@@ -1,0 +1,776 @@
+2013-07-22 08:31:35,655 DEBUG A1 - idle:19
+2013-07-22 08:31:35,655 DEBUG A1 - active:1
+2013-07-22 08:31:37,106 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-07-22 08:31:52,363 DEBUG A1 - idle:19
+2013-07-22 08:31:52,363 DEBUG A1 - active:1
+2013-07-22 08:31:52,800 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-22 08:31:56,404 DEBUG A1 - idle:19
+2013-07-22 08:31:56,404 DEBUG A1 - active:1
+2013-07-22 08:31:58,060 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 08:31:58,091 DEBUG A1 - idle:19
+2013-07-22 08:31:58,091 DEBUG A1 - active:1
+2013-07-22 08:31:58,138 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:07:40,239 DEBUG A1 - idle:19
+2013-07-22 09:07:40,239 DEBUG A1 - active:1
+2013-07-22 09:07:40,707 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2013-07-22 09:07:46,308 DEBUG A1 - idle:19
+2013-07-22 09:07:46,308 DEBUG A1 - active:1
+2013-07-22 09:07:46,479 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2013-07-22 09:07:46,573 DEBUG A1 - idle:19
+2013-07-22 09:07:46,573 DEBUG A1 - active:1
+2013-07-22 09:07:46,994 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:08:33,264 DEBUG A1 - idle:19
+2013-07-22 09:08:33,264 DEBUG A1 - active:1
+2013-07-22 09:08:33,545 DEBUG A1 - ScheduleRegistration
+ps is closed by jdbc4.0
+2013-07-22 09:08:34,496 DEBUG A1 - idle:19
+2013-07-22 09:08:34,496 DEBUG A1 - active:1
+2013-07-22 09:08:34,512 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:09:22,778 DEBUG A1 - idle:19
+2013-07-22 09:09:22,778 DEBUG A1 - active:1
+2013-07-22 09:09:22,778 DEBUG A1 - ScheduleRegistration
+ps is closed by jdbc4.0
+2013-07-22 09:09:24,401 DEBUG A1 - idle:19
+2013-07-22 09:09:24,401 DEBUG A1 - active:1
+2013-07-22 09:09:24,416 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:09:31,764 DEBUG A1 - idle:19
+2013-07-22 09:09:31,764 DEBUG A1 - active:1
+2013-07-22 09:09:32,076 DEBUG A1 - ScheduleRegistration
+ps is closed by jdbc4.0
+2013-07-22 09:09:32,809 DEBUG A1 - idle:19
+2013-07-22 09:09:32,809 DEBUG A1 - active:1
+2013-07-22 09:09:32,840 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:09:54,165 DEBUG A1 - idle:19
+2013-07-22 09:09:54,165 DEBUG A1 - active:1
+2013-07-22 09:09:54,181 DEBUG A1 - ScheduleRegistration
+ps is closed by jdbc4.0
+2013-07-22 09:09:55,086 DEBUG A1 - idle:19
+2013-07-22 09:09:55,086 DEBUG A1 - active:1
+2013-07-22 09:09:55,101 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:10:21,154 DEBUG A1 - idle:19
+2013-07-22 09:10:21,154 DEBUG A1 - active:1
+2013-07-22 09:10:21,185 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:10:21,809 DEBUG A1 - idle:19
+2013-07-22 09:10:21,809 DEBUG A1 - active:1
+2013-07-22 09:10:21,824 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:10:22,277 DEBUG A1 - idle:19
+2013-07-22 09:10:22,277 DEBUG A1 - active:1
+2013-07-22 09:10:22,308 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:10:22,776 DEBUG A1 - idle:19
+2013-07-22 09:10:22,792 DEBUG A1 - active:1
+2013-07-22 09:10:22,807 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:10:23,275 DEBUG A1 - idle:19
+2013-07-22 09:10:23,275 DEBUG A1 - active:1
+2013-07-22 09:10:23,291 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:10:23,821 DEBUG A1 - idle:19
+2013-07-22 09:10:23,821 DEBUG A1 - active:1
+2013-07-22 09:10:23,837 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:10:24,788 DEBUG A1 - idle:19
+2013-07-22 09:10:24,788 DEBUG A1 - active:1
+2013-07-22 09:10:24,804 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:10:59,155 DEBUG A1 - idle:19
+2013-07-22 09:10:59,155 DEBUG A1 - active:1
+2013-07-22 09:10:59,171 DEBUG A1 - ScheduleRegistration
+ps is closed by jdbc4.0
+2013-07-22 09:11:00,076 DEBUG A1 - idle:19
+2013-07-22 09:11:00,076 DEBUG A1 - active:1
+2013-07-22 09:11:00,091 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:11:33,444 DEBUG A1 - idle:19
+2013-07-22 09:11:33,444 DEBUG A1 - active:1
+2013-07-22 09:11:33,460 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:11:34,146 DEBUG A1 - idle:19
+2013-07-22 09:11:34,146 DEBUG A1 - active:1
+2013-07-22 09:11:34,162 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:11:34,942 DEBUG A1 - idle:19
+2013-07-22 09:11:34,942 DEBUG A1 - active:1
+2013-07-22 09:11:34,957 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:12:04,473 DEBUG A1 - idle:19
+2013-07-22 09:12:04,473 DEBUG A1 - active:1
+2013-07-22 09:12:04,488 DEBUG A1 - ScheduleRegistration
+ps is closed by jdbc4.0
+2013-07-22 09:12:05,440 DEBUG A1 - idle:19
+2013-07-22 09:12:05,440 DEBUG A1 - active:1
+2013-07-22 09:12:05,455 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:12:33,286 DEBUG A1 - idle:19
+2013-07-22 09:12:33,286 DEBUG A1 - active:1
+2013-07-22 09:12:33,333 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:12:33,816 DEBUG A1 - idle:19
+2013-07-22 09:12:33,816 DEBUG A1 - active:1
+2013-07-22 09:12:33,816 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:12:34,971 DEBUG A1 - idle:19
+2013-07-22 09:12:34,971 DEBUG A1 - active:1
+2013-07-22 09:12:34,986 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:12:37,638 DEBUG A1 - idle:19
+2013-07-22 09:12:37,638 DEBUG A1 - active:1
+2013-07-22 09:12:37,654 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:13:04,533 DEBUG A1 - idle:19
+2013-07-22 09:13:04,533 DEBUG A1 - active:1
+2013-07-22 09:13:04,548 DEBUG A1 - ScheduleRegistration
+ps is closed by jdbc4.0
+2013-07-22 09:13:05,484 DEBUG A1 - idle:19
+2013-07-22 09:13:05,484 DEBUG A1 - active:1
+2013-07-22 09:13:05,515 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:17:15,414 DEBUG A1 - idle:19
+2013-07-22 09:17:15,414 DEBUG A1 - active:1
+2013-07-22 09:17:17,335 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-22 09:17:28,114 DEBUG A1 - idle:19
+2013-07-22 09:17:28,114 DEBUG A1 - active:1
+2013-07-22 09:17:28,506 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:17:28,522 DEBUG A1 - idle:19
+2013-07-22 09:17:28,522 DEBUG A1 - active:1
+2013-07-22 09:17:28,569 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:17:29,629 DEBUG A1 - idle:19
+2013-07-22 09:17:29,629 DEBUG A1 - active:1
+2013-07-22 09:17:29,677 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:17:29,693 DEBUG A1 - idle:19
+2013-07-22 09:17:29,693 DEBUG A1 - active:1
+2013-07-22 09:17:29,693 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:18:34,688 DEBUG A1 - idle:19
+2013-07-22 09:18:34,688 DEBUG A1 - active:1
+2013-07-22 09:18:34,690 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2013-07-22 09:18:40,169 DEBUG A1 - idle:19
+2013-07-22 09:18:40,170 DEBUG A1 - active:1
+2013-07-22 09:18:40,190 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2013-07-22 09:18:40,268 DEBUG A1 - idle:19
+2013-07-22 09:18:40,268 DEBUG A1 - active:1
+2013-07-22 09:18:40,277 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:43,283 DEBUG A1 - idle:19
+2013-07-22 09:18:43,284 DEBUG A1 - active:1
+2013-07-22 09:18:43,300 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:43,467 DEBUG A1 - idle:19
+2013-07-22 09:18:43,467 DEBUG A1 - active:1
+2013-07-22 09:18:43,484 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:43,627 DEBUG A1 - idle:19
+2013-07-22 09:18:43,628 DEBUG A1 - active:1
+2013-07-22 09:18:43,643 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:43,819 DEBUG A1 - idle:19
+2013-07-22 09:18:43,819 DEBUG A1 - active:1
+2013-07-22 09:18:43,834 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:43,979 DEBUG A1 - idle:19
+2013-07-22 09:18:43,979 DEBUG A1 - active:1
+2013-07-22 09:18:43,997 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:44,139 DEBUG A1 - idle:19
+2013-07-22 09:18:44,139 DEBUG A1 - active:1
+2013-07-22 09:18:44,155 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:44,314 DEBUG A1 - idle:19
+2013-07-22 09:18:44,315 DEBUG A1 - active:1
+2013-07-22 09:18:44,330 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:44,499 DEBUG A1 - idle:19
+2013-07-22 09:18:44,499 DEBUG A1 - active:1
+2013-07-22 09:18:44,538 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:44,630 DEBUG A1 - idle:19
+2013-07-22 09:18:44,630 DEBUG A1 - active:1
+2013-07-22 09:18:44,643 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:44,955 DEBUG A1 - idle:19
+2013-07-22 09:18:44,955 DEBUG A1 - active:1
+2013-07-22 09:18:44,970 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:45,132 DEBUG A1 - idle:19
+2013-07-22 09:18:45,132 DEBUG A1 - active:1
+2013-07-22 09:18:45,147 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:45,987 DEBUG A1 - idle:19
+2013-07-22 09:18:45,988 DEBUG A1 - active:1
+2013-07-22 09:18:46,003 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:46,907 DEBUG A1 - idle:19
+2013-07-22 09:18:46,907 DEBUG A1 - active:1
+2013-07-22 09:18:46,923 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:47,299 DEBUG A1 - idle:19
+2013-07-22 09:18:47,299 DEBUG A1 - active:1
+2013-07-22 09:18:47,314 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:18:48,428 DEBUG A1 - idle:19
+2013-07-22 09:18:48,428 DEBUG A1 - active:1
+2013-07-22 09:18:48,443 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:19:18,795 DEBUG A1 - idle:19
+2013-07-22 09:19:18,795 DEBUG A1 - active:1
+2013-07-22 09:19:18,807 DEBUG A1 - ScheduleRegistration
+ps is closed by jdbc4.0
+2013-07-22 09:19:19,807 DEBUG A1 - idle:19
+2013-07-22 09:19:19,807 DEBUG A1 - active:1
+2013-07-22 09:19:19,822 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-07-22 09:25:45,720 DEBUG A1 - idle:19
+2013-07-22 09:25:45,720 DEBUG A1 - active:1
+2013-07-22 09:25:45,767 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-22 09:25:48,887 DEBUG A1 - idle:19
+2013-07-22 09:25:48,887 DEBUG A1 - active:1
+2013-07-22 09:25:48,965 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:26:00,868 DEBUG A1 - idle:19
+2013-07-22 09:26:00,868 DEBUG A1 - active:1
+2013-07-22 09:26:00,868 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:26:02,943 DEBUG A1 - idle:19
+2013-07-22 09:26:02,943 DEBUG A1 - active:1
+2013-07-22 09:26:02,959 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:26:04,456 DEBUG A1 - idle:19
+2013-07-22 09:26:04,456 DEBUG A1 - active:1
+2013-07-22 09:26:04,472 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:26:08,824 DEBUG A1 - idle:19
+2013-07-22 09:26:08,824 DEBUG A1 - active:1
+2013-07-22 09:26:08,840 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:26:11,351 DEBUG A1 - idle:19
+2013-07-22 09:26:11,351 DEBUG A1 - active:1
+2013-07-22 09:26:11,367 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:26:15,673 DEBUG A1 - idle:19
+2013-07-22 09:26:15,673 DEBUG A1 - active:1
+2013-07-22 09:26:15,688 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:28:16,526 DEBUG A1 - idle:19
+2013-07-22 09:28:16,526 DEBUG A1 - active:1
+2013-07-22 09:28:16,526 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-22 09:28:17,603 DEBUG A1 - idle:19
+2013-07-22 09:28:17,603 DEBUG A1 - active:1
+2013-07-22 09:28:17,619 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:29:19,068 DEBUG A1 - idle:19
+2013-07-22 09:29:19,068 DEBUG A1 - active:1
+2013-07-22 09:29:19,068 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-22 09:29:21,970 DEBUG A1 - idle:19
+2013-07-22 09:29:21,970 DEBUG A1 - active:1
+2013-07-22 09:29:21,986 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:39:40,605 DEBUG A1 - idle:19
+2013-07-22 09:39:40,605 DEBUG A1 - active:1
+2013-07-22 09:39:40,684 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:39:40,684 DEBUG A1 - idle:19
+2013-07-22 09:39:40,684 DEBUG A1 - active:1
+2013-07-22 09:39:40,699 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:39:51,869 DEBUG A1 - idle:19
+2013-07-22 09:39:51,869 DEBUG A1 - active:1
+2013-07-22 09:39:51,948 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:39:51,964 DEBUG A1 - idle:19
+2013-07-22 09:39:51,964 DEBUG A1 - active:1
+2013-07-22 09:39:51,979 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:39:58,297 DEBUG A1 - idle:19
+2013-07-22 09:39:58,297 DEBUG A1 - active:1
+2013-07-22 09:39:58,313 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:40:03,165 DEBUG A1 - idle:19
+2013-07-22 09:40:03,165 DEBUG A1 - active:1
+2013-07-22 09:40:03,290 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:40:03,306 DEBUG A1 - idle:19
+2013-07-22 09:40:03,306 DEBUG A1 - active:1
+2013-07-22 09:40:03,322 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:40:04,445 DEBUG A1 - idle:19
+2013-07-22 09:40:04,445 DEBUG A1 - active:1
+2013-07-22 09:40:04,460 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:40:19,982 DEBUG A1 - idle:19
+2013-07-22 09:40:19,982 DEBUG A1 - active:1
+2013-07-22 09:40:20,077 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:40:20,093 DEBUG A1 - idle:19
+2013-07-22 09:40:20,093 DEBUG A1 - active:1
+2013-07-22 09:40:20,108 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:40:21,715 DEBUG A1 - idle:19
+2013-07-22 09:40:21,715 DEBUG A1 - active:1
+2013-07-22 09:40:21,746 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:42:33,879 DEBUG A1 - idle:19
+2013-07-22 09:42:33,879 DEBUG A1 - active:1
+2013-07-22 09:42:33,977 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:42:33,977 DEBUG A1 - idle:19
+2013-07-22 09:42:33,977 DEBUG A1 - active:1
+2013-07-22 09:42:33,993 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:42:35,787 DEBUG A1 - idle:19
+2013-07-22 09:42:35,787 DEBUG A1 - active:1
+2013-07-22 09:42:35,818 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:42:51,278 DEBUG A1 - idle:19
+2013-07-22 09:42:51,278 DEBUG A1 - active:1
+2013-07-22 09:42:51,341 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:42:51,357 DEBUG A1 - idle:19
+2013-07-22 09:42:51,357 DEBUG A1 - active:1
+2013-07-22 09:42:51,372 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:42:52,745 DEBUG A1 - idle:19
+2013-07-22 09:42:52,745 DEBUG A1 - active:1
+2013-07-22 09:42:52,776 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:42:57,878 DEBUG A1 - idle:19
+2013-07-22 09:42:57,878 DEBUG A1 - active:1
+2013-07-22 09:42:57,966 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:42:57,966 DEBUG A1 - idle:19
+2013-07-22 09:42:57,966 DEBUG A1 - active:1
+2013-07-22 09:42:57,981 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:43:06,780 DEBUG A1 - idle:19
+2013-07-22 09:43:06,780 DEBUG A1 - active:1
+2013-07-22 09:43:06,843 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:43:06,859 DEBUG A1 - idle:19
+2013-07-22 09:43:06,859 DEBUG A1 - active:1
+2013-07-22 09:43:06,874 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:43:10,603 DEBUG A1 - idle:19
+2013-07-22 09:43:10,603 DEBUG A1 - active:1
+2013-07-22 09:43:10,666 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:43:10,666 DEBUG A1 - idle:19
+2013-07-22 09:43:10,666 DEBUG A1 - active:1
+2013-07-22 09:43:10,682 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:43:12,086 DEBUG A1 - idle:19
+2013-07-22 09:43:12,086 DEBUG A1 - active:1
+2013-07-22 09:43:12,117 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:44:23,362 DEBUG A1 - idle:19
+2013-07-22 09:44:23,362 DEBUG A1 - active:1
+2013-07-22 09:44:23,426 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 09:44:23,441 DEBUG A1 - idle:19
+2013-07-22 09:44:23,441 DEBUG A1 - active:1
+2013-07-22 09:44:23,441 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 09:58:59,993 DEBUG A1 - idle:19
+2013-07-22 09:58:59,993 DEBUG A1 - active:1
+2013-07-22 09:58:59,993 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-22 09:59:00,946 DEBUG A1 - idle:19
+2013-07-22 09:59:00,946 DEBUG A1 - active:1
+2013-07-22 09:59:00,961 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:59:08,808 DEBUG A1 - idle:19
+2013-07-22 09:59:08,808 DEBUG A1 - active:1
+2013-07-22 09:59:08,824 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:59:26,888 DEBUG A1 - idle:19
+2013-07-22 09:59:26,888 DEBUG A1 - active:1
+2013-07-22 09:59:26,888 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 09:59:30,570 DEBUG A1 - idle:19
+2013-07-22 09:59:30,570 DEBUG A1 - active:1
+2013-07-22 09:59:30,570 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-22 10:43:25,604 DEBUG A1 - idle:19
+2013-07-22 10:43:25,604 DEBUG A1 - active:1
+2013-07-22 10:43:26,073 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-22 10:43:29,021 DEBUG A1 - idle:19
+2013-07-22 10:43:29,021 DEBUG A1 - active:1
+2013-07-22 10:43:29,052 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 10:43:29,177 DEBUG A1 - idle:19
+2013-07-22 10:43:29,177 DEBUG A1 - active:1
+2013-07-22 10:43:29,334 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-22 10:43:37,415 DEBUG A1 - idle:19
+2013-07-22 10:43:37,431 DEBUG A1 - active:1
+2013-07-22 10:43:37,505 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 10:43:37,505 DEBUG A1 - idle:19
+2013-07-22 10:43:37,505 DEBUG A1 - active:1
+2013-07-22 10:43:37,520 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 10:43:37,536 DEBUG A1 - idle:19
+2013-07-22 10:43:37,536 DEBUG A1 - active:1
+2013-07-22 10:43:37,551 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 10:43:57,112 DEBUG A1 - idle:19
+2013-07-22 10:43:57,112 DEBUG A1 - active:1
+2013-07-22 10:43:57,176 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 10:43:57,176 DEBUG A1 - idle:19
+2013-07-22 10:43:57,176 DEBUG A1 - active:1
+2013-07-22 10:43:57,191 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 10:43:57,191 DEBUG A1 - idle:19
+2013-07-22 10:43:57,191 DEBUG A1 - active:1
+2013-07-22 10:43:57,207 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 10:46:32,733 DEBUG A1 - idle:19
+2013-07-22 10:46:32,733 DEBUG A1 - active:1
+2013-07-22 10:46:32,812 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 10:46:32,812 DEBUG A1 - idle:19
+2013-07-22 10:46:32,812 DEBUG A1 - active:1
+2013-07-22 10:46:32,843 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 10:46:32,859 DEBUG A1 - idle:19
+2013-07-22 10:46:32,859 DEBUG A1 - active:1
+2013-07-22 10:46:32,874 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 10:46:34,699 DEBUG A1 - idle:19
+2013-07-22 10:46:34,699 DEBUG A1 - active:1
+2013-07-22 10:46:34,779 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 10:46:34,779 DEBUG A1 - idle:19
+2013-07-22 10:46:34,779 DEBUG A1 - active:1
+2013-07-22 10:46:34,811 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 10:46:34,811 DEBUG A1 - idle:19
+2013-07-22 10:46:34,811 DEBUG A1 - active:1
+2013-07-22 10:46:34,826 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 10:48:58,220 DEBUG A1 - idle:19
+2013-07-22 10:48:58,220 DEBUG A1 - active:1
+2013-07-22 10:48:58,814 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2013-07-22 10:50:47,999 DEBUG A1 - idle:19
+2013-07-22 10:50:47,999 DEBUG A1 - active:1
+2013-07-22 10:50:48,062 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 10:50:48,062 DEBUG A1 - idle:19
+2013-07-22 10:50:48,062 DEBUG A1 - active:1
+2013-07-22 10:50:48,078 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 10:50:48,078 DEBUG A1 - idle:19
+2013-07-22 10:50:48,078 DEBUG A1 - active:1
+2013-07-22 10:50:48,093 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:34:59,964 DEBUG A1 - idle:19
+2013-07-22 16:34:59,964 DEBUG A1 - active:1
+2013-07-22 16:35:00,293 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-22 16:35:26,454 DEBUG A1 - idle:19
+2013-07-22 16:35:26,454 DEBUG A1 - active:1
+2013-07-22 16:35:26,519 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:35:26,519 DEBUG A1 - idle:19
+2013-07-22 16:35:26,519 DEBUG A1 - active:1
+2013-07-22 16:35:26,534 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:35:32,447 DEBUG A1 - idle:19
+2013-07-22 16:35:32,447 DEBUG A1 - active:1
+2013-07-22 16:35:32,526 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:35:32,526 DEBUG A1 - idle:19
+2013-07-22 16:35:32,526 DEBUG A1 - active:1
+2013-07-22 16:35:32,541 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:36:24,942 DEBUG A1 - idle:19
+2013-07-22 16:36:24,942 DEBUG A1 - active:1
+2013-07-22 16:36:25,006 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:36:25,022 DEBUG A1 - idle:19
+2013-07-22 16:36:25,022 DEBUG A1 - active:1
+2013-07-22 16:36:25,037 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:36:26,036 DEBUG A1 - idle:19
+2013-07-22 16:36:26,036 DEBUG A1 - active:1
+2013-07-22 16:36:26,091 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:36:26,091 DEBUG A1 - idle:19
+2013-07-22 16:36:26,091 DEBUG A1 - active:1
+2013-07-22 16:36:26,138 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:36:43,142 DEBUG A1 - idle:19
+2013-07-22 16:36:43,142 DEBUG A1 - active:1
+2013-07-22 16:36:43,221 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:36:43,237 DEBUG A1 - idle:19
+2013-07-22 16:36:43,237 DEBUG A1 - active:1
+2013-07-22 16:36:43,237 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:36:45,873 DEBUG A1 - idle:19
+2013-07-22 16:36:45,873 DEBUG A1 - active:1
+2013-07-22 16:36:45,937 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:36:45,937 DEBUG A1 - idle:19
+2013-07-22 16:36:45,937 DEBUG A1 - active:1
+2013-07-22 16:36:45,952 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:36:49,681 DEBUG A1 - idle:19
+2013-07-22 16:36:49,681 DEBUG A1 - active:1
+2013-07-22 16:36:49,744 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:36:49,760 DEBUG A1 - idle:19
+2013-07-22 16:36:49,760 DEBUG A1 - active:1
+2013-07-22 16:36:49,775 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:36:50,821 DEBUG A1 - idle:19
+2013-07-22 16:36:50,821 DEBUG A1 - active:1
+2013-07-22 16:36:50,852 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:37:27,028 DEBUG A1 - idle:19
+2013-07-22 16:37:27,028 DEBUG A1 - active:1
+2013-07-22 16:37:27,087 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:37:27,103 DEBUG A1 - idle:19
+2013-07-22 16:37:27,103 DEBUG A1 - active:1
+2013-07-22 16:37:27,118 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:37:30,425 DEBUG A1 - idle:19
+2013-07-22 16:37:30,425 DEBUG A1 - active:1
+2013-07-22 16:37:30,457 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:37:36,603 DEBUG A1 - idle:19
+2013-07-22 16:37:36,603 DEBUG A1 - active:1
+2013-07-22 16:37:36,665 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:37:36,665 DEBUG A1 - idle:19
+2013-07-22 16:37:36,665 DEBUG A1 - active:1
+2013-07-22 16:37:36,681 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:37:53,624 DEBUG A1 - idle:19
+2013-07-22 16:37:53,624 DEBUG A1 - active:1
+2013-07-22 16:37:53,703 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:37:53,718 DEBUG A1 - idle:19
+2013-07-22 16:37:53,718 DEBUG A1 - active:1
+2013-07-22 16:37:53,749 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:37:54,919 DEBUG A1 - idle:19
+2013-07-22 16:37:54,919 DEBUG A1 - active:1
+2013-07-22 16:37:54,967 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:37:54,983 DEBUG A1 - idle:19
+2013-07-22 16:37:54,983 DEBUG A1 - active:1
+2013-07-22 16:37:54,998 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:38:11,176 DEBUG A1 - idle:19
+2013-07-22 16:38:11,176 DEBUG A1 - active:1
+2013-07-22 16:38:11,240 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:38:11,256 DEBUG A1 - idle:19
+2013-07-22 16:38:11,256 DEBUG A1 - active:1
+2013-07-22 16:38:11,256 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:38:19,414 DEBUG A1 - idle:19
+2013-07-22 16:38:19,414 DEBUG A1 - active:1
+2013-07-22 16:38:19,472 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:38:19,488 DEBUG A1 - idle:19
+2013-07-22 16:38:19,488 DEBUG A1 - active:1
+2013-07-22 16:38:19,503 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:38:21,875 DEBUG A1 - idle:19
+2013-07-22 16:38:21,875 DEBUG A1 - active:1
+2013-07-22 16:38:21,938 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:38:21,938 DEBUG A1 - idle:19
+2013-07-22 16:38:21,938 DEBUG A1 - active:1
+2013-07-22 16:38:21,954 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:38:26,946 DEBUG A1 - idle:19
+2013-07-22 16:38:26,946 DEBUG A1 - active:1
+2013-07-22 16:38:27,009 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:38:27,009 DEBUG A1 - idle:19
+2013-07-22 16:38:27,009 DEBUG A1 - active:1
+2013-07-22 16:38:27,025 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:38:29,022 DEBUG A1 - idle:19
+2013-07-22 16:38:29,022 DEBUG A1 - active:1
+2013-07-22 16:38:29,101 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:38:29,101 DEBUG A1 - idle:19
+2013-07-22 16:38:29,101 DEBUG A1 - active:1
+2013-07-22 16:38:29,116 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:38:30,364 DEBUG A1 - idle:19
+2013-07-22 16:38:30,364 DEBUG A1 - active:1
+2013-07-22 16:38:30,429 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:38:30,429 DEBUG A1 - idle:19
+2013-07-22 16:38:30,429 DEBUG A1 - active:1
+2013-07-22 16:38:30,444 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:38:31,848 DEBUG A1 - idle:19
+2013-07-22 16:38:31,848 DEBUG A1 - active:1
+2013-07-22 16:38:31,927 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:38:31,927 DEBUG A1 - idle:19
+2013-07-22 16:38:31,927 DEBUG A1 - active:1
+2013-07-22 16:38:31,943 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:38:32,988 DEBUG A1 - idle:19
+2013-07-22 16:38:32,988 DEBUG A1 - active:1
+2013-07-22 16:38:33,055 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:38:33,071 DEBUG A1 - idle:19
+2013-07-22 16:38:33,071 DEBUG A1 - active:1
+2013-07-22 16:38:33,087 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:38:37,751 DEBUG A1 - idle:19
+2013-07-22 16:38:37,751 DEBUG A1 - active:1
+2013-07-22 16:38:37,767 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:38:42,618 DEBUG A1 - idle:19
+2013-07-22 16:38:42,618 DEBUG A1 - active:1
+2013-07-22 16:38:42,728 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:38:42,728 DEBUG A1 - idle:19
+2013-07-22 16:38:42,728 DEBUG A1 - active:1
+2013-07-22 16:38:42,744 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:38:44,772 DEBUG A1 - idle:19
+2013-07-22 16:38:44,772 DEBUG A1 - active:1
+2013-07-22 16:38:44,835 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:38:44,835 DEBUG A1 - idle:19
+2013-07-22 16:38:44,835 DEBUG A1 - active:1
+2013-07-22 16:38:44,867 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:39:14,085 DEBUG A1 - idle:19
+2013-07-22 16:39:14,085 DEBUG A1 - active:1
+2013-07-22 16:39:14,101 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:39:14,210 DEBUG A1 - idle:19
+2013-07-22 16:39:14,210 DEBUG A1 - active:1
+2013-07-22 16:39:14,866 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-22 16:39:49,530 DEBUG A1 - idle:19
+2013-07-22 16:39:49,530 DEBUG A1 - active:1
+2013-07-22 16:39:49,593 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:39:49,593 DEBUG A1 - idle:19
+2013-07-22 16:39:49,593 DEBUG A1 - active:1
+2013-07-22 16:39:49,609 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:39:57,939 DEBUG A1 - idle:19
+2013-07-22 16:39:57,939 DEBUG A1 - active:1
+2013-07-22 16:39:58,019 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:39:58,019 DEBUG A1 - idle:19
+2013-07-22 16:39:58,019 DEBUG A1 - active:1
+2013-07-22 16:39:58,035 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:40:14,992 DEBUG A1 - idle:19
+2013-07-22 16:40:14,992 DEBUG A1 - active:1
+2013-07-22 16:40:15,055 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:40:15,055 DEBUG A1 - idle:19
+2013-07-22 16:40:15,055 DEBUG A1 - active:1
+2013-07-22 16:40:15,071 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:40:19,642 DEBUG A1 - idle:19
+2013-07-22 16:40:19,642 DEBUG A1 - active:1
+2013-07-22 16:40:19,657 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:40:22,809 DEBUG A1 - idle:19
+2013-07-22 16:40:22,809 DEBUG A1 - active:1
+2013-07-22 16:40:22,840 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:42:07,797 DEBUG A1 - idle:19
+2013-07-22 16:42:07,797 DEBUG A1 - active:1
+2013-07-22 16:42:08,422 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2013-07-22 16:59:26,385 DEBUG A1 - idle:19
+2013-07-22 16:59:26,385 DEBUG A1 - active:1
+2013-07-22 16:59:26,416 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:59:26,510 DEBUG A1 - idle:19
+2013-07-22 16:59:26,510 DEBUG A1 - active:1
+2013-07-22 16:59:27,010 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-22 16:59:37,993 DEBUG A1 - idle:19
+2013-07-22 16:59:37,993 DEBUG A1 - active:1
+2013-07-22 16:59:38,040 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:59:38,056 DEBUG A1 - idle:19
+2013-07-22 16:59:38,056 DEBUG A1 - active:1
+2013-07-22 16:59:38,072 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:59:38,072 DEBUG A1 - idle:19
+2013-07-22 16:59:38,072 DEBUG A1 - active:1
+2013-07-22 16:59:38,087 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 16:59:49,101 DEBUG A1 - idle:19
+2013-07-22 16:59:49,101 DEBUG A1 - active:1
+2013-07-22 16:59:49,165 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 16:59:49,181 DEBUG A1 - idle:19
+2013-07-22 16:59:49,181 DEBUG A1 - active:1
+2013-07-22 16:59:49,196 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 17:13:38,032 DEBUG A1 - idle:19
+2013-07-22 17:13:38,032 DEBUG A1 - active:1
+2013-07-22 17:13:38,096 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-22 17:13:38,096 DEBUG A1 - idle:19
+2013-07-22 17:13:38,096 DEBUG A1 - active:1
+2013-07-22 17:13:38,111 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 17:13:38,127 DEBUG A1 - idle:19
+2013-07-22 17:13:38,127 DEBUG A1 - active:1
+2013-07-22 17:13:38,143 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-22 17:13:40,015 DEBUG A1 - idle:19
+2013-07-22 17:13:40,015 DEBUG A1 - active:1
+2013-07-22 17:13:40,030 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-22 17:13:40,030 DEBUG A1 - idle:19
+2013-07-22 17:13:40,030 DEBUG A1 - active:1
+2013-07-22 17:13:40,077 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-22 17:13:40,186 DEBUG A1 - idle:19
+2013-07-22 17:13:40,186 DEBUG A1 - active:1
+2013-07-22 17:13:40,234 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-22 17:13:40,265 DEBUG A1 - idle:19
+2013-07-22 17:13:40,265 DEBUG A1 - active:1
+2013-07-22 17:13:40,343 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-22 17:14:28,858 DEBUG A1 - idle:19
+2013-07-22 17:14:28,858 DEBUG A1 - active:1
+2013-07-22 17:14:29,162 DEBUG A1 - Search
+ps is closed by jdbc4.0

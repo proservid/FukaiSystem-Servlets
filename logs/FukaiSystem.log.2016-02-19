@@ -1,0 +1,28 @@
+2016-02-19 11:05:52,721 DEBUG A1 - idle:0
+2016-02-19 11:05:52,721 DEBUG A1 - active:1
+2016-02-19 11:05:52,846 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-02-19 11:06:10,739 DEBUG A1 - idle:0
+2016-02-19 11:06:10,739 DEBUG A1 - active:1
+2016-02-19 11:06:10,849 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-02-19 11:06:19,444 DEBUG A1 - idle:0
+2016-02-19 11:06:19,444 DEBUG A1 - active:1
+2016-02-19 11:06:19,803 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-02-19 11:06:21,223 DEBUG A1 - idle:0
+2016-02-19 11:06:21,223 DEBUG A1 - active:1
+2016-02-19 11:06:21,254 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2016-02-19 11:06:21,269 DEBUG A1 - idle:0
+2016-02-19 11:06:21,269 DEBUG A1 - active:1
+2016-02-19 11:06:21,269 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2016-02-19 11:06:30,489 DEBUG A1 - idle:0
+2016-02-19 11:06:30,489 DEBUG A1 - active:1
+2016-02-19 11:06:30,505 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2016-02-19 11:06:30,520 DEBUG A1 - idle:0
+2016-02-19 11:06:30,520 DEBUG A1 - active:1
+2016-02-19 11:06:30,520 DEBUG A1 - SetLabel
+ps closed by jdbc4.0

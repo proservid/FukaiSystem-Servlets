@@ -1,0 +1,2720 @@
+2013-07-10 08:22:49,821 DEBUG A1 - idle:19
+2013-07-10 08:22:49,821 DEBUG A1 - active:1
+2013-07-10 08:22:49,852 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 08:22:55,640 DEBUG A1 - idle:19
+2013-07-10 08:22:55,640 DEBUG A1 - active:1
+2013-07-10 08:22:55,921 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 08:23:12,036 DEBUG A1 - idle:19
+2013-07-10 08:23:12,036 DEBUG A1 - active:1
+2013-07-10 08:23:12,363 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 08:23:12,394 DEBUG A1 - idle:19
+2013-07-10 08:23:12,394 DEBUG A1 - active:1
+2013-07-10 08:23:12,427 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 08:25:00,987 DEBUG A1 - idle:19
+2013-07-10 08:25:00,987 DEBUG A1 - active:1
+2013-07-10 08:25:01,003 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 08:25:47,149 DEBUG A1 - idle:19
+2013-07-10 08:25:47,149 DEBUG A1 - active:1
+2013-07-10 08:25:47,149 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 08:25:51,189 DEBUG A1 - idle:19
+2013-07-10 08:25:51,189 DEBUG A1 - active:1
+2013-07-10 08:25:51,220 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 08:25:53,373 DEBUG A1 - idle:19
+2013-07-10 08:25:53,373 DEBUG A1 - active:1
+2013-07-10 08:25:53,404 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 08:25:53,436 DEBUG A1 - idle:19
+2013-07-10 08:25:53,436 DEBUG A1 - active:1
+2013-07-10 08:25:53,436 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 08:25:57,945 DEBUG A1 - idle:19
+2013-07-10 08:25:57,945 DEBUG A1 - active:1
+2013-07-10 08:25:57,945 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 08:27:02,140 DEBUG A1 - idle:19
+2013-07-10 08:27:02,140 DEBUG A1 - active:1
+2013-07-10 08:27:02,140 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 08:27:06,040 DEBUG A1 - idle:19
+2013-07-10 08:27:06,040 DEBUG A1 - active:1
+2013-07-10 08:27:06,056 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 08:27:14,573 DEBUG A1 - idle:19
+2013-07-10 08:27:14,573 DEBUG A1 - active:1
+2013-07-10 08:27:14,573 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 08:27:14,604 DEBUG A1 - idle:19
+2013-07-10 08:27:14,604 DEBUG A1 - active:1
+2013-07-10 08:27:14,604 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 08:28:36,740 DEBUG A1 - idle:19
+2013-07-10 08:28:36,740 DEBUG A1 - active:1
+2013-07-10 08:28:36,740 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 08:28:42,730 DEBUG A1 - idle:19
+2013-07-10 08:28:42,730 DEBUG A1 - active:1
+2013-07-10 08:28:42,746 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 08:28:44,399 DEBUG A1 - idle:19
+2013-07-10 08:28:44,399 DEBUG A1 - active:1
+2013-07-10 08:28:44,399 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 08:28:44,430 DEBUG A1 - idle:19
+2013-07-10 08:28:44,430 DEBUG A1 - active:1
+2013-07-10 08:28:44,430 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 08:31:58,198 DEBUG A1 - idle:19
+2013-07-10 08:31:58,198 DEBUG A1 - active:1
+2013-07-10 08:31:58,198 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 08:32:00,959 DEBUG A1 - idle:19
+2013-07-10 08:32:00,959 DEBUG A1 - active:1
+2013-07-10 08:32:00,975 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 08:32:04,032 DEBUG A1 - idle:19
+2013-07-10 08:32:04,032 DEBUG A1 - active:1
+2013-07-10 08:32:04,048 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 08:32:04,063 DEBUG A1 - idle:19
+2013-07-10 08:32:04,063 DEBUG A1 - active:1
+2013-07-10 08:32:04,063 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 08:42:37,036 DEBUG A1 - idle:19
+2013-07-10 08:42:37,036 DEBUG A1 - active:1
+2013-07-10 08:42:37,036 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 08:42:45,319 DEBUG A1 - idle:19
+2013-07-10 08:42:45,319 DEBUG A1 - active:1
+2013-07-10 08:42:45,319 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 08:42:46,817 DEBUG A1 - idle:19
+2013-07-10 08:42:46,817 DEBUG A1 - active:1
+2013-07-10 08:42:46,832 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 08:42:46,864 DEBUG A1 - idle:19
+2013-07-10 08:42:46,864 DEBUG A1 - active:1
+2013-07-10 08:42:46,864 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 08:42:54,759 DEBUG A1 - idle:19
+2013-07-10 08:42:54,759 DEBUG A1 - active:1
+2013-07-10 08:42:54,775 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 08:42:56,850 DEBUG A1 - idle:19
+2013-07-10 08:42:56,850 DEBUG A1 - active:1
+2013-07-10 08:42:56,865 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 08:42:56,881 DEBUG A1 - idle:19
+2013-07-10 08:42:56,881 DEBUG A1 - active:1
+2013-07-10 08:42:56,881 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 08:45:40,947 DEBUG A1 - idle:19
+2013-07-10 08:45:40,947 DEBUG A1 - active:1
+2013-07-10 08:45:41,432 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 08:45:43,819 DEBUG A1 - idle:19
+2013-07-10 08:45:43,819 DEBUG A1 - active:1
+2013-07-10 08:45:43,929 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 08:45:47,361 DEBUG A1 - idle:19
+2013-07-10 08:45:47,361 DEBUG A1 - active:1
+2013-07-10 08:45:47,456 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 08:45:50,747 DEBUG A1 - idle:19
+2013-07-10 08:45:50,747 DEBUG A1 - active:1
+2013-07-10 08:45:50,826 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 08:45:55,180 DEBUG A1 - idle:19
+2013-07-10 08:45:55,180 DEBUG A1 - active:1
+2013-07-10 08:45:55,261 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 08:46:00,970 DEBUG A1 - idle:19
+2013-07-10 08:46:00,970 DEBUG A1 - active:1
+2013-07-10 08:46:00,970 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 08:46:05,745 DEBUG A1 - idle:19
+2013-07-10 08:46:05,745 DEBUG A1 - active:1
+2013-07-10 08:46:05,824 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 08:46:12,080 DEBUG A1 - idle:19
+2013-07-10 08:46:12,080 DEBUG A1 - active:1
+2013-07-10 08:46:12,159 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 08:53:57,648 DEBUG A1 - idle:19
+2013-07-10 08:53:57,648 DEBUG A1 - active:1
+2013-07-10 08:53:57,648 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 08:58:04,643 DEBUG A1 - idle:19
+2013-07-10 08:58:04,643 DEBUG A1 - active:1
+2013-07-10 08:58:04,769 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 09:06:26,903 DEBUG A1 - idle:19
+2013-07-10 09:06:26,903 DEBUG A1 - active:1
+2013-07-10 09:06:26,903 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 09:06:51,410 DEBUG A1 - idle:19
+2013-07-10 09:06:51,410 DEBUG A1 - active:1
+2013-07-10 09:06:51,722 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 09:06:59,756 DEBUG A1 - idle:19
+2013-07-10 09:06:59,756 DEBUG A1 - active:1
+2013-07-10 09:06:59,756 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 09:06:59,787 DEBUG A1 - idle:19
+2013-07-10 09:06:59,787 DEBUG A1 - active:1
+2013-07-10 09:06:59,787 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 09:07:23,682 DEBUG A1 - idle:19
+2013-07-10 09:07:23,682 DEBUG A1 - active:1
+2013-07-10 09:07:24,011 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 09:07:37,770 DEBUG A1 - idle:19
+2013-07-10 09:07:37,770 DEBUG A1 - active:1
+2013-07-10 09:07:37,849 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 09:08:02,840 DEBUG A1 - idle:19
+2013-07-10 09:08:02,840 DEBUG A1 - active:1
+2013-07-10 09:08:02,935 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 09:08:03,403 DEBUG A1 - idle:19
+2013-07-10 09:08:03,403 DEBUG A1 - active:1
+2013-07-10 09:08:03,403 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 09:09:21,715 DEBUG A1 - idle:19
+2013-07-10 09:09:21,715 DEBUG A1 - active:1
+2013-07-10 09:09:21,715 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 09:09:29,203 DEBUG A1 - idle:19
+2013-07-10 09:09:29,203 DEBUG A1 - active:1
+2013-07-10 09:09:29,298 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 09:09:44,008 DEBUG A1 - idle:19
+2013-07-10 09:09:44,008 DEBUG A1 - active:1
+2013-07-10 09:09:44,103 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 09:12:25,813 DEBUG A1 - idle:19
+2013-07-10 09:12:25,813 DEBUG A1 - active:1
+2013-07-10 09:12:25,813 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 09:12:29,401 DEBUG A1 - idle:19
+2013-07-10 09:12:29,401 DEBUG A1 - active:1
+2013-07-10 09:12:29,416 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 09:12:34,627 DEBUG A1 - idle:19
+2013-07-10 09:12:34,627 DEBUG A1 - active:1
+2013-07-10 09:12:34,642 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 09:12:34,689 DEBUG A1 - idle:19
+2013-07-10 09:12:34,689 DEBUG A1 - active:1
+2013-07-10 09:12:34,689 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:06:02,006 DEBUG A1 - idle:19
+2013-07-10 10:06:02,006 DEBUG A1 - active:1
+2013-07-10 10:06:02,006 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 10:06:05,688 DEBUG A1 - idle:19
+2013-07-10 10:06:05,688 DEBUG A1 - active:1
+2013-07-10 10:06:05,812 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 10:06:08,464 DEBUG A1 - idle:19
+2013-07-10 10:06:08,464 DEBUG A1 - active:1
+2013-07-10 10:06:08,605 ERROR A1 - GetCorpData
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名 'TEL' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.address.GetCorpData.service(GetCorpData.java:70)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 10:06:08,605 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 10:07:02,614 DEBUG A1 - idle:19
+2013-07-10 10:07:02,614 DEBUG A1 - active:1
+2013-07-10 10:07:02,630 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 10:07:04,424 DEBUG A1 - idle:19
+2013-07-10 10:07:04,424 DEBUG A1 - active:1
+2013-07-10 10:07:04,455 ERROR A1 - GetCorpData
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名 'TEL' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.address.GetCorpData.service(GetCorpData.java:70)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 10:07:04,455 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 10:07:59,510 DEBUG A1 - idle:19
+2013-07-10 10:07:59,510 DEBUG A1 - active:1
+2013-07-10 10:07:59,526 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 10:08:01,476 DEBUG A1 - idle:19
+2013-07-10 10:08:01,476 DEBUG A1 - active:1
+2013-07-10 10:08:01,601 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 10:08:16,624 DEBUG A1 - idle:19
+2013-07-10 10:08:16,624 DEBUG A1 - active:1
+2013-07-10 10:08:16,624 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 10:08:20,196 DEBUG A1 - idle:19
+2013-07-10 10:08:20,196 DEBUG A1 - active:1
+2013-07-10 10:08:20,212 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 10:08:22,427 DEBUG A1 - idle:19
+2013-07-10 10:08:22,427 DEBUG A1 - active:1
+2013-07-10 10:08:22,442 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 10:08:22,474 DEBUG A1 - idle:19
+2013-07-10 10:08:22,474 DEBUG A1 - active:1
+2013-07-10 10:08:22,474 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:17:11,686 DEBUG A1 - idle:19
+2013-07-10 10:17:11,686 DEBUG A1 - active:1
+2013-07-10 10:17:11,686 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 10:17:59,219 DEBUG A1 - idle:19
+2013-07-10 10:17:59,219 DEBUG A1 - active:1
+2013-07-10 10:17:59,219 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 10:19:05,956 DEBUG A1 - idle:19
+2013-07-10 10:19:05,956 DEBUG A1 - active:1
+2013-07-10 10:19:05,956 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 10:19:36,626 DEBUG A1 - idle:19
+2013-07-10 10:19:36,626 DEBUG A1 - active:1
+2013-07-10 10:19:36,642 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 10:20:04,878 DEBUG A1 - idle:19
+2013-07-10 10:20:04,878 DEBUG A1 - active:1
+2013-07-10 10:20:04,956 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 10:20:06,687 DEBUG A1 - idle:19
+2013-07-10 10:20:06,687 DEBUG A1 - active:1
+2013-07-10 10:20:06,718 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 10:20:06,750 DEBUG A1 - idle:19
+2013-07-10 10:20:06,750 DEBUG A1 - active:1
+2013-07-10 10:20:06,750 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:24:40,016 DEBUG A1 - idle:19
+2013-07-10 10:24:40,016 DEBUG A1 - active:1
+2013-07-10 10:24:40,016 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 10:24:43,979 DEBUG A1 - idle:19
+2013-07-10 10:24:43,979 DEBUG A1 - active:1
+2013-07-10 10:24:43,994 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 10:24:45,445 DEBUG A1 - idle:19
+2013-07-10 10:24:45,445 DEBUG A1 - active:1
+2013-07-10 10:24:45,445 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 10:24:45,476 DEBUG A1 - idle:19
+2013-07-10 10:24:45,476 DEBUG A1 - active:1
+2013-07-10 10:24:45,476 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:26:07,050 DEBUG A1 - idle:19
+2013-07-10 10:26:07,050 DEBUG A1 - active:1
+2013-07-10 10:26:07,050 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 10:26:10,248 DEBUG A1 - idle:19
+2013-07-10 10:26:10,248 DEBUG A1 - active:1
+2013-07-10 10:26:10,248 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 10:26:12,073 DEBUG A1 - idle:19
+2013-07-10 10:26:12,073 DEBUG A1 - active:1
+2013-07-10 10:26:12,120 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 10:26:12,151 DEBUG A1 - idle:19
+2013-07-10 10:26:12,151 DEBUG A1 - active:1
+2013-07-10 10:26:12,151 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:26:17,799 DEBUG A1 - idle:19
+2013-07-10 10:26:17,799 DEBUG A1 - active:1
+2013-07-10 10:26:17,799 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 10:26:20,108 DEBUG A1 - idle:19
+2013-07-10 10:26:20,108 DEBUG A1 - active:1
+2013-07-10 10:26:20,124 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 10:26:20,139 DEBUG A1 - idle:19
+2013-07-10 10:26:20,139 DEBUG A1 - active:1
+2013-07-10 10:26:20,139 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:27:40,294 DEBUG A1 - idle:19
+2013-07-10 10:27:40,294 DEBUG A1 - active:1
+2013-07-10 10:27:40,294 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 10:27:48,235 DEBUG A1 - idle:19
+2013-07-10 10:27:48,235 DEBUG A1 - active:1
+2013-07-10 10:27:48,235 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 10:27:50,356 DEBUG A1 - idle:19
+2013-07-10 10:27:50,356 DEBUG A1 - active:1
+2013-07-10 10:27:50,372 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 10:27:50,403 DEBUG A1 - idle:19
+2013-07-10 10:27:50,403 DEBUG A1 - active:1
+2013-07-10 10:27:50,403 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:27:52,401 DEBUG A1 - idle:19
+2013-07-10 10:27:52,401 DEBUG A1 - active:1
+2013-07-10 10:27:52,416 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:27:55,428 DEBUG A1 - idle:19
+2013-07-10 10:27:55,428 DEBUG A1 - active:1
+2013-07-10 10:27:55,444 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 10:27:57,144 DEBUG A1 - idle:19
+2013-07-10 10:27:57,144 DEBUG A1 - active:1
+2013-07-10 10:27:57,160 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 10:27:57,175 DEBUG A1 - idle:19
+2013-07-10 10:27:57,175 DEBUG A1 - active:1
+2013-07-10 10:27:57,175 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:27:58,502 DEBUG A1 - idle:19
+2013-07-10 10:27:58,518 DEBUG A1 - active:1
+2013-07-10 10:27:58,534 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:30:59,183 DEBUG A1 - idle:19
+2013-07-10 10:30:59,183 DEBUG A1 - active:1
+2013-07-10 10:30:59,199 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:31:03,271 DEBUG A1 - idle:19
+2013-07-10 10:31:03,271 DEBUG A1 - active:1
+2013-07-10 10:31:03,647 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 10:35:24,526 DEBUG A1 - idle:19
+2013-07-10 10:35:24,541 DEBUG A1 - active:1
+2013-07-10 10:35:24,541 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 10:36:16,380 DEBUG A1 - idle:19
+2013-07-10 10:36:16,380 DEBUG A1 - active:1
+2013-07-10 10:36:16,396 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:36:20,406 DEBUG A1 - idle:19
+2013-07-10 10:36:20,406 DEBUG A1 - active:1
+2013-07-10 10:36:20,485 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 10:36:51,576 DEBUG A1 - idle:19
+2013-07-10 10:36:51,576 DEBUG A1 - active:1
+2013-07-10 10:36:51,576 ERROR A1 - Search
+readObjectがProjectSearchDTO型ではありません
+2013-07-10 10:36:51,592 ERROR A1 - Search
+java.lang.NullPointerException
+fukaisystem.Search.service(Search.java:77)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 10:40:21,539 DEBUG A1 - idle:19
+2013-07-10 10:40:21,539 DEBUG A1 - active:1
+2013-07-10 10:40:21,539 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 10:41:02,848 DEBUG A1 - idle:19
+2013-07-10 10:41:02,848 DEBUG A1 - active:1
+2013-07-10 10:41:02,848 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 10:41:06,015 DEBUG A1 - idle:19
+2013-07-10 10:41:06,015 DEBUG A1 - active:1
+2013-07-10 10:41:06,157 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 10:41:29,432 DEBUG A1 - idle:19
+2013-07-10 10:41:29,432 DEBUG A1 - active:1
+2013-07-10 10:43:36,482 DEBUG A1 - idle:19
+2013-07-10 10:43:36,482 DEBUG A1 - active:1
+2013-07-10 10:44:37,325 DEBUG A1 - idle:19
+2013-07-10 10:44:37,325 DEBUG A1 - active:1
+2013-07-10 10:44:37,340 ERROR A1 - CorpRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: インデックス 0 は範囲外です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.setterGetParam(SQLServerPreparedStatement.java:714)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.setValue(SQLServerPreparedStatement.java:723)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.setInt(SQLServerPreparedStatement.java:884)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.setInt(DelegatingPreparedStatement.java:120)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.setInt(DelegatingPreparedStatement.java:120)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.setInt(DelegatingPreparedStatement.java:120)
+fukaisystem.address.CorpRegistration.service(CorpRegistration.java:82)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 10:44:37,340 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 10:45:10,166 DEBUG A1 - idle:19
+2013-07-10 10:45:10,166 DEBUG A1 - active:1
+2013-07-10 10:45:10,197 ERROR A1 - CorpRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: インデックス 24 は範囲外です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.setterGetParam(SQLServerPreparedStatement.java:714)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.setValue(SQLServerPreparedStatement.java:723)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.setInt(SQLServerPreparedStatement.java:884)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.setInt(DelegatingPreparedStatement.java:120)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.setInt(DelegatingPreparedStatement.java:120)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.setInt(DelegatingPreparedStatement.java:120)
+fukaisystem.address.CorpRegistration.service(CorpRegistration.java:105)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 10:45:10,197 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 10:48:50,338 DEBUG A1 - idle:19
+2013-07-10 10:48:50,338 DEBUG A1 - active:1
+2013-07-10 10:48:50,354 ERROR A1 - CorpRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: パラメーター番号 25 に値が設定されていません。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.buildParamTypeDefinitions(SQLServerPreparedStatement.java:260)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.buildPreparedStrings(SQLServerPreparedStatement.java:219)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doPrepExec(SQLServerPreparedStatement.java:612)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:400)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:332)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+fukaisystem.address.CorpRegistration.service(CorpRegistration.java:107)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 10:48:50,354 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 10:50:11,336 DEBUG A1 - idle:19
+2013-07-10 10:50:11,336 DEBUG A1 - active:1
+2013-07-10 10:50:11,524 ERROR A1 - CorpRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: マルチパート識別子 "y.仕入先CD" をバインドできませんでした。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:332)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+fukaisystem.address.CorpRegistration.service(CorpRegistration.java:110)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 10:50:11,524 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 10:52:33,627 DEBUG A1 - idle:19
+2013-07-10 10:52:33,627 DEBUG A1 - active:1
+2013-07-10 10:52:33,721 ERROR A1 - CorpRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名 '更新日' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:332)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+fukaisystem.address.CorpRegistration.service(CorpRegistration.java:110)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 10:52:33,721 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 10:53:23,706 DEBUG A1 - idle:19
+2013-07-10 10:53:23,706 DEBUG A1 - active:1
+2013-07-10 10:53:24,190 ERROR A1 - CorpRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: nvarchar の値 'fff
+ggg' をデータ型 bit に変換できませんでした。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerResultSet$FetchBuffer.nextRow(SQLServerResultSet.java:4853)
+com.microsoft.sqlserver.jdbc.SQLServerResultSet.fetchBufferNext(SQLServerResultSet.java:1781)
+com.microsoft.sqlserver.jdbc.SQLServerResultSet.next(SQLServerResultSet.java:1034)
+org.apache.tomcat.dbcp.dbcp.DelegatingResultSet.next(DelegatingResultSet.java:207)
+org.apache.tomcat.dbcp.dbcp.DelegatingResultSet.next(DelegatingResultSet.java:207)
+org.apache.tomcat.dbcp.dbcp.DelegatingResultSet.next(DelegatingResultSet.java:207)
+fukaisystem.address.CorpRegistration.service(CorpRegistration.java:115)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 10:53:24,190 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 10:54:57,356 DEBUG A1 - idle:19
+2013-07-10 10:54:57,356 DEBUG A1 - active:1
+2013-07-10 10:54:57,419 ERROR A1 - CorpRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: nvarchar の値 'fff
+ggg' をデータ型 bit に変換できませんでした。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerResultSet$FetchBuffer.nextRow(SQLServerResultSet.java:4853)
+com.microsoft.sqlserver.jdbc.SQLServerResultSet.fetchBufferNext(SQLServerResultSet.java:1781)
+com.microsoft.sqlserver.jdbc.SQLServerResultSet.next(SQLServerResultSet.java:1034)
+org.apache.tomcat.dbcp.dbcp.DelegatingResultSet.next(DelegatingResultSet.java:207)
+org.apache.tomcat.dbcp.dbcp.DelegatingResultSet.next(DelegatingResultSet.java:207)
+org.apache.tomcat.dbcp.dbcp.DelegatingResultSet.next(DelegatingResultSet.java:207)
+fukaisystem.address.CorpRegistration.service(CorpRegistration.java:116)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 10:54:57,419 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 10:58:19,888 DEBUG A1 - idle:19
+2013-07-10 10:58:19,888 DEBUG A1 - active:1
+2013-07-10 10:58:19,966 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 10:59:55,010 DEBUG A1 - idle:19
+2013-07-10 10:59:55,010 DEBUG A1 - active:1
+2013-07-10 10:59:55,088 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-07-10 11:00:05,087 DEBUG A1 - idle:19
+2013-07-10 11:00:05,087 DEBUG A1 - active:1
+2013-07-10 11:00:05,103 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-10 11:00:05,103 DEBUG A1 - idle:19
+2013-07-10 11:00:05,103 DEBUG A1 - active:1
+2013-07-10 11:00:05,103 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-10 11:00:07,646 DEBUG A1 - idle:19
+2013-07-10 11:00:07,646 DEBUG A1 - active:1
+2013-07-10 11:00:08,567 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 11:00:09,581 DEBUG A1 - idle:19
+2013-07-10 11:00:09,581 DEBUG A1 - active:1
+2013-07-10 11:00:09,659 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-10 11:00:09,675 DEBUG A1 - idle:19
+2013-07-10 11:00:09,675 DEBUG A1 - active:1
+2013-07-10 11:00:09,690 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-10 11:03:41,316 DEBUG A1 - idle:19
+2013-07-10 11:03:41,332 DEBUG A1 - active:1
+2013-07-10 11:03:41,394 ERROR A1 - CorpRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名または指定された値の数がテーブルの定義と一致しません。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:332)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+fukaisystem.address.CorpRegistration.service(CorpRegistration.java:113)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 11:03:41,394 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 11:05:18,928 DEBUG A1 - idle:19
+2013-07-10 11:05:18,928 DEBUG A1 - active:1
+2013-07-10 11:05:18,960 ERROR A1 - CorpRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名または指定された値の数がテーブルの定義と一致しません。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.execute(SQLServerPreparedStatement.java:332)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.execute(DelegatingPreparedStatement.java:172)
+fukaisystem.address.CorpRegistration.service(CorpRegistration.java:113)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 11:05:18,960 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 11:06:24,044 DEBUG A1 - idle:19
+2013-07-10 11:06:24,044 DEBUG A1 - active:1
+2013-07-10 11:06:24,075 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 11:07:29,289 DEBUG A1 - idle:19
+2013-07-10 11:07:29,289 DEBUG A1 - active:1
+2013-07-10 11:07:29,320 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 11:13:30,544 DEBUG A1 - idle:19
+2013-07-10 11:13:30,544 DEBUG A1 - active:1
+2013-07-10 11:13:30,731 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-07-10 11:13:35,739 DEBUG A1 - idle:19
+2013-07-10 11:13:35,739 DEBUG A1 - active:1
+2013-07-10 11:13:36,879 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 11:13:44,086 DEBUG A1 - idle:19
+2013-07-10 11:13:44,086 DEBUG A1 - active:1
+2013-07-10 11:13:44,195 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:13:44,211 DEBUG A1 - idle:19
+2013-07-10 11:13:44,211 DEBUG A1 - active:1
+2013-07-10 11:13:44,226 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:13:46,925 DEBUG A1 - idle:19
+2013-07-10 11:13:46,925 DEBUG A1 - active:1
+2013-07-10 11:13:46,941 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-10 11:13:50,107 DEBUG A1 - idle:19
+2013-07-10 11:13:50,107 DEBUG A1 - active:1
+2013-07-10 11:13:50,764 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 11:13:51,450 DEBUG A1 - idle:19
+2013-07-10 11:13:51,450 DEBUG A1 - active:1
+2013-07-10 11:13:51,512 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-10 11:13:51,544 DEBUG A1 - idle:19
+2013-07-10 11:13:51,544 DEBUG A1 - active:1
+2013-07-10 11:13:51,544 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-10 11:13:53,338 DEBUG A1 - idle:19
+2013-07-10 11:13:53,338 DEBUG A1 - active:1
+2013-07-10 11:13:53,369 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-10 11:13:53,384 DEBUG A1 - idle:19
+2013-07-10 11:13:53,384 DEBUG A1 - active:1
+2013-07-10 11:13:53,384 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-10 11:15:37,191 DEBUG A1 - idle:19
+2013-07-10 11:15:37,191 DEBUG A1 - active:1
+2013-07-10 11:15:37,269 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 11:22:58,065 DEBUG A1 - idle:19
+2013-07-10 11:22:58,065 DEBUG A1 - active:1
+2013-07-10 11:22:58,065 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:23:52,837 DEBUG A1 - idle:19
+2013-07-10 11:23:52,837 DEBUG A1 - active:1
+2013-07-10 11:23:53,197 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 11:23:57,393 DEBUG A1 - idle:19
+2013-07-10 11:23:57,393 DEBUG A1 - active:1
+2013-07-10 11:23:57,456 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 11:25:15,208 DEBUG A1 - idle:19
+2013-07-10 11:25:15,208 DEBUG A1 - active:1
+2013-07-10 11:25:15,380 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:25:17,049 DEBUG A1 - idle:19
+2013-07-10 11:25:17,049 DEBUG A1 - active:1
+2013-07-10 11:25:17,111 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:25:17,127 DEBUG A1 - idle:19
+2013-07-10 11:25:17,127 DEBUG A1 - active:1
+2013-07-10 11:25:17,127 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:25:26,691 DEBUG A1 - idle:19
+2013-07-10 11:25:26,691 DEBUG A1 - active:1
+2013-07-10 11:25:26,691 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:25:39,077 DEBUG A1 - idle:19
+2013-07-10 11:25:39,077 DEBUG A1 - active:1
+2013-07-10 11:25:39,093 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:25:39,109 DEBUG A1 - idle:19
+2013-07-10 11:25:39,109 DEBUG A1 - active:1
+2013-07-10 11:25:39,124 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:25:54,897 DEBUG A1 - idle:19
+2013-07-10 11:25:54,897 DEBUG A1 - active:1
+2013-07-10 11:25:54,912 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:25:57,330 DEBUG A1 - idle:19
+2013-07-10 11:25:57,330 DEBUG A1 - active:1
+2013-07-10 11:25:57,330 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:25:57,362 DEBUG A1 - idle:19
+2013-07-10 11:25:57,362 DEBUG A1 - active:1
+2013-07-10 11:25:57,362 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:27:22,305 DEBUG A1 - idle:19
+2013-07-10 11:27:22,305 DEBUG A1 - active:1
+2013-07-10 11:27:22,305 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:27:57,858 DEBUG A1 - idle:19
+2013-07-10 11:27:57,858 DEBUG A1 - active:1
+2013-07-10 11:27:57,858 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 11:28:40,479 DEBUG A1 - idle:19
+2013-07-10 11:28:40,479 DEBUG A1 - active:1
+2013-07-10 11:28:40,495 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:28:42,726 DEBUG A1 - idle:19
+2013-07-10 11:28:42,726 DEBUG A1 - active:1
+2013-07-10 11:28:42,741 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:28:42,757 DEBUG A1 - idle:19
+2013-07-10 11:28:42,757 DEBUG A1 - active:1
+2013-07-10 11:28:42,773 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:28:46,689 DEBUG A1 - idle:19
+2013-07-10 11:28:46,689 DEBUG A1 - active:1
+2013-07-10 11:28:46,689 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:28:46,705 DEBUG A1 - idle:19
+2013-07-10 11:28:46,705 DEBUG A1 - active:1
+2013-07-10 11:28:46,705 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:28:46,705 DEBUG A1 - idle:19
+2013-07-10 11:28:46,705 DEBUG A1 - active:1
+2013-07-10 11:28:46,720 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:28:55,208 DEBUG A1 - idle:19
+2013-07-10 11:28:55,208 DEBUG A1 - active:1
+2013-07-10 11:28:55,208 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:29:26,581 DEBUG A1 - idle:19
+2013-07-10 11:29:26,581 DEBUG A1 - active:1
+2013-07-10 11:29:26,596 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:29:27,050 DEBUG A1 - idle:19
+2013-07-10 11:29:27,050 DEBUG A1 - active:1
+2013-07-10 11:29:27,050 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:29:27,237 DEBUG A1 - idle:19
+2013-07-10 11:29:27,237 DEBUG A1 - active:1
+2013-07-10 11:29:27,252 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:29:27,424 DEBUG A1 - idle:19
+2013-07-10 11:29:27,424 DEBUG A1 - active:1
+2013-07-10 11:29:27,424 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:29:27,596 DEBUG A1 - idle:19
+2013-07-10 11:29:27,596 DEBUG A1 - active:1
+2013-07-10 11:29:27,611 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:29:27,830 DEBUG A1 - idle:19
+2013-07-10 11:29:27,830 DEBUG A1 - active:1
+2013-07-10 11:29:27,845 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:29:28,267 DEBUG A1 - idle:19
+2013-07-10 11:29:28,267 DEBUG A1 - active:1
+2013-07-10 11:29:28,267 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:29:33,041 DEBUG A1 - idle:19
+2013-07-10 11:29:33,041 DEBUG A1 - active:1
+2013-07-10 11:29:33,057 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:29:34,679 DEBUG A1 - idle:19
+2013-07-10 11:29:34,679 DEBUG A1 - active:1
+2013-07-10 11:29:34,679 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:29:34,695 DEBUG A1 - idle:19
+2013-07-10 11:29:34,695 DEBUG A1 - active:1
+2013-07-10 11:29:34,710 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:29:38,736 DEBUG A1 - idle:19
+2013-07-10 11:29:38,736 DEBUG A1 - active:1
+2013-07-10 11:29:38,736 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:29:49,189 DEBUG A1 - idle:19
+2013-07-10 11:29:49,189 DEBUG A1 - active:1
+2013-07-10 11:29:49,205 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:29:50,655 DEBUG A1 - idle:19
+2013-07-10 11:29:50,655 DEBUG A1 - active:1
+2013-07-10 11:29:50,671 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:29:50,687 DEBUG A1 - idle:19
+2013-07-10 11:29:50,687 DEBUG A1 - active:1
+2013-07-10 11:29:50,702 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:30:14,805 DEBUG A1 - idle:19
+2013-07-10 11:30:14,805 DEBUG A1 - active:1
+2013-07-10 11:30:14,805 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:30:14,821 DEBUG A1 - idle:19
+2013-07-10 11:30:14,821 DEBUG A1 - active:1
+2013-07-10 11:30:14,821 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:30:14,852 DEBUG A1 - idle:19
+2013-07-10 11:30:14,852 DEBUG A1 - active:1
+2013-07-10 11:30:14,852 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:30:21,701 DEBUG A1 - idle:19
+2013-07-10 11:30:21,701 DEBUG A1 - active:1
+2013-07-10 11:30:21,701 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:30:35,242 DEBUG A1 - idle:19
+2013-07-10 11:30:35,242 DEBUG A1 - active:1
+2013-07-10 11:30:35,258 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:30:54,478 DEBUG A1 - idle:19
+2013-07-10 11:30:54,478 DEBUG A1 - active:1
+2013-07-10 11:30:54,478 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:30:59,922 DEBUG A1 - idle:19
+2013-07-10 11:30:59,922 DEBUG A1 - active:1
+2013-07-10 11:30:59,922 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:31:10,656 DEBUG A1 - idle:19
+2013-07-10 11:31:10,656 DEBUG A1 - active:1
+2013-07-10 11:31:10,656 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:31:12,450 DEBUG A1 - idle:19
+2013-07-10 11:31:12,450 DEBUG A1 - active:1
+2013-07-10 11:31:12,466 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:31:12,497 DEBUG A1 - idle:19
+2013-07-10 11:31:12,497 DEBUG A1 - active:1
+2013-07-10 11:31:12,497 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:31:13,528 DEBUG A1 - idle:19
+2013-07-10 11:31:13,528 DEBUG A1 - active:1
+2013-07-10 11:31:13,528 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:32:35,382 DEBUG A1 - idle:19
+2013-07-10 11:32:35,382 DEBUG A1 - active:1
+2013-07-10 11:32:35,382 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:32:39,344 DEBUG A1 - idle:19
+2013-07-10 11:32:39,344 DEBUG A1 - active:1
+2013-07-10 11:32:39,344 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:32:55,460 DEBUG A1 - idle:19
+2013-07-10 11:32:55,460 DEBUG A1 - active:1
+2013-07-10 11:32:55,460 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:32:57,317 DEBUG A1 - idle:19
+2013-07-10 11:32:57,317 DEBUG A1 - active:1
+2013-07-10 11:32:57,317 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:32:57,427 DEBUG A1 - idle:19
+2013-07-10 11:32:57,427 DEBUG A1 - active:1
+2013-07-10 11:32:57,427 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:32:58,768 DEBUG A1 - idle:19
+2013-07-10 11:32:58,768 DEBUG A1 - active:1
+2013-07-10 11:32:58,768 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:32:59,284 DEBUG A1 - idle:19
+2013-07-10 11:32:59,284 DEBUG A1 - active:1
+2013-07-10 11:32:59,284 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:32:59,518 DEBUG A1 - idle:19
+2013-07-10 11:32:59,518 DEBUG A1 - active:1
+2013-07-10 11:32:59,518 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:33:22,045 DEBUG A1 - idle:19
+2013-07-10 11:33:22,045 DEBUG A1 - active:1
+2013-07-10 11:33:22,060 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:33:24,478 DEBUG A1 - idle:19
+2013-07-10 11:33:24,478 DEBUG A1 - active:1
+2013-07-10 11:33:24,478 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:34:26,911 DEBUG A1 - idle:19
+2013-07-10 11:34:26,911 DEBUG A1 - active:1
+2013-07-10 11:34:26,911 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:34:26,942 DEBUG A1 - idle:19
+2013-07-10 11:34:26,942 DEBUG A1 - active:1
+2013-07-10 11:34:26,942 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:34:33,588 DEBUG A1 - idle:19
+2013-07-10 11:34:33,588 DEBUG A1 - active:1
+2013-07-10 11:34:33,588 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:34:33,620 DEBUG A1 - idle:19
+2013-07-10 11:34:33,620 DEBUG A1 - active:1
+2013-07-10 11:34:33,620 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:37:37,685 DEBUG A1 - idle:19
+2013-07-10 11:37:37,685 DEBUG A1 - active:1
+2013-07-10 11:37:37,685 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:37:37,717 DEBUG A1 - idle:19
+2013-07-10 11:37:37,717 DEBUG A1 - active:1
+2013-07-10 11:37:37,717 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:37:47,826 DEBUG A1 - idle:19
+2013-07-10 11:37:47,826 DEBUG A1 - active:1
+2013-07-10 11:37:47,858 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 11:41:19,149 DEBUG A1 - idle:19
+2013-07-10 11:41:19,149 DEBUG A1 - active:1
+2013-07-10 11:41:19,164 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:41:19,180 DEBUG A1 - idle:19
+2013-07-10 11:41:19,180 DEBUG A1 - active:1
+2013-07-10 11:41:19,196 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:41:42,519 DEBUG A1 - idle:19
+2013-07-10 11:41:42,519 DEBUG A1 - active:1
+2013-07-10 11:41:42,519 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 11:43:28,809 DEBUG A1 - idle:19
+2013-07-10 11:43:28,809 DEBUG A1 - active:1
+2013-07-10 11:43:28,809 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:46:50,308 DEBUG A1 - idle:19
+2013-07-10 11:46:50,308 DEBUG A1 - active:1
+2013-07-10 11:46:50,339 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:46:54,177 DEBUG A1 - idle:19
+2013-07-10 11:46:54,177 DEBUG A1 - active:1
+2013-07-10 11:46:54,177 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:46:54,208 DEBUG A1 - idle:19
+2013-07-10 11:46:54,208 DEBUG A1 - active:1
+2013-07-10 11:46:54,208 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:47:18,092 DEBUG A1 - idle:19
+2013-07-10 11:47:18,092 DEBUG A1 - active:1
+2013-07-10 11:47:18,171 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 11:47:18,203 DEBUG A1 - idle:19
+2013-07-10 11:47:18,203 DEBUG A1 - active:1
+2013-07-10 11:47:18,203 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:47:25,862 DEBUG A1 - idle:19
+2013-07-10 11:47:25,862 DEBUG A1 - active:1
+2013-07-10 11:47:25,862 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:47:25,893 DEBUG A1 - idle:19
+2013-07-10 11:47:25,893 DEBUG A1 - active:1
+2013-07-10 11:47:25,893 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:48:36,875 DEBUG A1 - idle:19
+2013-07-10 11:48:36,875 DEBUG A1 - active:1
+2013-07-10 11:48:36,875 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:48:36,906 DEBUG A1 - idle:19
+2013-07-10 11:48:36,906 DEBUG A1 - active:1
+2013-07-10 11:48:36,906 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:48:50,051 DEBUG A1 - idle:19
+2013-07-10 11:48:50,051 DEBUG A1 - active:1
+2013-07-10 11:48:50,082 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:49:11,282 DEBUG A1 - idle:19
+2013-07-10 11:49:11,282 DEBUG A1 - active:1
+2013-07-10 11:49:11,282 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:49:11,345 DEBUG A1 - idle:19
+2013-07-10 11:49:11,345 DEBUG A1 - active:1
+2013-07-10 11:49:11,345 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:52:23,665 DEBUG A1 - idle:19
+2013-07-10 11:52:23,665 DEBUG A1 - active:1
+2013-07-10 11:52:23,681 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:52:23,712 DEBUG A1 - idle:19
+2013-07-10 11:52:23,712 DEBUG A1 - active:1
+2013-07-10 11:52:23,712 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:52:33,416 DEBUG A1 - idle:19
+2013-07-10 11:52:33,416 DEBUG A1 - active:1
+2013-07-10 11:52:33,447 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:52:35,210 DEBUG A1 - idle:19
+2013-07-10 11:52:35,210 DEBUG A1 - active:1
+2013-07-10 11:52:35,210 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:52:35,257 DEBUG A1 - idle:19
+2013-07-10 11:52:35,257 DEBUG A1 - active:1
+2013-07-10 11:52:35,257 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:52:43,418 DEBUG A1 - idle:19
+2013-07-10 11:52:43,418 DEBUG A1 - active:1
+2013-07-10 11:52:43,497 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 11:53:36,100 DEBUG A1 - idle:19
+2013-07-10 11:53:36,100 DEBUG A1 - active:1
+2013-07-10 11:53:36,100 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:53:36,131 DEBUG A1 - idle:19
+2013-07-10 11:53:36,131 DEBUG A1 - active:1
+2013-07-10 11:53:36,131 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:53:43,698 DEBUG A1 - idle:19
+2013-07-10 11:53:43,698 DEBUG A1 - active:1
+2013-07-10 11:53:43,729 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:53:45,742 DEBUG A1 - idle:19
+2013-07-10 11:53:45,742 DEBUG A1 - active:1
+2013-07-10 11:53:45,742 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:53:45,789 DEBUG A1 - idle:19
+2013-07-10 11:53:45,789 DEBUG A1 - active:1
+2013-07-10 11:53:45,789 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:54:52,823 DEBUG A1 - idle:19
+2013-07-10 11:54:52,823 DEBUG A1 - active:1
+2013-07-10 11:54:52,838 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 11:54:52,870 DEBUG A1 - idle:19
+2013-07-10 11:54:52,870 DEBUG A1 - active:1
+2013-07-10 11:54:52,870 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:55:00,459 DEBUG A1 - idle:19
+2013-07-10 11:55:00,459 DEBUG A1 - active:1
+2013-07-10 11:55:00,490 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:55:03,719 DEBUG A1 - idle:19
+2013-07-10 11:55:03,719 DEBUG A1 - active:1
+2013-07-10 11:55:03,719 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:55:03,766 DEBUG A1 - idle:19
+2013-07-10 11:55:03,766 DEBUG A1 - active:1
+2013-07-10 11:55:03,766 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:59:11,950 DEBUG A1 - idle:19
+2013-07-10 11:59:11,950 DEBUG A1 - active:1
+2013-07-10 11:59:11,981 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 11:59:14,665 DEBUG A1 - idle:19
+2013-07-10 11:59:14,665 DEBUG A1 - active:1
+2013-07-10 11:59:14,665 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 11:59:14,680 DEBUG A1 - idle:19
+2013-07-10 11:59:14,680 DEBUG A1 - active:1
+2013-07-10 11:59:14,680 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 11:59:28,581 DEBUG A1 - idle:19
+2013-07-10 11:59:28,581 DEBUG A1 - active:1
+2013-07-10 11:59:28,660 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 11:59:33,948 DEBUG A1 - idle:19
+2013-07-10 11:59:33,948 DEBUG A1 - active:1
+2013-07-10 11:59:34,027 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 12:02:53,473 DEBUG A1 - idle:19
+2013-07-10 12:02:53,473 DEBUG A1 - active:1
+2013-07-10 12:02:53,505 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 12:02:56,547 DEBUG A1 - idle:19
+2013-07-10 12:02:56,547 DEBUG A1 - active:1
+2013-07-10 12:02:56,547 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 12:02:56,562 DEBUG A1 - idle:19
+2013-07-10 12:02:56,562 DEBUG A1 - active:1
+2013-07-10 12:02:56,578 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:41:41,452 DEBUG A1 - idle:19
+2013-07-10 12:41:41,452 DEBUG A1 - active:1
+2013-07-10 12:41:41,452 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 12:41:41,483 DEBUG A1 - idle:19
+2013-07-10 12:41:41,483 DEBUG A1 - active:1
+2013-07-10 12:41:41,483 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:41:46,039 DEBUG A1 - idle:19
+2013-07-10 12:41:46,039 DEBUG A1 - active:1
+2013-07-10 12:41:46,055 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 12:41:48,239 DEBUG A1 - idle:19
+2013-07-10 12:41:48,239 DEBUG A1 - active:1
+2013-07-10 12:41:48,239 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 12:41:48,270 DEBUG A1 - idle:19
+2013-07-10 12:41:48,270 DEBUG A1 - active:1
+2013-07-10 12:41:48,270 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:41:49,348 DEBUG A1 - idle:19
+2013-07-10 12:41:49,348 DEBUG A1 - active:1
+2013-07-10 12:41:49,379 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 12:41:53,528 DEBUG A1 - idle:19
+2013-07-10 12:41:53,528 DEBUG A1 - active:1
+2013-07-10 12:41:53,528 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 12:41:53,544 DEBUG A1 - idle:19
+2013-07-10 12:41:53,544 DEBUG A1 - active:1
+2013-07-10 12:41:53,544 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:42:32,561 DEBUG A1 - idle:19
+2013-07-10 12:42:32,561 DEBUG A1 - active:1
+2013-07-10 12:42:32,640 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 12:42:51,219 DEBUG A1 - idle:19
+2013-07-10 12:42:51,219 DEBUG A1 - active:1
+2013-07-10 12:42:51,250 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 12:42:53,341 DEBUG A1 - idle:19
+2013-07-10 12:42:53,341 DEBUG A1 - active:1
+2013-07-10 12:42:53,341 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 12:42:53,357 DEBUG A1 - idle:19
+2013-07-10 12:42:53,357 DEBUG A1 - active:1
+2013-07-10 12:42:53,372 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:42:59,535 DEBUG A1 - idle:19
+2013-07-10 12:42:59,535 DEBUG A1 - active:1
+2013-07-10 12:42:59,614 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 12:43:05,386 DEBUG A1 - idle:19
+2013-07-10 12:43:05,386 DEBUG A1 - active:1
+2013-07-10 12:43:05,481 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 12:44:42,685 DEBUG A1 - idle:19
+2013-07-10 12:44:42,685 DEBUG A1 - active:1
+2013-07-10 12:44:42,764 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 12:45:09,284 DEBUG A1 - idle:19
+2013-07-10 12:45:09,284 DEBUG A1 - active:1
+2013-07-10 12:45:09,363 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 12:47:55,628 DEBUG A1 - idle:19
+2013-07-10 12:47:55,644 DEBUG A1 - active:1
+2013-07-10 12:47:55,644 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 12:47:55,659 DEBUG A1 - idle:19
+2013-07-10 12:47:55,675 DEBUG A1 - active:1
+2013-07-10 12:47:55,675 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:48:04,739 DEBUG A1 - idle:19
+2013-07-10 12:48:04,739 DEBUG A1 - active:1
+2013-07-10 12:48:04,771 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 12:48:09,497 DEBUG A1 - idle:19
+2013-07-10 12:48:09,497 DEBUG A1 - active:1
+2013-07-10 12:48:09,513 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 12:48:09,544 DEBUG A1 - idle:19
+2013-07-10 12:48:09,544 DEBUG A1 - active:1
+2013-07-10 12:48:09,544 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:48:43,943 DEBUG A1 - idle:19
+2013-07-10 12:48:43,943 DEBUG A1 - active:1
+2013-07-10 12:48:43,959 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 12:48:43,990 DEBUG A1 - idle:19
+2013-07-10 12:48:43,990 DEBUG A1 - active:1
+2013-07-10 12:48:43,990 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:48:51,245 DEBUG A1 - idle:19
+2013-07-10 12:48:51,245 DEBUG A1 - active:1
+2013-07-10 12:48:51,276 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 12:48:53,398 DEBUG A1 - idle:19
+2013-07-10 12:48:53,398 DEBUG A1 - active:1
+2013-07-10 12:48:53,413 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 12:48:53,460 DEBUG A1 - idle:19
+2013-07-10 12:48:53,460 DEBUG A1 - active:1
+2013-07-10 12:48:53,460 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:49:22,174 DEBUG A1 - idle:19
+2013-07-10 12:49:22,174 DEBUG A1 - active:1
+2013-07-10 12:49:22,174 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 12:49:39,554 DEBUG A1 - idle:19
+2013-07-10 12:49:39,554 DEBUG A1 - active:1
+2013-07-10 12:49:39,554 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 12:49:39,585 DEBUG A1 - idle:19
+2013-07-10 12:49:39,585 DEBUG A1 - active:1
+2013-07-10 12:49:39,585 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:49:45,701 DEBUG A1 - idle:19
+2013-07-10 12:49:45,701 DEBUG A1 - active:1
+2013-07-10 12:49:45,732 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 12:49:48,119 DEBUG A1 - idle:19
+2013-07-10 12:49:48,119 DEBUG A1 - active:1
+2013-07-10 12:49:48,119 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 12:49:48,135 DEBUG A1 - idle:19
+2013-07-10 12:49:48,135 DEBUG A1 - active:1
+2013-07-10 12:49:48,150 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:50:20,428 DEBUG A1 - idle:19
+2013-07-10 12:50:20,428 DEBUG A1 - active:1
+2013-07-10 12:50:20,522 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 12:50:27,932 DEBUG A1 - idle:19
+2013-07-10 12:50:27,932 DEBUG A1 - active:1
+2013-07-10 12:50:28,011 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 12:54:31,357 DEBUG A1 - idle:19
+2013-07-10 12:54:31,357 DEBUG A1 - active:1
+2013-07-10 12:54:31,357 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 12:54:31,388 DEBUG A1 - idle:19
+2013-07-10 12:54:31,388 DEBUG A1 - active:1
+2013-07-10 12:54:31,388 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:55:03,775 DEBUG A1 - idle:19
+2013-07-10 12:55:03,775 DEBUG A1 - active:1
+2013-07-10 12:55:03,775 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 12:55:03,806 DEBUG A1 - idle:19
+2013-07-10 12:55:03,806 DEBUG A1 - active:1
+2013-07-10 12:55:03,806 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 12:57:35,892 DEBUG A1 - idle:19
+2013-07-10 12:57:35,892 DEBUG A1 - active:1
+2013-07-10 12:57:35,892 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 12:57:35,923 DEBUG A1 - idle:19
+2013-07-10 12:57:35,923 DEBUG A1 - active:1
+2013-07-10 12:57:35,923 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:00:48,054 DEBUG A1 - idle:19
+2013-07-10 13:00:48,054 DEBUG A1 - active:1
+2013-07-10 13:00:48,070 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 13:00:48,101 DEBUG A1 - idle:19
+2013-07-10 13:00:48,101 DEBUG A1 - active:1
+2013-07-10 13:00:48,101 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:02:03,741 DEBUG A1 - idle:19
+2013-07-10 13:02:03,741 DEBUG A1 - active:1
+2013-07-10 13:02:03,772 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 13:28:27,617 DEBUG A1 - idle:19
+2013-07-10 13:28:27,617 DEBUG A1 - active:1
+2013-07-10 13:28:27,633 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 13:28:27,664 DEBUG A1 - idle:19
+2013-07-10 13:28:27,664 DEBUG A1 - active:1
+2013-07-10 13:28:27,664 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:28:32,173 DEBUG A1 - idle:19
+2013-07-10 13:28:32,173 DEBUG A1 - active:1
+2013-07-10 13:28:32,173 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 13:28:32,204 DEBUG A1 - idle:19
+2013-07-10 13:28:32,204 DEBUG A1 - active:1
+2013-07-10 13:28:32,204 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:28:47,696 DEBUG A1 - idle:19
+2013-07-10 13:28:47,696 DEBUG A1 - active:1
+2013-07-10 13:28:47,743 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 13:28:52,922 DEBUG A1 - idle:19
+2013-07-10 13:28:52,922 DEBUG A1 - active:1
+2013-07-10 13:28:52,938 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 13:28:53,000 DEBUG A1 - idle:19
+2013-07-10 13:28:53,000 DEBUG A1 - active:1
+2013-07-10 13:28:53,000 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:29:12,205 DEBUG A1 - idle:19
+2013-07-10 13:29:12,205 DEBUG A1 - active:1
+2013-07-10 13:29:12,205 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 13:29:12,236 DEBUG A1 - idle:19
+2013-07-10 13:29:12,236 DEBUG A1 - active:1
+2013-07-10 13:29:12,252 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:29:36,324 DEBUG A1 - idle:19
+2013-07-10 13:29:36,324 DEBUG A1 - active:1
+2013-07-10 13:29:36,370 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 13:29:41,644 DEBUG A1 - idle:19
+2013-07-10 13:29:41,644 DEBUG A1 - active:1
+2013-07-10 13:29:41,644 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 13:30:52,235 DEBUG A1 - idle:19
+2013-07-10 13:30:52,235 DEBUG A1 - active:1
+2013-07-10 13:30:52,235 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 13:30:52,266 DEBUG A1 - idle:19
+2013-07-10 13:30:52,266 DEBUG A1 - active:1
+2013-07-10 13:30:52,266 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:30:56,885 DEBUG A1 - idle:19
+2013-07-10 13:30:56,885 DEBUG A1 - active:1
+2013-07-10 13:30:56,885 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 13:30:56,916 DEBUG A1 - idle:19
+2013-07-10 13:30:56,916 DEBUG A1 - active:1
+2013-07-10 13:30:56,916 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:31:11,347 DEBUG A1 - idle:19
+2013-07-10 13:31:11,347 DEBUG A1 - active:1
+2013-07-10 13:31:11,347 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 13:31:13,205 DEBUG A1 - idle:19
+2013-07-10 13:31:13,205 DEBUG A1 - active:1
+2013-07-10 13:31:13,205 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 13:33:42,029 DEBUG A1 - idle:19
+2013-07-10 13:33:42,029 DEBUG A1 - active:1
+2013-07-10 13:33:42,029 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 13:33:42,060 DEBUG A1 - idle:19
+2013-07-10 13:33:42,060 DEBUG A1 - active:1
+2013-07-10 13:33:42,060 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:33:50,173 DEBUG A1 - idle:19
+2013-07-10 13:33:50,173 DEBUG A1 - active:1
+2013-07-10 13:33:50,189 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 13:33:52,374 DEBUG A1 - idle:19
+2013-07-10 13:33:52,374 DEBUG A1 - active:1
+2013-07-10 13:33:52,389 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 13:33:52,405 DEBUG A1 - idle:19
+2013-07-10 13:33:52,405 DEBUG A1 - active:1
+2013-07-10 13:33:52,405 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:34:08,724 DEBUG A1 - idle:19
+2013-07-10 13:34:08,724 DEBUG A1 - active:1
+2013-07-10 13:34:08,739 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 13:34:10,191 DEBUG A1 - idle:19
+2013-07-10 13:34:10,191 DEBUG A1 - active:1
+2013-07-10 13:34:10,191 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 13:34:10,207 DEBUG A1 - idle:19
+2013-07-10 13:34:10,207 DEBUG A1 - active:1
+2013-07-10 13:34:10,222 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:37:08,719 DEBUG A1 - idle:19
+2013-07-10 13:37:08,719 DEBUG A1 - active:1
+2013-07-10 13:37:08,797 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-07-10 13:37:21,402 DEBUG A1 - idle:19
+2013-07-10 13:37:21,402 DEBUG A1 - active:1
+2013-07-10 13:37:21,731 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 13:38:03,212 DEBUG A1 - idle:19
+2013-07-10 13:38:03,212 DEBUG A1 - active:1
+2013-07-10 13:38:03,323 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 13:38:03,338 DEBUG A1 - idle:19
+2013-07-10 13:38:03,338 DEBUG A1 - active:1
+2013-07-10 13:38:03,354 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 13:38:15,475 DEBUG A1 - idle:19
+2013-07-10 13:38:15,475 DEBUG A1 - active:1
+2013-07-10 13:38:15,554 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 13:38:15,554 DEBUG A1 - idle:19
+2013-07-10 13:38:15,554 DEBUG A1 - active:1
+2013-07-10 13:38:15,570 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 13:38:22,512 DEBUG A1 - idle:19
+2013-07-10 13:38:22,512 DEBUG A1 - active:1
+2013-07-10 13:38:22,543 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 13:38:22,543 DEBUG A1 - idle:19
+2013-07-10 13:38:22,543 DEBUG A1 - active:1
+2013-07-10 13:38:22,559 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 13:38:24,165 DEBUG A1 - idle:19
+2013-07-10 13:38:24,165 DEBUG A1 - active:1
+2013-07-10 13:38:24,291 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 13:38:28,207 DEBUG A1 - idle:19
+2013-07-10 13:38:28,207 DEBUG A1 - active:1
+2013-07-10 13:38:28,284 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 13:38:28,284 DEBUG A1 - idle:19
+2013-07-10 13:38:28,284 DEBUG A1 - active:1
+2013-07-10 13:38:28,300 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 13:53:36,424 DEBUG A1 - idle:19
+2013-07-10 13:53:36,424 DEBUG A1 - active:1
+2013-07-10 13:53:36,440 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 13:53:37,735 DEBUG A1 - idle:19
+2013-07-10 13:53:37,735 DEBUG A1 - active:1
+2013-07-10 13:53:37,735 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 13:53:37,751 DEBUG A1 - idle:19
+2013-07-10 13:53:37,751 DEBUG A1 - active:1
+2013-07-10 13:53:37,767 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 13:55:38,795 DEBUG A1 - idle:19
+2013-07-10 13:55:38,795 DEBUG A1 - active:1
+2013-07-10 13:55:38,810 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 13:55:41,744 DEBUG A1 - idle:19
+2013-07-10 13:55:41,744 DEBUG A1 - active:1
+2013-07-10 13:55:41,760 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 13:55:41,775 DEBUG A1 - idle:19
+2013-07-10 13:55:41,775 DEBUG A1 - active:1
+2013-07-10 13:55:41,775 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:11:58,768 DEBUG A1 - idle:19
+2013-07-10 16:11:58,768 DEBUG A1 - active:1
+2013-07-10 16:11:58,955 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 16:11:58,986 DEBUG A1 - idle:19
+2013-07-10 16:11:58,986 DEBUG A1 - active:1
+2013-07-10 16:11:59,174 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:12:03,511 DEBUG A1 - idle:19
+2013-07-10 16:12:03,511 DEBUG A1 - active:1
+2013-07-10 16:12:03,699 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:12:05,212 DEBUG A1 - idle:19
+2013-07-10 16:12:05,212 DEBUG A1 - active:1
+2013-07-10 16:12:05,587 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:12:05,602 DEBUG A1 - idle:19
+2013-07-10 16:12:05,602 DEBUG A1 - active:1
+2013-07-10 16:12:05,618 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:12:11,734 DEBUG A1 - idle:19
+2013-07-10 16:12:11,734 DEBUG A1 - active:1
+2013-07-10 16:12:11,750 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:12:13,467 DEBUG A1 - idle:19
+2013-07-10 16:12:13,467 DEBUG A1 - active:1
+2013-07-10 16:12:13,467 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:12:13,467 DEBUG A1 - idle:19
+2013-07-10 16:12:13,467 DEBUG A1 - active:1
+2013-07-10 16:12:13,482 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:13:42,092 DEBUG A1 - idle:19
+2013-07-10 16:13:42,092 DEBUG A1 - active:1
+2013-07-10 16:13:42,107 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 16:13:42,138 DEBUG A1 - idle:19
+2013-07-10 16:13:42,138 DEBUG A1 - active:1
+2013-07-10 16:13:42,138 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:13:46,258 DEBUG A1 - idle:19
+2013-07-10 16:13:46,258 DEBUG A1 - active:1
+2013-07-10 16:13:46,524 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:13:47,476 DEBUG A1 - idle:19
+2013-07-10 16:13:47,491 DEBUG A1 - active:1
+2013-07-10 16:13:47,491 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:13:47,491 DEBUG A1 - idle:19
+2013-07-10 16:13:47,491 DEBUG A1 - active:1
+2013-07-10 16:13:47,491 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:13:50,940 DEBUG A1 - idle:19
+2013-07-10 16:13:50,940 DEBUG A1 - active:1
+2013-07-10 16:13:50,988 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:13:53,156 DEBUG A1 - idle:19
+2013-07-10 16:13:53,156 DEBUG A1 - active:1
+2013-07-10 16:13:53,156 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:13:53,172 DEBUG A1 - idle:19
+2013-07-10 16:13:53,172 DEBUG A1 - active:1
+2013-07-10 16:13:53,172 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:14:58,929 DEBUG A1 - idle:19
+2013-07-10 16:14:58,929 DEBUG A1 - active:1
+2013-07-10 16:14:59,117 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:15:01,363 DEBUG A1 - idle:19
+2013-07-10 16:15:01,363 DEBUG A1 - active:1
+2013-07-10 16:15:01,410 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:15:01,441 DEBUG A1 - idle:19
+2013-07-10 16:15:01,441 DEBUG A1 - active:1
+2013-07-10 16:15:01,441 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:15:03,548 DEBUG A1 - idle:19
+2013-07-10 16:15:03,548 DEBUG A1 - active:1
+2013-07-10 16:15:03,596 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:15:06,763 DEBUG A1 - idle:19
+2013-07-10 16:15:06,763 DEBUG A1 - active:1
+2013-07-10 16:15:06,763 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:15:06,779 DEBUG A1 - idle:19
+2013-07-10 16:15:06,779 DEBUG A1 - active:1
+2013-07-10 16:15:06,779 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:16:22,929 DEBUG A1 - idle:19
+2013-07-10 16:16:22,929 DEBUG A1 - active:1
+2013-07-10 16:16:23,272 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:16:28,779 DEBUG A1 - idle:19
+2013-07-10 16:16:28,779 DEBUG A1 - active:1
+2013-07-10 16:16:28,826 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:16:28,841 DEBUG A1 - idle:19
+2013-07-10 16:16:28,841 DEBUG A1 - active:1
+2013-07-10 16:16:28,857 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:17:50,883 DEBUG A1 - idle:19
+2013-07-10 16:17:50,883 DEBUG A1 - active:1
+2013-07-10 16:17:51,196 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:17:52,413 DEBUG A1 - idle:19
+2013-07-10 16:17:52,413 DEBUG A1 - active:1
+2013-07-10 16:17:52,428 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:17:52,444 DEBUG A1 - idle:19
+2013-07-10 16:17:52,444 DEBUG A1 - active:1
+2013-07-10 16:17:52,444 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:19:30,009 DEBUG A1 - idle:19
+2013-07-10 16:19:30,009 DEBUG A1 - active:1
+2013-07-10 16:19:30,040 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:19:32,224 DEBUG A1 - idle:19
+2013-07-10 16:19:32,224 DEBUG A1 - active:1
+2013-07-10 16:19:32,224 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:19:32,239 DEBUG A1 - idle:19
+2013-07-10 16:19:32,239 DEBUG A1 - active:1
+2013-07-10 16:19:32,255 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:19:42,802 DEBUG A1 - idle:19
+2013-07-10 16:19:42,802 DEBUG A1 - active:1
+2013-07-10 16:19:43,364 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:20:15,126 DEBUG A1 - idle:19
+2013-07-10 16:20:15,126 DEBUG A1 - active:1
+2013-07-10 16:20:15,141 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:20:16,141 DEBUG A1 - idle:19
+2013-07-10 16:20:16,141 DEBUG A1 - active:1
+2013-07-10 16:20:16,141 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:20:16,172 DEBUG A1 - idle:19
+2013-07-10 16:20:16,172 DEBUG A1 - active:1
+2013-07-10 16:20:16,172 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:22:30,879 DEBUG A1 - idle:19
+2013-07-10 16:22:30,879 DEBUG A1 - active:1
+2013-07-10 16:22:30,879 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 16:22:30,910 DEBUG A1 - idle:19
+2013-07-10 16:22:30,910 DEBUG A1 - active:1
+2013-07-10 16:22:30,910 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:22:42,861 DEBUG A1 - idle:19
+2013-07-10 16:22:42,861 DEBUG A1 - active:1
+2013-07-10 16:22:42,892 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:22:44,795 DEBUG A1 - idle:19
+2013-07-10 16:22:44,811 DEBUG A1 - active:1
+2013-07-10 16:22:44,811 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:22:44,858 DEBUG A1 - idle:19
+2013-07-10 16:22:44,858 DEBUG A1 - active:1
+2013-07-10 16:22:44,873 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:24:53,015 DEBUG A1 - idle:19
+2013-07-10 16:24:53,015 DEBUG A1 - active:1
+2013-07-10 16:24:53,046 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:24:54,809 DEBUG A1 - idle:19
+2013-07-10 16:24:54,809 DEBUG A1 - active:1
+2013-07-10 16:24:54,918 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:24:54,934 DEBUG A1 - idle:19
+2013-07-10 16:24:54,934 DEBUG A1 - active:1
+2013-07-10 16:24:54,934 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:25:01,877 DEBUG A1 - idle:19
+2013-07-10 16:25:01,877 DEBUG A1 - active:1
+2013-07-10 16:25:01,908 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:25:04,326 DEBUG A1 - idle:19
+2013-07-10 16:25:04,326 DEBUG A1 - active:1
+2013-07-10 16:25:04,326 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:25:04,357 DEBUG A1 - idle:19
+2013-07-10 16:25:04,357 DEBUG A1 - active:1
+2013-07-10 16:25:04,357 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:25:58,724 DEBUG A1 - idle:19
+2013-07-10 16:25:58,724 DEBUG A1 - active:1
+2013-07-10 16:25:58,724 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 16:25:58,756 DEBUG A1 - idle:19
+2013-07-10 16:25:58,756 DEBUG A1 - active:1
+2013-07-10 16:25:58,771 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:26:27,773 DEBUG A1 - idle:19
+2013-07-10 16:26:27,773 DEBUG A1 - active:1
+2013-07-10 16:26:27,804 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:26:29,613 DEBUG A1 - idle:19
+2013-07-10 16:26:29,613 DEBUG A1 - active:1
+2013-07-10 16:26:29,629 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:26:29,645 DEBUG A1 - idle:19
+2013-07-10 16:26:29,645 DEBUG A1 - active:1
+2013-07-10 16:26:29,660 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:27:52,825 DEBUG A1 - idle:19
+2013-07-10 16:27:52,825 DEBUG A1 - active:1
+2013-07-10 16:27:52,920 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:35:23,468 DEBUG A1 - idle:19
+2013-07-10 16:35:23,468 DEBUG A1 - active:1
+2013-07-10 16:35:23,578 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:35:23,594 DEBUG A1 - idle:19
+2013-07-10 16:35:23,594 DEBUG A1 - active:1
+2013-07-10 16:35:23,609 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:35:26,589 DEBUG A1 - idle:19
+2013-07-10 16:35:26,589 DEBUG A1 - active:1
+2013-07-10 16:35:26,651 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:35:26,667 DEBUG A1 - idle:19
+2013-07-10 16:35:26,667 DEBUG A1 - active:1
+2013-07-10 16:35:26,667 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:35:27,947 DEBUG A1 - idle:19
+2013-07-10 16:35:27,947 DEBUG A1 - active:1
+2013-07-10 16:35:27,963 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:35:30,116 DEBUG A1 - idle:19
+2013-07-10 16:35:30,116 DEBUG A1 - active:1
+2013-07-10 16:35:30,116 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:35:30,131 DEBUG A1 - idle:19
+2013-07-10 16:35:30,131 DEBUG A1 - active:1
+2013-07-10 16:35:30,131 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:35:35,577 DEBUG A1 - idle:19
+2013-07-10 16:35:35,577 DEBUG A1 - active:1
+2013-07-10 16:35:35,608 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:39:28,792 DEBUG A1 - idle:19
+2013-07-10 16:39:28,792 DEBUG A1 - active:1
+2013-07-10 16:39:28,808 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 16:39:30,119 DEBUG A1 - idle:19
+2013-07-10 16:39:30,119 DEBUG A1 - active:1
+2013-07-10 16:39:30,198 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 16:39:30,198 DEBUG A1 - idle:19
+2013-07-10 16:39:30,198 DEBUG A1 - active:1
+2013-07-10 16:39:30,214 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 16:39:56,593 DEBUG A1 - idle:19
+2013-07-10 16:39:56,593 DEBUG A1 - active:1
+2013-07-10 16:39:56,609 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 16:39:58,201 DEBUG A1 - idle:19
+2013-07-10 16:39:58,201 DEBUG A1 - active:1
+2013-07-10 16:39:58,268 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 16:39:58,268 DEBUG A1 - idle:19
+2013-07-10 16:39:58,268 DEBUG A1 - active:1
+2013-07-10 16:39:58,284 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 16:40:09,469 DEBUG A1 - idle:19
+2013-07-10 16:40:09,469 DEBUG A1 - active:1
+2013-07-10 16:40:09,532 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 16:40:11,591 DEBUG A1 - idle:19
+2013-07-10 16:40:11,591 DEBUG A1 - active:1
+2013-07-10 16:40:11,694 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 16:40:11,694 DEBUG A1 - idle:19
+2013-07-10 16:40:11,694 DEBUG A1 - active:1
+2013-07-10 16:40:11,709 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 16:40:23,222 DEBUG A1 - idle:19
+2013-07-10 16:40:23,222 DEBUG A1 - active:1
+2013-07-10 16:40:23,222 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-10 16:40:23,238 DEBUG A1 - idle:19
+2013-07-10 16:40:23,238 DEBUG A1 - active:1
+2013-07-10 16:40:23,238 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-10 16:40:23,378 DEBUG A1 - idle:19
+2013-07-10 16:40:23,378 DEBUG A1 - active:1
+2013-07-10 16:40:23,378 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-10 16:40:23,394 DEBUG A1 - idle:19
+2013-07-10 16:40:23,394 DEBUG A1 - active:1
+2013-07-10 16:40:23,394 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-10 16:44:50,811 DEBUG A1 - idle:19
+2013-07-10 16:44:50,811 DEBUG A1 - active:1
+2013-07-10 16:44:50,842 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:44:57,846 DEBUG A1 - idle:19
+2013-07-10 16:44:57,846 DEBUG A1 - active:1
+2013-07-10 16:44:57,846 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:44:57,862 DEBUG A1 - idle:19
+2013-07-10 16:44:57,862 DEBUG A1 - active:1
+2013-07-10 16:44:57,877 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:45:19,516 DEBUG A1 - idle:19
+2013-07-10 16:45:19,516 DEBUG A1 - active:1
+2013-07-10 16:45:19,626 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:45:22,559 DEBUG A1 - idle:19
+2013-07-10 16:45:22,559 DEBUG A1 - active:1
+2013-07-10 16:45:22,590 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:45:25,928 DEBUG A1 - idle:19
+2013-07-10 16:45:25,928 DEBUG A1 - active:1
+2013-07-10 16:45:25,944 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:45:25,944 DEBUG A1 - idle:19
+2013-07-10 16:45:25,944 DEBUG A1 - active:1
+2013-07-10 16:45:25,944 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:45:56,926 DEBUG A1 - idle:19
+2013-07-10 16:45:56,926 DEBUG A1 - active:1
+2013-07-10 16:45:56,926 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:45:58,783 DEBUG A1 - idle:19
+2013-07-10 16:45:58,783 DEBUG A1 - active:1
+2013-07-10 16:45:58,783 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:45:58,798 DEBUG A1 - idle:19
+2013-07-10 16:45:58,798 DEBUG A1 - active:1
+2013-07-10 16:45:59,049 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:46:04,244 DEBUG A1 - idle:19
+2013-07-10 16:46:04,244 DEBUG A1 - active:1
+2013-07-10 16:46:04,275 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:46:06,506 DEBUG A1 - idle:19
+2013-07-10 16:46:06,506 DEBUG A1 - active:1
+2013-07-10 16:46:06,506 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:46:06,521 DEBUG A1 - idle:19
+2013-07-10 16:46:06,521 DEBUG A1 - active:1
+2013-07-10 16:46:06,537 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:46:08,628 DEBUG A1 - idle:19
+2013-07-10 16:46:08,628 DEBUG A1 - active:1
+2013-07-10 16:46:08,660 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:46:12,747 DEBUG A1 - idle:19
+2013-07-10 16:46:12,747 DEBUG A1 - active:1
+2013-07-10 16:46:12,747 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:46:12,762 DEBUG A1 - idle:19
+2013-07-10 16:46:12,762 DEBUG A1 - active:1
+2013-07-10 16:46:12,778 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:46:21,094 DEBUG A1 - idle:19
+2013-07-10 16:46:21,094 DEBUG A1 - active:1
+2013-07-10 16:46:21,125 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:48:57,572 DEBUG A1 - idle:19
+2013-07-10 16:48:57,572 DEBUG A1 - active:1
+2013-07-10 16:48:57,603 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:49:00,380 DEBUG A1 - idle:19
+2013-07-10 16:49:00,380 DEBUG A1 - active:1
+2013-07-10 16:49:00,380 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:49:00,411 DEBUG A1 - idle:19
+2013-07-10 16:49:00,411 DEBUG A1 - active:1
+2013-07-10 16:49:00,411 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:52:16,860 DEBUG A1 - idle:19
+2013-07-10 16:52:16,860 DEBUG A1 - active:1
+2013-07-10 16:52:16,860 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 16:52:16,891 DEBUG A1 - idle:19
+2013-07-10 16:52:16,891 DEBUG A1 - active:1
+2013-07-10 16:52:16,891 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:52:21,416 DEBUG A1 - idle:19
+2013-07-10 16:52:21,416 DEBUG A1 - active:1
+2013-07-10 16:52:21,447 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:52:27,687 DEBUG A1 - idle:19
+2013-07-10 16:52:27,687 DEBUG A1 - active:1
+2013-07-10 16:52:27,703 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:52:27,719 DEBUG A1 - idle:19
+2013-07-10 16:52:27,719 DEBUG A1 - active:1
+2013-07-10 16:52:27,734 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:53:23,661 DEBUG A1 - idle:19
+2013-07-10 16:53:23,661 DEBUG A1 - active:1
+2013-07-10 16:53:23,677 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 16:53:23,708 DEBUG A1 - idle:19
+2013-07-10 16:53:23,708 DEBUG A1 - active:1
+2013-07-10 16:53:23,708 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:53:26,923 DEBUG A1 - idle:19
+2013-07-10 16:53:26,923 DEBUG A1 - active:1
+2013-07-10 16:53:26,954 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:53:29,341 DEBUG A1 - idle:19
+2013-07-10 16:53:29,341 DEBUG A1 - active:1
+2013-07-10 16:53:29,341 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:53:29,372 DEBUG A1 - idle:19
+2013-07-10 16:53:29,372 DEBUG A1 - active:1
+2013-07-10 16:53:29,372 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:53:35,597 DEBUG A1 - idle:19
+2013-07-10 16:53:35,597 DEBUG A1 - active:1
+2013-07-10 16:53:35,629 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:53:38,405 DEBUG A1 - idle:19
+2013-07-10 16:53:38,405 DEBUG A1 - active:1
+2013-07-10 16:53:38,405 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:53:38,421 DEBUG A1 - idle:19
+2013-07-10 16:53:38,421 DEBUG A1 - active:1
+2013-07-10 16:53:38,421 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:54:30,674 DEBUG A1 - idle:19
+2013-07-10 16:54:30,674 DEBUG A1 - active:1
+2013-07-10 16:54:30,753 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:54:35,479 DEBUG A1 - idle:19
+2013-07-10 16:54:35,479 DEBUG A1 - active:1
+2013-07-10 16:54:35,558 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:55:01,891 DEBUG A1 - idle:19
+2013-07-10 16:55:01,891 DEBUG A1 - active:1
+2013-07-10 16:55:01,891 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:55:02,906 DEBUG A1 - idle:19
+2013-07-10 16:55:02,906 DEBUG A1 - active:1
+2013-07-10 16:55:02,906 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:55:02,937 DEBUG A1 - idle:19
+2013-07-10 16:55:02,937 DEBUG A1 - active:1
+2013-07-10 16:55:02,937 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:55:10,988 DEBUG A1 - idle:19
+2013-07-10 16:55:10,988 DEBUG A1 - active:1
+2013-07-10 16:55:11,035 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:55:25,605 DEBUG A1 - idle:19
+2013-07-10 16:55:25,605 DEBUG A1 - active:1
+2013-07-10 16:55:25,605 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:55:25,637 DEBUG A1 - idle:19
+2013-07-10 16:55:25,637 DEBUG A1 - active:1
+2013-07-10 16:55:25,637 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:55:37,291 DEBUG A1 - idle:19
+2013-07-10 16:55:37,291 DEBUG A1 - active:1
+2013-07-10 16:55:37,370 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:55:42,643 DEBUG A1 - idle:19
+2013-07-10 16:55:42,643 DEBUG A1 - active:1
+2013-07-10 16:55:42,722 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:56:20,817 DEBUG A1 - idle:19
+2013-07-10 16:56:20,817 DEBUG A1 - active:1
+2013-07-10 16:56:20,832 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:56:21,816 DEBUG A1 - idle:19
+2013-07-10 16:56:21,816 DEBUG A1 - active:1
+2013-07-10 16:56:21,832 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:56:21,847 DEBUG A1 - idle:19
+2013-07-10 16:56:21,847 DEBUG A1 - active:1
+2013-07-10 16:56:21,863 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:56:33,720 DEBUG A1 - idle:19
+2013-07-10 16:56:33,720 DEBUG A1 - active:1
+2013-07-10 16:56:33,751 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:56:36,044 DEBUG A1 - idle:19
+2013-07-10 16:56:36,044 DEBUG A1 - active:1
+2013-07-10 16:56:36,044 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:56:36,060 DEBUG A1 - idle:19
+2013-07-10 16:56:36,060 DEBUG A1 - active:1
+2013-07-10 16:56:36,060 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:56:43,377 DEBUG A1 - idle:19
+2013-07-10 16:56:43,377 DEBUG A1 - active:1
+2013-07-10 16:56:43,456 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:56:48,136 DEBUG A1 - idle:19
+2013-07-10 16:56:48,136 DEBUG A1 - active:1
+2013-07-10 16:56:48,215 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:57:10,118 DEBUG A1 - idle:19
+2013-07-10 16:57:10,118 DEBUG A1 - active:1
+2013-07-10 16:57:10,118 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:57:11,117 DEBUG A1 - idle:19
+2013-07-10 16:57:11,117 DEBUG A1 - active:1
+2013-07-10 16:57:11,117 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:57:11,133 DEBUG A1 - idle:19
+2013-07-10 16:57:11,133 DEBUG A1 - active:1
+2013-07-10 16:57:11,133 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:57:18,950 DEBUG A1 - idle:19
+2013-07-10 16:57:18,950 DEBUG A1 - active:1
+2013-07-10 16:57:18,981 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:57:24,737 DEBUG A1 - idle:19
+2013-07-10 16:57:24,737 DEBUG A1 - active:1
+2013-07-10 16:57:24,737 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:57:24,753 DEBUG A1 - idle:19
+2013-07-10 16:57:24,753 DEBUG A1 - active:1
+2013-07-10 16:57:24,753 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:57:31,078 DEBUG A1 - idle:19
+2013-07-10 16:57:31,078 DEBUG A1 - active:1
+2013-07-10 16:57:31,157 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:57:39,269 DEBUG A1 - idle:19
+2013-07-10 16:57:39,269 DEBUG A1 - active:1
+2013-07-10 16:57:39,348 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:57:59,004 DEBUG A1 - idle:19
+2013-07-10 16:57:59,004 DEBUG A1 - active:1
+2013-07-10 16:57:59,004 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:57:59,988 DEBUG A1 - idle:19
+2013-07-10 16:57:59,988 DEBUG A1 - active:1
+2013-07-10 16:57:59,988 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:58:00,003 DEBUG A1 - idle:19
+2013-07-10 16:58:00,003 DEBUG A1 - active:1
+2013-07-10 16:58:00,003 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:58:02,640 DEBUG A1 - idle:19
+2013-07-10 16:58:02,640 DEBUG A1 - active:1
+2013-07-10 16:58:02,671 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:58:08,614 DEBUG A1 - idle:19
+2013-07-10 16:58:08,614 DEBUG A1 - active:1
+2013-07-10 16:58:08,630 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:58:08,646 DEBUG A1 - idle:19
+2013-07-10 16:58:08,646 DEBUG A1 - active:1
+2013-07-10 16:58:08,646 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:58:13,498 DEBUG A1 - idle:19
+2013-07-10 16:58:13,498 DEBUG A1 - active:1
+2013-07-10 16:58:13,562 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:58:19,178 DEBUG A1 - idle:19
+2013-07-10 16:58:19,193 DEBUG A1 - active:1
+2013-07-10 16:58:19,272 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:58:43,249 DEBUG A1 - idle:19
+2013-07-10 16:58:43,249 DEBUG A1 - active:1
+2013-07-10 16:58:43,265 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:58:44,327 DEBUG A1 - idle:19
+2013-07-10 16:58:44,327 DEBUG A1 - active:1
+2013-07-10 16:58:44,374 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:58:44,405 DEBUG A1 - idle:19
+2013-07-10 16:58:44,405 DEBUG A1 - active:1
+2013-07-10 16:58:44,405 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:58:45,607 DEBUG A1 - idle:19
+2013-07-10 16:58:45,607 DEBUG A1 - active:1
+2013-07-10 16:58:45,638 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:58:49,803 DEBUG A1 - idle:19
+2013-07-10 16:58:49,803 DEBUG A1 - active:1
+2013-07-10 16:58:49,803 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:58:49,835 DEBUG A1 - idle:19
+2013-07-10 16:58:49,835 DEBUG A1 - active:1
+2013-07-10 16:58:49,835 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:58:57,526 DEBUG A1 - idle:19
+2013-07-10 16:58:57,526 DEBUG A1 - active:1
+2013-07-10 16:58:57,605 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:59:02,192 DEBUG A1 - idle:19
+2013-07-10 16:59:02,192 DEBUG A1 - active:1
+2013-07-10 16:59:02,279 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 16:59:28,986 DEBUG A1 - idle:19
+2013-07-10 16:59:28,986 DEBUG A1 - active:1
+2013-07-10 16:59:28,986 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 16:59:29,798 DEBUG A1 - idle:19
+2013-07-10 16:59:29,798 DEBUG A1 - active:1
+2013-07-10 16:59:29,798 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:59:29,814 DEBUG A1 - idle:19
+2013-07-10 16:59:29,814 DEBUG A1 - active:1
+2013-07-10 16:59:29,814 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 16:59:34,494 DEBUG A1 - idle:19
+2013-07-10 16:59:34,494 DEBUG A1 - active:1
+2013-07-10 16:59:34,525 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 16:59:53,729 DEBUG A1 - idle:19
+2013-07-10 16:59:53,729 DEBUG A1 - active:1
+2013-07-10 16:59:53,744 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 16:59:53,760 DEBUG A1 - idle:19
+2013-07-10 16:59:53,760 DEBUG A1 - active:1
+2013-07-10 16:59:53,760 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 17:01:00,904 DEBUG A1 - idle:19
+2013-07-10 17:01:00,904 DEBUG A1 - active:1
+2013-07-10 17:01:01,029 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 17:01:05,351 DEBUG A1 - idle:19
+2013-07-10 17:01:05,351 DEBUG A1 - active:1
+2013-07-10 17:01:05,445 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 17:01:29,906 DEBUG A1 - idle:19
+2013-07-10 17:01:29,906 DEBUG A1 - active:1
+2013-07-10 17:01:29,922 DEBUG A1 - CorpRegistration
+ps is closed by jdbc4.0
+2013-07-10 17:01:30,562 DEBUG A1 - idle:19
+2013-07-10 17:01:30,562 DEBUG A1 - active:1
+2013-07-10 17:01:30,593 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 17:01:30,609 DEBUG A1 - idle:19
+2013-07-10 17:01:30,609 DEBUG A1 - active:1
+2013-07-10 17:01:30,609 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 17:01:57,925 DEBUG A1 - idle:19
+2013-07-10 17:01:57,925 DEBUG A1 - active:1
+2013-07-10 17:01:59,174 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 17:02:01,311 DEBUG A1 - idle:19
+2013-07-10 17:02:01,311 DEBUG A1 - active:1
+2013-07-10 17:02:01,374 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:02:01,374 DEBUG A1 - idle:19
+2013-07-10 17:02:01,374 DEBUG A1 - active:1
+2013-07-10 17:02:01,390 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:02:03,667 DEBUG A1 - idle:19
+2013-07-10 17:02:03,667 DEBUG A1 - active:1
+2013-07-10 17:02:03,793 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:02:03,793 DEBUG A1 - idle:19
+2013-07-10 17:02:03,793 DEBUG A1 - active:1
+2013-07-10 17:02:03,809 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:10:43,479 DEBUG A1 - idle:19
+2013-07-10 17:10:43,479 DEBUG A1 - active:1
+2013-07-10 17:10:43,542 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:10:43,542 DEBUG A1 - idle:19
+2013-07-10 17:10:43,542 DEBUG A1 - active:1
+2013-07-10 17:10:43,573 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:10:58,783 DEBUG A1 - idle:19
+2013-07-10 17:10:58,783 DEBUG A1 - active:1
+2013-07-10 17:10:58,799 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:10:58,893 DEBUG A1 - idle:19
+2013-07-10 17:10:58,893 DEBUG A1 - active:1
+2013-07-10 17:10:59,065 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 17:11:06,694 DEBUG A1 - idle:19
+2013-07-10 17:11:06,694 DEBUG A1 - active:1
+2013-07-10 17:11:06,960 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 17:11:19,814 DEBUG A1 - idle:19
+2013-07-10 17:11:19,814 DEBUG A1 - active:1
+2013-07-10 17:11:19,877 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:11:19,877 DEBUG A1 - idle:19
+2013-07-10 17:11:19,877 DEBUG A1 - active:1
+2013-07-10 17:11:19,892 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:11:39,518 DEBUG A1 - idle:19
+2013-07-10 17:11:39,518 DEBUG A1 - active:1
+2013-07-10 17:11:39,581 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:11:39,581 DEBUG A1 - idle:19
+2013-07-10 17:11:39,581 DEBUG A1 - active:1
+2013-07-10 17:11:39,597 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:12:19,517 DEBUG A1 - idle:19
+2013-07-10 17:12:19,517 DEBUG A1 - active:1
+2013-07-10 17:12:19,596 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 17:12:23,325 DEBUG A1 - idle:19
+2013-07-10 17:12:23,325 DEBUG A1 - active:1
+2013-07-10 17:12:23,657 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:12:23,657 DEBUG A1 - idle:19
+2013-07-10 17:12:23,657 DEBUG A1 - active:1
+2013-07-10 17:12:23,688 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:12:39,335 DEBUG A1 - idle:19
+2013-07-10 17:12:39,335 DEBUG A1 - active:1
+2013-07-10 17:12:39,366 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:13:01,846 DEBUG A1 - idle:19
+2013-07-10 17:13:01,846 DEBUG A1 - active:1
+2013-07-10 17:13:01,861 DEBUG A1 - NumCheck
+ps is closed by jdbc4.0
+2013-07-10 17:13:01,877 DEBUG A1 - idle:19
+2013-07-10 17:13:01,877 DEBUG A1 - active:1
+2013-07-10 17:13:02,394 ERROR A1 - EstimateRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: パラメーター番号 2 に値が設定されていません。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.buildParamTypeDefinitions(SQLServerPreparedStatement.java:260)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.buildPreparedStrings(SQLServerPreparedStatement.java:219)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doPrepExec(SQLServerPreparedStatement.java:612)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:400)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:314)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+fukaisystem.EstimateRegistration.service(EstimateRegistration.java:336)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-10 17:13:02,409  INFO A1 - T_見積_子は1件処理されました。
+2013-07-10 17:13:02,409  INFO A1 - T_見積_加工は0件処理されました。
+2013-07-10 17:13:02,409  INFO A1 - T_見積_材料は0件処理されました。
+2013-07-10 17:13:02,409 DEBUG A1 - rollback
+2013-07-10 17:13:02,534 DEBUG A1 - EstimateRegistration
+ps is closed by jdbc4.0
+2013-07-10 17:13:39,071 DEBUG A1 - idle:19
+2013-07-10 17:13:39,071 DEBUG A1 - active:1
+2013-07-10 17:13:39,071 DEBUG A1 - NumCheck
+ps is closed by jdbc4.0
+2013-07-10 17:13:39,087 DEBUG A1 - idle:19
+2013-07-10 17:13:39,087 DEBUG A1 - active:1
+2013-07-10 17:13:39,384  INFO A1 - T_見積_子は1件処理されました。
+2013-07-10 17:13:39,384  INFO A1 - T_見積_加工は0件処理されました。
+2013-07-10 17:13:39,384  INFO A1 - T_見積_材料は0件処理されました。
+2013-07-10 17:13:39,400 DEBUG A1 - EstimateRegistration
+ps is closed by jdbc4.0
+2013-07-10 17:13:40,539 DEBUG A1 - idle:19
+2013-07-10 17:13:40,539 DEBUG A1 - active:1
+2013-07-10 17:13:40,554 DEBUG A1 - UpdateCandidate
+ps is closed by jdbc4.0
+2013-07-10 17:13:40,554 DEBUG A1 - idle:19
+2013-07-10 17:13:40,554 DEBUG A1 - active:1
+2013-07-10 17:13:40,586 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-10 17:13:40,602 DEBUG A1 - idle:19
+2013-07-10 17:13:40,602 DEBUG A1 - active:1
+2013-07-10 17:13:40,633 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:13:40,649 DEBUG A1 - idle:19
+2013-07-10 17:13:40,649 DEBUG A1 - active:1
+2013-07-10 17:13:40,665 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:13:40,665 DEBUG A1 - idle:19
+2013-07-10 17:13:40,665 DEBUG A1 - active:1
+2013-07-10 17:13:40,727 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:13:40,743 DEBUG A1 - idle:19
+2013-07-10 17:13:40,743 DEBUG A1 - active:1
+2013-07-10 17:13:40,758 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:13:43,613 DEBUG A1 - idle:19
+2013-07-10 17:13:43,613 DEBUG A1 - active:1
+2013-07-10 17:13:43,629 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:14:01,818 DEBUG A1 - idle:19
+2013-07-10 17:14:01,818 DEBUG A1 - active:1
+2013-07-10 17:14:01,834 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:14:10,164 DEBUG A1 - idle:19
+2013-07-10 17:14:10,164 DEBUG A1 - active:1
+2013-07-10 17:14:10,195 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:14:48,353 DEBUG A1 - idle:19
+2013-07-10 17:14:48,353 DEBUG A1 - active:1
+2013-07-10 17:14:48,729 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 17:15:04,360 DEBUG A1 - idle:19
+2013-07-10 17:15:04,360 DEBUG A1 - active:1
+2013-07-10 17:15:04,375 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:15:07,948 DEBUG A1 - idle:19
+2013-07-10 17:15:07,948 DEBUG A1 - active:1
+2013-07-10 17:15:07,963 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:15:14,905 DEBUG A1 - idle:19
+2013-07-10 17:15:14,905 DEBUG A1 - active:1
+2013-07-10 17:15:15,008 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:15:15,008 DEBUG A1 - idle:19
+2013-07-10 17:15:15,008 DEBUG A1 - active:1
+2013-07-10 17:15:15,040 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:15:22,325 DEBUG A1 - idle:19
+2013-07-10 17:15:22,325 DEBUG A1 - active:1
+2013-07-10 17:15:23,090 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 17:15:28,535 DEBUG A1 - idle:19
+2013-07-10 17:15:28,535 DEBUG A1 - active:1
+2013-07-10 17:15:28,598 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:15:28,598 DEBUG A1 - idle:19
+2013-07-10 17:15:28,598 DEBUG A1 - active:1
+2013-07-10 17:15:28,614 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:15:43,714 DEBUG A1 - idle:19
+2013-07-10 17:15:43,714 DEBUG A1 - active:1
+2013-07-10 17:15:43,770 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:15:43,786 DEBUG A1 - idle:19
+2013-07-10 17:15:43,786 DEBUG A1 - active:1
+2013-07-10 17:15:43,801 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:15:55,111 DEBUG A1 - idle:19
+2013-07-10 17:15:55,111 DEBUG A1 - active:1
+2013-07-10 17:15:55,127 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:15:59,433 DEBUG A1 - idle:19
+2013-07-10 17:15:59,433 DEBUG A1 - active:1
+2013-07-10 17:15:59,448 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:16:02,615 DEBUG A1 - idle:19
+2013-07-10 17:16:02,615 DEBUG A1 - active:1
+2013-07-10 17:16:02,646 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:16:07,030 DEBUG A1 - idle:19
+2013-07-10 17:16:07,030 DEBUG A1 - active:1
+2013-07-10 17:16:07,095 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:16:07,097 DEBUG A1 - idle:19
+2013-07-10 17:16:07,097 DEBUG A1 - active:1
+2013-07-10 17:16:07,107 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:16:10,914 DEBUG A1 - idle:19
+2013-07-10 17:16:10,914 DEBUG A1 - active:1
+2013-07-10 17:16:10,977 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:16:10,993 DEBUG A1 - idle:19
+2013-07-10 17:16:10,993 DEBUG A1 - active:1
+2013-07-10 17:16:11,008 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:16:14,440 DEBUG A1 - idle:19
+2013-07-10 17:16:14,440 DEBUG A1 - active:1
+2013-07-10 17:16:14,456 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:16:19,635 DEBUG A1 - idle:19
+2013-07-10 17:16:19,635 DEBUG A1 - active:1
+2013-07-10 17:16:20,009 DEBUG A1 - EstimateRegistration
+ps is closed by jdbc4.0
+2013-07-10 17:16:23,005 DEBUG A1 - idle:19
+2013-07-10 17:16:23,005 DEBUG A1 - active:1
+2013-07-10 17:16:23,380 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 17:16:40,228 DEBUG A1 - idle:19
+2013-07-10 17:16:40,228 DEBUG A1 - active:1
+2013-07-10 17:16:40,290 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:16:40,290 DEBUG A1 - idle:19
+2013-07-10 17:16:40,290 DEBUG A1 - active:1
+2013-07-10 17:16:40,305 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:16:42,801 DEBUG A1 - idle:19
+2013-07-10 17:16:42,801 DEBUG A1 - active:1
+2013-07-10 17:16:42,817 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:17:02,473 DEBUG A1 - idle:19
+2013-07-10 17:17:02,473 DEBUG A1 - active:1
+2013-07-10 17:17:02,489 DEBUG A1 - NumCheck
+ps is closed by jdbc4.0
+2013-07-10 17:17:02,489 DEBUG A1 - idle:19
+2013-07-10 17:17:02,489 DEBUG A1 - active:1
+2013-07-10 17:17:02,520  INFO A1 - T_見積_子は1件処理されました。
+2013-07-10 17:17:02,520  INFO A1 - T_見積_加工は0件処理されました。
+2013-07-10 17:17:02,520  INFO A1 - T_見積_材料は0件処理されました。
+2013-07-10 17:17:02,535 DEBUG A1 - EstimateRegistration
+ps is closed by jdbc4.0
+2013-07-10 17:17:04,128 DEBUG A1 - idle:19
+2013-07-10 17:17:04,128 DEBUG A1 - active:1
+2013-07-10 17:17:04,143 DEBUG A1 - UpdateCandidate
+ps is closed by jdbc4.0
+2013-07-10 17:17:04,143 DEBUG A1 - idle:19
+2013-07-10 17:17:04,143 DEBUG A1 - active:1
+2013-07-10 17:17:04,143 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-10 17:17:04,143 DEBUG A1 - idle:19
+2013-07-10 17:17:04,143 DEBUG A1 - active:1
+2013-07-10 17:17:04,251 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:17:04,251 DEBUG A1 - idle:19
+2013-07-10 17:17:04,251 DEBUG A1 - active:1
+2013-07-10 17:17:04,266 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:17:04,282 DEBUG A1 - idle:19
+2013-07-10 17:17:04,282 DEBUG A1 - active:1
+2013-07-10 17:17:04,344 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:17:04,344 DEBUG A1 - idle:19
+2013-07-10 17:17:04,344 DEBUG A1 - active:1
+2013-07-10 17:17:04,360 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:17:08,354 DEBUG A1 - idle:19
+2013-07-10 17:17:08,354 DEBUG A1 - active:1
+2013-07-10 17:17:08,369 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:17:12,519 DEBUG A1 - idle:19
+2013-07-10 17:17:12,519 DEBUG A1 - active:1
+2013-07-10 17:17:12,550 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:17:24,936 DEBUG A1 - idle:19
+2013-07-10 17:17:24,936 DEBUG A1 - active:1
+2013-07-10 17:17:25,265 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 17:17:35,795 DEBUG A1 - idle:19
+2013-07-10 17:17:35,795 DEBUG A1 - active:1
+2013-07-10 17:17:35,857 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:17:35,857 DEBUG A1 - idle:19
+2013-07-10 17:17:35,857 DEBUG A1 - active:1
+2013-07-10 17:17:35,872 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:17:37,822 DEBUG A1 - idle:19
+2013-07-10 17:17:37,822 DEBUG A1 - active:1
+2013-07-10 17:17:37,838 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:17:40,630 DEBUG A1 - idle:19
+2013-07-10 17:17:40,630 DEBUG A1 - active:1
+2013-07-10 17:17:40,662 DEBUG A1 - EstimateRegistration
+ps is closed by jdbc4.0
+2013-07-10 17:17:43,111 DEBUG A1 - idle:19
+2013-07-10 17:17:43,111 DEBUG A1 - active:1
+2013-07-10 17:17:43,549 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-10 17:17:52,612 DEBUG A1 - idle:19
+2013-07-10 17:17:52,612 DEBUG A1 - active:1
+2013-07-10 17:17:52,660 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-10 17:17:52,676 DEBUG A1 - idle:19
+2013-07-10 17:17:52,676 DEBUG A1 - active:1
+2013-07-10 17:17:52,707 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:17:53,783 DEBUG A1 - idle:19
+2013-07-10 17:17:53,783 DEBUG A1 - active:1
+2013-07-10 17:17:53,799 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:17:56,638 DEBUG A1 - idle:19
+2013-07-10 17:17:56,638 DEBUG A1 - active:1
+2013-07-10 17:17:56,654 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-10 17:58:19,054 DEBUG A1 - idle:0
+2013-07-10 17:58:19,054 DEBUG A1 - active:1
+2013-07-10 17:58:19,086 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 17:58:19,132 DEBUG A1 - idle:0
+2013-07-10 17:58:19,132 DEBUG A1 - active:1
+2013-07-10 17:58:19,132 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 17:58:23,813 DEBUG A1 - idle:0
+2013-07-10 17:58:23,813 DEBUG A1 - active:1
+2013-07-10 17:58:24,437 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 17:58:33,329 DEBUG A1 - idle:0
+2013-07-10 17:58:33,329 DEBUG A1 - active:1
+2013-07-10 17:58:33,782 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 17:58:33,813 DEBUG A1 - idle:0
+2013-07-10 17:58:33,813 DEBUG A1 - active:1
+2013-07-10 17:58:33,813 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 17:58:36,965 DEBUG A1 - idle:0
+2013-07-10 17:58:36,965 DEBUG A1 - active:1
+2013-07-10 17:58:36,996 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 17:58:43,736 DEBUG A1 - idle:0
+2013-07-10 17:58:43,736 DEBUG A1 - active:1
+2013-07-10 17:58:43,798 DEBUG A1 - GetCorpData
+ps is closed by jdbc4.0
+2013-07-10 17:58:43,814 DEBUG A1 - idle:0
+2013-07-10 17:58:43,814 DEBUG A1 - active:1
+2013-07-10 17:58:43,829 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 18:09:05,647 DEBUG A1 - idle:0
+2013-07-10 18:09:05,647 DEBUG A1 - active:1
+2013-07-10 18:09:05,647 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 18:09:05,694 DEBUG A1 - idle:0
+2013-07-10 18:09:05,694 DEBUG A1 - active:1
+2013-07-10 18:09:05,694 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 18:09:11,436 DEBUG A1 - idle:0
+2013-07-10 18:09:11,436 DEBUG A1 - active:1
+2013-07-10 18:09:11,467 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 18:09:52,121 DEBUG A1 - idle:0
+2013-07-10 18:09:52,121 DEBUG A1 - active:1
+2013-07-10 18:09:52,121 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 18:09:52,152 DEBUG A1 - idle:0
+2013-07-10 18:09:52,152 DEBUG A1 - active:1
+2013-07-10 18:09:52,152 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 18:09:59,501 DEBUG A1 - idle:0
+2013-07-10 18:09:59,501 DEBUG A1 - active:1
+2013-07-10 18:09:59,516 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-10 18:10:28,813 DEBUG A1 - idle:0
+2013-07-10 18:10:28,813 DEBUG A1 - active:1
+2013-07-10 18:10:29,766 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 18:10:41,263 DEBUG A1 - idle:0
+2013-07-10 18:10:41,263 DEBUG A1 - active:1
+2013-07-10 18:10:41,342 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 18:11:49,390 DEBUG A1 - idle:0
+2013-07-10 18:11:49,390 DEBUG A1 - active:1
+2013-07-10 18:11:49,719 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 18:20:34,216 DEBUG A1 - idle:19
+2013-07-10 18:20:34,216 DEBUG A1 - active:1
+2013-07-10 18:20:34,216 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 18:20:34,247 DEBUG A1 - idle:19
+2013-07-10 18:20:34,247 DEBUG A1 - active:1
+2013-07-10 18:20:34,247 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 18:20:50,036 DEBUG A1 - idle:19
+2013-07-10 18:20:50,036 DEBUG A1 - active:1
+2013-07-10 18:20:50,067 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 18:25:50,197 DEBUG A1 - idle:19
+2013-07-10 18:25:50,197 DEBUG A1 - active:1
+2013-07-10 18:25:50,197 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 18:25:50,228 DEBUG A1 - idle:19
+2013-07-10 18:25:50,228 DEBUG A1 - active:1
+2013-07-10 18:25:50,228 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 18:25:57,064 DEBUG A1 - idle:19
+2013-07-10 18:25:57,064 DEBUG A1 - active:1
+2013-07-10 18:25:57,064 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 18:26:04,506 DEBUG A1 - idle:19
+2013-07-10 18:26:04,506 DEBUG A1 - active:1
+2013-07-10 18:26:04,506 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 18:27:56,235 DEBUG A1 - idle:19
+2013-07-10 18:27:56,235 DEBUG A1 - active:1
+2013-07-10 18:27:56,235 DEBUG A1 - GetCoType
+ps is closed by jdbc4.0
+2013-07-10 18:27:56,266 DEBUG A1 - idle:19
+2013-07-10 18:27:56,266 DEBUG A1 - active:1
+2013-07-10 18:27:56,266 DEBUG A1 - GetCountry
+ps is closed by jdbc4.0
+2013-07-10 18:28:04,878 DEBUG A1 - idle:19
+2013-07-10 18:28:04,878 DEBUG A1 - active:1
+2013-07-10 18:28:04,894 DEBUG A1 - GetZip
+ps is closed by jdbc4.0
+2013-07-10 18:40:14,899 DEBUG A1 - idle:19
+2013-07-10 18:40:14,899 DEBUG A1 - active:1
+2013-07-10 18:40:14,899 DEBUG A1 - GetZip
+ps is closed by jdbc4.0

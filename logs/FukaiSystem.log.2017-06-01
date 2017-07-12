@@ -1,0 +1,112 @@
+2017-06-01 14:43:29,624 DEBUG A1 - idle:19
+2017-06-01 14:43:29,629 DEBUG A1 - active:1
+2017-06-01 14:43:29,885 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2017-06-01 14:43:40,320 DEBUG A1 - idle:19
+2017-06-01 14:43:40,320 DEBUG A1 - active:1
+2017-06-01 14:43:41,083 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-06-01 14:43:44,263 DEBUG A1 - idle:19
+2017-06-01 14:43:44,263 DEBUG A1 - active:1
+2017-06-01 14:43:44,429 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2017-06-01 14:43:44,465 DEBUG A1 - idle:19
+2017-06-01 14:43:44,465 DEBUG A1 - active:1
+2017-06-01 14:43:44,493 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2017-06-01 14:44:22,900 DEBUG A1 - idle:19
+2017-06-01 14:44:22,900 DEBUG A1 - active:1
+2017-06-01 14:44:22,904 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2017-06-01 14:44:22,937 DEBUG A1 - idle:19
+2017-06-01 14:44:22,937 DEBUG A1 - active:1
+2017-06-01 14:44:22,946 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2017-06-01 14:44:23,045 DEBUG A1 - idle:19
+2017-06-01 14:44:23,045 DEBUG A1 - active:1
+2017-06-01 14:44:23,046 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2017-06-01 14:44:23,072 DEBUG A1 - idle:19
+2017-06-01 14:44:23,072 DEBUG A1 - active:1
+2017-06-01 14:44:23,075 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2017-06-01 14:44:23,102 DEBUG A1 - idle:19
+2017-06-01 14:44:23,102 DEBUG A1 - active:1
+2017-06-01 14:44:23,103 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2017-06-01 14:44:23,122 DEBUG A1 - idle:19
+2017-06-01 14:44:23,122 DEBUG A1 - active:1
+2017-06-01 14:44:23,123 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2017-06-01 14:44:23,153 DEBUG A1 - idle:19
+2017-06-01 14:44:23,153 DEBUG A1 - active:1
+2017-06-01 14:44:23,154 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2017-06-01 14:44:23,182 DEBUG A1 - idle:19
+2017-06-01 14:44:23,182 DEBUG A1 - active:1
+2017-06-01 14:44:23,186 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2017-06-01 14:44:23,223 DEBUG A1 - idle:19
+2017-06-01 14:44:23,223 DEBUG A1 - active:1
+2017-06-01 14:44:23,279 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2017-06-01 14:44:23,304 DEBUG A1 - idle:19
+2017-06-01 14:44:23,304 DEBUG A1 - active:1
+2017-06-01 14:44:23,317 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2017-06-01 15:03:18,711 DEBUG A1 - idle:19
+2017-06-01 15:03:18,711 DEBUG A1 - active:1
+2017-06-01 15:03:18,894 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2017-06-01 15:03:25,167 DEBUG A1 - idle:19
+2017-06-01 15:03:25,167 DEBUG A1 - active:1
+2017-06-01 15:03:25,636 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-06-01 15:03:27,210 DEBUG A1 - idle:19
+2017-06-01 15:03:27,210 DEBUG A1 - active:1
+2017-06-01 15:03:27,255 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2017-06-01 15:03:27,290 DEBUG A1 - idle:19
+2017-06-01 15:03:27,290 DEBUG A1 - active:1
+2017-06-01 15:03:27,293 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2017-06-01 15:03:30,526 DEBUG A1 - idle:19
+2017-06-01 15:03:30,526 DEBUG A1 - active:1
+2017-06-01 15:03:30,527 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2017-06-01 15:03:30,562 DEBUG A1 - idle:19
+2017-06-01 15:03:30,562 DEBUG A1 - active:1
+2017-06-01 15:03:30,563 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2017-06-01 15:03:30,625 DEBUG A1 - idle:19
+2017-06-01 15:03:30,625 DEBUG A1 - active:1
+2017-06-01 15:03:30,626 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2017-06-01 15:03:30,652 DEBUG A1 - idle:19
+2017-06-01 15:03:30,652 DEBUG A1 - active:1
+2017-06-01 15:03:30,653 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2017-06-01 15:03:30,680 DEBUG A1 - idle:19
+2017-06-01 15:03:30,680 DEBUG A1 - active:1
+2017-06-01 15:03:30,681 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2017-06-01 15:03:30,702 DEBUG A1 - idle:19
+2017-06-01 15:03:30,702 DEBUG A1 - active:1
+2017-06-01 15:03:30,703 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2017-06-01 15:03:30,730 DEBUG A1 - idle:19
+2017-06-01 15:03:30,730 DEBUG A1 - active:1
+2017-06-01 15:03:30,732 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2017-06-01 15:03:30,757 DEBUG A1 - idle:19
+2017-06-01 15:03:30,757 DEBUG A1 - active:1
+2017-06-01 15:03:30,759 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2017-06-01 15:03:30,786 DEBUG A1 - idle:19
+2017-06-01 15:03:30,786 DEBUG A1 - active:1
+2017-06-01 15:03:30,804 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2017-06-01 15:03:30,833 DEBUG A1 - idle:19
+2017-06-01 15:03:30,833 DEBUG A1 - active:1
+2017-06-01 15:03:30,836 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0

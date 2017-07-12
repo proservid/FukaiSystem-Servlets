@@ -1,0 +1,20 @@
+2016-12-15 16:21:37,139 DEBUG A1 - idle:19
+2016-12-15 16:21:37,139 DEBUG A1 - active:1
+2016-12-15 16:21:37,638 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-12-15 16:21:49,650 DEBUG A1 - idle:19
+2016-12-15 16:21:49,650 DEBUG A1 - active:1
+2016-12-15 16:21:49,853 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2016-12-15 16:31:50,522 DEBUG A1 - idle:19
+2016-12-15 16:31:50,522 DEBUG A1 - active:1
+2016-12-15 16:31:50,569 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-12-15 16:40:30,190 DEBUG A1 - idle:19
+2016-12-15 16:40:30,190 DEBUG A1 - active:1
+2016-12-15 16:40:30,252 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-12-15 16:40:36,430 DEBUG A1 - idle:19
+2016-12-15 16:40:36,430 DEBUG A1 - active:1
+2016-12-15 16:40:36,430 DEBUG A1 - Search
+ps is closed by jdbc4.0

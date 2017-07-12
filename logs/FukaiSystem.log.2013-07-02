@@ -1,0 +1,3642 @@
+2013-07-02 08:59:58,722 DEBUG A1 - idle:19
+2013-07-02 08:59:58,722 DEBUG A1 - active:1
+2013-07-02 08:59:58,831 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-07-02 09:00:04,759 DEBUG A1 - idle:19
+2013-07-02 09:00:04,759 DEBUG A1 - active:1
+2013-07-02 09:00:08,253 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 09:01:41,916 DEBUG A1 - idle:19
+2013-07-02 09:01:41,916 DEBUG A1 - active:1
+2013-07-02 09:01:44,417 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:01:44,465 DEBUG A1 - idle:19
+2013-07-02 09:01:44,465 DEBUG A1 - active:1
+2013-07-02 09:01:44,668 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:01:54,854 DEBUG A1 - idle:19
+2013-07-02 09:01:54,854 DEBUG A1 - active:1
+2013-07-02 09:01:54,913 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:01:54,913 DEBUG A1 - idle:19
+2013-07-02 09:01:54,913 DEBUG A1 - active:1
+2013-07-02 09:01:54,913 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:02:08,126 DEBUG A1 - idle:19
+2013-07-02 09:02:08,126 DEBUG A1 - active:1
+2013-07-02 09:02:08,158 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:02:32,244 DEBUG A1 - idle:19
+2013-07-02 09:02:32,244 DEBUG A1 - active:1
+2013-07-02 09:02:32,509 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:02:49,934 DEBUG A1 - idle:19
+2013-07-02 09:02:49,934 DEBUG A1 - active:1
+2013-07-02 09:02:49,981 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:02:49,997 DEBUG A1 - idle:19
+2013-07-02 09:02:49,997 DEBUG A1 - active:1
+2013-07-02 09:02:49,997 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:02:58,734 DEBUG A1 - idle:19
+2013-07-02 09:02:58,734 DEBUG A1 - active:1
+2013-07-02 09:02:58,799 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:02:58,799 DEBUG A1 - idle:19
+2013-07-02 09:02:58,799 DEBUG A1 - active:1
+2013-07-02 09:02:59,157 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:03:09,828 DEBUG A1 - idle:19
+2013-07-02 09:03:09,828 DEBUG A1 - active:1
+2013-07-02 09:03:09,843 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:03:16,661 DEBUG A1 - idle:19
+2013-07-02 09:03:16,661 DEBUG A1 - active:1
+2013-07-02 09:03:16,692 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:03:22,916 DEBUG A1 - idle:19
+2013-07-02 09:03:22,916 DEBUG A1 - active:1
+2013-07-02 09:03:22,964 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:03:22,980 DEBUG A1 - idle:19
+2013-07-02 09:03:22,980 DEBUG A1 - active:1
+2013-07-02 09:03:23,245 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:03:25,663 DEBUG A1 - idle:19
+2013-07-02 09:03:25,663 DEBUG A1 - active:1
+2013-07-02 09:03:25,663 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:03:31,513 DEBUG A1 - idle:19
+2013-07-02 09:03:31,513 DEBUG A1 - active:1
+2013-07-02 09:03:31,529 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:03:40,467 DEBUG A1 - idle:19
+2013-07-02 09:03:40,467 DEBUG A1 - active:1
+2013-07-02 09:03:40,531 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:03:40,546 DEBUG A1 - idle:19
+2013-07-02 09:03:40,546 DEBUG A1 - active:1
+2013-07-02 09:03:40,609 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:03:41,623 DEBUG A1 - idle:19
+2013-07-02 09:03:41,623 DEBUG A1 - active:1
+2013-07-02 09:03:41,686 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:03:41,686 DEBUG A1 - idle:19
+2013-07-02 09:03:41,686 DEBUG A1 - active:1
+2013-07-02 09:03:41,702 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:03:44,525 DEBUG A1 - idle:19
+2013-07-02 09:03:44,525 DEBUG A1 - active:1
+2013-07-02 09:03:44,541 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:03:50,984 DEBUG A1 - idle:19
+2013-07-02 09:03:50,984 DEBUG A1 - active:1
+2013-07-02 09:03:51,032 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:03:51,047 DEBUG A1 - idle:19
+2013-07-02 09:03:51,047 DEBUG A1 - active:1
+2013-07-02 09:03:51,297 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:03:52,545 DEBUG A1 - idle:19
+2013-07-02 09:03:52,545 DEBUG A1 - active:1
+2013-07-02 09:03:52,560 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:04:20,438 DEBUG A1 - idle:19
+2013-07-02 09:04:20,438 DEBUG A1 - active:1
+2013-07-02 09:04:20,579 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:04:20,610 DEBUG A1 - idle:19
+2013-07-02 09:04:20,610 DEBUG A1 - active:1
+2013-07-02 09:04:20,657 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:04:22,030 DEBUG A1 - idle:19
+2013-07-02 09:04:22,030 DEBUG A1 - active:1
+2013-07-02 09:04:22,045 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:04:30,391 DEBUG A1 - idle:19
+2013-07-02 09:04:30,391 DEBUG A1 - active:1
+2013-07-02 09:04:30,470 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:04:30,486 DEBUG A1 - idle:19
+2013-07-02 09:04:30,486 DEBUG A1 - active:1
+2013-07-02 09:04:30,486 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:04:34,667 DEBUG A1 - idle:19
+2013-07-02 09:04:34,667 DEBUG A1 - active:1
+2013-07-02 09:04:34,682 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:04:38,146 DEBUG A1 - idle:19
+2013-07-02 09:04:38,146 DEBUG A1 - active:1
+2013-07-02 09:04:38,286 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:04:38,286 DEBUG A1 - idle:19
+2013-07-02 09:04:38,286 DEBUG A1 - active:1
+2013-07-02 09:04:38,317 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:04:52,607 DEBUG A1 - idle:19
+2013-07-02 09:04:52,607 DEBUG A1 - active:1
+2013-07-02 09:04:52,685 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:04:52,700 DEBUG A1 - idle:19
+2013-07-02 09:04:52,700 DEBUG A1 - active:1
+2013-07-02 09:04:52,810 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:04:52,888 DEBUG A1 - idle:19
+2013-07-02 09:04:52,888 DEBUG A1 - active:1
+2013-07-02 09:04:52,888 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:04:52,903 DEBUG A1 - idle:19
+2013-07-02 09:04:52,903 DEBUG A1 - active:1
+2013-07-02 09:04:52,903 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:04:52,919 DEBUG A1 - idle:19
+2013-07-02 09:04:52,919 DEBUG A1 - active:1
+2013-07-02 09:04:52,919 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:04:52,919 DEBUG A1 - idle:19
+2013-07-02 09:04:52,919 DEBUG A1 - active:1
+2013-07-02 09:04:52,934 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:04:52,950 DEBUG A1 - idle:19
+2013-07-02 09:04:52,950 DEBUG A1 - active:1
+2013-07-02 09:04:52,950 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:04:52,966 DEBUG A1 - idle:19
+2013-07-02 09:04:52,966 DEBUG A1 - active:1
+2013-07-02 09:04:52,966 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:04:52,981 DEBUG A1 - idle:19
+2013-07-02 09:04:52,981 DEBUG A1 - active:1
+2013-07-02 09:04:52,981 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:04:52,981 DEBUG A1 - idle:19
+2013-07-02 09:04:52,981 DEBUG A1 - active:1
+2013-07-02 09:04:52,997 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:04:53,012 DEBUG A1 - idle:19
+2013-07-02 09:04:53,012 DEBUG A1 - active:1
+2013-07-02 09:04:53,528 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 09:04:53,528 DEBUG A1 - idle:19
+2013-07-02 09:04:53,528 DEBUG A1 - active:1
+2013-07-02 09:04:54,152 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 09:05:16,320 DEBUG A1 - idle:19
+2013-07-02 09:05:16,320 DEBUG A1 - active:1
+2013-07-02 09:05:16,415 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:05:16,415 DEBUG A1 - idle:19
+2013-07-02 09:05:16,415 DEBUG A1 - active:1
+2013-07-02 09:05:16,493 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:05:18,068 DEBUG A1 - idle:19
+2013-07-02 09:05:18,068 DEBUG A1 - active:1
+2013-07-02 09:05:18,121 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:05:18,137 DEBUG A1 - idle:19
+2013-07-02 09:05:18,137 DEBUG A1 - active:1
+2013-07-02 09:05:18,153 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:05:19,104 DEBUG A1 - idle:19
+2013-07-02 09:05:19,104 DEBUG A1 - active:1
+2013-07-02 09:05:19,168 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:05:19,168 DEBUG A1 - idle:19
+2013-07-02 09:05:19,168 DEBUG A1 - active:1
+2013-07-02 09:05:19,183 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:05:22,849 DEBUG A1 - idle:19
+2013-07-02 09:05:22,849 DEBUG A1 - active:1
+2013-07-02 09:05:22,849 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:05:22,865 DEBUG A1 - idle:19
+2013-07-02 09:05:22,865 DEBUG A1 - active:1
+2013-07-02 09:05:22,865 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:05:22,865 DEBUG A1 - idle:19
+2013-07-02 09:05:22,865 DEBUG A1 - active:1
+2013-07-02 09:05:22,880 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:05:22,880 DEBUG A1 - idle:19
+2013-07-02 09:05:22,880 DEBUG A1 - active:1
+2013-07-02 09:05:22,880 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:05:22,896 DEBUG A1 - idle:19
+2013-07-02 09:05:22,896 DEBUG A1 - active:1
+2013-07-02 09:05:22,896 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:05:22,912 DEBUG A1 - idle:19
+2013-07-02 09:05:22,912 DEBUG A1 - active:1
+2013-07-02 09:05:22,912 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:05:22,912 DEBUG A1 - idle:19
+2013-07-02 09:05:22,912 DEBUG A1 - active:1
+2013-07-02 09:05:22,927 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:05:22,927 DEBUG A1 - idle:19
+2013-07-02 09:05:22,927 DEBUG A1 - active:1
+2013-07-02 09:05:22,927 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:05:22,943 DEBUG A1 - idle:19
+2013-07-02 09:05:22,943 DEBUG A1 - active:1
+2013-07-02 09:05:22,943 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:05:22,943 DEBUG A1 - idle:19
+2013-07-02 09:05:22,943 DEBUG A1 - active:1
+2013-07-02 09:05:22,943 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:05:22,958 DEBUG A1 - idle:19
+2013-07-02 09:05:22,958 DEBUG A1 - active:1
+2013-07-02 09:05:22,974 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 09:05:22,974 DEBUG A1 - idle:19
+2013-07-02 09:05:22,974 DEBUG A1 - active:1
+2013-07-02 09:05:23,022 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 09:41:54,271 DEBUG A1 - idle:19
+2013-07-02 09:41:54,271 DEBUG A1 - active:1
+2013-07-02 09:41:54,599 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 09:42:15,425 DEBUG A1 - idle:19
+2013-07-02 09:42:15,425 DEBUG A1 - active:1
+2013-07-02 09:42:15,489 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:42:15,489 DEBUG A1 - idle:19
+2013-07-02 09:42:15,489 DEBUG A1 - active:1
+2013-07-02 09:42:15,504 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:42:23,008 DEBUG A1 - idle:19
+2013-07-02 09:42:23,008 DEBUG A1 - active:1
+2013-07-02 09:42:23,064 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:42:23,079 DEBUG A1 - idle:19
+2013-07-02 09:42:23,079 DEBUG A1 - active:1
+2013-07-02 09:42:23,344 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:42:44,046 DEBUG A1 - idle:19
+2013-07-02 09:42:44,046 DEBUG A1 - active:1
+2013-07-02 09:42:44,061 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:42:44,077 DEBUG A1 - idle:19
+2013-07-02 09:42:44,077 DEBUG A1 - active:1
+2013-07-02 09:42:44,092 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:43:54,215 DEBUG A1 - idle:19
+2013-07-02 09:43:54,215 DEBUG A1 - active:1
+2013-07-02 09:43:54,230 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:45:36,348 DEBUG A1 - idle:19
+2013-07-02 09:45:36,348 DEBUG A1 - active:1
+2013-07-02 09:45:36,364 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:47:36,409 DEBUG A1 - idle:19
+2013-07-02 09:47:36,409 DEBUG A1 - active:1
+2013-07-02 09:47:36,409 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:47:36,409 DEBUG A1 - idle:19
+2013-07-02 09:47:36,409 DEBUG A1 - active:1
+2013-07-02 09:47:36,424 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:47:36,424 DEBUG A1 - idle:19
+2013-07-02 09:47:36,424 DEBUG A1 - active:1
+2013-07-02 09:47:36,424 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:47:36,424 DEBUG A1 - idle:19
+2013-07-02 09:47:36,424 DEBUG A1 - active:1
+2013-07-02 09:47:36,440 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:47:36,440 DEBUG A1 - idle:19
+2013-07-02 09:47:36,440 DEBUG A1 - active:1
+2013-07-02 09:47:36,440 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:47:36,456 DEBUG A1 - idle:19
+2013-07-02 09:47:36,456 DEBUG A1 - active:1
+2013-07-02 09:47:36,456 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:47:36,456 DEBUG A1 - idle:19
+2013-07-02 09:47:36,456 DEBUG A1 - active:1
+2013-07-02 09:47:36,456 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:47:36,471 DEBUG A1 - idle:19
+2013-07-02 09:47:36,471 DEBUG A1 - active:1
+2013-07-02 09:47:36,471 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:47:36,471 DEBUG A1 - idle:19
+2013-07-02 09:47:36,471 DEBUG A1 - active:1
+2013-07-02 09:47:36,487 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:47:36,487 DEBUG A1 - idle:19
+2013-07-02 09:47:36,487 DEBUG A1 - active:1
+2013-07-02 09:47:36,487 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:47:36,502 DEBUG A1 - idle:19
+2013-07-02 09:47:36,502 DEBUG A1 - active:1
+2013-07-02 09:47:36,518 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 09:47:36,518 DEBUG A1 - idle:19
+2013-07-02 09:47:36,518 DEBUG A1 - active:1
+2013-07-02 09:47:36,613 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 09:47:48,281 DEBUG A1 - idle:19
+2013-07-02 09:47:48,281 DEBUG A1 - active:1
+2013-07-02 09:47:48,297 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:47:48,313 DEBUG A1 - idle:19
+2013-07-02 09:47:48,313 DEBUG A1 - active:1
+2013-07-02 09:47:48,313 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:48:19,809 DEBUG A1 - idle:19
+2013-07-02 09:48:19,809 DEBUG A1 - active:1
+2013-07-02 09:48:19,825 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:49:01,648 DEBUG A1 - idle:19
+2013-07-02 09:49:01,648 DEBUG A1 - active:1
+2013-07-02 09:49:01,820  INFO A1 - T_製作_子は6件処理されました。
+2013-07-02 09:49:01,837 DEBUG A1 - ProductRegistration
+ps is closed by jdbc4.0
+2013-07-02 09:49:03,007 DEBUG A1 - idle:19
+2013-07-02 09:49:03,007 DEBUG A1 - active:1
+2013-07-02 09:49:03,054 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 09:49:03,054 DEBUG A1 - idle:19
+2013-07-02 09:49:03,054 DEBUG A1 - active:1
+2013-07-02 09:49:03,117 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:49:03,117 DEBUG A1 - idle:19
+2013-07-02 09:49:03,117 DEBUG A1 - active:1
+2013-07-02 09:49:03,132 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:49:03,132 DEBUG A1 - idle:19
+2013-07-02 09:49:03,132 DEBUG A1 - active:1
+2013-07-02 09:49:03,164 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:49:03,179 DEBUG A1 - idle:19
+2013-07-02 09:49:03,179 DEBUG A1 - active:1
+2013-07-02 09:49:03,179 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:49:09,045 DEBUG A1 - idle:19
+2013-07-02 09:49:09,045 DEBUG A1 - active:1
+2013-07-02 09:49:09,264 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 09:49:10,809 DEBUG A1 - idle:19
+2013-07-02 09:49:10,809 DEBUG A1 - active:1
+2013-07-02 09:49:10,864 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:49:10,864 DEBUG A1 - idle:19
+2013-07-02 09:49:10,879 DEBUG A1 - active:1
+2013-07-02 09:49:10,879 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:49:16,215 DEBUG A1 - idle:19
+2013-07-02 09:49:16,215 DEBUG A1 - active:1
+2013-07-02 09:49:16,230 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:50:30,954 DEBUG A1 - idle:19
+2013-07-02 09:50:30,954 DEBUG A1 - active:1
+2013-07-02 09:50:31,018 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:50:31,024 DEBUG A1 - idle:19
+2013-07-02 09:50:31,024 DEBUG A1 - active:1
+2013-07-02 09:50:31,524 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:50:38,793 DEBUG A1 - idle:19
+2013-07-02 09:50:38,793 DEBUG A1 - active:1
+2013-07-02 09:50:38,857 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:50:38,857 DEBUG A1 - idle:19
+2013-07-02 09:50:38,857 DEBUG A1 - active:1
+2013-07-02 09:50:38,872 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:50:46,704 DEBUG A1 - idle:19
+2013-07-02 09:50:46,704 DEBUG A1 - active:1
+2013-07-02 09:50:46,783 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:50:46,783 DEBUG A1 - idle:19
+2013-07-02 09:50:46,783 DEBUG A1 - active:1
+2013-07-02 09:50:46,798 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:52:35,324 DEBUG A1 - idle:19
+2013-07-02 09:52:35,324 DEBUG A1 - active:1
+2013-07-02 09:52:35,339 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:52:44,247 DEBUG A1 - idle:19
+2013-07-02 09:52:44,247 DEBUG A1 - active:1
+2013-07-02 09:52:44,372  INFO A1 - T_製作_子は6件処理されました。
+2013-07-02 09:52:44,388 DEBUG A1 - ProductRegistration
+ps is closed by jdbc4.0
+2013-07-02 09:52:45,621 DEBUG A1 - idle:19
+2013-07-02 09:52:45,621 DEBUG A1 - active:1
+2013-07-02 09:52:45,621 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 09:52:45,636 DEBUG A1 - idle:19
+2013-07-02 09:52:45,636 DEBUG A1 - active:1
+2013-07-02 09:52:45,700 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:52:45,700 DEBUG A1 - idle:19
+2013-07-02 09:52:45,700 DEBUG A1 - active:1
+2013-07-02 09:52:45,715 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:52:45,715 DEBUG A1 - idle:19
+2013-07-02 09:52:45,715 DEBUG A1 - active:1
+2013-07-02 09:52:45,746 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:52:45,762 DEBUG A1 - idle:19
+2013-07-02 09:52:45,762 DEBUG A1 - active:1
+2013-07-02 09:52:45,762 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:53:01,128 DEBUG A1 - idle:19
+2013-07-02 09:53:01,128 DEBUG A1 - active:1
+2013-07-02 09:53:01,144 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:53:01,159 DEBUG A1 - idle:19
+2013-07-02 09:53:01,159 DEBUG A1 - active:1
+2013-07-02 09:53:01,175 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:53:36,634 DEBUG A1 - idle:19
+2013-07-02 09:53:36,634 DEBUG A1 - active:1
+2013-07-02 09:53:38,163 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 09:53:42,734 DEBUG A1 - idle:19
+2013-07-02 09:53:42,734 DEBUG A1 - active:1
+2013-07-02 09:53:42,798 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:53:42,798 DEBUG A1 - idle:19
+2013-07-02 09:53:42,798 DEBUG A1 - active:1
+2013-07-02 09:53:42,844 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:53:42,860 DEBUG A1 - idle:19
+2013-07-02 09:53:42,860 DEBUG A1 - active:1
+2013-07-02 09:53:42,876 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:53:47,025 DEBUG A1 - idle:19
+2013-07-02 09:53:47,025 DEBUG A1 - active:1
+2013-07-02 09:53:47,089 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:53:47,104 DEBUG A1 - idle:19
+2013-07-02 09:53:47,104 DEBUG A1 - active:1
+2013-07-02 09:53:47,104 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:53:47,635 DEBUG A1 - idle:19
+2013-07-02 09:53:47,635 DEBUG A1 - active:1
+2013-07-02 09:53:47,713 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:53:47,728 DEBUG A1 - idle:19
+2013-07-02 09:53:47,728 DEBUG A1 - active:1
+2013-07-02 09:53:47,744 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:53:47,744 DEBUG A1 - idle:19
+2013-07-02 09:53:47,744 DEBUG A1 - active:1
+2013-07-02 09:53:47,806 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:53:49,241 DEBUG A1 - idle:19
+2013-07-02 09:53:49,241 DEBUG A1 - active:1
+2013-07-02 09:53:49,300 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:53:49,300 DEBUG A1 - idle:19
+2013-07-02 09:53:49,300 DEBUG A1 - active:1
+2013-07-02 09:53:49,316 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:53:50,096 DEBUG A1 - idle:19
+2013-07-02 09:53:50,096 DEBUG A1 - active:1
+2013-07-02 09:53:50,189 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:53:50,189 DEBUG A1 - idle:19
+2013-07-02 09:53:50,189 DEBUG A1 - active:1
+2013-07-02 09:53:50,236 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:53:51,656 DEBUG A1 - idle:19
+2013-07-02 09:53:51,656 DEBUG A1 - active:1
+2013-07-02 09:53:51,719 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:53:51,719 DEBUG A1 - idle:19
+2013-07-02 09:53:51,719 DEBUG A1 - active:1
+2013-07-02 09:53:51,735 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:53:52,406 DEBUG A1 - idle:19
+2013-07-02 09:53:52,406 DEBUG A1 - active:1
+2013-07-02 09:53:52,468 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:53:52,468 DEBUG A1 - idle:19
+2013-07-02 09:53:52,468 DEBUG A1 - active:1
+2013-07-02 09:53:52,530 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:54:11,859 DEBUG A1 - idle:19
+2013-07-02 09:54:11,859 DEBUG A1 - active:1
+2013-07-02 09:54:11,923 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:54:11,923 DEBUG A1 - idle:19
+2013-07-02 09:54:11,923 DEBUG A1 - active:1
+2013-07-02 09:54:11,939 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:54:13,967 DEBUG A1 - idle:19
+2013-07-02 09:54:13,967 DEBUG A1 - active:1
+2013-07-02 09:54:14,021 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:54:14,025 DEBUG A1 - idle:19
+2013-07-02 09:54:14,025 DEBUG A1 - active:1
+2013-07-02 09:54:14,026 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:54:15,040 DEBUG A1 - idle:19
+2013-07-02 09:54:15,040 DEBUG A1 - active:1
+2013-07-02 09:54:15,040 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:54:15,040 DEBUG A1 - idle:19
+2013-07-02 09:54:15,040 DEBUG A1 - active:1
+2013-07-02 09:54:15,056 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:54:15,056 DEBUG A1 - idle:19
+2013-07-02 09:54:15,056 DEBUG A1 - active:1
+2013-07-02 09:54:15,056 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:54:15,056 DEBUG A1 - idle:19
+2013-07-02 09:54:15,056 DEBUG A1 - active:1
+2013-07-02 09:54:15,056 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:54:15,071 DEBUG A1 - idle:19
+2013-07-02 09:54:15,071 DEBUG A1 - active:1
+2013-07-02 09:54:15,071 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:54:15,071 DEBUG A1 - idle:19
+2013-07-02 09:54:15,071 DEBUG A1 - active:1
+2013-07-02 09:54:15,071 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:54:15,087 DEBUG A1 - idle:19
+2013-07-02 09:54:15,087 DEBUG A1 - active:1
+2013-07-02 09:54:15,087 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:54:15,087 DEBUG A1 - idle:19
+2013-07-02 09:54:15,087 DEBUG A1 - active:1
+2013-07-02 09:54:15,087 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:54:15,087 DEBUG A1 - idle:19
+2013-07-02 09:54:15,087 DEBUG A1 - active:1
+2013-07-02 09:54:15,102 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:54:15,102 DEBUG A1 - idle:19
+2013-07-02 09:54:15,102 DEBUG A1 - active:1
+2013-07-02 09:54:15,102 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:54:15,118 DEBUG A1 - idle:19
+2013-07-02 09:54:15,118 DEBUG A1 - active:1
+2013-07-02 09:54:15,134 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 09:54:15,134 DEBUG A1 - idle:19
+2013-07-02 09:54:15,134 DEBUG A1 - active:1
+2013-07-02 09:54:15,166 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 09:54:20,236 DEBUG A1 - idle:19
+2013-07-02 09:54:20,236 DEBUG A1 - active:1
+2013-07-02 09:54:20,315 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:54:20,315 DEBUG A1 - idle:19
+2013-07-02 09:54:20,315 DEBUG A1 - active:1
+2013-07-02 09:54:20,330 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:54:38,879 DEBUG A1 - idle:19
+2013-07-02 09:54:38,879 DEBUG A1 - active:1
+2013-07-02 09:54:39,108 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 09:54:41,011 DEBUG A1 - idle:19
+2013-07-02 09:54:41,011 DEBUG A1 - active:1
+2013-07-02 09:54:41,074 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:54:41,074 DEBUG A1 - idle:19
+2013-07-02 09:54:41,074 DEBUG A1 - active:1
+2013-07-02 09:54:41,090 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:57:59,644 DEBUG A1 - idle:19
+2013-07-02 09:57:59,644 DEBUG A1 - active:1
+2013-07-02 09:57:59,660 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:58:08,864 DEBUG A1 - idle:19
+2013-07-02 09:58:08,864 DEBUG A1 - active:1
+2013-07-02 09:58:08,864 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:58:08,864 DEBUG A1 - idle:19
+2013-07-02 09:58:08,864 DEBUG A1 - active:1
+2013-07-02 09:58:08,879 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:58:08,879 DEBUG A1 - idle:19
+2013-07-02 09:58:08,879 DEBUG A1 - active:1
+2013-07-02 09:58:08,879 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:58:08,879 DEBUG A1 - idle:19
+2013-07-02 09:58:08,879 DEBUG A1 - active:1
+2013-07-02 09:58:08,895 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:58:08,895 DEBUG A1 - idle:19
+2013-07-02 09:58:08,895 DEBUG A1 - active:1
+2013-07-02 09:58:08,895 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:58:08,895 DEBUG A1 - idle:19
+2013-07-02 09:58:08,895 DEBUG A1 - active:1
+2013-07-02 09:58:08,910 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:58:08,910 DEBUG A1 - idle:19
+2013-07-02 09:58:08,910 DEBUG A1 - active:1
+2013-07-02 09:58:08,910 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:58:08,910 DEBUG A1 - idle:19
+2013-07-02 09:58:08,910 DEBUG A1 - active:1
+2013-07-02 09:58:08,926 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:58:08,926 DEBUG A1 - idle:19
+2013-07-02 09:58:08,926 DEBUG A1 - active:1
+2013-07-02 09:58:08,926 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 09:58:08,926 DEBUG A1 - idle:19
+2013-07-02 09:58:08,926 DEBUG A1 - active:1
+2013-07-02 09:58:08,942 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 09:58:08,942 DEBUG A1 - idle:19
+2013-07-02 09:58:08,942 DEBUG A1 - active:1
+2013-07-02 09:58:08,957 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 09:58:08,973 DEBUG A1 - idle:19
+2013-07-02 09:58:08,973 DEBUG A1 - active:1
+2013-07-02 09:58:09,021 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 09:58:42,592 DEBUG A1 - idle:19
+2013-07-02 09:58:42,592 DEBUG A1 - active:1
+2013-07-02 09:58:42,951  INFO A1 - T_製作_子は6件処理されました。
+2013-07-02 09:58:42,951 DEBUG A1 - ProductRegistration
+ps is closed by jdbc4.0
+2013-07-02 09:58:43,997 DEBUG A1 - idle:19
+2013-07-02 09:58:43,997 DEBUG A1 - active:1
+2013-07-02 09:58:44,013 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 09:58:44,029 DEBUG A1 - idle:19
+2013-07-02 09:58:44,029 DEBUG A1 - active:1
+2013-07-02 09:58:44,092 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:58:44,092 DEBUG A1 - idle:19
+2013-07-02 09:58:44,092 DEBUG A1 - active:1
+2013-07-02 09:58:44,107 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:58:44,107 DEBUG A1 - idle:19
+2013-07-02 09:58:44,107 DEBUG A1 - active:1
+2013-07-02 09:58:44,154 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:58:44,170 DEBUG A1 - idle:19
+2013-07-02 09:58:44,170 DEBUG A1 - active:1
+2013-07-02 09:58:44,170 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:58:47,118 DEBUG A1 - idle:19
+2013-07-02 09:58:47,118 DEBUG A1 - active:1
+2013-07-02 09:58:47,337 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 09:58:49,693 DEBUG A1 - idle:19
+2013-07-02 09:58:49,693 DEBUG A1 - active:1
+2013-07-02 09:58:49,772 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 09:58:49,772 DEBUG A1 - idle:19
+2013-07-02 09:58:49,772 DEBUG A1 - active:1
+2013-07-02 09:58:49,788 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 09:59:12,704 DEBUG A1 - idle:19
+2013-07-02 09:59:12,704 DEBUG A1 - active:1
+2013-07-02 09:59:12,720 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 09:59:12,720 DEBUG A1 - idle:19
+2013-07-02 09:59:12,720 DEBUG A1 - active:1
+2013-07-02 09:59:12,735 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:10:03,679 DEBUG A1 - idle:19
+2013-07-02 10:10:03,679 DEBUG A1 - active:1
+2013-07-02 10:10:03,929 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:10:13,960 DEBUG A1 - idle:19
+2013-07-02 10:10:13,960 DEBUG A1 - active:1
+2013-07-02 10:10:15,116 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:12:23,021 DEBUG A1 - idle:19
+2013-07-02 10:12:23,021 DEBUG A1 - active:1
+2013-07-02 10:12:23,100 ERROR A1 - GetSummary
+com.microsoft.sqlserver.jdbc.SQLServerException: キーワード 'ON' 付近に不適切な構文があります。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.GetSummary.service(GetSummary.java:159)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-02 10:12:23,100 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:12:25,207 DEBUG A1 - idle:19
+2013-07-02 10:12:25,207 DEBUG A1 - active:1
+2013-07-02 10:12:25,238 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:12:25,238 DEBUG A1 - idle:19
+2013-07-02 10:12:25,238 DEBUG A1 - active:1
+2013-07-02 10:12:25,254 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:12:55,596 DEBUG A1 - idle:19
+2013-07-02 10:12:55,596 DEBUG A1 - active:1
+2013-07-02 10:12:55,611 ERROR A1 - GetSummary
+com.microsoft.sqlserver.jdbc.SQLServerException: キーワード 'ON' 付近に不適切な構文があります。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.GetSummary.service(GetSummary.java:159)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-02 10:12:55,611 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:12:56,222 DEBUG A1 - idle:19
+2013-07-02 10:12:56,222 DEBUG A1 - active:1
+2013-07-02 10:12:56,222 ERROR A1 - GetSummary
+com.microsoft.sqlserver.jdbc.SQLServerException: キーワード 'ON' 付近に不適切な構文があります。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.GetSummary.service(GetSummary.java:159)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-02 10:12:56,237 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:15:16,656 DEBUG A1 - idle:19
+2013-07-02 10:15:16,656 DEBUG A1 - active:1
+2013-07-02 10:15:17,952 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:15:30,931 DEBUG A1 - idle:19
+2013-07-02 10:15:30,931 DEBUG A1 - active:1
+2013-07-02 10:15:31,010 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:15:31,010 DEBUG A1 - idle:19
+2013-07-02 10:15:31,010 DEBUG A1 - active:1
+2013-07-02 10:15:31,541 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:16:22,367 DEBUG A1 - idle:19
+2013-07-02 10:16:22,367 DEBUG A1 - active:1
+2013-07-02 10:16:23,569 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:16:28,327 DEBUG A1 - idle:19
+2013-07-02 10:16:28,327 DEBUG A1 - active:1
+2013-07-02 10:16:28,406 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:16:28,406 DEBUG A1 - idle:19
+2013-07-02 10:16:28,406 DEBUG A1 - active:1
+2013-07-02 10:16:28,453 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:16:41,385 DEBUG A1 - idle:19
+2013-07-02 10:16:41,385 DEBUG A1 - active:1
+2013-07-02 10:16:41,401 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:16:47,828 DEBUG A1 - idle:19
+2013-07-02 10:16:47,828 DEBUG A1 - active:1
+2013-07-02 10:16:47,859 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:16:47,859 DEBUG A1 - idle:19
+2013-07-02 10:16:47,859 DEBUG A1 - active:1
+2013-07-02 10:16:47,875 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:19:48,260 DEBUG A1 - idle:19
+2013-07-02 10:19:48,260 DEBUG A1 - active:1
+2013-07-02 10:19:48,291 ERROR A1 - Search
+com.microsoft.sqlserver.jdbc.SQLServerException: パラメーター番号 5 に値が設定されていません。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.buildParamTypeDefinitions(SQLServerPreparedStatement.java:260)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.buildPreparedStrings(SQLServerPreparedStatement.java:219)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doPrepExec(SQLServerPreparedStatement.java:612)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:400)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.Search.service(Search.java:339)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-07-02 10:19:48,291 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:25:24,787 DEBUG A1 - idle:19
+2013-07-02 10:25:24,787 DEBUG A1 - active:1
+2013-07-02 10:25:25,536 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:25:58,718 DEBUG A1 - idle:19
+2013-07-02 10:25:58,718 DEBUG A1 - active:1
+2013-07-02 10:25:59,093 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:28:37,308 DEBUG A1 - idle:19
+2013-07-02 10:28:37,308 DEBUG A1 - active:1
+2013-07-02 10:28:37,372 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:28:37,372 DEBUG A1 - idle:19
+2013-07-02 10:28:37,372 DEBUG A1 - active:1
+2013-07-02 10:28:37,403 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:29:04,329 DEBUG A1 - idle:19
+2013-07-02 10:29:04,329 DEBUG A1 - active:1
+2013-07-02 10:29:04,344 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:29:15,764 DEBUG A1 - idle:19
+2013-07-02 10:29:15,764 DEBUG A1 - active:1
+2013-07-02 10:29:15,779 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:29:15,795 DEBUG A1 - idle:19
+2013-07-02 10:29:15,795 DEBUG A1 - active:1
+2013-07-02 10:29:15,810 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:53:06,635 DEBUG A1 - idle:19
+2013-07-02 10:53:06,635 DEBUG A1 - active:1
+2013-07-02 10:53:06,979 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:53:08,742 DEBUG A1 - idle:19
+2013-07-02 10:53:08,742 DEBUG A1 - active:1
+2013-07-02 10:53:09,083 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:53:09,098 DEBUG A1 - idle:19
+2013-07-02 10:53:09,098 DEBUG A1 - active:1
+2013-07-02 10:53:09,161 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:53:10,487 DEBUG A1 - idle:19
+2013-07-02 10:53:10,487 DEBUG A1 - active:1
+2013-07-02 10:53:10,533 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:53:10,549 DEBUG A1 - idle:19
+2013-07-02 10:53:10,549 DEBUG A1 - active:1
+2013-07-02 10:53:10,549 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:53:19,737 DEBUG A1 - idle:19
+2013-07-02 10:53:19,737 DEBUG A1 - active:1
+2013-07-02 10:53:19,987 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:53:23,419 DEBUG A1 - idle:19
+2013-07-02 10:53:23,419 DEBUG A1 - active:1
+2013-07-02 10:53:23,528  INFO A1 - T_売上_子は12件処理されました。
+2013-07-02 10:53:23,528 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:53:25,932 DEBUG A1 - idle:19
+2013-07-02 10:53:25,932 DEBUG A1 - active:1
+2013-07-02 10:53:25,974 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:53:25,978 DEBUG A1 - idle:19
+2013-07-02 10:53:25,978 DEBUG A1 - active:1
+2013-07-02 10:53:26,010 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:53:26,010 DEBUG A1 - idle:19
+2013-07-02 10:53:26,010 DEBUG A1 - active:1
+2013-07-02 10:53:26,026 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:53:26,026 DEBUG A1 - idle:19
+2013-07-02 10:53:26,026 DEBUG A1 - active:1
+2013-07-02 10:53:26,088 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:53:26,088 DEBUG A1 - idle:19
+2013-07-02 10:53:26,088 DEBUG A1 - active:1
+2013-07-02 10:53:26,104 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:53:26,104 DEBUG A1 - idle:19
+2013-07-02 10:53:26,104 DEBUG A1 - active:1
+2013-07-02 10:53:26,119 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:53:34,185 DEBUG A1 - idle:19
+2013-07-02 10:53:34,185 DEBUG A1 - active:1
+2013-07-02 10:53:34,185 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:53:35,839 DEBUG A1 - idle:19
+2013-07-02 10:53:35,839 DEBUG A1 - active:1
+2013-07-02 10:53:35,897 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:53:35,897 DEBUG A1 - idle:19
+2013-07-02 10:53:35,897 DEBUG A1 - active:1
+2013-07-02 10:53:35,913 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:53:39,158 DEBUG A1 - idle:19
+2013-07-02 10:53:39,158 DEBUG A1 - active:1
+2013-07-02 10:53:39,173 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:53:39,173 DEBUG A1 - idle:19
+2013-07-02 10:53:39,173 DEBUG A1 - active:1
+2013-07-02 10:53:39,189 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:53:45,117 DEBUG A1 - idle:19
+2013-07-02 10:53:45,117 DEBUG A1 - active:1
+2013-07-02 10:53:45,133 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:53:50,327 DEBUG A1 - idle:19
+2013-07-02 10:53:50,327 DEBUG A1 - active:1
+2013-07-02 10:53:50,359  INFO A1 - T_売上_子は9件処理されました。
+2013-07-02 10:53:50,374 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:53:51,779 DEBUG A1 - idle:19
+2013-07-02 10:53:51,779 DEBUG A1 - active:1
+2013-07-02 10:53:51,779 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:53:51,795 DEBUG A1 - idle:19
+2013-07-02 10:53:51,795 DEBUG A1 - active:1
+2013-07-02 10:53:51,858 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:53:51,858 DEBUG A1 - idle:19
+2013-07-02 10:53:51,858 DEBUG A1 - active:1
+2013-07-02 10:53:51,874 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:53:51,874 DEBUG A1 - idle:19
+2013-07-02 10:53:51,874 DEBUG A1 - active:1
+2013-07-02 10:53:51,921 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:53:51,936 DEBUG A1 - idle:19
+2013-07-02 10:53:51,936 DEBUG A1 - active:1
+2013-07-02 10:53:51,952 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:53:51,952 DEBUG A1 - idle:19
+2013-07-02 10:53:51,952 DEBUG A1 - active:1
+2013-07-02 10:53:51,967 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:54:07,630 DEBUG A1 - idle:19
+2013-07-02 10:54:07,630 DEBUG A1 - active:1
+2013-07-02 10:54:07,645 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:54:08,333 DEBUG A1 - idle:19
+2013-07-02 10:54:08,333 DEBUG A1 - active:1
+2013-07-02 10:54:08,395 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:54:08,411 DEBUG A1 - idle:19
+2013-07-02 10:54:08,411 DEBUG A1 - active:1
+2013-07-02 10:54:08,426 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:54:13,512 DEBUG A1 - idle:19
+2013-07-02 10:54:13,512 DEBUG A1 - active:1
+2013-07-02 10:54:13,528 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:54:13,528 DEBUG A1 - idle:19
+2013-07-02 10:54:13,528 DEBUG A1 - active:1
+2013-07-02 10:54:13,559 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:54:17,365 DEBUG A1 - idle:19
+2013-07-02 10:54:17,365 DEBUG A1 - active:1
+2013-07-02 10:54:17,365 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:54:18,941 DEBUG A1 - idle:19
+2013-07-02 10:54:18,941 DEBUG A1 - active:1
+2013-07-02 10:54:18,988  INFO A1 - T_売上_子は13件処理されました。
+2013-07-02 10:54:18,988 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:54:20,081 DEBUG A1 - idle:19
+2013-07-02 10:54:20,081 DEBUG A1 - active:1
+2013-07-02 10:54:20,081 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:54:20,096 DEBUG A1 - idle:19
+2013-07-02 10:54:20,096 DEBUG A1 - active:1
+2013-07-02 10:54:20,144 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:54:20,144 DEBUG A1 - idle:19
+2013-07-02 10:54:20,144 DEBUG A1 - active:1
+2013-07-02 10:54:20,160 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:54:20,160 DEBUG A1 - idle:19
+2013-07-02 10:54:20,160 DEBUG A1 - active:1
+2013-07-02 10:54:20,206 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:54:20,206 DEBUG A1 - idle:19
+2013-07-02 10:54:20,206 DEBUG A1 - active:1
+2013-07-02 10:54:20,222 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:54:20,222 DEBUG A1 - idle:19
+2013-07-02 10:54:20,222 DEBUG A1 - active:1
+2013-07-02 10:54:20,238 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:54:33,404 DEBUG A1 - idle:19
+2013-07-02 10:54:33,404 DEBUG A1 - active:1
+2013-07-02 10:54:33,499 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:54:34,669 DEBUG A1 - idle:19
+2013-07-02 10:54:34,669 DEBUG A1 - active:1
+2013-07-02 10:54:34,733 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:54:34,733 DEBUG A1 - idle:19
+2013-07-02 10:54:34,733 DEBUG A1 - active:1
+2013-07-02 10:54:34,748 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:54:41,628 DEBUG A1 - idle:19
+2013-07-02 10:54:41,628 DEBUG A1 - active:1
+2013-07-02 10:54:41,644 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:54:41,644 DEBUG A1 - idle:19
+2013-07-02 10:54:41,644 DEBUG A1 - active:1
+2013-07-02 10:54:41,659 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:54:47,041 DEBUG A1 - idle:19
+2013-07-02 10:54:47,041 DEBUG A1 - active:1
+2013-07-02 10:54:47,057 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:54:50,052 DEBUG A1 - idle:19
+2013-07-02 10:54:50,052 DEBUG A1 - active:1
+2013-07-02 10:54:50,083  INFO A1 - T_売上_子は9件処理されました。
+2013-07-02 10:54:50,083 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:54:51,395 DEBUG A1 - idle:19
+2013-07-02 10:54:51,395 DEBUG A1 - active:1
+2013-07-02 10:54:51,395 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:54:51,427 DEBUG A1 - idle:19
+2013-07-02 10:54:51,427 DEBUG A1 - active:1
+2013-07-02 10:54:51,474 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:54:51,474 DEBUG A1 - idle:19
+2013-07-02 10:54:51,474 DEBUG A1 - active:1
+2013-07-02 10:54:51,489 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:54:51,489 DEBUG A1 - idle:19
+2013-07-02 10:54:51,489 DEBUG A1 - active:1
+2013-07-02 10:54:51,536 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:54:51,536 DEBUG A1 - idle:19
+2013-07-02 10:54:51,536 DEBUG A1 - active:1
+2013-07-02 10:54:51,552 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:54:51,552 DEBUG A1 - idle:19
+2013-07-02 10:54:51,552 DEBUG A1 - active:1
+2013-07-02 10:54:51,567 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:54:55,951 DEBUG A1 - idle:19
+2013-07-02 10:54:55,951 DEBUG A1 - active:1
+2013-07-02 10:54:55,951 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:54:57,325 DEBUG A1 - idle:19
+2013-07-02 10:54:57,325 DEBUG A1 - active:1
+2013-07-02 10:54:57,404 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:54:57,404 DEBUG A1 - idle:19
+2013-07-02 10:54:57,404 DEBUG A1 - active:1
+2013-07-02 10:54:57,419 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:54:59,104 DEBUG A1 - idle:19
+2013-07-02 10:54:59,104 DEBUG A1 - active:1
+2013-07-02 10:54:59,120 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:54:59,135 DEBUG A1 - idle:19
+2013-07-02 10:54:59,135 DEBUG A1 - active:1
+2013-07-02 10:54:59,151 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:03,207 DEBUG A1 - idle:19
+2013-07-02 10:55:03,222 DEBUG A1 - active:1
+2013-07-02 10:55:03,222 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:55:04,502 DEBUG A1 - idle:19
+2013-07-02 10:55:04,502 DEBUG A1 - active:1
+2013-07-02 10:55:04,533  INFO A1 - T_売上_子は10件処理されました。
+2013-07-02 10:55:04,548 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:55:05,657 DEBUG A1 - idle:19
+2013-07-02 10:55:05,657 DEBUG A1 - active:1
+2013-07-02 10:55:05,657 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:55:05,673 DEBUG A1 - idle:19
+2013-07-02 10:55:05,673 DEBUG A1 - active:1
+2013-07-02 10:55:05,740 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:05,756 DEBUG A1 - idle:19
+2013-07-02 10:55:05,756 DEBUG A1 - active:1
+2013-07-02 10:55:05,771 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:05,771 DEBUG A1 - idle:19
+2013-07-02 10:55:05,771 DEBUG A1 - active:1
+2013-07-02 10:55:05,818 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:05,834 DEBUG A1 - idle:19
+2013-07-02 10:55:05,834 DEBUG A1 - active:1
+2013-07-02 10:55:05,834 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:05,849 DEBUG A1 - idle:19
+2013-07-02 10:55:05,849 DEBUG A1 - active:1
+2013-07-02 10:55:05,865 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:09,219 DEBUG A1 - idle:19
+2013-07-02 10:55:09,234 DEBUG A1 - active:1
+2013-07-02 10:55:09,234 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:55:10,015 DEBUG A1 - idle:19
+2013-07-02 10:55:10,015 DEBUG A1 - active:1
+2013-07-02 10:55:10,109 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:10,109 DEBUG A1 - idle:19
+2013-07-02 10:55:10,109 DEBUG A1 - active:1
+2013-07-02 10:55:10,125 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:11,232 DEBUG A1 - idle:19
+2013-07-02 10:55:11,232 DEBUG A1 - active:1
+2013-07-02 10:55:11,248 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:11,279 DEBUG A1 - idle:19
+2013-07-02 10:55:11,279 DEBUG A1 - active:1
+2013-07-02 10:55:11,295 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:14,430 DEBUG A1 - idle:19
+2013-07-02 10:55:14,430 DEBUG A1 - active:1
+2013-07-02 10:55:14,430 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:55:15,959 DEBUG A1 - idle:19
+2013-07-02 10:55:15,959 DEBUG A1 - active:1
+2013-07-02 10:55:15,990  INFO A1 - T_売上_子は12件処理されました。
+2013-07-02 10:55:16,006 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:55:17,115 DEBUG A1 - idle:19
+2013-07-02 10:55:17,115 DEBUG A1 - active:1
+2013-07-02 10:55:17,115 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:55:17,115 DEBUG A1 - idle:19
+2013-07-02 10:55:17,115 DEBUG A1 - active:1
+2013-07-02 10:55:17,521 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:17,537 DEBUG A1 - idle:19
+2013-07-02 10:55:17,537 DEBUG A1 - active:1
+2013-07-02 10:55:17,568 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:17,584 DEBUG A1 - idle:19
+2013-07-02 10:55:17,584 DEBUG A1 - active:1
+2013-07-02 10:55:17,646 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:17,646 DEBUG A1 - idle:19
+2013-07-02 10:55:17,646 DEBUG A1 - active:1
+2013-07-02 10:55:17,677 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:17,693 DEBUG A1 - idle:19
+2013-07-02 10:55:17,693 DEBUG A1 - active:1
+2013-07-02 10:55:17,724 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:24,401 DEBUG A1 - idle:19
+2013-07-02 10:55:24,401 DEBUG A1 - active:1
+2013-07-02 10:55:24,416 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:55:25,775 DEBUG A1 - idle:19
+2013-07-02 10:55:25,775 DEBUG A1 - active:1
+2013-07-02 10:55:25,815 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:25,821 DEBUG A1 - idle:19
+2013-07-02 10:55:25,821 DEBUG A1 - active:1
+2013-07-02 10:55:25,821 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:27,287 DEBUG A1 - idle:19
+2013-07-02 10:55:27,287 DEBUG A1 - active:1
+2013-07-02 10:55:27,287 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:27,303 DEBUG A1 - idle:19
+2013-07-02 10:55:27,303 DEBUG A1 - active:1
+2013-07-02 10:55:27,303 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:30,392 DEBUG A1 - idle:19
+2013-07-02 10:55:30,392 DEBUG A1 - active:1
+2013-07-02 10:55:30,392 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:55:31,624 DEBUG A1 - idle:19
+2013-07-02 10:55:31,624 DEBUG A1 - active:1
+2013-07-02 10:55:31,655  INFO A1 - T_売上_子は6件処理されました。
+2013-07-02 10:55:31,671 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:55:32,748 DEBUG A1 - idle:19
+2013-07-02 10:55:32,748 DEBUG A1 - active:1
+2013-07-02 10:55:32,748 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:55:32,764 DEBUG A1 - idle:19
+2013-07-02 10:55:32,764 DEBUG A1 - active:1
+2013-07-02 10:55:32,825 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:32,825 DEBUG A1 - idle:19
+2013-07-02 10:55:32,825 DEBUG A1 - active:1
+2013-07-02 10:55:32,840 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:32,840 DEBUG A1 - idle:19
+2013-07-02 10:55:32,840 DEBUG A1 - active:1
+2013-07-02 10:55:32,887 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:32,887 DEBUG A1 - idle:19
+2013-07-02 10:55:32,887 DEBUG A1 - active:1
+2013-07-02 10:55:32,903 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:32,903 DEBUG A1 - idle:19
+2013-07-02 10:55:32,903 DEBUG A1 - active:1
+2013-07-02 10:55:32,918 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:38,316 DEBUG A1 - idle:19
+2013-07-02 10:55:38,316 DEBUG A1 - active:1
+2013-07-02 10:55:38,316 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:55:39,159 DEBUG A1 - idle:19
+2013-07-02 10:55:39,159 DEBUG A1 - active:1
+2013-07-02 10:55:39,222 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:39,222 DEBUG A1 - idle:19
+2013-07-02 10:55:39,222 DEBUG A1 - active:1
+2013-07-02 10:55:39,237 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:40,594 DEBUG A1 - idle:19
+2013-07-02 10:55:40,594 DEBUG A1 - active:1
+2013-07-02 10:55:40,610 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:40,626 DEBUG A1 - idle:19
+2013-07-02 10:55:40,626 DEBUG A1 - active:1
+2013-07-02 10:55:40,641 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:45,181 DEBUG A1 - idle:19
+2013-07-02 10:55:45,181 DEBUG A1 - active:1
+2013-07-02 10:55:45,181 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:55:46,554 DEBUG A1 - idle:19
+2013-07-02 10:55:46,554 DEBUG A1 - active:1
+2013-07-02 10:55:46,585  INFO A1 - T_売上_子は12件処理されました。
+2013-07-02 10:55:46,600 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:55:47,631 DEBUG A1 - idle:19
+2013-07-02 10:55:47,631 DEBUG A1 - active:1
+2013-07-02 10:55:47,631 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:55:47,647 DEBUG A1 - idle:19
+2013-07-02 10:55:47,647 DEBUG A1 - active:1
+2013-07-02 10:55:47,694 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:47,694 DEBUG A1 - idle:19
+2013-07-02 10:55:47,694 DEBUG A1 - active:1
+2013-07-02 10:55:47,710 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:47,710 DEBUG A1 - idle:19
+2013-07-02 10:55:47,710 DEBUG A1 - active:1
+2013-07-02 10:55:47,772 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:47,772 DEBUG A1 - idle:19
+2013-07-02 10:55:47,772 DEBUG A1 - active:1
+2013-07-02 10:55:47,804 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:47,804 DEBUG A1 - idle:19
+2013-07-02 10:55:47,804 DEBUG A1 - active:1
+2013-07-02 10:55:47,819 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:50,924 DEBUG A1 - idle:19
+2013-07-02 10:55:50,924 DEBUG A1 - active:1
+2013-07-02 10:55:50,924 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:55:52,002 DEBUG A1 - idle:19
+2013-07-02 10:55:52,002 DEBUG A1 - active:1
+2013-07-02 10:55:52,057 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:55:52,072 DEBUG A1 - idle:19
+2013-07-02 10:55:52,072 DEBUG A1 - active:1
+2013-07-02 10:55:52,088 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:55:53,149 DEBUG A1 - idle:19
+2013-07-02 10:55:53,149 DEBUG A1 - active:1
+2013-07-02 10:55:53,180 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:53,180 DEBUG A1 - idle:19
+2013-07-02 10:55:53,180 DEBUG A1 - active:1
+2013-07-02 10:55:53,211 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:55:58,671 DEBUG A1 - idle:19
+2013-07-02 10:55:58,671 DEBUG A1 - active:1
+2013-07-02 10:55:58,671 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:56:00,918 DEBUG A1 - idle:19
+2013-07-02 10:56:00,918 DEBUG A1 - active:1
+2013-07-02 10:56:00,949  INFO A1 - T_売上_子は23件処理されました。
+2013-07-02 10:56:00,981 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:56:02,057 DEBUG A1 - idle:19
+2013-07-02 10:56:02,057 DEBUG A1 - active:1
+2013-07-02 10:56:02,057 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:56:02,073 DEBUG A1 - idle:19
+2013-07-02 10:56:02,073 DEBUG A1 - active:1
+2013-07-02 10:56:02,121 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:56:02,121 DEBUG A1 - idle:19
+2013-07-02 10:56:02,121 DEBUG A1 - active:1
+2013-07-02 10:56:02,136 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:56:02,152 DEBUG A1 - idle:19
+2013-07-02 10:56:02,152 DEBUG A1 - active:1
+2013-07-02 10:56:02,183 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:56:02,183 DEBUG A1 - idle:19
+2013-07-02 10:56:02,183 DEBUG A1 - active:1
+2013-07-02 10:56:02,199 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:56:02,214 DEBUG A1 - idle:19
+2013-07-02 10:56:02,214 DEBUG A1 - active:1
+2013-07-02 10:56:02,230 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:56:18,064 DEBUG A1 - idle:19
+2013-07-02 10:56:18,064 DEBUG A1 - active:1
+2013-07-02 10:56:18,080 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:56:19,438 DEBUG A1 - idle:19
+2013-07-02 10:56:19,438 DEBUG A1 - active:1
+2013-07-02 10:56:19,501 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:56:19,501 DEBUG A1 - idle:19
+2013-07-02 10:56:19,501 DEBUG A1 - active:1
+2013-07-02 10:56:19,517 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:56:21,935 DEBUG A1 - idle:19
+2013-07-02 10:56:21,935 DEBUG A1 - active:1
+2013-07-02 10:56:21,950 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:56:21,966 DEBUG A1 - idle:19
+2013-07-02 10:56:21,966 DEBUG A1 - active:1
+2013-07-02 10:56:21,982 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:56:24,556 DEBUG A1 - idle:19
+2013-07-02 10:56:24,556 DEBUG A1 - active:1
+2013-07-02 10:56:24,556 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:56:25,351 DEBUG A1 - idle:19
+2013-07-02 10:56:25,351 DEBUG A1 - active:1
+2013-07-02 10:56:25,398  INFO A1 - T_売上_子は10件処理されました。
+2013-07-02 10:56:25,398 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:56:26,257 DEBUG A1 - idle:19
+2013-07-02 10:56:26,257 DEBUG A1 - active:1
+2013-07-02 10:56:26,288 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:56:26,288 DEBUG A1 - idle:19
+2013-07-02 10:56:26,288 DEBUG A1 - active:1
+2013-07-02 10:56:26,351 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:56:26,351 DEBUG A1 - idle:19
+2013-07-02 10:56:26,351 DEBUG A1 - active:1
+2013-07-02 10:56:26,366 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:56:26,366 DEBUG A1 - idle:19
+2013-07-02 10:56:26,366 DEBUG A1 - active:1
+2013-07-02 10:56:26,413 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:56:26,413 DEBUG A1 - idle:19
+2013-07-02 10:56:26,413 DEBUG A1 - active:1
+2013-07-02 10:56:26,429 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:56:26,429 DEBUG A1 - idle:19
+2013-07-02 10:56:26,429 DEBUG A1 - active:1
+2013-07-02 10:56:26,444 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:56:45,398 DEBUG A1 - idle:19
+2013-07-02 10:56:45,398 DEBUG A1 - active:1
+2013-07-02 10:56:45,414 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:56:46,429 DEBUG A1 - idle:19
+2013-07-02 10:56:46,429 DEBUG A1 - active:1
+2013-07-02 10:56:46,492 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:56:46,492 DEBUG A1 - idle:19
+2013-07-02 10:56:46,492 DEBUG A1 - active:1
+2013-07-02 10:56:46,523 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:56:47,818 DEBUG A1 - idle:19
+2013-07-02 10:56:47,818 DEBUG A1 - active:1
+2013-07-02 10:56:47,849 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:56:47,849 DEBUG A1 - idle:19
+2013-07-02 10:56:47,849 DEBUG A1 - active:1
+2013-07-02 10:56:47,865 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:57:16,616 DEBUG A1 - idle:19
+2013-07-02 10:57:16,616 DEBUG A1 - active:1
+2013-07-02 10:57:16,632 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:57:21,202 DEBUG A1 - idle:19
+2013-07-02 10:57:21,202 DEBUG A1 - active:1
+2013-07-02 10:57:21,234  INFO A1 - T_売上_子は8件処理されました。
+2013-07-02 10:57:21,234 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:57:23,091 DEBUG A1 - idle:19
+2013-07-02 10:57:23,091 DEBUG A1 - active:1
+2013-07-02 10:57:23,091 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:57:23,124 DEBUG A1 - idle:19
+2013-07-02 10:57:23,124 DEBUG A1 - active:1
+2013-07-02 10:57:23,171 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:57:23,171 DEBUG A1 - idle:19
+2013-07-02 10:57:23,171 DEBUG A1 - active:1
+2013-07-02 10:57:23,187 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:57:23,202 DEBUG A1 - idle:19
+2013-07-02 10:57:23,202 DEBUG A1 - active:1
+2013-07-02 10:57:23,233 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:57:23,233 DEBUG A1 - idle:19
+2013-07-02 10:57:23,233 DEBUG A1 - active:1
+2013-07-02 10:57:23,249 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:57:23,249 DEBUG A1 - idle:19
+2013-07-02 10:57:23,249 DEBUG A1 - active:1
+2013-07-02 10:57:23,265 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:57:31,767 DEBUG A1 - idle:19
+2013-07-02 10:57:31,767 DEBUG A1 - active:1
+2013-07-02 10:57:31,782 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:57:32,938 DEBUG A1 - idle:19
+2013-07-02 10:57:32,938 DEBUG A1 - active:1
+2013-07-02 10:57:32,985 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:57:33,001 DEBUG A1 - idle:19
+2013-07-02 10:57:33,001 DEBUG A1 - active:1
+2013-07-02 10:57:33,017 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:57:34,421 DEBUG A1 - idle:19
+2013-07-02 10:57:34,421 DEBUG A1 - active:1
+2013-07-02 10:57:34,436 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:57:34,436 DEBUG A1 - idle:19
+2013-07-02 10:57:34,436 DEBUG A1 - active:1
+2013-07-02 10:57:34,452 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:57:38,118 DEBUG A1 - idle:19
+2013-07-02 10:57:38,118 DEBUG A1 - active:1
+2013-07-02 10:57:38,133 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:57:39,179 DEBUG A1 - idle:19
+2013-07-02 10:57:39,179 DEBUG A1 - active:1
+2013-07-02 10:57:39,225  INFO A1 - T_売上_子は13件処理されました。
+2013-07-02 10:57:39,225 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:57:39,850 DEBUG A1 - idle:19
+2013-07-02 10:57:39,850 DEBUG A1 - active:1
+2013-07-02 10:57:39,866 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:57:39,866 DEBUG A1 - idle:19
+2013-07-02 10:57:39,866 DEBUG A1 - active:1
+2013-07-02 10:57:39,928 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:57:39,944 DEBUG A1 - idle:19
+2013-07-02 10:57:39,944 DEBUG A1 - active:1
+2013-07-02 10:57:39,960 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:57:39,960 DEBUG A1 - idle:19
+2013-07-02 10:57:39,960 DEBUG A1 - active:1
+2013-07-02 10:57:40,006 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:57:40,022 DEBUG A1 - idle:19
+2013-07-02 10:57:40,022 DEBUG A1 - active:1
+2013-07-02 10:57:40,022 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:57:40,038 DEBUG A1 - idle:19
+2013-07-02 10:57:40,038 DEBUG A1 - active:1
+2013-07-02 10:57:40,069 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:57:48,009 DEBUG A1 - idle:19
+2013-07-02 10:57:48,009 DEBUG A1 - active:1
+2013-07-02 10:57:48,009 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:57:48,821 DEBUG A1 - idle:19
+2013-07-02 10:57:48,821 DEBUG A1 - active:1
+2013-07-02 10:57:48,868 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:57:48,868 DEBUG A1 - idle:19
+2013-07-02 10:57:48,868 DEBUG A1 - active:1
+2013-07-02 10:57:48,884 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:57:50,054 DEBUG A1 - idle:19
+2013-07-02 10:57:50,054 DEBUG A1 - active:1
+2013-07-02 10:57:50,069 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:57:50,069 DEBUG A1 - idle:19
+2013-07-02 10:57:50,069 DEBUG A1 - active:1
+2013-07-02 10:57:50,085 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:57:53,127 DEBUG A1 - idle:19
+2013-07-02 10:57:53,127 DEBUG A1 - active:1
+2013-07-02 10:57:53,143 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:57:54,313 DEBUG A1 - idle:19
+2013-07-02 10:57:54,313 DEBUG A1 - active:1
+2013-07-02 10:57:54,344  INFO A1 - T_売上_子は10件処理されました。
+2013-07-02 10:57:54,359 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:57:54,844 DEBUG A1 - idle:19
+2013-07-02 10:57:54,844 DEBUG A1 - active:1
+2013-07-02 10:57:54,860 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:57:54,875 DEBUG A1 - idle:19
+2013-07-02 10:57:54,875 DEBUG A1 - active:1
+2013-07-02 10:57:54,906 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:57:54,906 DEBUG A1 - idle:19
+2013-07-02 10:57:54,906 DEBUG A1 - active:1
+2013-07-02 10:57:54,922 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:57:54,922 DEBUG A1 - idle:19
+2013-07-02 10:57:54,922 DEBUG A1 - active:1
+2013-07-02 10:57:54,953 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:57:54,969 DEBUG A1 - idle:19
+2013-07-02 10:57:54,969 DEBUG A1 - active:1
+2013-07-02 10:57:54,969 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:57:54,984 DEBUG A1 - idle:19
+2013-07-02 10:57:54,984 DEBUG A1 - active:1
+2013-07-02 10:57:54,984 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:58:02,270 DEBUG A1 - idle:19
+2013-07-02 10:58:02,270 DEBUG A1 - active:1
+2013-07-02 10:58:02,270 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:58:04,236 DEBUG A1 - idle:19
+2013-07-02 10:58:04,236 DEBUG A1 - active:1
+2013-07-02 10:58:04,454 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:58:04,470 DEBUG A1 - idle:19
+2013-07-02 10:58:04,470 DEBUG A1 - active:1
+2013-07-02 10:58:04,485 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:58:05,827 DEBUG A1 - idle:19
+2013-07-02 10:58:05,827 DEBUG A1 - active:1
+2013-07-02 10:58:05,842 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:58:05,842 DEBUG A1 - idle:19
+2013-07-02 10:58:05,842 DEBUG A1 - active:1
+2013-07-02 10:58:05,858 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:58:11,412 DEBUG A1 - idle:19
+2013-07-02 10:58:11,412 DEBUG A1 - active:1
+2013-07-02 10:58:11,412 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:58:13,330 DEBUG A1 - idle:19
+2013-07-02 10:58:13,330 DEBUG A1 - active:1
+2013-07-02 10:58:13,362  INFO A1 - T_売上_子は7件処理されました。
+2013-07-02 10:58:13,394 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:58:14,111 DEBUG A1 - idle:19
+2013-07-02 10:58:14,111 DEBUG A1 - active:1
+2013-07-02 10:58:14,127 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:58:14,143 DEBUG A1 - idle:19
+2013-07-02 10:58:14,143 DEBUG A1 - active:1
+2013-07-02 10:58:14,205 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:58:14,205 DEBUG A1 - idle:19
+2013-07-02 10:58:14,205 DEBUG A1 - active:1
+2013-07-02 10:58:14,221 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:58:14,221 DEBUG A1 - idle:19
+2013-07-02 10:58:14,221 DEBUG A1 - active:1
+2013-07-02 10:58:14,252 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:58:14,267 DEBUG A1 - idle:19
+2013-07-02 10:58:14,267 DEBUG A1 - active:1
+2013-07-02 10:58:14,267 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:58:14,283 DEBUG A1 - idle:19
+2013-07-02 10:58:14,283 DEBUG A1 - active:1
+2013-07-02 10:58:14,314 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:58:20,429 DEBUG A1 - idle:19
+2013-07-02 10:58:20,429 DEBUG A1 - active:1
+2013-07-02 10:58:20,429 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:58:21,288 DEBUG A1 - idle:19
+2013-07-02 10:58:21,288 DEBUG A1 - active:1
+2013-07-02 10:58:21,351 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:58:21,351 DEBUG A1 - idle:19
+2013-07-02 10:58:21,351 DEBUG A1 - active:1
+2013-07-02 10:58:21,366 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:58:22,271 DEBUG A1 - idle:19
+2013-07-02 10:58:22,271 DEBUG A1 - active:1
+2013-07-02 10:58:22,287 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:58:22,302 DEBUG A1 - idle:19
+2013-07-02 10:58:22,302 DEBUG A1 - active:1
+2013-07-02 10:58:22,318 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:58:25,110 DEBUG A1 - idle:19
+2013-07-02 10:58:25,110 DEBUG A1 - active:1
+2013-07-02 10:58:25,126 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:58:26,530 DEBUG A1 - idle:19
+2013-07-02 10:58:26,530 DEBUG A1 - active:1
+2013-07-02 10:58:26,561  INFO A1 - T_売上_子は4件処理されました。
+2013-07-02 10:58:26,561 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:58:27,405 DEBUG A1 - idle:19
+2013-07-02 10:58:27,405 DEBUG A1 - active:1
+2013-07-02 10:58:27,405 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:58:27,420 DEBUG A1 - idle:19
+2013-07-02 10:58:27,420 DEBUG A1 - active:1
+2013-07-02 10:58:27,483 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:58:27,483 DEBUG A1 - idle:19
+2013-07-02 10:58:27,483 DEBUG A1 - active:1
+2013-07-02 10:58:27,498 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:58:27,498 DEBUG A1 - idle:19
+2013-07-02 10:58:27,498 DEBUG A1 - active:1
+2013-07-02 10:58:27,561 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:58:27,561 DEBUG A1 - idle:19
+2013-07-02 10:58:27,561 DEBUG A1 - active:1
+2013-07-02 10:58:27,576 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:58:27,592 DEBUG A1 - idle:19
+2013-07-02 10:58:27,592 DEBUG A1 - active:1
+2013-07-02 10:58:27,592 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:58:36,000 DEBUG A1 - idle:19
+2013-07-02 10:58:36,000 DEBUG A1 - active:1
+2013-07-02 10:58:36,000 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:58:36,890 DEBUG A1 - idle:19
+2013-07-02 10:58:36,890 DEBUG A1 - active:1
+2013-07-02 10:58:36,953 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:58:36,953 DEBUG A1 - idle:19
+2013-07-02 10:58:36,953 DEBUG A1 - active:1
+2013-07-02 10:58:36,968 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:58:39,402 DEBUG A1 - idle:19
+2013-07-02 10:58:39,402 DEBUG A1 - active:1
+2013-07-02 10:58:39,418 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:58:39,433 DEBUG A1 - idle:19
+2013-07-02 10:58:39,433 DEBUG A1 - active:1
+2013-07-02 10:58:39,449 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:58:43,115 DEBUG A1 - idle:19
+2013-07-02 10:58:43,115 DEBUG A1 - active:1
+2013-07-02 10:58:43,115 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:58:44,269 DEBUG A1 - idle:19
+2013-07-02 10:58:44,269 DEBUG A1 - active:1
+2013-07-02 10:58:44,316  INFO A1 - T_売上_子は9件処理されました。
+2013-07-02 10:58:44,316 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:58:44,957 DEBUG A1 - idle:19
+2013-07-02 10:58:44,957 DEBUG A1 - active:1
+2013-07-02 10:58:44,972 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:58:44,972 DEBUG A1 - idle:19
+2013-07-02 10:58:44,972 DEBUG A1 - active:1
+2013-07-02 10:58:45,050 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:58:45,066 DEBUG A1 - idle:19
+2013-07-02 10:58:45,066 DEBUG A1 - active:1
+2013-07-02 10:58:45,081 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:58:45,081 DEBUG A1 - idle:19
+2013-07-02 10:58:45,081 DEBUG A1 - active:1
+2013-07-02 10:58:45,128 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:58:45,144 DEBUG A1 - idle:19
+2013-07-02 10:58:45,144 DEBUG A1 - active:1
+2013-07-02 10:58:45,144 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:58:45,159 DEBUG A1 - idle:19
+2013-07-02 10:58:45,159 DEBUG A1 - active:1
+2013-07-02 10:58:45,175 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:58:57,717 DEBUG A1 - idle:19
+2013-07-02 10:58:57,717 DEBUG A1 - active:1
+2013-07-02 10:58:57,717 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:58:58,405 DEBUG A1 - idle:19
+2013-07-02 10:58:58,405 DEBUG A1 - active:1
+2013-07-02 10:58:58,467 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:58:58,467 DEBUG A1 - idle:19
+2013-07-02 10:58:58,467 DEBUG A1 - active:1
+2013-07-02 10:58:58,483 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:58:59,138 DEBUG A1 - idle:19
+2013-07-02 10:58:59,138 DEBUG A1 - active:1
+2013-07-02 10:58:59,154 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:58:59,169 DEBUG A1 - idle:19
+2013-07-02 10:58:59,169 DEBUG A1 - active:1
+2013-07-02 10:58:59,169 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:59:22,226 DEBUG A1 - idle:19
+2013-07-02 10:59:22,226 DEBUG A1 - active:1
+2013-07-02 10:59:22,226 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:59:25,611 DEBUG A1 - idle:19
+2013-07-02 10:59:25,611 DEBUG A1 - active:1
+2013-07-02 10:59:25,643  INFO A1 - T_売上_子は5件処理されました。
+2013-07-02 10:59:25,643 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:59:26,439 DEBUG A1 - idle:19
+2013-07-02 10:59:26,439 DEBUG A1 - active:1
+2013-07-02 10:59:26,439 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:59:26,470 DEBUG A1 - idle:19
+2013-07-02 10:59:26,470 DEBUG A1 - active:1
+2013-07-02 10:59:26,517 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:59:26,533 DEBUG A1 - idle:19
+2013-07-02 10:59:26,533 DEBUG A1 - active:1
+2013-07-02 10:59:26,548 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:59:26,548 DEBUG A1 - idle:19
+2013-07-02 10:59:26,548 DEBUG A1 - active:1
+2013-07-02 10:59:26,611 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:59:26,611 DEBUG A1 - idle:19
+2013-07-02 10:59:26,611 DEBUG A1 - active:1
+2013-07-02 10:59:26,626 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:59:26,626 DEBUG A1 - idle:19
+2013-07-02 10:59:26,626 DEBUG A1 - active:1
+2013-07-02 10:59:26,642 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:59:36,127 DEBUG A1 - idle:19
+2013-07-02 10:59:36,127 DEBUG A1 - active:1
+2013-07-02 10:59:36,142 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:59:37,204 DEBUG A1 - idle:19
+2013-07-02 10:59:37,204 DEBUG A1 - active:1
+2013-07-02 10:59:37,262 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:59:37,278 DEBUG A1 - idle:19
+2013-07-02 10:59:37,278 DEBUG A1 - active:1
+2013-07-02 10:59:37,278 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:59:38,354 DEBUG A1 - idle:19
+2013-07-02 10:59:38,354 DEBUG A1 - active:1
+2013-07-02 10:59:38,370 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:59:38,370 DEBUG A1 - idle:19
+2013-07-02 10:59:38,370 DEBUG A1 - active:1
+2013-07-02 10:59:38,401 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:59:41,162 DEBUG A1 - idle:19
+2013-07-02 10:59:41,162 DEBUG A1 - active:1
+2013-07-02 10:59:41,162 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 10:59:42,130 DEBUG A1 - idle:19
+2013-07-02 10:59:42,130 DEBUG A1 - active:1
+2013-07-02 10:59:42,161  INFO A1 - T_売上_子は5件処理されました。
+2013-07-02 10:59:42,176 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 10:59:43,131 DEBUG A1 - idle:19
+2013-07-02 10:59:43,131 DEBUG A1 - active:1
+2013-07-02 10:59:43,147 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 10:59:43,162 DEBUG A1 - idle:19
+2013-07-02 10:59:43,162 DEBUG A1 - active:1
+2013-07-02 10:59:43,211 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:59:43,211 DEBUG A1 - idle:19
+2013-07-02 10:59:43,211 DEBUG A1 - active:1
+2013-07-02 10:59:43,227 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:59:43,227 DEBUG A1 - idle:19
+2013-07-02 10:59:43,227 DEBUG A1 - active:1
+2013-07-02 10:59:43,273 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:59:43,273 DEBUG A1 - idle:19
+2013-07-02 10:59:43,289 DEBUG A1 - active:1
+2013-07-02 10:59:43,289 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:59:43,305 DEBUG A1 - idle:19
+2013-07-02 10:59:43,305 DEBUG A1 - active:1
+2013-07-02 10:59:43,305 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:59:52,930 DEBUG A1 - idle:19
+2013-07-02 10:59:52,930 DEBUG A1 - active:1
+2013-07-02 10:59:52,945 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 10:59:54,210 DEBUG A1 - idle:19
+2013-07-02 10:59:54,210 DEBUG A1 - active:1
+2013-07-02 10:59:54,289 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 10:59:54,289 DEBUG A1 - idle:19
+2013-07-02 10:59:54,289 DEBUG A1 - active:1
+2013-07-02 10:59:54,305 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 10:59:55,365 DEBUG A1 - idle:19
+2013-07-02 10:59:55,365 DEBUG A1 - active:1
+2013-07-02 10:59:55,381 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 10:59:55,381 DEBUG A1 - idle:19
+2013-07-02 10:59:55,381 DEBUG A1 - active:1
+2013-07-02 10:59:55,397 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:00:01,699 DEBUG A1 - idle:19
+2013-07-02 11:00:01,699 DEBUG A1 - active:1
+2013-07-02 11:00:01,699 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:00:16,800 DEBUG A1 - idle:19
+2013-07-02 11:00:16,800 DEBUG A1 - active:1
+2013-07-02 11:00:16,800 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:00:23,898 DEBUG A1 - idle:19
+2013-07-02 11:00:23,898 DEBUG A1 - active:1
+2013-07-02 11:00:23,898 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:00:38,889 DEBUG A1 - idle:19
+2013-07-02 11:00:38,889 DEBUG A1 - active:1
+2013-07-02 11:00:38,936  INFO A1 - T_売上_子は12件処理されました。
+2013-07-02 11:00:38,953 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:00:40,060 DEBUG A1 - idle:19
+2013-07-02 11:00:40,060 DEBUG A1 - active:1
+2013-07-02 11:00:40,076 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:00:40,092 DEBUG A1 - idle:19
+2013-07-02 11:00:40,092 DEBUG A1 - active:1
+2013-07-02 11:00:40,139 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:00:40,155 DEBUG A1 - idle:19
+2013-07-02 11:00:40,155 DEBUG A1 - active:1
+2013-07-02 11:00:40,155 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:00:40,171 DEBUG A1 - idle:19
+2013-07-02 11:00:40,171 DEBUG A1 - active:1
+2013-07-02 11:00:40,233 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:00:40,249 DEBUG A1 - idle:19
+2013-07-02 11:00:40,249 DEBUG A1 - active:1
+2013-07-02 11:00:40,264 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:00:40,264 DEBUG A1 - idle:19
+2013-07-02 11:00:40,264 DEBUG A1 - active:1
+2013-07-02 11:00:40,280 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:00:54,804 DEBUG A1 - idle:19
+2013-07-02 11:00:54,804 DEBUG A1 - active:1
+2013-07-02 11:00:54,835 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:00:56,177 DEBUG A1 - idle:19
+2013-07-02 11:00:56,177 DEBUG A1 - active:1
+2013-07-02 11:00:56,249 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:00:56,249 DEBUG A1 - idle:19
+2013-07-02 11:00:56,249 DEBUG A1 - active:1
+2013-07-02 11:00:56,265 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:00:57,825 DEBUG A1 - idle:19
+2013-07-02 11:00:57,825 DEBUG A1 - active:1
+2013-07-02 11:00:57,840 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:00:57,856 DEBUG A1 - idle:19
+2013-07-02 11:00:57,856 DEBUG A1 - active:1
+2013-07-02 11:00:57,872 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:02:32,923 DEBUG A1 - idle:19
+2013-07-02 11:02:32,923 DEBUG A1 - active:1
+2013-07-02 11:02:32,939 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:02:32,955 DEBUG A1 - idle:19
+2013-07-02 11:02:32,955 DEBUG A1 - active:1
+2013-07-02 11:02:32,970 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:02:55,138 DEBUG A1 - idle:19
+2013-07-02 11:02:55,138 DEBUG A1 - active:1
+2013-07-02 11:02:55,138 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:02:55,919 DEBUG A1 - idle:19
+2013-07-02 11:02:55,919 DEBUG A1 - active:1
+2013-07-02 11:02:55,981 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:02:55,981 DEBUG A1 - idle:19
+2013-07-02 11:02:55,981 DEBUG A1 - active:1
+2013-07-02 11:02:55,997 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:02:59,928 DEBUG A1 - idle:19
+2013-07-02 11:02:59,928 DEBUG A1 - active:1
+2013-07-02 11:02:59,944 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:02:59,944 DEBUG A1 - idle:19
+2013-07-02 11:02:59,944 DEBUG A1 - active:1
+2013-07-02 11:02:59,975 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:03:10,193 DEBUG A1 - idle:19
+2013-07-02 11:03:10,193 DEBUG A1 - active:1
+2013-07-02 11:03:10,209 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:03:50,535 DEBUG A1 - idle:19
+2013-07-02 11:03:50,535 DEBUG A1 - active:1
+2013-07-02 11:03:50,550 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:03:50,550 DEBUG A1 - idle:19
+2013-07-02 11:03:50,550 DEBUG A1 - active:1
+2013-07-02 11:03:50,566 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:04:03,436 DEBUG A1 - idle:19
+2013-07-02 11:04:03,436 DEBUG A1 - active:1
+2013-07-02 11:04:03,467 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:04:05,292 DEBUG A1 - idle:19
+2013-07-02 11:04:05,292 DEBUG A1 - active:1
+2013-07-02 11:04:05,323 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:04:08,490 DEBUG A1 - idle:19
+2013-07-02 11:04:08,490 DEBUG A1 - active:1
+2013-07-02 11:04:08,553 DEBUG A1 - DeleteSlip
+ps is closed by jdbc4.0
+2013-07-02 11:04:12,719 DEBUG A1 - idle:19
+2013-07-02 11:04:12,719 DEBUG A1 - active:1
+2013-07-02 11:04:12,750 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:05:56,226 DEBUG A1 - idle:19
+2013-07-02 11:05:56,226 DEBUG A1 - active:1
+2013-07-02 11:05:56,226 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:05:56,991 DEBUG A1 - idle:19
+2013-07-02 11:05:56,991 DEBUG A1 - active:1
+2013-07-02 11:05:57,038 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:05:57,038 DEBUG A1 - idle:19
+2013-07-02 11:05:57,038 DEBUG A1 - active:1
+2013-07-02 11:05:57,054 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:05:58,317 DEBUG A1 - idle:19
+2013-07-02 11:05:58,317 DEBUG A1 - active:1
+2013-07-02 11:05:58,349 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:05:58,349 DEBUG A1 - idle:19
+2013-07-02 11:05:58,349 DEBUG A1 - active:1
+2013-07-02 11:05:58,364 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:06:03,044 DEBUG A1 - idle:19
+2013-07-02 11:06:03,044 DEBUG A1 - active:1
+2013-07-02 11:06:03,075 DEBUG A1 - DeleteSlip
+ps is closed by jdbc4.0
+2013-07-02 11:07:18,129 DEBUG A1 - idle:19
+2013-07-02 11:07:18,129 DEBUG A1 - active:1
+2013-07-02 11:07:18,145 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:07:18,754 DEBUG A1 - idle:19
+2013-07-02 11:07:18,754 DEBUG A1 - active:1
+2013-07-02 11:07:18,817 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:07:18,817 DEBUG A1 - idle:19
+2013-07-02 11:07:18,817 DEBUG A1 - active:1
+2013-07-02 11:07:18,832 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:07:19,987 DEBUG A1 - idle:19
+2013-07-02 11:07:19,987 DEBUG A1 - active:1
+2013-07-02 11:07:20,002 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:07:20,002 DEBUG A1 - idle:19
+2013-07-02 11:07:20,002 DEBUG A1 - active:1
+2013-07-02 11:07:20,018 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:08:07,785 DEBUG A1 - idle:19
+2013-07-02 11:08:07,785 DEBUG A1 - active:1
+2013-07-02 11:08:07,785 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:08:08,831 DEBUG A1 - idle:19
+2013-07-02 11:08:08,831 DEBUG A1 - active:1
+2013-07-02 11:08:08,895 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:08:08,895 DEBUG A1 - idle:19
+2013-07-02 11:08:08,895 DEBUG A1 - active:1
+2013-07-02 11:08:08,910 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:08:12,311 DEBUG A1 - idle:19
+2013-07-02 11:08:12,311 DEBUG A1 - active:1
+2013-07-02 11:08:12,327 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:08:12,327 DEBUG A1 - idle:19
+2013-07-02 11:08:12,327 DEBUG A1 - active:1
+2013-07-02 11:08:12,358 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:09:36,863 DEBUG A1 - idle:19
+2013-07-02 11:09:36,863 DEBUG A1 - active:1
+2013-07-02 11:09:36,863 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:09:51,605 DEBUG A1 - idle:19
+2013-07-02 11:09:51,605 DEBUG A1 - active:1
+2013-07-02 11:09:51,636  INFO A1 - T_売上_子は6件処理されました。
+2013-07-02 11:09:51,636 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:09:52,901 DEBUG A1 - idle:19
+2013-07-02 11:09:52,901 DEBUG A1 - active:1
+2013-07-02 11:09:52,901 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:09:52,917 DEBUG A1 - idle:19
+2013-07-02 11:09:52,917 DEBUG A1 - active:1
+2013-07-02 11:09:52,981 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:09:52,981 DEBUG A1 - idle:19
+2013-07-02 11:09:52,981 DEBUG A1 - active:1
+2013-07-02 11:09:52,997 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:09:52,997 DEBUG A1 - idle:19
+2013-07-02 11:09:52,997 DEBUG A1 - active:1
+2013-07-02 11:09:53,043 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:09:53,043 DEBUG A1 - idle:19
+2013-07-02 11:09:53,043 DEBUG A1 - active:1
+2013-07-02 11:09:53,059 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:09:53,059 DEBUG A1 - idle:19
+2013-07-02 11:09:53,059 DEBUG A1 - active:1
+2013-07-02 11:09:53,075 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:10:34,040 DEBUG A1 - idle:19
+2013-07-02 11:10:34,040 DEBUG A1 - active:1
+2013-07-02 11:10:34,040 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:10:34,884 DEBUG A1 - idle:19
+2013-07-02 11:10:34,884 DEBUG A1 - active:1
+2013-07-02 11:10:34,946 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:10:34,946 DEBUG A1 - idle:19
+2013-07-02 11:10:34,946 DEBUG A1 - active:1
+2013-07-02 11:10:34,962 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:10:36,194 DEBUG A1 - idle:19
+2013-07-02 11:10:36,194 DEBUG A1 - active:1
+2013-07-02 11:10:36,210 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:10:36,210 DEBUG A1 - idle:19
+2013-07-02 11:10:36,210 DEBUG A1 - active:1
+2013-07-02 11:10:36,225 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:11:31,348 DEBUG A1 - idle:19
+2013-07-02 11:11:31,348 DEBUG A1 - active:1
+2013-07-02 11:11:31,348 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:11:31,926 DEBUG A1 - idle:19
+2013-07-02 11:11:31,926 DEBUG A1 - active:1
+2013-07-02 11:11:31,989 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:11:31,989 DEBUG A1 - idle:19
+2013-07-02 11:11:31,989 DEBUG A1 - active:1
+2013-07-02 11:11:32,004 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:11:33,299 DEBUG A1 - idle:19
+2013-07-02 11:11:33,299 DEBUG A1 - active:1
+2013-07-02 11:11:33,315 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:11:33,330 DEBUG A1 - idle:19
+2013-07-02 11:11:33,330 DEBUG A1 - active:1
+2013-07-02 11:11:33,346 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:12:19,585 DEBUG A1 - idle:19
+2013-07-02 11:12:19,585 DEBUG A1 - active:1
+2013-07-02 11:12:19,585 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:12:20,647 DEBUG A1 - idle:19
+2013-07-02 11:12:20,647 DEBUG A1 - active:1
+2013-07-02 11:12:20,742 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:12:20,742 DEBUG A1 - idle:19
+2013-07-02 11:12:20,742 DEBUG A1 - active:1
+2013-07-02 11:12:20,757 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:12:22,239 DEBUG A1 - idle:19
+2013-07-02 11:12:22,239 DEBUG A1 - active:1
+2013-07-02 11:12:22,255 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:17:01,185 DEBUG A1 - idle:19
+2013-07-02 11:17:01,185 DEBUG A1 - active:1
+2013-07-02 11:17:01,185 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:17:02,044 DEBUG A1 - idle:19
+2013-07-02 11:17:02,044 DEBUG A1 - active:1
+2013-07-02 11:17:02,107 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:17:02,107 DEBUG A1 - idle:19
+2013-07-02 11:17:02,107 DEBUG A1 - active:1
+2013-07-02 11:17:02,122 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:17:03,589 DEBUG A1 - idle:19
+2013-07-02 11:17:03,589 DEBUG A1 - active:1
+2013-07-02 11:17:03,604 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:17:03,620 DEBUG A1 - idle:19
+2013-07-02 11:17:03,620 DEBUG A1 - active:1
+2013-07-02 11:17:03,636 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:17:08,050 DEBUG A1 - idle:19
+2013-07-02 11:17:08,050 DEBUG A1 - active:1
+2013-07-02 11:17:08,050 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:17:09,408 DEBUG A1 - idle:19
+2013-07-02 11:17:09,408 DEBUG A1 - active:1
+2013-07-02 11:17:09,454  INFO A1 - T_売上_子は18件処理されました。
+2013-07-02 11:17:09,454 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:17:11,327 DEBUG A1 - idle:19
+2013-07-02 11:17:11,327 DEBUG A1 - active:1
+2013-07-02 11:17:11,343 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:17:11,360 DEBUG A1 - idle:19
+2013-07-02 11:17:11,360 DEBUG A1 - active:1
+2013-07-02 11:17:11,406 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:17:11,406 DEBUG A1 - idle:19
+2013-07-02 11:17:11,406 DEBUG A1 - active:1
+2013-07-02 11:17:11,422 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:17:11,438 DEBUG A1 - idle:19
+2013-07-02 11:17:11,438 DEBUG A1 - active:1
+2013-07-02 11:17:11,469 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:17:11,469 DEBUG A1 - idle:19
+2013-07-02 11:17:11,469 DEBUG A1 - active:1
+2013-07-02 11:17:11,484 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:17:11,484 DEBUG A1 - idle:19
+2013-07-02 11:17:11,484 DEBUG A1 - active:1
+2013-07-02 11:17:11,500 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:18:08,238 DEBUG A1 - idle:19
+2013-07-02 11:18:08,238 DEBUG A1 - active:1
+2013-07-02 11:18:08,254 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:18:08,957 DEBUG A1 - idle:19
+2013-07-02 11:18:08,957 DEBUG A1 - active:1
+2013-07-02 11:18:09,004 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:18:09,004 DEBUG A1 - idle:19
+2013-07-02 11:18:09,004 DEBUG A1 - active:1
+2013-07-02 11:18:09,019 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:18:10,205 DEBUG A1 - idle:19
+2013-07-02 11:18:10,205 DEBUG A1 - active:1
+2013-07-02 11:18:10,221 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:18:10,221 DEBUG A1 - idle:19
+2013-07-02 11:18:10,221 DEBUG A1 - active:1
+2013-07-02 11:18:10,236 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:20:39,029 DEBUG A1 - idle:19
+2013-07-02 11:20:39,029 DEBUG A1 - active:1
+2013-07-02 11:20:39,029 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:20:39,904 DEBUG A1 - idle:19
+2013-07-02 11:20:39,904 DEBUG A1 - active:1
+2013-07-02 11:20:39,966 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:20:39,966 DEBUG A1 - idle:19
+2013-07-02 11:20:39,966 DEBUG A1 - active:1
+2013-07-02 11:20:39,982 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:20:41,105 DEBUG A1 - idle:19
+2013-07-02 11:20:41,105 DEBUG A1 - active:1
+2013-07-02 11:20:41,121 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:20:41,136 DEBUG A1 - idle:19
+2013-07-02 11:20:41,136 DEBUG A1 - active:1
+2013-07-02 11:20:41,152 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:24:20,457 DEBUG A1 - idle:19
+2013-07-02 11:24:20,457 DEBUG A1 - active:1
+2013-07-02 11:24:20,457 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:24:21,628 DEBUG A1 - idle:19
+2013-07-02 11:24:21,628 DEBUG A1 - active:1
+2013-07-02 11:24:21,680 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:24:21,696 DEBUG A1 - idle:19
+2013-07-02 11:24:21,696 DEBUG A1 - active:1
+2013-07-02 11:24:21,711 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:24:28,997 DEBUG A1 - idle:19
+2013-07-02 11:24:28,997 DEBUG A1 - active:1
+2013-07-02 11:24:29,012 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:25:32,598 DEBUG A1 - idle:19
+2013-07-02 11:25:32,598 DEBUG A1 - active:1
+2013-07-02 11:25:32,927  INFO A1 - T_製作_子は2件処理されました。
+2013-07-02 11:25:32,942 DEBUG A1 - ProductRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:25:33,379 DEBUG A1 - idle:19
+2013-07-02 11:25:33,379 DEBUG A1 - active:1
+2013-07-02 11:25:33,426 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:25:33,441 DEBUG A1 - idle:19
+2013-07-02 11:25:33,441 DEBUG A1 - active:1
+2013-07-02 11:25:33,473 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:25:33,473 DEBUG A1 - idle:19
+2013-07-02 11:25:33,473 DEBUG A1 - active:1
+2013-07-02 11:25:33,488 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:25:33,504 DEBUG A1 - idle:19
+2013-07-02 11:25:33,504 DEBUG A1 - active:1
+2013-07-02 11:25:33,566 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:25:33,582 DEBUG A1 - idle:19
+2013-07-02 11:25:33,582 DEBUG A1 - active:1
+2013-07-02 11:25:33,597 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:25:34,814 DEBUG A1 - idle:19
+2013-07-02 11:25:34,814 DEBUG A1 - active:1
+2013-07-02 11:25:34,830 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:27:03,625 DEBUG A1 - idle:19
+2013-07-02 11:27:03,625 DEBUG A1 - active:1
+2013-07-02 11:27:03,641 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:27:29,194 DEBUG A1 - idle:19
+2013-07-02 11:27:29,194 DEBUG A1 - active:1
+2013-07-02 11:27:29,209 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:27:30,131 DEBUG A1 - idle:19
+2013-07-02 11:27:30,131 DEBUG A1 - active:1
+2013-07-02 11:27:30,177 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:27:30,177 DEBUG A1 - idle:19
+2013-07-02 11:27:30,177 DEBUG A1 - active:1
+2013-07-02 11:27:30,193 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:28:04,778 DEBUG A1 - idle:19
+2013-07-02 11:28:04,778 DEBUG A1 - active:1
+2013-07-02 11:28:04,825 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-07-02 11:28:22,687 DEBUG A1 - idle:19
+2013-07-02 11:28:22,687 DEBUG A1 - active:1
+2013-07-02 11:28:22,687 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:28:23,285 DEBUG A1 - idle:19
+2013-07-02 11:28:23,285 DEBUG A1 - active:1
+2013-07-02 11:28:23,347 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:28:23,363 DEBUG A1 - idle:19
+2013-07-02 11:28:23,363 DEBUG A1 - active:1
+2013-07-02 11:28:23,394 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:28:25,235 DEBUG A1 - idle:19
+2013-07-02 11:28:25,235 DEBUG A1 - active:1
+2013-07-02 11:28:25,250 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:28:58,931 DEBUG A1 - idle:19
+2013-07-02 11:28:58,931 DEBUG A1 - active:1
+2013-07-02 11:28:58,931 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:29:06,701 DEBUG A1 - idle:19
+2013-07-02 11:29:06,701 DEBUG A1 - active:1
+2013-07-02 11:29:06,701 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:29:10,056 DEBUG A1 - idle:19
+2013-07-02 11:29:10,056 DEBUG A1 - active:1
+2013-07-02 11:29:10,119 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:29:10,119 DEBUG A1 - idle:19
+2013-07-02 11:29:10,119 DEBUG A1 - active:1
+2013-07-02 11:29:10,135 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:29:11,367 DEBUG A1 - idle:19
+2013-07-02 11:29:11,367 DEBUG A1 - active:1
+2013-07-02 11:29:11,383 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:29:16,125 DEBUG A1 - idle:19
+2013-07-02 11:29:16,125 DEBUG A1 - active:1
+2013-07-02 11:29:16,219  INFO A1 - T_製作_子は2件処理されました。
+2013-07-02 11:29:16,234 DEBUG A1 - ProductRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:29:17,514 DEBUG A1 - idle:19
+2013-07-02 11:29:17,514 DEBUG A1 - active:1
+2013-07-02 11:29:17,530 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:29:17,558 DEBUG A1 - idle:19
+2013-07-02 11:29:17,558 DEBUG A1 - active:1
+2013-07-02 11:29:17,604 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:29:17,620 DEBUG A1 - idle:19
+2013-07-02 11:29:17,620 DEBUG A1 - active:1
+2013-07-02 11:29:17,636 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:29:17,636 DEBUG A1 - idle:19
+2013-07-02 11:29:17,636 DEBUG A1 - active:1
+2013-07-02 11:29:17,682 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:29:17,682 DEBUG A1 - idle:19
+2013-07-02 11:29:17,682 DEBUG A1 - active:1
+2013-07-02 11:29:17,698 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:29:32,861 DEBUG A1 - idle:19
+2013-07-02 11:29:32,861 DEBUG A1 - active:1
+2013-07-02 11:29:32,861 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:29:33,595 DEBUG A1 - idle:19
+2013-07-02 11:29:33,595 DEBUG A1 - active:1
+2013-07-02 11:29:33,642 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:29:33,657 DEBUG A1 - idle:19
+2013-07-02 11:29:33,657 DEBUG A1 - active:1
+2013-07-02 11:29:33,673 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:29:34,500 DEBUG A1 - idle:19
+2013-07-02 11:29:34,500 DEBUG A1 - active:1
+2013-07-02 11:29:34,515 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:30:55,068 DEBUG A1 - idle:19
+2013-07-02 11:30:55,068 DEBUG A1 - active:1
+2013-07-02 11:30:55,100 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:31:06,659 DEBUG A1 - idle:19
+2013-07-02 11:31:06,659 DEBUG A1 - active:1
+2013-07-02 11:31:07,049  INFO A1 - T_製作_子は8件処理されました。
+2013-07-02 11:31:07,049 DEBUG A1 - ProductRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:31:07,799 DEBUG A1 - idle:19
+2013-07-02 11:31:07,799 DEBUG A1 - active:1
+2013-07-02 11:31:07,799 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:31:07,815 DEBUG A1 - idle:19
+2013-07-02 11:31:07,815 DEBUG A1 - active:1
+2013-07-02 11:31:07,861 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:31:07,877 DEBUG A1 - idle:19
+2013-07-02 11:31:07,877 DEBUG A1 - active:1
+2013-07-02 11:31:07,877 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:31:07,893 DEBUG A1 - idle:19
+2013-07-02 11:31:07,893 DEBUG A1 - active:1
+2013-07-02 11:31:07,924 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:31:07,924 DEBUG A1 - idle:19
+2013-07-02 11:31:07,924 DEBUG A1 - active:1
+2013-07-02 11:31:07,939 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:31:09,499 DEBUG A1 - idle:19
+2013-07-02 11:31:09,499 DEBUG A1 - active:1
+2013-07-02 11:31:09,515 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:31:51,682 DEBUG A1 - idle:19
+2013-07-02 11:31:51,682 DEBUG A1 - active:1
+2013-07-02 11:31:51,698  INFO A1 - T_売上_子は4件処理されました。
+2013-07-02 11:31:51,713 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:31:52,697 DEBUG A1 - idle:19
+2013-07-02 11:31:52,697 DEBUG A1 - active:1
+2013-07-02 11:31:52,697 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:31:52,697 DEBUG A1 - idle:19
+2013-07-02 11:31:52,697 DEBUG A1 - active:1
+2013-07-02 11:31:52,760 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:31:52,760 DEBUG A1 - idle:19
+2013-07-02 11:31:52,760 DEBUG A1 - active:1
+2013-07-02 11:31:52,776 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:31:52,792 DEBUG A1 - idle:19
+2013-07-02 11:31:52,792 DEBUG A1 - active:1
+2013-07-02 11:31:52,838 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:31:52,838 DEBUG A1 - idle:19
+2013-07-02 11:31:52,838 DEBUG A1 - active:1
+2013-07-02 11:31:52,854 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:31:52,854 DEBUG A1 - idle:19
+2013-07-02 11:31:52,854 DEBUG A1 - active:1
+2013-07-02 11:31:52,870 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:33:01,946 DEBUG A1 - idle:19
+2013-07-02 11:33:01,946 DEBUG A1 - active:1
+2013-07-02 11:33:01,962 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:33:02,587 DEBUG A1 - idle:19
+2013-07-02 11:33:02,603 DEBUG A1 - active:1
+2013-07-02 11:33:02,649 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:33:02,649 DEBUG A1 - idle:19
+2013-07-02 11:33:02,649 DEBUG A1 - active:1
+2013-07-02 11:33:02,665 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:33:03,851 DEBUG A1 - idle:19
+2013-07-02 11:33:03,851 DEBUG A1 - active:1
+2013-07-02 11:33:03,882 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:33:43,038 DEBUG A1 - idle:19
+2013-07-02 11:33:43,038 DEBUG A1 - active:1
+2013-07-02 11:33:43,069 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:34:14,737 DEBUG A1 - idle:19
+2013-07-02 11:34:14,737 DEBUG A1 - active:1
+2013-07-02 11:34:14,879  INFO A1 - T_製作_子は5件処理されました。
+2013-07-02 11:34:14,894 DEBUG A1 - ProductRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:34:15,768 DEBUG A1 - idle:19
+2013-07-02 11:34:15,768 DEBUG A1 - active:1
+2013-07-02 11:34:15,768 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:34:15,783 DEBUG A1 - idle:19
+2013-07-02 11:34:15,783 DEBUG A1 - active:1
+2013-07-02 11:34:15,846 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:34:15,846 DEBUG A1 - idle:19
+2013-07-02 11:34:15,846 DEBUG A1 - active:1
+2013-07-02 11:34:15,861 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:34:15,878 DEBUG A1 - idle:19
+2013-07-02 11:34:15,878 DEBUG A1 - active:1
+2013-07-02 11:34:15,909 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:34:15,925 DEBUG A1 - idle:19
+2013-07-02 11:34:15,925 DEBUG A1 - active:1
+2013-07-02 11:34:15,925 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:34:17,890 DEBUG A1 - idle:19
+2013-07-02 11:34:17,890 DEBUG A1 - active:1
+2013-07-02 11:34:17,906 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:34:17,922 DEBUG A1 - idle:19
+2013-07-02 11:34:17,922 DEBUG A1 - active:1
+2013-07-02 11:34:17,937 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:35:03,552 DEBUG A1 - idle:19
+2013-07-02 11:35:03,552 DEBUG A1 - active:1
+2013-07-02 11:35:03,552 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:35:08,107 DEBUG A1 - idle:19
+2013-07-02 11:35:08,107 DEBUG A1 - active:1
+2013-07-02 11:35:08,122  INFO A1 - T_売上_子は3件処理されました。
+2013-07-02 11:35:08,138 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:35:09,590 DEBUG A1 - idle:19
+2013-07-02 11:35:09,590 DEBUG A1 - active:1
+2013-07-02 11:35:09,590 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:35:09,605 DEBUG A1 - idle:19
+2013-07-02 11:35:09,605 DEBUG A1 - active:1
+2013-07-02 11:35:09,685 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:35:09,700 DEBUG A1 - idle:19
+2013-07-02 11:35:09,700 DEBUG A1 - active:1
+2013-07-02 11:35:09,700 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:35:09,716 DEBUG A1 - idle:19
+2013-07-02 11:35:09,716 DEBUG A1 - active:1
+2013-07-02 11:35:09,747 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:35:09,763 DEBUG A1 - idle:19
+2013-07-02 11:35:09,763 DEBUG A1 - active:1
+2013-07-02 11:35:09,763 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:35:09,778 DEBUG A1 - idle:19
+2013-07-02 11:35:09,778 DEBUG A1 - active:1
+2013-07-02 11:35:09,794 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:35:31,681 DEBUG A1 - idle:19
+2013-07-02 11:35:31,681 DEBUG A1 - active:1
+2013-07-02 11:35:31,681 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:35:33,117 DEBUG A1 - idle:19
+2013-07-02 11:35:33,117 DEBUG A1 - active:1
+2013-07-02 11:35:33,180 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:35:33,196 DEBUG A1 - idle:19
+2013-07-02 11:35:33,196 DEBUG A1 - active:1
+2013-07-02 11:35:33,212 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:35:34,787 DEBUG A1 - idle:19
+2013-07-02 11:35:34,787 DEBUG A1 - active:1
+2013-07-02 11:35:34,834 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:35:34,834 DEBUG A1 - idle:19
+2013-07-02 11:35:34,834 DEBUG A1 - active:1
+2013-07-02 11:35:34,850 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:38:18,557 DEBUG A1 - idle:19
+2013-07-02 11:38:18,557 DEBUG A1 - active:1
+2013-07-02 11:38:18,573 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:38:19,354 DEBUG A1 - idle:19
+2013-07-02 11:38:19,354 DEBUG A1 - active:1
+2013-07-02 11:38:19,432 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:38:19,463 DEBUG A1 - idle:19
+2013-07-02 11:38:19,463 DEBUG A1 - active:1
+2013-07-02 11:38:19,494 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:38:20,742 DEBUG A1 - idle:19
+2013-07-02 11:38:20,742 DEBUG A1 - active:1
+2013-07-02 11:38:20,758 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:38:20,774 DEBUG A1 - idle:19
+2013-07-02 11:38:20,774 DEBUG A1 - active:1
+2013-07-02 11:38:20,789 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:38:23,644 DEBUG A1 - idle:19
+2013-07-02 11:38:23,644 DEBUG A1 - active:1
+2013-07-02 11:38:23,660 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:38:25,173 DEBUG A1 - idle:19
+2013-07-02 11:38:25,173 DEBUG A1 - active:1
+2013-07-02 11:38:25,188 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:38:28,386 DEBUG A1 - idle:19
+2013-07-02 11:38:28,386 DEBUG A1 - active:1
+2013-07-02 11:38:28,418 DEBUG A1 - DeleteSlip
+ps is closed by jdbc4.0
+2013-07-02 11:39:05,828 DEBUG A1 - idle:19
+2013-07-02 11:39:05,828 DEBUG A1 - active:1
+2013-07-02 11:39:05,844 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:39:07,530 DEBUG A1 - idle:19
+2013-07-02 11:39:07,530 DEBUG A1 - active:1
+2013-07-02 11:39:07,592 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:39:07,592 DEBUG A1 - idle:19
+2013-07-02 11:39:07,592 DEBUG A1 - active:1
+2013-07-02 11:39:07,608 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:40:13,814 DEBUG A1 - idle:19
+2013-07-02 11:40:13,814 DEBUG A1 - active:1
+2013-07-02 11:40:13,830 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:40:49,008 DEBUG A1 - idle:19
+2013-07-02 11:40:49,008 DEBUG A1 - active:1
+2013-07-02 11:40:49,023  INFO A1 - T_売上_子は2件処理されました。
+2013-07-02 11:40:49,039 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:40:50,054 DEBUG A1 - idle:19
+2013-07-02 11:40:50,054 DEBUG A1 - active:1
+2013-07-02 11:40:50,054 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:40:50,070 DEBUG A1 - idle:19
+2013-07-02 11:40:50,070 DEBUG A1 - active:1
+2013-07-02 11:40:50,133 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:40:50,133 DEBUG A1 - idle:19
+2013-07-02 11:40:50,133 DEBUG A1 - active:1
+2013-07-02 11:40:50,149 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:40:50,164 DEBUG A1 - idle:19
+2013-07-02 11:40:50,164 DEBUG A1 - active:1
+2013-07-02 11:40:50,195 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:40:50,195 DEBUG A1 - idle:19
+2013-07-02 11:40:50,211 DEBUG A1 - active:1
+2013-07-02 11:40:50,211 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:40:50,227 DEBUG A1 - idle:19
+2013-07-02 11:40:50,227 DEBUG A1 - active:1
+2013-07-02 11:40:50,227 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:41:26,108 DEBUG A1 - idle:19
+2013-07-02 11:41:26,108 DEBUG A1 - active:1
+2013-07-02 11:41:26,123 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:41:38,667 DEBUG A1 - idle:19
+2013-07-02 11:41:38,667 DEBUG A1 - active:1
+2013-07-02 11:41:38,682 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:41:45,579 DEBUG A1 - idle:19
+2013-07-02 11:41:45,579 DEBUG A1 - active:1
+2013-07-02 11:41:45,594 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:42:32,910 DEBUG A1 - idle:19
+2013-07-02 11:42:32,910 DEBUG A1 - active:1
+2013-07-02 11:42:32,910 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:42:33,909 DEBUG A1 - idle:19
+2013-07-02 11:42:33,909 DEBUG A1 - active:1
+2013-07-02 11:42:33,972 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:42:33,987 DEBUG A1 - idle:19
+2013-07-02 11:42:33,987 DEBUG A1 - active:1
+2013-07-02 11:42:34,003 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:42:43,894 DEBUG A1 - idle:19
+2013-07-02 11:42:43,894 DEBUG A1 - active:1
+2013-07-02 11:42:43,926 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:42:43,926 DEBUG A1 - idle:19
+2013-07-02 11:42:43,926 DEBUG A1 - active:1
+2013-07-02 11:42:43,941 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:43:27,107 DEBUG A1 - idle:19
+2013-07-02 11:43:27,107 DEBUG A1 - active:1
+2013-07-02 11:43:27,138 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:43:36,732 DEBUG A1 - idle:19
+2013-07-02 11:43:36,732 DEBUG A1 - active:1
+2013-07-02 11:43:36,747 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:43:36,763 DEBUG A1 - idle:19
+2013-07-02 11:43:36,763 DEBUG A1 - active:1
+2013-07-02 11:43:36,779 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:44:00,225 DEBUG A1 - idle:19
+2013-07-02 11:44:00,225 DEBUG A1 - active:1
+2013-07-02 11:44:00,225 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:44:31,254 DEBUG A1 - idle:19
+2013-07-02 11:44:31,254 DEBUG A1 - active:1
+2013-07-02 11:44:31,285  INFO A1 - T_売上_子は23件処理されました。
+2013-07-02 11:44:31,285 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:44:32,518 DEBUG A1 - idle:19
+2013-07-02 11:44:32,518 DEBUG A1 - active:1
+2013-07-02 11:44:32,518 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:44:32,534 DEBUG A1 - idle:19
+2013-07-02 11:44:32,534 DEBUG A1 - active:1
+2013-07-02 11:44:32,629 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:44:32,644 DEBUG A1 - idle:19
+2013-07-02 11:44:32,644 DEBUG A1 - active:1
+2013-07-02 11:44:32,660 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:44:32,675 DEBUG A1 - idle:19
+2013-07-02 11:44:32,675 DEBUG A1 - active:1
+2013-07-02 11:44:32,738 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:44:32,769 DEBUG A1 - idle:19
+2013-07-02 11:44:32,769 DEBUG A1 - active:1
+2013-07-02 11:44:32,785 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:44:32,785 DEBUG A1 - idle:19
+2013-07-02 11:44:32,785 DEBUG A1 - active:1
+2013-07-02 11:44:32,800 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:47:29,486 DEBUG A1 - idle:19
+2013-07-02 11:47:29,486 DEBUG A1 - active:1
+2013-07-02 11:47:29,486 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:47:30,626 DEBUG A1 - idle:19
+2013-07-02 11:47:30,626 DEBUG A1 - active:1
+2013-07-02 11:47:30,689 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:47:30,705 DEBUG A1 - idle:19
+2013-07-02 11:47:30,705 DEBUG A1 - active:1
+2013-07-02 11:47:30,721 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:47:31,750 DEBUG A1 - idle:19
+2013-07-02 11:47:31,750 DEBUG A1 - active:1
+2013-07-02 11:47:31,766 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:48:02,326 DEBUG A1 - idle:19
+2013-07-02 11:48:02,326 DEBUG A1 - active:1
+2013-07-02 11:48:02,342 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:48:19,517 DEBUG A1 - idle:19
+2013-07-02 11:48:19,517 DEBUG A1 - active:1
+2013-07-02 11:48:19,533 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:48:19,549 DEBUG A1 - idle:19
+2013-07-02 11:48:19,549 DEBUG A1 - active:1
+2013-07-02 11:48:19,595 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:48:32,965 DEBUG A1 - idle:19
+2013-07-02 11:48:32,965 DEBUG A1 - active:1
+2013-07-02 11:48:32,980 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:48:36,147 DEBUG A1 - idle:19
+2013-07-02 11:48:36,147 DEBUG A1 - active:1
+2013-07-02 11:48:36,194  INFO A1 - T_売上_子は10件処理されました。
+2013-07-02 11:48:36,209 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:48:37,240 DEBUG A1 - idle:19
+2013-07-02 11:48:37,240 DEBUG A1 - active:1
+2013-07-02 11:48:37,240 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:48:37,256 DEBUG A1 - idle:19
+2013-07-02 11:48:37,256 DEBUG A1 - active:1
+2013-07-02 11:48:37,319 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:48:37,335 DEBUG A1 - idle:19
+2013-07-02 11:48:37,335 DEBUG A1 - active:1
+2013-07-02 11:48:37,350 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:48:37,350 DEBUG A1 - idle:19
+2013-07-02 11:48:37,350 DEBUG A1 - active:1
+2013-07-02 11:48:37,428 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:48:37,444 DEBUG A1 - idle:19
+2013-07-02 11:48:37,444 DEBUG A1 - active:1
+2013-07-02 11:48:37,459 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:48:37,459 DEBUG A1 - idle:19
+2013-07-02 11:48:37,459 DEBUG A1 - active:1
+2013-07-02 11:48:37,475 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:48:40,018 DEBUG A1 - idle:19
+2013-07-02 11:48:40,018 DEBUG A1 - active:1
+2013-07-02 11:48:40,018 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:48:41,516 DEBUG A1 - idle:19
+2013-07-02 11:48:41,516 DEBUG A1 - active:1
+2013-07-02 11:48:41,600 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:48:41,600 DEBUG A1 - idle:19
+2013-07-02 11:48:41,600 DEBUG A1 - active:1
+2013-07-02 11:48:41,615 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:48:44,564 DEBUG A1 - idle:19
+2013-07-02 11:48:44,564 DEBUG A1 - active:1
+2013-07-02 11:48:44,579 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:48:44,579 DEBUG A1 - idle:19
+2013-07-02 11:48:44,579 DEBUG A1 - active:1
+2013-07-02 11:48:44,611 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:48:55,000 DEBUG A1 - idle:19
+2013-07-02 11:48:55,000 DEBUG A1 - active:1
+2013-07-02 11:48:55,016 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:49:00,882 DEBUG A1 - idle:19
+2013-07-02 11:49:00,882 DEBUG A1 - active:1
+2013-07-02 11:49:00,897 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:49:00,897 DEBUG A1 - idle:19
+2013-07-02 11:49:00,897 DEBUG A1 - active:1
+2013-07-02 11:49:00,928 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:49:12,940 DEBUG A1 - idle:19
+2013-07-02 11:49:12,940 DEBUG A1 - active:1
+2013-07-02 11:49:12,940 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:49:18,603 DEBUG A1 - idle:19
+2013-07-02 11:49:18,603 DEBUG A1 - active:1
+2013-07-02 11:49:18,634  INFO A1 - T_売上_子は11件処理されました。
+2013-07-02 11:49:18,634 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:49:19,478 DEBUG A1 - idle:19
+2013-07-02 11:49:19,478 DEBUG A1 - active:1
+2013-07-02 11:49:19,493 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:49:19,509 DEBUG A1 - idle:19
+2013-07-02 11:49:19,509 DEBUG A1 - active:1
+2013-07-02 11:49:19,556 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:49:19,571 DEBUG A1 - idle:19
+2013-07-02 11:49:19,571 DEBUG A1 - active:1
+2013-07-02 11:49:19,587 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:49:19,587 DEBUG A1 - idle:19
+2013-07-02 11:49:19,587 DEBUG A1 - active:1
+2013-07-02 11:49:19,634 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:49:19,634 DEBUG A1 - idle:19
+2013-07-02 11:49:19,634 DEBUG A1 - active:1
+2013-07-02 11:49:19,649 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:49:19,649 DEBUG A1 - idle:19
+2013-07-02 11:49:19,649 DEBUG A1 - active:1
+2013-07-02 11:49:19,665 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:49:21,506 DEBUG A1 - idle:19
+2013-07-02 11:49:21,506 DEBUG A1 - active:1
+2013-07-02 11:49:21,521 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:49:22,727 DEBUG A1 - idle:19
+2013-07-02 11:49:22,727 DEBUG A1 - active:1
+2013-07-02 11:49:22,823 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:49:22,839 DEBUG A1 - idle:19
+2013-07-02 11:49:22,839 DEBUG A1 - active:1
+2013-07-02 11:49:22,854 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:49:24,835 DEBUG A1 - idle:19
+2013-07-02 11:49:24,835 DEBUG A1 - active:1
+2013-07-02 11:49:24,867 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:49:24,867 DEBUG A1 - idle:19
+2013-07-02 11:49:24,867 DEBUG A1 - active:1
+2013-07-02 11:49:24,882 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:49:42,994 DEBUG A1 - idle:19
+2013-07-02 11:49:42,994 DEBUG A1 - active:1
+2013-07-02 11:49:42,994 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:49:46,254 DEBUG A1 - idle:19
+2013-07-02 11:49:46,254 DEBUG A1 - active:1
+2013-07-02 11:49:46,285  INFO A1 - T_売上_子は13件処理されました。
+2013-07-02 11:49:46,301 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:49:47,566 DEBUG A1 - idle:19
+2013-07-02 11:49:47,566 DEBUG A1 - active:1
+2013-07-02 11:49:47,566 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:49:47,581 DEBUG A1 - idle:19
+2013-07-02 11:49:47,581 DEBUG A1 - active:1
+2013-07-02 11:49:47,645 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:49:47,645 DEBUG A1 - idle:19
+2013-07-02 11:49:47,645 DEBUG A1 - active:1
+2013-07-02 11:49:47,660 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:49:47,660 DEBUG A1 - idle:19
+2013-07-02 11:49:47,660 DEBUG A1 - active:1
+2013-07-02 11:49:47,707 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:49:47,707 DEBUG A1 - idle:19
+2013-07-02 11:49:47,707 DEBUG A1 - active:1
+2013-07-02 11:49:47,723 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:49:47,723 DEBUG A1 - idle:19
+2013-07-02 11:49:47,723 DEBUG A1 - active:1
+2013-07-02 11:49:47,738 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:49:49,205 DEBUG A1 - idle:19
+2013-07-02 11:49:49,205 DEBUG A1 - active:1
+2013-07-02 11:49:49,236 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:49:49,236 DEBUG A1 - idle:19
+2013-07-02 11:49:49,236 DEBUG A1 - active:1
+2013-07-02 11:49:49,251 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:49:53,994 DEBUG A1 - idle:19
+2013-07-02 11:49:53,994 DEBUG A1 - active:1
+2013-07-02 11:49:54,009 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:49:55,149 DEBUG A1 - idle:19
+2013-07-02 11:49:55,149 DEBUG A1 - active:1
+2013-07-02 11:49:55,213 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:49:55,213 DEBUG A1 - idle:19
+2013-07-02 11:49:55,213 DEBUG A1 - active:1
+2013-07-02 11:49:55,228 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:49:57,131 DEBUG A1 - idle:19
+2013-07-02 11:49:57,131 DEBUG A1 - active:1
+2013-07-02 11:49:57,163 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:49:57,163 DEBUG A1 - idle:19
+2013-07-02 11:49:57,163 DEBUG A1 - active:1
+2013-07-02 11:49:57,178 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:50:10,813 DEBUG A1 - idle:19
+2013-07-02 11:50:10,813 DEBUG A1 - active:1
+2013-07-02 11:50:10,813 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:50:11,889 DEBUG A1 - idle:19
+2013-07-02 11:50:11,889 DEBUG A1 - active:1
+2013-07-02 11:50:11,920  INFO A1 - T_売上_子は7件処理されました。
+2013-07-02 11:50:11,951 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:50:12,982 DEBUG A1 - idle:19
+2013-07-02 11:50:12,982 DEBUG A1 - active:1
+2013-07-02 11:50:12,982 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:50:12,998 DEBUG A1 - idle:19
+2013-07-02 11:50:12,998 DEBUG A1 - active:1
+2013-07-02 11:50:13,045 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:50:13,061 DEBUG A1 - idle:19
+2013-07-02 11:50:13,061 DEBUG A1 - active:1
+2013-07-02 11:50:13,061 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:50:13,077 DEBUG A1 - idle:19
+2013-07-02 11:50:13,077 DEBUG A1 - active:1
+2013-07-02 11:50:13,123 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:50:13,139 DEBUG A1 - idle:19
+2013-07-02 11:50:13,139 DEBUG A1 - active:1
+2013-07-02 11:50:13,155 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:50:13,155 DEBUG A1 - idle:19
+2013-07-02 11:50:13,155 DEBUG A1 - active:1
+2013-07-02 11:50:13,170 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:50:16,228 DEBUG A1 - idle:19
+2013-07-02 11:50:16,228 DEBUG A1 - active:1
+2013-07-02 11:50:16,243 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:50:17,118 DEBUG A1 - idle:19
+2013-07-02 11:50:17,118 DEBUG A1 - active:1
+2013-07-02 11:50:17,180 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:50:17,180 DEBUG A1 - idle:19
+2013-07-02 11:50:17,180 DEBUG A1 - active:1
+2013-07-02 11:50:17,212 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:50:18,163 DEBUG A1 - idle:19
+2013-07-02 11:50:18,163 DEBUG A1 - active:1
+2013-07-02 11:50:18,194 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:50:18,194 DEBUG A1 - idle:19
+2013-07-02 11:50:18,194 DEBUG A1 - active:1
+2013-07-02 11:50:18,210 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:50:31,751 DEBUG A1 - idle:19
+2013-07-02 11:50:31,751 DEBUG A1 - active:1
+2013-07-02 11:50:31,751 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:50:34,574 DEBUG A1 - idle:19
+2013-07-02 11:50:34,574 DEBUG A1 - active:1
+2013-07-02 11:50:34,606  INFO A1 - T_売上_子は13件処理されました。
+2013-07-02 11:50:34,606 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:50:35,277 DEBUG A1 - idle:19
+2013-07-02 11:50:35,277 DEBUG A1 - active:1
+2013-07-02 11:50:35,293 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:50:35,293 DEBUG A1 - idle:19
+2013-07-02 11:50:35,293 DEBUG A1 - active:1
+2013-07-02 11:50:35,355 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:50:35,371 DEBUG A1 - idle:19
+2013-07-02 11:50:35,371 DEBUG A1 - active:1
+2013-07-02 11:50:35,387 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:50:35,387 DEBUG A1 - idle:19
+2013-07-02 11:50:35,387 DEBUG A1 - active:1
+2013-07-02 11:50:35,433 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:50:35,433 DEBUG A1 - idle:19
+2013-07-02 11:50:35,433 DEBUG A1 - active:1
+2013-07-02 11:50:35,465 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:50:35,480 DEBUG A1 - idle:19
+2013-07-02 11:50:35,480 DEBUG A1 - active:1
+2013-07-02 11:50:35,496 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:50:37,212 DEBUG A1 - idle:19
+2013-07-02 11:50:37,212 DEBUG A1 - active:1
+2013-07-02 11:50:37,227 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:50:38,274 DEBUG A1 - idle:19
+2013-07-02 11:50:38,274 DEBUG A1 - active:1
+2013-07-02 11:50:38,337 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:50:38,353 DEBUG A1 - idle:19
+2013-07-02 11:50:38,353 DEBUG A1 - active:1
+2013-07-02 11:50:38,353 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:50:39,413 DEBUG A1 - idle:19
+2013-07-02 11:50:39,413 DEBUG A1 - active:1
+2013-07-02 11:50:39,429 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:50:39,445 DEBUG A1 - idle:19
+2013-07-02 11:50:39,445 DEBUG A1 - active:1
+2013-07-02 11:50:39,460 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:50:50,053 DEBUG A1 - idle:19
+2013-07-02 11:50:50,053 DEBUG A1 - active:1
+2013-07-02 11:50:50,053 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:51:12,002 DEBUG A1 - idle:19
+2013-07-02 11:51:12,002 DEBUG A1 - active:1
+2013-07-02 11:51:12,018 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 11:51:16,776 DEBUG A1 - idle:19
+2013-07-02 11:51:16,776 DEBUG A1 - active:1
+2013-07-02 11:51:16,807  INFO A1 - T_売上_子は24件処理されました。
+2013-07-02 11:51:16,822 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 11:51:17,869 DEBUG A1 - idle:19
+2013-07-02 11:51:17,869 DEBUG A1 - active:1
+2013-07-02 11:51:17,884 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 11:51:17,884 DEBUG A1 - idle:19
+2013-07-02 11:51:17,884 DEBUG A1 - active:1
+2013-07-02 11:51:17,948 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:51:17,963 DEBUG A1 - idle:19
+2013-07-02 11:51:17,963 DEBUG A1 - active:1
+2013-07-02 11:51:17,979 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:51:17,979 DEBUG A1 - idle:19
+2013-07-02 11:51:17,979 DEBUG A1 - active:1
+2013-07-02 11:51:18,041 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:51:18,057 DEBUG A1 - idle:19
+2013-07-02 11:51:18,057 DEBUG A1 - active:1
+2013-07-02 11:51:18,088 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:51:18,088 DEBUG A1 - idle:19
+2013-07-02 11:51:18,088 DEBUG A1 - active:1
+2013-07-02 11:51:18,119 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:52:57,023 DEBUG A1 - idle:19
+2013-07-02 11:52:57,023 DEBUG A1 - active:1
+2013-07-02 11:52:57,039 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:52:58,257 DEBUG A1 - idle:19
+2013-07-02 11:52:58,257 DEBUG A1 - active:1
+2013-07-02 11:52:58,319 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:52:58,334 DEBUG A1 - idle:19
+2013-07-02 11:52:58,334 DEBUG A1 - active:1
+2013-07-02 11:52:58,334 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:53:00,019 DEBUG A1 - idle:19
+2013-07-02 11:53:00,019 DEBUG A1 - active:1
+2013-07-02 11:53:00,035 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:53:00,035 DEBUG A1 - idle:19
+2013-07-02 11:53:00,035 DEBUG A1 - active:1
+2013-07-02 11:53:00,050 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:55:54,615 DEBUG A1 - idle:19
+2013-07-02 11:55:54,615 DEBUG A1 - active:1
+2013-07-02 11:55:54,631 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:55:55,740 DEBUG A1 - idle:19
+2013-07-02 11:55:55,740 DEBUG A1 - active:1
+2013-07-02 11:55:55,805 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 11:55:55,805 DEBUG A1 - idle:19
+2013-07-02 11:55:55,805 DEBUG A1 - active:1
+2013-07-02 11:55:55,820 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:55:57,646 DEBUG A1 - idle:19
+2013-07-02 11:55:57,646 DEBUG A1 - active:1
+2013-07-02 11:55:57,661 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:55:57,661 DEBUG A1 - idle:19
+2013-07-02 11:55:57,661 DEBUG A1 - active:1
+2013-07-02 11:55:57,677 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 11:57:21,355 DEBUG A1 - idle:19
+2013-07-02 11:57:21,355 DEBUG A1 - active:1
+2013-07-02 11:57:21,371 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:57:37,768 DEBUG A1 - idle:19
+2013-07-02 11:57:37,768 DEBUG A1 - active:1
+2013-07-02 11:57:37,799 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:57:37,799 DEBUG A1 - idle:19
+2013-07-02 11:57:37,799 DEBUG A1 - active:1
+2013-07-02 11:57:37,830 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 11:57:39,312 DEBUG A1 - idle:19
+2013-07-02 11:57:39,312 DEBUG A1 - active:1
+2013-07-02 11:57:39,687 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 11:57:57,253 DEBUG A1 - idle:19
+2013-07-02 11:57:57,253 DEBUG A1 - active:1
+2013-07-02 11:57:57,284 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 12:01:50,901 DEBUG A1 - idle:19
+2013-07-02 12:01:50,901 DEBUG A1 - active:1
+2013-07-02 12:01:50,917 DEBUG A1 - NumCheck
+ps is closed by jdbc4.0
+2013-07-02 12:01:50,917 DEBUG A1 - idle:19
+2013-07-02 12:01:50,917 DEBUG A1 - active:1
+2013-07-02 12:01:51,338  INFO A1 - T_製作_子は2件処理されました。
+2013-07-02 12:01:51,338 DEBUG A1 - ProductRegistration
+ps is closed by jdbc4.0
+2013-07-02 12:01:52,665 DEBUG A1 - idle:19
+2013-07-02 12:01:52,665 DEBUG A1 - active:1
+2013-07-02 12:01:52,665 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 12:01:52,681 DEBUG A1 - idle:19
+2013-07-02 12:01:52,681 DEBUG A1 - active:1
+2013-07-02 12:01:52,731 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 12:01:52,731 DEBUG A1 - idle:19
+2013-07-02 12:01:52,731 DEBUG A1 - active:1
+2013-07-02 12:01:52,762 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 12:01:52,762 DEBUG A1 - idle:19
+2013-07-02 12:01:52,762 DEBUG A1 - active:1
+2013-07-02 12:01:52,809 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 12:01:52,809 DEBUG A1 - idle:19
+2013-07-02 12:01:52,809 DEBUG A1 - active:1
+2013-07-02 12:01:52,824 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 12:02:09,875 DEBUG A1 - idle:19
+2013-07-02 12:02:09,875 DEBUG A1 - active:1
+2013-07-02 12:02:09,891 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 12:41:36,992 DEBUG A1 - idle:19
+2013-07-02 12:41:36,992 DEBUG A1 - active:1
+2013-07-02 12:41:36,992 DEBUG A1 - GetTaxRate
+ps is closed by jdbc4.0
+2013-07-02 12:41:41,376 DEBUG A1 - idle:19
+2013-07-02 12:41:41,376 DEBUG A1 - active:1
+2013-07-02 12:41:41,391  INFO A1 - T_売上_子は3件処理されました。
+2013-07-02 12:41:41,407 DEBUG A1 - DeliveryRegistration
+ps is closed by jdbc4.0
+2013-07-02 12:41:42,250 DEBUG A1 - idle:19
+2013-07-02 12:41:42,250 DEBUG A1 - active:1
+2013-07-02 12:41:42,250 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-07-02 12:41:42,281 DEBUG A1 - idle:19
+2013-07-02 12:41:42,281 DEBUG A1 - active:1
+2013-07-02 12:41:42,328 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 12:41:42,344 DEBUG A1 - idle:19
+2013-07-02 12:41:42,344 DEBUG A1 - active:1
+2013-07-02 12:41:42,359 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 12:41:42,375 DEBUG A1 - idle:19
+2013-07-02 12:41:42,375 DEBUG A1 - active:1
+2013-07-02 12:41:42,437 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 12:41:42,437 DEBUG A1 - idle:19
+2013-07-02 12:41:42,437 DEBUG A1 - active:1
+2013-07-02 12:41:42,453 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 12:41:42,453 DEBUG A1 - idle:19
+2013-07-02 12:41:42,453 DEBUG A1 - active:1
+2013-07-02 12:41:42,469 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 12:47:25,859 DEBUG A1 - idle:19
+2013-07-02 12:47:25,859 DEBUG A1 - active:1
+2013-07-02 12:47:25,859 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 12:47:25,859 DEBUG A1 - idle:19
+2013-07-02 12:47:25,859 DEBUG A1 - active:1
+2013-07-02 12:47:25,875 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 12:47:25,906 DEBUG A1 - idle:19
+2013-07-02 12:47:25,906 DEBUG A1 - active:1
+2013-07-02 12:47:25,906 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 12:47:25,906 DEBUG A1 - idle:19
+2013-07-02 12:47:25,906 DEBUG A1 - active:1
+2013-07-02 12:47:25,906 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 12:47:25,922 DEBUG A1 - idle:19
+2013-07-02 12:47:25,922 DEBUG A1 - active:1
+2013-07-02 12:47:25,937 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 12:47:25,937 DEBUG A1 - idle:19
+2013-07-02 12:47:25,937 DEBUG A1 - active:1
+2013-07-02 12:47:25,937 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 12:47:25,953 DEBUG A1 - idle:19
+2013-07-02 12:47:25,953 DEBUG A1 - active:1
+2013-07-02 12:47:25,953 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 12:47:25,953 DEBUG A1 - idle:19
+2013-07-02 12:47:25,953 DEBUG A1 - active:1
+2013-07-02 12:47:25,969 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 12:47:25,969 DEBUG A1 - idle:19
+2013-07-02 12:47:25,969 DEBUG A1 - active:1
+2013-07-02 12:47:25,969 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 12:47:25,969 DEBUG A1 - idle:19
+2013-07-02 12:47:25,969 DEBUG A1 - active:1
+2013-07-02 12:47:25,984 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 12:47:26,000 DEBUG A1 - idle:19
+2013-07-02 12:47:26,000 DEBUG A1 - active:1
+2013-07-02 12:47:26,048 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 12:47:26,048 DEBUG A1 - idle:19
+2013-07-02 12:47:26,048 DEBUG A1 - active:1
+2013-07-02 12:47:26,094 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 12:52:38,833 DEBUG A1 - idle:19
+2013-07-02 12:52:38,833 DEBUG A1 - active:1
+2013-07-02 12:52:38,849 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 12:52:40,193 DEBUG A1 - idle:19
+2013-07-02 12:52:40,193 DEBUG A1 - active:1
+2013-07-02 12:52:40,257 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 12:52:40,272 DEBUG A1 - idle:19
+2013-07-02 12:52:40,272 DEBUG A1 - active:1
+2013-07-02 12:52:40,319 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 12:52:41,349 DEBUG A1 - idle:19
+2013-07-02 12:52:41,349 DEBUG A1 - active:1
+2013-07-02 12:52:41,364 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 12:52:41,380 DEBUG A1 - idle:19
+2013-07-02 12:52:41,380 DEBUG A1 - active:1
+2013-07-02 12:52:41,396 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 12:52:44,328 DEBUG A1 - idle:19
+2013-07-02 12:52:44,344 DEBUG A1 - active:1
+2013-07-02 12:52:44,360 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 12:52:46,154 DEBUG A1 - idle:19
+2013-07-02 12:52:46,154 DEBUG A1 - active:1
+2013-07-02 12:52:46,169 DEBUG A1 - ChangeSlip
+ps is closed by jdbc4.0
+2013-07-02 12:52:47,901 DEBUG A1 - idle:19
+2013-07-02 12:52:47,901 DEBUG A1 - active:1
+2013-07-02 12:52:47,932 DEBUG A1 - DeleteSlip
+ps is closed by jdbc4.0
+2013-07-02 16:10:35,103 DEBUG A1 - idle:19
+2013-07-02 16:10:35,103 DEBUG A1 - active:1
+2013-07-02 16:10:35,135 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:10:35,135 DEBUG A1 - idle:19
+2013-07-02 16:10:35,135 DEBUG A1 - active:1
+2013-07-02 16:10:35,150 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:10:36,726 DEBUG A1 - idle:19
+2013-07-02 16:10:36,726 DEBUG A1 - active:1
+2013-07-02 16:10:37,086 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:10:38,521 DEBUG A1 - idle:19
+2013-07-02 16:10:38,521 DEBUG A1 - active:1
+2013-07-02 16:10:38,636 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 16:10:38,652 DEBUG A1 - idle:19
+2013-07-02 16:10:38,652 DEBUG A1 - active:1
+2013-07-02 16:10:38,667 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:10:39,556 DEBUG A1 - idle:19
+2013-07-02 16:10:39,556 DEBUG A1 - active:1
+2013-07-02 16:10:39,600 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 16:10:39,615 DEBUG A1 - idle:19
+2013-07-02 16:10:39,615 DEBUG A1 - active:1
+2013-07-02 16:10:39,615 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:10:52,080 DEBUG A1 - idle:19
+2013-07-02 16:10:52,080 DEBUG A1 - active:1
+2013-07-02 16:10:52,111 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:10:52,111 DEBUG A1 - idle:19
+2013-07-02 16:10:52,111 DEBUG A1 - active:1
+2013-07-02 16:10:52,126 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:10:53,936 DEBUG A1 - idle:19
+2013-07-02 16:10:53,936 DEBUG A1 - active:1
+2013-07-02 16:10:54,202 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:11:07,649 DEBUG A1 - idle:19
+2013-07-02 16:11:07,649 DEBUG A1 - active:1
+2013-07-02 16:11:07,681 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:11:07,774 DEBUG A1 - idle:19
+2013-07-02 16:11:07,774 DEBUG A1 - active:1
+2013-07-02 16:11:08,025 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:11:16,870 DEBUG A1 - idle:19
+2013-07-02 16:11:16,870 DEBUG A1 - active:1
+2013-07-02 16:11:16,933 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 16:11:16,933 DEBUG A1 - idle:19
+2013-07-02 16:11:16,933 DEBUG A1 - active:1
+2013-07-02 16:11:16,949 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:11:17,979 DEBUG A1 - idle:19
+2013-07-02 16:11:17,979 DEBUG A1 - active:1
+2013-07-02 16:11:18,038 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 16:11:18,043 DEBUG A1 - idle:19
+2013-07-02 16:11:18,043 DEBUG A1 - active:1
+2013-07-02 16:11:18,043 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:11:18,994 DEBUG A1 - idle:19
+2013-07-02 16:11:18,994 DEBUG A1 - active:1
+2013-07-02 16:11:19,051 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 16:11:19,066 DEBUG A1 - idle:19
+2013-07-02 16:11:19,066 DEBUG A1 - active:1
+2013-07-02 16:11:19,066 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:11:50,828 DEBUG A1 - idle:19
+2013-07-02 16:11:50,828 DEBUG A1 - active:1
+2013-07-02 16:11:50,843 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:11:50,859 DEBUG A1 - idle:19
+2013-07-02 16:11:50,859 DEBUG A1 - active:1
+2013-07-02 16:11:50,875 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:11:52,216 DEBUG A1 - idle:19
+2013-07-02 16:11:52,216 DEBUG A1 - active:1
+2013-07-02 16:11:52,514 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:11:59,658 DEBUG A1 - idle:19
+2013-07-02 16:11:59,658 DEBUG A1 - active:1
+2013-07-02 16:11:59,720 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 16:11:59,720 DEBUG A1 - idle:19
+2013-07-02 16:11:59,720 DEBUG A1 - active:1
+2013-07-02 16:11:59,736 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:12:56,099 DEBUG A1 - idle:19
+2013-07-02 16:12:56,099 DEBUG A1 - active:1
+2013-07-02 16:12:56,114 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:12:56,239 DEBUG A1 - idle:19
+2013-07-02 16:12:56,239 DEBUG A1 - active:1
+2013-07-02 16:12:56,505 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:12:58,362 DEBUG A1 - idle:19
+2013-07-02 16:12:58,362 DEBUG A1 - active:1
+2013-07-02 16:12:58,407 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 16:12:58,423 DEBUG A1 - idle:19
+2013-07-02 16:12:58,423 DEBUG A1 - active:1
+2013-07-02 16:12:58,423 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:13:12,665 DEBUG A1 - idle:19
+2013-07-02 16:13:12,665 DEBUG A1 - active:1
+2013-07-02 16:13:12,697 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:13:12,697 DEBUG A1 - idle:19
+2013-07-02 16:13:12,697 DEBUG A1 - active:1
+2013-07-02 16:13:12,712 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:13:14,319 DEBUG A1 - idle:19
+2013-07-02 16:13:14,319 DEBUG A1 - active:1
+2013-07-02 16:13:14,429 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:13:15,428 DEBUG A1 - idle:19
+2013-07-02 16:13:15,428 DEBUG A1 - active:1
+2013-07-02 16:13:15,522 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:13:15,850 DEBUG A1 - idle:19
+2013-07-02 16:13:15,850 DEBUG A1 - active:1
+2013-07-02 16:13:15,959 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:13:16,895 DEBUG A1 - idle:19
+2013-07-02 16:13:16,895 DEBUG A1 - active:1
+2013-07-02 16:13:17,005 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:13:23,994 DEBUG A1 - idle:19
+2013-07-02 16:13:23,994 DEBUG A1 - active:1
+2013-07-02 16:13:24,089 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:13:33,152 DEBUG A1 - idle:19
+2013-07-02 16:13:33,152 DEBUG A1 - active:1
+2013-07-02 16:13:33,183 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:13:33,277 DEBUG A1 - idle:19
+2013-07-02 16:13:33,277 DEBUG A1 - active:1
+2013-07-02 16:13:33,543 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:13:34,822 DEBUG A1 - idle:19
+2013-07-02 16:13:34,822 DEBUG A1 - active:1
+2013-07-02 16:13:34,870 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 16:13:34,886 DEBUG A1 - idle:19
+2013-07-02 16:13:34,886 DEBUG A1 - active:1
+2013-07-02 16:13:34,901 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:16:03,840 DEBUG A1 - idle:19
+2013-07-02 16:16:03,840 DEBUG A1 - active:1
+2013-07-02 16:16:03,855 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:16:03,855 DEBUG A1 - idle:19
+2013-07-02 16:16:03,855 DEBUG A1 - active:1
+2013-07-02 16:16:03,871 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:16:05,025 DEBUG A1 - idle:19
+2013-07-02 16:16:05,025 DEBUG A1 - active:1
+2013-07-02 16:16:05,120 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:18:29,253 DEBUG A1 - idle:19
+2013-07-02 16:18:29,253 DEBUG A1 - active:1
+2013-07-02 16:18:29,348 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:18:31,781 DEBUG A1 - idle:19
+2013-07-02 16:18:31,781 DEBUG A1 - active:1
+2013-07-02 16:18:31,860 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:18:32,032 DEBUG A1 - idle:19
+2013-07-02 16:18:32,032 DEBUG A1 - active:1
+2013-07-02 16:18:32,126 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:18:32,968 DEBUG A1 - idle:19
+2013-07-02 16:18:32,968 DEBUG A1 - active:1
+2013-07-02 16:18:33,063 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:18:35,013 DEBUG A1 - idle:19
+2013-07-02 16:18:35,013 DEBUG A1 - active:1
+2013-07-02 16:18:35,107 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:23:45,193 DEBUG A1 - idle:19
+2013-07-02 16:23:45,193 DEBUG A1 - active:1
+2013-07-02 16:23:45,224 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:23:45,302 DEBUG A1 - idle:19
+2013-07-02 16:23:45,302 DEBUG A1 - active:1
+2013-07-02 16:23:45,553 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:24:07,268 DEBUG A1 - idle:19
+2013-07-02 16:24:07,268 DEBUG A1 - active:1
+2013-07-02 16:24:07,347 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 16:24:07,363 DEBUG A1 - idle:19
+2013-07-02 16:24:07,363 DEBUG A1 - active:1
+2013-07-02 16:24:07,363 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:24:07,378 DEBUG A1 - idle:19
+2013-07-02 16:24:07,378 DEBUG A1 - active:1
+2013-07-02 16:24:07,394 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:28:09,594 DEBUG A1 - idle:19
+2013-07-02 16:28:09,594 DEBUG A1 - active:1
+2013-07-02 16:28:09,626 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:28:09,626 DEBUG A1 - idle:19
+2013-07-02 16:28:09,626 DEBUG A1 - active:1
+2013-07-02 16:28:09,657 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:28:11,435 DEBUG A1 - idle:19
+2013-07-02 16:28:11,435 DEBUG A1 - active:1
+2013-07-02 16:28:11,545 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:45:06,537 DEBUG A1 - idle:19
+2013-07-02 16:45:06,537 DEBUG A1 - active:1
+2013-07-02 16:45:06,756 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 16:45:25,429 DEBUG A1 - idle:19
+2013-07-02 16:45:25,429 DEBUG A1 - active:1
+2013-07-02 16:45:25,482 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 16:45:25,497 DEBUG A1 - idle:19
+2013-07-02 16:45:25,497 DEBUG A1 - active:1
+2013-07-02 16:45:25,497 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:47:07,337 DEBUG A1 - idle:19
+2013-07-02 16:47:07,337 DEBUG A1 - active:1
+2013-07-02 16:47:07,340 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 16:47:07,342 DEBUG A1 - idle:19
+2013-07-02 16:47:07,342 DEBUG A1 - active:1
+2013-07-02 16:47:07,348 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 16:47:07,358 DEBUG A1 - idle:19
+2013-07-02 16:47:07,358 DEBUG A1 - active:1
+2013-07-02 16:47:07,364 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 16:47:07,367 DEBUG A1 - idle:19
+2013-07-02 16:47:07,367 DEBUG A1 - active:1
+2013-07-02 16:47:07,371 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 16:47:14,541 DEBUG A1 - idle:19
+2013-07-02 16:47:14,541 DEBUG A1 - active:1
+2013-07-02 16:47:14,542 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 16:47:14,545 DEBUG A1 - idle:19
+2013-07-02 16:47:14,545 DEBUG A1 - active:1
+2013-07-02 16:47:14,551 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 16:47:14,557 DEBUG A1 - idle:19
+2013-07-02 16:47:14,557 DEBUG A1 - active:1
+2013-07-02 16:47:14,558 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 16:47:14,561 DEBUG A1 - idle:19
+2013-07-02 16:47:14,561 DEBUG A1 - active:1
+2013-07-02 16:47:14,566 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 16:47:14,571 DEBUG A1 - idle:19
+2013-07-02 16:47:14,571 DEBUG A1 - active:1
+2013-07-02 16:47:14,573 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 16:47:14,575 DEBUG A1 - idle:19
+2013-07-02 16:47:14,575 DEBUG A1 - active:1
+2013-07-02 16:47:14,581 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 16:47:14,586 DEBUG A1 - idle:19
+2013-07-02 16:47:14,586 DEBUG A1 - active:1
+2013-07-02 16:47:14,587 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 16:47:14,590 DEBUG A1 - idle:19
+2013-07-02 16:47:14,590 DEBUG A1 - active:1
+2013-07-02 16:47:14,597 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 16:47:14,607 DEBUG A1 - idle:19
+2013-07-02 16:47:14,607 DEBUG A1 - active:1
+2013-07-02 16:47:14,644 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 16:47:14,651 DEBUG A1 - idle:19
+2013-07-02 16:47:14,651 DEBUG A1 - active:1
+2013-07-02 16:47:14,656 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 16:47:17,565 DEBUG A1 - idle:19
+2013-07-02 16:47:17,566 DEBUG A1 - active:1
+2013-07-02 16:47:17,621 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-02 16:47:17,626 DEBUG A1 - idle:19
+2013-07-02 16:47:17,626 DEBUG A1 - active:1
+2013-07-02 16:47:17,638 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 16:47:18,376 DEBUG A1 - idle:19
+2013-07-02 16:47:18,376 DEBUG A1 - active:1
+2013-07-02 16:47:18,378 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-02 16:47:18,381 DEBUG A1 - idle:19
+2013-07-02 16:47:18,381 DEBUG A1 - active:1
+2013-07-02 16:47:18,388 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-02 16:47:18,396 DEBUG A1 - idle:19
+2013-07-02 16:47:18,396 DEBUG A1 - active:1
+2013-07-02 16:47:18,401 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 16:47:18,403 DEBUG A1 - idle:19
+2013-07-02 16:47:18,403 DEBUG A1 - active:1
+2013-07-02 16:47:18,406 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-02 17:07:49,405 DEBUG A1 - idle:19
+2013-07-02 17:07:49,405 DEBUG A1 - active:1
+2013-07-02 17:07:49,686 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 17:07:49,702 DEBUG A1 - idle:19
+2013-07-02 17:07:49,702 DEBUG A1 - active:1
+2013-07-02 17:07:49,717 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 17:07:53,290 DEBUG A1 - idle:19
+2013-07-02 17:07:53,290 DEBUG A1 - active:1
+2013-07-02 17:07:53,587 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 17:13:23,533 DEBUG A1 - idle:19
+2013-07-02 17:13:23,533 DEBUG A1 - active:1
+2013-07-02 17:13:23,971 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 17:13:26,732 DEBUG A1 - idle:19
+2013-07-02 17:13:26,732 DEBUG A1 - active:1
+2013-07-02 17:13:26,763 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 17:13:44,251 DEBUG A1 - idle:19
+2013-07-02 17:13:44,251 DEBUG A1 - active:1
+2013-07-02 17:13:44,282 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 17:13:44,282 DEBUG A1 - idle:19
+2013-07-02 17:13:44,282 DEBUG A1 - active:1
+2013-07-02 17:13:44,313 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 17:13:46,201 DEBUG A1 - idle:19
+2013-07-02 17:13:46,201 DEBUG A1 - active:1
+2013-07-02 17:13:46,467 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 17:14:16,388 DEBUG A1 - idle:19
+2013-07-02 17:14:16,388 DEBUG A1 - active:1
+2013-07-02 17:14:16,404 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 17:14:16,497 DEBUG A1 - idle:19
+2013-07-02 17:14:16,497 DEBUG A1 - active:1
+2013-07-02 17:14:16,779 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-02 17:14:35,156 DEBUG A1 - idle:19
+2013-07-02 17:14:35,156 DEBUG A1 - active:1
+2013-07-02 17:14:35,187 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-02 17:14:35,265 DEBUG A1 - idle:19
+2013-07-02 17:14:35,265 DEBUG A1 - active:1
+2013-07-02 17:14:35,531 DEBUG A1 - Search
+ps is closed by jdbc4.0

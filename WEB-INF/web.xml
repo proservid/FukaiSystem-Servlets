@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+ <web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+ version="2.4">
+
+        <resource-ref>
+                <description>FukaiSystem</description>
+                <res-ref-name>jdbc/FukaiSystem</res-ref-name>
+                <res-type>javax.sql.DataSource</res-type>
+                <res-auth>Container</res-auth>
+        </resource-ref>
+ <servlet>
+ <servlet-name> h </servlet-name>
+ <servlet-class> fukaisystem.Hello </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> h </servlet-name>
+ <url-pattern> /h </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> tbInit </servlet-name>
+ <servlet-class> fukaisystem.TbInit </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> tbInit </servlet-name>
+ <url-pattern> /tbInit </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> getShelf </servlet-name>
+ <servlet-class> fukaisystem.aggregate.GetShelf </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getShelf </servlet-name>
+ <url-pattern> /getShelf </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> getLedger </servlet-name>
+ <servlet-class> fukaisystem.aggregate.GetLedger </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getLedger </servlet-name>
+ <url-pattern> /getLedger </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> getSalesData </servlet-name>
+ <servlet-class> fukaisystem.aggregate.GetSalesData </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getSalesData </servlet-name>
+ <url-pattern> /getSalesData </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getTableData </servlet-name>
+ <servlet-class> fukaisystem.GetTableData </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getTableData </servlet-name>
+ <url-pattern> /getTableData </url-pattern>
+ </servlet-mapping>
+
+  <servlet>
+ <servlet-name> dataRegistration </servlet-name>
+ <servlet-class> fukaisystem.DataRegistration </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> dataRegistration </servlet-name>
+ <url-pattern> /dataRegistration </url-pattern>
+ </servlet-mapping>
+
+  <servlet>
+ <servlet-name> queryExecutor </servlet-name>
+ <servlet-class> fukaisystem.QueryExecutor </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> queryExecutor </servlet-name>
+ <url-pattern> /queryExecutor </url-pattern>
+ </servlet-mapping>
+
+
+
+ <servlet>
+ <servlet-name> corpRegistration </servlet-name>
+ <servlet-class> fukaisystem.address.CorpRegistration </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> corpRegistration </servlet-name>
+ <url-pattern> /corpRegistration </url-pattern>
+ </servlet-mapping>
+ <servlet>
+ <servlet-name> indRegistration </servlet-name>
+ <servlet-class> fukaisystem.address.IndRegistration </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> indRegistration </servlet-name>
+ <url-pattern> /indRegistration </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getAddress </servlet-name>
+ <servlet-class> fukaisystem.address.GetAddress </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getAddress </servlet-name>
+ <url-pattern> /getAddress </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getCountry </servlet-name>
+ <servlet-class> fukaisystem.address.GetCountry </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getCountry </servlet-name>
+ <url-pattern> /getCountry </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getCoType </servlet-name>
+ <servlet-class> fukaisystem.address.GetCoType </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getCoType </servlet-name>
+ <url-pattern> /getCoType </url-pattern>
+ </servlet-mapping>
+ <servlet>
+ <servlet-name> getInType </servlet-name>
+ <servlet-class> fukaisystem.address.GetInType </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getInType </servlet-name>
+ <url-pattern> /getInType </url-pattern>
+ </servlet-mapping>
+ <servlet>
+ <servlet-name> getNenga </servlet-name>
+ <servlet-class> fukaisystem.address.GetNenga </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getNenga </servlet-name>
+ <url-pattern> /getNenga </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getCorpData </servlet-name>
+ <servlet-class> fukaisystem.address.GetCorpData </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getCorpData </servlet-name>
+ <url-pattern> /getCorpData </url-pattern>
+ </servlet-mapping>
+ <servlet>
+ <servlet-name> getIndData </servlet-name>
+ <servlet-class> fukaisystem.address.GetIndData </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getIndData </servlet-name>
+ <url-pattern> /getIndData </url-pattern>
+ </servlet-mapping>
+
+
+ <servlet>
+ <servlet-name> getEstData </servlet-name>
+ <servlet-class> fukaisystem.GetEstData </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getEstData </servlet-name>
+ <url-pattern> /getEstData </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> numCheck </servlet-name>
+ <servlet-class> fukaisystem.NumCheck </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> numCheck </servlet-name>
+ <url-pattern> /numCheck </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> text </servlet-name>
+ <servlet-class> fukaisystem.Text </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> text </servlet-name>
+ <url-pattern> /text </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> init </servlet-name>
+ <servlet-class> fukaisystem.Init </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> init </servlet-name>
+ <url-pattern> /init </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> pinit </servlet-name>
+ <servlet-class> fukaisystem.Init2 </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> pinit </servlet-name>
+ <url-pattern> /pinit </url-pattern>
+ </servlet-mapping>
+
+  <servlet>
+  <servlet-name> updateCandidate </servlet-name>
+ <servlet-class> fukaisystem.UpdateCandidate </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> updateCandidate </servlet-name>
+ <url-pattern> /updateCandidate </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getDetail2 </servlet-name>
+ <servlet-class> fukaisystem.GetDetail2 </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getDetail2 </servlet-name>
+ <url-pattern> /getDetail2 </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getDetail </servlet-name>
+ <servlet-class> fukaisystem.GetDetail </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getDetail </servlet-name>
+ <url-pattern> /getDetail </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getEstDetail </servlet-name>
+ <servlet-class> fukaisystem.GetEstDetail </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getEstDetail </servlet-name>
+ <url-pattern> /getEstDetail </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> auth </servlet-name>
+ <servlet-class> fukaisystem.group.Auth </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> auth </servlet-name>
+ <url-pattern> /auth </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> cp </servlet-name>
+ <servlet-class> fukaisystem.group.ChangePassword </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> cp </servlet-name>
+ <url-pattern> /cp </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> iis </servlet-name>
+ <servlet-class> fukaisystem.input.InitInputSystem </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> iis </servlet-name>
+ <url-pattern> /iis </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> set </servlet-name>
+ <servlet-class> fukaisystem.SetCombo </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> set </servlet-name>
+ <url-pattern> /set </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> setLabel </servlet-name>
+ <servlet-class> fukaisystem.SetLabel </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> setLabel </servlet-name>
+ <url-pattern> /setLabel </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> registration </servlet-name>
+ <servlet-class> fukaisystem.Registration </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> registration </servlet-name>
+ <url-pattern> /registration </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> orderRegistration </servlet-name>
+ <servlet-class> fukaisystem.OrderRegistration </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> orderRegistration </servlet-name>
+ <url-pattern> /orderRegistration </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> estimateRegistration </servlet-name>
+ <servlet-class> fukaisystem.EstimateRegistration </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> estimateRegistration </servlet-name>
+ <url-pattern> /estimateRegistration </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> productRegistration </servlet-name>
+ <servlet-class> fukaisystem.ProductRegistration </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> productRegistration </servlet-name>
+ <url-pattern> /productRegistration </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> deliveryRegistration </servlet-name>
+ <servlet-class> fukaisystem.DeliveryRegistration </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> deliveryRegistration </servlet-name>
+ <url-pattern> /deliveryRegistration </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> dispatchingRegistration </servlet-name>
+ <servlet-class> fukaisystem.DispatchingRegistration </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> dispatchingRegistration </servlet-name>
+ <url-pattern> /dispatchingRegistration </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> inputRegistration </servlet-name>
+ <servlet-class> fukaisystem.input.InputRegistration </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> inputRegistration </servlet-name>
+ <url-pattern> /inputRegistration </url-pattern>
+ </servlet-mapping>
+
+
+ <servlet>
+ <servlet-name> search </servlet-name>
+ <servlet-class> fukaisystem.Search </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> search </servlet-name>
+ <url-pattern> /search </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> csearch </servlet-name>
+ <servlet-class> fukaisystem.ChildSearch </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> csearch </servlet-name>
+ <url-pattern> /csearch </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> osearch </servlet-name>
+ <servlet-class> fukaisystem.OrderSearch </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> osearch </servlet-name>
+ <url-pattern> /osearch </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> dsearch </servlet-name>
+ <servlet-class> fukaisystem.DispatchingSearch </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> dsearch </servlet-name>
+ <url-pattern> /dsearch </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> hsearch </servlet-name>
+ <servlet-class> fukaisystem.HistorySearch </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> hsearch </servlet-name>
+ <url-pattern> /hsearch </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> summary </servlet-name>
+ <servlet-class> fukaisystem.GetSummary </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> summary </servlet-name>
+ <url-pattern> /summary </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> osummary </servlet-name>
+ <servlet-class> fukaisystem.GetOrderSummary </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> osummary </servlet-name>
+ <url-pattern> /osummary </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> dsummary </servlet-name>
+ <servlet-class> fukaisystem.GetDispatchingSummary </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> dsummary </servlet-name>
+ <url-pattern> /dsummary </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> readSlip </servlet-name>
+ <servlet-class> fukaisystem.ReadSlip </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> readSlip </servlet-name>
+ <url-pattern> /readSlip </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> writeSlip </servlet-name>
+ <servlet-class> fukaisystem.WriteSlip </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> writeSlip </servlet-name>
+ <url-pattern> /writeSlip </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getTitle </servlet-name>
+ <servlet-class> fukaisystem.GetTitle </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getTitle </servlet-name>
+ <url-pattern> /getTitle </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getColInfo </servlet-name>
+ <servlet-class> fukaisystem.GetColInfo </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getColInfo </servlet-name>
+ <url-pattern> /getColInfo </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getData </servlet-name>
+ <servlet-class> fukaisystem.GetData </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getData </servlet-name>
+ <url-pattern> /getData </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getSlipName </servlet-name>
+ <servlet-class> fukaisystem.GetSlipName </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getSlipName </servlet-name>
+ <url-pattern> /getSlipName </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> setSlipFormat </servlet-name>
+ <servlet-class> fukaisystem.SetSlipFormat </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> setSlipFormat </servlet-name>
+ <url-pattern> /setSlipFormat </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getLine </servlet-name>
+ <servlet-class> fukaisystem.GetLine </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getLine </servlet-name>
+ <url-pattern> /getLine </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getCandidate </servlet-name>
+ <servlet-class> fukaisystem.GetCandidate </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getCandidate </servlet-name>
+ <url-pattern> /getCandidate </url-pattern>
+ </servlet-mapping>
+ <servlet>
+ <servlet-name> getIndCandidate </servlet-name>
+ <servlet-class> fukaisystem.address.GetIndCandidate </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getIndCandidate </servlet-name>
+ <url-pattern> /getIndCandidate </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> changeSlip </servlet-name>
+ <servlet-class> fukaisystem.ChangeSlip </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> changeSlip </servlet-name>
+ <url-pattern> /changeSlip </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> deleteSlip </servlet-name>
+ <servlet-class> fukaisystem.DeleteSlip </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> deleteSlip </servlet-name>
+ <url-pattern> /deleteSlip </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> copy </servlet-name>
+ <servlet-class> fukaisystem.CopyData </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> copy </servlet-name>
+ <url-pattern> /copy </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getTaxRate </servlet-name>
+ <servlet-class> fukaisystem.GetTaxRate </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getTaxRate </servlet-name>
+ <url-pattern> /getTaxRate </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getSchedule </servlet-name>
+ <servlet-class> fukaisystem.group.GetSchedule </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getSchedule </servlet-name>
+ <url-pattern> /getSchedule </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> scheduleRegistration </servlet-name>
+ <servlet-class> fukaisystem.group.ScheduleRegistration </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> scheduleRegistration </servlet-name>
+ <url-pattern> /scheduleRegistration </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> setHoliday </servlet-name>
+ <servlet-class> fukaisystem.group.SetHoliday </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> setHoliday </servlet-name>
+ <url-pattern> /setHoliday </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> setClose </servlet-name>
+ <servlet-class> fukaisystem.aggregate.SetClose </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> setClose </servlet-name>
+ <url-pattern> /setClose </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> setRelease </servlet-name>
+ <servlet-class> fukaisystem.aggregate.SetRelease </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> setRelease </servlet-name>
+ <url-pattern> /setRelease </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getState </servlet-name>
+ <servlet-class> fukaisystem.aggregate.GetState </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getState </servlet-name>
+ <url-pattern> /getState </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getDM </servlet-name>
+ <servlet-class> fukaisystem.group.GetDandM </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getDM </servlet-name>
+ <url-pattern> /getDM </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> setMember </servlet-name>
+ <servlet-class> fukaisystem.group.SetMember </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> setMember </servlet-name>
+ <url-pattern> /setMember </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> deleteMember </servlet-name>
+ <servlet-class> fukaisystem.group.DeleteMember </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> deleteMember </servlet-name>
+ <url-pattern> /deleteMember </url-pattern>
+ </servlet-mapping>
+
+ </web-app>

@@ -1,0 +1,201 @@
+2016-11-22 16:38:37,342 DEBUG A1 - idle:19
+2016-11-22 16:38:37,345 DEBUG A1 - active:1
+2016-11-22 16:38:37,594 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-11-22 16:38:46,827 DEBUG A1 - idle:19
+2016-11-22 16:38:46,827 DEBUG A1 - active:1
+2016-11-22 16:38:48,100 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2016-11-22 16:39:05,716 DEBUG A1 - idle:19
+2016-11-22 16:39:05,716 DEBUG A1 - active:1
+2016-11-22 16:39:06,184 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2016-11-22 16:40:46,278 DEBUG A1 - idle:19
+2016-11-22 16:40:46,278 DEBUG A1 - active:1
+2016-11-22 16:40:46,569 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-11-22 16:41:05,339 DEBUG A1 - idle:19
+2016-11-22 16:41:05,339 DEBUG A1 - active:1
+2016-11-22 16:41:05,363  INFO A1 - T_出庫_子は1件処理されました。
+2016-11-22 16:41:05,425 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2016-11-22 16:41:05,451 DEBUG A1 - idle:19
+2016-11-22 16:41:05,451 DEBUG A1 - active:1
+2016-11-22 16:41:05,458 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2016-11-22 16:41:10,297 DEBUG A1 - idle:19
+2016-11-22 16:41:10,297 DEBUG A1 - active:1
+2016-11-22 16:41:10,675 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2016-11-22 16:41:46,554 DEBUG A1 - idle:19
+2016-11-22 16:41:46,554 DEBUG A1 - active:1
+2016-11-22 16:41:46,677 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-11-22 16:41:59,233 DEBUG A1 - idle:19
+2016-11-22 16:41:59,233 DEBUG A1 - active:1
+2016-11-22 16:41:59,321 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-11-22 16:41:59,349 DEBUG A1 - idle:19
+2016-11-22 16:41:59,349 DEBUG A1 - active:1
+2016-11-22 16:41:59,498 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2016-11-22 16:41:59,527 DEBUG A1 - idle:19
+2016-11-22 16:41:59,527 DEBUG A1 - active:1
+2016-11-22 16:41:59,571 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2016-11-22 16:42:01,801 DEBUG A1 - idle:19
+2016-11-22 16:42:01,802 DEBUG A1 - active:1
+2016-11-22 16:42:01,804 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2016-11-22 16:42:50,746 DEBUG A1 - idle:19
+2016-11-22 16:42:50,746 DEBUG A1 - active:1
+2016-11-22 16:42:50,749 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2016-11-22 17:00:32,463 DEBUG A1 - idle:19
+2016-11-22 17:00:32,463 DEBUG A1 - active:1
+2016-11-22 17:00:32,496 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-11-22 17:00:40,103 DEBUG A1 - idle:19
+2016-11-22 17:00:40,104 DEBUG A1 - active:1
+2016-11-22 17:00:40,118 ERROR A1 - HistorySearch
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名 '完成年月日' があいまいです。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.HistorySearch.service(HistorySearch.java:213)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-11-22 17:00:40,119 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2016-11-22 17:00:43,958 DEBUG A1 - idle:19
+2016-11-22 17:00:43,958 DEBUG A1 - active:1
+2016-11-22 17:00:43,962 ERROR A1 - HistorySearch
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名 '完成年月日' があいまいです。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.HistorySearch.service(HistorySearch.java:213)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-11-22 17:00:43,962 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2016-11-22 17:00:44,891 DEBUG A1 - idle:19
+2016-11-22 17:00:44,891 DEBUG A1 - active:1
+2016-11-22 17:00:44,896 ERROR A1 - HistorySearch
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名 '完成年月日' があいまいです。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.HistorySearch.service(HistorySearch.java:213)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-11-22 17:00:44,905 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2016-11-22 17:00:45,572 DEBUG A1 - idle:19
+2016-11-22 17:00:45,572 DEBUG A1 - active:1
+2016-11-22 17:00:45,576 ERROR A1 - HistorySearch
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名 '完成年月日' があいまいです。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.HistorySearch.service(HistorySearch.java:213)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-11-22 17:00:45,576 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0

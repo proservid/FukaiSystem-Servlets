@@ -1,0 +1,208 @@
+2017-04-28 14:45:49,641 DEBUG A1 - idle:19
+2017-04-28 14:45:49,641 DEBUG A1 - active:1
+2017-04-28 14:45:49,750 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 14:46:55,052 DEBUG A1 - idle:19
+2017-04-28 14:46:55,052 DEBUG A1 - active:1
+2017-04-28 14:46:55,083 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 14:48:08,029 DEBUG A1 - idle:19
+2017-04-28 14:48:08,029 DEBUG A1 - active:1
+2017-04-28 14:48:08,044 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 14:49:42,440 DEBUG A1 - idle:19
+2017-04-28 14:49:42,440 DEBUG A1 - active:1
+2017-04-28 14:49:42,549 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-04-28 15:30:23,699 DEBUG A1 - idle:19
+2017-04-28 15:30:23,699 DEBUG A1 - active:1
+2017-04-28 15:30:23,715 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:31:27,756 DEBUG A1 - idle:19
+2017-04-28 15:31:27,756 DEBUG A1 - active:1
+2017-04-28 15:31:27,772 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:31:47,927 DEBUG A1 - idle:19
+2017-04-28 15:31:47,927 DEBUG A1 - active:1
+2017-04-28 15:31:47,927 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 15:31:48,941 DEBUG A1 - idle:19
+2017-04-28 15:31:48,941 DEBUG A1 - active:1
+2017-04-28 15:31:48,972 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:32:04,463 DEBUG A1 - idle:19
+2017-04-28 15:32:04,463 DEBUG A1 - active:1
+2017-04-28 15:32:04,463 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 15:32:05,446 DEBUG A1 - idle:19
+2017-04-28 15:32:05,446 DEBUG A1 - active:1
+2017-04-28 15:32:05,446 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:36:39,985 DEBUG A1 - idle:19
+2017-04-28 15:36:39,985 DEBUG A1 - active:1
+2017-04-28 15:36:40,001 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:36:58,880 DEBUG A1 - idle:19
+2017-04-28 15:36:58,880 DEBUG A1 - active:1
+2017-04-28 15:36:58,880 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:37:19,584 DEBUG A1 - idle:19
+2017-04-28 15:37:19,584 DEBUG A1 - active:1
+2017-04-28 15:37:19,584 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:37:34,189 DEBUG A1 - idle:19
+2017-04-28 15:37:34,189 DEBUG A1 - active:1
+2017-04-28 15:37:34,204 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:38:49,961 DEBUG A1 - idle:19
+2017-04-28 15:38:49,961 DEBUG A1 - active:1
+2017-04-28 15:38:49,977 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:39:13,819 DEBUG A1 - idle:19
+2017-04-28 15:39:13,819 DEBUG A1 - active:1
+2017-04-28 15:39:13,835 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:39:25,274 DEBUG A1 - idle:19
+2017-04-28 15:39:25,274 DEBUG A1 - active:1
+2017-04-28 15:39:25,305 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 15:39:26,132 DEBUG A1 - idle:19
+2017-04-28 15:39:26,132 DEBUG A1 - active:1
+2017-04-28 15:39:26,132 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:40:05,069 DEBUG A1 - idle:19
+2017-04-28 15:40:05,069 DEBUG A1 - active:1
+2017-04-28 15:40:05,069 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 15:40:05,974 DEBUG A1 - idle:19
+2017-04-28 15:40:05,974 DEBUG A1 - active:1
+2017-04-28 15:40:05,990 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:41:19,297 DEBUG A1 - idle:19
+2017-04-28 15:41:19,297 DEBUG A1 - active:1
+2017-04-28 15:41:19,297 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:41:25,069 DEBUG A1 - idle:19
+2017-04-28 15:41:25,069 DEBUG A1 - active:1
+2017-04-28 15:41:25,085 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 15:41:26,083 DEBUG A1 - idle:19
+2017-04-28 15:41:26,083 DEBUG A1 - active:1
+2017-04-28 15:41:26,083 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:50:08,344 DEBUG A1 - idle:19
+2017-04-28 15:50:08,344 DEBUG A1 - active:1
+2017-04-28 15:50:08,360 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:54:21,683 DEBUG A1 - idle:19
+2017-04-28 15:54:21,683 DEBUG A1 - active:1
+2017-04-28 15:54:21,683 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:55:23,716 DEBUG A1 - idle:19
+2017-04-28 15:55:23,716 DEBUG A1 - active:1
+2017-04-28 15:55:23,716 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:55:29,116 DEBUG A1 - idle:19
+2017-04-28 15:55:29,116 DEBUG A1 - active:1
+2017-04-28 15:55:29,132 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:57:56,029 DEBUG A1 - idle:19
+2017-04-28 15:57:56,029 DEBUG A1 - active:1
+2017-04-28 15:57:56,139 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 15:57:57,418 DEBUG A1 - idle:19
+2017-04-28 15:57:57,418 DEBUG A1 - active:1
+2017-04-28 15:57:57,450 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:58:22,051 DEBUG A1 - idle:19
+2017-04-28 15:58:22,051 DEBUG A1 - active:1
+2017-04-28 15:58:22,066 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 15:58:23,331 DEBUG A1 - idle:19
+2017-04-28 15:58:23,331 DEBUG A1 - active:1
+2017-04-28 15:58:23,347 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:58:26,092 DEBUG A1 - idle:19
+2017-04-28 15:58:26,092 DEBUG A1 - active:1
+2017-04-28 15:58:26,108 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 15:58:27,076 DEBUG A1 - idle:19
+2017-04-28 15:58:27,076 DEBUG A1 - active:1
+2017-04-28 15:58:27,092 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:58:38,214 DEBUG A1 - idle:19
+2017-04-28 15:58:38,214 DEBUG A1 - active:1
+2017-04-28 15:58:38,230 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 15:58:39,588 DEBUG A1 - idle:19
+2017-04-28 15:58:39,588 DEBUG A1 - active:1
+2017-04-28 15:58:39,604 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 15:58:42,646 DEBUG A1 - idle:19
+2017-04-28 15:58:42,646 DEBUG A1 - active:1
+2017-04-28 15:58:42,661 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 15:58:43,474 DEBUG A1 - idle:19
+2017-04-28 15:58:43,474 DEBUG A1 - active:1
+2017-04-28 15:58:43,474 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 16:01:17,477 DEBUG A1 - idle:19
+2017-04-28 16:01:17,477 DEBUG A1 - active:1
+2017-04-28 16:01:17,493 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-28 16:01:18,555 DEBUG A1 - idle:19
+2017-04-28 16:01:18,555 DEBUG A1 - active:1
+2017-04-28 16:01:18,570 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 16:09:21,048 DEBUG A1 - idle:19
+2017-04-28 16:09:21,048 DEBUG A1 - active:1
+2017-04-28 16:09:21,095 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2017-04-28 16:09:56,432 DEBUG A1 - idle:19
+2017-04-28 16:09:56,432 DEBUG A1 - active:1
+2017-04-28 16:09:56,447 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 16:17:51,799 DEBUG A1 - idle:19
+2017-04-28 16:17:51,799 DEBUG A1 - active:1
+2017-04-28 16:17:51,799 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2017-04-28 16:18:10,379 DEBUG A1 - idle:19
+2017-04-28 16:18:10,379 DEBUG A1 - active:1
+2017-04-28 16:18:10,379 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2017-04-28 16:18:13,015 DEBUG A1 - idle:19
+2017-04-28 16:18:13,015 DEBUG A1 - active:1
+2017-04-28 16:18:13,063 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2017-04-28 16:18:13,921 DEBUG A1 - idle:19
+2017-04-28 16:18:13,921 DEBUG A1 - active:1
+2017-04-28 16:18:13,921 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2017-04-28 16:18:14,451 DEBUG A1 - idle:19
+2017-04-28 16:18:14,451 DEBUG A1 - active:1
+2017-04-28 16:18:14,451 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2017-04-28 16:18:15,139 DEBUG A1 - idle:19
+2017-04-28 16:18:15,154 DEBUG A1 - active:1
+2017-04-28 16:18:15,154 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2017-04-28 18:26:26,279 DEBUG A1 - idle:19
+2017-04-28 18:26:26,280 DEBUG A1 - active:1
+2017-04-28 18:26:26,396 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 18:38:06,713 DEBUG A1 - idle:19
+2017-04-28 18:38:06,713 DEBUG A1 - active:1
+2017-04-28 18:38:06,729 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 18:40:10,407 DEBUG A1 - idle:19
+2017-04-28 18:40:10,407 DEBUG A1 - active:1
+2017-04-28 18:40:10,423 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 18:44:29,938 DEBUG A1 - idle:19
+2017-04-28 18:44:29,938 DEBUG A1 - active:1
+2017-04-28 18:44:29,952 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-28 18:45:36,376 DEBUG A1 - idle:19
+2017-04-28 18:45:36,376 DEBUG A1 - active:1
+2017-04-28 18:45:36,388 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0

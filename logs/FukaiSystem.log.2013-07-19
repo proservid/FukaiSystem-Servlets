@@ -1,0 +1,4381 @@
+2013-07-19 08:43:00,972 DEBUG A1 - idle:19
+2013-07-19 08:43:00,972 DEBUG A1 - active:1
+2013-07-19 08:43:01,066 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-07-19 08:43:17,430 DEBUG A1 - idle:19
+2013-07-19 08:43:17,430 DEBUG A1 - active:1
+2013-07-19 08:43:17,587 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 08:43:19,178 DEBUG A1 - idle:19
+2013-07-19 08:43:19,178 DEBUG A1 - active:1
+2013-07-19 08:43:19,256 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:43:19,272 DEBUG A1 - idle:19
+2013-07-19 08:43:19,272 DEBUG A1 - active:1
+2013-07-19 08:43:19,272 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:10,362 DEBUG A1 - idle:19
+2013-07-19 08:44:10,362 DEBUG A1 - active:1
+2013-07-19 08:44:10,722 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 08:44:12,141 DEBUG A1 - idle:19
+2013-07-19 08:44:12,141 DEBUG A1 - active:1
+2013-07-19 08:44:12,188 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:12,204 DEBUG A1 - idle:19
+2013-07-19 08:44:12,204 DEBUG A1 - active:1
+2013-07-19 08:44:12,204 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:14,824 DEBUG A1 - idle:19
+2013-07-19 08:44:14,824 DEBUG A1 - active:1
+2013-07-19 08:44:14,856 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:14,871 DEBUG A1 - idle:19
+2013-07-19 08:44:14,871 DEBUG A1 - active:1
+2013-07-19 08:44:14,871 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:15,807 DEBUG A1 - idle:19
+2013-07-19 08:44:15,807 DEBUG A1 - active:1
+2013-07-19 08:44:15,838 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:15,854 DEBUG A1 - idle:19
+2013-07-19 08:44:15,854 DEBUG A1 - active:1
+2013-07-19 08:44:15,854 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:16,806 DEBUG A1 - idle:19
+2013-07-19 08:44:16,806 DEBUG A1 - active:1
+2013-07-19 08:44:16,852 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:16,852 DEBUG A1 - idle:19
+2013-07-19 08:44:16,852 DEBUG A1 - active:1
+2013-07-19 08:44:16,868 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:17,757 DEBUG A1 - idle:19
+2013-07-19 08:44:17,757 DEBUG A1 - active:1
+2013-07-19 08:44:17,804 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:17,820 DEBUG A1 - idle:19
+2013-07-19 08:44:17,820 DEBUG A1 - active:1
+2013-07-19 08:44:17,835 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:20,300 DEBUG A1 - idle:19
+2013-07-19 08:44:20,300 DEBUG A1 - active:1
+2013-07-19 08:44:20,362 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:20,378 DEBUG A1 - idle:19
+2013-07-19 08:44:20,378 DEBUG A1 - active:1
+2013-07-19 08:44:20,378 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:26,462 DEBUG A1 - idle:19
+2013-07-19 08:44:26,462 DEBUG A1 - active:1
+2013-07-19 08:44:26,509 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:26,540 DEBUG A1 - idle:19
+2013-07-19 08:44:26,540 DEBUG A1 - active:1
+2013-07-19 08:44:26,540 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:28,630 DEBUG A1 - idle:19
+2013-07-19 08:44:28,630 DEBUG A1 - active:1
+2013-07-19 08:44:28,662 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:28,693 DEBUG A1 - idle:19
+2013-07-19 08:44:28,693 DEBUG A1 - active:1
+2013-07-19 08:44:28,693 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:29,192 DEBUG A1 - idle:19
+2013-07-19 08:44:29,192 DEBUG A1 - active:1
+2013-07-19 08:44:29,223 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:29,239 DEBUG A1 - idle:19
+2013-07-19 08:44:29,239 DEBUG A1 - active:1
+2013-07-19 08:44:29,239 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:29,754 DEBUG A1 - idle:19
+2013-07-19 08:44:29,754 DEBUG A1 - active:1
+2013-07-19 08:44:29,785 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:29,800 DEBUG A1 - idle:19
+2013-07-19 08:44:29,800 DEBUG A1 - active:1
+2013-07-19 08:44:29,800 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:30,128 DEBUG A1 - idle:19
+2013-07-19 08:44:30,128 DEBUG A1 - active:1
+2013-07-19 08:44:30,159 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:30,175 DEBUG A1 - idle:19
+2013-07-19 08:44:30,175 DEBUG A1 - active:1
+2013-07-19 08:44:30,175 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:30,409 DEBUG A1 - idle:19
+2013-07-19 08:44:30,409 DEBUG A1 - active:1
+2013-07-19 08:44:30,456 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:30,471 DEBUG A1 - idle:19
+2013-07-19 08:44:30,471 DEBUG A1 - active:1
+2013-07-19 08:44:30,471 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:41,656 DEBUG A1 - idle:19
+2013-07-19 08:44:41,656 DEBUG A1 - active:1
+2013-07-19 08:44:41,703 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:41,703 DEBUG A1 - idle:19
+2013-07-19 08:44:41,703 DEBUG A1 - active:1
+2013-07-19 08:44:41,703 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:47,304 DEBUG A1 - idle:19
+2013-07-19 08:44:47,304 DEBUG A1 - active:1
+2013-07-19 08:44:47,335 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:47,351 DEBUG A1 - idle:19
+2013-07-19 08:44:47,351 DEBUG A1 - active:1
+2013-07-19 08:44:47,351 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:47,881 DEBUG A1 - idle:19
+2013-07-19 08:44:47,881 DEBUG A1 - active:1
+2013-07-19 08:44:47,928 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:47,943 DEBUG A1 - idle:19
+2013-07-19 08:44:47,943 DEBUG A1 - active:1
+2013-07-19 08:44:47,943 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:44:48,645 DEBUG A1 - idle:19
+2013-07-19 08:44:48,645 DEBUG A1 - active:1
+2013-07-19 08:44:48,692 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:44:48,708 DEBUG A1 - idle:19
+2013-07-19 08:44:48,708 DEBUG A1 - active:1
+2013-07-19 08:44:48,708 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:08,582 DEBUG A1 - idle:19
+2013-07-19 08:45:08,582 DEBUG A1 - active:1
+2013-07-19 08:45:08,630 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 08:45:12,156 DEBUG A1 - idle:19
+2013-07-19 08:45:12,156 DEBUG A1 - active:1
+2013-07-19 08:45:12,187 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:12,202 DEBUG A1 - idle:19
+2013-07-19 08:45:12,202 DEBUG A1 - active:1
+2013-07-19 08:45:12,202 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:13,965 DEBUG A1 - idle:19
+2013-07-19 08:45:13,965 DEBUG A1 - active:1
+2013-07-19 08:45:14,012 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:14,028 DEBUG A1 - idle:19
+2013-07-19 08:45:14,028 DEBUG A1 - active:1
+2013-07-19 08:45:14,028 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:14,511 DEBUG A1 - idle:19
+2013-07-19 08:45:14,511 DEBUG A1 - active:1
+2013-07-19 08:45:14,574 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:14,589 DEBUG A1 - idle:19
+2013-07-19 08:45:14,589 DEBUG A1 - active:1
+2013-07-19 08:45:14,589 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:15,588 DEBUG A1 - idle:19
+2013-07-19 08:45:15,588 DEBUG A1 - active:1
+2013-07-19 08:45:15,650 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:15,666 DEBUG A1 - idle:19
+2013-07-19 08:45:15,666 DEBUG A1 - active:1
+2013-07-19 08:45:15,666 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:16,305 DEBUG A1 - idle:19
+2013-07-19 08:45:16,305 DEBUG A1 - active:1
+2013-07-19 08:45:16,352 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:16,352 DEBUG A1 - idle:19
+2013-07-19 08:45:16,352 DEBUG A1 - active:1
+2013-07-19 08:45:16,368 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:17,085 DEBUG A1 - idle:19
+2013-07-19 08:45:17,085 DEBUG A1 - active:1
+2013-07-19 08:45:17,116 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:17,132 DEBUG A1 - idle:19
+2013-07-19 08:45:17,132 DEBUG A1 - active:1
+2013-07-19 08:45:17,132 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:17,288 DEBUG A1 - idle:19
+2013-07-19 08:45:17,288 DEBUG A1 - active:1
+2013-07-19 08:45:17,319 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:17,335 DEBUG A1 - idle:19
+2013-07-19 08:45:17,335 DEBUG A1 - active:1
+2013-07-19 08:45:17,335 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:18,052 DEBUG A1 - idle:19
+2013-07-19 08:45:18,052 DEBUG A1 - active:1
+2013-07-19 08:45:18,084 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:18,099 DEBUG A1 - idle:19
+2013-07-19 08:45:18,099 DEBUG A1 - active:1
+2013-07-19 08:45:18,099 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:18,552 DEBUG A1 - idle:19
+2013-07-19 08:45:18,552 DEBUG A1 - active:1
+2013-07-19 08:45:18,583 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:18,598 DEBUG A1 - idle:19
+2013-07-19 08:45:18,598 DEBUG A1 - active:1
+2013-07-19 08:45:18,598 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:19,004 DEBUG A1 - idle:19
+2013-07-19 08:45:19,004 DEBUG A1 - active:1
+2013-07-19 08:45:19,035 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:19,035 DEBUG A1 - idle:19
+2013-07-19 08:45:19,035 DEBUG A1 - active:1
+2013-07-19 08:45:19,035 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:19,316 DEBUG A1 - idle:19
+2013-07-19 08:45:19,316 DEBUG A1 - active:1
+2013-07-19 08:45:19,363 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:19,363 DEBUG A1 - idle:19
+2013-07-19 08:45:19,363 DEBUG A1 - active:1
+2013-07-19 08:45:19,394 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:22,982 DEBUG A1 - idle:19
+2013-07-19 08:45:22,982 DEBUG A1 - active:1
+2013-07-19 08:45:23,013 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:23,029 DEBUG A1 - idle:19
+2013-07-19 08:45:23,029 DEBUG A1 - active:1
+2013-07-19 08:45:23,044 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:25,743 DEBUG A1 - idle:19
+2013-07-19 08:45:25,743 DEBUG A1 - active:1
+2013-07-19 08:45:25,790 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:25,790 DEBUG A1 - idle:19
+2013-07-19 08:45:25,790 DEBUG A1 - active:1
+2013-07-19 08:45:25,806 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:26,336 DEBUG A1 - idle:19
+2013-07-19 08:45:26,336 DEBUG A1 - active:1
+2013-07-19 08:45:26,383 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:26,383 DEBUG A1 - idle:19
+2013-07-19 08:45:26,383 DEBUG A1 - active:1
+2013-07-19 08:45:26,398 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:26,539 DEBUG A1 - idle:19
+2013-07-19 08:45:26,554 DEBUG A1 - active:1
+2013-07-19 08:45:26,586 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:26,601 DEBUG A1 - idle:19
+2013-07-19 08:45:26,601 DEBUG A1 - active:1
+2013-07-19 08:45:26,601 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:28,036 DEBUG A1 - idle:19
+2013-07-19 08:45:28,036 DEBUG A1 - active:1
+2013-07-19 08:45:28,083 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:28,099 DEBUG A1 - idle:19
+2013-07-19 08:45:28,099 DEBUG A1 - active:1
+2013-07-19 08:45:28,099 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:30,751 DEBUG A1 - idle:19
+2013-07-19 08:45:30,751 DEBUG A1 - active:1
+2013-07-19 08:45:30,782 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:30,798 DEBUG A1 - idle:19
+2013-07-19 08:45:30,798 DEBUG A1 - active:1
+2013-07-19 08:45:30,798 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:42,342 DEBUG A1 - idle:19
+2013-07-19 08:45:42,342 DEBUG A1 - active:1
+2013-07-19 08:45:42,405 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 08:45:43,388 DEBUG A1 - idle:19
+2013-07-19 08:45:43,388 DEBUG A1 - active:1
+2013-07-19 08:45:43,419 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:43,435 DEBUG A1 - idle:19
+2013-07-19 08:45:43,435 DEBUG A1 - active:1
+2013-07-19 08:45:43,435 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:47,257 DEBUG A1 - idle:19
+2013-07-19 08:45:47,257 DEBUG A1 - active:1
+2013-07-19 08:45:47,288 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:47,303 DEBUG A1 - idle:19
+2013-07-19 08:45:47,303 DEBUG A1 - active:1
+2013-07-19 08:45:47,303 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:47,678 DEBUG A1 - idle:19
+2013-07-19 08:45:47,678 DEBUG A1 - active:1
+2013-07-19 08:45:47,725 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:47,740 DEBUG A1 - idle:19
+2013-07-19 08:45:47,740 DEBUG A1 - active:1
+2013-07-19 08:45:47,740 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:48,224 DEBUG A1 - idle:19
+2013-07-19 08:45:48,224 DEBUG A1 - active:1
+2013-07-19 08:45:48,271 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:48,286 DEBUG A1 - idle:19
+2013-07-19 08:45:48,286 DEBUG A1 - active:1
+2013-07-19 08:45:48,286 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:50,642 DEBUG A1 - idle:19
+2013-07-19 08:45:50,642 DEBUG A1 - active:1
+2013-07-19 08:45:50,673 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:50,704 DEBUG A1 - idle:19
+2013-07-19 08:45:50,704 DEBUG A1 - active:1
+2013-07-19 08:45:50,720 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:51,344 DEBUG A1 - idle:19
+2013-07-19 08:45:51,344 DEBUG A1 - active:1
+2013-07-19 08:45:51,391 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:51,406 DEBUG A1 - idle:19
+2013-07-19 08:45:51,406 DEBUG A1 - active:1
+2013-07-19 08:45:51,406 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:51,609 DEBUG A1 - idle:19
+2013-07-19 08:45:51,609 DEBUG A1 - active:1
+2013-07-19 08:45:51,640 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:51,656 DEBUG A1 - idle:19
+2013-07-19 08:45:51,656 DEBUG A1 - active:1
+2013-07-19 08:45:51,656 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:51,765 DEBUG A1 - idle:19
+2013-07-19 08:45:51,765 DEBUG A1 - active:1
+2013-07-19 08:45:51,812 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:51,827 DEBUG A1 - idle:19
+2013-07-19 08:45:51,827 DEBUG A1 - active:1
+2013-07-19 08:45:51,827 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:51,937 DEBUG A1 - idle:19
+2013-07-19 08:45:51,937 DEBUG A1 - active:1
+2013-07-19 08:45:51,983 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:51,999 DEBUG A1 - idle:19
+2013-07-19 08:45:51,999 DEBUG A1 - active:1
+2013-07-19 08:45:51,999 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:52,108 DEBUG A1 - idle:19
+2013-07-19 08:45:52,108 DEBUG A1 - active:1
+2013-07-19 08:45:52,139 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:52,155 DEBUG A1 - idle:19
+2013-07-19 08:45:52,155 DEBUG A1 - active:1
+2013-07-19 08:45:52,155 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:52,249 DEBUG A1 - idle:19
+2013-07-19 08:45:52,264 DEBUG A1 - active:1
+2013-07-19 08:45:52,295 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:52,311 DEBUG A1 - idle:19
+2013-07-19 08:45:52,311 DEBUG A1 - active:1
+2013-07-19 08:45:52,311 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:52,592 DEBUG A1 - idle:19
+2013-07-19 08:45:52,592 DEBUG A1 - active:1
+2013-07-19 08:45:52,623 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:52,639 DEBUG A1 - idle:19
+2013-07-19 08:45:52,639 DEBUG A1 - active:1
+2013-07-19 08:45:52,639 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:52,904 DEBUG A1 - idle:19
+2013-07-19 08:45:52,904 DEBUG A1 - active:1
+2013-07-19 08:45:52,935 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:52,966 DEBUG A1 - idle:19
+2013-07-19 08:45:52,966 DEBUG A1 - active:1
+2013-07-19 08:45:52,966 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:53,138 DEBUG A1 - idle:19
+2013-07-19 08:45:53,138 DEBUG A1 - active:1
+2013-07-19 08:45:53,185 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:53,200 DEBUG A1 - idle:19
+2013-07-19 08:45:53,200 DEBUG A1 - active:1
+2013-07-19 08:45:53,200 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:53,341 DEBUG A1 - idle:19
+2013-07-19 08:45:53,341 DEBUG A1 - active:1
+2013-07-19 08:45:53,387 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:53,403 DEBUG A1 - idle:19
+2013-07-19 08:45:53,403 DEBUG A1 - active:1
+2013-07-19 08:45:53,403 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:53,528 DEBUG A1 - idle:19
+2013-07-19 08:45:53,528 DEBUG A1 - active:1
+2013-07-19 08:45:53,559 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:53,575 DEBUG A1 - idle:19
+2013-07-19 08:45:53,575 DEBUG A1 - active:1
+2013-07-19 08:45:53,575 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:53,715 DEBUG A1 - idle:19
+2013-07-19 08:45:53,715 DEBUG A1 - active:1
+2013-07-19 08:45:53,746 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:53,762 DEBUG A1 - idle:19
+2013-07-19 08:45:53,762 DEBUG A1 - active:1
+2013-07-19 08:45:53,762 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:53,887 DEBUG A1 - idle:19
+2013-07-19 08:45:53,887 DEBUG A1 - active:1
+2013-07-19 08:45:53,918 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:53,933 DEBUG A1 - idle:19
+2013-07-19 08:45:53,933 DEBUG A1 - active:1
+2013-07-19 08:45:53,933 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:54,058 DEBUG A1 - idle:19
+2013-07-19 08:45:54,058 DEBUG A1 - active:1
+2013-07-19 08:45:54,105 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:54,121 DEBUG A1 - idle:19
+2013-07-19 08:45:54,121 DEBUG A1 - active:1
+2013-07-19 08:45:54,121 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:55,041 DEBUG A1 - idle:19
+2013-07-19 08:45:55,041 DEBUG A1 - active:1
+2013-07-19 08:45:55,088 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:55,103 DEBUG A1 - idle:19
+2013-07-19 08:45:55,103 DEBUG A1 - active:1
+2013-07-19 08:45:55,103 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:55,618 DEBUG A1 - idle:19
+2013-07-19 08:45:55,618 DEBUG A1 - active:1
+2013-07-19 08:45:55,649 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:55,665 DEBUG A1 - idle:19
+2013-07-19 08:45:55,665 DEBUG A1 - active:1
+2013-07-19 08:45:55,665 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:56,164 DEBUG A1 - idle:19
+2013-07-19 08:45:56,164 DEBUG A1 - active:1
+2013-07-19 08:45:56,195 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:56,211 DEBUG A1 - idle:19
+2013-07-19 08:45:56,211 DEBUG A1 - active:1
+2013-07-19 08:45:56,211 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:56,726 DEBUG A1 - idle:19
+2013-07-19 08:45:56,726 DEBUG A1 - active:1
+2013-07-19 08:45:56,757 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:56,773 DEBUG A1 - idle:19
+2013-07-19 08:45:56,773 DEBUG A1 - active:1
+2013-07-19 08:45:56,773 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:57,537 DEBUG A1 - idle:19
+2013-07-19 08:45:57,537 DEBUG A1 - active:1
+2013-07-19 08:45:57,568 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:57,584 DEBUG A1 - idle:19
+2013-07-19 08:45:57,584 DEBUG A1 - active:1
+2013-07-19 08:45:57,584 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:57,896 DEBUG A1 - idle:19
+2013-07-19 08:45:57,896 DEBUG A1 - active:1
+2013-07-19 08:45:57,958 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:57,958 DEBUG A1 - idle:19
+2013-07-19 08:45:57,958 DEBUG A1 - active:1
+2013-07-19 08:45:57,974 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:58,161 DEBUG A1 - idle:19
+2013-07-19 08:45:58,161 DEBUG A1 - active:1
+2013-07-19 08:45:58,192 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:58,208 DEBUG A1 - idle:19
+2013-07-19 08:45:58,208 DEBUG A1 - active:1
+2013-07-19 08:45:58,208 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:58,520 DEBUG A1 - idle:19
+2013-07-19 08:45:58,520 DEBUG A1 - active:1
+2013-07-19 08:45:58,551 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:58,567 DEBUG A1 - idle:19
+2013-07-19 08:45:58,567 DEBUG A1 - active:1
+2013-07-19 08:45:58,567 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:59,534 DEBUG A1 - idle:19
+2013-07-19 08:45:59,534 DEBUG A1 - active:1
+2013-07-19 08:45:59,565 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:59,581 DEBUG A1 - idle:19
+2013-07-19 08:45:59,581 DEBUG A1 - active:1
+2013-07-19 08:45:59,581 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:45:59,877 DEBUG A1 - idle:19
+2013-07-19 08:45:59,877 DEBUG A1 - active:1
+2013-07-19 08:45:59,924 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:45:59,924 DEBUG A1 - idle:19
+2013-07-19 08:45:59,924 DEBUG A1 - active:1
+2013-07-19 08:45:59,924 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:00,142 DEBUG A1 - idle:19
+2013-07-19 08:46:00,142 DEBUG A1 - active:1
+2013-07-19 08:46:00,173 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:00,189 DEBUG A1 - idle:19
+2013-07-19 08:46:00,189 DEBUG A1 - active:1
+2013-07-19 08:46:00,189 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:00,501 DEBUG A1 - idle:19
+2013-07-19 08:46:00,501 DEBUG A1 - active:1
+2013-07-19 08:46:00,548 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:00,563 DEBUG A1 - idle:19
+2013-07-19 08:46:00,563 DEBUG A1 - active:1
+2013-07-19 08:46:00,563 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:01,484 DEBUG A1 - idle:19
+2013-07-19 08:46:01,484 DEBUG A1 - active:1
+2013-07-19 08:46:01,515 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:01,531 DEBUG A1 - idle:19
+2013-07-19 08:46:01,531 DEBUG A1 - active:1
+2013-07-19 08:46:01,531 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:01,858 DEBUG A1 - idle:19
+2013-07-19 08:46:01,858 DEBUG A1 - active:1
+2013-07-19 08:46:01,905 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:01,921 DEBUG A1 - idle:19
+2013-07-19 08:46:01,921 DEBUG A1 - active:1
+2013-07-19 08:46:01,921 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:06,242 DEBUG A1 - idle:19
+2013-07-19 08:46:06,257 DEBUG A1 - active:1
+2013-07-19 08:46:06,289 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:06,304 DEBUG A1 - idle:19
+2013-07-19 08:46:06,304 DEBUG A1 - active:1
+2013-07-19 08:46:06,304 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:06,647 DEBUG A1 - idle:19
+2013-07-19 08:46:06,647 DEBUG A1 - active:1
+2013-07-19 08:46:06,694 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:06,710 DEBUG A1 - idle:19
+2013-07-19 08:46:06,710 DEBUG A1 - active:1
+2013-07-19 08:46:06,710 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:07,115 DEBUG A1 - idle:19
+2013-07-19 08:46:07,115 DEBUG A1 - active:1
+2013-07-19 08:46:07,147 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:07,162 DEBUG A1 - idle:19
+2013-07-19 08:46:07,162 DEBUG A1 - active:1
+2013-07-19 08:46:07,162 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:07,568 DEBUG A1 - idle:19
+2013-07-19 08:46:07,568 DEBUG A1 - active:1
+2013-07-19 08:46:07,615 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:07,615 DEBUG A1 - idle:19
+2013-07-19 08:46:07,615 DEBUG A1 - active:1
+2013-07-19 08:46:07,630 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:08,301 DEBUG A1 - idle:19
+2013-07-19 08:46:08,301 DEBUG A1 - active:1
+2013-07-19 08:46:08,348 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:08,348 DEBUG A1 - idle:19
+2013-07-19 08:46:08,348 DEBUG A1 - active:1
+2013-07-19 08:46:08,363 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:08,691 DEBUG A1 - idle:19
+2013-07-19 08:46:08,691 DEBUG A1 - active:1
+2013-07-19 08:46:08,738 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:08,753 DEBUG A1 - idle:19
+2013-07-19 08:46:08,753 DEBUG A1 - active:1
+2013-07-19 08:46:08,753 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:09,081 DEBUG A1 - idle:19
+2013-07-19 08:46:09,081 DEBUG A1 - active:1
+2013-07-19 08:46:09,112 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:09,128 DEBUG A1 - idle:19
+2013-07-19 08:46:09,128 DEBUG A1 - active:1
+2013-07-19 08:46:09,128 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:09,409 DEBUG A1 - idle:19
+2013-07-19 08:46:09,409 DEBUG A1 - active:1
+2013-07-19 08:46:09,455 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:09,455 DEBUG A1 - idle:19
+2013-07-19 08:46:09,455 DEBUG A1 - active:1
+2013-07-19 08:46:09,455 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:09,767 DEBUG A1 - idle:19
+2013-07-19 08:46:09,767 DEBUG A1 - active:1
+2013-07-19 08:46:09,814 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:09,830 DEBUG A1 - idle:19
+2013-07-19 08:46:09,830 DEBUG A1 - active:1
+2013-07-19 08:46:09,830 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:10,142 DEBUG A1 - idle:19
+2013-07-19 08:46:10,142 DEBUG A1 - active:1
+2013-07-19 08:46:10,189 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:10,220 DEBUG A1 - idle:19
+2013-07-19 08:46:10,220 DEBUG A1 - active:1
+2013-07-19 08:46:10,220 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:10,563 DEBUG A1 - idle:19
+2013-07-19 08:46:10,563 DEBUG A1 - active:1
+2013-07-19 08:46:10,594 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:10,610 DEBUG A1 - idle:19
+2013-07-19 08:46:10,610 DEBUG A1 - active:1
+2013-07-19 08:46:10,610 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:10,906 DEBUG A1 - idle:19
+2013-07-19 08:46:10,906 DEBUG A1 - active:1
+2013-07-19 08:46:10,953 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:10,969 DEBUG A1 - idle:19
+2013-07-19 08:46:10,969 DEBUG A1 - active:1
+2013-07-19 08:46:10,969 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:11,343 DEBUG A1 - idle:19
+2013-07-19 08:46:11,343 DEBUG A1 - active:1
+2013-07-19 08:46:11,374 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:11,390 DEBUG A1 - idle:19
+2013-07-19 08:46:11,390 DEBUG A1 - active:1
+2013-07-19 08:46:11,390 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:11,702 DEBUG A1 - idle:19
+2013-07-19 08:46:11,702 DEBUG A1 - active:1
+2013-07-19 08:46:11,749 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:11,780 DEBUG A1 - idle:19
+2013-07-19 08:46:11,780 DEBUG A1 - active:1
+2013-07-19 08:46:11,780 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:12,076 DEBUG A1 - idle:19
+2013-07-19 08:46:12,076 DEBUG A1 - active:1
+2013-07-19 08:46:12,123 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:12,139 DEBUG A1 - idle:19
+2013-07-19 08:46:12,139 DEBUG A1 - active:1
+2013-07-19 08:46:12,139 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:12,451 DEBUG A1 - idle:19
+2013-07-19 08:46:12,451 DEBUG A1 - active:1
+2013-07-19 08:46:12,482 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:12,497 DEBUG A1 - idle:19
+2013-07-19 08:46:12,497 DEBUG A1 - active:1
+2013-07-19 08:46:12,497 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:12,778 DEBUG A1 - idle:19
+2013-07-19 08:46:12,778 DEBUG A1 - active:1
+2013-07-19 08:46:12,825 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:12,825 DEBUG A1 - idle:19
+2013-07-19 08:46:12,825 DEBUG A1 - active:1
+2013-07-19 08:46:12,825 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:13,090 DEBUG A1 - idle:19
+2013-07-19 08:46:13,090 DEBUG A1 - active:1
+2013-07-19 08:46:13,355 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:13,371 DEBUG A1 - idle:19
+2013-07-19 08:46:13,371 DEBUG A1 - active:1
+2013-07-19 08:46:13,371 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:13,402 DEBUG A1 - idle:19
+2013-07-19 08:46:13,402 DEBUG A1 - active:1
+2013-07-19 08:46:13,449 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:13,449 DEBUG A1 - idle:19
+2013-07-19 08:46:13,449 DEBUG A1 - active:1
+2013-07-19 08:46:13,465 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:14,884 DEBUG A1 - idle:19
+2013-07-19 08:46:14,884 DEBUG A1 - active:1
+2013-07-19 08:46:14,915 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:14,931 DEBUG A1 - idle:19
+2013-07-19 08:46:14,931 DEBUG A1 - active:1
+2013-07-19 08:46:14,931 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:15,633 DEBUG A1 - idle:19
+2013-07-19 08:46:15,633 DEBUG A1 - active:1
+2013-07-19 08:46:15,664 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:15,680 DEBUG A1 - idle:19
+2013-07-19 08:46:15,680 DEBUG A1 - active:1
+2013-07-19 08:46:15,680 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:16,585 DEBUG A1 - idle:19
+2013-07-19 08:46:16,585 DEBUG A1 - active:1
+2013-07-19 08:46:16,616 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:16,616 DEBUG A1 - idle:19
+2013-07-19 08:46:16,616 DEBUG A1 - active:1
+2013-07-19 08:46:16,616 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:46:16,943 DEBUG A1 - idle:19
+2013-07-19 08:46:16,943 DEBUG A1 - active:1
+2013-07-19 08:46:16,975 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:46:16,990 DEBUG A1 - idle:19
+2013-07-19 08:46:16,990 DEBUG A1 - active:1
+2013-07-19 08:46:16,990 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:47:15,202 DEBUG A1 - idle:19
+2013-07-19 08:47:15,202 DEBUG A1 - active:1
+2013-07-19 08:47:15,250 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 08:47:16,623 DEBUG A1 - idle:19
+2013-07-19 08:47:16,623 DEBUG A1 - active:1
+2013-07-19 08:47:16,654 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:47:16,669 DEBUG A1 - idle:19
+2013-07-19 08:47:16,669 DEBUG A1 - active:1
+2013-07-19 08:47:16,669 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:48:05,685 DEBUG A1 - idle:19
+2013-07-19 08:48:05,685 DEBUG A1 - active:1
+2013-07-19 08:48:05,982 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 08:48:06,559 DEBUG A1 - idle:19
+2013-07-19 08:48:06,559 DEBUG A1 - active:1
+2013-07-19 08:48:06,590 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:48:06,606 DEBUG A1 - idle:19
+2013-07-19 08:48:06,606 DEBUG A1 - active:1
+2013-07-19 08:48:06,606 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:51:22,870 DEBUG A1 - idle:19
+2013-07-19 08:51:22,870 DEBUG A1 - active:1
+2013-07-19 08:51:23,105  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 08:51:23,230  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 08:51:23,261 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 08:52:18,750 DEBUG A1 - idle:19
+2013-07-19 08:52:18,750 DEBUG A1 - active:1
+2013-07-19 08:52:18,798 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 08:52:20,420 DEBUG A1 - idle:19
+2013-07-19 08:52:20,420 DEBUG A1 - active:1
+2013-07-19 08:52:20,452 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:52:20,467 DEBUG A1 - idle:19
+2013-07-19 08:52:20,467 DEBUG A1 - active:1
+2013-07-19 08:52:20,467 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:52:53,867 DEBUG A1 - idle:19
+2013-07-19 08:52:53,867 DEBUG A1 - active:1
+2013-07-19 08:52:53,961  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 08:52:53,976  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 08:52:53,976 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 08:53:22,260 DEBUG A1 - idle:19
+2013-07-19 08:53:22,260 DEBUG A1 - active:1
+2013-07-19 08:53:22,308 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 08:53:23,103 DEBUG A1 - idle:19
+2013-07-19 08:53:23,103 DEBUG A1 - active:1
+2013-07-19 08:53:23,135 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 08:53:23,150 DEBUG A1 - idle:19
+2013-07-19 08:53:23,150 DEBUG A1 - active:1
+2013-07-19 08:53:23,150 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 08:54:18,000 DEBUG A1 - idle:19
+2013-07-19 08:54:18,000 DEBUG A1 - active:1
+2013-07-19 08:54:18,062  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 08:54:18,078  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 08:54:18,078 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 09:12:34,403 DEBUG A1 - idle:19
+2013-07-19 09:12:34,403 DEBUG A1 - active:1
+2013-07-19 09:12:34,576 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:12:45,839 DEBUG A1 - idle:19
+2013-07-19 09:12:45,839 DEBUG A1 - active:1
+2013-07-19 09:12:46,464 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2013-07-19 09:13:20,566 DEBUG A1 - idle:19
+2013-07-19 09:13:20,566 DEBUG A1 - active:1
+2013-07-19 09:13:20,612 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-07-19 09:13:29,692 DEBUG A1 - idle:19
+2013-07-19 09:13:29,692 DEBUG A1 - active:1
+2013-07-19 09:13:30,192 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2013-07-19 09:17:10,575 DEBUG A1 - idle:19
+2013-07-19 09:17:10,575 DEBUG A1 - active:1
+2013-07-19 09:17:10,857 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:17:12,807 DEBUG A1 - idle:19
+2013-07-19 09:17:12,807 DEBUG A1 - active:1
+2013-07-19 09:17:12,839 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:17:31,419 DEBUG A1 - idle:19
+2013-07-19 09:17:31,419 DEBUG A1 - active:1
+2013-07-19 09:17:31,419 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:17:31,497 DEBUG A1 - idle:19
+2013-07-19 09:17:31,497 DEBUG A1 - active:1
+2013-07-19 09:17:31,607 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:17:38,705 DEBUG A1 - idle:19
+2013-07-19 09:17:38,705 DEBUG A1 - active:1
+2013-07-19 09:17:42,669 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:17:47,754 DEBUG A1 - idle:19
+2013-07-19 09:17:47,754 DEBUG A1 - active:1
+2013-07-19 09:17:48,036 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:17:49,346 DEBUG A1 - idle:19
+2013-07-19 09:17:49,346 DEBUG A1 - active:1
+2013-07-19 09:17:49,378 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 09:17:49,393 DEBUG A1 - idle:19
+2013-07-19 09:17:49,393 DEBUG A1 - active:1
+2013-07-19 09:17:49,393 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:18:27,504 DEBUG A1 - idle:19
+2013-07-19 09:18:27,504 DEBUG A1 - active:1
+2013-07-19 09:18:27,598  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 09:18:27,598  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 09:18:27,614 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 09:18:41,888 DEBUG A1 - idle:19
+2013-07-19 09:18:41,888 DEBUG A1 - active:1
+2013-07-19 09:18:41,888 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:18:41,966 DEBUG A1 - idle:19
+2013-07-19 09:18:41,966 DEBUG A1 - active:1
+2013-07-19 09:18:42,123 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:18:43,309 DEBUG A1 - idle:19
+2013-07-19 09:18:43,309 DEBUG A1 - active:1
+2013-07-19 09:18:43,356 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 09:18:43,356 DEBUG A1 - idle:19
+2013-07-19 09:18:43,356 DEBUG A1 - active:1
+2013-07-19 09:18:43,371 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:19:31,934 DEBUG A1 - idle:19
+2013-07-19 09:19:31,934 DEBUG A1 - active:1
+2013-07-19 09:19:32,028  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 09:19:32,028  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 09:19:32,294 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 09:20:55,497 DEBUG A1 - idle:19
+2013-07-19 09:20:55,497 DEBUG A1 - active:1
+2013-07-19 09:20:55,497 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:21:02,298 DEBUG A1 - idle:19
+2013-07-19 09:21:02,298 DEBUG A1 - active:1
+2013-07-19 09:21:02,565 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:21:16,246 DEBUG A1 - idle:19
+2013-07-19 09:21:16,246 DEBUG A1 - active:1
+2013-07-19 09:21:16,356 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:21:26,449 DEBUG A1 - idle:19
+2013-07-19 09:21:26,449 DEBUG A1 - active:1
+2013-07-19 09:21:26,480 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 09:21:26,496 DEBUG A1 - idle:19
+2013-07-19 09:21:26,496 DEBUG A1 - active:1
+2013-07-19 09:21:26,496 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:22:36,290 DEBUG A1 - idle:19
+2013-07-19 09:22:36,290 DEBUG A1 - active:1
+2013-07-19 09:22:36,384  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 09:22:36,416  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 09:22:36,416 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 09:23:17,600 DEBUG A1 - idle:19
+2013-07-19 09:23:17,600 DEBUG A1 - active:1
+2013-07-19 09:23:17,600 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:23:28,224 DEBUG A1 - idle:19
+2013-07-19 09:23:28,224 DEBUG A1 - active:1
+2013-07-19 09:23:28,381 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:23:29,473 DEBUG A1 - idle:19
+2013-07-19 09:23:29,489 DEBUG A1 - active:1
+2013-07-19 09:23:29,520 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 09:23:29,520 DEBUG A1 - idle:19
+2013-07-19 09:23:29,520 DEBUG A1 - active:1
+2013-07-19 09:23:29,535 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:24:29,923 DEBUG A1 - idle:19
+2013-07-19 09:24:29,923 DEBUG A1 - active:1
+2013-07-19 09:24:30,001  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 09:24:30,001  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 09:24:30,018 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 09:24:49,705 DEBUG A1 - idle:19
+2013-07-19 09:24:49,705 DEBUG A1 - active:1
+2013-07-19 09:24:49,705 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:24:51,624 DEBUG A1 - idle:19
+2013-07-19 09:24:51,624 DEBUG A1 - active:1
+2013-07-19 09:24:51,781 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:24:59,628 DEBUG A1 - idle:19
+2013-07-19 09:24:59,628 DEBUG A1 - active:1
+2013-07-19 09:24:59,800 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:25:02,655 DEBUG A1 - idle:19
+2013-07-19 09:25:02,655 DEBUG A1 - active:1
+2013-07-19 09:25:02,750 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:25:04,169 DEBUG A1 - idle:19
+2013-07-19 09:25:04,169 DEBUG A1 - active:1
+2013-07-19 09:25:04,545 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:25:51,267 DEBUG A1 - idle:19
+2013-07-19 09:25:51,267 DEBUG A1 - active:1
+2013-07-19 09:25:51,267 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:28:58,514 DEBUG A1 - idle:19
+2013-07-19 09:28:58,514 DEBUG A1 - active:1
+2013-07-19 09:28:58,514 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:28:58,639 DEBUG A1 - idle:19
+2013-07-19 09:28:58,639 DEBUG A1 - active:1
+2013-07-19 09:28:58,952 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2013-07-19 09:29:10,823 DEBUG A1 - idle:19
+2013-07-19 09:29:10,823 DEBUG A1 - active:1
+2013-07-19 09:29:10,901  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 09:29:10,917  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 09:29:10,917 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 09:29:36,143 DEBUG A1 - idle:19
+2013-07-19 09:29:36,143 DEBUG A1 - active:1
+2013-07-19 09:29:36,502 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-19 09:29:41,010 DEBUG A1 - idle:19
+2013-07-19 09:29:41,010 DEBUG A1 - active:1
+2013-07-19 09:29:41,026 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:29:44,177 DEBUG A1 - idle:19
+2013-07-19 09:29:44,177 DEBUG A1 - active:1
+2013-07-19 09:29:44,272 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:29:51,416 DEBUG A1 - idle:19
+2013-07-19 09:29:51,416 DEBUG A1 - active:1
+2013-07-19 09:29:51,463 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 09:29:51,479 DEBUG A1 - idle:19
+2013-07-19 09:29:51,479 DEBUG A1 - active:1
+2013-07-19 09:29:51,479 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:30:41,461 DEBUG A1 - idle:19
+2013-07-19 09:30:41,461 DEBUG A1 - active:1
+2013-07-19 09:30:41,539  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 09:30:41,539  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 09:30:41,555 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 09:31:08,341 DEBUG A1 - idle:19
+2013-07-19 09:31:08,341 DEBUG A1 - active:1
+2013-07-19 09:31:08,357 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 09:31:08,450 DEBUG A1 - idle:19
+2013-07-19 09:31:08,450 DEBUG A1 - active:1
+2013-07-19 09:31:08,545 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 09:31:09,263 DEBUG A1 - idle:19
+2013-07-19 09:31:09,263 DEBUG A1 - active:1
+2013-07-19 09:31:09,294 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 09:31:09,309 DEBUG A1 - idle:19
+2013-07-19 09:31:09,309 DEBUG A1 - active:1
+2013-07-19 09:31:09,309 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:07:55,310 DEBUG A1 - idle:19
+2013-07-19 10:07:55,310 DEBUG A1 - active:1
+2013-07-19 10:07:55,388  INFO A1 - T_在庫_子は5件処理されました。
+2013-07-19 10:07:55,404  INFO A1 - T_指定納品書は4件処理されました。
+2013-07-19 10:07:55,404 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 10:09:04,170 DEBUG A1 - idle:19
+2013-07-19 10:09:04,170 DEBUG A1 - active:1
+2013-07-19 10:09:04,185 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 10:09:05,107 DEBUG A1 - idle:19
+2013-07-19 10:09:05,107 DEBUG A1 - active:1
+2013-07-19 10:09:05,122 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 10:09:30,332 DEBUG A1 - idle:19
+2013-07-19 10:09:30,332 DEBUG A1 - active:1
+2013-07-19 10:09:30,442  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 10:09:30,442 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 10:10:07,493 DEBUG A1 - idle:19
+2013-07-19 10:10:07,493 DEBUG A1 - active:1
+2013-07-19 10:10:11,800 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:10:11,816 DEBUG A1 - idle:19
+2013-07-19 10:10:11,816 DEBUG A1 - active:1
+2013-07-19 10:10:15,732 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:10:15,748 DEBUG A1 - idle:19
+2013-07-19 10:10:15,748 DEBUG A1 - active:1
+2013-07-19 10:10:15,795 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:10:15,795 DEBUG A1 - idle:19
+2013-07-19 10:10:15,795 DEBUG A1 - active:1
+2013-07-19 10:10:15,810 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:10:20,287 DEBUG A1 - idle:19
+2013-07-19 10:10:20,287 DEBUG A1 - active:1
+2013-07-19 10:10:20,350 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:10:20,350 DEBUG A1 - idle:19
+2013-07-19 10:10:20,350 DEBUG A1 - active:1
+2013-07-19 10:10:20,365 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:10:49,023 DEBUG A1 - idle:19
+2013-07-19 10:10:49,023 DEBUG A1 - active:1
+2013-07-19 10:10:49,054 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:10:49,069 DEBUG A1 - idle:19
+2013-07-19 10:10:49,069 DEBUG A1 - active:1
+2013-07-19 10:10:49,069 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:10:56,245 DEBUG A1 - idle:19
+2013-07-19 10:10:56,245 DEBUG A1 - active:1
+2013-07-19 10:10:56,277 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:10:56,292 DEBUG A1 - idle:19
+2013-07-19 10:10:56,292 DEBUG A1 - active:1
+2013-07-19 10:10:56,292 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:11:06,573 DEBUG A1 - idle:19
+2013-07-19 10:11:06,573 DEBUG A1 - active:1
+2013-07-19 10:11:06,604 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:11:06,619 DEBUG A1 - idle:19
+2013-07-19 10:11:06,619 DEBUG A1 - active:1
+2013-07-19 10:11:06,619 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:11:21,970 DEBUG A1 - idle:19
+2013-07-19 10:11:21,970 DEBUG A1 - active:1
+2013-07-19 10:11:22,096 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:11:28,320 DEBUG A1 - idle:19
+2013-07-19 10:11:28,320 DEBUG A1 - active:1
+2013-07-19 10:11:28,320 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:11:28,460 DEBUG A1 - idle:19
+2013-07-19 10:11:28,460 DEBUG A1 - active:1
+2013-07-19 10:11:28,805 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:11:30,193 DEBUG A1 - idle:19
+2013-07-19 10:11:30,193 DEBUG A1 - active:1
+2013-07-19 10:11:30,240 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:11:30,240 DEBUG A1 - idle:19
+2013-07-19 10:11:30,240 DEBUG A1 - active:1
+2013-07-19 10:11:30,240 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:11:45,200 DEBUG A1 - idle:19
+2013-07-19 10:11:45,200 DEBUG A1 - active:1
+2013-07-19 10:11:45,247 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:11:45,247 DEBUG A1 - idle:19
+2013-07-19 10:11:45,247 DEBUG A1 - active:1
+2013-07-19 10:11:45,263 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:11:48,897 DEBUG A1 - idle:19
+2013-07-19 10:11:48,897 DEBUG A1 - active:1
+2013-07-19 10:11:48,929 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:11:48,944 DEBUG A1 - idle:19
+2013-07-19 10:11:48,944 DEBUG A1 - active:1
+2013-07-19 10:11:48,944 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:11:49,584 DEBUG A1 - idle:19
+2013-07-19 10:11:49,584 DEBUG A1 - active:1
+2013-07-19 10:11:49,631 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:11:49,631 DEBUG A1 - idle:19
+2013-07-19 10:11:49,631 DEBUG A1 - active:1
+2013-07-19 10:11:49,646 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:11:50,457 DEBUG A1 - idle:19
+2013-07-19 10:11:50,457 DEBUG A1 - active:1
+2013-07-19 10:11:50,489 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:11:50,504 DEBUG A1 - idle:19
+2013-07-19 10:11:50,504 DEBUG A1 - active:1
+2013-07-19 10:11:50,504 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:11:52,548 DEBUG A1 - idle:19
+2013-07-19 10:11:52,548 DEBUG A1 - active:1
+2013-07-19 10:11:52,579 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:11:52,595 DEBUG A1 - idle:19
+2013-07-19 10:11:52,595 DEBUG A1 - active:1
+2013-07-19 10:11:52,595 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:11:53,016 DEBUG A1 - idle:19
+2013-07-19 10:11:53,016 DEBUG A1 - active:1
+2013-07-19 10:11:53,047 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:11:53,063 DEBUG A1 - idle:19
+2013-07-19 10:11:53,063 DEBUG A1 - active:1
+2013-07-19 10:11:53,063 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:12:39,067 DEBUG A1 - idle:19
+2013-07-19 10:12:39,067 DEBUG A1 - active:1
+2013-07-19 10:12:43,062 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:12:47,882 DEBUG A1 - idle:19
+2013-07-19 10:12:47,882 DEBUG A1 - active:1
+2013-07-19 10:12:51,814 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:12:53,203 DEBUG A1 - idle:19
+2013-07-19 10:12:53,203 DEBUG A1 - active:1
+2013-07-19 10:12:53,234 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:12:53,234 DEBUG A1 - idle:19
+2013-07-19 10:12:53,234 DEBUG A1 - active:1
+2013-07-19 10:12:53,250 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:13:00,238 DEBUG A1 - idle:19
+2013-07-19 10:13:00,238 DEBUG A1 - active:1
+2013-07-19 10:13:00,270 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:13:00,285 DEBUG A1 - idle:19
+2013-07-19 10:13:00,285 DEBUG A1 - active:1
+2013-07-19 10:13:00,285 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:13:10,893 DEBUG A1 - idle:19
+2013-07-19 10:13:10,893 DEBUG A1 - active:1
+2013-07-19 10:13:11,003 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:17:53,910 DEBUG A1 - idle:19
+2013-07-19 10:17:53,910 DEBUG A1 - active:1
+2013-07-19 10:17:53,910 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 10:17:55,097 DEBUG A1 - idle:19
+2013-07-19 10:17:55,097 DEBUG A1 - active:1
+2013-07-19 10:17:55,097 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 10:18:06,953 DEBUG A1 - idle:19
+2013-07-19 10:18:06,953 DEBUG A1 - active:1
+2013-07-19 10:18:06,968  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 10:18:06,984 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 10:24:13,961 DEBUG A1 - idle:19
+2013-07-19 10:24:13,961 DEBUG A1 - active:1
+2013-07-19 10:24:13,961 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 10:24:14,945 DEBUG A1 - idle:19
+2013-07-19 10:24:14,945 DEBUG A1 - active:1
+2013-07-19 10:24:14,945 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 10:24:21,309 DEBUG A1 - idle:19
+2013-07-19 10:24:21,309 DEBUG A1 - active:1
+2013-07-19 10:24:21,325  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 10:24:21,341 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 10:24:52,090 DEBUG A1 - idle:19
+2013-07-19 10:24:52,090 DEBUG A1 - active:1
+2013-07-19 10:24:52,090 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 10:24:52,934 DEBUG A1 - idle:19
+2013-07-19 10:24:52,934 DEBUG A1 - active:1
+2013-07-19 10:24:52,949 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 10:25:06,786 DEBUG A1 - idle:19
+2013-07-19 10:25:06,786 DEBUG A1 - active:1
+2013-07-19 10:25:06,818  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 10:25:06,818 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 10:25:51,467 DEBUG A1 - idle:19
+2013-07-19 10:25:51,467 DEBUG A1 - active:1
+2013-07-19 10:25:51,467 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 10:25:52,248 DEBUG A1 - idle:19
+2013-07-19 10:25:52,248 DEBUG A1 - active:1
+2013-07-19 10:25:52,264 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 10:26:01,218 DEBUG A1 - idle:19
+2013-07-19 10:26:01,218 DEBUG A1 - active:1
+2013-07-19 10:26:01,234  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 10:26:01,249 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 10:26:19,659 DEBUG A1 - idle:19
+2013-07-19 10:26:19,659 DEBUG A1 - active:1
+2013-07-19 10:26:19,659 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 10:26:20,705 DEBUG A1 - idle:19
+2013-07-19 10:26:20,705 DEBUG A1 - active:1
+2013-07-19 10:26:20,705 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 10:26:34,761 DEBUG A1 - idle:19
+2013-07-19 10:26:34,761 DEBUG A1 - active:1
+2013-07-19 10:26:34,777  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 10:26:34,792 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 10:27:39,516 DEBUG A1 - idle:19
+2013-07-19 10:27:39,516 DEBUG A1 - active:1
+2013-07-19 10:27:39,516 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 10:27:40,375 DEBUG A1 - idle:19
+2013-07-19 10:27:40,375 DEBUG A1 - active:1
+2013-07-19 10:27:40,390 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 10:27:54,134 DEBUG A1 - idle:19
+2013-07-19 10:27:54,134 DEBUG A1 - active:1
+2013-07-19 10:27:54,149  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 10:27:54,149 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 10:28:20,890 DEBUG A1 - idle:19
+2013-07-19 10:28:20,890 DEBUG A1 - active:1
+2013-07-19 10:28:20,890 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 10:28:21,858 DEBUG A1 - idle:19
+2013-07-19 10:28:21,858 DEBUG A1 - active:1
+2013-07-19 10:28:21,874 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 10:28:31,468 DEBUG A1 - idle:19
+2013-07-19 10:28:31,468 DEBUG A1 - active:1
+2013-07-19 10:28:31,499  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 10:28:31,499 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 10:31:55,112 DEBUG A1 - idle:19
+2013-07-19 10:31:55,112 DEBUG A1 - active:1
+2013-07-19 10:31:55,160 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:31:57,297 DEBUG A1 - idle:19
+2013-07-19 10:31:57,297 DEBUG A1 - active:1
+2013-07-19 10:31:57,329 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:31:57,344 DEBUG A1 - idle:19
+2013-07-19 10:31:57,344 DEBUG A1 - active:1
+2013-07-19 10:31:57,344 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:31:58,795 DEBUG A1 - idle:19
+2013-07-19 10:31:58,795 DEBUG A1 - active:1
+2013-07-19 10:31:58,826 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:31:58,842 DEBUG A1 - idle:19
+2013-07-19 10:31:58,842 DEBUG A1 - active:1
+2013-07-19 10:31:58,842 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:31:59,450 DEBUG A1 - idle:19
+2013-07-19 10:31:59,450 DEBUG A1 - active:1
+2013-07-19 10:31:59,481 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:31:59,497 DEBUG A1 - idle:19
+2013-07-19 10:31:59,497 DEBUG A1 - active:1
+2013-07-19 10:31:59,497 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:32:00,480 DEBUG A1 - idle:19
+2013-07-19 10:32:00,480 DEBUG A1 - active:1
+2013-07-19 10:32:00,527 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:32:00,527 DEBUG A1 - idle:19
+2013-07-19 10:32:00,527 DEBUG A1 - active:1
+2013-07-19 10:32:00,542 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:32:11,587 DEBUG A1 - idle:19
+2013-07-19 10:32:11,587 DEBUG A1 - active:1
+2013-07-19 10:32:12,009 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:32:25,378 DEBUG A1 - idle:19
+2013-07-19 10:32:25,378 DEBUG A1 - active:1
+2013-07-19 10:32:25,473 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:32:26,503 DEBUG A1 - idle:19
+2013-07-19 10:32:26,503 DEBUG A1 - active:1
+2013-07-19 10:32:26,534 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:32:26,549 DEBUG A1 - idle:19
+2013-07-19 10:32:26,549 DEBUG A1 - active:1
+2013-07-19 10:32:26,549 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:32:27,111 DEBUG A1 - idle:19
+2013-07-19 10:32:27,111 DEBUG A1 - active:1
+2013-07-19 10:32:27,158 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:32:27,158 DEBUG A1 - idle:19
+2013-07-19 10:32:27,158 DEBUG A1 - active:1
+2013-07-19 10:32:27,173 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:32:27,688 DEBUG A1 - idle:19
+2013-07-19 10:32:27,688 DEBUG A1 - active:1
+2013-07-19 10:32:27,719 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:32:27,735 DEBUG A1 - idle:19
+2013-07-19 10:32:27,735 DEBUG A1 - active:1
+2013-07-19 10:32:27,735 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:37:34,096 DEBUG A1 - idle:19
+2013-07-19 10:37:34,096 DEBUG A1 - active:1
+2013-07-19 10:37:34,112 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 10:38:04,193 DEBUG A1 - idle:19
+2013-07-19 10:38:04,193 DEBUG A1 - active:1
+2013-07-19 10:38:04,209 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 10:41:22,483 DEBUG A1 - idle:19
+2013-07-19 10:41:22,483 DEBUG A1 - active:1
+2013-07-19 10:41:22,499 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 10:41:23,920 DEBUG A1 - idle:19
+2013-07-19 10:41:23,920 DEBUG A1 - active:1
+2013-07-19 10:41:23,920 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 10:41:55,632 DEBUG A1 - idle:19
+2013-07-19 10:41:55,632 DEBUG A1 - active:1
+2013-07-19 10:41:56,179 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:41:58,457 DEBUG A1 - idle:19
+2013-07-19 10:41:58,473 DEBUG A1 - active:1
+2013-07-19 10:41:58,520 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:42:34,276 DEBUG A1 - idle:19
+2013-07-19 10:42:34,276 DEBUG A1 - active:1
+2013-07-19 10:42:34,307 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:42:34,323 DEBUG A1 - idle:19
+2013-07-19 10:42:34,323 DEBUG A1 - active:1
+2013-07-19 10:42:34,323 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:43:38,173 DEBUG A1 - idle:19
+2013-07-19 10:43:38,173 DEBUG A1 - active:1
+2013-07-19 10:43:38,205 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:43:38,220 DEBUG A1 - idle:19
+2013-07-19 10:43:38,220 DEBUG A1 - active:1
+2013-07-19 10:43:38,220 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:43:41,808 DEBUG A1 - idle:19
+2013-07-19 10:43:41,808 DEBUG A1 - active:1
+2013-07-19 10:43:41,855 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:43:41,871 DEBUG A1 - idle:19
+2013-07-19 10:43:41,871 DEBUG A1 - active:1
+2013-07-19 10:43:41,871 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:43:49,374 DEBUG A1 - idle:19
+2013-07-19 10:43:49,374 DEBUG A1 - active:1
+2013-07-19 10:43:49,405 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:43:49,421 DEBUG A1 - idle:19
+2013-07-19 10:43:49,421 DEBUG A1 - active:1
+2013-07-19 10:43:49,421 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:43:52,385 DEBUG A1 - idle:19
+2013-07-19 10:43:52,385 DEBUG A1 - active:1
+2013-07-19 10:43:52,432 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:43:52,432 DEBUG A1 - idle:19
+2013-07-19 10:43:52,432 DEBUG A1 - active:1
+2013-07-19 10:43:52,432 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:43:52,931 DEBUG A1 - idle:19
+2013-07-19 10:43:52,931 DEBUG A1 - active:1
+2013-07-19 10:43:52,962 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:43:52,978 DEBUG A1 - idle:19
+2013-07-19 10:43:52,978 DEBUG A1 - active:1
+2013-07-19 10:43:52,978 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:43:55,989 DEBUG A1 - idle:19
+2013-07-19 10:43:55,989 DEBUG A1 - active:1
+2013-07-19 10:43:56,035 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:43:56,035 DEBUG A1 - idle:19
+2013-07-19 10:43:56,035 DEBUG A1 - active:1
+2013-07-19 10:43:56,051 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:43:58,765 DEBUG A1 - idle:19
+2013-07-19 10:43:58,765 DEBUG A1 - active:1
+2013-07-19 10:43:58,797 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:43:58,812 DEBUG A1 - idle:19
+2013-07-19 10:43:58,812 DEBUG A1 - active:1
+2013-07-19 10:43:58,812 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:44:03,336 DEBUG A1 - idle:19
+2013-07-19 10:44:03,336 DEBUG A1 - active:1
+2013-07-19 10:44:03,383 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:44:03,383 DEBUG A1 - idle:19
+2013-07-19 10:44:03,383 DEBUG A1 - active:1
+2013-07-19 10:44:03,383 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:44:08,578 DEBUG A1 - idle:19
+2013-07-19 10:44:08,578 DEBUG A1 - active:1
+2013-07-19 10:44:08,609 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:44:08,625 DEBUG A1 - idle:19
+2013-07-19 10:44:08,625 DEBUG A1 - active:1
+2013-07-19 10:44:08,625 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:44:11,479 DEBUG A1 - idle:19
+2013-07-19 10:44:11,479 DEBUG A1 - active:1
+2013-07-19 10:44:11,511 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:44:11,511 DEBUG A1 - idle:19
+2013-07-19 10:44:11,511 DEBUG A1 - active:1
+2013-07-19 10:44:11,526 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:44:13,929 DEBUG A1 - idle:19
+2013-07-19 10:44:13,944 DEBUG A1 - active:1
+2013-07-19 10:44:13,975 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:44:13,975 DEBUG A1 - idle:19
+2013-07-19 10:44:13,975 DEBUG A1 - active:1
+2013-07-19 10:44:13,991 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:44:16,316 DEBUG A1 - idle:19
+2013-07-19 10:44:16,316 DEBUG A1 - active:1
+2013-07-19 10:44:16,347 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:44:16,362 DEBUG A1 - idle:19
+2013-07-19 10:44:16,362 DEBUG A1 - active:1
+2013-07-19 10:44:16,362 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:44:22,400 DEBUG A1 - idle:19
+2013-07-19 10:44:22,400 DEBUG A1 - active:1
+2013-07-19 10:44:22,431 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:44:22,431 DEBUG A1 - idle:19
+2013-07-19 10:44:22,431 DEBUG A1 - active:1
+2013-07-19 10:44:22,446 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:44:24,630 DEBUG A1 - idle:19
+2013-07-19 10:44:24,630 DEBUG A1 - active:1
+2013-07-19 10:44:24,662 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:44:24,662 DEBUG A1 - idle:19
+2013-07-19 10:44:24,662 DEBUG A1 - active:1
+2013-07-19 10:44:24,677 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:44:26,799 DEBUG A1 - idle:19
+2013-07-19 10:44:26,799 DEBUG A1 - active:1
+2013-07-19 10:44:26,814 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:44:26,814 DEBUG A1 - idle:19
+2013-07-19 10:44:26,814 DEBUG A1 - active:1
+2013-07-19 10:44:26,814 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:44:27,860 DEBUG A1 - idle:19
+2013-07-19 10:44:27,860 DEBUG A1 - active:1
+2013-07-19 10:44:27,891 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:44:27,906 DEBUG A1 - idle:19
+2013-07-19 10:44:27,906 DEBUG A1 - active:1
+2013-07-19 10:44:27,906 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:45:24,566 DEBUG A1 - idle:19
+2013-07-19 10:45:24,566 DEBUG A1 - active:1
+2013-07-19 10:45:24,597 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:45:24,612 DEBUG A1 - idle:19
+2013-07-19 10:45:24,612 DEBUG A1 - active:1
+2013-07-19 10:45:24,612 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:45:27,171 DEBUG A1 - idle:19
+2013-07-19 10:45:27,171 DEBUG A1 - active:1
+2013-07-19 10:45:27,202 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:45:27,218 DEBUG A1 - idle:19
+2013-07-19 10:45:27,218 DEBUG A1 - active:1
+2013-07-19 10:45:27,233 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:45:40,977 DEBUG A1 - idle:19
+2013-07-19 10:45:40,977 DEBUG A1 - active:1
+2013-07-19 10:45:41,024 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:45:41,024 DEBUG A1 - idle:19
+2013-07-19 10:45:41,024 DEBUG A1 - active:1
+2013-07-19 10:45:41,039 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 10:46:44,407 DEBUG A1 - idle:19
+2013-07-19 10:46:44,407 DEBUG A1 - active:1
+2013-07-19 10:46:44,844 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:46:47,730 DEBUG A1 - idle:19
+2013-07-19 10:46:47,730 DEBUG A1 - active:1
+2013-07-19 10:46:48,277 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 10:46:55,188 DEBUG A1 - idle:19
+2013-07-19 10:46:55,188 DEBUG A1 - active:1
+2013-07-19 10:46:55,219 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 10:46:55,235 DEBUG A1 - idle:19
+2013-07-19 10:46:55,235 DEBUG A1 - active:1
+2013-07-19 10:46:55,235 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:02:10,717 DEBUG A1 - idle:19
+2013-07-19 11:02:10,717 DEBUG A1 - active:1
+2013-07-19 11:02:11,248 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:02:28,362 DEBUG A1 - idle:19
+2013-07-19 11:02:28,377 DEBUG A1 - active:1
+2013-07-19 11:02:28,768 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:02:30,656 DEBUG A1 - idle:19
+2013-07-19 11:02:30,656 DEBUG A1 - active:1
+2013-07-19 11:02:30,703 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:02:30,718 DEBUG A1 - idle:19
+2013-07-19 11:02:30,718 DEBUG A1 - active:1
+2013-07-19 11:02:30,718 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:02:43,510 DEBUG A1 - idle:19
+2013-07-19 11:02:43,510 DEBUG A1 - active:1
+2013-07-19 11:02:43,839 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:02:44,822 DEBUG A1 - idle:19
+2013-07-19 11:02:44,822 DEBUG A1 - active:1
+2013-07-19 11:02:44,853 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:02:44,853 DEBUG A1 - idle:19
+2013-07-19 11:02:44,853 DEBUG A1 - active:1
+2013-07-19 11:02:44,868 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:03:40,711 DEBUG A1 - idle:19
+2013-07-19 11:03:40,711 DEBUG A1 - active:1
+2013-07-19 11:03:40,744 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:03:41,461 DEBUG A1 - idle:19
+2013-07-19 11:03:41,461 DEBUG A1 - active:1
+2013-07-19 11:03:41,492 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:03:41,508 DEBUG A1 - idle:19
+2013-07-19 11:03:41,508 DEBUG A1 - active:1
+2013-07-19 11:03:41,508 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:03:59,395 DEBUG A1 - idle:19
+2013-07-19 11:03:59,395 DEBUG A1 - active:1
+2013-07-19 11:03:59,442 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:04:00,473 DEBUG A1 - idle:19
+2013-07-19 11:04:00,473 DEBUG A1 - active:1
+2013-07-19 11:04:00,519 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:04:00,519 DEBUG A1 - idle:19
+2013-07-19 11:04:00,519 DEBUG A1 - active:1
+2013-07-19 11:04:00,519 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:04:24,410 DEBUG A1 - idle:19
+2013-07-19 11:04:24,410 DEBUG A1 - active:1
+2013-07-19 11:04:24,441 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:04:25,284 DEBUG A1 - idle:19
+2013-07-19 11:04:25,284 DEBUG A1 - active:1
+2013-07-19 11:04:25,316 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:04:25,331 DEBUG A1 - idle:19
+2013-07-19 11:04:25,331 DEBUG A1 - active:1
+2013-07-19 11:04:25,331 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:04:48,041 DEBUG A1 - idle:19
+2013-07-19 11:04:48,041 DEBUG A1 - active:1
+2013-07-19 11:04:48,073 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:04:48,885 DEBUG A1 - idle:19
+2013-07-19 11:04:48,885 DEBUG A1 - active:1
+2013-07-19 11:04:48,916 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:04:48,916 DEBUG A1 - idle:19
+2013-07-19 11:04:48,916 DEBUG A1 - active:1
+2013-07-19 11:04:48,931 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:05:02,925 DEBUG A1 - idle:19
+2013-07-19 11:05:02,925 DEBUG A1 - active:1
+2013-07-19 11:05:02,973 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:05:05,797 DEBUG A1 - idle:19
+2013-07-19 11:05:05,797 DEBUG A1 - active:1
+2013-07-19 11:05:05,828 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:05:05,843 DEBUG A1 - idle:19
+2013-07-19 11:05:05,843 DEBUG A1 - active:1
+2013-07-19 11:05:05,843 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:05:19,200 DEBUG A1 - idle:19
+2013-07-19 11:05:19,200 DEBUG A1 - active:1
+2013-07-19 11:05:19,232 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:05:30,557 DEBUG A1 - idle:19
+2013-07-19 11:05:30,557 DEBUG A1 - active:1
+2013-07-19 11:05:30,589 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:05:30,604 DEBUG A1 - idle:19
+2013-07-19 11:05:30,604 DEBUG A1 - active:1
+2013-07-19 11:05:30,604 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:05:47,889 DEBUG A1 - idle:19
+2013-07-19 11:05:47,889 DEBUG A1 - active:1
+2013-07-19 11:05:47,920 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:05:47,936 DEBUG A1 - idle:19
+2013-07-19 11:05:47,936 DEBUG A1 - active:1
+2013-07-19 11:05:47,936 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:05:50,603 DEBUG A1 - idle:19
+2013-07-19 11:05:50,603 DEBUG A1 - active:1
+2013-07-19 11:05:50,635 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:05:50,635 DEBUG A1 - idle:19
+2013-07-19 11:05:50,635 DEBUG A1 - active:1
+2013-07-19 11:05:50,635 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:06:02,475 DEBUG A1 - idle:19
+2013-07-19 11:06:02,475 DEBUG A1 - active:1
+2013-07-19 11:06:02,506 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:06:02,522 DEBUG A1 - idle:19
+2013-07-19 11:06:02,522 DEBUG A1 - active:1
+2013-07-19 11:06:02,522 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:06:04,347 DEBUG A1 - idle:19
+2013-07-19 11:06:04,347 DEBUG A1 - active:1
+2013-07-19 11:06:04,378 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:06:04,394 DEBUG A1 - idle:19
+2013-07-19 11:06:04,394 DEBUG A1 - active:1
+2013-07-19 11:06:04,394 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:06:06,437 DEBUG A1 - idle:19
+2013-07-19 11:06:06,437 DEBUG A1 - active:1
+2013-07-19 11:06:06,469 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:06:06,484 DEBUG A1 - idle:19
+2013-07-19 11:06:06,484 DEBUG A1 - active:1
+2013-07-19 11:06:06,484 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:06:08,169 DEBUG A1 - idle:19
+2013-07-19 11:06:08,169 DEBUG A1 - active:1
+2013-07-19 11:06:08,200 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:06:08,216 DEBUG A1 - idle:19
+2013-07-19 11:06:08,216 DEBUG A1 - active:1
+2013-07-19 11:06:08,216 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:06:08,949 DEBUG A1 - idle:19
+2013-07-19 11:06:08,949 DEBUG A1 - active:1
+2013-07-19 11:06:08,980 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:06:08,996 DEBUG A1 - idle:19
+2013-07-19 11:06:08,996 DEBUG A1 - active:1
+2013-07-19 11:06:08,996 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:06:10,135 DEBUG A1 - idle:19
+2013-07-19 11:06:10,135 DEBUG A1 - active:1
+2013-07-19 11:06:10,181 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:06:10,197 DEBUG A1 - idle:19
+2013-07-19 11:06:10,197 DEBUG A1 - active:1
+2013-07-19 11:06:10,197 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:06:10,727 DEBUG A1 - idle:19
+2013-07-19 11:06:10,727 DEBUG A1 - active:1
+2013-07-19 11:06:10,759 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:06:10,774 DEBUG A1 - idle:19
+2013-07-19 11:06:10,774 DEBUG A1 - active:1
+2013-07-19 11:06:10,774 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:06:17,872 DEBUG A1 - idle:19
+2013-07-19 11:06:17,872 DEBUG A1 - active:1
+2013-07-19 11:06:17,903 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:06:17,919 DEBUG A1 - idle:19
+2013-07-19 11:06:17,919 DEBUG A1 - active:1
+2013-07-19 11:06:17,919 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:06:31,716 DEBUG A1 - idle:19
+2013-07-19 11:06:31,716 DEBUG A1 - active:1
+2013-07-19 11:06:31,748 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:06:32,560 DEBUG A1 - idle:19
+2013-07-19 11:06:32,560 DEBUG A1 - active:1
+2013-07-19 11:06:32,606 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:06:32,606 DEBUG A1 - idle:19
+2013-07-19 11:06:32,606 DEBUG A1 - active:1
+2013-07-19 11:06:32,622 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:06:47,184 DEBUG A1 - idle:19
+2013-07-19 11:06:47,184 DEBUG A1 - active:1
+2013-07-19 11:06:47,230 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:06:48,089 DEBUG A1 - idle:19
+2013-07-19 11:06:48,089 DEBUG A1 - active:1
+2013-07-19 11:06:48,136 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:06:48,136 DEBUG A1 - idle:19
+2013-07-19 11:06:48,136 DEBUG A1 - active:1
+2013-07-19 11:06:48,152 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:07:10,421 DEBUG A1 - idle:19
+2013-07-19 11:07:10,421 DEBUG A1 - active:1
+2013-07-19 11:07:10,453 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:07:11,733 DEBUG A1 - idle:19
+2013-07-19 11:07:11,733 DEBUG A1 - active:1
+2013-07-19 11:07:11,779 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:07:11,779 DEBUG A1 - idle:19
+2013-07-19 11:07:11,779 DEBUG A1 - active:1
+2013-07-19 11:07:11,795 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:07:32,223 DEBUG A1 - idle:19
+2013-07-19 11:07:32,239 DEBUG A1 - active:1
+2013-07-19 11:07:32,271 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:07:33,426 DEBUG A1 - idle:19
+2013-07-19 11:07:33,426 DEBUG A1 - active:1
+2013-07-19 11:07:33,472 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:07:33,472 DEBUG A1 - idle:19
+2013-07-19 11:07:33,472 DEBUG A1 - active:1
+2013-07-19 11:07:33,488 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:07:49,407 DEBUG A1 - idle:19
+2013-07-19 11:07:49,407 DEBUG A1 - active:1
+2013-07-19 11:07:49,439 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:07:52,263 DEBUG A1 - idle:19
+2013-07-19 11:07:52,263 DEBUG A1 - active:1
+2013-07-19 11:07:52,309 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:07:52,309 DEBUG A1 - idle:19
+2013-07-19 11:07:52,309 DEBUG A1 - active:1
+2013-07-19 11:07:52,309 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:09:41,370 DEBUG A1 - idle:19
+2013-07-19 11:09:41,370 DEBUG A1 - active:1
+2013-07-19 11:09:41,668 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:10:17,314 DEBUG A1 - idle:19
+2013-07-19 11:10:17,314 DEBUG A1 - active:1
+2013-07-19 11:10:17,360 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:10:17,360 DEBUG A1 - idle:19
+2013-07-19 11:10:17,360 DEBUG A1 - active:1
+2013-07-19 11:10:17,376 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:10:41,384 DEBUG A1 - idle:19
+2013-07-19 11:10:41,384 DEBUG A1 - active:1
+2013-07-19 11:10:41,510  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 11:10:41,526  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:10:41,541 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:10:49,997 DEBUG A1 - idle:19
+2013-07-19 11:10:49,997 DEBUG A1 - active:1
+2013-07-19 11:10:50,028 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:10:50,044 DEBUG A1 - idle:19
+2013-07-19 11:10:50,044 DEBUG A1 - active:1
+2013-07-19 11:10:50,044 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:11:11,322 DEBUG A1 - idle:19
+2013-07-19 11:11:11,322 DEBUG A1 - active:1
+2013-07-19 11:11:11,384  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 11:11:11,400  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:11:11,417 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:11:27,875 DEBUG A1 - idle:19
+2013-07-19 11:11:27,875 DEBUG A1 - active:1
+2013-07-19 11:11:27,906 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:11:27,921 DEBUG A1 - idle:19
+2013-07-19 11:11:27,921 DEBUG A1 - active:1
+2013-07-19 11:11:27,921 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:13:32,269 DEBUG A1 - idle:19
+2013-07-19 11:13:32,269 DEBUG A1 - active:1
+2013-07-19 11:13:32,364 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:13:33,565 DEBUG A1 - idle:19
+2013-07-19 11:13:33,565 DEBUG A1 - active:1
+2013-07-19 11:13:33,581 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:13:33,596 DEBUG A1 - idle:19
+2013-07-19 11:13:33,596 DEBUG A1 - active:1
+2013-07-19 11:13:33,596 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:13:35,110 DEBUG A1 - idle:19
+2013-07-19 11:13:35,110 DEBUG A1 - active:1
+2013-07-19 11:13:35,141 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:13:35,156 DEBUG A1 - idle:19
+2013-07-19 11:13:35,156 DEBUG A1 - active:1
+2013-07-19 11:13:35,156 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:14:11,411 DEBUG A1 - idle:19
+2013-07-19 11:14:11,411 DEBUG A1 - active:1
+2013-07-19 11:14:11,504  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 11:14:11,504  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:14:11,521 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:14:13,424 DEBUG A1 - idle:19
+2013-07-19 11:14:13,424 DEBUG A1 - active:1
+2013-07-19 11:14:13,455 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:14:13,455 DEBUG A1 - idle:19
+2013-07-19 11:14:13,455 DEBUG A1 - active:1
+2013-07-19 11:14:13,471 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:15:01,878 DEBUG A1 - idle:19
+2013-07-19 11:15:01,878 DEBUG A1 - active:1
+2013-07-19 11:15:01,972  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:15:01,972  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:15:01,988 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:15:32,347 DEBUG A1 - idle:19
+2013-07-19 11:15:32,347 DEBUG A1 - active:1
+2013-07-19 11:15:32,362 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:15:34,390 DEBUG A1 - idle:19
+2013-07-19 11:15:34,390 DEBUG A1 - active:1
+2013-07-19 11:15:34,390 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:17:01,673 DEBUG A1 - idle:19
+2013-07-19 11:17:01,673 DEBUG A1 - active:1
+2013-07-19 11:17:01,719  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:17:01,719  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:17:01,735 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:17:04,279 DEBUG A1 - idle:19
+2013-07-19 11:17:04,279 DEBUG A1 - active:1
+2013-07-19 11:17:04,327 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:17:10,364 DEBUG A1 - idle:19
+2013-07-19 11:17:10,364 DEBUG A1 - active:1
+2013-07-19 11:17:10,427 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:17:14,733 DEBUG A1 - idle:19
+2013-07-19 11:17:14,733 DEBUG A1 - active:1
+2013-07-19 11:17:14,764 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:17:14,780 DEBUG A1 - idle:19
+2013-07-19 11:17:14,780 DEBUG A1 - active:1
+2013-07-19 11:17:14,780 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:19:00,502 DEBUG A1 - idle:19
+2013-07-19 11:19:00,502 DEBUG A1 - active:1
+2013-07-19 11:19:00,533 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:19:00,549 DEBUG A1 - idle:19
+2013-07-19 11:19:00,549 DEBUG A1 - active:1
+2013-07-19 11:19:00,549 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:19:01,781 DEBUG A1 - idle:19
+2013-07-19 11:19:01,781 DEBUG A1 - active:1
+2013-07-19 11:19:01,812 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:19:01,828 DEBUG A1 - idle:19
+2013-07-19 11:19:01,828 DEBUG A1 - active:1
+2013-07-19 11:19:01,844 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:19:21,110 DEBUG A1 - idle:19
+2013-07-19 11:19:21,110 DEBUG A1 - active:1
+2013-07-19 11:19:21,203  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 11:19:21,203  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:19:21,220 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:21:06,661 DEBUG A1 - idle:19
+2013-07-19 11:21:06,661 DEBUG A1 - active:1
+2013-07-19 11:21:06,724  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 11:21:06,724 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:22:17,737 DEBUG A1 - idle:19
+2013-07-19 11:22:17,737 DEBUG A1 - active:1
+2013-07-19 11:22:17,894 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:22:18,893 DEBUG A1 - idle:19
+2013-07-19 11:22:18,893 DEBUG A1 - active:1
+2013-07-19 11:22:18,977 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 11:22:18,992 DEBUG A1 - idle:19
+2013-07-19 11:22:18,992 DEBUG A1 - active:1
+2013-07-19 11:22:19,023 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 11:22:34,031 DEBUG A1 - idle:19
+2013-07-19 11:22:34,031 DEBUG A1 - active:1
+2013-07-19 11:22:34,063 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:22:37,261 DEBUG A1 - idle:19
+2013-07-19 11:22:37,261 DEBUG A1 - active:1
+2013-07-19 11:22:37,292 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:22:37,308 DEBUG A1 - idle:19
+2013-07-19 11:22:37,308 DEBUG A1 - active:1
+2013-07-19 11:22:37,308 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:24:23,965 DEBUG A1 - idle:19
+2013-07-19 11:24:23,965 DEBUG A1 - active:1
+2013-07-19 11:24:24,105  INFO A1 - T_在庫_子は5件処理されました。
+2013-07-19 11:24:24,105  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:24:24,122 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:24:26,649 DEBUG A1 - idle:19
+2013-07-19 11:24:26,649 DEBUG A1 - active:1
+2013-07-19 11:24:26,680 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:24:26,696 DEBUG A1 - idle:19
+2013-07-19 11:24:26,696 DEBUG A1 - active:1
+2013-07-19 11:24:26,696 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:25:06,445 DEBUG A1 - idle:19
+2013-07-19 11:25:06,445 DEBUG A1 - active:1
+2013-07-19 11:25:06,538  INFO A1 - T_在庫_子は5件処理されました。
+2013-07-19 11:25:06,555  INFO A1 - T_指定納品書は3件処理されました。
+2013-07-19 11:25:06,555 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:25:13,825 DEBUG A1 - idle:19
+2013-07-19 11:25:13,825 DEBUG A1 - active:1
+2013-07-19 11:25:13,856 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:25:13,871 DEBUG A1 - idle:19
+2013-07-19 11:25:13,871 DEBUG A1 - active:1
+2013-07-19 11:25:13,871 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:25:48,238 DEBUG A1 - idle:19
+2013-07-19 11:25:48,238 DEBUG A1 - active:1
+2013-07-19 11:25:48,316  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:25:48,316  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:25:48,333 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:25:58,255 DEBUG A1 - idle:19
+2013-07-19 11:25:58,270 DEBUG A1 - active:1
+2013-07-19 11:25:58,301 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:25:58,301 DEBUG A1 - idle:19
+2013-07-19 11:25:58,301 DEBUG A1 - active:1
+2013-07-19 11:25:58,317 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:26:25,867 DEBUG A1 - idle:19
+2013-07-19 11:26:25,867 DEBUG A1 - active:1
+2013-07-19 11:26:25,960  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:26:25,960  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:26:25,977 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:26:35,384 DEBUG A1 - idle:19
+2013-07-19 11:26:35,384 DEBUG A1 - active:1
+2013-07-19 11:26:35,415 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:26:35,430 DEBUG A1 - idle:19
+2013-07-19 11:26:35,430 DEBUG A1 - active:1
+2013-07-19 11:26:35,430 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:27:13,276 DEBUG A1 - idle:19
+2013-07-19 11:27:13,276 DEBUG A1 - active:1
+2013-07-19 11:27:13,354  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 11:27:13,370  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:27:13,370 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:27:19,548 DEBUG A1 - idle:19
+2013-07-19 11:27:19,548 DEBUG A1 - active:1
+2013-07-19 11:27:19,579 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:27:19,595 DEBUG A1 - idle:19
+2013-07-19 11:27:19,595 DEBUG A1 - active:1
+2013-07-19 11:27:19,595 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:27:35,289 DEBUG A1 - idle:19
+2013-07-19 11:27:35,289 DEBUG A1 - active:1
+2013-07-19 11:27:35,351  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 11:27:35,367  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:27:35,382 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:27:43,620 DEBUG A1 - idle:19
+2013-07-19 11:27:43,620 DEBUG A1 - active:1
+2013-07-19 11:27:43,667 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:27:43,667 DEBUG A1 - idle:19
+2013-07-19 11:27:43,667 DEBUG A1 - active:1
+2013-07-19 11:27:43,667 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:28:30,670 DEBUG A1 - idle:19
+2013-07-19 11:28:30,670 DEBUG A1 - active:1
+2013-07-19 11:28:30,748  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 11:28:30,763  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:28:30,763 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:28:37,691 DEBUG A1 - idle:19
+2013-07-19 11:28:37,691 DEBUG A1 - active:1
+2013-07-19 11:28:37,722 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:28:37,738 DEBUG A1 - idle:19
+2013-07-19 11:28:37,738 DEBUG A1 - active:1
+2013-07-19 11:28:37,738 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:29:04,226 DEBUG A1 - idle:19
+2013-07-19 11:29:04,226 DEBUG A1 - active:1
+2013-07-19 11:29:04,336  INFO A1 - T_在庫_子は5件処理されました。
+2013-07-19 11:29:04,336  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:29:04,352 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:29:09,407 DEBUG A1 - idle:19
+2013-07-19 11:29:09,407 DEBUG A1 - active:1
+2013-07-19 11:29:09,438 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:29:09,453 DEBUG A1 - idle:19
+2013-07-19 11:29:09,453 DEBUG A1 - active:1
+2013-07-19 11:29:09,453 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:29:32,292 DEBUG A1 - idle:19
+2013-07-19 11:29:32,292 DEBUG A1 - active:1
+2013-07-19 11:29:32,323 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:29:32,323 DEBUG A1 - idle:19
+2013-07-19 11:29:32,323 DEBUG A1 - active:1
+2013-07-19 11:29:32,339 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:29:53,274 DEBUG A1 - idle:19
+2013-07-19 11:29:53,274 DEBUG A1 - active:1
+2013-07-19 11:29:53,352  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:29:53,352  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:29:53,369 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:30:49,920 DEBUG A1 - idle:19
+2013-07-19 11:30:49,920 DEBUG A1 - active:1
+2013-07-19 11:30:49,951 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:30:49,951 DEBUG A1 - idle:19
+2013-07-19 11:30:49,951 DEBUG A1 - active:1
+2013-07-19 11:30:49,966 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:30:51,729 DEBUG A1 - idle:19
+2013-07-19 11:30:51,729 DEBUG A1 - active:1
+2013-07-19 11:30:51,760 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:30:51,776 DEBUG A1 - idle:19
+2013-07-19 11:30:51,776 DEBUG A1 - active:1
+2013-07-19 11:30:51,776 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:30:53,430 DEBUG A1 - idle:19
+2013-07-19 11:30:53,430 DEBUG A1 - active:1
+2013-07-19 11:30:53,476 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:30:53,476 DEBUG A1 - idle:19
+2013-07-19 11:30:53,476 DEBUG A1 - active:1
+2013-07-19 11:30:53,492 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:30:55,411 DEBUG A1 - idle:19
+2013-07-19 11:30:55,411 DEBUG A1 - active:1
+2013-07-19 11:30:55,458 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:30:55,458 DEBUG A1 - idle:19
+2013-07-19 11:30:55,458 DEBUG A1 - active:1
+2013-07-19 11:30:55,473 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:30:56,050 DEBUG A1 - idle:19
+2013-07-19 11:30:56,050 DEBUG A1 - active:1
+2013-07-19 11:30:56,082 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:30:56,097 DEBUG A1 - idle:19
+2013-07-19 11:30:56,097 DEBUG A1 - active:1
+2013-07-19 11:30:56,097 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:30:56,659 DEBUG A1 - idle:19
+2013-07-19 11:30:56,659 DEBUG A1 - active:1
+2013-07-19 11:30:56,690 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:30:56,706 DEBUG A1 - idle:19
+2013-07-19 11:30:56,706 DEBUG A1 - active:1
+2013-07-19 11:30:56,706 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:30:58,796 DEBUG A1 - idle:19
+2013-07-19 11:30:58,796 DEBUG A1 - active:1
+2013-07-19 11:30:58,827 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:30:58,827 DEBUG A1 - idle:19
+2013-07-19 11:30:58,827 DEBUG A1 - active:1
+2013-07-19 11:30:58,843 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:30:59,514 DEBUG A1 - idle:19
+2013-07-19 11:30:59,514 DEBUG A1 - active:1
+2013-07-19 11:30:59,545 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:30:59,560 DEBUG A1 - idle:19
+2013-07-19 11:30:59,560 DEBUG A1 - active:1
+2013-07-19 11:30:59,560 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:30:59,904 DEBUG A1 - idle:19
+2013-07-19 11:30:59,904 DEBUG A1 - active:1
+2013-07-19 11:30:59,950 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:30:59,950 DEBUG A1 - idle:19
+2013-07-19 11:30:59,950 DEBUG A1 - active:1
+2013-07-19 11:30:59,950 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:31:31,010 DEBUG A1 - idle:19
+2013-07-19 11:31:31,010 DEBUG A1 - active:1
+2013-07-19 11:31:31,088  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 11:31:31,088  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:31:31,104 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:32:05,773 DEBUG A1 - idle:19
+2013-07-19 11:32:05,773 DEBUG A1 - active:1
+2013-07-19 11:32:05,805 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:32:06,429 DEBUG A1 - idle:19
+2013-07-19 11:32:06,429 DEBUG A1 - active:1
+2013-07-19 11:32:06,476 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:32:06,476 DEBUG A1 - idle:19
+2013-07-19 11:32:06,476 DEBUG A1 - active:1
+2013-07-19 11:32:06,476 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:32:45,254 DEBUG A1 - idle:19
+2013-07-19 11:32:45,254 DEBUG A1 - active:1
+2013-07-19 11:32:45,332  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 11:32:45,332  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:32:45,349 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:32:57,147 DEBUG A1 - idle:19
+2013-07-19 11:32:57,147 DEBUG A1 - active:1
+2013-07-19 11:32:57,178 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:32:57,194 DEBUG A1 - idle:19
+2013-07-19 11:32:57,194 DEBUG A1 - active:1
+2013-07-19 11:32:57,194 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:34:26,457 DEBUG A1 - idle:19
+2013-07-19 11:34:26,457 DEBUG A1 - active:1
+2013-07-19 11:34:26,535  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 11:34:26,551  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:34:26,551 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:35:00,395 DEBUG A1 - idle:19
+2013-07-19 11:35:00,395 DEBUG A1 - active:1
+2013-07-19 11:35:00,474 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:35:01,519 DEBUG A1 - idle:19
+2013-07-19 11:35:01,519 DEBUG A1 - active:1
+2013-07-19 11:35:01,550 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:35:01,566 DEBUG A1 - idle:19
+2013-07-19 11:35:01,566 DEBUG A1 - active:1
+2013-07-19 11:35:01,566 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:35:04,702 DEBUG A1 - idle:19
+2013-07-19 11:35:04,702 DEBUG A1 - active:1
+2013-07-19 11:35:04,733 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:35:04,748 DEBUG A1 - idle:19
+2013-07-19 11:35:04,748 DEBUG A1 - active:1
+2013-07-19 11:35:04,748 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:35:46,962 DEBUG A1 - idle:19
+2013-07-19 11:35:46,962 DEBUG A1 - active:1
+2013-07-19 11:35:47,040  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 11:35:47,056  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:35:47,056 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:39:41,307 DEBUG A1 - idle:19
+2013-07-19 11:39:41,307 DEBUG A1 - active:1
+2013-07-19 11:39:41,322 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:39:43,913 DEBUG A1 - idle:19
+2013-07-19 11:39:43,913 DEBUG A1 - active:1
+2013-07-19 11:39:43,913 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:40:57,764 DEBUG A1 - idle:19
+2013-07-19 11:40:57,764 DEBUG A1 - active:1
+2013-07-19 11:40:57,811 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:40:57,827 DEBUG A1 - idle:19
+2013-07-19 11:40:57,827 DEBUG A1 - active:1
+2013-07-19 11:40:57,827 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:41:31,367 DEBUG A1 - idle:19
+2013-07-19 11:41:31,367 DEBUG A1 - active:1
+2013-07-19 11:41:31,445  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:41:31,445  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:41:31,461 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:41:47,108 DEBUG A1 - idle:19
+2013-07-19 11:41:47,108 DEBUG A1 - active:1
+2013-07-19 11:41:47,108 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 11:42:37,513 DEBUG A1 - idle:19
+2013-07-19 11:42:37,513 DEBUG A1 - active:1
+2013-07-19 11:42:37,529  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 11:42:37,544 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:42:58,902 DEBUG A1 - idle:19
+2013-07-19 11:42:58,902 DEBUG A1 - active:1
+2013-07-19 11:42:58,902 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:44:29,070 DEBUG A1 - idle:19
+2013-07-19 11:44:29,070 DEBUG A1 - active:1
+2013-07-19 11:44:29,101  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:44:29,117  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:44:29,117 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:44:41,379 DEBUG A1 - idle:19
+2013-07-19 11:44:41,379 DEBUG A1 - active:1
+2013-07-19 11:44:41,410 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:44:41,426 DEBUG A1 - idle:19
+2013-07-19 11:44:41,426 DEBUG A1 - active:1
+2013-07-19 11:44:41,426 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:45:05,559 DEBUG A1 - idle:19
+2013-07-19 11:45:05,559 DEBUG A1 - active:1
+2013-07-19 11:45:05,653  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:45:05,653  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:45:05,669 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:45:07,510 DEBUG A1 - idle:19
+2013-07-19 11:45:07,510 DEBUG A1 - active:1
+2013-07-19 11:45:07,542 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:45:07,557 DEBUG A1 - idle:19
+2013-07-19 11:45:07,557 DEBUG A1 - active:1
+2013-07-19 11:45:07,557 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:47:18,129 DEBUG A1 - idle:19
+2013-07-19 11:47:18,129 DEBUG A1 - active:1
+2013-07-19 11:47:18,254  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 11:47:18,254  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:47:18,302 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:47:33,231 DEBUG A1 - idle:19
+2013-07-19 11:47:33,231 DEBUG A1 - active:1
+2013-07-19 11:47:33,247 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:49:02,541 DEBUG A1 - idle:19
+2013-07-19 11:49:02,541 DEBUG A1 - active:1
+2013-07-19 11:49:02,573  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:49:02,573  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:49:02,588 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:49:12,932 DEBUG A1 - idle:19
+2013-07-19 11:49:12,932 DEBUG A1 - active:1
+2013-07-19 11:49:12,963 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:49:12,963 DEBUG A1 - idle:19
+2013-07-19 11:49:12,963 DEBUG A1 - active:1
+2013-07-19 11:49:12,979 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:49:15,319 DEBUG A1 - idle:19
+2013-07-19 11:49:15,319 DEBUG A1 - active:1
+2013-07-19 11:49:15,366 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:49:15,366 DEBUG A1 - idle:19
+2013-07-19 11:49:15,366 DEBUG A1 - active:1
+2013-07-19 11:49:15,366 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:49:20,264 DEBUG A1 - idle:19
+2013-07-19 11:49:20,264 DEBUG A1 - active:1
+2013-07-19 11:49:20,295 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:49:20,295 DEBUG A1 - idle:19
+2013-07-19 11:49:20,295 DEBUG A1 - active:1
+2013-07-19 11:49:20,311 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:50:08,998 DEBUG A1 - idle:19
+2013-07-19 11:50:08,998 DEBUG A1 - active:1
+2013-07-19 11:50:09,061  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:50:09,076  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:50:09,076 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:50:18,671 DEBUG A1 - idle:19
+2013-07-19 11:50:18,671 DEBUG A1 - active:1
+2013-07-19 11:50:18,703 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:50:18,703 DEBUG A1 - idle:19
+2013-07-19 11:50:18,703 DEBUG A1 - active:1
+2013-07-19 11:50:18,718 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:50:46,471 DEBUG A1 - idle:19
+2013-07-19 11:50:46,471 DEBUG A1 - active:1
+2013-07-19 11:50:46,564  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 11:50:46,564  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:50:46,580 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:51:42,283 DEBUG A1 - idle:19
+2013-07-19 11:51:42,283 DEBUG A1 - active:1
+2013-07-19 11:51:42,331 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:51:43,797 DEBUG A1 - idle:19
+2013-07-19 11:51:43,797 DEBUG A1 - active:1
+2013-07-19 11:51:43,844 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:51:43,844 DEBUG A1 - idle:19
+2013-07-19 11:51:43,844 DEBUG A1 - active:1
+2013-07-19 11:51:43,844 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:51:46,481 DEBUG A1 - idle:19
+2013-07-19 11:51:46,481 DEBUG A1 - active:1
+2013-07-19 11:51:46,512 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:51:46,527 DEBUG A1 - idle:19
+2013-07-19 11:51:46,527 DEBUG A1 - active:1
+2013-07-19 11:51:46,527 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:51:48,228 DEBUG A1 - idle:19
+2013-07-19 11:51:48,228 DEBUG A1 - active:1
+2013-07-19 11:51:48,259 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:51:48,275 DEBUG A1 - idle:19
+2013-07-19 11:51:48,275 DEBUG A1 - active:1
+2013-07-19 11:51:48,290 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:52:11,004 DEBUG A1 - idle:19
+2013-07-19 11:52:11,004 DEBUG A1 - active:1
+2013-07-19 11:52:11,051 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:52:11,051 DEBUG A1 - idle:19
+2013-07-19 11:52:11,051 DEBUG A1 - active:1
+2013-07-19 11:52:11,066 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:52:25,543 DEBUG A1 - idle:19
+2013-07-19 11:52:25,543 DEBUG A1 - active:1
+2013-07-19 11:52:25,574 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:52:25,590 DEBUG A1 - idle:19
+2013-07-19 11:52:25,590 DEBUG A1 - active:1
+2013-07-19 11:52:25,590 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:52:33,140 DEBUG A1 - idle:19
+2013-07-19 11:52:33,140 DEBUG A1 - active:1
+2013-07-19 11:52:33,172 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:52:33,187 DEBUG A1 - idle:19
+2013-07-19 11:52:33,187 DEBUG A1 - active:1
+2013-07-19 11:52:33,187 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:53:01,002 DEBUG A1 - idle:19
+2013-07-19 11:53:01,002 DEBUG A1 - active:1
+2013-07-19 11:53:01,111  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:53:01,111  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:53:01,128 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:53:16,104 DEBUG A1 - idle:19
+2013-07-19 11:53:16,104 DEBUG A1 - active:1
+2013-07-19 11:53:16,151 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:53:16,151 DEBUG A1 - idle:19
+2013-07-19 11:53:16,151 DEBUG A1 - active:1
+2013-07-19 11:53:16,151 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:53:23,405 DEBUG A1 - idle:19
+2013-07-19 11:53:23,405 DEBUG A1 - active:1
+2013-07-19 11:53:23,436 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:53:23,436 DEBUG A1 - idle:19
+2013-07-19 11:53:23,436 DEBUG A1 - active:1
+2013-07-19 11:53:23,451 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:53:49,472 DEBUG A1 - idle:19
+2013-07-19 11:53:49,472 DEBUG A1 - active:1
+2013-07-19 11:53:49,503 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:53:49,519 DEBUG A1 - idle:19
+2013-07-19 11:53:49,519 DEBUG A1 - active:1
+2013-07-19 11:53:49,519 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:54:02,529 DEBUG A1 - idle:19
+2013-07-19 11:54:02,529 DEBUG A1 - active:1
+2013-07-19 11:54:02,561 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:54:02,561 DEBUG A1 - idle:19
+2013-07-19 11:54:02,561 DEBUG A1 - active:1
+2013-07-19 11:54:02,576 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:54:12,451 DEBUG A1 - idle:19
+2013-07-19 11:54:12,451 DEBUG A1 - active:1
+2013-07-19 11:54:12,482 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:54:12,498 DEBUG A1 - idle:19
+2013-07-19 11:54:12,498 DEBUG A1 - active:1
+2013-07-19 11:54:12,498 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:55:49,406 DEBUG A1 - idle:19
+2013-07-19 11:55:49,406 DEBUG A1 - active:1
+2013-07-19 11:55:49,470 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:55:50,452 DEBUG A1 - idle:19
+2013-07-19 11:55:50,452 DEBUG A1 - active:1
+2013-07-19 11:55:50,499 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:55:50,499 DEBUG A1 - idle:19
+2013-07-19 11:55:50,499 DEBUG A1 - active:1
+2013-07-19 11:55:50,499 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:55:52,075 DEBUG A1 - idle:19
+2013-07-19 11:55:52,075 DEBUG A1 - active:1
+2013-07-19 11:55:52,106 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:55:52,122 DEBUG A1 - idle:19
+2013-07-19 11:55:52,122 DEBUG A1 - active:1
+2013-07-19 11:55:52,122 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:57:24,084 DEBUG A1 - idle:19
+2013-07-19 11:57:24,084 DEBUG A1 - active:1
+2013-07-19 11:57:24,162  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:57:24,162  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:57:24,177 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:57:28,437 DEBUG A1 - idle:19
+2013-07-19 11:57:28,437 DEBUG A1 - active:1
+2013-07-19 11:57:28,468 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:57:28,484 DEBUG A1 - idle:19
+2013-07-19 11:57:28,484 DEBUG A1 - active:1
+2013-07-19 11:57:28,484 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:57:35,785 DEBUG A1 - idle:19
+2013-07-19 11:57:35,785 DEBUG A1 - active:1
+2013-07-19 11:57:35,816 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:57:35,816 DEBUG A1 - idle:19
+2013-07-19 11:57:35,816 DEBUG A1 - active:1
+2013-07-19 11:57:35,832 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:57:43,881 DEBUG A1 - idle:19
+2013-07-19 11:57:43,881 DEBUG A1 - active:1
+2013-07-19 11:57:43,881 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:59:06,109 DEBUG A1 - idle:19
+2013-07-19 11:59:06,109 DEBUG A1 - active:1
+2013-07-19 11:59:06,140  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:59:06,140  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:59:06,156 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:59:11,617 DEBUG A1 - idle:19
+2013-07-19 11:59:11,617 DEBUG A1 - active:1
+2013-07-19 11:59:11,648 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:59:11,664 DEBUG A1 - idle:19
+2013-07-19 11:59:11,664 DEBUG A1 - active:1
+2013-07-19 11:59:11,664 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:59:13,660 DEBUG A1 - idle:19
+2013-07-19 11:59:13,660 DEBUG A1 - active:1
+2013-07-19 11:59:13,693 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 11:59:14,722 DEBUG A1 - idle:19
+2013-07-19 11:59:14,722 DEBUG A1 - active:1
+2013-07-19 11:59:14,753 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:59:14,769 DEBUG A1 - idle:19
+2013-07-19 11:59:14,769 DEBUG A1 - active:1
+2013-07-19 11:59:14,769 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:59:27,187 DEBUG A1 - idle:19
+2013-07-19 11:59:27,187 DEBUG A1 - active:1
+2013-07-19 11:59:27,265  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 11:59:27,265  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:59:27,280 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 11:59:34,566 DEBUG A1 - idle:19
+2013-07-19 11:59:34,566 DEBUG A1 - active:1
+2013-07-19 11:59:34,598 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 11:59:34,613 DEBUG A1 - idle:19
+2013-07-19 11:59:34,613 DEBUG A1 - active:1
+2013-07-19 11:59:34,613 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 11:59:51,976 DEBUG A1 - idle:19
+2013-07-19 11:59:51,976 DEBUG A1 - active:1
+2013-07-19 11:59:52,054  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 11:59:52,070  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 11:59:52,086 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 12:00:18,171 DEBUG A1 - idle:19
+2013-07-19 12:00:18,171 DEBUG A1 - active:1
+2013-07-19 12:00:18,202 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:00:18,217 DEBUG A1 - idle:19
+2013-07-19 12:00:18,217 DEBUG A1 - active:1
+2013-07-19 12:00:18,217 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:00:37,171 DEBUG A1 - idle:19
+2013-07-19 12:00:37,171 DEBUG A1 - active:1
+2013-07-19 12:00:37,249  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 12:00:37,265  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 12:00:37,265 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 12:00:38,966 DEBUG A1 - idle:19
+2013-07-19 12:00:38,966 DEBUG A1 - active:1
+2013-07-19 12:00:38,998 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:00:38,998 DEBUG A1 - idle:19
+2013-07-19 12:00:39,013 DEBUG A1 - active:1
+2013-07-19 12:00:39,013 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:00:41,150 DEBUG A1 - idle:19
+2013-07-19 12:00:41,150 DEBUG A1 - active:1
+2013-07-19 12:00:41,182 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:00:41,197 DEBUG A1 - idle:19
+2013-07-19 12:00:41,197 DEBUG A1 - active:1
+2013-07-19 12:00:41,197 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:00:57,546 DEBUG A1 - idle:19
+2013-07-19 12:00:57,546 DEBUG A1 - active:1
+2013-07-19 12:00:57,624  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 12:00:57,640  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 12:00:57,640 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 12:01:36,408 DEBUG A1 - idle:19
+2013-07-19 12:01:36,408 DEBUG A1 - active:1
+2013-07-19 12:01:36,455 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 12:01:37,501 DEBUG A1 - idle:19
+2013-07-19 12:01:37,501 DEBUG A1 - active:1
+2013-07-19 12:01:37,532 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:01:37,532 DEBUG A1 - idle:19
+2013-07-19 12:01:37,532 DEBUG A1 - active:1
+2013-07-19 12:01:37,547 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:02:23,100 DEBUG A1 - idle:19
+2013-07-19 12:02:23,115 DEBUG A1 - active:1
+2013-07-19 12:02:23,178  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 12:02:23,193  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 12:02:23,193 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 12:02:27,344 DEBUG A1 - idle:19
+2013-07-19 12:02:27,344 DEBUG A1 - active:1
+2013-07-19 12:02:27,391 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:02:27,391 DEBUG A1 - idle:19
+2013-07-19 12:02:27,391 DEBUG A1 - active:1
+2013-07-19 12:02:27,406 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:02:49,808 DEBUG A1 - idle:19
+2013-07-19 12:02:49,808 DEBUG A1 - active:1
+2013-07-19 12:02:49,886  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 12:02:49,886  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 12:02:49,901 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 12:42:23,822 DEBUG A1 - idle:19
+2013-07-19 12:42:23,822 DEBUG A1 - active:1
+2013-07-19 12:42:23,917 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 12:42:25,414 DEBUG A1 - idle:19
+2013-07-19 12:42:25,414 DEBUG A1 - active:1
+2013-07-19 12:42:25,477 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:42:25,477 DEBUG A1 - idle:19
+2013-07-19 12:42:25,477 DEBUG A1 - active:1
+2013-07-19 12:42:25,492 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:44:32,554 DEBUG A1 - idle:19
+2013-07-19 12:44:32,554 DEBUG A1 - active:1
+2013-07-19 12:44:32,632  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 12:44:32,648  INFO A1 - T_指定納品書は3件処理されました。
+2013-07-19 12:44:32,648 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 12:44:48,109 DEBUG A1 - idle:19
+2013-07-19 12:44:48,109 DEBUG A1 - active:1
+2013-07-19 12:44:48,140 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:44:48,140 DEBUG A1 - idle:19
+2013-07-19 12:44:48,140 DEBUG A1 - active:1
+2013-07-19 12:44:48,140 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:45:26,672 DEBUG A1 - idle:19
+2013-07-19 12:45:26,672 DEBUG A1 - active:1
+2013-07-19 12:45:26,750  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 12:45:26,750  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 12:45:26,765 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 12:45:52,663 DEBUG A1 - idle:19
+2013-07-19 12:45:52,678 DEBUG A1 - active:1
+2013-07-19 12:45:52,678 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:47:17,043 DEBUG A1 - idle:19
+2013-07-19 12:47:17,043 DEBUG A1 - active:1
+2013-07-19 12:47:17,074  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 12:47:17,090  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 12:47:17,090 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 12:49:09,117 DEBUG A1 - idle:19
+2013-07-19 12:49:09,117 DEBUG A1 - active:1
+2013-07-19 12:49:09,164 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 12:50:40,768 DEBUG A1 - idle:19
+2013-07-19 12:50:40,768 DEBUG A1 - active:1
+2013-07-19 12:50:40,799 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:50:40,799 DEBUG A1 - idle:19
+2013-07-19 12:50:40,799 DEBUG A1 - active:1
+2013-07-19 12:50:40,799 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:51:20,688 DEBUG A1 - idle:19
+2013-07-19 12:51:20,688 DEBUG A1 - active:1
+2013-07-19 12:51:20,766  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 12:51:20,782  INFO A1 - T_指定納品書は3件処理されました。
+2013-07-19 12:51:20,782 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 12:51:40,346 DEBUG A1 - idle:19
+2013-07-19 12:51:40,346 DEBUG A1 - active:1
+2013-07-19 12:51:40,394 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 12:51:48,756 DEBUG A1 - idle:19
+2013-07-19 12:51:48,771 DEBUG A1 - active:1
+2013-07-19 12:51:48,819 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 12:51:50,504 DEBUG A1 - idle:19
+2013-07-19 12:51:50,504 DEBUG A1 - active:1
+2013-07-19 12:51:50,535 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:51:50,551 DEBUG A1 - idle:19
+2013-07-19 12:51:50,551 DEBUG A1 - active:1
+2013-07-19 12:51:50,551 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:51:53,952 DEBUG A1 - idle:19
+2013-07-19 12:51:53,952 DEBUG A1 - active:1
+2013-07-19 12:51:53,983 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:51:53,998 DEBUG A1 - idle:19
+2013-07-19 12:51:53,998 DEBUG A1 - active:1
+2013-07-19 12:51:53,998 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:51:55,668 DEBUG A1 - idle:19
+2013-07-19 12:51:55,668 DEBUG A1 - active:1
+2013-07-19 12:51:55,714 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:51:55,714 DEBUG A1 - idle:19
+2013-07-19 12:51:55,714 DEBUG A1 - active:1
+2013-07-19 12:51:55,714 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:51:58,990 DEBUG A1 - idle:19
+2013-07-19 12:51:58,990 DEBUG A1 - active:1
+2013-07-19 12:51:59,022 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:51:59,037 DEBUG A1 - idle:19
+2013-07-19 12:51:59,037 DEBUG A1 - active:1
+2013-07-19 12:51:59,037 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:52:04,669 DEBUG A1 - idle:19
+2013-07-19 12:52:04,669 DEBUG A1 - active:1
+2013-07-19 12:52:04,716 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:52:04,716 DEBUG A1 - idle:19
+2013-07-19 12:52:04,716 DEBUG A1 - active:1
+2013-07-19 12:52:04,716 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:52:06,556 DEBUG A1 - idle:19
+2013-07-19 12:52:06,556 DEBUG A1 - active:1
+2013-07-19 12:52:06,588 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 12:52:06,588 DEBUG A1 - idle:19
+2013-07-19 12:52:06,588 DEBUG A1 - active:1
+2013-07-19 12:52:06,603 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 12:57:27,621 DEBUG A1 - idle:19
+2013-07-19 12:57:27,621 DEBUG A1 - active:1
+2013-07-19 12:57:27,653 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 12:57:29,618 DEBUG A1 - idle:19
+2013-07-19 12:57:29,618 DEBUG A1 - active:1
+2013-07-19 12:57:29,666 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 12:57:29,885 DEBUG A1 - idle:19
+2013-07-19 12:57:29,885 DEBUG A1 - active:1
+2013-07-19 12:57:29,931 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 12:57:41,366 DEBUG A1 - idle:19
+2013-07-19 12:57:41,366 DEBUG A1 - active:1
+2013-07-19 12:57:41,366 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:02:51,543 DEBUG A1 - idle:19
+2013-07-19 13:02:51,543 DEBUG A1 - active:1
+2013-07-19 13:02:51,823  INFO A1 - T_在庫_子は5件処理されました。
+2013-07-19 13:02:51,840  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:02:51,840 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:03:01,668 DEBUG A1 - idle:19
+2013-07-19 13:03:01,668 DEBUG A1 - active:1
+2013-07-19 13:03:01,716 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 13:03:04,695 DEBUG A1 - idle:19
+2013-07-19 13:03:04,695 DEBUG A1 - active:1
+2013-07-19 13:03:04,727 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:03:04,727 DEBUG A1 - idle:19
+2013-07-19 13:03:04,727 DEBUG A1 - active:1
+2013-07-19 13:03:04,742 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:03:17,004 DEBUG A1 - idle:19
+2013-07-19 13:03:17,004 DEBUG A1 - active:1
+2013-07-19 13:03:17,019 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 13:03:19,329 DEBUG A1 - idle:19
+2013-07-19 13:03:19,329 DEBUG A1 - active:1
+2013-07-19 13:03:19,329 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 13:03:19,642 DEBUG A1 - idle:19
+2013-07-19 13:03:19,642 DEBUG A1 - active:1
+2013-07-19 13:03:19,658 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 13:03:21,233 DEBUG A1 - idle:19
+2013-07-19 13:03:21,249 DEBUG A1 - active:1
+2013-07-19 13:03:21,249 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 13:04:28,720 DEBUG A1 - idle:19
+2013-07-19 13:04:28,720 DEBUG A1 - active:1
+2013-07-19 13:04:29,016  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 13:04:29,032 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:05:49,093 DEBUG A1 - idle:19
+2013-07-19 13:05:49,093 DEBUG A1 - active:1
+2013-07-19 13:05:49,126 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 13:05:57,284 DEBUG A1 - idle:19
+2013-07-19 13:05:57,284 DEBUG A1 - active:1
+2013-07-19 13:05:57,316 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:05:57,331 DEBUG A1 - idle:19
+2013-07-19 13:05:57,331 DEBUG A1 - active:1
+2013-07-19 13:05:57,331 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:06:40,169 DEBUG A1 - idle:19
+2013-07-19 13:06:40,169 DEBUG A1 - active:1
+2013-07-19 13:06:40,247  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 13:06:40,247  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:06:40,264 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:06:50,201 DEBUG A1 - idle:19
+2013-07-19 13:06:50,201 DEBUG A1 - active:1
+2013-07-19 13:06:50,232 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:06:50,232 DEBUG A1 - idle:19
+2013-07-19 13:06:50,232 DEBUG A1 - active:1
+2013-07-19 13:06:50,248 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:07:27,688 DEBUG A1 - idle:19
+2013-07-19 13:07:27,688 DEBUG A1 - active:1
+2013-07-19 13:07:27,766  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 13:07:27,766  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:07:27,766 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:07:45,348 DEBUG A1 - idle:19
+2013-07-19 13:07:45,348 DEBUG A1 - active:1
+2013-07-19 13:07:45,379 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:07:45,395 DEBUG A1 - idle:19
+2013-07-19 13:07:45,395 DEBUG A1 - active:1
+2013-07-19 13:07:45,395 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:08:30,760 DEBUG A1 - idle:19
+2013-07-19 13:08:30,760 DEBUG A1 - active:1
+2013-07-19 13:08:30,838  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 13:08:30,853  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:08:30,853 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:08:37,968 DEBUG A1 - idle:19
+2013-07-19 13:08:37,968 DEBUG A1 - active:1
+2013-07-19 13:08:37,999 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:08:38,015 DEBUG A1 - idle:19
+2013-07-19 13:08:38,015 DEBUG A1 - active:1
+2013-07-19 13:08:38,015 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:08:38,654 DEBUG A1 - idle:19
+2013-07-19 13:08:38,654 DEBUG A1 - active:1
+2013-07-19 13:08:38,685 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:08:38,701 DEBUG A1 - idle:19
+2013-07-19 13:08:38,701 DEBUG A1 - active:1
+2013-07-19 13:08:38,701 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:09:11,211 DEBUG A1 - idle:19
+2013-07-19 13:09:11,211 DEBUG A1 - active:1
+2013-07-19 13:09:11,289  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 13:09:11,305  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:09:11,322 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:09:24,270 DEBUG A1 - idle:19
+2013-07-19 13:09:24,270 DEBUG A1 - active:1
+2013-07-19 13:09:24,301 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:09:24,301 DEBUG A1 - idle:19
+2013-07-19 13:09:24,301 DEBUG A1 - active:1
+2013-07-19 13:09:24,316 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:09:48,996 DEBUG A1 - idle:19
+2013-07-19 13:09:48,996 DEBUG A1 - active:1
+2013-07-19 13:09:49,090  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 13:09:49,090  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:09:49,106 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:12:53,593 DEBUG A1 - idle:19
+2013-07-19 13:12:53,593 DEBUG A1 - active:1
+2013-07-19 13:12:53,625 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 13:12:54,951 DEBUG A1 - idle:19
+2013-07-19 13:12:54,951 DEBUG A1 - active:1
+2013-07-19 13:12:54,967 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:12:54,982 DEBUG A1 - idle:19
+2013-07-19 13:12:54,982 DEBUG A1 - active:1
+2013-07-19 13:12:54,982 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:14:28,008 DEBUG A1 - idle:19
+2013-07-19 13:14:28,008 DEBUG A1 - active:1
+2013-07-19 13:14:28,086  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 13:14:28,101  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:14:28,101 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:14:53,047 DEBUG A1 - idle:19
+2013-07-19 13:14:53,047 DEBUG A1 - active:1
+2013-07-19 13:14:53,047 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:18:04,178 DEBUG A1 - idle:19
+2013-07-19 13:18:04,178 DEBUG A1 - active:1
+2013-07-19 13:18:04,209  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 13:18:04,225  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:18:04,225 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:18:19,280 DEBUG A1 - idle:19
+2013-07-19 13:18:19,280 DEBUG A1 - active:1
+2013-07-19 13:18:19,280 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:19:26,984 DEBUG A1 - idle:19
+2013-07-19 13:19:26,984 DEBUG A1 - active:1
+2013-07-19 13:19:27,015  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 13:19:27,015  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:19:27,015 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:19:29,793 DEBUG A1 - idle:19
+2013-07-19 13:19:29,793 DEBUG A1 - active:1
+2013-07-19 13:19:29,841 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 13:19:30,964 DEBUG A1 - idle:19
+2013-07-19 13:19:30,964 DEBUG A1 - active:1
+2013-07-19 13:19:30,995 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:19:30,995 DEBUG A1 - idle:19
+2013-07-19 13:19:30,995 DEBUG A1 - active:1
+2013-07-19 13:19:31,011 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:19:52,743 DEBUG A1 - idle:19
+2013-07-19 13:19:52,743 DEBUG A1 - active:1
+2013-07-19 13:19:52,821  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 13:19:52,821  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:19:52,836 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:20:39,233 DEBUG A1 - idle:19
+2013-07-19 13:20:39,233 DEBUG A1 - active:1
+2013-07-19 13:20:39,264 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:20:39,264 DEBUG A1 - idle:19
+2013-07-19 13:20:39,264 DEBUG A1 - active:1
+2013-07-19 13:20:39,280 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:20:50,917 DEBUG A1 - idle:19
+2013-07-19 13:20:50,917 DEBUG A1 - active:1
+2013-07-19 13:20:51,011  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 13:20:51,011  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:20:51,027 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:22:06,782 DEBUG A1 - idle:19
+2013-07-19 13:22:06,782 DEBUG A1 - active:1
+2013-07-19 13:22:06,814 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 13:22:07,719 DEBUG A1 - idle:19
+2013-07-19 13:22:07,719 DEBUG A1 - active:1
+2013-07-19 13:22:07,750 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:22:07,750 DEBUG A1 - idle:19
+2013-07-19 13:22:07,750 DEBUG A1 - active:1
+2013-07-19 13:22:07,766 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:23:23,083 DEBUG A1 - idle:19
+2013-07-19 13:23:23,083 DEBUG A1 - active:1
+2013-07-19 13:23:23,176  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 13:23:23,192  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:23:23,192 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:23:31,445 DEBUG A1 - idle:19
+2013-07-19 13:23:31,445 DEBUG A1 - active:1
+2013-07-19 13:23:31,492 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:23:31,492 DEBUG A1 - idle:19
+2013-07-19 13:23:31,492 DEBUG A1 - active:1
+2013-07-19 13:23:31,492 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:24:08,917 DEBUG A1 - idle:19
+2013-07-19 13:24:08,917 DEBUG A1 - active:1
+2013-07-19 13:24:09,010  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 13:24:09,010  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:24:09,027 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:24:30,477 DEBUG A1 - idle:19
+2013-07-19 13:24:30,477 DEBUG A1 - active:1
+2013-07-19 13:24:30,508 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:24:30,524 DEBUG A1 - idle:19
+2013-07-19 13:24:30,524 DEBUG A1 - active:1
+2013-07-19 13:24:30,524 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:24:31,070 DEBUG A1 - idle:19
+2013-07-19 13:24:31,070 DEBUG A1 - active:1
+2013-07-19 13:24:31,117 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:24:31,117 DEBUG A1 - idle:19
+2013-07-19 13:24:31,132 DEBUG A1 - active:1
+2013-07-19 13:24:31,132 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:25:27,043 DEBUG A1 - idle:19
+2013-07-19 13:25:27,043 DEBUG A1 - active:1
+2013-07-19 13:25:27,121  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 13:25:27,121  INFO A1 - T_指定納品書は3件処理されました。
+2013-07-19 13:25:27,136 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:25:30,710 DEBUG A1 - idle:19
+2013-07-19 13:25:30,710 DEBUG A1 - active:1
+2013-07-19 13:25:30,741 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:25:30,741 DEBUG A1 - idle:19
+2013-07-19 13:25:30,741 DEBUG A1 - active:1
+2013-07-19 13:25:30,757 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:27:52,654 DEBUG A1 - idle:19
+2013-07-19 13:27:52,654 DEBUG A1 - active:1
+2013-07-19 13:27:52,748  INFO A1 - T_在庫_子は9件処理されました。
+2013-07-19 13:27:52,764  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:27:52,764 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:28:21,423 DEBUG A1 - idle:19
+2013-07-19 13:28:21,423 DEBUG A1 - active:1
+2013-07-19 13:28:21,455 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 13:30:50,700 DEBUG A1 - idle:19
+2013-07-19 13:30:50,700 DEBUG A1 - active:1
+2013-07-19 13:30:50,733 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 13:30:54,648 DEBUG A1 - idle:19
+2013-07-19 13:30:54,648 DEBUG A1 - active:1
+2013-07-19 13:30:54,648 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:35:07,822 DEBUG A1 - idle:19
+2013-07-19 13:35:07,822 DEBUG A1 - active:1
+2013-07-19 13:35:07,869  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 13:35:07,869  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:35:07,901 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:35:33,440 DEBUG A1 - idle:19
+2013-07-19 13:35:33,440 DEBUG A1 - active:1
+2013-07-19 13:35:33,487 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 13:35:34,501 DEBUG A1 - idle:19
+2013-07-19 13:35:34,501 DEBUG A1 - active:1
+2013-07-19 13:35:34,548 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:35:34,548 DEBUG A1 - idle:19
+2013-07-19 13:35:34,548 DEBUG A1 - active:1
+2013-07-19 13:35:34,548 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:36:20,553 DEBUG A1 - idle:19
+2013-07-19 13:36:20,553 DEBUG A1 - active:1
+2013-07-19 13:36:20,646  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 13:36:20,662  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:36:20,662 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:36:52,550 DEBUG A1 - idle:19
+2013-07-19 13:36:52,550 DEBUG A1 - active:1
+2013-07-19 13:36:52,598 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 13:36:53,675 DEBUG A1 - idle:19
+2013-07-19 13:36:53,675 DEBUG A1 - active:1
+2013-07-19 13:36:53,706 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:36:53,721 DEBUG A1 - idle:19
+2013-07-19 13:36:53,721 DEBUG A1 - active:1
+2013-07-19 13:36:53,721 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:37:07,496 DEBUG A1 - idle:19
+2013-07-19 13:37:07,496 DEBUG A1 - active:1
+2013-07-19 13:37:07,512 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:40:49,985 DEBUG A1 - idle:19
+2013-07-19 13:40:49,985 DEBUG A1 - active:1
+2013-07-19 13:40:50,016  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 13:40:50,016  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:40:50,033 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:41:42,043 DEBUG A1 - idle:19
+2013-07-19 13:41:42,043 DEBUG A1 - active:1
+2013-07-19 13:41:42,043 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:45:04,656 DEBUG A1 - idle:19
+2013-07-19 13:45:04,656 DEBUG A1 - active:1
+2013-07-19 13:45:04,687  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 13:45:04,687  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:45:04,703 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:45:29,492 DEBUG A1 - idle:19
+2013-07-19 13:45:29,492 DEBUG A1 - active:1
+2013-07-19 13:45:29,524 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:45:29,524 DEBUG A1 - idle:19
+2013-07-19 13:45:29,539 DEBUG A1 - active:1
+2013-07-19 13:45:29,539 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:46:06,121 DEBUG A1 - idle:19
+2013-07-19 13:46:06,121 DEBUG A1 - active:1
+2013-07-19 13:46:06,152 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:46:06,168 DEBUG A1 - idle:19
+2013-07-19 13:46:06,168 DEBUG A1 - active:1
+2013-07-19 13:46:06,168 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:46:07,822 DEBUG A1 - idle:19
+2013-07-19 13:46:07,822 DEBUG A1 - active:1
+2013-07-19 13:46:07,853 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:46:07,868 DEBUG A1 - idle:19
+2013-07-19 13:46:07,868 DEBUG A1 - active:1
+2013-07-19 13:46:07,868 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:46:15,762 DEBUG A1 - idle:19
+2013-07-19 13:46:15,762 DEBUG A1 - active:1
+2013-07-19 13:46:15,793 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:46:15,809 DEBUG A1 - idle:19
+2013-07-19 13:46:15,809 DEBUG A1 - active:1
+2013-07-19 13:46:15,809 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:47:51,546 DEBUG A1 - idle:19
+2013-07-19 13:47:51,546 DEBUG A1 - active:1
+2013-07-19 13:47:51,624  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 13:47:51,640  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:47:51,640 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:47:53,825 DEBUG A1 - idle:19
+2013-07-19 13:47:53,825 DEBUG A1 - active:1
+2013-07-19 13:47:53,856 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:47:53,872 DEBUG A1 - idle:19
+2013-07-19 13:47:53,872 DEBUG A1 - active:1
+2013-07-19 13:47:53,872 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:49:06,193 DEBUG A1 - idle:19
+2013-07-19 13:49:06,193 DEBUG A1 - active:1
+2013-07-19 13:49:06,256  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 13:49:06,271  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:49:06,271 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:49:08,784 DEBUG A1 - idle:19
+2013-07-19 13:49:08,784 DEBUG A1 - active:1
+2013-07-19 13:49:08,815 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:49:08,831 DEBUG A1 - idle:19
+2013-07-19 13:49:08,831 DEBUG A1 - active:1
+2013-07-19 13:49:08,831 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:49:22,231 DEBUG A1 - idle:19
+2013-07-19 13:49:22,231 DEBUG A1 - active:1
+2013-07-19 13:49:22,262 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:49:22,262 DEBUG A1 - idle:19
+2013-07-19 13:49:22,262 DEBUG A1 - active:1
+2013-07-19 13:49:22,262 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:49:25,211 DEBUG A1 - idle:19
+2013-07-19 13:49:25,211 DEBUG A1 - active:1
+2013-07-19 13:49:25,242 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:49:25,242 DEBUG A1 - idle:19
+2013-07-19 13:49:25,242 DEBUG A1 - active:1
+2013-07-19 13:49:25,258 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:51:03,553 DEBUG A1 - idle:19
+2013-07-19 13:51:03,553 DEBUG A1 - active:1
+2013-07-19 13:51:03,616  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 13:51:03,631  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:51:03,648 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:51:50,262 DEBUG A1 - idle:19
+2013-07-19 13:51:50,262 DEBUG A1 - active:1
+2013-07-19 13:51:50,293 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:51:50,293 DEBUG A1 - idle:19
+2013-07-19 13:51:50,293 DEBUG A1 - active:1
+2013-07-19 13:51:50,309 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:52:36,750 DEBUG A1 - idle:19
+2013-07-19 13:52:36,750 DEBUG A1 - active:1
+2013-07-19 13:52:36,797 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:52:36,797 DEBUG A1 - idle:19
+2013-07-19 13:52:36,797 DEBUG A1 - active:1
+2013-07-19 13:52:36,812 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:54:14,032 DEBUG A1 - idle:19
+2013-07-19 13:54:14,032 DEBUG A1 - active:1
+2013-07-19 13:54:14,110  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 13:54:14,110  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 13:54:14,126 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 13:54:46,668 DEBUG A1 - idle:19
+2013-07-19 13:54:46,668 DEBUG A1 - active:1
+2013-07-19 13:54:46,716 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 13:55:26,418 DEBUG A1 - idle:19
+2013-07-19 13:55:26,418 DEBUG A1 - active:1
+2013-07-19 13:55:26,466 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 13:55:27,558 DEBUG A1 - idle:19
+2013-07-19 13:55:27,558 DEBUG A1 - active:1
+2013-07-19 13:55:27,589 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 13:55:27,589 DEBUG A1 - idle:19
+2013-07-19 13:55:27,589 DEBUG A1 - active:1
+2013-07-19 13:55:27,604 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 13:55:35,264 DEBUG A1 - idle:19
+2013-07-19 13:55:35,264 DEBUG A1 - active:1
+2013-07-19 13:55:35,264 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:03:43,034 DEBUG A1 - idle:19
+2013-07-19 14:03:43,034 DEBUG A1 - active:1
+2013-07-19 14:03:43,080  INFO A1 - T_在庫_子は6件処理されました。
+2013-07-19 14:03:43,113  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 14:03:43,144 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:04:07,356 DEBUG A1 - idle:19
+2013-07-19 14:04:07,356 DEBUG A1 - active:1
+2013-07-19 14:04:07,387 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:04:07,403 DEBUG A1 - idle:19
+2013-07-19 14:04:07,403 DEBUG A1 - active:1
+2013-07-19 14:04:07,403 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:04:10,632 DEBUG A1 - idle:19
+2013-07-19 14:04:10,632 DEBUG A1 - active:1
+2013-07-19 14:04:10,680 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 14:04:11,585 DEBUG A1 - idle:19
+2013-07-19 14:04:11,585 DEBUG A1 - active:1
+2013-07-19 14:04:11,616 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:04:11,616 DEBUG A1 - idle:19
+2013-07-19 14:04:11,616 DEBUG A1 - active:1
+2013-07-19 14:04:11,631 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:04:23,035 DEBUG A1 - idle:19
+2013-07-19 14:04:23,035 DEBUG A1 - active:1
+2013-07-19 14:04:23,066 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:04:23,066 DEBUG A1 - idle:19
+2013-07-19 14:04:23,066 DEBUG A1 - active:1
+2013-07-19 14:04:23,082 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:04:28,963 DEBUG A1 - idle:19
+2013-07-19 14:04:28,963 DEBUG A1 - active:1
+2013-07-19 14:04:28,994 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:04:28,994 DEBUG A1 - idle:19
+2013-07-19 14:04:28,994 DEBUG A1 - active:1
+2013-07-19 14:04:29,010 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:04:31,303 DEBUG A1 - idle:19
+2013-07-19 14:04:31,303 DEBUG A1 - active:1
+2013-07-19 14:04:31,350 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:04:31,350 DEBUG A1 - idle:19
+2013-07-19 14:04:31,350 DEBUG A1 - active:1
+2013-07-19 14:04:31,350 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:04:39,165 DEBUG A1 - idle:19
+2013-07-19 14:04:39,165 DEBUG A1 - active:1
+2013-07-19 14:04:39,197 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:04:39,212 DEBUG A1 - idle:19
+2013-07-19 14:04:39,212 DEBUG A1 - active:1
+2013-07-19 14:04:39,212 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:05:00,366 DEBUG A1 - idle:19
+2013-07-19 14:05:00,366 DEBUG A1 - active:1
+2013-07-19 14:05:00,366 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:06:25,230 DEBUG A1 - idle:19
+2013-07-19 14:06:25,230 DEBUG A1 - active:1
+2013-07-19 14:06:25,261  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 14:06:25,261  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 14:06:25,278 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:07:09,723 DEBUG A1 - idle:19
+2013-07-19 14:07:09,723 DEBUG A1 - active:1
+2013-07-19 14:07:09,755 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 14:07:10,879 DEBUG A1 - idle:19
+2013-07-19 14:07:10,879 DEBUG A1 - active:1
+2013-07-19 14:07:10,910 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:07:10,925 DEBUG A1 - idle:19
+2013-07-19 14:07:10,925 DEBUG A1 - active:1
+2013-07-19 14:07:10,925 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:14:51,844 DEBUG A1 - idle:19
+2013-07-19 14:14:51,844 DEBUG A1 - active:1
+2013-07-19 14:14:52,203 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-19 14:14:52,218 DEBUG A1 - idle:19
+2013-07-19 14:14:52,218 DEBUG A1 - active:1
+2013-07-19 14:14:52,234 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-19 14:14:52,686 DEBUG A1 - idle:19
+2013-07-19 14:14:52,686 DEBUG A1 - active:1
+2013-07-19 14:14:52,702 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-19 14:14:52,936 DEBUG A1 - idle:19
+2013-07-19 14:14:52,936 DEBUG A1 - active:1
+2013-07-19 14:14:52,952 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-19 14:14:54,434 DEBUG A1 - idle:19
+2013-07-19 14:14:54,434 DEBUG A1 - active:1
+2013-07-19 14:14:54,512 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-19 14:14:54,527 DEBUG A1 - idle:19
+2013-07-19 14:14:54,527 DEBUG A1 - active:1
+2013-07-19 14:14:54,543 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2013-07-19 14:14:57,476 DEBUG A1 - idle:19
+2013-07-19 14:14:57,476 DEBUG A1 - active:1
+2013-07-19 14:14:57,678 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:14:59,004 DEBUG A1 - idle:19
+2013-07-19 14:14:59,004 DEBUG A1 - active:1
+2013-07-19 14:15:00,331 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 14:15:20,315 DEBUG A1 - idle:19
+2013-07-19 14:15:20,315 DEBUG A1 - active:1
+2013-07-19 14:15:20,394 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:20,394 DEBUG A1 - idle:19
+2013-07-19 14:15:20,394 DEBUG A1 - active:1
+2013-07-19 14:15:20,410 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:15:23,264 DEBUG A1 - idle:19
+2013-07-19 14:15:23,264 DEBUG A1 - active:1
+2013-07-19 14:15:23,343 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:23,343 DEBUG A1 - idle:19
+2013-07-19 14:15:23,343 DEBUG A1 - active:1
+2013-07-19 14:15:23,359 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:15:23,577 DEBUG A1 - idle:19
+2013-07-19 14:15:23,577 DEBUG A1 - active:1
+2013-07-19 14:15:23,640 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:23,640 DEBUG A1 - idle:19
+2013-07-19 14:15:23,640 DEBUG A1 - active:1
+2013-07-19 14:15:23,655 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:15:23,874 DEBUG A1 - idle:19
+2013-07-19 14:15:23,874 DEBUG A1 - active:1
+2013-07-19 14:15:23,983 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:23,999 DEBUG A1 - idle:19
+2013-07-19 14:15:23,999 DEBUG A1 - active:1
+2013-07-19 14:15:24,014 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:15:24,342 DEBUG A1 - idle:19
+2013-07-19 14:15:24,342 DEBUG A1 - active:1
+2013-07-19 14:15:24,405 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:24,405 DEBUG A1 - idle:19
+2013-07-19 14:15:24,405 DEBUG A1 - active:1
+2013-07-19 14:15:24,421 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:15:24,873 DEBUG A1 - idle:19
+2013-07-19 14:15:24,873 DEBUG A1 - active:1
+2013-07-19 14:15:24,951 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:24,951 DEBUG A1 - idle:19
+2013-07-19 14:15:24,951 DEBUG A1 - active:1
+2013-07-19 14:15:24,967 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:15:25,653 DEBUG A1 - idle:19
+2013-07-19 14:15:25,653 DEBUG A1 - active:1
+2013-07-19 14:15:25,715 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:25,715 DEBUG A1 - idle:19
+2013-07-19 14:15:25,715 DEBUG A1 - active:1
+2013-07-19 14:15:25,747 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:15:27,119 DEBUG A1 - idle:19
+2013-07-19 14:15:27,119 DEBUG A1 - active:1
+2013-07-19 14:15:27,183 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:27,183 DEBUG A1 - idle:19
+2013-07-19 14:15:27,183 DEBUG A1 - active:1
+2013-07-19 14:15:27,198 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:15:27,838 DEBUG A1 - idle:19
+2013-07-19 14:15:27,838 DEBUG A1 - active:1
+2013-07-19 14:15:27,900 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:27,900 DEBUG A1 - idle:19
+2013-07-19 14:15:27,900 DEBUG A1 - active:1
+2013-07-19 14:15:27,932 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:15:29,070 DEBUG A1 - idle:19
+2013-07-19 14:15:29,070 DEBUG A1 - active:1
+2013-07-19 14:15:29,129 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:29,129 DEBUG A1 - idle:19
+2013-07-19 14:15:29,129 DEBUG A1 - active:1
+2013-07-19 14:15:29,145 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:15:50,142 DEBUG A1 - idle:19
+2013-07-19 14:15:50,142 DEBUG A1 - active:1
+2013-07-19 14:15:50,192 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:50,192 DEBUG A1 - idle:19
+2013-07-19 14:15:50,192 DEBUG A1 - active:1
+2013-07-19 14:15:50,208 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:15:57,774 DEBUG A1 - idle:19
+2013-07-19 14:15:57,774 DEBUG A1 - active:1
+2013-07-19 14:15:57,853 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:15:57,853 DEBUG A1 - idle:19
+2013-07-19 14:15:57,853 DEBUG A1 - active:1
+2013-07-19 14:15:57,868 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:16:09,834 DEBUG A1 - idle:19
+2013-07-19 14:16:09,834 DEBUG A1 - active:1
+2013-07-19 14:16:09,928 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:16:09,928 DEBUG A1 - idle:19
+2013-07-19 14:16:09,928 DEBUG A1 - active:1
+2013-07-19 14:16:09,959 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:16:11,301 DEBUG A1 - idle:19
+2013-07-19 14:16:11,301 DEBUG A1 - active:1
+2013-07-19 14:16:11,332 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:16:43,203 DEBUG A1 - idle:19
+2013-07-19 14:16:43,203 DEBUG A1 - active:1
+2013-07-19 14:16:43,391 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2013-07-19 14:17:28,475 DEBUG A1 - idle:19
+2013-07-19 14:17:28,475 DEBUG A1 - active:1
+2013-07-19 14:17:28,554 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:17:28,554 DEBUG A1 - idle:19
+2013-07-19 14:17:28,554 DEBUG A1 - active:1
+2013-07-19 14:17:28,570 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:17:41,159 DEBUG A1 - idle:19
+2013-07-19 14:17:41,159 DEBUG A1 - active:1
+2013-07-19 14:17:41,239 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:17:41,239 DEBUG A1 - idle:19
+2013-07-19 14:17:41,239 DEBUG A1 - active:1
+2013-07-19 14:17:41,255 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:17:47,074 DEBUG A1 - idle:19
+2013-07-19 14:17:47,074 DEBUG A1 - active:1
+2013-07-19 14:17:47,137 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:17:47,137 DEBUG A1 - idle:19
+2013-07-19 14:17:47,137 DEBUG A1 - active:1
+2013-07-19 14:17:47,153 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:17:49,633 DEBUG A1 - idle:19
+2013-07-19 14:17:49,633 DEBUG A1 - active:1
+2013-07-19 14:17:49,664 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:18:07,994 DEBUG A1 - idle:19
+2013-07-19 14:18:07,994 DEBUG A1 - active:1
+2013-07-19 14:18:08,077 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:18:08,077 DEBUG A1 - idle:19
+2013-07-19 14:18:08,077 DEBUG A1 - active:1
+2013-07-19 14:18:08,093 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:18:12,539 DEBUG A1 - idle:19
+2013-07-19 14:18:12,539 DEBUG A1 - active:1
+2013-07-19 14:18:12,602 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:18:12,602 DEBUG A1 - idle:19
+2013-07-19 14:18:12,602 DEBUG A1 - active:1
+2013-07-19 14:18:12,618 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:18:17,844 DEBUG A1 - idle:19
+2013-07-19 14:18:17,844 DEBUG A1 - active:1
+2013-07-19 14:18:17,897 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:18:17,897 DEBUG A1 - idle:19
+2013-07-19 14:18:17,897 DEBUG A1 - active:1
+2013-07-19 14:18:17,928 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:18:19,207 DEBUG A1 - idle:19
+2013-07-19 14:18:19,207 DEBUG A1 - active:1
+2013-07-19 14:18:19,260 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 14:18:19,275 DEBUG A1 - idle:19
+2013-07-19 14:18:19,275 DEBUG A1 - active:1
+2013-07-19 14:18:19,275 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:18:27,075 DEBUG A1 - idle:19
+2013-07-19 14:18:27,075 DEBUG A1 - active:1
+2013-07-19 14:18:27,106 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 14:44:33,227 DEBUG A1 - idle:19
+2013-07-19 14:44:33,227 DEBUG A1 - active:1
+2013-07-19 14:44:33,275 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 14:44:43,821 DEBUG A1 - idle:19
+2013-07-19 14:44:43,821 DEBUG A1 - active:1
+2013-07-19 14:44:43,868 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:44:43,883 DEBUG A1 - idle:19
+2013-07-19 14:44:43,883 DEBUG A1 - active:1
+2013-07-19 14:44:43,883 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:44:52,775 DEBUG A1 - idle:19
+2013-07-19 14:44:52,775 DEBUG A1 - active:1
+2013-07-19 14:44:52,822 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:44:52,838 DEBUG A1 - idle:19
+2013-07-19 14:44:52,838 DEBUG A1 - active:1
+2013-07-19 14:44:52,838 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:45:41,026 DEBUG A1 - idle:19
+2013-07-19 14:45:41,026 DEBUG A1 - active:1
+2013-07-19 14:45:41,104  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 14:45:41,355  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 14:45:41,355 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:45:48,156 DEBUG A1 - idle:19
+2013-07-19 14:45:48,156 DEBUG A1 - active:1
+2013-07-19 14:45:48,188 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:45:48,203 DEBUG A1 - idle:19
+2013-07-19 14:45:48,203 DEBUG A1 - active:1
+2013-07-19 14:45:48,203 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:46:29,481 DEBUG A1 - idle:19
+2013-07-19 14:46:29,481 DEBUG A1 - active:1
+2013-07-19 14:46:29,559  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 14:46:29,559  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 14:46:29,574 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:46:34,193 DEBUG A1 - idle:19
+2013-07-19 14:46:34,193 DEBUG A1 - active:1
+2013-07-19 14:46:34,224 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:46:34,224 DEBUG A1 - idle:19
+2013-07-19 14:46:34,224 DEBUG A1 - active:1
+2013-07-19 14:46:34,240 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:47:45,906 DEBUG A1 - idle:19
+2013-07-19 14:47:45,906 DEBUG A1 - active:1
+2013-07-19 14:47:46,296  INFO A1 - T_在庫_子は5件処理されました。
+2013-07-19 14:47:46,296  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 14:47:46,313 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:47:59,838 DEBUG A1 - idle:19
+2013-07-19 14:47:59,838 DEBUG A1 - active:1
+2013-07-19 14:47:59,885 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:47:59,885 DEBUG A1 - idle:19
+2013-07-19 14:47:59,885 DEBUG A1 - active:1
+2013-07-19 14:47:59,901 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:49:23,142 DEBUG A1 - idle:19
+2013-07-19 14:49:23,142 DEBUG A1 - active:1
+2013-07-19 14:49:23,267  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 14:49:23,267  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 14:49:23,283 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:49:40,896 DEBUG A1 - idle:19
+2013-07-19 14:49:40,896 DEBUG A1 - active:1
+2013-07-19 14:49:40,912 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:49:40,927 DEBUG A1 - idle:19
+2013-07-19 14:49:40,927 DEBUG A1 - active:1
+2013-07-19 14:49:40,927 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:50:58,850 DEBUG A1 - idle:19
+2013-07-19 14:50:58,850 DEBUG A1 - active:1
+2013-07-19 14:50:58,943  INFO A1 - T_在庫_子は7件処理されました。
+2013-07-19 14:50:58,943  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 14:50:58,960 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:51:13,093 DEBUG A1 - idle:19
+2013-07-19 14:51:13,093 DEBUG A1 - active:1
+2013-07-19 14:51:13,125 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:51:13,140 DEBUG A1 - idle:19
+2013-07-19 14:51:13,140 DEBUG A1 - active:1
+2013-07-19 14:51:13,140 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:51:16,057 DEBUG A1 - idle:19
+2013-07-19 14:51:16,057 DEBUG A1 - active:1
+2013-07-19 14:51:16,104 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:51:16,120 DEBUG A1 - idle:19
+2013-07-19 14:51:16,120 DEBUG A1 - active:1
+2013-07-19 14:51:16,120 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:51:20,675 DEBUG A1 - idle:19
+2013-07-19 14:51:20,675 DEBUG A1 - active:1
+2013-07-19 14:51:20,722 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:51:20,722 DEBUG A1 - idle:19
+2013-07-19 14:51:20,722 DEBUG A1 - active:1
+2013-07-19 14:51:20,722 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:53:36,504 DEBUG A1 - idle:19
+2013-07-19 14:53:36,504 DEBUG A1 - active:1
+2013-07-19 14:53:36,848  INFO A1 - T_在庫_子は11件処理されました。
+2013-07-19 14:53:36,863  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 14:53:36,863 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:53:47,753 DEBUG A1 - idle:19
+2013-07-19 14:53:47,753 DEBUG A1 - active:1
+2013-07-19 14:53:47,800 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:53:47,800 DEBUG A1 - idle:19
+2013-07-19 14:53:47,800 DEBUG A1 - active:1
+2013-07-19 14:53:47,815 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:55:11,525 DEBUG A1 - idle:19
+2013-07-19 14:55:11,525 DEBUG A1 - active:1
+2013-07-19 14:55:11,603  INFO A1 - T_在庫_子は10件処理されました。
+2013-07-19 14:55:11,603  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 14:55:11,634 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:55:34,739 DEBUG A1 - idle:19
+2013-07-19 14:55:34,739 DEBUG A1 - active:1
+2013-07-19 14:55:34,786 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:55:34,786 DEBUG A1 - idle:19
+2013-07-19 14:55:34,786 DEBUG A1 - active:1
+2013-07-19 14:55:34,786 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:55:45,300 DEBUG A1 - idle:19
+2013-07-19 14:55:45,300 DEBUG A1 - active:1
+2013-07-19 14:55:45,347 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:55:45,347 DEBUG A1 - idle:19
+2013-07-19 14:55:45,347 DEBUG A1 - active:1
+2013-07-19 14:55:45,347 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:55:59,715 DEBUG A1 - idle:19
+2013-07-19 14:55:59,715 DEBUG A1 - active:1
+2013-07-19 14:55:59,761 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:55:59,761 DEBUG A1 - idle:19
+2013-07-19 14:55:59,761 DEBUG A1 - active:1
+2013-07-19 14:55:59,761 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:56:41,757 DEBUG A1 - idle:19
+2013-07-19 14:56:41,757 DEBUG A1 - active:1
+2013-07-19 14:56:41,788 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:56:41,804 DEBUG A1 - idle:19
+2013-07-19 14:56:41,804 DEBUG A1 - active:1
+2013-07-19 14:56:41,804 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:56:45,220 DEBUG A1 - idle:19
+2013-07-19 14:56:45,220 DEBUG A1 - active:1
+2013-07-19 14:56:45,251 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:56:45,251 DEBUG A1 - idle:19
+2013-07-19 14:56:45,251 DEBUG A1 - active:1
+2013-07-19 14:56:45,251 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:56:48,246 DEBUG A1 - idle:19
+2013-07-19 14:56:48,246 DEBUG A1 - active:1
+2013-07-19 14:56:48,293 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:56:48,293 DEBUG A1 - idle:19
+2013-07-19 14:56:48,293 DEBUG A1 - active:1
+2013-07-19 14:56:48,293 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:56:51,351 DEBUG A1 - idle:19
+2013-07-19 14:56:51,351 DEBUG A1 - active:1
+2013-07-19 14:56:51,382 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:56:51,398 DEBUG A1 - idle:19
+2013-07-19 14:56:51,398 DEBUG A1 - active:1
+2013-07-19 14:56:51,398 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:56:57,575 DEBUG A1 - idle:19
+2013-07-19 14:56:57,575 DEBUG A1 - active:1
+2013-07-19 14:56:57,684  INFO A1 - T_在庫_子は11件処理されました。
+2013-07-19 14:56:57,700  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 14:56:57,700 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:56:59,417 DEBUG A1 - idle:19
+2013-07-19 14:56:59,417 DEBUG A1 - active:1
+2013-07-19 14:56:59,448 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:56:59,464 DEBUG A1 - idle:19
+2013-07-19 14:56:59,464 DEBUG A1 - active:1
+2013-07-19 14:56:59,464 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:57:01,991 DEBUG A1 - idle:19
+2013-07-19 14:57:01,991 DEBUG A1 - active:1
+2013-07-19 14:57:02,022 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:57:02,038 DEBUG A1 - idle:19
+2013-07-19 14:57:02,038 DEBUG A1 - active:1
+2013-07-19 14:57:02,038 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:57:05,829 DEBUG A1 - idle:19
+2013-07-19 14:57:05,829 DEBUG A1 - active:1
+2013-07-19 14:57:05,922  INFO A1 - T_在庫_子は11件処理されました。
+2013-07-19 14:57:05,922  INFO A1 - T_指定納品書は3件処理されました。
+2013-07-19 14:57:05,969 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:57:29,164 DEBUG A1 - idle:19
+2013-07-19 14:57:29,164 DEBUG A1 - active:1
+2013-07-19 14:57:29,210 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:57:29,226 DEBUG A1 - idle:19
+2013-07-19 14:57:29,226 DEBUG A1 - active:1
+2013-07-19 14:57:29,226 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:57:32,190 DEBUG A1 - idle:19
+2013-07-19 14:57:32,190 DEBUG A1 - active:1
+2013-07-19 14:57:32,237 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:57:32,252 DEBUG A1 - idle:19
+2013-07-19 14:57:32,252 DEBUG A1 - active:1
+2013-07-19 14:57:32,252 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:57:38,524 DEBUG A1 - idle:19
+2013-07-19 14:57:38,524 DEBUG A1 - active:1
+2013-07-19 14:57:38,555 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:57:38,555 DEBUG A1 - idle:19
+2013-07-19 14:57:38,570 DEBUG A1 - active:1
+2013-07-19 14:57:38,570 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:58:12,625 DEBUG A1 - idle:19
+2013-07-19 14:58:12,625 DEBUG A1 - active:1
+2013-07-19 14:58:12,703  INFO A1 - T_在庫_子は10件処理されました。
+2013-07-19 14:58:12,719  INFO A1 - T_指定納品書は3件処理されました。
+2013-07-19 14:58:12,734 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 14:58:19,569 DEBUG A1 - idle:19
+2013-07-19 14:58:19,569 DEBUG A1 - active:1
+2013-07-19 14:58:19,600 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:58:19,600 DEBUG A1 - idle:19
+2013-07-19 14:58:19,600 DEBUG A1 - active:1
+2013-07-19 14:58:19,616 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:58:29,023 DEBUG A1 - idle:19
+2013-07-19 14:58:29,023 DEBUG A1 - active:1
+2013-07-19 14:58:29,054 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 14:58:29,070 DEBUG A1 - idle:19
+2013-07-19 14:58:29,070 DEBUG A1 - active:1
+2013-07-19 14:58:29,070 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 14:58:35,793 DEBUG A1 - idle:19
+2013-07-19 14:58:35,793 DEBUG A1 - active:1
+2013-07-19 14:58:35,793 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:22:02,230 DEBUG A1 - idle:19
+2013-07-19 15:22:02,230 DEBUG A1 - active:1
+2013-07-19 15:22:02,621 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2013-07-19 15:22:11,420 DEBUG A1 - idle:19
+2013-07-19 15:22:11,420 DEBUG A1 - active:1
+2013-07-19 15:22:11,748 DEBUG A1 - HistorySearch
+ps is closed by jdbc4.0
+2013-07-19 15:37:16,534 DEBUG A1 - idle:19
+2013-07-19 15:37:16,534 DEBUG A1 - active:1
+2013-07-19 15:37:16,566  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 15:37:16,581  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 15:37:16,581 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 15:37:22,011 DEBUG A1 - idle:19
+2013-07-19 15:37:22,011 DEBUG A1 - active:1
+2013-07-19 15:37:22,058 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:37:22,058 DEBUG A1 - idle:19
+2013-07-19 15:37:22,058 DEBUG A1 - active:1
+2013-07-19 15:37:22,073 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:37:38,843 DEBUG A1 - idle:19
+2013-07-19 15:37:38,843 DEBUG A1 - active:1
+2013-07-19 15:37:38,859 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:40:05,407 DEBUG A1 - idle:19
+2013-07-19 15:40:05,407 DEBUG A1 - active:1
+2013-07-19 15:40:05,453  INFO A1 - T_在庫_子は5件処理されました。
+2013-07-19 15:40:05,470  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 15:40:05,517 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 15:40:29,167 DEBUG A1 - idle:19
+2013-07-19 15:40:29,167 DEBUG A1 - active:1
+2013-07-19 15:40:29,230 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 15:40:30,057 DEBUG A1 - idle:19
+2013-07-19 15:40:30,057 DEBUG A1 - active:1
+2013-07-19 15:40:30,104 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:40:30,104 DEBUG A1 - idle:19
+2013-07-19 15:40:30,104 DEBUG A1 - active:1
+2013-07-19 15:40:30,104 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:40:31,367 DEBUG A1 - idle:19
+2013-07-19 15:40:31,367 DEBUG A1 - active:1
+2013-07-19 15:40:31,398 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:40:31,414 DEBUG A1 - idle:19
+2013-07-19 15:40:31,414 DEBUG A1 - active:1
+2013-07-19 15:40:31,414 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:43:44,651 DEBUG A1 - idle:19
+2013-07-19 15:43:44,651 DEBUG A1 - active:1
+2013-07-19 15:43:44,745  INFO A1 - T_在庫_子は13件処理されました。
+2013-07-19 15:43:44,745  INFO A1 - T_指定納品書は3件処理されました。
+2013-07-19 15:43:44,777 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 15:43:54,059 DEBUG A1 - idle:19
+2013-07-19 15:43:54,059 DEBUG A1 - active:1
+2013-07-19 15:43:54,106 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:43:54,106 DEBUG A1 - idle:19
+2013-07-19 15:43:54,106 DEBUG A1 - active:1
+2013-07-19 15:43:54,122 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:43:56,119 DEBUG A1 - idle:19
+2013-07-19 15:43:56,119 DEBUG A1 - active:1
+2013-07-19 15:43:56,150 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:43:56,150 DEBUG A1 - idle:19
+2013-07-19 15:43:56,150 DEBUG A1 - active:1
+2013-07-19 15:43:56,165 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:44:33,028 DEBUG A1 - idle:19
+2013-07-19 15:44:33,028 DEBUG A1 - active:1
+2013-07-19 15:44:33,106  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 15:44:33,106  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 15:44:33,122 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 15:44:37,865 DEBUG A1 - idle:19
+2013-07-19 15:44:37,865 DEBUG A1 - active:1
+2013-07-19 15:44:37,912 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:44:37,912 DEBUG A1 - idle:19
+2013-07-19 15:44:37,912 DEBUG A1 - active:1
+2013-07-19 15:44:37,928 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:45:15,758 DEBUG A1 - idle:19
+2013-07-19 15:45:15,758 DEBUG A1 - active:1
+2013-07-19 15:45:15,868  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 15:45:15,883  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 15:45:15,900 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 15:45:25,868 DEBUG A1 - idle:19
+2013-07-19 15:45:25,868 DEBUG A1 - active:1
+2013-07-19 15:45:25,915 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:45:25,931 DEBUG A1 - idle:19
+2013-07-19 15:45:25,931 DEBUG A1 - active:1
+2013-07-19 15:45:25,931 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:45:42,732 DEBUG A1 - idle:19
+2013-07-19 15:45:42,732 DEBUG A1 - active:1
+2013-07-19 15:45:42,732 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:48:40,167 DEBUG A1 - idle:19
+2013-07-19 15:48:40,167 DEBUG A1 - active:1
+2013-07-19 15:48:40,213  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 15:48:40,213  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 15:48:40,230 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 15:48:49,184 DEBUG A1 - idle:19
+2013-07-19 15:48:49,200 DEBUG A1 - active:1
+2013-07-19 15:48:49,216 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:48:49,231 DEBUG A1 - idle:19
+2013-07-19 15:48:49,231 DEBUG A1 - active:1
+2013-07-19 15:48:49,231 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:48:49,793 DEBUG A1 - idle:19
+2013-07-19 15:48:49,793 DEBUG A1 - active:1
+2013-07-19 15:48:49,840 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:48:49,840 DEBUG A1 - idle:19
+2013-07-19 15:48:49,840 DEBUG A1 - active:1
+2013-07-19 15:48:49,840 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:49:19,682 DEBUG A1 - idle:19
+2013-07-19 15:49:19,682 DEBUG A1 - active:1
+2013-07-19 15:49:19,760  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 15:49:19,776  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 15:49:19,776 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 15:50:11,882 DEBUG A1 - idle:19
+2013-07-19 15:50:11,882 DEBUG A1 - active:1
+2013-07-19 15:50:11,961 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 15:50:12,944 DEBUG A1 - idle:19
+2013-07-19 15:50:12,944 DEBUG A1 - active:1
+2013-07-19 15:50:12,991 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:50:12,991 DEBUG A1 - idle:19
+2013-07-19 15:50:12,991 DEBUG A1 - active:1
+2013-07-19 15:50:13,006 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:50:45,782 DEBUG A1 - idle:19
+2013-07-19 15:50:45,782 DEBUG A1 - active:1
+2013-07-19 15:50:45,844  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 15:50:45,860  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 15:50:45,860 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 15:50:56,953 DEBUG A1 - idle:19
+2013-07-19 15:50:56,953 DEBUG A1 - active:1
+2013-07-19 15:50:56,968 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:55:28,799 DEBUG A1 - idle:19
+2013-07-19 15:55:28,799 DEBUG A1 - active:1
+2013-07-19 15:55:28,830  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 15:55:29,081  INFO A1 - T_指定納品書は3件処理されました。
+2013-07-19 15:55:29,096 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 15:56:16,178 DEBUG A1 - idle:19
+2013-07-19 15:56:16,178 DEBUG A1 - active:1
+2013-07-19 15:56:16,210 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 15:56:17,146 DEBUG A1 - idle:19
+2013-07-19 15:56:17,146 DEBUG A1 - active:1
+2013-07-19 15:56:17,177 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:56:17,193 DEBUG A1 - idle:19
+2013-07-19 15:56:17,193 DEBUG A1 - active:1
+2013-07-19 15:56:17,193 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 15:56:20,453 DEBUG A1 - idle:19
+2013-07-19 15:56:20,453 DEBUG A1 - active:1
+2013-07-19 15:56:20,485 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 15:56:20,485 DEBUG A1 - idle:19
+2013-07-19 15:56:20,485 DEBUG A1 - active:1
+2013-07-19 15:56:20,500 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:05:45,113 DEBUG A1 - idle:19
+2013-07-19 16:05:45,113 DEBUG A1 - active:1
+2013-07-19 16:05:45,129  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 16:05:45,176  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:05:45,176 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:05:55,566 DEBUG A1 - idle:19
+2013-07-19 16:05:55,566 DEBUG A1 - active:1
+2013-07-19 16:05:55,645 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 16:05:56,799 DEBUG A1 - idle:19
+2013-07-19 16:05:56,799 DEBUG A1 - active:1
+2013-07-19 16:05:56,831 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:05:56,831 DEBUG A1 - idle:19
+2013-07-19 16:05:56,831 DEBUG A1 - active:1
+2013-07-19 16:05:56,831 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:06:54,848 DEBUG A1 - idle:19
+2013-07-19 16:06:54,848 DEBUG A1 - active:1
+2013-07-19 16:06:55,130 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 16:06:56,440 DEBUG A1 - idle:19
+2013-07-19 16:06:56,440 DEBUG A1 - active:1
+2013-07-19 16:06:56,487 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 16:09:24,344 DEBUG A1 - idle:19
+2013-07-19 16:09:24,344 DEBUG A1 - active:1
+2013-07-19 16:09:24,486  INFO A1 - T_出庫_子は2件処理されました。
+2013-07-19 16:09:24,486 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:09:50,289 DEBUG A1 - idle:19
+2013-07-19 16:09:50,289 DEBUG A1 - active:1
+2013-07-19 16:09:50,289 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 16:09:56,467 DEBUG A1 - idle:19
+2013-07-19 16:09:56,467 DEBUG A1 - active:1
+2013-07-19 16:09:56,514 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 16:10:04,751 DEBUG A1 - idle:19
+2013-07-19 16:10:04,751 DEBUG A1 - active:1
+2013-07-19 16:10:04,751 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:12:44,355 DEBUG A1 - idle:19
+2013-07-19 16:12:44,355 DEBUG A1 - active:1
+2013-07-19 16:12:44,418  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 16:12:44,418  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:12:44,450 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:15:45,739 DEBUG A1 - idle:19
+2013-07-19 16:15:45,739 DEBUG A1 - active:1
+2013-07-19 16:15:46,208 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 16:15:56,987 DEBUG A1 - idle:19
+2013-07-19 16:15:56,987 DEBUG A1 - active:1
+2013-07-19 16:15:57,003 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:19:13,255 DEBUG A1 - idle:19
+2013-07-19 16:19:13,255 DEBUG A1 - active:1
+2013-07-19 16:19:13,442  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 16:19:13,442  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:19:13,458 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:19:21,633 DEBUG A1 - idle:19
+2013-07-19 16:19:21,633 DEBUG A1 - active:1
+2013-07-19 16:19:21,664 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:19:21,680 DEBUG A1 - idle:19
+2013-07-19 16:19:21,680 DEBUG A1 - active:1
+2013-07-19 16:19:21,680 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:21:44,825 DEBUG A1 - idle:19
+2013-07-19 16:21:44,825 DEBUG A1 - active:1
+2013-07-19 16:21:45,169  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 16:21:45,169  INFO A1 - T_指定納品書は3件処理されました。
+2013-07-19 16:21:45,185 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:21:47,541 DEBUG A1 - idle:19
+2013-07-19 16:21:47,541 DEBUG A1 - active:1
+2013-07-19 16:21:47,572 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:21:47,588 DEBUG A1 - idle:19
+2013-07-19 16:21:47,588 DEBUG A1 - active:1
+2013-07-19 16:21:47,588 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:23:33,621 DEBUG A1 - idle:19
+2013-07-19 16:23:33,621 DEBUG A1 - active:1
+2013-07-19 16:23:33,715  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 16:23:33,730  INFO A1 - T_指定納品書は3件処理されました。
+2013-07-19 16:23:33,730 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:23:40,595 DEBUG A1 - idle:19
+2013-07-19 16:23:40,595 DEBUG A1 - active:1
+2013-07-19 16:23:40,626 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:23:40,626 DEBUG A1 - idle:19
+2013-07-19 16:23:40,626 DEBUG A1 - active:1
+2013-07-19 16:23:40,642 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:24:17,209 DEBUG A1 - idle:19
+2013-07-19 16:24:17,209 DEBUG A1 - active:1
+2013-07-19 16:24:17,287  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 16:24:17,302  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:24:17,302 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:24:37,334 DEBUG A1 - idle:19
+2013-07-19 16:24:37,334 DEBUG A1 - active:1
+2013-07-19 16:24:37,334 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:26:01,246 DEBUG A1 - idle:19
+2013-07-19 16:26:01,246 DEBUG A1 - active:1
+2013-07-19 16:26:01,527  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 16:26:01,527  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:26:01,527 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:26:07,175 DEBUG A1 - idle:19
+2013-07-19 16:26:07,175 DEBUG A1 - active:1
+2013-07-19 16:26:07,222 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:26:07,222 DEBUG A1 - idle:19
+2013-07-19 16:26:07,222 DEBUG A1 - active:1
+2013-07-19 16:26:07,222 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:26:37,299 DEBUG A1 - idle:19
+2013-07-19 16:26:37,299 DEBUG A1 - active:1
+2013-07-19 16:26:37,361  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 16:26:37,377  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:26:37,377 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:26:49,749 DEBUG A1 - idle:19
+2013-07-19 16:26:49,749 DEBUG A1 - active:1
+2013-07-19 16:26:49,780 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:26:49,795 DEBUG A1 - idle:19
+2013-07-19 16:26:49,795 DEBUG A1 - active:1
+2013-07-19 16:26:49,795 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:29:20,320 DEBUG A1 - idle:19
+2013-07-19 16:29:20,320 DEBUG A1 - active:1
+2013-07-19 16:29:20,382  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 16:29:20,398  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:29:20,398 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:29:36,608 DEBUG A1 - idle:19
+2013-07-19 16:29:36,608 DEBUG A1 - active:1
+2013-07-19 16:29:36,623 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:30:44,343 DEBUG A1 - idle:19
+2013-07-19 16:30:44,343 DEBUG A1 - active:1
+2013-07-19 16:30:44,436  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 16:30:44,452  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:30:44,469 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:33:36,101 DEBUG A1 - idle:19
+2013-07-19 16:33:36,101 DEBUG A1 - active:1
+2013-07-19 16:33:36,180 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 16:33:37,179 DEBUG A1 - idle:19
+2013-07-19 16:33:37,179 DEBUG A1 - active:1
+2013-07-19 16:33:37,225 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:33:37,225 DEBUG A1 - idle:19
+2013-07-19 16:33:37,225 DEBUG A1 - active:1
+2013-07-19 16:33:37,225 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:33:41,063 DEBUG A1 - idle:19
+2013-07-19 16:33:41,063 DEBUG A1 - active:1
+2013-07-19 16:33:41,094 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:33:41,110 DEBUG A1 - idle:19
+2013-07-19 16:33:41,110 DEBUG A1 - active:1
+2013-07-19 16:33:41,110 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:34:11,577 DEBUG A1 - idle:19
+2013-07-19 16:34:11,577 DEBUG A1 - active:1
+2013-07-19 16:34:11,686  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 16:34:11,701  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:34:11,718 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:34:16,258 DEBUG A1 - idle:19
+2013-07-19 16:34:16,258 DEBUG A1 - active:1
+2013-07-19 16:34:16,304 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:34:16,304 DEBUG A1 - idle:19
+2013-07-19 16:34:16,304 DEBUG A1 - active:1
+2013-07-19 16:34:16,304 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:34:19,315 DEBUG A1 - idle:19
+2013-07-19 16:34:19,315 DEBUG A1 - active:1
+2013-07-19 16:34:19,346 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:34:19,346 DEBUG A1 - idle:19
+2013-07-19 16:34:19,346 DEBUG A1 - active:1
+2013-07-19 16:34:19,362 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:34:48,534 DEBUG A1 - idle:19
+2013-07-19 16:34:48,534 DEBUG A1 - active:1
+2013-07-19 16:34:48,612  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 16:34:48,628  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:34:48,628 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:34:55,212 DEBUG A1 - idle:19
+2013-07-19 16:34:55,212 DEBUG A1 - active:1
+2013-07-19 16:34:55,243 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:34:55,259 DEBUG A1 - idle:19
+2013-07-19 16:34:55,259 DEBUG A1 - active:1
+2013-07-19 16:34:55,259 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:35:06,179 DEBUG A1 - idle:19
+2013-07-19 16:35:06,179 DEBUG A1 - active:1
+2013-07-19 16:35:06,210 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:35:06,225 DEBUG A1 - idle:19
+2013-07-19 16:35:06,225 DEBUG A1 - active:1
+2013-07-19 16:35:06,225 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:35:10,952 DEBUG A1 - idle:19
+2013-07-19 16:35:10,952 DEBUG A1 - active:1
+2013-07-19 16:35:10,999 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:35:10,999 DEBUG A1 - idle:19
+2013-07-19 16:35:10,999 DEBUG A1 - active:1
+2013-07-19 16:35:10,999 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:35:39,064 DEBUG A1 - idle:19
+2013-07-19 16:35:39,064 DEBUG A1 - active:1
+2013-07-19 16:35:39,142  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 16:35:39,142  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:35:39,158 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:35:43,979 DEBUG A1 - idle:19
+2013-07-19 16:35:43,979 DEBUG A1 - active:1
+2013-07-19 16:35:43,994 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:35:44,010 DEBUG A1 - idle:19
+2013-07-19 16:35:44,010 DEBUG A1 - active:1
+2013-07-19 16:35:44,010 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:37:12,182 DEBUG A1 - idle:19
+2013-07-19 16:37:12,182 DEBUG A1 - active:1
+2013-07-19 16:37:12,260  INFO A1 - T_在庫_子は4件処理されました。
+2013-07-19 16:37:12,260  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:37:12,291 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:38:07,798 DEBUG A1 - idle:19
+2013-07-19 16:38:07,814 DEBUG A1 - active:1
+2013-07-19 16:38:07,846 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 16:38:09,156 DEBUG A1 - idle:19
+2013-07-19 16:38:09,156 DEBUG A1 - active:1
+2013-07-19 16:38:09,189 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 16:38:24,586 DEBUG A1 - idle:19
+2013-07-19 16:38:24,586 DEBUG A1 - active:1
+2013-07-19 16:38:24,586 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:40:27,233 DEBUG A1 - idle:19
+2013-07-19 16:40:27,233 DEBUG A1 - active:1
+2013-07-19 16:40:27,296  INFO A1 - T_在庫_子は2件処理されました。
+2013-07-19 16:40:27,296  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:40:27,312 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:41:00,214 DEBUG A1 - idle:19
+2013-07-19 16:41:00,214 DEBUG A1 - active:1
+2013-07-19 16:41:00,293 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 16:41:19,652 DEBUG A1 - idle:19
+2013-07-19 16:41:19,652 DEBUG A1 - active:1
+2013-07-19 16:41:19,668 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:42:43,534 DEBUG A1 - idle:19
+2013-07-19 16:42:43,534 DEBUG A1 - active:1
+2013-07-19 16:42:43,830  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 16:42:43,830  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:42:43,830 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:43:14,424 DEBUG A1 - idle:19
+2013-07-19 16:43:14,424 DEBUG A1 - active:1
+2013-07-19 16:43:14,472 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 16:43:21,757 DEBUG A1 - idle:19
+2013-07-19 16:43:21,757 DEBUG A1 - active:1
+2013-07-19 16:43:21,772 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:45:42,828 DEBUG A1 - idle:19
+2013-07-19 16:45:42,828 DEBUG A1 - active:1
+2013-07-19 16:45:42,859  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 16:45:42,891  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:45:42,891 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:46:09,802 DEBUG A1 - idle:19
+2013-07-19 16:46:09,802 DEBUG A1 - active:1
+2013-07-19 16:46:09,850 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 16:46:10,646 DEBUG A1 - idle:19
+2013-07-19 16:46:10,646 DEBUG A1 - active:1
+2013-07-19 16:46:10,692 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 16:46:10,692 DEBUG A1 - idle:19
+2013-07-19 16:46:10,692 DEBUG A1 - active:1
+2013-07-19 16:46:10,692 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 16:46:57,773 DEBUG A1 - idle:19
+2013-07-19 16:46:57,773 DEBUG A1 - active:1
+2013-07-19 16:46:57,867  INFO A1 - T_在庫_子は3件処理されました。
+2013-07-19 16:46:57,883  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 16:46:57,920 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:49:00,793 DEBUG A1 - idle:19
+2013-07-19 16:49:00,793 DEBUG A1 - active:1
+2013-07-19 16:49:00,809 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 16:49:02,822 DEBUG A1 - idle:19
+2013-07-19 16:49:02,838 DEBUG A1 - active:1
+2013-07-19 16:49:02,838 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 16:49:22,821 DEBUG A1 - idle:19
+2013-07-19 16:49:22,821 DEBUG A1 - active:1
+2013-07-19 16:49:22,837 DEBUG A1 - GetDispatchingSummary
+ps is closed by jdbc4.0
+2013-07-19 16:50:02,149 DEBUG A1 - idle:19
+2013-07-19 16:50:02,149 DEBUG A1 - active:1
+2013-07-19 16:50:02,415  INFO A1 - T_出庫_子は1件処理されました。
+2013-07-19 16:50:02,431 DEBUG A1 - DispatchingRegistration
+ps is closed by jdbc4.0
+2013-07-19 16:50:05,519 DEBUG A1 - idle:19
+2013-07-19 16:50:05,519 DEBUG A1 - active:1
+2013-07-19 16:50:05,519 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 17:10:28,347 DEBUG A1 - idle:19
+2013-07-19 17:10:28,347 DEBUG A1 - active:1
+2013-07-19 17:10:28,347 DEBUG A1 - DispatchingSearch
+ps is closed by jdbc4.0
+2013-07-19 17:10:40,859 DEBUG A1 - idle:19
+2013-07-19 17:10:40,859 DEBUG A1 - active:1
+2013-07-19 17:10:40,907 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 17:10:42,046 DEBUG A1 - idle:19
+2013-07-19 17:10:42,046 DEBUG A1 - active:1
+2013-07-19 17:10:42,077 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 17:10:42,093 DEBUG A1 - idle:19
+2013-07-19 17:10:42,093 DEBUG A1 - active:1
+2013-07-19 17:10:42,093 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 17:11:56,614 DEBUG A1 - idle:19
+2013-07-19 17:11:56,614 DEBUG A1 - active:1
+2013-07-19 17:11:56,692  INFO A1 - T_在庫_子は1件処理されました。
+2013-07-19 17:11:56,692  INFO A1 - T_指定納品書は2件処理されました。
+2013-07-19 17:11:56,708 DEBUG A1 - OrderRegistration
+ps is closed by jdbc4.0
+2013-07-19 17:12:17,052 DEBUG A1 - idle:19
+2013-07-19 17:12:17,052 DEBUG A1 - active:1
+2013-07-19 17:12:17,083 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 17:12:17,099 DEBUG A1 - idle:19
+2013-07-19 17:12:17,099 DEBUG A1 - active:1
+2013-07-19 17:12:17,099 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 17:12:35,148 DEBUG A1 - idle:19
+2013-07-19 17:12:35,148 DEBUG A1 - active:1
+2013-07-19 17:12:35,196 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 17:35:50,919 DEBUG A1 - idle:19
+2013-07-19 17:35:50,919 DEBUG A1 - active:1
+2013-07-19 17:35:51,012 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-07-19 17:35:58,937 DEBUG A1 - idle:19
+2013-07-19 17:35:58,937 DEBUG A1 - active:1
+2013-07-19 17:35:59,578 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 17:36:01,075 DEBUG A1 - idle:19
+2013-07-19 17:36:01,075 DEBUG A1 - active:1
+2013-07-19 17:36:01,154 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-07-19 17:36:01,170 DEBUG A1 - idle:19
+2013-07-19 17:36:01,170 DEBUG A1 - active:1
+2013-07-19 17:36:01,185 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-07-19 17:36:03,307 DEBUG A1 - idle:19
+2013-07-19 17:36:03,307 DEBUG A1 - active:1
+2013-07-19 17:36:03,307 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-19 17:36:03,307 DEBUG A1 - idle:19
+2013-07-19 17:36:03,307 DEBUG A1 - active:1
+2013-07-19 17:36:03,338 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-19 17:36:03,401 DEBUG A1 - idle:19
+2013-07-19 17:36:03,401 DEBUG A1 - active:1
+2013-07-19 17:36:03,542 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-19 17:36:03,542 DEBUG A1 - idle:19
+2013-07-19 17:36:03,542 DEBUG A1 - active:1
+2013-07-19 17:36:03,558 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-19 17:36:11,482 DEBUG A1 - idle:19
+2013-07-19 17:36:11,482 DEBUG A1 - active:1
+2013-07-19 17:36:11,795 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-07-19 17:36:12,217 DEBUG A1 - idle:19
+2013-07-19 17:36:12,217 DEBUG A1 - active:1
+2013-07-19 17:36:12,248 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2013-07-19 17:36:12,263 DEBUG A1 - idle:19
+2013-07-19 17:36:12,263 DEBUG A1 - active:1
+2013-07-19 17:36:12,279 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2013-07-19 17:36:13,667 DEBUG A1 - idle:19
+2013-07-19 17:36:13,667 DEBUG A1 - active:1
+2013-07-19 17:36:13,667 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-19 17:36:13,667 DEBUG A1 - idle:19
+2013-07-19 17:36:13,667 DEBUG A1 - active:1
+2013-07-19 17:36:13,699 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-19 17:36:13,730 DEBUG A1 - idle:19
+2013-07-19 17:36:13,730 DEBUG A1 - active:1
+2013-07-19 17:36:13,762 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-19 17:36:13,762 DEBUG A1 - idle:19
+2013-07-19 17:36:13,762 DEBUG A1 - active:1
+2013-07-19 17:36:13,793 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-19 17:40:58,164 DEBUG A1 - idle:19
+2013-07-19 17:40:58,164 DEBUG A1 - active:1
+2013-07-19 17:40:58,227 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-07-19 17:41:05,403 DEBUG A1 - idle:19
+2013-07-19 17:41:05,403 DEBUG A1 - active:1
+2013-07-19 17:41:05,403 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-19 17:41:05,403 DEBUG A1 - idle:19
+2013-07-19 17:41:05,403 DEBUG A1 - active:1
+2013-07-19 17:41:05,683 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-19 17:41:05,777 DEBUG A1 - idle:19
+2013-07-19 17:41:05,777 DEBUG A1 - active:1
+2013-07-19 17:41:05,777 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-19 17:41:05,777 DEBUG A1 - idle:19
+2013-07-19 17:41:05,777 DEBUG A1 - active:1
+2013-07-19 17:41:05,793 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-19 17:41:05,808 DEBUG A1 - idle:19
+2013-07-19 17:41:05,808 DEBUG A1 - active:1
+2013-07-19 17:41:05,808 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-19 17:41:05,824 DEBUG A1 - idle:19
+2013-07-19 17:41:05,824 DEBUG A1 - active:1
+2013-07-19 17:41:05,855 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-19 17:41:09,725 DEBUG A1 - idle:19
+2013-07-19 17:41:09,725 DEBUG A1 - active:1
+2013-07-19 17:41:09,725 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-19 17:41:09,725 DEBUG A1 - idle:19
+2013-07-19 17:41:09,725 DEBUG A1 - active:1
+2013-07-19 17:41:09,725 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-19 17:41:09,756 DEBUG A1 - idle:19
+2013-07-19 17:41:09,756 DEBUG A1 - active:1
+2013-07-19 17:41:09,756 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-19 17:41:09,756 DEBUG A1 - idle:19
+2013-07-19 17:41:09,756 DEBUG A1 - active:1
+2013-07-19 17:41:09,756 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-19 17:41:09,772 DEBUG A1 - idle:19
+2013-07-19 17:41:09,772 DEBUG A1 - active:1
+2013-07-19 17:41:09,772 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-19 17:41:09,772 DEBUG A1 - idle:19
+2013-07-19 17:41:09,772 DEBUG A1 - active:1
+2013-07-19 17:41:09,787 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-19 17:41:09,803 DEBUG A1 - idle:19
+2013-07-19 17:41:09,803 DEBUG A1 - active:1
+2013-07-19 17:41:09,818 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2013-07-19 17:41:09,818 DEBUG A1 - idle:19
+2013-07-19 17:41:09,818 DEBUG A1 - active:1
+2013-07-19 17:41:09,818 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2013-07-19 17:41:09,850 DEBUG A1 - idle:19
+2013-07-19 17:41:09,850 DEBUG A1 - active:1
+2013-07-19 17:41:09,882 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2013-07-19 17:41:09,882 DEBUG A1 - idle:19
+2013-07-19 17:41:09,882 DEBUG A1 - active:1
+2013-07-19 17:41:09,882 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0

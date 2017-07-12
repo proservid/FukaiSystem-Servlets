@@ -1,0 +1,1083 @@
+2016-04-29 12:36:21,970 DEBUG A1 - idle:19
+2016-04-29 12:36:21,972 DEBUG A1 - active:1
+2016-04-29 12:36:22,089 ERROR A1 - Init
+com.microsoft.sqlserver.jdbc.SQLServerException: オブジェクト名 'T_帳票' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.Init.service(Init.java:78)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-04-29 12:36:22,218 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 12:37:50,850 DEBUG A1 - idle:19
+2016-04-29 12:37:50,850 DEBUG A1 - active:1
+2016-04-29 12:37:50,969 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 12:38:03,652 DEBUG A1 - idle:19
+2016-04-29 12:38:03,652 DEBUG A1 - active:1
+2016-04-29 12:38:03,947 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-04-29 12:38:28,908 DEBUG A1 - idle:19
+2016-04-29 12:38:28,908 DEBUG A1 - active:1
+2016-04-29 12:38:30,392 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2016-04-29 12:38:30,417 DEBUG A1 - idle:19
+2016-04-29 12:38:30,417 DEBUG A1 - active:1
+2016-04-29 12:38:30,502 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2016-04-29 12:38:32,799 DEBUG A1 - idle:19
+2016-04-29 12:38:32,799 DEBUG A1 - active:1
+2016-04-29 12:38:32,802 ERROR A1 - GetSlipName
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名 '伝票名' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.GetSlipName.service(GetSlipName.java:97)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-04-29 12:38:32,803 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2016-04-29 12:38:32,829 DEBUG A1 - idle:19
+2016-04-29 12:38:32,829 DEBUG A1 - active:1
+2016-04-29 12:38:32,831 ERROR A1 - ReadSlip
+com.microsoft.sqlserver.jdbc.SQLServerException: オブジェクト名 'T_帳票' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.ReadSlip.service(ReadSlip.java:69)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-04-29 12:38:32,832 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2016-04-29 12:40:12,545 DEBUG A1 - idle:19
+2016-04-29 12:40:12,545 DEBUG A1 - active:1
+2016-04-29 12:40:12,776 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 12:40:17,594 DEBUG A1 - idle:19
+2016-04-29 12:40:17,595 DEBUG A1 - active:1
+2016-04-29 12:40:17,770 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-04-29 12:43:12,806 DEBUG A1 - idle:19
+2016-04-29 12:43:12,806 DEBUG A1 - active:1
+2016-04-29 12:43:12,956 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 12:43:19,420 DEBUG A1 - idle:19
+2016-04-29 12:43:19,420 DEBUG A1 - active:1
+2016-04-29 12:43:19,585 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-04-29 12:43:21,832 DEBUG A1 - idle:19
+2016-04-29 12:43:21,833 DEBUG A1 - active:1
+2016-04-29 12:43:21,930 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2016-04-29 12:43:21,952 DEBUG A1 - idle:19
+2016-04-29 12:43:21,952 DEBUG A1 - active:1
+2016-04-29 12:43:21,964 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2016-04-29 12:44:29,715 DEBUG A1 - idle:19
+2016-04-29 12:44:29,715 DEBUG A1 - active:1
+2016-04-29 12:44:29,753 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 12:44:36,240 DEBUG A1 - idle:19
+2016-04-29 12:44:36,240 DEBUG A1 - active:1
+2016-04-29 12:44:36,329 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-04-29 12:45:04,917 DEBUG A1 - idle:19
+2016-04-29 12:45:04,917 DEBUG A1 - active:1
+2016-04-29 12:45:04,957 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 12:45:09,837 DEBUG A1 - idle:19
+2016-04-29 12:45:09,837 DEBUG A1 - active:1
+2016-04-29 12:45:09,913 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-04-29 12:45:50,921 DEBUG A1 - idle:19
+2016-04-29 12:45:50,922 DEBUG A1 - active:1
+2016-04-29 12:45:50,964 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 12:46:02,028 DEBUG A1 - idle:19
+2016-04-29 12:46:02,029 DEBUG A1 - active:1
+2016-04-29 12:46:02,166 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-04-29 12:46:04,186 DEBUG A1 - idle:19
+2016-04-29 12:46:04,186 DEBUG A1 - active:1
+2016-04-29 12:46:04,241 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2016-04-29 12:46:04,263 DEBUG A1 - idle:19
+2016-04-29 12:46:04,263 DEBUG A1 - active:1
+2016-04-29 12:46:04,270 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2016-04-29 12:46:05,683 DEBUG A1 - idle:19
+2016-04-29 12:46:05,683 DEBUG A1 - active:1
+2016-04-29 12:46:05,692 ERROR A1 - GetSlipName
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名 '伝票名' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.GetSlipName.service(GetSlipName.java:97)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-04-29 12:46:05,693 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2016-04-29 12:46:05,712 DEBUG A1 - idle:19
+2016-04-29 12:46:05,712 DEBUG A1 - active:1
+2016-04-29 12:46:05,715 ERROR A1 - ReadSlip
+com.microsoft.sqlserver.jdbc.SQLServerException: オブジェクト名 'T_帳票' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.ReadSlip.service(ReadSlip.java:69)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-04-29 12:46:05,715 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2016-04-29 12:48:03,480 DEBUG A1 - idle:19
+2016-04-29 12:48:03,480 DEBUG A1 - active:1
+2016-04-29 12:48:03,497 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 12:48:08,715 DEBUG A1 - idle:19
+2016-04-29 12:48:08,715 DEBUG A1 - active:1
+2016-04-29 12:48:08,773 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-04-29 12:48:09,322 DEBUG A1 - idle:19
+2016-04-29 12:48:09,323 DEBUG A1 - active:1
+2016-04-29 12:48:09,364 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2016-04-29 12:48:09,391 DEBUG A1 - idle:19
+2016-04-29 12:48:09,392 DEBUG A1 - active:1
+2016-04-29 12:48:09,399 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2016-04-29 12:48:11,159 DEBUG A1 - idle:19
+2016-04-29 12:48:11,159 DEBUG A1 - active:1
+2016-04-29 12:48:11,210 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2016-04-29 12:48:11,234 DEBUG A1 - idle:19
+2016-04-29 12:48:11,234 DEBUG A1 - active:1
+2016-04-29 12:48:11,238 ERROR A1 - ReadSlip
+com.microsoft.sqlserver.jdbc.SQLServerException: オブジェクト名 'T_帳票' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.ReadSlip.service(ReadSlip.java:69)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-04-29 12:48:11,239 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2016-04-29 12:49:48,593 DEBUG A1 - idle:19
+2016-04-29 12:49:48,593 DEBUG A1 - active:1
+2016-04-29 12:49:48,616 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 12:49:53,955 DEBUG A1 - idle:19
+2016-04-29 12:49:53,955 DEBUG A1 - active:1
+2016-04-29 12:49:54,039 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-04-29 12:49:54,682 DEBUG A1 - idle:19
+2016-04-29 12:49:54,682 DEBUG A1 - active:1
+2016-04-29 12:49:54,737 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2016-04-29 12:49:54,825 DEBUG A1 - idle:19
+2016-04-29 12:49:54,825 DEBUG A1 - active:1
+2016-04-29 12:49:54,836 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2016-04-29 12:49:56,070 DEBUG A1 - idle:19
+2016-04-29 12:49:56,070 DEBUG A1 - active:1
+2016-04-29 12:49:56,071 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2016-04-29 12:49:56,097 DEBUG A1 - idle:19
+2016-04-29 12:49:56,097 DEBUG A1 - active:1
+2016-04-29 12:49:56,129 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2016-04-29 13:58:01,536 DEBUG A1 - idle:19
+2016-04-29 13:58:01,537 DEBUG A1 - active:1
+2016-04-29 13:58:01,811 ERROR A1 - Init
+com.microsoft.sqlserver.jdbc.SQLServerException: オブジェクト名 'T_伝票フォーマット' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeQuery(SQLServerPreparedStatement.java:285)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeQuery(DelegatingPreparedStatement.java:96)
+fukaisystem.Init.service(Init.java:78)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-04-29 13:58:01,940 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 14:07:07,085 DEBUG A1 - idle:19
+2016-04-29 14:07:07,085 DEBUG A1 - active:1
+2016-04-29 14:07:07,269 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 14:07:14,884 DEBUG A1 - idle:19
+2016-04-29 14:07:14,884 DEBUG A1 - active:1
+2016-04-29 14:07:15,036 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-04-29 14:07:17,184 DEBUG A1 - idle:19
+2016-04-29 14:07:17,184 DEBUG A1 - active:1
+2016-04-29 14:07:17,236 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2016-04-29 14:07:17,270 DEBUG A1 - idle:19
+2016-04-29 14:07:17,270 DEBUG A1 - active:1
+2016-04-29 14:07:17,283 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2016-04-29 14:07:19,901 DEBUG A1 - idle:19
+2016-04-29 14:07:19,901 DEBUG A1 - active:1
+2016-04-29 14:07:19,902 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2016-04-29 14:07:19,936 DEBUG A1 - idle:19
+2016-04-29 14:07:19,936 DEBUG A1 - active:1
+2016-04-29 14:07:19,941 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2016-04-29 14:16:51,802 DEBUG A1 - idle:19
+2016-04-29 14:16:51,802 DEBUG A1 - active:1
+2016-04-29 14:16:52,019 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 14:17:00,672 DEBUG A1 - idle:19
+2016-04-29 14:17:00,673 DEBUG A1 - active:1
+2016-04-29 14:17:00,928 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-04-29 14:17:07,006 DEBUG A1 - idle:19
+2016-04-29 14:17:07,006 DEBUG A1 - active:1
+2016-04-29 14:17:07,064 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2016-04-29 14:17:07,106 DEBUG A1 - idle:19
+2016-04-29 14:17:07,106 DEBUG A1 - active:1
+2016-04-29 14:17:07,118 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2016-04-29 14:17:17,209 DEBUG A1 - idle:19
+2016-04-29 14:17:17,209 DEBUG A1 - active:1
+2016-04-29 14:17:17,211 DEBUG A1 - GetSlipName
+ps is closed by jdbc4.0
+2016-04-29 14:17:17,236 DEBUG A1 - idle:19
+2016-04-29 14:17:17,236 DEBUG A1 - active:1
+2016-04-29 14:17:17,241 DEBUG A1 - ReadSlip
+ps is closed by jdbc4.0
+2016-04-29 14:17:17,317 DEBUG A1 - idle:19
+2016-04-29 14:17:17,317 DEBUG A1 - active:1
+2016-04-29 14:17:17,329 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2016-04-29 14:17:17,357 DEBUG A1 - idle:19
+2016-04-29 14:17:17,357 DEBUG A1 - active:1
+2016-04-29 14:17:17,371 DEBUG A1 - GetTableData
+ps is closed by jdbc4.0
+2016-04-29 14:26:23,769 DEBUG A1 - idle:19
+2016-04-29 14:26:23,769 DEBUG A1 - active:1
+2016-04-29 14:26:23,824 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 14:26:28,269 DEBUG A1 - idle:19
+2016-04-29 14:26:28,269 DEBUG A1 - active:1
+2016-04-29 14:26:28,352 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2016-04-29 14:42:16,894 DEBUG A1 - idle:19
+2016-04-29 14:42:16,894 DEBUG A1 - active:1
+2016-04-29 14:42:16,936 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2016-04-29 14:42:28,074 DEBUG A1 - idle:19
+2016-04-29 14:42:28,074 DEBUG A1 - active:1
+2016-04-29 14:42:28,085 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2016-04-29 14:44:06,601 DEBUG A1 - idle:19
+2016-04-29 14:44:06,601 DEBUG A1 - active:1
+2016-04-29 14:44:06,607 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2016-04-29 14:44:18,265 DEBUG A1 - idle:19
+2016-04-29 14:44:18,265 DEBUG A1 - active:1
+2016-04-29 14:44:18,269 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2016-04-29 14:45:07,847 DEBUG A1 - idle:19
+2016-04-29 14:45:07,847 DEBUG A1 - active:1
+2016-04-29 14:45:07,850 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2016-04-29 14:45:23,184 DEBUG A1 - idle:19
+2016-04-29 14:45:23,184 DEBUG A1 - active:1
+2016-04-29 14:45:23,188 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2016-04-29 14:45:24,143 DEBUG A1 - idle:19
+2016-04-29 14:45:24,143 DEBUG A1 - active:1
+2016-04-29 14:45:24,150 ERROR A1 - GetTableData
+java.lang.ClassNotFoundException: net.dto.SqlDTO
+org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1701)
+org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1546)
+java.lang.Class.forName0(Native Method)
+java.lang.Class.forName(Class.java:348)
+java.io.ObjectInputStream.resolveClass(ObjectInputStream.java:626)
+java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1613)
+java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1518)
+java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1774)
+java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1351)
+java.io.ObjectInputStream.readObject(ObjectInputStream.java:371)
+fukaisystem.GetData.service(GetData.java:55)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-04-29 14:48:16,369 DEBUG A1 - idle:19
+2016-04-29 14:48:16,369 DEBUG A1 - active:1
+2016-04-29 14:48:16,374 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2016-04-29 14:48:33,552 DEBUG A1 - idle:19
+2016-04-29 14:48:33,553 DEBUG A1 - active:1
+2016-04-29 14:48:33,556 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2016-04-29 14:48:34,801 DEBUG A1 - idle:19
+2016-04-29 14:48:34,801 DEBUG A1 - active:1
+2016-04-29 14:48:34,804 ERROR A1 - GetTableData
+java.lang.ClassNotFoundException: fukaisystem.dto.SqlDTO
+org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1701)
+org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1546)
+java.lang.Class.forName0(Native Method)
+java.lang.Class.forName(Class.java:348)
+java.io.ObjectInputStream.resolveClass(ObjectInputStream.java:626)
+java.io.ObjectInputStream.readNonProxyDesc(ObjectInputStream.java:1613)
+java.io.ObjectInputStream.readClassDesc(ObjectInputStream.java:1518)
+java.io.ObjectInputStream.readOrdinaryObject(ObjectInputStream.java:1774)
+java.io.ObjectInputStream.readObject0(ObjectInputStream.java:1351)
+java.io.ObjectInputStream.readObject(ObjectInputStream.java:371)
+fukaisystem.GetData.service(GetData.java:55)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-04-29 14:50:02,958 DEBUG A1 - idle:19
+2016-04-29 14:50:02,958 DEBUG A1 - active:1
+2016-04-29 14:50:03,076 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2016-04-29 14:50:14,517 DEBUG A1 - idle:19
+2016-04-29 14:50:14,517 DEBUG A1 - active:1
+2016-04-29 14:50:14,530 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2016-04-29 14:50:15,930 DEBUG A1 - idle:19
+2016-04-29 14:50:15,932 DEBUG A1 - active:1
+2016-04-29 14:50:15,936 ERROR A1 - GetTableData
+readObjectがString型ではありません
+2016-04-29 14:50:15,941 ERROR A1 - GetTableData
+java.lang.NullPointerException
+fukaisystem.GetData.service(GetData.java:69)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2016-04-29 14:57:43,472 DEBUG A1 - idle:19
+2016-04-29 14:57:43,472 DEBUG A1 - active:1
+2016-04-29 14:57:43,485 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2016-04-29 15:14:32,520 DEBUG A1 - idle:19
+2016-04-29 15:14:32,520 DEBUG A1 - active:1
+2016-04-29 15:14:32,534 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2016-04-29 15:15:18,364 DEBUG A1 - idle:19
+2016-04-29 15:15:18,364 DEBUG A1 - active:1
+2016-04-29 15:15:18,505 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2016-04-29 15:15:32,363 DEBUG A1 - idle:19
+2016-04-29 15:15:32,363 DEBUG A1 - active:1
+2016-04-29 15:15:32,375 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2016-04-29 15:15:33,330 DEBUG A1 - idle:19
+2016-04-29 15:15:33,330 DEBUG A1 - active:1
+2016-04-29 15:15:55,727 DEBUG A1 - idle:19
+2016-04-29 15:15:55,727 DEBUG A1 - active:1
+2016-04-29 15:15:59,579 DEBUG A1 - idle:19
+2016-04-29 15:15:59,580 DEBUG A1 - active:1
+2016-04-29 15:15:59,601 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2016-04-29 15:16:00,497 DEBUG A1 - idle:19
+2016-04-29 15:16:00,497 DEBUG A1 - active:1
+2016-04-29 15:16:06,537 DEBUG A1 - idle:19
+2016-04-29 15:16:06,538 DEBUG A1 - active:1
+2016-04-29 15:16:09,142 DEBUG A1 - idle:19
+2016-04-29 15:16:09,142 DEBUG A1 - active:1
+2016-04-29 15:16:09,166 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2016-04-29 15:16:09,926 DEBUG A1 - idle:19
+2016-04-29 15:16:09,926 DEBUG A1 - active:1
+2016-04-29 15:20:43,518 DEBUG A1 - idle:19
+2016-04-29 15:20:43,518 DEBUG A1 - active:1
+2016-04-29 15:20:43,529 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2016-04-29 15:20:43,715 DEBUG A1 - idle:19
+2016-04-29 15:20:43,715 DEBUG A1 - active:1
+2016-04-29 15:20:43,832 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:20:44,046 DEBUG A1 - idle:19
+2016-04-29 15:20:44,046 DEBUG A1 - active:1
+2016-04-29 15:20:44,053 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:20:46,703 DEBUG A1 - idle:19
+2016-04-29 15:20:46,703 DEBUG A1 - active:1
+2016-04-29 15:20:46,711 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:20:46,784 DEBUG A1 - idle:19
+2016-04-29 15:20:46,784 DEBUG A1 - active:1
+2016-04-29 15:20:46,789 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:20:57,711 DEBUG A1 - idle:19
+2016-04-29 15:20:57,711 DEBUG A1 - active:1
+2016-04-29 15:20:57,716 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:20:58,230 DEBUG A1 - idle:19
+2016-04-29 15:20:58,230 DEBUG A1 - active:1
+2016-04-29 15:20:58,235 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:20:58,778 DEBUG A1 - idle:19
+2016-04-29 15:20:58,778 DEBUG A1 - active:1
+2016-04-29 15:20:58,785 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:20:59,363 DEBUG A1 - idle:19
+2016-04-29 15:20:59,363 DEBUG A1 - active:1
+2016-04-29 15:20:59,371 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:20:59,597 DEBUG A1 - idle:19
+2016-04-29 15:20:59,597 DEBUG A1 - active:1
+2016-04-29 15:20:59,604 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:20:59,794 DEBUG A1 - idle:19
+2016-04-29 15:20:59,794 DEBUG A1 - active:1
+2016-04-29 15:20:59,800 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:38:18,510 DEBUG A1 - idle:19
+2016-04-29 15:38:18,510 DEBUG A1 - active:1
+2016-04-29 15:38:18,511 DEBUG dbtool - 
+2016-04-29 15:38:18,511  WARN dbtool - Query was sent ""
+2016-04-29 15:48:26,415 DEBUG A1 - idle:19
+2016-04-29 15:48:26,416 DEBUG A1 - active:1
+2016-04-29 15:48:26,417 DEBUG dbtool - s
+2016-04-29 15:48:26,418  WARN dbtool - Query was sent "s"
+2016-04-29 15:48:26,423 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
+2016-04-29 15:53:51,102 DEBUG A1 - idle:19
+2016-04-29 15:53:51,102 DEBUG A1 - active:1
+2016-04-29 15:53:51,123 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2016-04-29 15:53:51,283 DEBUG A1 - idle:19
+2016-04-29 15:53:51,283 DEBUG A1 - active:1
+2016-04-29 15:53:51,300 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:53:51,443 DEBUG A1 - idle:19
+2016-04-29 15:53:51,443 DEBUG A1 - active:1
+2016-04-29 15:53:51,456 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:53:53,167 DEBUG A1 - idle:19
+2016-04-29 15:53:53,167 DEBUG A1 - active:1
+2016-04-29 15:53:53,174 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:53:53,223 DEBUG A1 - idle:19
+2016-04-29 15:53:53,223 DEBUG A1 - active:1
+2016-04-29 15:53:53,229 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:53:57,583 DEBUG A1 - idle:19
+2016-04-29 15:53:57,583 DEBUG A1 - active:1
+2016-04-29 15:53:57,592 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:54:01,266 DEBUG A1 - idle:19
+2016-04-29 15:54:01,266 DEBUG A1 - active:1
+2016-04-29 15:54:01,275 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 15:54:34,065 DEBUG A1 - idle:19
+2016-04-29 15:54:34,065 DEBUG A1 - active:1
+2016-04-29 15:54:34,065 DEBUG dbtool - s
+2016-04-29 15:54:34,065  WARN dbtool - Query was sent "s"
+2016-04-29 15:54:34,066 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
+2016-04-29 15:54:34,549 DEBUG A1 - idle:19
+2016-04-29 15:54:34,549 DEBUG A1 - active:1
+2016-04-29 15:54:34,549 DEBUG dbtool - s
+2016-04-29 15:54:34,549  WARN dbtool - Query was sent "s"
+2016-04-29 15:54:34,550 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
+2016-04-29 15:54:57,275 DEBUG A1 - idle:19
+2016-04-29 15:54:57,275 DEBUG A1 - active:1
+2016-04-29 15:55:00,996 DEBUG A1 - idle:19
+2016-04-29 15:55:00,996 DEBUG A1 - active:1
+2016-04-29 15:55:01,001 DEBUG A1 - idle:18
+2016-04-29 15:55:01,002 DEBUG A1 - active:2
+2016-04-29 15:55:03,896 DEBUG A1 - idle:18
+2016-04-29 15:55:03,896 DEBUG A1 - active:1
+2016-04-29 15:55:03,898 DEBUG A1 - idle:18
+2016-04-29 15:55:03,898 DEBUG A1 - active:2
+2016-04-29 15:55:06,310 DEBUG A1 - idle:19
+2016-04-29 15:55:06,310 DEBUG A1 - active:1
+2016-04-29 15:55:06,320 DEBUG A1 - idle:18
+2016-04-29 15:55:06,320 DEBUG A1 - active:2
+2016-04-29 15:55:08,596 DEBUG A1 - idle:19
+2016-04-29 15:55:08,596 DEBUG A1 - active:1
+2016-04-29 15:55:08,605 DEBUG A1 - idle:18
+2016-04-29 15:55:08,605 DEBUG A1 - active:2
+2016-04-29 15:55:10,477 DEBUG A1 - idle:19
+2016-04-29 15:55:10,477 DEBUG A1 - active:1
+2016-04-29 15:55:10,482 DEBUG A1 - idle:19
+2016-04-29 15:55:10,482 DEBUG A1 - active:1
+2016-04-29 15:55:12,349 DEBUG A1 - idle:19
+2016-04-29 15:55:12,349 DEBUG A1 - active:1
+2016-04-29 15:55:12,375 DEBUG A1 - idle:18
+2016-04-29 15:55:12,375 DEBUG A1 - active:2
+2016-04-29 15:55:43,827 DEBUG A1 - idle:19
+2016-04-29 15:55:43,827 DEBUG A1 - active:1
+2016-04-29 15:55:43,840 DEBUG A1 - idle:18
+2016-04-29 15:55:43,840 DEBUG A1 - active:2
+2016-04-29 15:55:48,816 DEBUG A1 - idle:18
+2016-04-29 15:55:48,816 DEBUG A1 - idle:18
+2016-04-29 15:55:48,816 DEBUG A1 - active:2
+2016-04-29 15:55:48,816 DEBUG A1 - active:2
+2016-04-29 15:55:50,346 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 15:55:50,369 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:01:06,842 DEBUG A1 - idle:19
+2016-04-29 16:01:06,843 DEBUG A1 - active:1
+2016-04-29 16:01:06,845 DEBUG dbtool - s
+2016-04-29 16:01:06,845  WARN dbtool - Query was sent "s"
+2016-04-29 16:01:06,847 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
+2016-04-29 16:01:07,227 DEBUG A1 - idle:19
+2016-04-29 16:01:07,227 DEBUG A1 - active:1
+2016-04-29 16:01:07,227 DEBUG dbtool - s
+2016-04-29 16:01:07,227  WARN dbtool - Query was sent "s"
+2016-04-29 16:01:07,228 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
+2016-04-29 16:01:12,181 DEBUG A1 - idle:19
+2016-04-29 16:01:12,181 DEBUG A1 - active:1
+2016-04-29 16:01:12,189 DEBUG A1 - idle:18
+2016-04-29 16:01:12,190 DEBUG A1 - active:2
+2016-04-29 16:01:13,232 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:01:13,315 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:01:24,005 DEBUG A1 - idle:19
+2016-04-29 16:01:24,005 DEBUG A1 - active:1
+2016-04-29 16:01:24,010 DEBUG A1 - idle:18
+2016-04-29 16:01:24,010 DEBUG A1 - active:2
+2016-04-29 16:01:26,835 DEBUG A1 - idle:19
+2016-04-29 16:01:26,835 DEBUG A1 - active:1
+2016-04-29 16:01:26,844 DEBUG A1 - idle:18
+2016-04-29 16:01:26,844 DEBUG A1 - active:2
+2016-04-29 16:01:27,632 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:01:27,652 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:01:31,529 DEBUG A1 - idle:19
+2016-04-29 16:01:31,529 DEBUG A1 - active:1
+2016-04-29 16:01:31,544 DEBUG A1 - idle:18
+2016-04-29 16:01:31,544 DEBUG A1 - active:2
+2016-04-29 16:01:33,908 DEBUG A1 - idle:19
+2016-04-29 16:01:33,908 DEBUG A1 - active:1
+2016-04-29 16:01:33,925 DEBUG A1 - idle:18
+2016-04-29 16:01:33,925 DEBUG A1 - active:2
+2016-04-29 16:01:36,883 DEBUG A1 - idle:18
+2016-04-29 16:01:36,883 DEBUG A1 - active:1
+2016-04-29 16:01:36,884 DEBUG A1 - idle:18
+2016-04-29 16:01:36,884 DEBUG A1 - active:2
+2016-04-29 16:01:39,337 DEBUG A1 - idle:19
+2016-04-29 16:01:39,337 DEBUG A1 - active:1
+2016-04-29 16:01:39,351 DEBUG A1 - idle:18
+2016-04-29 16:01:39,352 DEBUG A1 - active:2
+2016-04-29 16:01:41,320 DEBUG A1 - idle:18
+2016-04-29 16:01:41,320 DEBUG A1 - active:1
+2016-04-29 16:01:41,320 DEBUG A1 - idle:18
+2016-04-29 16:01:41,320 DEBUG A1 - active:2
+2016-04-29 16:01:43,139 DEBUG A1 - idle:19
+2016-04-29 16:01:43,139 DEBUG A1 - active:1
+2016-04-29 16:01:43,142 DEBUG A1 - idle:18
+2016-04-29 16:01:43,142 DEBUG A1 - active:2
+2016-04-29 16:01:48,288 DEBUG A1 - idle:19
+2016-04-29 16:01:48,288 DEBUG A1 - active:1
+2016-04-29 16:01:48,303 DEBUG A1 - idle:18
+2016-04-29 16:01:48,303 DEBUG A1 - active:2
+2016-04-29 16:01:57,489 DEBUG A1 - idle:18
+2016-04-29 16:01:57,489 DEBUG A1 - active:1
+2016-04-29 16:01:57,490 DEBUG A1 - idle:18
+2016-04-29 16:01:57,490 DEBUG A1 - active:2
+2016-04-29 16:05:12,970 DEBUG A1 - idle:18
+2016-04-29 16:05:12,970 DEBUG A1 - active:1
+2016-04-29 16:05:12,977 DEBUG A1 - idle:18
+2016-04-29 16:05:12,977 DEBUG A1 - active:2
+2016-04-29 16:05:13,891 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:05:14,087 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:07:15,332 DEBUG A1 - idle:19
+2016-04-29 16:07:15,333 DEBUG A1 - active:1
+2016-04-29 16:07:15,370 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:07:15,607 DEBUG A1 - idle:19
+2016-04-29 16:07:15,607 DEBUG A1 - active:1
+2016-04-29 16:07:15,607 DEBUG dbtool - 
+2016-04-29 16:07:15,607  WARN dbtool - Query was sent ""
+2016-04-29 16:08:14,465 DEBUG A1 - idle:19
+2016-04-29 16:08:14,465 DEBUG A1 - active:1
+2016-04-29 16:08:14,489 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:08:14,626 DEBUG A1 - idle:19
+2016-04-29 16:08:14,626 DEBUG A1 - active:1
+2016-04-29 16:08:14,626 DEBUG dbtool - 
+2016-04-29 16:08:14,626  WARN dbtool - Query was sent ""
+2016-04-29 16:10:13,416 DEBUG A1 - idle:19
+2016-04-29 16:10:13,416 DEBUG A1 - active:1
+2016-04-29 16:10:13,417 DEBUG dbtool - s
+2016-04-29 16:10:13,417  WARN dbtool - Query was sent "s"
+2016-04-29 16:10:13,417 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
+2016-04-29 16:10:13,744 DEBUG A1 - idle:19
+2016-04-29 16:10:13,744 DEBUG A1 - active:1
+2016-04-29 16:10:13,744 DEBUG dbtool - s
+2016-04-29 16:10:13,744  WARN dbtool - Query was sent "s"
+2016-04-29 16:10:13,745 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
+2016-04-29 16:10:16,811 DEBUG A1 - idle:19
+2016-04-29 16:10:16,811 DEBUG A1 - active:1
+2016-04-29 16:10:18,384 DEBUG A1 - idle:19
+2016-04-29 16:10:18,384 DEBUG A1 - active:1
+2016-04-29 16:10:18,402 DEBUG A1 - idle:18
+2016-04-29 16:10:18,402 DEBUG A1 - active:2
+2016-04-29 16:10:20,061 DEBUG A1 - idle:19
+2016-04-29 16:10:20,061 DEBUG A1 - active:1
+2016-04-29 16:10:20,064 DEBUG A1 - idle:18
+2016-04-29 16:10:20,064 DEBUG A1 - active:2
+2016-04-29 16:10:21,509 DEBUG A1 - idle:19
+2016-04-29 16:10:21,509 DEBUG A1 - active:1
+2016-04-29 16:10:21,519 DEBUG A1 - idle:18
+2016-04-29 16:10:21,519 DEBUG A1 - active:2
+2016-04-29 16:10:23,007 DEBUG A1 - idle:19
+2016-04-29 16:10:23,007 DEBUG A1 - active:1
+2016-04-29 16:10:23,011 DEBUG A1 - idle:18
+2016-04-29 16:10:23,011 DEBUG A1 - active:2
+2016-04-29 16:10:24,858 DEBUG A1 - idle:19
+2016-04-29 16:10:24,858 DEBUG A1 - active:1
+2016-04-29 16:10:24,859 DEBUG A1 - idle:19
+2016-04-29 16:10:24,860 DEBUG A1 - active:1
+2016-04-29 16:10:26,612 DEBUG A1 - idle:19
+2016-04-29 16:10:26,612 DEBUG A1 - active:1
+2016-04-29 16:10:26,642 DEBUG A1 - idle:18
+2016-04-29 16:10:26,642 DEBUG A1 - active:2
+2016-04-29 16:10:28,746 DEBUG A1 - idle:19
+2016-04-29 16:10:28,746 DEBUG A1 - active:1
+2016-04-29 16:10:28,760 DEBUG A1 - idle:18
+2016-04-29 16:10:28,760 DEBUG A1 - active:2
+2016-04-29 16:10:31,626 DEBUG A1 - idle:18
+2016-04-29 16:10:31,626 DEBUG A1 - idle:18
+2016-04-29 16:10:31,626 DEBUG A1 - active:2
+2016-04-29 16:10:31,626 DEBUG A1 - active:2
+2016-04-29 16:10:32,516 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:10:32,537 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:10:34,937 DEBUG A1 - idle:18
+2016-04-29 16:10:34,937 DEBUG A1 - active:1
+2016-04-29 16:10:34,939 DEBUG A1 - idle:18
+2016-04-29 16:10:34,939 DEBUG A1 - active:2
+2016-04-29 16:10:35,855 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:10:35,879 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:10:38,417 DEBUG A1 - idle:19
+2016-04-29 16:10:38,417 DEBUG A1 - active:1
+2016-04-29 16:10:38,424 DEBUG A1 - idle:18
+2016-04-29 16:10:38,424 DEBUG A1 - active:2
+2016-04-29 16:10:40,050 DEBUG A1 - idle:19
+2016-04-29 16:10:40,050 DEBUG A1 - active:1
+2016-04-29 16:10:40,064 DEBUG A1 - idle:18
+2016-04-29 16:10:40,064 DEBUG A1 - active:2
+2016-04-29 16:10:40,682 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:10:40,683 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:10:42,216 DEBUG A1 - idle:19
+2016-04-29 16:10:42,216 DEBUG A1 - active:1
+2016-04-29 16:10:42,225 DEBUG A1 - idle:18
+2016-04-29 16:10:42,225 DEBUG A1 - active:2
+2016-04-29 16:10:45,067 DEBUG A1 - idle:19
+2016-04-29 16:10:45,067 DEBUG A1 - active:1
+2016-04-29 16:10:45,084 DEBUG A1 - idle:18
+2016-04-29 16:10:45,084 DEBUG A1 - active:2
+2016-04-29 16:10:47,177 DEBUG A1 - idle:18
+2016-04-29 16:10:47,177 DEBUG A1 - active:1
+2016-04-29 16:10:47,178 DEBUG A1 - idle:18
+2016-04-29 16:10:47,178 DEBUG A1 - active:2
+2016-04-29 16:10:48,850 DEBUG A1 - idle:19
+2016-04-29 16:10:48,850 DEBUG A1 - active:1
+2016-04-29 16:10:48,873 DEBUG A1 - idle:18
+2016-04-29 16:10:48,873 DEBUG A1 - active:2
+2016-04-29 16:10:50,427 DEBUG A1 - idle:18
+2016-04-29 16:10:50,428 DEBUG A1 - active:1
+2016-04-29 16:10:50,429 DEBUG A1 - idle:18
+2016-04-29 16:10:50,429 DEBUG A1 - active:2
+2016-04-29 16:10:51,994 DEBUG A1 - idle:18
+2016-04-29 16:10:51,995 DEBUG A1 - active:1
+2016-04-29 16:10:51,995 DEBUG A1 - idle:18
+2016-04-29 16:10:51,995 DEBUG A1 - active:2
+2016-04-29 16:11:01,749 DEBUG A1 - idle:19
+2016-04-29 16:11:01,749 DEBUG A1 - active:1
+2016-04-29 16:11:08,008 DEBUG A1 - idle:19
+2016-04-29 16:11:08,008 DEBUG A1 - active:1
+2016-04-29 16:14:11,225 DEBUG A1 - idle:19
+2016-04-29 16:14:11,225 DEBUG A1 - active:1
+2016-04-29 16:14:11,234 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2016-04-29 16:14:33,125 DEBUG A1 - idle:19
+2016-04-29 16:14:33,125 DEBUG A1 - active:1
+2016-04-29 16:14:33,125 DEBUG dbtool - s
+2016-04-29 16:14:33,125  WARN dbtool - Query was sent "s"
+2016-04-29 16:14:33,126 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
+2016-04-29 16:14:33,476 DEBUG A1 - idle:19
+2016-04-29 16:14:33,476 DEBUG A1 - active:1
+2016-04-29 16:14:33,476 DEBUG dbtool - s
+2016-04-29 16:14:33,476  WARN dbtool - Query was sent "s"
+2016-04-29 16:14:33,478 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
+2016-04-29 16:14:39,509 DEBUG A1 - idle:19
+2016-04-29 16:14:39,510 DEBUG A1 - active:1
+2016-04-29 16:14:39,525 DEBUG A1 - idle:18
+2016-04-29 16:14:39,525 DEBUG A1 - active:2
+2016-04-29 16:14:40,378 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:14:40,419 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:14:43,362 DEBUG A1 - idle:19
+2016-04-29 16:14:43,363 DEBUG A1 - active:1
+2016-04-29 16:14:43,372 DEBUG A1 - idle:18
+2016-04-29 16:14:43,372 DEBUG A1 - active:2
+2016-04-29 16:14:44,259 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:14:44,292 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:14:46,005 DEBUG A1 - idle:19
+2016-04-29 16:14:46,005 DEBUG A1 - active:1
+2016-04-29 16:14:46,022 DEBUG A1 - idle:18
+2016-04-29 16:14:46,023 DEBUG A1 - active:2
+2016-04-29 16:14:46,584 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:14:46,606 DEBUG dbtool - ps is closed by jdbc4.0
+2016-04-29 16:15:04,760 DEBUG A1 - idle:19
+2016-04-29 16:15:04,760 DEBUG A1 - active:1
+2016-04-29 16:15:04,774 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:15:04,940 DEBUG A1 - idle:19
+2016-04-29 16:15:04,940 DEBUG A1 - active:1
+2016-04-29 16:15:04,940 DEBUG dbtool - 
+2016-04-29 16:15:04,940  WARN dbtool - Query was sent ""
+2016-04-29 16:18:31,046 DEBUG A1 - idle:19
+2016-04-29 16:18:31,046 DEBUG A1 - active:1
+2016-04-29 16:18:31,063 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:18:31,229 DEBUG A1 - idle:19
+2016-04-29 16:18:31,229 DEBUG A1 - active:1
+2016-04-29 16:18:31,229 DEBUG dbtool - 
+2016-04-29 16:18:31,230  WARN dbtool - Query was sent ""
+2016-04-29 16:21:33,762 DEBUG A1 - idle:19
+2016-04-29 16:21:33,762 DEBUG A1 - active:1
+2016-04-29 16:21:33,776 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:21:33,917 DEBUG A1 - idle:19
+2016-04-29 16:21:33,917 DEBUG A1 - active:1
+2016-04-29 16:21:33,917 DEBUG dbtool - 
+2016-04-29 16:21:33,917  WARN dbtool - Query was sent ""
+2016-04-29 16:34:45,695 DEBUG A1 - idle:19
+2016-04-29 16:34:45,695 DEBUG A1 - active:1
+2016-04-29 16:34:45,709 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:34:45,854 DEBUG A1 - idle:19
+2016-04-29 16:34:45,854 DEBUG A1 - active:1
+2016-04-29 16:34:45,855 DEBUG dbtool - 
+2016-04-29 16:34:45,855  WARN dbtool - Query was sent ""
+2016-04-29 16:34:53,252 DEBUG A1 - idle:19
+2016-04-29 16:34:53,252 DEBUG A1 - active:1
+2016-04-29 16:34:53,270 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:34:53,422 DEBUG A1 - idle:19
+2016-04-29 16:34:53,422 DEBUG A1 - active:1
+2016-04-29 16:34:53,423 DEBUG dbtool - 
+2016-04-29 16:34:53,423  WARN dbtool - Query was sent ""
+2016-04-29 16:35:01,299 DEBUG A1 - idle:19
+2016-04-29 16:35:01,299 DEBUG A1 - active:1
+2016-04-29 16:35:01,308 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:35:01,465 DEBUG A1 - idle:19
+2016-04-29 16:35:01,465 DEBUG A1 - active:1
+2016-04-29 16:35:01,465 DEBUG dbtool - 
+2016-04-29 16:35:01,465  WARN dbtool - Query was sent ""
+2016-04-29 16:35:31,373 DEBUG A1 - idle:19
+2016-04-29 16:35:31,374 DEBUG A1 - active:1
+2016-04-29 16:35:31,575 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:35:31,712 DEBUG A1 - idle:19
+2016-04-29 16:35:31,712 DEBUG A1 - active:1
+2016-04-29 16:35:31,712 DEBUG dbtool - 
+2016-04-29 16:35:31,712  WARN dbtool - Query was sent ""
+2016-04-29 16:35:39,325 DEBUG A1 - idle:19
+2016-04-29 16:35:39,325 DEBUG A1 - active:1
+2016-04-29 16:35:39,387 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:35:39,575 DEBUG A1 - idle:19
+2016-04-29 16:35:39,575 DEBUG A1 - active:1
+2016-04-29 16:35:39,575 DEBUG dbtool - 
+2016-04-29 16:35:39,575  WARN dbtool - Query was sent ""
+2016-04-29 16:35:46,338 DEBUG A1 - idle:19
+2016-04-29 16:35:46,338 DEBUG A1 - active:1
+2016-04-29 16:35:46,390 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:35:46,568 DEBUG A1 - idle:19
+2016-04-29 16:35:46,568 DEBUG A1 - active:1
+2016-04-29 16:35:46,568 DEBUG dbtool - 
+2016-04-29 16:35:46,568  WARN dbtool - Query was sent ""
+2016-04-29 16:38:17,419 DEBUG A1 - idle:19
+2016-04-29 16:38:17,419 DEBUG A1 - active:1
+2016-04-29 16:38:17,476 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:38:17,597 DEBUG A1 - idle:19
+2016-04-29 16:38:17,597 DEBUG A1 - active:1
+2016-04-29 16:38:17,598 DEBUG dbtool - 
+2016-04-29 16:38:17,598  WARN dbtool - Query was sent ""
+2016-04-29 16:42:08,685 DEBUG A1 - idle:19
+2016-04-29 16:42:08,685 DEBUG A1 - active:1
+2016-04-29 16:42:08,880 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:42:09,018 DEBUG A1 - idle:19
+2016-04-29 16:42:09,018 DEBUG A1 - active:1
+2016-04-29 16:42:09,018 DEBUG dbtool - 
+2016-04-29 16:42:09,018  WARN dbtool - Query was sent ""
+2016-04-29 16:42:19,805 DEBUG A1 - idle:19
+2016-04-29 16:42:19,805 DEBUG A1 - active:1
+2016-04-29 16:42:19,863 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:42:20,063 DEBUG A1 - idle:19
+2016-04-29 16:42:20,063 DEBUG A1 - active:1
+2016-04-29 16:42:20,063 DEBUG dbtool - 
+2016-04-29 16:42:20,063  WARN dbtool - Query was sent ""
+2016-04-29 16:43:24,716 DEBUG A1 - idle:19
+2016-04-29 16:43:24,716 DEBUG A1 - active:1
+2016-04-29 16:43:24,898 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:43:25,034 DEBUG A1 - idle:19
+2016-04-29 16:43:25,034 DEBUG A1 - active:1
+2016-04-29 16:43:25,035 DEBUG dbtool - 
+2016-04-29 16:43:25,035  WARN dbtool - Query was sent ""
+2016-04-29 16:43:39,354 DEBUG A1 - idle:19
+2016-04-29 16:43:39,354 DEBUG A1 - active:1
+2016-04-29 16:43:39,383 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2016-04-29 16:43:39,616 DEBUG A1 - idle:19
+2016-04-29 16:43:39,616 DEBUG A1 - active:1
+2016-04-29 16:43:39,616 DEBUG dbtool - 
+2016-04-29 16:43:39,616  WARN dbtool - Query was sent ""
+2016-04-29 16:46:27,959 DEBUG A1 - idle:19
+2016-04-29 16:46:27,959 DEBUG A1 - active:1
+2016-04-29 16:46:28,053 DEBUG A1 - TbInit
+ps is closed by jdbc4.0
+2016-04-29 16:46:28,199 DEBUG A1 - idle:19
+2016-04-29 16:46:28,199 DEBUG A1 - active:1
+2016-04-29 16:46:28,200 DEBUG dbtool - 
+2016-04-29 16:46:28,200  WARN dbtool - Query was sent ""
+2016-04-29 16:47:04,029 DEBUG A1 - idle:19
+2016-04-29 16:47:04,029 DEBUG A1 - active:1
+2016-04-29 16:47:04,086 DEBUG A1 - TbInit
+ps is closed by jdbc4.0
+2016-04-29 16:47:04,207 DEBUG A1 - idle:19
+2016-04-29 16:47:04,207 DEBUG A1 - active:1
+2016-04-29 16:47:04,208 DEBUG dbtool - 
+2016-04-29 16:47:04,208  WARN dbtool - Query was sent ""
+2016-04-29 16:47:23,619 DEBUG A1 - idle:19
+2016-04-29 16:47:23,619 DEBUG A1 - active:1
+2016-04-29 16:47:23,619 DEBUG dbtool - 
+2016-04-29 16:47:23,619  WARN dbtool - Query was sent ""
+2016-04-29 16:47:35,891 DEBUG A1 - idle:19
+2016-04-29 16:47:35,892 DEBUG A1 - active:1
+2016-04-29 16:47:35,945 DEBUG A1 - TbInit
+ps is closed by jdbc4.0
+2016-04-29 16:47:36,065 DEBUG A1 - idle:19
+2016-04-29 16:47:36,065 DEBUG A1 - active:1
+2016-04-29 16:47:36,065 DEBUG dbtool - 
+2016-04-29 16:47:36,065  WARN dbtool - Query was sent ""
+2016-04-29 16:47:40,328 DEBUG A1 - idle:19
+2016-04-29 16:47:40,328 DEBUG A1 - active:1
+2016-04-29 16:47:42,143 DEBUG A1 - idle:19
+2016-04-29 16:47:42,143 DEBUG A1 - active:1
+2016-04-29 16:49:48,005 DEBUG A1 - idle:19
+2016-04-29 16:49:48,005 DEBUG A1 - active:1
+2016-04-29 16:49:48,018 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2016-04-29 16:58:41,609 DEBUG A1 - idle:19
+2016-04-29 16:58:41,609 DEBUG A1 - active:1
+2016-04-29 16:58:41,613 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2016-04-29 16:58:41,808 DEBUG A1 - idle:19
+2016-04-29 16:58:41,808 DEBUG A1 - active:1
+2016-04-29 16:58:41,823 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2016-04-29 16:58:42,049 DEBUG A1 - idle:19
+2016-04-29 16:58:42,049 DEBUG A1 - active:1
+2016-04-29 16:58:42,061 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0

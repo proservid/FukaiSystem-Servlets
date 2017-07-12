@@ -1,0 +1,54 @@
+2017-07-11 08:24:51,187 DEBUG A1 - idle:19
+2017-07-11 08:24:51,203 DEBUG A1 - active:1
+2017-07-11 08:24:51,281 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2017-07-11 08:24:51,577 DEBUG A1 - idle:19
+2017-07-11 08:24:51,577 DEBUG A1 - active:1
+2017-07-11 08:24:51,686 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-07-11 08:24:51,811 DEBUG A1 - idle:19
+2017-07-11 08:24:51,811 DEBUG A1 - active:1
+2017-07-11 08:24:52,014 DEBUG A1 - idle:18
+2017-07-11 08:24:52,014 DEBUG A1 - active:2
+2017-07-11 08:24:52,030 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-07-11 08:24:52,076 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2017-07-11 08:25:07,240 DEBUG A1 - idle:19
+2017-07-11 08:25:07,240 DEBUG A1 - active:1
+2017-07-11 08:25:07,255 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-07-11 08:25:07,349 DEBUG A1 - idle:19
+2017-07-11 08:25:07,349 DEBUG A1 - active:1
+2017-07-11 08:25:07,364 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-07-11 08:26:04,136 DEBUG A1 - idle:19
+2017-07-11 08:26:04,136 DEBUG A1 - active:1
+2017-07-11 08:26:05,072 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-07-11 13:00:51,401 DEBUG A1 - idle:19
+2017-07-11 13:00:51,401 DEBUG A1 - active:1
+2017-07-11 13:00:51,442 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2017-07-11 13:09:52,064 DEBUG A1 - idle:19
+2017-07-11 13:09:52,064 DEBUG A1 - active:1
+2017-07-11 13:09:52,095 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-07-11 13:24:52,005 DEBUG A1 - idle:19
+2017-07-11 13:24:52,005 DEBUG A1 - active:1
+2017-07-11 13:24:52,011 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-07-11 13:34:42,809 DEBUG A1 - idle:19
+2017-07-11 13:34:42,809 DEBUG A1 - active:1
+2017-07-11 13:34:42,809 DEBUG dbtool - s
+2017-07-11 13:34:42,810  WARN dbtool - Query was sent "s"
+2017-07-11 13:34:42,812 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
+2017-07-11 13:34:43,573 DEBUG A1 - idle:19
+2017-07-11 13:34:43,573 DEBUG A1 - active:1
+2017-07-11 13:34:43,574 DEBUG dbtool - s
+2017-07-11 13:34:43,574  WARN dbtool - Query was sent "s"
+2017-07-11 13:34:43,574 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
+2017-07-11 13:35:48,909 DEBUG A1 - idle:19
+2017-07-11 13:35:48,909 DEBUG A1 - active:1
+2017-07-11 13:35:48,957 DEBUG A1 - Init
+ps is closed by jdbc4.0

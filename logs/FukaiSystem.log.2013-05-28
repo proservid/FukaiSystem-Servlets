@@ -1,0 +1,949 @@
+2013-05-28 08:21:36,608 DEBUG A1 - idle:19
+2013-05-28 08:21:36,608 DEBUG A1 - active:1
+2013-05-28 08:21:36,686 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 08:21:36,826 DEBUG A1 - idle:19
+2013-05-28 08:21:36,826 DEBUG A1 - active:1
+2013-05-28 08:21:36,874 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 09:03:30,702 DEBUG A1 - idle:19
+2013-05-28 09:03:30,702 DEBUG A1 - active:1
+2013-05-28 09:03:30,733 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 09:03:30,874 DEBUG A1 - idle:19
+2013-05-28 09:03:30,874 DEBUG A1 - active:1
+2013-05-28 09:03:30,874 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 09:06:15,923 DEBUG A1 - idle:19
+2013-05-28 09:06:15,923 DEBUG A1 - active:1
+2013-05-28 09:06:15,939 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 09:06:16,079 DEBUG A1 - idle:19
+2013-05-28 09:06:16,079 DEBUG A1 - active:1
+2013-05-28 09:06:16,095 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 09:07:32,770 DEBUG A1 - idle:19
+2013-05-28 09:07:32,770 DEBUG A1 - active:1
+2013-05-28 09:07:32,801 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 09:07:32,988 DEBUG A1 - idle:19
+2013-05-28 09:07:32,988 DEBUG A1 - active:1
+2013-05-28 09:07:33,004 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 09:08:48,556 DEBUG A1 - idle:19
+2013-05-28 09:08:48,556 DEBUG A1 - active:1
+2013-05-28 09:08:48,571 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 09:08:48,712 DEBUG A1 - idle:19
+2013-05-28 09:08:48,712 DEBUG A1 - active:1
+2013-05-28 09:08:48,712 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 09:12:19,734 DEBUG A1 - idle:19
+2013-05-28 09:12:19,734 DEBUG A1 - active:1
+2013-05-28 09:12:19,750 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 09:12:19,890 DEBUG A1 - idle:19
+2013-05-28 09:12:19,890 DEBUG A1 - active:1
+2013-05-28 09:12:19,906 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 09:17:04,374 DEBUG A1 - idle:19
+2013-05-28 09:17:04,374 DEBUG A1 - active:1
+2013-05-28 09:17:04,421 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 09:17:04,546 DEBUG A1 - idle:19
+2013-05-28 09:17:04,546 DEBUG A1 - active:1
+2013-05-28 09:17:04,562 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 09:18:08,476 DEBUG A1 - idle:19
+2013-05-28 09:18:08,476 DEBUG A1 - active:1
+2013-05-28 09:18:08,507 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 09:18:08,648 DEBUG A1 - idle:19
+2013-05-28 09:18:08,648 DEBUG A1 - active:1
+2013-05-28 09:18:08,648 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 09:37:18,808 DEBUG A1 - idle:19
+2013-05-28 09:37:18,808 DEBUG A1 - active:1
+2013-05-28 09:37:18,824 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 09:37:18,980 DEBUG A1 - idle:19
+2013-05-28 09:37:18,980 DEBUG A1 - active:1
+2013-05-28 09:37:18,980 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:38:40,571 DEBUG A1 - idle:19
+2013-05-28 10:38:40,571 DEBUG A1 - active:1
+2013-05-28 10:38:40,602 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 10:38:40,727 DEBUG A1 - idle:19
+2013-05-28 10:38:40,727 DEBUG A1 - active:1
+2013-05-28 10:38:40,758 ERROR A1 - GetSchedule
+com.microsoft.sqlserver.jdbc.SQLServerException: インデックス 1 は範囲外です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDriverError(SQLServerException.java:190)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.setterGetParam(SQLServerPreparedStatement.java:714)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.setValue(SQLServerPreparedStatement.java:723)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.setDate(SQLServerPreparedStatement.java:1094)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.setDate(DelegatingPreparedStatement.java:141)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.setDate(DelegatingPreparedStatement.java:141)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.setDate(DelegatingPreparedStatement.java:141)
+fukaisystem.group.GetSchedule.service(GetSchedule.java:121)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-05-28 10:38:40,758 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:39:26,688 DEBUG A1 - idle:19
+2013-05-28 10:39:26,688 DEBUG A1 - active:1
+2013-05-28 10:39:26,704 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 10:39:26,844 DEBUG A1 - idle:19
+2013-05-28 10:39:26,844 DEBUG A1 - active:1
+2013-05-28 10:39:26,875 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:41:40,676 DEBUG A1 - idle:19
+2013-05-28 10:41:40,676 DEBUG A1 - active:1
+2013-05-28 10:41:40,708 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:44:30,966 DEBUG A1 - idle:19
+2013-05-28 10:44:30,966 DEBUG A1 - active:1
+2013-05-28 10:44:30,982 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:44:38,236 DEBUG A1 - idle:19
+2013-05-28 10:44:38,236 DEBUG A1 - active:1
+2013-05-28 10:44:38,252 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:44:46,988 DEBUG A1 - idle:19
+2013-05-28 10:44:46,988 DEBUG A1 - active:1
+2013-05-28 10:44:47,003 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:46:11,103 DEBUG A1 - idle:19
+2013-05-28 10:46:11,103 DEBUG A1 - active:1
+2013-05-28 10:46:11,134 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 10:46:11,274 DEBUG A1 - idle:19
+2013-05-28 10:46:11,274 DEBUG A1 - active:1
+2013-05-28 10:46:11,274 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:50:12,997 DEBUG A1 - idle:19
+2013-05-28 10:50:12,997 DEBUG A1 - active:1
+2013-05-28 10:50:13,013 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 10:50:13,137 DEBUG A1 - idle:19
+2013-05-28 10:50:13,137 DEBUG A1 - active:1
+2013-05-28 10:50:13,153 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:52:25,800 DEBUG A1 - idle:19
+2013-05-28 10:52:25,800 DEBUG A1 - active:1
+2013-05-28 10:52:25,862 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 10:52:26,018 DEBUG A1 - idle:19
+2013-05-28 10:52:26,018 DEBUG A1 - active:1
+2013-05-28 10:52:26,034 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:54:33,429 DEBUG A1 - idle:19
+2013-05-28 10:54:33,429 DEBUG A1 - active:1
+2013-05-28 10:54:33,444 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:55:38,715 DEBUG A1 - idle:19
+2013-05-28 10:55:38,715 DEBUG A1 - active:1
+2013-05-28 10:55:38,746 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:58:59,722 DEBUG A1 - idle:19
+2013-05-28 10:58:59,722 DEBUG A1 - active:1
+2013-05-28 10:58:59,769 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 10:58:59,894 DEBUG A1 - idle:19
+2013-05-28 10:58:59,894 DEBUG A1 - active:1
+2013-05-28 10:58:59,909 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:09,457 DEBUG A1 - idle:19
+2013-05-28 10:59:09,457 DEBUG A1 - active:1
+2013-05-28 10:59:09,488 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:11,235 DEBUG A1 - idle:19
+2013-05-28 10:59:11,235 DEBUG A1 - active:1
+2013-05-28 10:59:11,251 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:14,043 DEBUG A1 - idle:19
+2013-05-28 10:59:14,043 DEBUG A1 - active:1
+2013-05-28 10:59:14,059 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:14,885 DEBUG A1 - idle:19
+2013-05-28 10:59:14,885 DEBUG A1 - active:1
+2013-05-28 10:59:14,917 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:17,069 DEBUG A1 - idle:19
+2013-05-28 10:59:17,069 DEBUG A1 - active:1
+2013-05-28 10:59:17,101 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:19,784 DEBUG A1 - idle:19
+2013-05-28 10:59:19,784 DEBUG A1 - active:1
+2013-05-28 10:59:19,800 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:20,814 DEBUG A1 - idle:19
+2013-05-28 10:59:20,814 DEBUG A1 - active:1
+2013-05-28 10:59:20,829 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:21,422 DEBUG A1 - idle:19
+2013-05-28 10:59:21,422 DEBUG A1 - active:1
+2013-05-28 10:59:21,438 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:22,202 DEBUG A1 - idle:19
+2013-05-28 10:59:22,202 DEBUG A1 - active:1
+2013-05-28 10:59:22,218 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:23,029 DEBUG A1 - idle:19
+2013-05-28 10:59:23,029 DEBUG A1 - active:1
+2013-05-28 10:59:23,044 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:23,606 DEBUG A1 - idle:19
+2013-05-28 10:59:23,606 DEBUG A1 - active:1
+2013-05-28 10:59:23,622 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:24,214 DEBUG A1 - idle:19
+2013-05-28 10:59:24,214 DEBUG A1 - active:1
+2013-05-28 10:59:24,246 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:25,353 DEBUG A1 - idle:19
+2013-05-28 10:59:25,353 DEBUG A1 - active:1
+2013-05-28 10:59:25,384 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:27,724 DEBUG A1 - idle:19
+2013-05-28 10:59:27,724 DEBUG A1 - active:1
+2013-05-28 10:59:27,740 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 10:59:29,004 DEBUG A1 - idle:19
+2013-05-28 10:59:29,004 DEBUG A1 - active:1
+2013-05-28 10:59:29,035 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 11:00:10,687 DEBUG A1 - idle:19
+2013-05-28 11:00:10,687 DEBUG A1 - active:1
+2013-05-28 11:00:10,734 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 11:00:10,858 DEBUG A1 - idle:19
+2013-05-28 11:00:10,874 DEBUG A1 - active:1
+2013-05-28 11:00:10,874 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 11:08:11,745 DEBUG A1 - idle:19
+2013-05-28 11:08:11,745 DEBUG A1 - active:1
+2013-05-28 11:08:11,792 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 11:08:11,948 DEBUG A1 - idle:19
+2013-05-28 11:08:11,948 DEBUG A1 - active:1
+2013-05-28 11:08:11,963 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 11:08:32,711 DEBUG A1 - idle:19
+2013-05-28 11:08:32,711 DEBUG A1 - active:1
+2013-05-28 11:08:32,727 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 11:08:32,867 DEBUG A1 - idle:19
+2013-05-28 11:08:32,867 DEBUG A1 - active:1
+2013-05-28 11:08:32,867 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 11:09:59,744 DEBUG A1 - idle:19
+2013-05-28 11:09:59,744 DEBUG A1 - active:1
+2013-05-28 11:09:59,791 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 11:09:59,962 DEBUG A1 - idle:19
+2013-05-28 11:09:59,962 DEBUG A1 - active:1
+2013-05-28 11:09:59,978 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 11:16:17,264 DEBUG A1 - idle:19
+2013-05-28 11:16:17,264 DEBUG A1 - active:1
+2013-05-28 11:16:17,280 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 11:16:17,405 DEBUG A1 - idle:19
+2013-05-28 11:16:17,405 DEBUG A1 - active:1
+2013-05-28 11:16:17,420 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 11:20:04,885 DEBUG A1 - idle:19
+2013-05-28 11:20:04,885 DEBUG A1 - active:1
+2013-05-28 11:20:04,901 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 11:20:05,041 DEBUG A1 - idle:19
+2013-05-28 11:20:05,041 DEBUG A1 - active:1
+2013-05-28 11:20:05,041 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 11:24:41,911 DEBUG A1 - idle:19
+2013-05-28 11:24:41,911 DEBUG A1 - active:1
+2013-05-28 11:24:41,942 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 11:24:42,067 DEBUG A1 - idle:19
+2013-05-28 11:24:42,067 DEBUG A1 - active:1
+2013-05-28 11:24:42,067 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 11:26:26,166 DEBUG A1 - idle:19
+2013-05-28 11:26:26,166 DEBUG A1 - active:1
+2013-05-28 11:26:26,181 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 11:26:26,322 DEBUG A1 - idle:19
+2013-05-28 11:26:26,322 DEBUG A1 - active:1
+2013-05-28 11:26:26,337 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 11:26:35,198 DEBUG A1 - idle:19
+2013-05-28 11:26:35,198 DEBUG A1 - active:1
+2013-05-28 11:26:35,229 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 13:19:13,213 DEBUG A1 - idle:19
+2013-05-28 13:19:13,229 DEBUG A1 - active:1
+2013-05-28 13:19:13,244 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 13:19:13,369 DEBUG A1 - idle:19
+2013-05-28 13:19:13,369 DEBUG A1 - active:1
+2013-05-28 13:19:13,494 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 13:26:39,269 DEBUG A1 - idle:19
+2013-05-28 13:26:39,269 DEBUG A1 - active:1
+2013-05-28 13:26:39,284 ERROR A1 - InputRegistration
+readObjectがShippingDTO型ではありません
+2013-05-28 13:26:39,815 ERROR A1 - InputRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: マルチパート識別子 "t.人員CD" をバインドできませんでした。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:314)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+fukaisystem.group.ScheduleRegistration.service(ScheduleRegistration.java:73)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-05-28 13:26:39,831 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2013-05-28 13:26:42,452 DEBUG A1 - idle:19
+2013-05-28 13:26:42,452 DEBUG A1 - active:1
+2013-05-28 13:26:42,468 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 13:28:21,733 DEBUG A1 - idle:19
+2013-05-28 13:28:21,733 DEBUG A1 - active:1
+2013-05-28 13:28:21,733 ERROR A1 - InputRegistration
+readObjectがShippingDTO型ではありません
+2013-05-28 13:28:22,029 ERROR A1 - InputRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: 列名 'ID' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:314)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+fukaisystem.group.ScheduleRegistration.service(ScheduleRegistration.java:73)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-05-28 13:28:22,029 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2013-05-28 13:28:23,652 DEBUG A1 - idle:19
+2013-05-28 13:28:23,652 DEBUG A1 - active:1
+2013-05-28 13:28:23,668 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 13:29:29,688 DEBUG A1 - idle:19
+2013-05-28 13:29:29,688 DEBUG A1 - active:1
+2013-05-28 13:29:29,703 ERROR A1 - InputRegistration
+readObjectがShippingDTO型ではありません
+2013-05-28 13:29:30,015 ERROR A1 - InputRegistration
+com.microsoft.sqlserver.jdbc.SQLServerException: MERGE ステートメントは、セミコロン (;) で終わる必要があります。
+com.microsoft.sqlserver.jdbc.SQLServerException.makeFromDatabaseError(SQLServerException.java:216)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.getNextResult(SQLServerStatement.java:1515)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.doExecutePreparedStatement(SQLServerPreparedStatement.java:404)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement$PrepStmtExecCmd.doExecute(SQLServerPreparedStatement.java:350)
+com.microsoft.sqlserver.jdbc.TDSCommand.execute(IOBuffer.java:5696)
+com.microsoft.sqlserver.jdbc.SQLServerConnection.executeCommand(SQLServerConnection.java:1715)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeCommand(SQLServerStatement.java:180)
+com.microsoft.sqlserver.jdbc.SQLServerStatement.executeStatement(SQLServerStatement.java:155)
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeUpdate(SQLServerPreparedStatement.java:314)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+org.apache.tomcat.dbcp.dbcp.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:105)
+fukaisystem.group.ScheduleRegistration.service(ScheduleRegistration.java:72)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor$Worker.runTask(Unknown Source)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+java.lang.Thread.run(Unknown Source)
+
+2013-05-28 13:29:30,015 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2013-05-28 13:29:31,202 DEBUG A1 - idle:19
+2013-05-28 13:29:31,202 DEBUG A1 - active:1
+2013-05-28 13:29:31,218 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 13:29:46,570 DEBUG A1 - idle:19
+2013-05-28 13:29:46,570 DEBUG A1 - active:1
+2013-05-28 13:29:46,586 ERROR A1 - InputRegistration
+readObjectがShippingDTO型ではありません
+2013-05-28 13:29:46,632 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2013-05-28 13:29:48,801 DEBUG A1 - idle:19
+2013-05-28 13:29:48,801 DEBUG A1 - active:1
+2013-05-28 13:29:48,816 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 13:32:49,512 DEBUG A1 - idle:19
+2013-05-28 13:32:49,512 DEBUG A1 - active:1
+2013-05-28 13:32:49,527 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 13:32:49,652 DEBUG A1 - idle:19
+2013-05-28 13:32:49,652 DEBUG A1 - active:1
+2013-05-28 13:32:49,668 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 13:32:55,689 DEBUG A1 - idle:19
+2013-05-28 13:32:55,689 DEBUG A1 - active:1
+2013-05-28 13:32:55,705 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2013-05-28 13:32:57,109 DEBUG A1 - idle:19
+2013-05-28 13:32:57,109 DEBUG A1 - active:1
+2013-05-28 13:32:57,124 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 13:37:47,610 DEBUG A1 - idle:19
+2013-05-28 13:37:47,610 DEBUG A1 - active:1
+2013-05-28 13:37:47,610 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2013-05-28 13:37:50,870 DEBUG A1 - idle:19
+2013-05-28 13:37:50,870 DEBUG A1 - active:1
+2013-05-28 13:37:50,886 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 13:38:20,873 DEBUG A1 - idle:19
+2013-05-28 13:38:20,873 DEBUG A1 - active:1
+2013-05-28 13:38:20,873 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2013-05-28 13:38:21,637 DEBUG A1 - idle:19
+2013-05-28 13:38:21,637 DEBUG A1 - active:1
+2013-05-28 13:38:21,653 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 13:53:15,774 DEBUG A1 - idle:19
+2013-05-28 13:53:15,774 DEBUG A1 - active:1
+2013-05-28 13:53:15,820 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 13:53:15,961 DEBUG A1 - idle:19
+2013-05-28 13:53:15,961 DEBUG A1 - active:1
+2013-05-28 13:53:15,976 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 13:59:50,419 DEBUG A1 - idle:19
+2013-05-28 13:59:50,419 DEBUG A1 - active:1
+2013-05-28 13:59:50,544 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-05-28 13:59:59,248 DEBUG A1 - idle:19
+2013-05-28 13:59:59,248 DEBUG A1 - active:1
+2013-05-28 13:59:59,343 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-05-28 14:00:00,154 DEBUG A1 - idle:19
+2013-05-28 14:00:00,154 DEBUG A1 - active:1
+2013-05-28 14:00:00,201 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-05-28 14:00:00,232 DEBUG A1 - idle:19
+2013-05-28 14:00:00,232 DEBUG A1 - active:1
+2013-05-28 14:00:00,279 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:00:08,110 DEBUG A1 - idle:19
+2013-05-28 14:00:08,110 DEBUG A1 - active:1
+2013-05-28 14:00:08,157 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:00:20,887 DEBUG A1 - idle:19
+2013-05-28 14:00:20,887 DEBUG A1 - active:1
+2013-05-28 14:00:21,106  INFO A1 - T_製作_子は0件処理されました。
+2013-05-28 14:00:21,106 DEBUG A1 - ProductRegistration
+ps is closed by jdbc4.0
+2013-05-28 14:00:21,699 DEBUG A1 - idle:19
+2013-05-28 14:00:21,699 DEBUG A1 - active:1
+2013-05-28 14:00:21,714 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-05-28 14:00:21,730 DEBUG A1 - idle:19
+2013-05-28 14:00:21,730 DEBUG A1 - active:1
+2013-05-28 14:00:21,761 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-05-28 14:00:21,761 DEBUG A1 - idle:19
+2013-05-28 14:00:21,761 DEBUG A1 - active:1
+2013-05-28 14:00:21,792 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:00:21,839 DEBUG A1 - idle:19
+2013-05-28 14:00:21,839 DEBUG A1 - active:1
+2013-05-28 14:00:21,855 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-05-28 14:00:21,855 DEBUG A1 - idle:19
+2013-05-28 14:00:21,855 DEBUG A1 - active:1
+2013-05-28 14:00:21,886 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:00:50,544 DEBUG A1 - idle:19
+2013-05-28 14:00:50,544 DEBUG A1 - active:1
+2013-05-28 14:00:50,685 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-05-28 14:01:03,867 DEBUG A1 - idle:19
+2013-05-28 14:01:03,867 DEBUG A1 - active:1
+2013-05-28 14:01:04,086 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-05-28 14:01:11,278 DEBUG A1 - idle:19
+2013-05-28 14:01:11,278 DEBUG A1 - active:1
+2013-05-28 14:01:11,324 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-05-28 14:01:11,340 DEBUG A1 - idle:19
+2013-05-28 14:01:11,340 DEBUG A1 - active:1
+2013-05-28 14:01:11,392 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:01:15,089 DEBUG A1 - idle:19
+2013-05-28 14:01:15,089 DEBUG A1 - active:1
+2013-05-28 14:01:15,121 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:01:23,779 DEBUG A1 - idle:19
+2013-05-28 14:01:23,779 DEBUG A1 - active:1
+2013-05-28 14:01:23,827  INFO A1 - T_製作_子は0件処理されました。
+2013-05-28 14:01:23,827 DEBUG A1 - ProductRegistration
+ps is closed by jdbc4.0
+2013-05-28 14:01:24,607 DEBUG A1 - idle:19
+2013-05-28 14:01:24,607 DEBUG A1 - active:1
+2013-05-28 14:01:24,638 DEBUG A1 - GetLine
+ps is closed by jdbc4.0
+2013-05-28 14:01:24,638 DEBUG A1 - idle:19
+2013-05-28 14:01:24,638 DEBUG A1 - active:1
+2013-05-28 14:01:24,685 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-05-28 14:01:24,700 DEBUG A1 - idle:19
+2013-05-28 14:01:24,700 DEBUG A1 - active:1
+2013-05-28 14:01:24,716 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:01:24,731 DEBUG A1 - idle:19
+2013-05-28 14:01:24,731 DEBUG A1 - active:1
+2013-05-28 14:01:24,763 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-05-28 14:01:24,778 DEBUG A1 - idle:19
+2013-05-28 14:01:24,778 DEBUG A1 - active:1
+2013-05-28 14:01:24,794 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:01:39,755 DEBUG A1 - idle:19
+2013-05-28 14:01:39,755 DEBUG A1 - active:1
+2013-05-28 14:01:39,880 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-05-28 14:01:45,746 DEBUG A1 - idle:19
+2013-05-28 14:01:45,746 DEBUG A1 - active:1
+2013-05-28 14:01:45,793 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-05-28 14:01:49,038 DEBUG A1 - idle:19
+2013-05-28 14:01:49,038 DEBUG A1 - active:1
+2013-05-28 14:01:49,086 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-05-28 14:01:49,117 DEBUG A1 - idle:19
+2013-05-28 14:01:49,117 DEBUG A1 - active:1
+2013-05-28 14:01:49,148 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:01:51,629 DEBUG A1 - idle:19
+2013-05-28 14:01:51,629 DEBUG A1 - active:1
+2013-05-28 14:01:51,873 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-05-28 14:01:51,904 DEBUG A1 - idle:19
+2013-05-28 14:01:51,904 DEBUG A1 - active:1
+2013-05-28 14:01:51,920 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:01:53,121 DEBUG A1 - idle:19
+2013-05-28 14:01:53,121 DEBUG A1 - active:1
+2013-05-28 14:01:53,153 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-05-28 14:01:53,169 DEBUG A1 - idle:19
+2013-05-28 14:01:53,169 DEBUG A1 - active:1
+2013-05-28 14:01:53,185 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:01:56,851 DEBUG A1 - idle:19
+2013-05-28 14:01:56,851 DEBUG A1 - active:1
+2013-05-28 14:01:56,866 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:02:03,574 DEBUG A1 - idle:19
+2013-05-28 14:02:03,574 DEBUG A1 - active:1
+2013-05-28 14:02:03,590 DEBUG A1 - ProductRegistration
+ps is closed by jdbc4.0
+2013-05-28 14:02:14,761 DEBUG A1 - idle:19
+2013-05-28 14:02:14,761 DEBUG A1 - active:1
+2013-05-28 14:02:14,886 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-05-28 14:02:16,509 DEBUG A1 - idle:19
+2013-05-28 14:02:16,509 DEBUG A1 - active:1
+2013-05-28 14:02:16,587 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-05-28 14:02:23,295 DEBUG A1 - idle:19
+2013-05-28 14:02:23,295 DEBUG A1 - active:1
+2013-05-28 14:02:23,327 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-05-28 14:02:26,759 DEBUG A1 - idle:19
+2013-05-28 14:02:26,759 DEBUG A1 - active:1
+2013-05-28 14:02:26,791 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-05-28 14:02:26,822 DEBUG A1 - idle:19
+2013-05-28 14:02:26,822 DEBUG A1 - active:1
+2013-05-28 14:02:26,853 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2013-05-28 14:21:18,650 DEBUG A1 - idle:19
+2013-05-28 14:21:18,650 DEBUG A1 - active:1
+2013-05-28 14:21:18,931 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 14:21:19,103 DEBUG A1 - idle:19
+2013-05-28 14:21:19,103 DEBUG A1 - active:1
+2013-05-28 14:21:19,118 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 14:21:33,580 DEBUG A1 - idle:19
+2013-05-28 14:21:33,580 DEBUG A1 - active:1
+2013-05-28 14:21:33,892 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2013-05-28 14:21:35,124 DEBUG A1 - idle:19
+2013-05-28 14:21:35,124 DEBUG A1 - active:1
+2013-05-28 14:21:35,140 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:07:15,572 DEBUG A1 - idle:19
+2013-05-28 15:07:15,572 DEBUG A1 - active:1
+2013-05-28 15:07:15,588 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 15:07:15,744 DEBUG A1 - idle:19
+2013-05-28 15:07:15,744 DEBUG A1 - active:1
+2013-05-28 15:07:15,759 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:07:30,376 DEBUG A1 - idle:19
+2013-05-28 15:07:30,376 DEBUG A1 - active:1
+2013-05-28 15:07:30,392 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2013-05-28 15:07:31,734 DEBUG A1 - idle:19
+2013-05-28 15:07:31,734 DEBUG A1 - active:1
+2013-05-28 15:07:31,749 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:14:06,757 DEBUG A1 - idle:19
+2013-05-28 15:14:06,757 DEBUG A1 - active:1
+2013-05-28 15:14:06,773 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 15:14:06,898 DEBUG A1 - idle:19
+2013-05-28 15:14:06,898 DEBUG A1 - active:1
+2013-05-28 15:14:06,913 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:14:21,094 DEBUG A1 - idle:19
+2013-05-28 15:14:21,094 DEBUG A1 - active:1
+2013-05-28 15:14:21,109 DEBUG A1 - InputRegistration
+ps is closed by jdbc4.0
+2013-05-28 15:14:22,092 DEBUG A1 - idle:19
+2013-05-28 15:14:22,092 DEBUG A1 - active:1
+2013-05-28 15:14:22,092 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:18:45,577 DEBUG A1 - idle:19
+2013-05-28 15:18:45,577 DEBUG A1 - active:1
+2013-05-28 15:18:45,592 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 15:18:45,780 DEBUG A1 - idle:19
+2013-05-28 15:18:45,780 DEBUG A1 - active:1
+2013-05-28 15:18:45,780 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:19:14,296 DEBUG A1 - idle:19
+2013-05-28 15:19:14,296 DEBUG A1 - active:1
+2013-05-28 15:19:14,328 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 15:19:14,452 DEBUG A1 - idle:19
+2013-05-28 15:19:14,452 DEBUG A1 - active:1
+2013-05-28 15:19:14,468 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:28:02,139 DEBUG A1 - idle:19
+2013-05-28 15:28:02,139 DEBUG A1 - active:1
+2013-05-28 15:28:02,155 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 15:28:02,311 DEBUG A1 - idle:19
+2013-05-28 15:28:02,311 DEBUG A1 - active:1
+2013-05-28 15:28:02,311 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:28:42,590 DEBUG A1 - idle:19
+2013-05-28 15:28:42,590 DEBUG A1 - active:1
+2013-05-28 15:28:42,605 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 15:28:42,746 DEBUG A1 - idle:19
+2013-05-28 15:28:42,746 DEBUG A1 - active:1
+2013-05-28 15:28:42,761 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:29:15,053 DEBUG A1 - idle:19
+2013-05-28 15:29:15,053 DEBUG A1 - active:1
+2013-05-28 15:29:15,069 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 15:29:15,225 DEBUG A1 - idle:19
+2013-05-28 15:29:15,225 DEBUG A1 - active:1
+2013-05-28 15:29:15,272 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:30:09,934 DEBUG A1 - idle:19
+2013-05-28 15:30:09,934 DEBUG A1 - active:1
+2013-05-28 15:30:09,934 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 15:30:10,075 DEBUG A1 - idle:19
+2013-05-28 15:30:10,075 DEBUG A1 - active:1
+2013-05-28 15:30:10,075 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:30:32,882 DEBUG A1 - idle:19
+2013-05-28 15:30:32,882 DEBUG A1 - active:1
+2013-05-28 15:30:32,882 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 15:30:33,038 DEBUG A1 - idle:19
+2013-05-28 15:30:33,038 DEBUG A1 - active:1
+2013-05-28 15:30:33,038 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:38:17,903 DEBUG A1 - idle:19
+2013-05-28 15:38:17,903 DEBUG A1 - active:1
+2013-05-28 15:38:17,919 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 15:38:18,059 DEBUG A1 - idle:19
+2013-05-28 15:38:18,059 DEBUG A1 - active:1
+2013-05-28 15:38:18,075 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 15:44:56,125 DEBUG A1 - idle:19
+2013-05-28 15:44:56,125 DEBUG A1 - active:1
+2013-05-28 15:44:56,141 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 15:44:56,265 DEBUG A1 - idle:19
+2013-05-28 15:44:56,265 DEBUG A1 - active:1
+2013-05-28 15:44:56,281 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:04:47,140 DEBUG A1 - idle:19
+2013-05-28 16:04:47,140 DEBUG A1 - active:1
+2013-05-28 16:04:47,156 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:04:47,312 DEBUG A1 - idle:19
+2013-05-28 16:04:47,312 DEBUG A1 - active:1
+2013-05-28 16:04:47,312 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:05:39,369 DEBUG A1 - idle:19
+2013-05-28 16:05:39,369 DEBUG A1 - active:1
+2013-05-28 16:05:39,385 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:05:39,510 DEBUG A1 - idle:19
+2013-05-28 16:05:39,510 DEBUG A1 - active:1
+2013-05-28 16:05:39,510 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:05:58,230 DEBUG A1 - idle:19
+2013-05-28 16:05:58,230 DEBUG A1 - active:1
+2013-05-28 16:05:58,245 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:05:58,854 DEBUG A1 - idle:19
+2013-05-28 16:05:58,854 DEBUG A1 - active:1
+2013-05-28 16:05:58,869 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:08:56,494 DEBUG A1 - idle:19
+2013-05-28 16:08:56,494 DEBUG A1 - active:1
+2013-05-28 16:08:56,509 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:08:56,650 DEBUG A1 - idle:19
+2013-05-28 16:08:56,650 DEBUG A1 - active:1
+2013-05-28 16:08:56,665 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:09:01,158 DEBUG A1 - idle:19
+2013-05-28 16:09:01,158 DEBUG A1 - active:1
+2013-05-28 16:09:01,174 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:09:01,314 DEBUG A1 - idle:19
+2013-05-28 16:09:01,314 DEBUG A1 - active:1
+2013-05-28 16:09:01,314 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:10:48,467 DEBUG A1 - idle:19
+2013-05-28 16:10:48,467 DEBUG A1 - active:1
+2013-05-28 16:10:48,483 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:10:48,623 DEBUG A1 - idle:19
+2013-05-28 16:10:48,623 DEBUG A1 - active:1
+2013-05-28 16:10:48,623 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:11:45,954 DEBUG A1 - idle:19
+2013-05-28 16:11:45,954 DEBUG A1 - active:1
+2013-05-28 16:11:45,954 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:11:46,094 DEBUG A1 - idle:19
+2013-05-28 16:11:46,094 DEBUG A1 - active:1
+2013-05-28 16:11:46,094 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:14:55,265 DEBUG A1 - idle:19
+2013-05-28 16:14:55,265 DEBUG A1 - active:1
+2013-05-28 16:14:55,280 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:14:55,421 DEBUG A1 - idle:19
+2013-05-28 16:14:55,421 DEBUG A1 - active:1
+2013-05-28 16:14:55,436 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:16:45,869 DEBUG A1 - idle:19
+2013-05-28 16:16:45,869 DEBUG A1 - active:1
+2013-05-28 16:16:45,884 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:16:46,025 DEBUG A1 - idle:19
+2013-05-28 16:16:46,025 DEBUG A1 - active:1
+2013-05-28 16:16:46,025 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:16:52,062 DEBUG A1 - idle:19
+2013-05-28 16:16:52,062 DEBUG A1 - active:1
+2013-05-28 16:16:52,078 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:16:55,650 DEBUG A1 - idle:19
+2013-05-28 16:16:55,650 DEBUG A1 - active:1
+2013-05-28 16:16:55,666 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:17:00,954 DEBUG A1 - idle:19
+2013-05-28 16:17:00,954 DEBUG A1 - active:1
+2013-05-28 16:17:00,970 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:24:55,695 DEBUG A1 - idle:19
+2013-05-28 16:24:55,695 DEBUG A1 - active:1
+2013-05-28 16:24:55,711 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:24:55,836 DEBUG A1 - idle:19
+2013-05-28 16:24:55,836 DEBUG A1 - active:1
+2013-05-28 16:24:55,836 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:25:02,762 DEBUG A1 - idle:19
+2013-05-28 16:25:02,762 DEBUG A1 - active:1
+2013-05-28 16:25:02,778 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:25:08,674 DEBUG A1 - idle:19
+2013-05-28 16:25:08,674 DEBUG A1 - active:1
+2013-05-28 16:25:08,690 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:26:16,144 DEBUG A1 - idle:19
+2013-05-28 16:26:16,144 DEBUG A1 - active:1
+2013-05-28 16:26:16,160 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:26:16,956 DEBUG A1 - idle:19
+2013-05-28 16:26:16,956 DEBUG A1 - active:1
+2013-05-28 16:26:16,971 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:27:00,683 DEBUG A1 - idle:19
+2013-05-28 16:27:00,683 DEBUG A1 - active:1
+2013-05-28 16:27:00,698 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:27:00,839 DEBUG A1 - idle:19
+2013-05-28 16:27:00,839 DEBUG A1 - active:1
+2013-05-28 16:27:00,839 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:28:12,614 DEBUG A1 - idle:19
+2013-05-28 16:28:12,614 DEBUG A1 - active:1
+2013-05-28 16:28:12,614 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:28:12,770 DEBUG A1 - idle:19
+2013-05-28 16:28:12,770 DEBUG A1 - active:1
+2013-05-28 16:28:12,770 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:31:17,927 DEBUG A1 - idle:19
+2013-05-28 16:31:17,927 DEBUG A1 - active:1
+2013-05-28 16:31:17,943 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:31:18,114 DEBUG A1 - idle:19
+2013-05-28 16:31:18,114 DEBUG A1 - active:1
+2013-05-28 16:31:18,114 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:31:56,225 DEBUG A1 - idle:19
+2013-05-28 16:31:56,225 DEBUG A1 - active:1
+2013-05-28 16:31:56,241 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:31:56,381 DEBUG A1 - idle:19
+2013-05-28 16:31:56,381 DEBUG A1 - active:1
+2013-05-28 16:31:56,397 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:34:02,086 DEBUG A1 - idle:19
+2013-05-28 16:34:02,086 DEBUG A1 - active:1
+2013-05-28 16:34:02,086 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:34:02,227 DEBUG A1 - idle:19
+2013-05-28 16:34:02,227 DEBUG A1 - active:1
+2013-05-28 16:34:02,242 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:34:40,899 DEBUG A1 - idle:19
+2013-05-28 16:34:40,899 DEBUG A1 - active:1
+2013-05-28 16:34:40,899 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:34:41,055 DEBUG A1 - idle:19
+2013-05-28 16:34:41,055 DEBUG A1 - active:1
+2013-05-28 16:34:41,071 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:35:45,733 DEBUG A1 - idle:19
+2013-05-28 16:35:45,733 DEBUG A1 - active:1
+2013-05-28 16:35:45,749 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:35:45,905 DEBUG A1 - idle:19
+2013-05-28 16:35:45,905 DEBUG A1 - active:1
+2013-05-28 16:35:45,920 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:42:14,533 DEBUG A1 - idle:19
+2013-05-28 16:42:14,533 DEBUG A1 - active:1
+2013-05-28 16:42:14,533 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:42:14,673 DEBUG A1 - idle:19
+2013-05-28 16:42:14,673 DEBUG A1 - active:1
+2013-05-28 16:42:14,689 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:44:17,821 DEBUG A1 - idle:19
+2013-05-28 16:44:17,821 DEBUG A1 - active:1
+2013-05-28 16:44:17,836 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:44:17,961 DEBUG A1 - idle:19
+2013-05-28 16:44:17,961 DEBUG A1 - active:1
+2013-05-28 16:44:17,977 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:44:59,831 DEBUG A1 - idle:19
+2013-05-28 16:44:59,831 DEBUG A1 - active:1
+2013-05-28 16:44:59,847 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:45:00,003 DEBUG A1 - idle:19
+2013-05-28 16:45:00,003 DEBUG A1 - active:1
+2013-05-28 16:45:00,019 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2013-05-28 16:54:02,619 DEBUG A1 - idle:19
+2013-05-28 16:54:02,619 DEBUG A1 - active:1
+2013-05-28 16:54:02,634 DEBUG A1 - InitInputSystem
+ps is closed by jdbc4.0
+2013-05-28 16:54:02,775 DEBUG A1 - idle:19
+2013-05-28 16:54:02,775 DEBUG A1 - active:1
+2013-05-28 16:54:02,790 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0

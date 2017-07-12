@@ -1,0 +1,26 @@
+<Context path="/FukaiSystem" reloadable="true" docBase="C:\Users\kameura\workspace\FukaiSystem" workDir="C:\Users\kameura\workspace\FukaiSystem\work">
+       <Resource
+                name="jdbc/FukaiSystem"
+                auth="Container"
+                type="javax.sql.DataSource"
+                username="sa"
+                password="3ishifukai"
+                driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+                url="jdbc:sqlserver://192.168.1.248:1433;databaseName=FukaiSystem"
+                initialSize="20"
+                maxActive="20"
+                maxWait="5000"
+                maxIdle="20"
+		minIdle="20"
+                timeBetweenEvictionRunsMillis="1800000"
+                testWhileIdle="true"
+                testOnBorrow="true"
+                validationQuery="select 1"
+                minEvictableIdleTimeMillis="7200000"
+                numTestsPerEvictionRun="10"
+                poolPreparedStatements="true"
+                removeAbandoned="false"
+                removeAbandonedTimeout="300"
+                logAbandoned="true"
+        />
+</Context>

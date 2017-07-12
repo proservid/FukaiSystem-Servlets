@@ -1,0 +1,16 @@
+2017-03-03 14:39:30,880 DEBUG A1 - idle:19
+2017-03-03 14:39:30,880 DEBUG A1 - active:1
+2017-03-03 14:39:31,052 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2017-03-03 14:39:39,569 DEBUG A1 - idle:19
+2017-03-03 14:39:39,569 DEBUG A1 - active:1
+2017-03-03 14:39:39,819 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-03-03 14:39:45,092 DEBUG A1 - idle:19
+2017-03-03 14:39:45,092 DEBUG A1 - active:1
+2017-03-03 14:39:45,185 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2017-03-03 14:39:45,216 DEBUG A1 - idle:19
+2017-03-03 14:39:45,216 DEBUG A1 - active:1
+2017-03-03 14:39:45,232 DEBUG A1 - SetLabel
+ps closed by jdbc4.0

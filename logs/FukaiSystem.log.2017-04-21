@@ -1,0 +1,436 @@
+2017-04-21 14:56:15,122 DEBUG A1 - idle:19
+2017-04-21 14:56:15,122 DEBUG A1 - active:1
+2017-04-21 14:56:15,247 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 14:56:55,342 DEBUG A1 - idle:19
+2017-04-21 14:56:55,342 DEBUG A1 - active:1
+2017-04-21 14:56:55,373 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 14:57:26,217 DEBUG A1 - idle:19
+2017-04-21 14:57:26,217 DEBUG A1 - active:1
+2017-04-21 14:57:26,217 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 14:58:13,972 DEBUG A1 - idle:19
+2017-04-21 14:58:13,972 DEBUG A1 - active:1
+2017-04-21 14:58:13,988 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 14:58:34,724 DEBUG A1 - idle:19
+2017-04-21 14:58:34,724 DEBUG A1 - active:1
+2017-04-21 14:58:34,724 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 14:59:33,149 DEBUG A1 - idle:19
+2017-04-21 14:59:33,149 DEBUG A1 - active:1
+2017-04-21 14:59:33,149 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 15:10:42,643 DEBUG A1 - idle:19
+2017-04-21 15:10:42,643 DEBUG A1 - active:1
+2017-04-21 15:10:42,643 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 15:10:51,051 DEBUG A1 - idle:19
+2017-04-21 15:10:51,051 DEBUG A1 - active:1
+2017-04-21 15:10:51,067 ERROR A1 - SetMember
+java.sql.BatchUpdateException: 'THENUPDATE' 付近に不適切な構文があります。
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:1178)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+fukaisystem.group.SetMember.service(SetMember.java:82)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2017-04-21 15:10:51,067 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:11:31,052 DEBUG A1 - idle:19
+2017-04-21 15:11:31,052 DEBUG A1 - active:1
+2017-04-21 15:11:31,130 ERROR A1 - SetMember
+java.sql.BatchUpdateException: 列名 '管理区分' が無効です。
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:1178)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+fukaisystem.group.SetMember.service(SetMember.java:82)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2017-04-21 15:11:31,130 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:13:32,392 DEBUG A1 - idle:19
+2017-04-21 15:13:32,392 DEBUG A1 - active:1
+2017-04-21 15:13:32,454 ERROR A1 - SetMember
+java.sql.BatchUpdateException: 制約 'PK_M_社員' の PRIMARY KEY 違反。オブジェクト 'dbo.M_人員' には重複するキーを挿入できません。重複するキーの値は (0) です。
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:1178)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+fukaisystem.group.SetMember.service(SetMember.java:82)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2017-04-21 15:13:32,454 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:14:29,797 DEBUG A1 - idle:19
+2017-04-21 15:14:29,797 DEBUG A1 - active:1
+2017-04-21 15:14:29,922 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:22:10,824 DEBUG A1 - idle:19
+2017-04-21 15:22:10,824 DEBUG A1 - active:1
+2017-04-21 15:22:10,840 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:23:14,214 DEBUG A1 - idle:19
+2017-04-21 15:23:14,214 DEBUG A1 - active:1
+2017-04-21 15:23:14,229 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:27:28,561 DEBUG A1 - idle:19
+2017-04-21 15:27:28,562 DEBUG A1 - active:1
+2017-04-21 15:27:28,676 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:28:51,031 DEBUG A1 - idle:19
+2017-04-21 15:28:51,031 DEBUG A1 - active:1
+2017-04-21 15:28:51,042 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:30:20,475 DEBUG A1 - idle:19
+2017-04-21 15:30:20,475 DEBUG A1 - active:1
+2017-04-21 15:30:20,486 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:30:55,409 DEBUG A1 - idle:19
+2017-04-21 15:30:55,409 DEBUG A1 - active:1
+2017-04-21 15:30:55,417 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:43:28,457 DEBUG A1 - idle:19
+2017-04-21 15:43:28,457 DEBUG A1 - active:1
+2017-04-21 15:43:28,477 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 15:43:33,880 DEBUG A1 - idle:19
+2017-04-21 15:43:33,880 DEBUG A1 - active:1
+2017-04-21 15:43:33,889 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:45:05,135 DEBUG A1 - idle:19
+2017-04-21 15:45:05,135 DEBUG A1 - active:1
+2017-04-21 15:45:05,148 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 15:45:11,679 DEBUG A1 - idle:19
+2017-04-21 15:45:11,679 DEBUG A1 - active:1
+2017-04-21 15:45:11,687 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:45:16,463 DEBUG A1 - idle:19
+2017-04-21 15:45:16,464 DEBUG A1 - active:1
+2017-04-21 15:45:16,473 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 15:45:58,061 DEBUG A1 - idle:19
+2017-04-21 15:45:58,061 DEBUG A1 - active:1
+2017-04-21 15:45:58,123 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-04-21 15:46:26,921 DEBUG A1 - idle:19
+2017-04-21 15:46:26,921 DEBUG A1 - active:1
+2017-04-21 15:46:26,993 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2017-04-21 16:22:14,393 DEBUG A1 - idle:19
+2017-04-21 16:22:14,393 DEBUG A1 - active:1
+2017-04-21 16:22:14,399 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 16:22:52,759 DEBUG A1 - idle:19
+2017-04-21 16:22:52,759 DEBUG A1 - active:1
+2017-04-21 16:22:52,765 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 16:23:01,856 DEBUG A1 - idle:19
+2017-04-21 16:23:01,856 DEBUG A1 - active:1
+2017-04-21 16:23:01,862 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 16:25:00,103 DEBUG A1 - idle:19
+2017-04-21 16:25:00,103 DEBUG A1 - active:1
+2017-04-21 16:25:00,141 DEBUG A1 - SetMember
+ps is closed by jdbc4.0
+2017-04-21 16:29:35,881 DEBUG A1 - idle:19
+2017-04-21 16:29:35,881 DEBUG A1 - active:1
+2017-04-21 16:29:35,885 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 16:30:21,562 DEBUG A1 - idle:19
+2017-04-21 16:30:21,562 DEBUG A1 - active:1
+2017-04-21 16:30:21,566 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 16:33:08,325 DEBUG A1 - idle:19
+2017-04-21 16:33:08,325 DEBUG A1 - active:1
+2017-04-21 16:33:08,333 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 16:34:46,334 DEBUG A1 - idle:19
+2017-04-21 16:34:46,334 DEBUG A1 - active:1
+2017-04-21 16:34:46,343 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 16:35:03,469 DEBUG A1 - idle:19
+2017-04-21 16:35:03,470 DEBUG A1 - active:1
+2017-04-21 16:35:03,474 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 16:35:55,351 DEBUG A1 - idle:19
+2017-04-21 16:35:55,351 DEBUG A1 - active:1
+2017-04-21 16:35:55,358 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2017-04-21 16:35:55,571 DEBUG A1 - idle:19
+2017-04-21 16:35:55,572 DEBUG A1 - active:1
+2017-04-21 16:35:55,597 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:35:55,883 DEBUG A1 - idle:19
+2017-04-21 16:35:55,883 DEBUG A1 - active:1
+2017-04-21 16:35:55,889 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:35:57,708 DEBUG A1 - idle:19
+2017-04-21 16:35:57,709 DEBUG A1 - active:1
+2017-04-21 16:35:57,713 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:35:57,792 DEBUG A1 - idle:19
+2017-04-21 16:35:57,792 DEBUG A1 - active:1
+2017-04-21 16:35:57,795 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:04,604 DEBUG A1 - idle:19
+2017-04-21 16:36:04,604 DEBUG A1 - active:1
+2017-04-21 16:36:04,610 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:04,644 DEBUG A1 - idle:19
+2017-04-21 16:36:04,645 DEBUG A1 - active:1
+2017-04-21 16:36:04,649 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:07,337 DEBUG A1 - idle:19
+2017-04-21 16:36:07,337 DEBUG A1 - active:1
+2017-04-21 16:36:07,341 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:07,379 DEBUG A1 - idle:19
+2017-04-21 16:36:07,379 DEBUG A1 - active:1
+2017-04-21 16:36:07,383 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:14,413 DEBUG A1 - idle:19
+2017-04-21 16:36:14,413 DEBUG A1 - active:1
+2017-04-21 16:36:14,418 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:14,455 DEBUG A1 - idle:19
+2017-04-21 16:36:14,455 DEBUG A1 - active:1
+2017-04-21 16:36:14,459 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:38,368 DEBUG A1 - idle:19
+2017-04-21 16:36:38,368 DEBUG A1 - active:1
+2017-04-21 16:36:38,369 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2017-04-21 16:36:38,573 DEBUG A1 - idle:19
+2017-04-21 16:36:38,573 DEBUG A1 - active:1
+2017-04-21 16:36:38,576 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:38,806 DEBUG A1 - idle:19
+2017-04-21 16:36:38,806 DEBUG A1 - active:1
+2017-04-21 16:36:38,811 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:41,705 DEBUG A1 - idle:19
+2017-04-21 16:36:41,706 DEBUG A1 - active:1
+2017-04-21 16:36:41,709 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:41,794 DEBUG A1 - idle:19
+2017-04-21 16:36:41,794 DEBUG A1 - active:1
+2017-04-21 16:36:41,798 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:43,965 DEBUG A1 - idle:19
+2017-04-21 16:36:43,965 DEBUG A1 - active:1
+2017-04-21 16:36:43,969 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:36:44,010 DEBUG A1 - idle:19
+2017-04-21 16:36:44,011 DEBUG A1 - active:1
+2017-04-21 16:36:44,017 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:42:43,668 DEBUG A1 - idle:19
+2017-04-21 16:42:43,668 DEBUG A1 - active:1
+2017-04-21 16:42:43,676 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 16:43:18,609 DEBUG A1 - idle:19
+2017-04-21 16:43:18,609 DEBUG A1 - active:1
+2017-04-21 16:43:18,614 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2017-04-21 16:43:18,808 DEBUG A1 - idle:19
+2017-04-21 16:43:18,808 DEBUG A1 - active:1
+2017-04-21 16:43:18,818 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:19,035 DEBUG A1 - idle:19
+2017-04-21 16:43:19,035 DEBUG A1 - active:1
+2017-04-21 16:43:19,050 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:20,797 DEBUG A1 - idle:19
+2017-04-21 16:43:20,797 DEBUG A1 - active:1
+2017-04-21 16:43:20,800 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:20,876 DEBUG A1 - idle:19
+2017-04-21 16:43:20,876 DEBUG A1 - active:1
+2017-04-21 16:43:20,879 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:23,963 DEBUG A1 - idle:19
+2017-04-21 16:43:23,963 DEBUG A1 - active:1
+2017-04-21 16:43:23,969 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:24,013 DEBUG A1 - idle:19
+2017-04-21 16:43:24,013 DEBUG A1 - active:1
+2017-04-21 16:43:24,016 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:25,153 DEBUG A1 - idle:19
+2017-04-21 16:43:25,153 DEBUG A1 - active:1
+2017-04-21 16:43:25,157 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:25,191 DEBUG A1 - idle:19
+2017-04-21 16:43:25,191 DEBUG A1 - active:1
+2017-04-21 16:43:25,194 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:26,417 DEBUG A1 - idle:19
+2017-04-21 16:43:26,417 DEBUG A1 - active:1
+2017-04-21 16:43:26,420 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:26,462 DEBUG A1 - idle:19
+2017-04-21 16:43:26,462 DEBUG A1 - active:1
+2017-04-21 16:43:26,467 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:28,464 DEBUG A1 - idle:19
+2017-04-21 16:43:28,464 DEBUG A1 - active:1
+2017-04-21 16:43:28,468 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:28,499 DEBUG A1 - idle:19
+2017-04-21 16:43:28,499 DEBUG A1 - active:1
+2017-04-21 16:43:28,503 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:30,192 DEBUG A1 - idle:19
+2017-04-21 16:43:30,193 DEBUG A1 - active:1
+2017-04-21 16:43:30,197 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:30,230 DEBUG A1 - idle:19
+2017-04-21 16:43:30,230 DEBUG A1 - active:1
+2017-04-21 16:43:30,233 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:32,309 DEBUG A1 - idle:19
+2017-04-21 16:43:32,309 DEBUG A1 - active:1
+2017-04-21 16:43:32,313 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:43:32,352 DEBUG A1 - idle:19
+2017-04-21 16:43:32,352 DEBUG A1 - active:1
+2017-04-21 16:43:32,357 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:44:54,604 DEBUG A1 - idle:19
+2017-04-21 16:44:54,604 DEBUG A1 - active:1
+2017-04-21 16:44:54,614 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 16:45:18,843 DEBUG A1 - idle:19
+2017-04-21 16:45:18,843 DEBUG A1 - active:1
+2017-04-21 16:45:18,853 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:18,883 DEBUG A1 - idle:19
+2017-04-21 16:45:18,883 DEBUG A1 - active:1
+2017-04-21 16:45:18,886 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:20,290 DEBUG A1 - idle:19
+2017-04-21 16:45:20,290 DEBUG A1 - active:1
+2017-04-21 16:45:20,294 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:20,325 DEBUG A1 - idle:19
+2017-04-21 16:45:20,326 DEBUG A1 - active:1
+2017-04-21 16:45:20,329 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:24,265 DEBUG A1 - idle:19
+2017-04-21 16:45:24,265 DEBUG A1 - active:1
+2017-04-21 16:45:24,271 DEBUG A1 - Auth
+ps is closed by jdbc4.0
+2017-04-21 16:45:24,453 DEBUG A1 - idle:19
+2017-04-21 16:45:24,453 DEBUG A1 - active:1
+2017-04-21 16:45:24,457 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:24,701 DEBUG A1 - idle:19
+2017-04-21 16:45:24,701 DEBUG A1 - active:1
+2017-04-21 16:45:24,706 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:25,791 DEBUG A1 - idle:19
+2017-04-21 16:45:25,791 DEBUG A1 - active:1
+2017-04-21 16:45:25,795 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:25,872 DEBUG A1 - idle:19
+2017-04-21 16:45:25,872 DEBUG A1 - active:1
+2017-04-21 16:45:25,875 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:27,801 DEBUG A1 - idle:19
+2017-04-21 16:45:27,801 DEBUG A1 - active:1
+2017-04-21 16:45:27,804 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:27,848 DEBUG A1 - idle:19
+2017-04-21 16:45:27,848 DEBUG A1 - active:1
+2017-04-21 16:45:27,851 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:29,505 DEBUG A1 - idle:19
+2017-04-21 16:45:29,506 DEBUG A1 - active:1
+2017-04-21 16:45:29,509 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:29,543 DEBUG A1 - idle:19
+2017-04-21 16:45:29,544 DEBUG A1 - active:1
+2017-04-21 16:45:29,547 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:31,342 DEBUG A1 - idle:19
+2017-04-21 16:45:31,342 DEBUG A1 - active:1
+2017-04-21 16:45:31,346 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:31,383 DEBUG A1 - idle:19
+2017-04-21 16:45:31,383 DEBUG A1 - active:1
+2017-04-21 16:45:31,386 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:32,765 DEBUG A1 - idle:19
+2017-04-21 16:45:32,765 DEBUG A1 - active:1
+2017-04-21 16:45:32,768 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:32,800 DEBUG A1 - idle:19
+2017-04-21 16:45:32,800 DEBUG A1 - active:1
+2017-04-21 16:45:32,804 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:39,932 DEBUG A1 - idle:19
+2017-04-21 16:45:39,932 DEBUG A1 - active:1
+2017-04-21 16:45:39,936 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:45:39,967 DEBUG A1 - idle:19
+2017-04-21 16:45:39,967 DEBUG A1 - active:1
+2017-04-21 16:45:39,970 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-21 16:57:23,615 DEBUG A1 - idle:19
+2017-04-21 16:57:23,615 DEBUG A1 - active:1
+2017-04-21 16:57:23,618 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0
+2017-04-21 16:57:37,948 DEBUG A1 - idle:19
+2017-04-21 16:57:37,948 DEBUG A1 - active:1
+2017-04-21 16:57:37,950 DEBUG A1 - GetDandM
+ps is closed by jdbc4.0

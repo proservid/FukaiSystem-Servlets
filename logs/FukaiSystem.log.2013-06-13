@@ -1,0 +1,16 @@
+2013-06-13 08:40:23,281 DEBUG A1 - idle:19
+2013-06-13 08:40:23,281 DEBUG A1 - active:1
+2013-06-13 08:40:23,515 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2013-06-13 08:40:32,641 DEBUG A1 - idle:19
+2013-06-13 08:40:32,641 DEBUG A1 - active:1
+2013-06-13 08:40:33,141 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2013-06-13 08:40:33,672 DEBUG A1 - idle:19
+2013-06-13 08:40:33,672 DEBUG A1 - active:1
+2013-06-13 08:40:33,985 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2013-06-13 08:40:34,016 DEBUG A1 - idle:19
+2013-06-13 08:40:34,016 DEBUG A1 - active:1
+2013-06-13 08:40:34,110 DEBUG A1 - SetCombo
+ps closed by jdbc4.0

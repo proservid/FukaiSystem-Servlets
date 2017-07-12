@@ -1,0 +1,740 @@
+2017-04-17 14:50:09,216 DEBUG A1 - idle:19
+2017-04-17 14:50:09,219 DEBUG A1 - active:1
+2017-04-17 14:53:20,563 DEBUG A1 - idle:19
+2017-04-17 14:53:20,564 DEBUG A1 - active:1
+2017-04-17 14:56:25,905 DEBUG A1 - idle:19
+2017-04-17 14:56:25,905 DEBUG A1 - active:1
+2017-04-17 15:06:26,778 DEBUG A1 - idle:19
+2017-04-17 15:06:26,779 DEBUG A1 - active:1
+2017-04-17 15:06:26,881 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:08:14,879 DEBUG A1 - idle:19
+2017-04-17 15:08:14,879 DEBUG A1 - active:1
+2017-04-17 15:08:14,882 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:09:12,603 DEBUG A1 - idle:19
+2017-04-17 15:09:12,603 DEBUG A1 - active:1
+2017-04-17 15:09:12,605 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:10:05,543 DEBUG A1 - idle:19
+2017-04-17 15:10:05,544 DEBUG A1 - active:1
+2017-04-17 15:10:05,546 ERROR dbtool - java.lang.ClassCastException: java.util.Date cannot be cast to java.sql.Date
+2017-04-17 15:14:24,103 DEBUG A1 - idle:19
+2017-04-17 15:14:24,103 DEBUG A1 - active:1
+2017-04-17 15:14:24,110 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:08,277 DEBUG A1 - idle:19
+2017-04-17 15:19:08,277 DEBUG A1 - active:1
+2017-04-17 15:19:08,303 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:18,065 DEBUG A1 - idle:19
+2017-04-17 15:19:18,066 DEBUG A1 - active:1
+2017-04-17 15:19:18,068 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:18,866 DEBUG A1 - idle:19
+2017-04-17 15:19:18,866 DEBUG A1 - active:1
+2017-04-17 15:19:18,868 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:20,191 DEBUG A1 - idle:19
+2017-04-17 15:19:20,191 DEBUG A1 - active:1
+2017-04-17 15:19:20,193 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:20,525 DEBUG A1 - idle:19
+2017-04-17 15:19:20,525 DEBUG A1 - active:1
+2017-04-17 15:19:20,527 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:20,805 DEBUG A1 - idle:19
+2017-04-17 15:19:20,805 DEBUG A1 - active:1
+2017-04-17 15:19:20,807 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:21,269 DEBUG A1 - idle:19
+2017-04-17 15:19:21,269 DEBUG A1 - active:1
+2017-04-17 15:19:21,270 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:21,719 DEBUG A1 - idle:19
+2017-04-17 15:19:21,719 DEBUG A1 - active:1
+2017-04-17 15:19:21,721 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:21,999 DEBUG A1 - idle:19
+2017-04-17 15:19:21,999 DEBUG A1 - active:1
+2017-04-17 15:19:22,001 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:22,508 DEBUG A1 - idle:19
+2017-04-17 15:19:22,508 DEBUG A1 - active:1
+2017-04-17 15:19:22,510 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:22,532 DEBUG A1 - idle:19
+2017-04-17 15:19:22,532 DEBUG A1 - active:1
+2017-04-17 15:19:22,534 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:24,070 DEBUG A1 - idle:19
+2017-04-17 15:19:24,070 DEBUG A1 - active:1
+2017-04-17 15:19:24,072 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:24,291 DEBUG A1 - idle:19
+2017-04-17 15:19:24,291 DEBUG A1 - active:1
+2017-04-17 15:19:24,293 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:24,491 DEBUG A1 - idle:19
+2017-04-17 15:19:24,491 DEBUG A1 - active:1
+2017-04-17 15:19:24,492 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:25,470 DEBUG A1 - idle:19
+2017-04-17 15:19:25,470 DEBUG A1 - active:1
+2017-04-17 15:19:25,473 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:25,665 DEBUG A1 - idle:19
+2017-04-17 15:19:25,665 DEBUG A1 - active:1
+2017-04-17 15:19:25,668 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:25,834 DEBUG A1 - idle:19
+2017-04-17 15:19:25,834 DEBUG A1 - active:1
+2017-04-17 15:19:25,835 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:26,503 DEBUG A1 - idle:19
+2017-04-17 15:19:26,503 DEBUG A1 - active:1
+2017-04-17 15:19:26,505 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:26,660 DEBUG A1 - idle:19
+2017-04-17 15:19:26,661 DEBUG A1 - active:1
+2017-04-17 15:19:26,664 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:26,932 DEBUG A1 - idle:19
+2017-04-17 15:19:26,932 DEBUG A1 - active:1
+2017-04-17 15:19:26,936 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:27,232 DEBUG A1 - idle:19
+2017-04-17 15:19:27,233 DEBUG A1 - active:1
+2017-04-17 15:19:27,235 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:27,693 DEBUG A1 - idle:19
+2017-04-17 15:19:27,694 DEBUG A1 - active:1
+2017-04-17 15:19:27,696 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:28,082 DEBUG A1 - idle:19
+2017-04-17 15:19:28,082 DEBUG A1 - active:1
+2017-04-17 15:19:28,084 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:29,413 DEBUG A1 - idle:19
+2017-04-17 15:19:29,413 DEBUG A1 - active:1
+2017-04-17 15:19:29,415 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:29,810 DEBUG A1 - idle:19
+2017-04-17 15:19:29,810 DEBUG A1 - active:1
+2017-04-17 15:19:29,812 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:30,245 DEBUG A1 - idle:19
+2017-04-17 15:19:30,245 DEBUG A1 - active:1
+2017-04-17 15:19:30,248 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:30,640 DEBUG A1 - idle:19
+2017-04-17 15:19:30,640 DEBUG A1 - active:1
+2017-04-17 15:19:30,643 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:31,057 DEBUG A1 - idle:19
+2017-04-17 15:19:31,057 DEBUG A1 - active:1
+2017-04-17 15:19:31,061 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:31,494 DEBUG A1 - idle:19
+2017-04-17 15:19:31,494 DEBUG A1 - active:1
+2017-04-17 15:19:31,496 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:31,988 DEBUG A1 - idle:19
+2017-04-17 15:19:31,988 DEBUG A1 - active:1
+2017-04-17 15:19:31,989 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:32,435 DEBUG A1 - idle:19
+2017-04-17 15:19:32,435 DEBUG A1 - active:1
+2017-04-17 15:19:32,437 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:32,886 DEBUG A1 - idle:19
+2017-04-17 15:19:32,886 DEBUG A1 - active:1
+2017-04-17 15:19:32,905 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:33,314 DEBUG A1 - idle:19
+2017-04-17 15:19:33,314 DEBUG A1 - active:1
+2017-04-17 15:19:33,338 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:34,016 DEBUG A1 - idle:19
+2017-04-17 15:19:34,016 DEBUG A1 - active:1
+2017-04-17 15:19:34,038 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:34,480 DEBUG A1 - idle:19
+2017-04-17 15:19:34,480 DEBUG A1 - active:1
+2017-04-17 15:19:34,502 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:34,970 DEBUG A1 - idle:19
+2017-04-17 15:19:34,970 DEBUG A1 - active:1
+2017-04-17 15:19:34,991 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:35,364 DEBUG A1 - idle:19
+2017-04-17 15:19:35,364 DEBUG A1 - active:1
+2017-04-17 15:19:35,387 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:35,765 DEBUG A1 - idle:19
+2017-04-17 15:19:35,765 DEBUG A1 - active:1
+2017-04-17 15:19:35,786 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:36,068 DEBUG A1 - idle:19
+2017-04-17 15:19:36,068 DEBUG A1 - active:1
+2017-04-17 15:19:36,089 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:36,292 DEBUG A1 - idle:19
+2017-04-17 15:19:36,292 DEBUG A1 - active:1
+2017-04-17 15:19:36,318 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:36,484 DEBUG A1 - idle:19
+2017-04-17 15:19:36,485 DEBUG A1 - active:1
+2017-04-17 15:19:36,504 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:36,676 DEBUG A1 - idle:19
+2017-04-17 15:19:36,676 DEBUG A1 - active:1
+2017-04-17 15:19:36,697 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:36,876 DEBUG A1 - idle:19
+2017-04-17 15:19:36,877 DEBUG A1 - active:1
+2017-04-17 15:19:36,896 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:37,166 DEBUG A1 - idle:19
+2017-04-17 15:19:37,166 DEBUG A1 - active:1
+2017-04-17 15:19:37,184 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:37,432 DEBUG A1 - idle:19
+2017-04-17 15:19:37,432 DEBUG A1 - active:1
+2017-04-17 15:19:37,452 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:38,507 DEBUG A1 - idle:19
+2017-04-17 15:19:38,507 DEBUG A1 - active:1
+2017-04-17 15:19:38,525 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:38,792 DEBUG A1 - idle:19
+2017-04-17 15:19:38,792 DEBUG A1 - active:1
+2017-04-17 15:19:38,810 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:39,446 DEBUG A1 - idle:19
+2017-04-17 15:19:39,446 DEBUG A1 - active:1
+2017-04-17 15:19:39,465 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:39,785 DEBUG A1 - idle:19
+2017-04-17 15:19:39,785 DEBUG A1 - active:1
+2017-04-17 15:19:39,805 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:40,343 DEBUG A1 - idle:19
+2017-04-17 15:19:40,343 DEBUG A1 - active:1
+2017-04-17 15:19:40,361 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:40,742 DEBUG A1 - idle:19
+2017-04-17 15:19:40,742 DEBUG A1 - active:1
+2017-04-17 15:19:40,760 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:40,987 DEBUG A1 - idle:19
+2017-04-17 15:19:40,987 DEBUG A1 - active:1
+2017-04-17 15:19:41,005 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:41,229 DEBUG A1 - idle:19
+2017-04-17 15:19:41,229 DEBUG A1 - active:1
+2017-04-17 15:19:41,249 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:41,696 DEBUG A1 - idle:19
+2017-04-17 15:19:41,696 DEBUG A1 - active:1
+2017-04-17 15:19:41,715 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:42,017 DEBUG A1 - idle:19
+2017-04-17 15:19:42,017 DEBUG A1 - active:1
+2017-04-17 15:19:42,018 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:42,040 DEBUG A1 - idle:19
+2017-04-17 15:19:42,040 DEBUG A1 - active:1
+2017-04-17 15:19:42,059 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:42,484 DEBUG A1 - idle:19
+2017-04-17 15:19:42,484 DEBUG A1 - active:1
+2017-04-17 15:19:42,503 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:42,952 DEBUG A1 - idle:19
+2017-04-17 15:19:42,952 DEBUG A1 - active:1
+2017-04-17 15:19:42,973 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:43,383 DEBUG A1 - idle:19
+2017-04-17 15:19:43,383 DEBUG A1 - active:1
+2017-04-17 15:19:43,400 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:43,823 DEBUG A1 - idle:19
+2017-04-17 15:19:43,823 DEBUG A1 - active:1
+2017-04-17 15:19:43,827 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:44,503 DEBUG A1 - idle:19
+2017-04-17 15:19:44,503 DEBUG A1 - active:1
+2017-04-17 15:19:44,505 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:44,947 DEBUG A1 - idle:19
+2017-04-17 15:19:44,948 DEBUG A1 - active:1
+2017-04-17 15:19:44,949 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:45,365 DEBUG A1 - idle:19
+2017-04-17 15:19:45,365 DEBUG A1 - active:1
+2017-04-17 15:19:45,367 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:45,832 DEBUG A1 - idle:19
+2017-04-17 15:19:45,832 DEBUG A1 - active:1
+2017-04-17 15:19:45,834 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:46,337 DEBUG A1 - idle:19
+2017-04-17 15:19:46,337 DEBUG A1 - active:1
+2017-04-17 15:19:46,339 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:46,851 DEBUG A1 - idle:19
+2017-04-17 15:19:46,851 DEBUG A1 - active:1
+2017-04-17 15:19:46,853 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:54,176 DEBUG A1 - idle:19
+2017-04-17 15:19:54,177 DEBUG A1 - active:1
+2017-04-17 15:19:54,212 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-04-17 15:19:59,012 DEBUG A1 - idle:19
+2017-04-17 15:19:59,012 DEBUG A1 - active:1
+2017-04-17 15:19:59,013 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:59,450 DEBUG A1 - idle:19
+2017-04-17 15:19:59,450 DEBUG A1 - active:1
+2017-04-17 15:19:59,452 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:19:59,917 DEBUG A1 - idle:19
+2017-04-17 15:19:59,917 DEBUG A1 - active:1
+2017-04-17 15:19:59,920 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:00,472 DEBUG A1 - idle:19
+2017-04-17 15:20:00,472 DEBUG A1 - active:1
+2017-04-17 15:20:00,474 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:00,930 DEBUG A1 - idle:19
+2017-04-17 15:20:00,930 DEBUG A1 - active:1
+2017-04-17 15:20:00,932 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:01,443 DEBUG A1 - idle:19
+2017-04-17 15:20:01,443 DEBUG A1 - active:1
+2017-04-17 15:20:01,444 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:01,948 DEBUG A1 - idle:19
+2017-04-17 15:20:01,948 DEBUG A1 - active:1
+2017-04-17 15:20:01,967 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:04,221 DEBUG A1 - idle:19
+2017-04-17 15:20:04,221 DEBUG A1 - active:1
+2017-04-17 15:20:04,241 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:04,773 DEBUG A1 - idle:19
+2017-04-17 15:20:04,773 DEBUG A1 - active:1
+2017-04-17 15:20:04,792 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:05,347 DEBUG A1 - idle:19
+2017-04-17 15:20:05,347 DEBUG A1 - active:1
+2017-04-17 15:20:05,367 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:05,871 DEBUG A1 - idle:19
+2017-04-17 15:20:05,871 DEBUG A1 - active:1
+2017-04-17 15:20:05,891 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:06,751 DEBUG A1 - idle:19
+2017-04-17 15:20:06,751 DEBUG A1 - active:1
+2017-04-17 15:20:06,781 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:07,910 DEBUG A1 - idle:19
+2017-04-17 15:20:07,910 DEBUG A1 - active:1
+2017-04-17 15:20:07,928 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:08,350 DEBUG A1 - idle:19
+2017-04-17 15:20:08,351 DEBUG A1 - active:1
+2017-04-17 15:20:08,352 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:08,377 DEBUG A1 - idle:19
+2017-04-17 15:20:08,377 DEBUG A1 - active:1
+2017-04-17 15:20:08,398 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:09,399 DEBUG A1 - idle:19
+2017-04-17 15:20:09,399 DEBUG A1 - active:1
+2017-04-17 15:20:09,437 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:11,029 DEBUG A1 - idle:19
+2017-04-17 15:20:11,029 DEBUG A1 - active:1
+2017-04-17 15:20:11,048 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:11,585 DEBUG A1 - idle:19
+2017-04-17 15:20:11,585 DEBUG A1 - active:1
+2017-04-17 15:20:11,603 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:11,917 DEBUG A1 - idle:19
+2017-04-17 15:20:11,917 DEBUG A1 - active:1
+2017-04-17 15:20:11,935 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:12,820 DEBUG A1 - idle:19
+2017-04-17 15:20:12,820 DEBUG A1 - active:1
+2017-04-17 15:20:12,839 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:13,430 DEBUG A1 - idle:19
+2017-04-17 15:20:13,430 DEBUG A1 - active:1
+2017-04-17 15:20:13,450 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:13,988 DEBUG A1 - idle:19
+2017-04-17 15:20:13,988 DEBUG A1 - active:1
+2017-04-17 15:20:14,007 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:14,508 DEBUG A1 - idle:19
+2017-04-17 15:20:14,508 DEBUG A1 - active:1
+2017-04-17 15:20:14,526 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:14,993 DEBUG A1 - idle:19
+2017-04-17 15:20:14,993 DEBUG A1 - active:1
+2017-04-17 15:20:15,011 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:15,423 DEBUG A1 - idle:19
+2017-04-17 15:20:15,424 DEBUG A1 - active:1
+2017-04-17 15:20:15,446 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:15,784 DEBUG A1 - idle:19
+2017-04-17 15:20:15,784 DEBUG A1 - active:1
+2017-04-17 15:20:15,802 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:16,657 DEBUG A1 - idle:19
+2017-04-17 15:20:16,657 DEBUG A1 - active:1
+2017-04-17 15:20:16,676 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:16,905 DEBUG A1 - idle:19
+2017-04-17 15:20:16,905 DEBUG A1 - active:1
+2017-04-17 15:20:16,923 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:17,117 DEBUG A1 - idle:19
+2017-04-17 15:20:17,117 DEBUG A1 - active:1
+2017-04-17 15:20:17,141 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:17,633 DEBUG A1 - idle:19
+2017-04-17 15:20:17,634 DEBUG A1 - active:1
+2017-04-17 15:20:17,635 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:17,655 DEBUG A1 - idle:19
+2017-04-17 15:20:17,655 DEBUG A1 - active:1
+2017-04-17 15:20:17,674 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:18,232 DEBUG A1 - idle:19
+2017-04-17 15:20:18,233 DEBUG A1 - active:1
+2017-04-17 15:20:18,252 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:19,949 DEBUG A1 - idle:19
+2017-04-17 15:20:19,949 DEBUG A1 - active:1
+2017-04-17 15:20:19,968 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:20,931 DEBUG A1 - idle:19
+2017-04-17 15:20:20,931 DEBUG A1 - active:1
+2017-04-17 15:20:20,962 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:22,161 DEBUG A1 - idle:19
+2017-04-17 15:20:22,161 DEBUG A1 - active:1
+2017-04-17 15:20:22,180 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:22,582 DEBUG A1 - idle:19
+2017-04-17 15:20:22,582 DEBUG A1 - active:1
+2017-04-17 15:20:22,584 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:22,839 DEBUG A1 - idle:19
+2017-04-17 15:20:22,839 DEBUG A1 - active:1
+2017-04-17 15:20:22,841 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:24,600 DEBUG A1 - idle:19
+2017-04-17 15:20:24,600 DEBUG A1 - active:1
+2017-04-17 15:20:24,601 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:25,054 DEBUG A1 - idle:19
+2017-04-17 15:20:25,054 DEBUG A1 - active:1
+2017-04-17 15:20:25,072 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:25,725 DEBUG A1 - idle:19
+2017-04-17 15:20:25,725 DEBUG A1 - active:1
+2017-04-17 15:20:25,743 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:26,295 DEBUG A1 - idle:19
+2017-04-17 15:20:26,295 DEBUG A1 - active:1
+2017-04-17 15:20:26,319 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:26,793 DEBUG A1 - idle:19
+2017-04-17 15:20:26,793 DEBUG A1 - active:1
+2017-04-17 15:20:26,812 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:27,201 DEBUG A1 - idle:19
+2017-04-17 15:20:27,201 DEBUG A1 - active:1
+2017-04-17 15:20:27,219 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:27,548 DEBUG A1 - idle:19
+2017-04-17 15:20:27,548 DEBUG A1 - active:1
+2017-04-17 15:20:27,567 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:27,754 DEBUG A1 - idle:19
+2017-04-17 15:20:27,755 DEBUG A1 - active:1
+2017-04-17 15:20:27,784 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:27,965 DEBUG A1 - idle:19
+2017-04-17 15:20:27,965 DEBUG A1 - active:1
+2017-04-17 15:20:27,983 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:28,171 DEBUG A1 - idle:19
+2017-04-17 15:20:28,171 DEBUG A1 - active:1
+2017-04-17 15:20:28,190 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:28,355 DEBUG A1 - idle:19
+2017-04-17 15:20:28,355 DEBUG A1 - active:1
+2017-04-17 15:20:28,373 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:28,558 DEBUG A1 - idle:19
+2017-04-17 15:20:28,558 DEBUG A1 - active:1
+2017-04-17 15:20:28,577 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:29,675 DEBUG A1 - idle:19
+2017-04-17 15:20:29,675 DEBUG A1 - active:1
+2017-04-17 15:20:29,694 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:29,884 DEBUG A1 - idle:19
+2017-04-17 15:20:29,884 DEBUG A1 - active:1
+2017-04-17 15:20:29,903 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:30,063 DEBUG A1 - idle:19
+2017-04-17 15:20:30,063 DEBUG A1 - active:1
+2017-04-17 15:20:30,081 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:30,261 DEBUG A1 - idle:19
+2017-04-17 15:20:30,261 DEBUG A1 - active:1
+2017-04-17 15:20:30,292 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:30,633 DEBUG A1 - idle:19
+2017-04-17 15:20:30,633 DEBUG A1 - active:1
+2017-04-17 15:20:30,653 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:30,917 DEBUG A1 - idle:19
+2017-04-17 15:20:30,917 DEBUG A1 - active:1
+2017-04-17 15:20:30,937 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:31,471 DEBUG A1 - idle:19
+2017-04-17 15:20:31,471 DEBUG A1 - active:1
+2017-04-17 15:20:31,474 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:31,492 DEBUG A1 - idle:19
+2017-04-17 15:20:31,493 DEBUG A1 - active:1
+2017-04-17 15:20:31,511 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:31,956 DEBUG A1 - idle:19
+2017-04-17 15:20:31,957 DEBUG A1 - active:1
+2017-04-17 15:20:31,975 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:20:32,252 DEBUG A1 - idle:19
+2017-04-17 15:20:32,252 DEBUG A1 - active:1
+2017-04-17 15:20:32,270 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:21:08,451 DEBUG A1 - idle:19
+2017-04-17 15:21:08,452 DEBUG A1 - active:1
+2017-04-17 15:21:08,453 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:21:09,723 DEBUG A1 - idle:19
+2017-04-17 15:21:09,723 DEBUG A1 - active:1
+2017-04-17 15:21:09,725 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:21:10,238 DEBUG A1 - idle:19
+2017-04-17 15:21:10,238 DEBUG A1 - active:1
+2017-04-17 15:21:10,239 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:21:12,208 DEBUG A1 - idle:19
+2017-04-17 15:21:12,208 DEBUG A1 - active:1
+2017-04-17 15:21:12,210 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:21:13,428 DEBUG A1 - idle:19
+2017-04-17 15:21:13,428 DEBUG A1 - active:1
+2017-04-17 15:21:13,430 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:21:14,271 DEBUG A1 - idle:19
+2017-04-17 15:21:14,271 DEBUG A1 - active:1
+2017-04-17 15:21:14,272 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:21:14,915 DEBUG A1 - idle:19
+2017-04-17 15:21:14,915 DEBUG A1 - active:1
+2017-04-17 15:21:14,916 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:21:15,258 DEBUG A1 - idle:19
+2017-04-17 15:21:15,258 DEBUG A1 - active:1
+2017-04-17 15:21:15,259 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:23:16,594 DEBUG A1 - idle:19
+2017-04-17 15:23:16,594 DEBUG A1 - active:1
+2017-04-17 15:23:16,596 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:23:18,397 DEBUG A1 - idle:19
+2017-04-17 15:23:18,398 DEBUG A1 - active:1
+2017-04-17 15:23:18,399 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 15:23:18,826 DEBUG A1 - idle:19
+2017-04-17 15:23:18,826 DEBUG A1 - active:1
+2017-04-17 15:23:18,827 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:20,087 DEBUG A1 - idle:19
+2017-04-17 16:43:20,087 DEBUG A1 - active:1
+2017-04-17 16:43:20,211 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:25,857 DEBUG A1 - idle:19
+2017-04-17 16:43:25,857 DEBUG A1 - active:1
+2017-04-17 16:43:25,896 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:26,951 DEBUG A1 - idle:19
+2017-04-17 16:43:26,951 DEBUG A1 - active:1
+2017-04-17 16:43:26,970 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:27,612 DEBUG A1 - idle:19
+2017-04-17 16:43:27,612 DEBUG A1 - active:1
+2017-04-17 16:43:27,632 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:28,174 DEBUG A1 - idle:19
+2017-04-17 16:43:28,174 DEBUG A1 - active:1
+2017-04-17 16:43:28,194 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:28,683 DEBUG A1 - idle:19
+2017-04-17 16:43:28,683 DEBUG A1 - active:1
+2017-04-17 16:43:28,705 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:29,150 DEBUG A1 - idle:19
+2017-04-17 16:43:29,150 DEBUG A1 - active:1
+2017-04-17 16:43:29,175 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:29,534 DEBUG A1 - idle:19
+2017-04-17 16:43:29,535 DEBUG A1 - active:1
+2017-04-17 16:43:29,560 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:29,884 DEBUG A1 - idle:19
+2017-04-17 16:43:29,885 DEBUG A1 - active:1
+2017-04-17 16:43:29,905 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:30,165 DEBUG A1 - idle:19
+2017-04-17 16:43:30,165 DEBUG A1 - active:1
+2017-04-17 16:43:30,197 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:30,354 DEBUG A1 - idle:19
+2017-04-17 16:43:30,354 DEBUG A1 - active:1
+2017-04-17 16:43:30,373 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:30,564 DEBUG A1 - idle:19
+2017-04-17 16:43:30,564 DEBUG A1 - active:1
+2017-04-17 16:43:30,584 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:30,761 DEBUG A1 - idle:19
+2017-04-17 16:43:30,761 DEBUG A1 - active:1
+2017-04-17 16:43:30,781 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:31,150 DEBUG A1 - idle:19
+2017-04-17 16:43:31,150 DEBUG A1 - active:1
+2017-04-17 16:43:31,174 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:31,350 DEBUG A1 - idle:19
+2017-04-17 16:43:31,350 DEBUG A1 - active:1
+2017-04-17 16:43:31,371 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:31,560 DEBUG A1 - idle:19
+2017-04-17 16:43:31,560 DEBUG A1 - active:1
+2017-04-17 16:43:31,587 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:31,781 DEBUG A1 - idle:19
+2017-04-17 16:43:31,781 DEBUG A1 - active:1
+2017-04-17 16:43:31,815 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:31,988 DEBUG A1 - idle:19
+2017-04-17 16:43:31,988 DEBUG A1 - active:1
+2017-04-17 16:43:32,009 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:32,184 DEBUG A1 - idle:19
+2017-04-17 16:43:32,184 DEBUG A1 - active:1
+2017-04-17 16:43:32,209 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:32,405 DEBUG A1 - idle:19
+2017-04-17 16:43:32,405 DEBUG A1 - active:1
+2017-04-17 16:43:32,426 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:32,617 DEBUG A1 - idle:19
+2017-04-17 16:43:32,617 DEBUG A1 - active:1
+2017-04-17 16:43:32,637 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:32,844 DEBUG A1 - idle:19
+2017-04-17 16:43:32,844 DEBUG A1 - active:1
+2017-04-17 16:43:32,863 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:33,045 DEBUG A1 - idle:19
+2017-04-17 16:43:33,045 DEBUG A1 - active:1
+2017-04-17 16:43:33,065 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:33,203 DEBUG A1 - idle:19
+2017-04-17 16:43:33,203 DEBUG A1 - active:1
+2017-04-17 16:43:33,231 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:33,426 DEBUG A1 - idle:19
+2017-04-17 16:43:33,426 DEBUG A1 - active:1
+2017-04-17 16:43:33,449 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:34,668 DEBUG A1 - idle:19
+2017-04-17 16:43:34,668 DEBUG A1 - active:1
+2017-04-17 16:43:34,687 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:35,214 DEBUG A1 - idle:19
+2017-04-17 16:43:35,214 DEBUG A1 - active:1
+2017-04-17 16:43:35,233 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:37,295 DEBUG A1 - idle:19
+2017-04-17 16:43:37,295 DEBUG A1 - active:1
+2017-04-17 16:43:37,297 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:38,046 DEBUG A1 - idle:19
+2017-04-17 16:43:38,046 DEBUG A1 - active:1
+2017-04-17 16:43:38,048 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:38,303 DEBUG A1 - idle:19
+2017-04-17 16:43:38,303 DEBUG A1 - active:1
+2017-04-17 16:43:38,305 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:38,615 DEBUG A1 - idle:19
+2017-04-17 16:43:38,615 DEBUG A1 - active:1
+2017-04-17 16:43:38,616 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:38,866 DEBUG A1 - idle:19
+2017-04-17 16:43:38,866 DEBUG A1 - active:1
+2017-04-17 16:43:38,869 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:39,227 DEBUG A1 - idle:19
+2017-04-17 16:43:39,227 DEBUG A1 - active:1
+2017-04-17 16:43:39,228 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:39,492 DEBUG A1 - idle:19
+2017-04-17 16:43:39,492 DEBUG A1 - active:1
+2017-04-17 16:43:39,494 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:39,742 DEBUG A1 - idle:19
+2017-04-17 16:43:39,742 DEBUG A1 - active:1
+2017-04-17 16:43:39,743 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:39,953 DEBUG A1 - idle:19
+2017-04-17 16:43:39,953 DEBUG A1 - active:1
+2017-04-17 16:43:39,955 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:39,979 DEBUG A1 - idle:19
+2017-04-17 16:43:39,979 DEBUG A1 - active:1
+2017-04-17 16:43:39,981 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:40,189 DEBUG A1 - idle:19
+2017-04-17 16:43:40,189 DEBUG A1 - active:1
+2017-04-17 16:43:40,190 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:40,413 DEBUG A1 - idle:19
+2017-04-17 16:43:40,413 DEBUG A1 - active:1
+2017-04-17 16:43:40,415 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:40,643 DEBUG A1 - idle:19
+2017-04-17 16:43:40,643 DEBUG A1 - active:1
+2017-04-17 16:43:40,645 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:40,878 DEBUG A1 - idle:19
+2017-04-17 16:43:40,878 DEBUG A1 - active:1
+2017-04-17 16:43:40,879 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:41,174 DEBUG A1 - idle:19
+2017-04-17 16:43:41,174 DEBUG A1 - active:1
+2017-04-17 16:43:41,176 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:47,047 DEBUG A1 - idle:19
+2017-04-17 16:43:47,047 DEBUG A1 - active:1
+2017-04-17 16:43:47,049 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:49,733 DEBUG A1 - idle:19
+2017-04-17 16:43:49,733 DEBUG A1 - active:1
+2017-04-17 16:43:49,735 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:50,407 DEBUG A1 - idle:19
+2017-04-17 16:43:50,407 DEBUG A1 - active:1
+2017-04-17 16:43:50,409 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:51,306 DEBUG A1 - idle:19
+2017-04-17 16:43:51,306 DEBUG A1 - active:1
+2017-04-17 16:43:51,325 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:51,992 DEBUG A1 - idle:19
+2017-04-17 16:43:51,992 DEBUG A1 - active:1
+2017-04-17 16:43:52,011 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:43:52,699 DEBUG A1 - idle:19
+2017-04-17 16:43:52,699 DEBUG A1 - active:1
+2017-04-17 16:43:52,720 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:45:30,203 DEBUG A1 - idle:19
+2017-04-17 16:45:30,204 DEBUG A1 - active:1
+2017-04-17 16:45:30,223 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:45:31,624 DEBUG A1 - idle:19
+2017-04-17 16:45:31,624 DEBUG A1 - active:1
+2017-04-17 16:45:31,643 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:45:45,710 DEBUG A1 - idle:19
+2017-04-17 16:45:45,710 DEBUG A1 - active:1
+2017-04-17 16:45:45,729 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:45:48,906 DEBUG A1 - idle:19
+2017-04-17 16:45:48,906 DEBUG A1 - active:1
+2017-04-17 16:45:48,926 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:46:01,513 DEBUG A1 - idle:19
+2017-04-17 16:46:01,513 DEBUG A1 - active:1
+2017-04-17 16:46:01,548 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:46:54,165 DEBUG A1 - idle:19
+2017-04-17 16:46:54,165 DEBUG A1 - active:1
+2017-04-17 16:46:54,184 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:03,528 DEBUG A1 - idle:19
+2017-04-17 16:47:03,528 DEBUG A1 - active:1
+2017-04-17 16:47:03,530 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:05,941 DEBUG A1 - idle:19
+2017-04-17 16:47:05,942 DEBUG A1 - active:1
+2017-04-17 16:47:05,944 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:07,737 DEBUG A1 - idle:19
+2017-04-17 16:47:07,738 DEBUG A1 - active:1
+2017-04-17 16:47:07,739 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:08,954 DEBUG A1 - idle:19
+2017-04-17 16:47:08,954 DEBUG A1 - active:1
+2017-04-17 16:47:08,956 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:09,491 DEBUG A1 - idle:19
+2017-04-17 16:47:09,491 DEBUG A1 - active:1
+2017-04-17 16:47:09,492 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:10,128 DEBUG A1 - idle:19
+2017-04-17 16:47:10,128 DEBUG A1 - active:1
+2017-04-17 16:47:10,147 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:11,156 DEBUG A1 - idle:19
+2017-04-17 16:47:11,156 DEBUG A1 - active:1
+2017-04-17 16:47:11,176 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:11,972 DEBUG A1 - idle:19
+2017-04-17 16:47:11,972 DEBUG A1 - active:1
+2017-04-17 16:47:11,991 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:18,392 DEBUG A1 - idle:19
+2017-04-17 16:47:18,393 DEBUG A1 - active:1
+2017-04-17 16:47:18,412 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:19,408 DEBUG A1 - idle:19
+2017-04-17 16:47:19,408 DEBUG A1 - active:1
+2017-04-17 16:47:19,428 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:21,863 DEBUG A1 - idle:19
+2017-04-17 16:47:21,863 DEBUG A1 - active:1
+2017-04-17 16:47:21,864 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:47:21,886 DEBUG A1 - idle:19
+2017-04-17 16:47:21,886 DEBUG A1 - active:1
+2017-04-17 16:47:21,904 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:48:09,250 DEBUG A1 - idle:19
+2017-04-17 16:48:09,250 DEBUG A1 - active:1
+2017-04-17 16:48:09,281 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:48:16,081 DEBUG A1 - idle:19
+2017-04-17 16:48:16,081 DEBUG A1 - active:1
+2017-04-17 16:48:16,111 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:48:16,801 DEBUG A1 - idle:19
+2017-04-17 16:48:16,801 DEBUG A1 - active:1
+2017-04-17 16:48:16,820 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:48:17,603 DEBUG A1 - idle:19
+2017-04-17 16:48:17,603 DEBUG A1 - active:1
+2017-04-17 16:48:17,623 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:48:18,638 DEBUG A1 - idle:19
+2017-04-17 16:48:18,638 DEBUG A1 - active:1
+2017-04-17 16:48:18,639 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:48:18,659 DEBUG A1 - idle:19
+2017-04-17 16:48:18,660 DEBUG A1 - active:1
+2017-04-17 16:48:18,678 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:48:19,052 DEBUG A1 - idle:19
+2017-04-17 16:48:19,052 DEBUG A1 - active:1
+2017-04-17 16:48:19,071 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:48:19,580 DEBUG A1 - idle:19
+2017-04-17 16:48:19,580 DEBUG A1 - active:1
+2017-04-17 16:48:19,599 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:48:20,698 DEBUG A1 - idle:19
+2017-04-17 16:48:20,698 DEBUG A1 - active:1
+2017-04-17 16:48:20,716 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:51:36,334 DEBUG A1 - idle:19
+2017-04-17 16:51:36,334 DEBUG A1 - active:1
+2017-04-17 16:51:36,355 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:51:41,391 DEBUG A1 - idle:19
+2017-04-17 16:51:41,392 DEBUG A1 - active:1
+2017-04-17 16:51:41,439 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:51:50,271 DEBUG A1 - idle:19
+2017-04-17 16:51:50,271 DEBUG A1 - active:1
+2017-04-17 16:51:50,273 ERROR dbtool - GetElements3 com.microsoft.sqlserver.jdbc.SQLServerException: メソッド executeUpdate() は、PreparedStatement または CallableStatement で引数を取れません。
+2017-04-17 16:51:50,274 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:52:55,739 DEBUG A1 - idle:19
+2017-04-17 16:52:55,739 DEBUG A1 - active:1
+2017-04-17 16:52:55,760 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:52:57,877 DEBUG A1 - idle:19
+2017-04-17 16:52:57,877 DEBUG A1 - active:1
+2017-04-17 16:52:57,878 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:52:57,899 DEBUG A1 - idle:19
+2017-04-17 16:52:57,899 DEBUG A1 - active:1
+2017-04-17 16:52:57,918 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:00,274 DEBUG A1 - idle:19
+2017-04-17 16:53:00,275 DEBUG A1 - active:1
+2017-04-17 16:53:00,293 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:00,967 DEBUG A1 - idle:19
+2017-04-17 16:53:00,968 DEBUG A1 - active:1
+2017-04-17 16:53:00,986 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:01,613 DEBUG A1 - idle:19
+2017-04-17 16:53:01,613 DEBUG A1 - active:1
+2017-04-17 16:53:01,631 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:02,164 DEBUG A1 - idle:19
+2017-04-17 16:53:02,164 DEBUG A1 - active:1
+2017-04-17 16:53:02,186 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:03,695 DEBUG A1 - idle:19
+2017-04-17 16:53:03,695 DEBUG A1 - active:1
+2017-04-17 16:53:03,778 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:13,777 DEBUG A1 - idle:19
+2017-04-17 16:53:13,777 DEBUG A1 - active:1
+2017-04-17 16:53:13,798 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:15,156 DEBUG A1 - idle:19
+2017-04-17 16:53:15,156 DEBUG A1 - active:1
+2017-04-17 16:53:15,174 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:15,830 DEBUG A1 - idle:19
+2017-04-17 16:53:15,830 DEBUG A1 - active:1
+2017-04-17 16:53:15,848 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:16,483 DEBUG A1 - idle:19
+2017-04-17 16:53:16,483 DEBUG A1 - active:1
+2017-04-17 16:53:16,502 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:17,635 DEBUG A1 - idle:19
+2017-04-17 16:53:17,636 DEBUG A1 - active:1
+2017-04-17 16:53:17,654 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:21,352 DEBUG A1 - idle:19
+2017-04-17 16:53:21,352 DEBUG A1 - active:1
+2017-04-17 16:53:21,354 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:21,377 DEBUG A1 - idle:19
+2017-04-17 16:53:21,377 DEBUG A1 - active:1
+2017-04-17 16:53:21,396 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:23,953 DEBUG A1 - idle:19
+2017-04-17 16:53:23,953 DEBUG A1 - active:1
+2017-04-17 16:53:23,971 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:25,122 DEBUG A1 - idle:19
+2017-04-17 16:53:25,122 DEBUG A1 - active:1
+2017-04-17 16:53:25,142 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:53:25,595 DEBUG A1 - idle:19
+2017-04-17 16:53:25,595 DEBUG A1 - active:1
+2017-04-17 16:53:25,613 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:56:15,771 DEBUG A1 - idle:19
+2017-04-17 16:56:15,771 DEBUG A1 - active:1
+2017-04-17 16:56:15,791 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:56:16,312 DEBUG A1 - idle:19
+2017-04-17 16:56:16,312 DEBUG A1 - active:1
+2017-04-17 16:56:16,330 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:56:16,836 DEBUG A1 - idle:19
+2017-04-17 16:56:16,836 DEBUG A1 - active:1
+2017-04-17 16:56:16,854 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:56:20,045 DEBUG A1 - idle:19
+2017-04-17 16:56:20,046 DEBUG A1 - active:1
+2017-04-17 16:56:20,064 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:56:22,866 DEBUG A1 - idle:19
+2017-04-17 16:56:22,866 DEBUG A1 - active:1
+2017-04-17 16:56:22,891 DEBUG dbtool - ps is closed by jdbc4.0
+2017-04-17 16:56:25,896 DEBUG A1 - idle:19
+2017-04-17 16:56:25,896 DEBUG A1 - active:1
+2017-04-17 16:56:25,966 DEBUG dbtool - ps is closed by jdbc4.0
