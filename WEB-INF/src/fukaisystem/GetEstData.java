@@ -75,7 +75,6 @@ public class GetEstData extends GenericServlet {
 				}
 				query.append(") order by å©êœêeID,ID");
 				ps = c.prepareStatement(query.toString());
-				System.out.println(query.toString());
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					Vector<Object> line = new Vector<Object>();

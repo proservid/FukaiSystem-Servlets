@@ -56,11 +56,11 @@ package fukaisystem.group;
 						dept.put(rs.getString("部署CD"), rs.getString("部署名"));
 						name.put(rs.getString("部署CD"), new Vector<Vector>());
 					}
-					ps = c.prepareStatement("SELECT 管理ID,CD,姓,名 ,RIGHT('00' + CONVERT(varchar, 所属部署CD), 3) AS 部署CD,在籍FLG FROM M_人員 WHERE CD>0 ORDER BY 所属部署CD,表示CD");
+					ps = c.prepareStatement("SELECT CD,姓,名 ,RIGHT('00' + CONVERT(varchar, 所属部署CD), 3) AS 部署CD,在籍FLG FROM M_人員 WHERE CD>0 ORDER BY 所属部署CD,表示CD");
 					rs = ps.executeQuery();
 					while(rs.next()) {
 						Vector v = new Vector();
-						v.add(rs.getInt("管理ID"));
+						//v.add(rs.getInt("管理ID"));
 						v.add(rs.getInt("CD"));
 						v.add(rs.getString("姓"));
 						v.add(rs.getString("名"));

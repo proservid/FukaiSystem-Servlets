@@ -66,7 +66,7 @@ public class ChildSearch extends GenericServlet {
 			}
 			try {
 				StringBuilder query = new StringBuilder(
-					"select " +
+					"select top 30000 " +
 					"e.見積親ID," +
 					"p.製作親ID," +
 					"s.売上親ID," +
@@ -99,7 +99,6 @@ public class ChildSearch extends GenericServlet {
 					"p.出荷年月日," +
 					"p.検収年月日" +
 				 " from ");
-				System.out.println("type:"+type);
 //////////////////////////////////////////////////////////////////////////	
 				String col = "名称";
 				if(type == 3) col = "品名";
@@ -145,7 +144,6 @@ public class ChildSearch extends GenericServlet {
 							" where p.得意先CD is not null");
 						break;
 				}
-System.out.println(query.toString());
 				ps = c.prepareStatement(query.toString());
 				for(int i = 0; i < count ; i++) {
 					ps.setString(i + 1, "%" + words[i] + "%");
@@ -179,7 +177,7 @@ System.out.println(query.toString());
 					v2.add(rs.getString("納入先名"));
 					v2.add(rs.getString("案件名"));
 
-					v2.add(rs.getDate("提出年月日"));
+					v2.add(rs.getDate("見積年月日"));
 					v2.add(rs.getInt("見積金額"));
 					v2.add(rs.getString("受注番号"));
 					v2.add(rs.getDate("受注年月日"));

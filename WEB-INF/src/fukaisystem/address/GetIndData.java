@@ -86,7 +86,6 @@ public class GetIndData extends GenericServlet {
 					" left outer join M_Žs‹æ’¬‘º coc on copc.“s“¹•{Œ§CD=coc.“s“¹•{Œ§CD and copc.Žs‹æ’¬‘ºCD=coc.CD" +
 					" where ind.CD=?");
 				ps.setString(1, input);
-				System.out.println("input:"+input);
 				rs = ps.executeQuery();
 				if(rs.next()) {
 					CorpDTO corpDTO = null;

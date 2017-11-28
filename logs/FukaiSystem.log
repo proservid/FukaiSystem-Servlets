@@ -1,54 +1,216 @@
-2017-07-11 08:24:51,187 DEBUG A1 - idle:19
-2017-07-11 08:24:51,203 DEBUG A1 - active:1
-2017-07-11 08:24:51,281 DEBUG A1 - Auth
+2017-11-28 09:46:29,844 DEBUG A1 - idle:19
+2017-11-28 09:46:29,846 DEBUG A1 - active:1
+2017-11-28 09:46:30,690 DEBUG A1 - Search
 ps is closed by jdbc4.0
-2017-07-11 08:24:51,577 DEBUG A1 - idle:19
-2017-07-11 08:24:51,577 DEBUG A1 - active:1
-2017-07-11 08:24:51,686 DEBUG A1 - GetSchedule
+2017-11-28 10:15:20,258 DEBUG A1 - idle:19
+2017-11-28 10:15:20,259 DEBUG A1 - active:1
+2017-11-28 10:15:20,630 DEBUG A1 - Search
 ps is closed by jdbc4.0
-2017-07-11 08:24:51,811 DEBUG A1 - idle:19
-2017-07-11 08:24:51,811 DEBUG A1 - active:1
-2017-07-11 08:24:52,014 DEBUG A1 - idle:18
-2017-07-11 08:24:52,014 DEBUG A1 - active:2
-2017-07-11 08:24:52,030 DEBUG A1 - GetSchedule
+2017-11-28 11:36:59,009 DEBUG A1 - idle:19
+2017-11-28 11:36:59,009 DEBUG A1 - active:1
+2017-11-28 11:36:59,275 DEBUG A1 - Init
 ps is closed by jdbc4.0
-2017-07-11 08:24:52,076 DEBUG A1 - Init
+2017-11-28 11:37:09,482 DEBUG A1 - idle:19
+2017-11-28 11:37:09,483 DEBUG A1 - active:1
+2017-11-28 11:37:10,116 DEBUG A1 - Search
 ps is closed by jdbc4.0
-2017-07-11 08:25:07,240 DEBUG A1 - idle:19
-2017-07-11 08:25:07,240 DEBUG A1 - active:1
-2017-07-11 08:25:07,255 DEBUG A1 - GetSchedule
+2017-11-28 11:37:42,508 DEBUG A1 - idle:19
+2017-11-28 11:37:42,508 DEBUG A1 - active:1
+2017-11-28 11:37:44,078 DEBUG A1 - Search
 ps is closed by jdbc4.0
-2017-07-11 08:25:07,349 DEBUG A1 - idle:19
-2017-07-11 08:25:07,349 DEBUG A1 - active:1
-2017-07-11 08:25:07,364 DEBUG A1 - GetSchedule
+2017-11-28 11:39:24,614 DEBUG A1 - idle:19
+2017-11-28 11:39:24,614 DEBUG A1 - active:1
+2017-11-28 11:39:25,682 DEBUG A1 - Search
 ps is closed by jdbc4.0
-2017-07-11 08:26:04,136 DEBUG A1 - idle:19
-2017-07-11 08:26:04,136 DEBUG A1 - active:1
-2017-07-11 08:26:05,072 DEBUG A1 - Search
+2017-11-28 11:43:18,669 DEBUG A1 - idle:19
+2017-11-28 11:43:18,669 DEBUG A1 - active:1
+2017-11-28 11:43:18,810 DEBUG A1 - GetSchedule
 ps is closed by jdbc4.0
-2017-07-11 13:00:51,401 DEBUG A1 - idle:19
-2017-07-11 13:00:51,401 DEBUG A1 - active:1
-2017-07-11 13:00:51,442 DEBUG A1 - Init
+2017-11-28 11:53:24,244 DEBUG A1 - idle:19
+2017-11-28 11:53:24,244 DEBUG A1 - active:1
+2017-11-28 11:53:24,251 DEBUG A1 - GetSchedule
 ps is closed by jdbc4.0
-2017-07-11 13:09:52,064 DEBUG A1 - idle:19
-2017-07-11 13:09:52,064 DEBUG A1 - active:1
-2017-07-11 13:09:52,095 DEBUG A1 - GetSchedule
+2017-11-28 11:53:25,471 DEBUG A1 - idle:19
+2017-11-28 11:53:25,471 DEBUG A1 - active:1
+2017-11-28 11:53:25,476 DEBUG A1 - GetSchedule
 ps is closed by jdbc4.0
-2017-07-11 13:24:52,005 DEBUG A1 - idle:19
-2017-07-11 13:24:52,005 DEBUG A1 - active:1
-2017-07-11 13:24:52,011 DEBUG A1 - GetSchedule
+2017-11-28 11:53:26,315 DEBUG A1 - idle:19
+2017-11-28 11:53:26,315 DEBUG A1 - active:1
+2017-11-28 11:53:26,320 DEBUG A1 - GetSchedule
 ps is closed by jdbc4.0
-2017-07-11 13:34:42,809 DEBUG A1 - idle:19
-2017-07-11 13:34:42,809 DEBUG A1 - active:1
-2017-07-11 13:34:42,809 DEBUG dbtool - s
-2017-07-11 13:34:42,810  WARN dbtool - Query was sent "s"
-2017-07-11 13:34:42,812 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
-2017-07-11 13:34:43,573 DEBUG A1 - idle:19
-2017-07-11 13:34:43,573 DEBUG A1 - active:1
-2017-07-11 13:34:43,574 DEBUG dbtool - s
-2017-07-11 13:34:43,574  WARN dbtool - Query was sent "s"
-2017-07-11 13:34:43,574 ERROR dbtool - [2] com.microsoft.sqlserver.jdbc.SQLServerException: ストアド プロシージャ 's' が見つかりませんでした。
-2017-07-11 13:35:48,909 DEBUG A1 - idle:19
-2017-07-11 13:35:48,909 DEBUG A1 - active:1
-2017-07-11 13:35:48,957 DEBUG A1 - Init
+2017-11-28 11:53:32,301 DEBUG A1 - idle:19
+2017-11-28 11:53:32,301 DEBUG A1 - active:1
+2017-11-28 11:53:32,306 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:32,487 DEBUG A1 - idle:19
+2017-11-28 11:53:32,488 DEBUG A1 - active:1
+2017-11-28 11:53:32,493 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:33,040 DEBUG A1 - idle:19
+2017-11-28 11:53:33,040 DEBUG A1 - active:1
+2017-11-28 11:53:33,045 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:35,764 DEBUG A1 - idle:19
+2017-11-28 11:53:35,764 DEBUG A1 - active:1
+2017-11-28 11:53:35,769 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:37,412 DEBUG A1 - idle:19
+2017-11-28 11:53:37,412 DEBUG A1 - active:1
+2017-11-28 11:53:37,418 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:41,001 DEBUG A1 - idle:19
+2017-11-28 11:53:41,001 DEBUG A1 - active:1
+2017-11-28 11:53:41,006 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:41,411 DEBUG A1 - idle:19
+2017-11-28 11:53:41,411 DEBUG A1 - active:1
+2017-11-28 11:53:41,416 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:43,216 DEBUG A1 - idle:19
+2017-11-28 11:53:43,216 DEBUG A1 - active:1
+2017-11-28 11:53:43,220 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:43,416 DEBUG A1 - idle:19
+2017-11-28 11:53:43,417 DEBUG A1 - active:1
+2017-11-28 11:53:43,422 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:43,655 DEBUG A1 - idle:19
+2017-11-28 11:53:43,655 DEBUG A1 - active:1
+2017-11-28 11:53:43,659 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:43,915 DEBUG A1 - idle:19
+2017-11-28 11:53:43,915 DEBUG A1 - active:1
+2017-11-28 11:53:43,920 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:44,182 DEBUG A1 - idle:19
+2017-11-28 11:53:44,182 DEBUG A1 - active:1
+2017-11-28 11:53:44,187 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:47,079 DEBUG A1 - idle:19
+2017-11-28 11:53:47,080 DEBUG A1 - active:1
+2017-11-28 11:53:47,084 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:53:47,296 DEBUG A1 - idle:19
+2017-11-28 11:53:47,296 DEBUG A1 - active:1
+2017-11-28 11:53:47,301 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 11:58:18,666 DEBUG A1 - idle:19
+2017-11-28 11:58:18,666 DEBUG A1 - active:1
+2017-11-28 11:58:18,672 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 12:13:18,674 DEBUG A1 - idle:19
+2017-11-28 12:13:18,674 DEBUG A1 - active:1
+2017-11-28 12:13:18,682 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 12:28:18,681 DEBUG A1 - idle:19
+2017-11-28 12:28:18,681 DEBUG A1 - active:1
+2017-11-28 12:28:18,689 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 12:43:18,667 DEBUG A1 - idle:19
+2017-11-28 12:43:18,668 DEBUG A1 - active:1
+2017-11-28 12:43:18,674 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2017-11-28 12:55:16,997 DEBUG A1 - idle:19
+2017-11-28 12:55:16,997 DEBUG A1 - active:1
+2017-11-28 12:55:17,461 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-11-28 12:59:03,588 DEBUG A1 - idle:19
+2017-11-28 12:59:03,588 DEBUG A1 - active:1
+2017-11-28 12:59:03,679 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-11-28 13:00:43,979 DEBUG A1 - idle:19
+2017-11-28 13:00:43,980 DEBUG A1 - active:1
+2017-11-28 13:00:45,003 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-11-28 13:00:55,145 DEBUG A1 - idle:19
+2017-11-28 13:00:55,145 DEBUG A1 - active:1
+2017-11-28 13:00:56,275 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-11-28 13:03:19,135 DEBUG A1 - idle:19
+2017-11-28 13:03:19,135 DEBUG A1 - active:1
+2017-11-28 13:03:19,250 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2017-11-28 13:03:19,287 DEBUG A1 - idle:19
+2017-11-28 13:03:19,288 DEBUG A1 - active:1
+2017-11-28 13:03:19,317 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2017-11-28 13:03:32,856 DEBUG A1 - idle:19
+2017-11-28 13:03:32,856 DEBUG A1 - active:1
+2017-11-28 13:03:32,885 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2017-11-28 13:03:32,909 DEBUG A1 - idle:19
+2017-11-28 13:03:32,909 DEBUG A1 - active:1
+2017-11-28 13:03:32,916 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2017-11-28 13:03:48,210 DEBUG A1 - idle:19
+2017-11-28 13:03:48,210 DEBUG A1 - active:1
+2017-11-28 13:03:48,239 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2017-11-28 13:03:48,262 DEBUG A1 - idle:19
+2017-11-28 13:03:48,262 DEBUG A1 - active:1
+2017-11-28 13:03:48,270 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2017-11-28 13:04:36,007 DEBUG A1 - idle:19
+2017-11-28 13:04:36,007 DEBUG A1 - active:1
+2017-11-28 13:04:36,036 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2017-11-28 13:04:36,062 DEBUG A1 - idle:19
+2017-11-28 13:04:36,062 DEBUG A1 - active:1
+2017-11-28 13:04:36,073 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2017-11-28 13:08:35,345 DEBUG A1 - idle:19
+2017-11-28 13:08:35,345 DEBUG A1 - active:1
+2017-11-28 13:08:35,376 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2017-11-28 13:08:35,398 DEBUG A1 - idle:19
+2017-11-28 13:08:35,398 DEBUG A1 - active:1
+2017-11-28 13:08:35,406 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2017-11-28 13:08:54,065 DEBUG A1 - idle:19
+2017-11-28 13:08:54,065 DEBUG A1 - active:1
+2017-11-28 13:08:54,563 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-11-28 13:09:02,424 DEBUG A1 - idle:19
+2017-11-28 13:09:02,425 DEBUG A1 - active:1
+2017-11-28 13:09:03,514 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-11-28 13:09:11,045 DEBUG A1 - idle:19
+2017-11-28 13:09:11,045 DEBUG A1 - active:1
+2017-11-28 13:09:11,108 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2017-11-28 13:09:11,129 DEBUG A1 - idle:19
+2017-11-28 13:09:11,129 DEBUG A1 - active:1
+2017-11-28 13:09:11,136 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2017-11-28 13:09:12,233 DEBUG A1 - idle:19
+2017-11-28 13:09:12,233 DEBUG A1 - active:1
+2017-11-28 13:09:12,264 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2017-11-28 13:09:12,288 DEBUG A1 - idle:19
+2017-11-28 13:09:12,288 DEBUG A1 - active:1
+2017-11-28 13:09:12,294 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2017-11-28 13:11:15,960 DEBUG A1 - idle:19
+2017-11-28 13:11:15,960 DEBUG A1 - active:1
+2017-11-28 13:11:15,993 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2017-11-28 13:11:16,015 DEBUG A1 - idle:19
+2017-11-28 13:11:16,015 DEBUG A1 - active:1
+2017-11-28 13:11:16,021 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2017-11-28 14:19:17,054 DEBUG A1 - idle:19
+2017-11-28 14:19:17,054 DEBUG A1 - active:1
+2017-11-28 14:19:17,110 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2017-11-28 14:19:51,576 DEBUG A1 - idle:19
+2017-11-28 14:19:51,576 DEBUG A1 - active:1
+2017-11-28 14:19:53,202 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-11-28 14:20:35,336 DEBUG A1 - idle:19
+2017-11-28 14:20:35,336 DEBUG A1 - active:1
+2017-11-28 14:20:35,635 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2017-11-28 14:20:51,086 DEBUG A1 - idle:19
+2017-11-28 14:20:51,086 DEBUG A1 - active:1
+2017-11-28 14:20:52,096 DEBUG A1 - Search
 ps is closed by jdbc4.0

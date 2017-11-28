@@ -73,7 +73,7 @@ public class HistorySearch extends GenericServlet {
 				isStock = historyDTO.getBool(1);
 				StringBuilder query = new StringBuilder("");
 				if(isStock) {
-					query.append("select *,case when 数量=1 then 金額*残数 else 単価*残数 end as 金額 from (" +
+					query.append("select top 30000 *,case when 数量=1 then 金額*残数 else 単価*残数 end as 金額 from (" +
 							"	select sc.在庫親ID,sc.ID,sp.仕入先CD,'在庫' as 種別,sc.大分類CD,sc.中分類CD,sc.小分類CD,材料品名,注文年月日,入庫年月日,指定納期," +
 							"	注文期,注文番号,注文枝番,sc.数量,sc.数量-case when dis.使用数 is null then 0 else dis.使用数 end as 残数," +
 							"	sc.数量単位CD,sc.重量長さ,sc.単価,sc.金額,伝票番号,納品書番号,sc.備考,摘要," +
@@ -89,7 +89,7 @@ public class HistorySearch extends GenericServlet {
 							"	LEFT OUTER JOIN (select 在庫親ID,在庫子ID,sum(数量) as 使用数 from T_出庫_子 group by 在庫親ID,在庫子ID) dis" +
 							"	on sc.在庫親ID=dis.在庫親ID and sc.ID=dis.在庫子ID" +
 							"	where sc.大分類CD>=1 and sc.大分類CD<=2 and 注文期>=1000" +
-							"UNION ALL" +
+							" UNION ALL" +
 							"	select p.製作親ID as 在庫親ID,c.ID,p.得意先CD,'在庫' as 種別,99 as 大分類CD,0 as 中分類CD,0 as 小分類CD,名称,発行年月日,完成年月日,納期," +
 							"	製作期,製作番号,製作枝番,c.数量,c.数量-case when d.使用数 is null then 0 else d.使用数 end as 残数," +
 							"	c.数量単位CD,null as 重量,c.単価,c.金額,null as 伝票番号,null as 納品書番号,c.備考,摘要,null as 仕入先名" +
@@ -101,7 +101,7 @@ public class HistorySearch extends GenericServlet {
 							") s");
 				} else {
 					query.append(
-							 "select * from (" +
+							 "select top 30000 * from (" +
 							 "SELECT sc.在庫親ID,sc.ID,sp.仕入先CD,'注文' as 種別,大分類CD,中分類CD,小分類CD,材料品名,注文年月日,入庫年月日,指定納期," +
 							 " 注文期,注文番号,注文枝番,数量,0 as 残数,数量単位CD,重量長さ,単価,金額,伝票番号,納品書番号,sc.備考,摘要," +
 							 " CASE WHEN 種別CD=1 THEN '㈱'+会社名" +
@@ -158,7 +158,6 @@ public class HistorySearch extends GenericServlet {
 						} else {
 							if(i == 0) {
 								String words = historyDTO.getStr(i).replaceAll("　", " ");
-								System.out.println("!"+words.split(" ").length + "!");
 								for(int j = 0; j < words.split(" ").length; j++) {
 									if(j > 0) {
 										if(historyDTO.isAnd()) query.append(" AND ");
@@ -196,11 +195,10 @@ public class HistorySearch extends GenericServlet {
 				}
 				query.append(" order by 注文年月日 desc,種別,ID");
 				ps = c.prepareStatement(query.toString());
-				System.out.println(query.toString());
 				int j = 1;
 				for(int i : strIndex) {
 					if(i == 0) {
-						String words = historyDTO.getStr(i).replaceAll("　", " ");System.out.println("#"+words + "#");
+						String words = historyDTO.getStr(i).replaceAll("　", " ");
 						for(String word : words.split(" ")) {
 							ps.setString(j, "%" + word + "%"); j++;
 						}

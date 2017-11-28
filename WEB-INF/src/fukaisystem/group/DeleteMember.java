@@ -57,7 +57,6 @@ public class DeleteMember extends GenericServlet {
 			try {
 				ps = c.prepareStatement("delete from M_lˆõ where ŠÇ—ID=?");
 				for(int m : delMembers) {
-					System.out.println(m);
 					ps.setInt(1, m);
 					ps.addBatch();
 				}

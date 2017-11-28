@@ -59,7 +59,6 @@ public class GetCountry extends GenericServlet {
 					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
 				}
 			}
-System.out.println(input);
 			try {
 				ps = c.prepareStatement(
 					"select ccTLD,‘Û“d˜b‘”Ô†,‘–¼,‰pŒê–¼," +

@@ -90,7 +90,6 @@ public class GetData extends GenericServlet {
 					Calendar cal = Calendar.getInstance();
 					cal.setTimeInMillis(format.parse(values[0]).getTime());
 					Date current = new Date(cal.getTimeInMillis());
-					//System.out.println(current);
 					cal.add(Calendar.MONTH, 1);
 					Date next = new Date(cal.getTimeInMillis());
 					cal.add(Calendar.DATE, -1);
@@ -123,7 +122,6 @@ public class GetData extends GenericServlet {
 							" FROM V_売上集計ヘッダ" +
 							" WHERE 売上年月日>=? AND 売上年月日<?" +//current,next
 							" GROUP BY 得意先CD) a");
-					System.out.println(query.toString());
 					if(values[2].equals("0")) {//その月の対象社一覧を表示する場合
 						ps = c.prepareStatement(query.toString());
 						ps.setDate(1, current);//月度納入額
@@ -159,8 +157,6 @@ public class GetData extends GenericServlet {
 						while(rs.next()) {
 							for (int k = 0; k < columnCount; k++) {
 								String columnName = metaData.getColumnName(k + 1);
-								System.out.println("a:"+columnName);
-								System.out.println("b:"+rs.getString(columnName));
 								if(dataMap.containsKey(columnName)) dataMap.get(columnName).add(rs.getString(columnName));
 								else {
 									List<String> columnData = new ArrayList<String>();
@@ -239,7 +235,6 @@ public class GetData extends GenericServlet {
 						i++;
 					}
 					ps = c.prepareStatement(query.toString());
-System.out.println(query.toString());
 					int j = 1;
 					for(String id : values) {
 						ps.setString(j, id);

@@ -74,7 +74,6 @@ public class GetAddress extends GenericServlet {
 					" left outer join M_“s“¹•{Œ§ p on pc.“s“¹•{Œ§CD=p.CD" +
 					" left outer join M_s‹æ’¬‘º c on pc.“s“¹•{Œ§CD=c.“s“¹•{Œ§CD and pc.s‹æ’¬‘ºCD=c.CD" +
 					(input.length() == 7 ? " where —X•Ö”Ô†=?" : " where —X•Ö”Ô†+—X•Ö}”Ô=?"));
-				System.out.println("inputzip"+input);
 				ps.setString(1, input);
 				rs = ps.executeQuery();
 				while(rs.next()) {
@@ -86,7 +85,7 @@ public class GetAddress extends GenericServlet {
 					v.add(rs.getString("–‹ÆŠ–¼"));
 					v.add(rs.getString("–‹ÆŠZŠ"));
 					v.add(rs.getString("—X•Ö}”Ô"));
-					output.add(v);System.out.println("v:"+v);
+					output.add(v);
 				}
 				if(output.size() == 0) {
 					Vector<String> v = new Vector<String>();
@@ -110,7 +109,6 @@ public class GetAddress extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			System.out.println("output:"+output);
 			out.writeObject(output);
 			out.writeUTF(err.toString());
 			out.flush();

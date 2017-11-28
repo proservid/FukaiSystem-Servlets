@@ -64,7 +64,6 @@ public class Summary extends GenericServlet {
 
 			Calendar cal = Calendar.getInstance();
 			cal.setTimeInMillis(date.getTime());
-			//System.out.println(current);
 			cal.add(Calendar.MONTH, 1);
 			cal.add(Calendar.DATE, -1);
 			try {

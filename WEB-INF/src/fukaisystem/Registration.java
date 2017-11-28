@@ -215,9 +215,6 @@ MERGE INTO triple AS t
 						         rs = ps.getResultSet();
 						         while (rs.next()) {
 						        	estimateID = rs.getInt(2);
-						            System.out.println("oldId: " + rs.getInt(1) +
-						                               "newId: " + rs.getInt(2) +
-						                               "更新日: " + rs.getTimestamp(3));
 						         }
 						         rs.close();
 						   }
@@ -226,7 +223,6 @@ MERGE INTO triple AS t
 						         if (updateCount == -1) {
 						            break;
 						         }
-						         System.out.println("Update Count: " + updateCount);
 						   }
 						   isResultSet = ps.getMoreResults();
 						}
@@ -274,8 +270,6 @@ MERGE INTO triple AS t
 						         rs = ps.getResultSet();
 						         while (rs.next()) {
 						        	estimateID = rs.getInt(1);
-						            System.out.println("newId: " + rs.getInt(1) +
-						                               "更新日: " + rs.getTimestamp(2));
 						         }
 						         rs.close();
 						   }
@@ -538,9 +532,6 @@ MERGE INTO triple AS t
 						         rs = ps.getResultSet();
 						         while (rs.next()) {
 						        	productID = rs.getInt(1);
-						            System.out.println(
-						                               "newId: " + rs.getInt(1) +
-						                               "更新日: " + rs.getTimestamp(2));
 						         }
 						         rs.close();
 						   }

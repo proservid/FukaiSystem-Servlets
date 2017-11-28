@@ -91,9 +91,6 @@ public class DeleteSlip extends GenericServlet {
 				ps = c.prepareStatement(query2);
 				ps.setInt(1, id);
 				ps.executeUpdate();
-System.out.println(query1);
-System.out.println(query2);
-System.out.println(id);
 
 			}catch(SQLException ex) {
 				err.append(ex.toString());

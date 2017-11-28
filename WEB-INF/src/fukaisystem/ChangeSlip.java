@@ -79,7 +79,6 @@ public class ChangeSlip extends GenericServlet {
 				} else {
 					tax = rs.getInt("消費税");
 				}
-				System.out.println("消費税:"+tax);
 
 				discount = rs.getInt("値引き");
 				//sDTO = new SalesDTO(deliveryID, rs.getInt("納品区分CD"),rs.getInt("納品手段CD"),rs.getInt("得意先CD"),type,rs.getDate("売上年月日"),rs.getString("摘要"),null);

@@ -328,8 +328,6 @@ public class EstimateRegistration extends GenericServlet {
 						         rs = ps.getResultSet();
 						         while (rs.next()) {
 						        	estimateID = rs.getInt(1);
-						            System.out.println("newId: " + rs.getInt(1) +
-						                               "XV“ú: " + rs.getTimestamp(2));
 						         }
 						         rs.close();
 						   }

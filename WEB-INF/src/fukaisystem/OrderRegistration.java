@@ -9,7 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
@@ -37,9 +40,6 @@ public class OrderRegistration extends GenericServlet {
 
 		DBConnection dbc = new DBConnection();
 		Connection c = dbc.getConnection();
-		Statement st = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
 		boolean isError = false;
 		OrderDocumentDTO odd = null;
 		StringBuilder err = new StringBuilder("");
@@ -55,14 +55,12 @@ public class OrderRegistration extends GenericServlet {
 			in.close();
 
 			if(obj == null) {
-				System.out.println("obj is null");
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
 				if(obj instanceof OrderDocumentDTO) {
 					odd = (OrderDocumentDTO)obj;
 				} else {
-					System.out.println("ns");
 					err.append(className + "readObjectがString型ではありません\n");
 					lg.error(className + "readObjectがString型ではありません");
 				}
@@ -72,7 +70,7 @@ public class OrderRegistration extends GenericServlet {
 				//コミット後でありさえすればよい。
 				//コミット後ということは、子・孫ともども更新されているはずで、問題は生じない
 				//親→子→孫（加工→材料）の順が守られている限り、デッドロックは発生しないはず
-				st = c.createStatement();
+				Statement st = c.createStatement();
 				st.executeUpdate("SET TRANSACTION ISOLATION LEVEL READ COMMITTED");
 				st.executeUpdate("BEGIN TRANSACTION");
 //				st.executeQuery("SELECT COUNT(*) FROM T_在庫_親 WITH(TABLOCKX)");
@@ -84,33 +82,83 @@ public class OrderRegistration extends GenericServlet {
 				Logging.logStackTrace(ex, lg, className);
 			}
 
+			//////////////////////////////////////////////////////////////////////////////////////////////////////
+			boolean isDelivery = false; //納品書番号が入ったデータが１つでもあるか
+			taxMap = new HashMap<Integer, DeliverySlip>(); //指定納品書のデータ
+			boolean closeFlg = false;
+			for(Vector<Object> v : odd.getVector(0)) {
+				if(v.get(14) != null && (Boolean)v.get(17)) { //納品書番号がnullでなく納品書チェック入り
+					//1行でも指定納品書が〆られていたら親データの編集を不可に
+					PreparedStatement ps = c.prepareStatement("select 〆FLG from T_指定納品書 WHERE ID=?");
+					ps.setInt(1, (Integer)v.get(14));
+					ResultSet rs = ps.executeQuery();
+					if(rs.next()) {
+						if(rs.getBoolean("〆FLG")) isDelivery = true;
+					}
+					if(v.get(15) != null) {
+						//〆後の日付の指定納品書を追加させない
+						ps = c.prepareStatement("select * from T_指定納品書 WHERE 納品書日>=?　and 納品書日<? and 〆FLG='true'");
+						java.util.Date d = (java.util.Date)v.get(15);
+						Calendar cal = Calendar.getInstance();
+						cal.setTime(d);
+						cal.set(Calendar.DATE, 1);//その月の１日
+						ps.setDate(1, new Date(cal.getTimeInMillis()));
+						cal.add(Calendar.MONTH, 1);//翌月１日
+						ps.setDate(2, new Date(cal.getTimeInMillis()));
+						rs = ps.executeQuery();
+						if(rs.next()) {
+							//入力された納品月は〆られているので納品書番号とﾁｪｯｸをクリア
+							//そしてその行は指定納品書を登録しない
+							v.set(14, 0);
+							v.set(17, false);
+							closeFlg = true;
+						} else {
+							//納品書にチェックがあれば納品書番号、納品書日、消費税、〆FLGをMapにセット（後でT_指定納品書にmergeするため）
+							if((Boolean)v.get(17)) {
+								if(!taxMap.containsKey(v.get(14)) || !(Boolean)v.get(18)) {
+									//納品書番号が同じデータ又は〆後データは省く
+									//〆られた月のデータも省く
+									taxMap.put((Integer)v.get(14), new DeliverySlip(v.get(15) == null ? null : new Date(((java.util.Date)v.get(15)).getTime()), v.get(16) == null ? 0 : (Integer)v.get(16)));
+								}
+							}
+						}
+					}
+				}
+			}
+			if(closeFlg) err.append("〆後の納品書日が入力されている行があります\n納品書データは〆後の日付で登録できません");
+			//////////////////////////////////////////////////////////////////////////////////////////////////////
 			orderID = odd.getInt(4);
 			if(odd.getInt(1) + odd.getInt(2) == 0) {
 				//注文期と注文番号を0に変更したということは、消去せよということ
-				if(orderID != 0) {
-					System.out.println("del");
-					try {
-						ps = c.prepareStatement("DELETE FROM T_在庫_親 WHERE 在庫親ID=?");
-						ps.setInt(1, orderID);
-						ps.executeUpdate();
-						ps = c.prepareStatement("DELETE FROM T_在庫_子 WHERE 在庫親ID=?");
-						ps.setInt(1, orderID);
-						ps.executeUpdate();
-						orderID = 0;
-					} catch(SQLException ex) {
-						ex.printStackTrace();
-						isError = true;
-						err.append(className + "在庫テーブルの削除に失敗しました\n");
-						Logging.logStackTrace(ex, lg, className);
+				if(isDelivery) {
+					//削除不可
+				} else {
+					//削除
+					if(orderID != 0) {
+						try {
+							PreparedStatement ps = c.prepareStatement("DELETE FROM T_在庫_親 WHERE 在庫親ID=?");
+							ps.setInt(1, orderID);
+							ps.executeUpdate();
+							ps = c.prepareStatement("DELETE FROM T_在庫_子 WHERE 在庫親ID=?");
+							ps.setInt(1, orderID);
+							ps.executeUpdate();
+							orderID = 0;
+						} catch(SQLException ex) {
+							ex.printStackTrace();
+							isError = true;
+							err.append(className + "在庫テーブルの削除に失敗しました\n");
+							Logging.logStackTrace(ex, lg, className);
+						}
 					}
 				}
 			} else {
 				int orderNum = odd.getInt(2);
+				//在庫用注文番号（≠注文書番号）自動採番
 				if(orderNum == 0) {
 					try {
-						ps = c.prepareStatement("SELECT CASE WHEN MAX(注文番号) IS NULL THEN 1 ELSE MAX(注文番号)+1 END AS 新注文番号 FROM T_在庫_親 WHERE 注文期=? AND 注文番号<9999");
+						PreparedStatement ps = c.prepareStatement("SELECT CASE WHEN MAX(注文番号) IS NULL THEN 1 ELSE MAX(注文番号)+1 END AS 新注文番号 FROM T_在庫_親 WHERE 注文期=? AND 注文番号<9999");
 						ps.setInt(1, odd.getInt(1));//注文期
-						rs = ps.executeQuery();
+						ResultSet rs = ps.executeQuery();
 						if(rs.next()) {
 							orderNum = rs.getInt("新注文番号");
 						}
@@ -122,31 +170,23 @@ public class OrderRegistration extends GenericServlet {
 					}
 				}
 
-				if(orderID == 0 || odd.getInt(3) == 0) {//伝票番号=0
+				if(orderID == 0 || odd.getInt(3) == 0) {//ID又は注文書番号が0 → 新規
 
 					try {
-						ps = c.prepareStatement(
+						PreparedStatement ps = c.prepareStatement(
 								"INSERT INTO T_在庫_親" +
 								" OUTPUT inserted.在庫親ID as newId, inserted.更新日" +
 								" SELECT ?, ?, ?, MAX(伝票番号)+1, ?, ?, ?, ?, ?, ?, ? FROM T_在庫_親");
 						int i = 1;
-						System.out.println("d1:"+odd.getInt(1));
 						ps.setInt(i, odd.getInt(1)); i++;//注文期
-						System.out.println("d2:"+orderNum);
 						ps.setInt(i, orderNum); i++;//注文番号
-						System.out.println("d3:"+odd.getStr(1));
 						ps.setString(i, odd.getStr(1)); i++;//注文枝番
 //自動採番
 //						ps.setInt(i, odd.getInt(3)); i++;//伝票番号
-						System.out.println("d4:"+odd.getInt(0));
 						ps.setInt(i, odd.getInt(0)); i++;//仕入先CD
-						System.out.println("d5:"+odd.getDate(0));
 						ps.setDate(i, odd.getDate(0)); i++;//注文年月日
-						System.out.println("d6:"+odd.getDate(1));
 						ps.setDate(i, odd.getDate(1)); i++;//指定納期
-						System.out.println("d7:"+odd.getStr(2));
 						ps.setString(i, odd.getStr(2)); i++;//摘要
-						System.out.println("d8:"+odd.getStr(3));
 						ps.setString(i, odd.getStr(3)); i++;//納入先指定
 						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//更新日
 						ps.setInt(i, 0); i++;//更新者CD
@@ -154,16 +194,13 @@ public class OrderRegistration extends GenericServlet {
 						int   updateCount = 0;
 						while (true) {
 						   if (isResultSet) {
-						         rs = ps.getResultSet();
+							   ResultSet rs = ps.getResultSet();
 						         while (rs.next()) {
 						        	orderID = rs.getInt(1);
-						            System.out.println("newId: " + rs.getInt(1) +
-						                               "更新日: " + rs.getTimestamp(2));
 						         }
 						         rs.close();
 						   }
 						   else {
-								System.out.println("d9");
 						         updateCount = ps.getUpdateCount();
 						         if (updateCount == -1) {
 						            break;
@@ -179,33 +216,38 @@ public class OrderRegistration extends GenericServlet {
 					}
 
 				} else {
+					//更新
 					try {
-						ps = c.prepareStatement("UPDATE T_在庫_親 SET" +
-							" 注文期=?, 注文番号=?, 注文枝番=?, 仕入先CD=?, 注文年月日=?, 指定納期=?," +
-							" 摘要=?, 納入先指定=?, 更新日=?, 更新者CD=?" +
-							" WHERE 在庫親ID=?");
-						int i = 1;
-						ps.setInt(i, odd.getInt(1)); i++;//注文期
-						ps.setInt(i, orderNum); i++;//注文番号
-						ps.setString(i, odd.getStr(1)); i++;//注文枝番
-//自動採番
-//						ps.setInt(i, odd.getInt(3)); i++;//伝票番号
-						ps.setInt(i, odd.getInt(0)); i++;//仕入先CD
-						ps.setDate(i, odd.getDate(0)); i++;//注文年月日
-						ps.setDate(i, odd.getDate(1)); i++;//指定納期
-						ps.setString(i, odd.getStr(2)); i++;//摘要
-						ps.setString(i, odd.getStr(3)); i++;//納入先指定
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//更新日
-						ps.setInt(i, 0); i++;//更新者CD
-						ps.setInt(i, orderID); i++;//在庫親ID
-						ps.executeUpdate();
+						if(isDelivery) {
+							//更新不可
+						} else {
+							PreparedStatement ps = c.prepareStatement("UPDATE T_在庫_親 SET" +
+								" 注文期=?, 注文番号=?, 注文枝番=?, 仕入先CD=?, 注文年月日=?, 指定納期=?," +
+								" 摘要=?, 納入先指定=?, 更新日=?, 更新者CD=?" +
+								" WHERE 在庫親ID=?");
+							int i = 1;
+							ps.setInt(i, odd.getInt(1)); i++;//注文期
+							ps.setInt(i, orderNum); i++;//注文番号
+							ps.setString(i, odd.getStr(1)); i++;//注文枝番
+	//自動採番
+	//						ps.setInt(i, odd.getInt(3)); i++;//伝票番号
+							ps.setInt(i, odd.getInt(0)); i++;//仕入先CD
+							ps.setDate(i, odd.getDate(0)); i++;//注文年月日
+							ps.setDate(i, odd.getDate(1)); i++;//指定納期
+							ps.setString(i, odd.getStr(2)); i++;//摘要
+							ps.setString(i, odd.getStr(3)); i++;//納入先指定
+							ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//更新日
+							ps.setInt(i, 0); i++;//更新者CD
+							ps.setInt(i, orderID); i++;//在庫親ID
+							ps.executeUpdate();
+							ps.close();
+						}
 						//子孫のデータ更新は、削除→追加にて
-//T_在庫_子とT_指定納品書のinnerjoinにおいて、それぞれの〆FLGに不一致のものがあったときは
-//〆後に〆前の画面から登録しようとした→エラー
-						ps = c.prepareStatement("DELETE FROM T_在庫_子 WHERE 在庫親ID=?");
+						//T_在庫_子とT_指定納品書のinnerjoinにおいて、それぞれの〆FLGに不一致のものがあったときは
+						//〆後に〆前の画面から登録しようとした→エラー
+						PreparedStatement ps = c.prepareStatement("DELETE FROM T_在庫_子 WHERE 在庫親ID=?");
 						//where以降
-						i = 1;
-						ps.setInt(i, orderID);//在庫親ID
+						ps.setInt(1, orderID);//在庫親ID
 						ps.executeUpdate();
 					} catch(SQLException ex) {
 						ex.printStackTrace();
@@ -217,20 +259,11 @@ public class OrderRegistration extends GenericServlet {
 
 				int k = 1;
 				try {
-					ps = c.prepareStatement(
+					PreparedStatement ps = c.prepareStatement(
 						"INSERT INTO T_在庫_子 VALUES(" +
 						"?, ?, ?, ?, ?, ?, ?, ?, ?, ?," +
 						"?, ?, ?, ?, ?, ?)");
-					taxMap = new HashMap<Integer, DeliverySlip>();
-					System.out.println(odd.getVector(0));
 					for(Vector<Object> v : odd.getVector(0)) {
-						//納品書番号がnullでなければ納品書番号、納品書日、消費税、〆FLGをMapにセット（後でT_指定納品書にmergeするため）
-						if(v.get(14) != null) {
-							//納品書番号が同じデータ又は〆後データは省く
-							if(!taxMap.containsKey(v.get(14)) || !(Boolean)v.get(18)) {
-								taxMap.put((Integer)v.get(14), new DeliverySlip(v.get(15) == null ? null : new Date(((java.util.Date)v.get(15)).getTime()), v.get(16) == null ? 0 : (Integer)v.get(16)));
-							}
-						}
 						int tag = (Integer)v.get(0);
 						if(tag != 0) {
 							int i = 1;
@@ -266,7 +299,7 @@ public class OrderRegistration extends GenericServlet {
 					 "  UPDATE SET" +
 					 "   t.ID = w.ID," +
 					 "   t.納品書日 = w.納品書日," +
-					 "   t.消費税 = w.消費税," +
+					 "   t.消費税 = w.消費税" +
 					 " WHEN NOT MATCHED THEN" +
 					 "  INSERT VALUES(w.ID, w.納品書日, w.消費税, 'false');");
 					for(Map.Entry<Integer, DeliverySlip> e : taxMap.entrySet()) {
@@ -286,7 +319,7 @@ public class OrderRegistration extends GenericServlet {
 
 				try {
 					//注文書データで使用していない納品書番号は削除する
-					ps = c.prepareStatement(
+					PreparedStatement ps = c.prepareStatement(
 							"delete from T_指定納品書 where ID IN (" +
 							"select ID from T_指定納品書 f WHERE NOT EXISTS(" +
 							"SELECT 1 FROM T_在庫_子 c WHERE c.納品書番号=f.ID))");
@@ -302,8 +335,9 @@ public class OrderRegistration extends GenericServlet {
 
 			if(!isError) {
 				try {
-					st = c.createStatement();
+					Statement st = c.createStatement();
 					st.executeUpdate("COMMIT");
+					st.close();
 				} catch(SQLException ex) {
 					ex.printStackTrace();
 					isError = true;
@@ -318,7 +352,7 @@ public class OrderRegistration extends GenericServlet {
 		} finally {
 			if(isError) {lg.debug("rollback");
 				try{
-					st = c.createStatement();
+					Statement st = c.createStatement();
 					st.executeUpdate("ROLLBACK");
 				} catch(SQLException ex) {
 					ex.printStackTrace();
@@ -349,6 +383,8 @@ public class OrderRegistration extends GenericServlet {
 				Logging.logStackTrace(ex, lg, className);
 			}
 // The following processes requires JDBC4.0.
+//		https://www.ibm.com/developerworks/jp/java/library/j-jtp03216/index.html
+			/*
 			try {
 				if(ps != null && !ps.isClosed()) {
 					ps.close();
@@ -367,6 +403,7 @@ public class OrderRegistration extends GenericServlet {
 				ex.printStackTrace();
 				Logging.logStackTrace(ex, lg, className);
 			}
+			*/
 		}
 	}
 	private class DeliverySlip {

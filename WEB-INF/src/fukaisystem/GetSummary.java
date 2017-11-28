@@ -146,7 +146,7 @@ public class GetSummary extends GenericServlet {
 			} else {
 				query.append("p.製作親ID=?");
 			}
-			ps = c.prepareStatement(query.toString());System.out.println(query.toString());
+			ps = c.prepareStatement(query.toString());
 			int i = 1;
 			if(estimateID != 0) {
 				ps.setInt(i, estimateID);
@@ -157,7 +157,6 @@ public class GetSummary extends GenericServlet {
 			}
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				 System.out.println("!"+rs.getInt("親機番号"));
 				psDTO = new ProjectSummaryDTO(
 				 //共通
 				 rs.getString("社名e"), rs.getString("社名p"), rs.getString("案件名e"), rs.getString("案件名p"),
@@ -190,7 +189,6 @@ public class GetSummary extends GenericServlet {
 				 );
 				if(rs.getString("消費税") == null) {
 					tax = -1;
-					System.out.println("消費税:-1");
 				} else {
 					tax = rs.getInt("消費税");
 				}
@@ -364,7 +362,6 @@ public class GetSummary extends GenericServlet {
 				rs = ps.executeQuery();
 				List<Integer> parents = new ArrayList<Integer>();
 				while(rs.next()) {
-					System.out.println("#"+rs.getInt("機械番号"));
 					parents.add(rs.getInt("機械番号"));
 				}
 				if(psDTO != null) psDTO.setParents(parents);

@@ -83,7 +83,6 @@ public class CorpRegistration extends GenericServlet {
 				}
 			} else {
 				cd = corpDTO.getStr(22);
-				System.out.println("oldCD:"+cd);
 				try {
 					if(cd.equals("0") || cd == null) {//êVãKí«â¡
 						ps = c.prepareStatement("INSERT INTO M_ñ@êl" +
@@ -138,7 +137,6 @@ public class CorpRegistration extends GenericServlet {
 						         rs = ps.getResultSet();
 						         while (rs.next()) {
 						        	cd = rs.getString(1);
-						            System.out.println("newId: " + rs.getInt(1));
 						         }
 						         rs.close();
 						   }
@@ -177,7 +175,7 @@ public class CorpRegistration extends GenericServlet {
 						ps.setString(i++, corpDTO.getStr(23));
 						ps.setString(i++, corpDTO.getStr(5));
 						ps.setString(i++, corpDTO.getStr(6));
-						ps.setString(i++, corpDTO.getStr(7));System.out.println("zip2:"+corpDTO.getStr(7));
+						ps.setString(i++, corpDTO.getStr(7));
 						ps.setString(i++, corpDTO.getStr(11));
 						ps.setString(i++, corpDTO.getStr(12));
 						ps.setString(i++, corpDTO.getStr(13));
@@ -191,7 +189,6 @@ public class CorpRegistration extends GenericServlet {
 						ps.setString(i++, corpDTO.getStr(21));
 						ps.setBoolean(i++, corpDTO.getBool(0));
 						ps.setBoolean(i++, corpDTO.getBool(1));
-						System.out.println("nenga::"+corpDTO.getInt(3));
 						ps.setInt(i++, corpDTO.getInt(3));
 						ps.setString(i, corpDTO.getStr(22));
 						ps.executeUpdate();

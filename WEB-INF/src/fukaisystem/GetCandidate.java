@@ -50,15 +50,12 @@ public class GetCandidate extends GenericServlet {
 			in.close();
 
 			if(obj == null) {
-				System.out.println("null");
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				System.out.println(obj.getClass().getName());
 				if(obj instanceof CandidateInputDTO) {
 					CandidateInputDTO ciDTO = (CandidateInputDTO)obj;
 					input = ciDTO.getInput();
-					System.out.println(ciDTO.getKey());
 					switch(ciDTO.getKey()) {
 						case 0: key = "CD"; break;
 						case 1: key = "得意先CD"; break;
@@ -66,7 +63,6 @@ public class GetCandidate extends GenericServlet {
 					}
 					isValidOnly = ciDTO.isValidOnly();
 				} else {
-					System.out.println("error");
 					err.append(className + "readObjectがString型ではありません\n");
 					lg.error(className + "readObjectがString型ではありません");
 				}
@@ -85,9 +81,8 @@ public class GetCandidate extends GenericServlet {
 						" WHERE " + key + " IS NOT NULL AND (会社名 LIKE ? OR 支店名 LIKE ? OR カイシャメイ LIKE ? OR シテンメイ LIKE ? OR アルファベット LIKE ? OR 仕入先CD LIKE ? OR 得意先CD LIKE ?)");
 				if(isValidOnly) {
 					sql.append(" AND 有効FLG='true'");
-				}//System.out.println(input);
-				sql.append(" ORDER BY " + key);//System.out.println(sql.toString());
-				System.out.println(sql);
+				}
+				sql.append(" ORDER BY " + key);
 				ps = c.prepareStatement(sql.toString());
 				int i = 1;
 				ps.setString(i++, "%" + input + "%");

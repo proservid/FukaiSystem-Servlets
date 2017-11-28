@@ -122,7 +122,6 @@ public class IndRegistration extends GenericServlet {
 						         rs = ps.getResultSet();
 						         while (rs.next()) {
 						        	cd = rs.getString(1);
-						            System.out.println("newId: " + rs.getInt(1));
 						         }
 						         rs.close();
 						   }
@@ -176,7 +175,6 @@ public class IndRegistration extends GenericServlet {
 						ps.executeUpdate();
 						if(indDTO.getBool(3)) {
 							//ŒÂlZŠ‚ ‚è
-							System.out.println("‚ ‚è");System.out.println(indDTO.getStr(5));
 							ps = c.prepareStatement(
 								"MERGE INTO M_ŒÂlZŠ AS addr" +
 								" USING (SELECT ? AS ŒÂlCD, ? AS alpha_2, ? AS —X•Ö”Ô†, ? AS —X•Ö}”Ô," +//7
@@ -199,7 +197,6 @@ public class IndRegistration extends GenericServlet {
 							ps.executeUpdate();
 						} else {
 							//ŒÂlZŠ‚È‚µ
-							System.out.println("‚È‚µ");
 							ps = c.prepareStatement("DELETE FROM M_ŒÂlZŠ WHERE ŒÂlCD=?");
 							ps.setString(1, cd);
 							ps.executeUpdate();

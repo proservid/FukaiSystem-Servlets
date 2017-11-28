@@ -117,9 +117,6 @@ public class GetLine extends GenericServlet {
 					query.append("p.êªçÏêeID=?");
 				}
 				ps = c.prepareStatement(query.toString());
-				System.out.println(query.toString());
-				System.out.println(estimateID);
-				System.out.println(productID);
 				int i = 1;
 				if(estimateID != 0) {
 					ps.setInt(i, estimateID);

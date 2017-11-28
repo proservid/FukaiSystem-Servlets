@@ -105,7 +105,6 @@ public class GetSalesData extends GenericServlet {
 					 ") a group by “¾ˆÓæCD,“¾ˆÓæ–¼,ó’”Ô†,“ú•t");
 				ps.setDate(1, from);
 				ps.setDate(2, to);
-				System.out.println(from);System.out.println(to);
 				rs = ps.executeQuery();
 				ResultSetMetaData rsmd = rs.getMetaData();
 				for(int i = 1; i <= rsmd.getColumnCount(); i++) {
@@ -202,7 +201,6 @@ public class GetSalesData extends GenericServlet {
 					}
 				}
 				output = new TableAdapter(keys, colInfos, contents);
-				System.out.println(contents);
 			} catch(SQLException ex) {
 				ex.printStackTrace();
 				err.append(ex + "\n");
@@ -213,7 +211,6 @@ public class GetSalesData extends GenericServlet {
 
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-System.out.println(output);
 			out.writeObject(output);
 			out.writeUTF(err.toString());
 			out.flush();

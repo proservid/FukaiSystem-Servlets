@@ -54,7 +54,6 @@ public class GetTableData extends GenericServlet {
 			List<ColInfoDTO> colInfos = new ArrayList<ColInfoDTO>();
 			List<List<Object>> contents = new ArrayList<List<Object>>();
 			try {
-System.out.println(sql);
 				Statement st = c.createStatement();
 				rs = st.executeQuery(sql);
 				ResultSetMetaData rsmd = rs.getMetaData();
@@ -133,9 +132,7 @@ System.out.println(sql);
 
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-System.out.println("o:"+output);
-if(output == null)
-System.out.println("e:"+err.toString());
+			if(output == null) System.out.println("e:"+err.toString());
 
 			out.writeObject(output);
 			out.writeUTF(err.toString());

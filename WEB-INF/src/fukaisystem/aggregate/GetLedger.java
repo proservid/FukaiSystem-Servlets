@@ -91,7 +91,6 @@ public class GetLedger extends GenericServlet {
 				ps.setDate(4, to);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					System.out.println(rs.getString("得意先CD"));
 					m.put(rs.getString("得意先CD"), new Amount(rs.getInt("合計額"), rs.getInt("税額")));
 				}
 				
@@ -116,10 +115,8 @@ public class GetLedger extends GenericServlet {
 					 " left outer join T_製作_親 pp on sc.製作親ID=pp.製作親ID" +
 					 " where 売上年月日>=? and 売上年月日<? and 売上FLG='true' and 製作番号<9000 and 納品区分CD<5" +
 					 " order by 得意先CD,売上年月日,受注番号,ID");
-				System.out.println("f:"+from);
 				ps.setDate(1, from);
 				ps.setDate(2, to);
-				System.out.println(from);System.out.println(to);
 				rs = ps.executeQuery();
 				ResultSetMetaData rsmd = rs.getMetaData();
 				for(int i = 2; i <= rsmd.getColumnCount(); i++) {//最初の列（得意先CD）はスキップ
@@ -136,8 +133,6 @@ public class GetLedger extends GenericServlet {
 				while(rs.next()) {
 					//特殊データの追加
 					if(rs.getString("受注番号") != null) {
-					System.out.println("ac:"+accept);
-					System.out.println("ju:"+rs.getString("受注番号"));
 					if(!accept.equals(rs.getString("受注番号")) && !accept.equals("")) {//次の受注番号へ変わるタイミングで小計を追加
 						List<Object> row = new ArrayList<Object>();
 //						row.add(acNum);
@@ -150,10 +145,8 @@ public class GetLedger extends GenericServlet {
 						row.add("");//注文書番号
 						contents.add(row);
 						subtotal = 0;
-//System.out.println("bbb:"+acNum+":"+rs.getString("得意先CD"));
 						if(!acNum.equals(rs.getString("得意先CD")) && !acNum.equals("")) {//さらに次の得意先CDへ変わるタイミングで（消費税別途の得意先の消費税と）合計を追加
 							if(m.containsKey(acNum)) {//消費税を別途計算していた得意先については、追加
-//System.out.println("ccc:"+m);
 								row = new ArrayList<Object>();
 //								row.add(acNum);
 								row.add(acName);
@@ -303,7 +296,6 @@ public class GetLedger extends GenericServlet {
 					}
 				}
 				output = new TableAdapter(keys, colInfos, contents);
-				System.out.println(contents);
 			} catch(SQLException ex) {
 				ex.printStackTrace();
 				err.append(ex + "\n");

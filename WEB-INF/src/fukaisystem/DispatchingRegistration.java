@@ -75,7 +75,7 @@ public class DispatchingRegistration extends GenericServlet {
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-			dispatchingID = dispDTO.getInt(5);
+			dispatchingID = dispDTO.getInt(7);
 			if(dispDTO.getInt(0) * dispDTO.getInt(1) == 0) {
 				//注文期または注文番号を0に変更したということは、消去せよということ
 				if(dispatchingID != 0) {
@@ -116,9 +116,6 @@ public class DispatchingRegistration extends GenericServlet {
 						         rs = ps.getResultSet();
 						         while (rs.next()) {
 						        	dispatchingID = rs.getInt(1);
-						            System.out.println(
-						                               "newId: " + rs.getInt(1) +
-						                               "更新日: " + rs.getTimestamp(2));
 						         }
 						         rs.close();
 						   }
@@ -138,7 +135,6 @@ public class DispatchingRegistration extends GenericServlet {
 	
 	
 				} else {
-	System.out.println("did"+dispatchingID);
 					try {
 						ps = c.prepareStatement("UPDATE T_出庫_親 SET 製作期=?, 製作番号=?, 製作枝番=?, 出庫年月日=?, 用途=?, 摘要=?, 更新日=?, 更新者CD=?" +
 								" WHERE 出庫親ID=?");

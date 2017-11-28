@@ -43,9 +43,15 @@ public class DispatchingSearch extends GenericServlet {
 
 		String[] constStrs = {
 			"製作枝番 like ?",
-			"SUBSTRING(CONVERT(VARCHAR, 出庫年月日),1,4) like ?", "SUBSTRING(CONVERT(VARCHAR, 出庫年月日),6,2) like ?", "SUBSTRING(CONVERT(VARCHAR, 出庫年月日),9,2) like ?",
-			"用途 like ?", "摘要 like ?"};
-		String[] constInts = {"製作期=?", "製作番号=?", "大分類CD=?", "中分類CD=?", "小分類CD=?"};
+			"SUBSTRING(CONVERT(VARCHAR, 出庫年月日),1,4) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 出庫年月日),6,2) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 出庫年月日),9,2) like ?",
+			"用途 like ?",
+			"摘要 like ?",
+			"注文枝番 like ?",
+			"品名 like ?"
+		};
+		String[] constInts = {"製作期=?", "製作番号=?", "大分類CD=?", "中分類CD=?", "小分類CD=?", "注文期=?", "注文番号=?"};
 		try {
 
 			/**
@@ -68,12 +74,17 @@ public class DispatchingSearch extends GenericServlet {
 			}
 			try {
 				StringBuilder query = new StringBuilder(
-				 "SELECT * FROM (SELECT p.出庫親ID,製作期,製作番号,製作枝番,出庫年月日,用途,摘要" +
-				 " FROM T_出庫_親 p" +
-				 " LEFT OUTER JOIN T_出庫_子 c" +
-				 " ON p.出庫親ID=c.出庫親ID");
+				 "SELECT top 30000 出庫親ID,製作期,製作番号,製作枝番,出庫年月日,用途,摘要 FROM (" +
+				 " SELECT p.出庫親ID,p.製作期,p.製作番号,p.製作枝番,出庫年月日,用途,p.摘要,注文期,注文番号,注文枝番 FROM T_出庫_親 p" +
+				 " LEFT OUTER JOIN T_出庫_子 c ON p.出庫親ID=c.出庫親ID" +
+				 " LEFT OUTER JOIN (" +
+				 "  SELECT 在庫親ID,注文期,注文番号,注文枝番 FROM T_在庫_親 zp" +
+				 "  UNION" +
+				 "  SELECT 製作親ID,製作期,製作番号,製作枝番 FROM T_製作_親 pp" +
+				 " ) z on z.在庫親ID=c.在庫親ID");
 				boolean isFirst = true;
-				for(int i = 0; i < 6; i++) {
+				//文字列の検索条件は、searchDTO.getStr(0～7)
+				for(int i = 0; i < 8; i++) {
 					if(!dispatchingDTO.getStr(i).equals("")) {//検索条件が入っていれば
 						strIndex.add(i);
 						if(isFirst) {
@@ -87,8 +98,8 @@ public class DispatchingSearch extends GenericServlet {
 					}
 				}
 
-				//数値の検索条件は、searchDTO.getInt(0～4)
-				for(int i = 0; i < 5; i++) {
+				//数値の検索条件は、searchDTO.getInt(0～6)
+				for(int i = 0; i < 7; i++) {
 					if(dispatchingDTO.getInt(i) != 0) {//検索条件が入っていれば
 						intIndex.add(i);
 						if(isFirst) {
@@ -102,7 +113,6 @@ public class DispatchingSearch extends GenericServlet {
 				}
 				query.append(") a GROUP BY 出庫親ID,製作期,製作番号,製作枝番,出庫年月日,用途,摘要");
 				ps = c.prepareStatement(query.toString());
-				System.out.println(query.toString());
 				int j = 1;
 				for(int i : strIndex) {
 					ps.setString(j, dispatchingDTO.getStr(i)); j++;

@@ -76,9 +76,8 @@ public class GetIndCandidate extends GenericServlet {
 					sql.append(" AND ñ@êlCD=?");
 				}
 				sql.append(" ORDER BY i.CD");
-				System.out.println(sql.toString());
 				ps = c.prepareStatement(sql.toString());
-				int i = 1;System.out.println(input);
+				int i = 1;
 				ps.setString(i++, "%" + input + "%");
 				ps.setString(i++, "%" + input + "%");
 				ps.setString(i++, "%" + input + "%");

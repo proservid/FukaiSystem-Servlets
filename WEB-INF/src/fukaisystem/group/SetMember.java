@@ -72,9 +72,7 @@ public class SetMember extends GenericServlet {
 				int i = 1;
 				for(Vector v : data) {
 					if(v.get(1).toString().equals("0") || (v.get(2).equals("") && v.get(3).equals(""))) {
-						System.out.println("zero");
 					} else {
-						System.out.println(v.get(0));
 						ps.setInt(1, (Integer)v.get(0)); //ä«óùID
 						ps.setInt(2, (Integer)v.get(1)); //CD
 						ps.setString(3, (String)v.get(2)); //ê©

@@ -40,7 +40,6 @@ public class QueryExecutor extends GenericServlet {
 			sql = (String)in.readObject();
 			in.close();
 			lg.debug(sql);
-System.out.println(sql);
 
 			if(sql.toUpperCase().startsWith("SELECT")) {
 

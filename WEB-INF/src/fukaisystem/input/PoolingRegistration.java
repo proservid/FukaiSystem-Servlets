@@ -109,9 +109,7 @@ public class PoolingRegistration extends GenericServlet {
 				t1715 = new Date(cal.getTimeInMillis());
 
 				int br1 = (int)((t1245.getTime() - t1200.getTime()) / (1000 * 60));//45分
-				//System.out.println("br1:"+br1);
 				int br2 = (int)((t1715.getTime() - t1700.getTime()) / (1000 * 60));//15分
-				//System.out.println("br2:"+br2);
 
 				if(inputDTO.getString(2).equals("17")) {//出張の場合
 					cal.setTime(to);
@@ -119,7 +117,6 @@ public class PoolingRegistration extends GenericServlet {
 					setTime(cal.getTimeInMillis() - from.getTime());
 				} else {
 					if(from.before(t0820)) {
-						//System.out.println("f1:"+new Timestamp(from.getTime()));
 						//開始を0820に
 						cal.set(year, month, day, w0, w1, 0);
 						long adjustedFrom = cal.getTimeInMillis();
@@ -127,25 +124,20 @@ public class PoolingRegistration extends GenericServlet {
 							//終了から45分+15分=1時間引く
 							cal.setTime(to);
 							cal.add(Calendar.MINUTE, -br1-br2);
-							//System.out.println("t11:"+cal);
 						} else if(to.after(t1700)) {
 							//45分引き、終りを1700で計算
 							cal.set(year, month, day, w2, w3, 0);
 							cal.add(Calendar.MINUTE, -br1);
-							//System.out.println("t12:"+cal);
 						} else if(to.after(t1245)) {
 							//45分引くのみ
 							cal.setTime(to);
 							cal.add(Calendar.MINUTE, -br1);
-							//System.out.println("t13:"+cal);
 						} else if(to.before(t1200)) {
 							//そのまま
 							cal.setTime(to);
 						} else {
 							//終了を1200に
-							//System.out.println(new Timestamp(to.getTime()));
 							cal.set(year, month, day, w4, w5, 0);
-							//System.out.println("t14:"+cal);
 						}
 						setTime(cal.getTimeInMillis() - adjustedFrom);
 					} else if(from.before(t1200)) {
@@ -153,26 +145,20 @@ public class PoolingRegistration extends GenericServlet {
 							//終了から45分+15分=1時間引く
 							cal.setTime(to);
 							cal.add(Calendar.MINUTE, -br1-br2);
-							//System.out.println("t1:"+cal);
 						} else if(to.after(t1700)) {//TODO 1659
 							//終了を1700とし、45分引く
 							cal.set(year, month, day, w2, w3, 0);
 							cal.add(Calendar.MINUTE, -br1);
-							//System.out.println("f2:"+new Timestamp(from.getTime()));
-							//System.out.println("t2:"+new Timestamp(cal.getTimeInMillis()));
 						} else if(to.after(t1245)) {
 							//終了から45分引く
 							cal.setTime(to);
 							cal.add(Calendar.MINUTE, -br1);
-							//System.out.println("t3:"+cal);
 						} else if(to.after(t1200)) {
 							//終了を1200に
 							cal.set(year, month, day, w4, w5, 0);
-							//System.out.println("t4:"+cal);
 						} else {
 							//終了が12時前ならそのまま
 							cal.setTime(to);
-							//System.out.println("t5:"+cal);
 						}
 						setTime(cal.getTimeInMillis() - from.getTime());
 					} else if(from.after(t1715)) {
@@ -192,8 +178,6 @@ public class PoolingRegistration extends GenericServlet {
 							//終了を1700に
 							cal.set(year, month, day, w2, w3);
 							setTime(cal.getTimeInMillis() - from.getTime());
-							//System.out.println(new Timestamp(cal.getTimeInMillis()));
-							//System.out.println(new Timestamp(from.getTime()));
 						} else {
 							setTime(to.getTime() - from.getTime());
 						}
@@ -235,8 +219,6 @@ public class PoolingRegistration extends GenericServlet {
 				"   INSERT VALUES(w.製作期, w.製作番号, w.製作枝番, w.加工CD, w.時間, w.着手日時, w.終了日時, w.担当者CD, w.備考, ?)" +
 				" OUTPUT deleted.ID as oldId, inserted.着手日時 as newId;");
 	*/
-				System.out.println(inputDTO.getInt(0));
-				System.out.println(inputDTO.getInt(1));
 				int i = 1;
 				ps.setInt(i, inputDTO.getInt(1) == 0 ? 0 : inputDTO.getInt(0)); i++;//番号が0なら期も0
 				ps.setInt(i, inputDTO.getInt(1)); i++;
@@ -320,12 +302,8 @@ public class PoolingRegistration extends GenericServlet {
 
 	private void setTime(long value) {
 		long remainder = value % (1000 * 60 * 15);//ミリ秒を100分の1秒にして分にして15分単位にする
-		//System.out.println("value"+value);
 		//３捨４入
-		//System.out.println(remainder);
-		//System.out.println((float)remainder / (1000 * 60 * 15));
 		time = ((float)remainder / (1000 * 60 * 15) >= 0.4) ? ((int)(value / (1000 * 60 * 15)) + 1) * 25 : ((int)(value / (1000 * 60 * 15))) * 25;
-		//System.out.println("t:"+time);
 	}
 
 }

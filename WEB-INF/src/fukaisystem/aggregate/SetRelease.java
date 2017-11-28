@@ -39,7 +39,6 @@ public class SetRelease extends GenericServlet {
 
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
-			System.out.println(obj);
 			if(obj instanceof Date) {
 				from = (Date)obj;
 				Calendar target = Calendar.getInstance();

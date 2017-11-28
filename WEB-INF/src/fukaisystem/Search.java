@@ -155,7 +155,10 @@ public class Search extends GenericServlet {
 							condition.append("(見積金額>=? OR 契約金額>=? OR 売上合計>=?)");
 						} else if(i == 7 && searchDTO.getStr(1).equals("以下")) {
 							condition.append("((見積金額>0 AND 見積金額<=?) OR (契約金額>0 AND 契約金額<=?) OR (売上合計>0 AND 売上合計<=?))");
+						} else if(searchDTO.getInt(1) % 1000 == 0 && i == 1) {//製番で検索
+							condition.append("FLOOR(製作番号/1000)*1000=?");
 						} else {
+							//製番が0で終わる→○○台　を追加
 							condition.append(constInts[i]);
 						}
 					}
@@ -170,7 +173,7 @@ public class Search extends GenericServlet {
 				}
 
 				StringBuilder query = new StringBuilder(
-				 "SELECT " + "\n" +
+				 "SELECT top 30000 " + "\n" +
 					"e.見積親ID," + "\n" +
 					"main.製作親ID," + "\n" +
 					"s.売上ID," + "\n" +
@@ -237,7 +240,7 @@ public class Search extends GenericServlet {
 						"  WHERE mc.ID=msc.製作子ID AND mc.製作親ID=msc.製作親ID AND 納品区分CD=?" + "\n" +
 						" )" + "\n" +
 						" GROUP BY mp.製作親ID) sub" + "\n" +
-						" left outer join T_見積製作 mapping on sub.製作親ID=mapping.見積親ID) main" + "\n" +
+						" left outer join T_見積製作 mapping on sub.製作親ID=mapping.製作親ID) main" + "\n" +
 						" LEFT"); break;
 				}
 
@@ -285,8 +288,8 @@ public class Search extends GenericServlet {
 				}
 				String conditionStr = condition.toString();
 				if(!conditionStr.equals("")) query.append(" WHERE " + conditionStr);
-				ps = c.prepareStatement(query.toString());System.out.println(query.toString());
-
+				ps = c.prepareStatement(query.toString());
+System.out.println(query.toString());
 				//////////////////////条件のセット
 				int j = 1;
 				/*

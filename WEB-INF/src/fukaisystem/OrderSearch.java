@@ -69,7 +69,7 @@ public class OrderSearch extends GenericServlet {
 			}
 			try {
 				StringBuilder query = new StringBuilder(
-				 "SELECT s.İŒÉeID,’•¶Šú,’•¶”Ô†,’•¶}”Ô," +
+				 "SELECT top 30000 s.İŒÉeID,’•¶Šú,’•¶”Ô†,’•¶}”Ô," +
 				 " “`•[”Ô†,s.d“üæCD,’•¶”NŒ“ú,w’è”[Šú," +
 				 " “E—v,”[“üæw’è,”[•i‘”Ô†,”[•i‘“ú," +
 				 " CASE" +
@@ -137,7 +137,7 @@ public class OrderSearch extends GenericServlet {
 						}
 					}
 				}
-				ps = c.prepareStatement(query.toString());System.out.println(query.toString());
+				ps = c.prepareStatement(query.toString());
 				int j = 1;
 				for(int i : strIndex) {
 					if(!searchDTO.getStr(i).equals("–¢")) {

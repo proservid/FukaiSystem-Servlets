@@ -27,7 +27,6 @@ public class DataRegistration extends GenericServlet {
 		ResultSet rs = null;
 		StringBuilder msg = new StringBuilder();
 		StringBuilder err = new StringBuilder();
-System.out.println("aaa");
 		try {
 
 			Object obj = null;
@@ -73,11 +72,9 @@ System.out.println("aaa");
 				}
 
 
-				c.setAutoCommit(false);//System.out.println(sql.toString());
+				c.setAutoCommit(false);
 				ps = c.prepareStatement(sql.toString());
-				System.out.println(lines.size());
 				for(int i = 1; i < lines.size(); i++) {
-					System.out.println(i);
 					String[] strs = lines.get(i).split("\t", cols);
 					for(int j = 0; j < cols; j++) {//テーブルの列数を超えるデータは無視
 						boolean isEmpty = false;
@@ -129,7 +126,7 @@ System.out.println("aaa");
 				}
 
 				int[] updateCounts = ps.executeBatch();
-				c.commit();System.out.println("bbb");
+				c.commit();
 				msg.append(updateCounts.length + "件処理されました。");
 			} catch(SQLException ex) {
 				ex.printStackTrace();

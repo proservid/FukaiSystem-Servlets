@@ -176,7 +176,6 @@ String sql =
 "where (p2.»ì”Ô†>0 or p2.»ì”Ô† is null) and (z.»ì”Ô†>0 or z.»ì”Ô† is null) and (ŒJ‰zd“ü<>0 or ŒJ‰zoŒÉ<>0 or H”—İŒv<>'0' or d“ü‹àŠz<>0 or oŒÉ‹àŠz<>0 or H”<>'0')" + "\n" +
 "group by p2.»ìŠú,p2.»ì”Ô†,p2.»ì}”Ô,z.»ìŠú,z.»ì”Ô†,z.»ì}”Ô,d“ü‹àŠz,oŒÉ‹àŠz,H”,H”—İŒv,p2.”„ã”NŒ“ú,p2.”[•i‹æ•ªCD,ŒJ‰zd“ü,ŒJ‰zoŒÉ" + "\n" +
 "order by substring(convert(varchar,case when p2.»ì”Ô† is null then z.»ì”Ô† else p2.»ì”Ô† end),1,1),»”Ô";
-//System.out.println(sql);
 			try {
 				ps = c.prepareStatement(sql);
 int n = 1;
@@ -198,7 +197,6 @@ int n = 1;
 
 				ps.setDate(n++, month == 1 ? from : from2);//”[•i
 				ps.setDate(n++, month == 12 ? to : to2);//”[•i
-				System.out.println(to2);
 				ps.setDate(n++, from);//oŒÉ
 				ps.setDate(n++, to);//oŒÉ
 				ps.setDate(n++, from);//’…è

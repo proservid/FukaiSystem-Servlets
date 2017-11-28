@@ -121,9 +121,6 @@ public class DeliveryRegistration extends GenericServlet {
 						         rs = ps.getResultSet();
 						         while (rs.next()) {
 						        	deliveryID = rs.getInt(1);
-						            System.out.println(
-						                               "newId: " + rs.getInt(1) +
-						                               "更新日: " + rs.getTimestamp(2));
 						         }
 						         rs.close();
 						   }
@@ -177,7 +174,6 @@ public class DeliveryRegistration extends GenericServlet {
 	//UPDATE失敗したらINSERTさせない
 				int k = 1;
 				try {
-					System.out.println(deliveryID);
 					ps = c.prepareStatement(
 						"INSERT INTO T_売上_子 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");// +
 						//"UPDATE T_製作_子 SET 納品年月日=? WHERE ID=? AND 製作親ID=?");

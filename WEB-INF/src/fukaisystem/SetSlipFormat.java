@@ -61,7 +61,7 @@ public class SetSlipFormat extends GenericServlet {
 
 			try {
 				ps = c.prepareStatement(
-						 "UPDATE T_帳票選択 SET 雛型名=? WHERE 帳票名=?");
+						 "UPDATE T_伝票 SET フォーマット名=? WHERE 伝票名=?");
 				for(Vector<String> v : input) {
 					ps.setString(1, v.get(1));
 					ps.setString(2, v.get(0));
@@ -70,7 +70,7 @@ public class SetSlipFormat extends GenericServlet {
 				int[] updateCounts = ps.executeBatch();
 				output = updateCounts.length + "件更新されました。";
 			} catch(SQLException ex) {
-				err.append("テーブル「T_テーブル名」の読込に失敗しました\n");
+				err.append("テーブル「T_伝票」を更新できません\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 

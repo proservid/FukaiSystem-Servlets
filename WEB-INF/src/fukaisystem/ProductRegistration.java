@@ -62,7 +62,6 @@ public class ProductRegistration extends GenericServlet {
 				if(obj instanceof ProjectSummaryDTO) {
 					summaryDTO = (ProjectSummaryDTO)obj;
 				} else {
-					System.out.println("b");
 					isError = true;
 					err.append(className + "readObjectがProjectSummaryDTO型ではありません\n");
 					lg.error(className + "readObjectがProjectSummaryDTO型ではありません");
@@ -176,9 +175,6 @@ public class ProductRegistration extends GenericServlet {
 						         rs = ps.getResultSet();
 						         while (rs.next()) {
 						        	productID = rs.getInt(1);
-						            System.out.println(
-						                               "newId: " + rs.getInt(1) +
-						                               "更新日: " + rs.getTimestamp(2));
 						         }
 						         rs.close();
 						   }
@@ -284,8 +280,6 @@ if(productID != 0) {
 						if(tag != 0) {
 							int i = 1;
 							int j = 2;
-							System.out.println(k);
-							System.out.println(productID);
 							ps.setInt(i, k); i++;//ID
 							ps.setInt(i, productID); i++;//製作親ID
 							ps.setInt(i, tag); i++;//表示CD

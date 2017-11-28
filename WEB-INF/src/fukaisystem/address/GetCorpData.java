@@ -68,7 +68,7 @@ public class GetCorpData extends GenericServlet {
 					" left outer join V_—X•Ö”Ô† pc on replace(co.—X•Ö”Ô†,'-','')=pc.—X•Ö”Ô† and co.—X•Ö}”Ô=pc.—X•Ö}”Ô" +
 					" left outer join M_“s“¹•{Œ§ p on pc.“s“¹•{Œ§CD=p.CD" +
 					" left outer join M_s‹æ’¬‘º c on pc.“s“¹•{Œ§CD=c.“s“¹•{Œ§CD and pc.s‹æ’¬‘ºCD=c.CD" +
-					" where co.CD=?");System.out.println("input:"+input);
+					" where co.CD=?");
 				ps.setString(1, input);
 				rs = ps.executeQuery();
 				if(rs.next()) {
