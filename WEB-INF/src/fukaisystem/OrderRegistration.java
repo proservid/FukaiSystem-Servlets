@@ -95,7 +95,7 @@ public class OrderRegistration extends GenericServlet {
 					if(rs.next()) {
 						if(rs.getBoolean("〆FLG")) isDelivery = true;
 					}
-					if(v.get(15) != null) {//納品書日
+					if(v.get(15) != null) {//納品書日が入っている
 						//〆後の日付の指定納品書を追加させない
 						ps = c.prepareStatement("select * from T_指定納品書 WHERE 納品書日>=?　and 納品書日<? and 〆FLG='true'");
 						java.util.Date d = (java.util.Date)v.get(15);
@@ -113,9 +113,10 @@ public class OrderRegistration extends GenericServlet {
 								v.set(16, rs.getInt("消費税"));//消費税
 								v.set(17, true);//指定納品書のﾁｪｯｸ
 							}
+							//一致する納品書データがなくてもその月が〆られてさえいればcloseFlgをtrueに
 							closeFlg = true;
 						}
-						if(!closeFlg) {//〆られていなければ
+						if(!closeFlg) {//その行の納品書日が〆られていなければ
 							//納品書にチェックがあれば納品書番号、納品書日、消費税、〆FLGをMapにセット（後でT_指定納品書にmergeするため）
 							if((Boolean)v.get(17)) {
 								if(!taxMap.containsKey(v.get(14)) || !(Boolean)v.get(18)) {
