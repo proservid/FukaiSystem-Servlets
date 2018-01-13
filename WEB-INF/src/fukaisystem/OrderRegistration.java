@@ -85,8 +85,8 @@ public class OrderRegistration extends GenericServlet {
 			//////////////////////////////////////////////////////////////////////////////////////////////////////
 			boolean isDelivery = false; //納品書番号が入ったデータが１つでもあるか
 			taxMap = new HashMap<Integer, DeliverySlip>(); //指定納品書のデータ
-			boolean closeFlg = false;
 			for(Vector<Object> v : odd.getVector(0)) {
+				boolean closeFlg = false;
 				if(v.get(14) != null && (Boolean)v.get(17)) { //納品書番号がnullでなく納品書チェック入り
 					//1行でも指定納品書が〆られていたら親データの編集を不可に
 					PreparedStatement ps = c.prepareStatement("select 〆FLG from T_指定納品書 WHERE ID=?");
@@ -95,7 +95,7 @@ public class OrderRegistration extends GenericServlet {
 					if(rs.next()) {
 						if(rs.getBoolean("〆FLG")) isDelivery = true;
 					}
-					if(v.get(15) != null) {
+					if(v.get(15) != null) {//納品書日
 						//〆後の日付の指定納品書を追加させない
 						ps = c.prepareStatement("select * from T_指定納品書 WHERE 納品書日>=?　and 納品書日<? and 〆FLG='true'");
 						java.util.Date d = (java.util.Date)v.get(15);
@@ -106,13 +106,16 @@ public class OrderRegistration extends GenericServlet {
 						cal.add(Calendar.MONTH, 1);//翌月１日
 						ps.setDate(2, new Date(cal.getTimeInMillis()));
 						rs = ps.executeQuery();
-						if(rs.next()) {
-							//入力された納品月は〆られているので納品書番号とﾁｪｯｸをクリア
-							//そしてその行は指定納品書を登録しない
-							v.set(14, 0);
-							v.set(17, false);
+						while(rs.next()) {
+							//入力された納品月は〆られているので指定納品書データが登録されていればそのデータをセット
+							if(rs.getInt("ID") == (Integer)v.get(14)) {
+								v.set(15, rs.getDate("納品書日"));//納品書日
+								v.set(16, rs.getInt("消費税"));//消費税
+								v.set(17, true);//指定納品書のﾁｪｯｸ
+							}
 							closeFlg = true;
-						} else {
+						}
+						if(!closeFlg) {//〆られていなければ
 							//納品書にチェックがあれば納品書番号、納品書日、消費税、〆FLGをMapにセット（後でT_指定納品書にmergeするため）
 							if((Boolean)v.get(17)) {
 								if(!taxMap.containsKey(v.get(14)) || !(Boolean)v.get(18)) {
@@ -125,7 +128,7 @@ public class OrderRegistration extends GenericServlet {
 					}
 				}
 			}
-			if(closeFlg) err.append("〆後の納品書日が入力されている行があります\n納品書データは〆後の日付で登録できません");
+//			if(closeFlg) err.append("〆後の納品書日が入力されている行があります\n納品書データは〆後の日付で登録できません");
 			//////////////////////////////////////////////////////////////////////////////////////////////////////
 			orderID = odd.getInt(4);
 			if(odd.getInt(1) + odd.getInt(2) == 0) {
@@ -146,7 +149,7 @@ public class OrderRegistration extends GenericServlet {
 						} catch(SQLException ex) {
 							ex.printStackTrace();
 							isError = true;
-							err.append(className + "在庫テーブルの削除に失敗しました\n");
+							err.append("データの削除に失敗しました\n");
 							Logging.logStackTrace(ex, lg, className);
 						}
 					}
@@ -165,7 +168,7 @@ public class OrderRegistration extends GenericServlet {
 					} catch(SQLException ex) {
 						ex.printStackTrace();
 						isError = true;
-						err.append(className + "注文番号の読み込みに失敗しました\n");
+						err.append("注文番号の読み込みに失敗しました\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 				}
@@ -211,7 +214,7 @@ public class OrderRegistration extends GenericServlet {
 					} catch(SQLException ex) {
 						ex.printStackTrace();
 						isError = true;
-						err.append(className + "テーブル「T_在庫_親」の更新に失敗しました\n");
+						err.append("基礎データの更新に失敗しました\n仕入先コード、日付フォーマット等を見直してみてください");
 						Logging.logStackTrace(ex, lg, className);
 					}
 
@@ -242,6 +245,13 @@ public class OrderRegistration extends GenericServlet {
 							ps.executeUpdate();
 							ps.close();
 						}
+					} catch(SQLException ex) {
+						ex.printStackTrace();
+						isError = true;
+						err.append("基礎データの更新に失敗しました\n仕入先コード、日付フォーマット等を見直してみてください");
+						Logging.logStackTrace(ex, lg, className);
+					}
+					try {
 						//子孫のデータ更新は、削除→追加にて
 						//T_在庫_子とT_指定納品書のinnerjoinにおいて、それぞれの〆FLGに不一致のものがあったときは
 						//〆後に〆前の画面から登録しようとした→エラー
@@ -252,7 +262,7 @@ public class OrderRegistration extends GenericServlet {
 					} catch(SQLException ex) {
 						ex.printStackTrace();
 						isError = true;
-						err.append(className + "在庫テーブルの削除に失敗しました\n");
+						err.append("明細データの更新に失敗しました\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 				}
@@ -290,11 +300,18 @@ public class OrderRegistration extends GenericServlet {
 					}
 					int[] updateCounts = ps.executeBatch();
 					lg.info("T_在庫_子は" + updateCounts.length + "件処理されました。");
+				} catch(SQLException ex) {
+					ex.printStackTrace();
+					isError = true;
+					err.append("明細データの登録に失敗しました\n");
+					Logging.logStackTrace(ex, lg, className);
+				}
 
-					ps = c.prepareStatement(
+				try {
+					PreparedStatement ps = c.prepareStatement(
 					 "MERGE INTO T_指定納品書 AS t" +
 					 " USING (SELECT ? AS ID, ? AS 納品書日, ? AS 消費税) AS w" +
-					 "  ON t.ID=w.ID" +
+					 "  ON t.ID=w.ID AND t.〆FLG='false'" +
 					 " WHEN MATCHED THEN" +
 					 "  UPDATE SET" +
 					 "   t.ID = w.ID," +
@@ -308,12 +325,12 @@ public class OrderRegistration extends GenericServlet {
 						ps.setInt(3, e.getValue().getTax());//消費税
 						ps.addBatch();
 					}
-					updateCounts = ps.executeBatch();
+					int[] updateCounts = ps.executeBatch();
 					lg.info("T_指定納品書は" + updateCounts.length + "件処理されました。");
 				} catch(SQLException ex) {
 					ex.printStackTrace();
 					isError = true;
-					err.append(className + "テーブル「T_在庫_子」の更新に失敗しました\n");
+					err.append("指定納品書データを更新できません\n納品書番号が〆後の番号でないか、日付が正しいか確認してください");
 					Logging.logStackTrace(ex, lg, className);
 				}
 
