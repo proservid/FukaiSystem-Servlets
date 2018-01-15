@@ -1,240 +1,903 @@
-2018-01-13 16:01:32,562 DEBUG A1 - idle:19
-2018-01-13 16:01:32,564 DEBUG A1 - active:1
-2018-01-13 16:01:32,855 DEBUG A1 - Init
+2018-01-15 10:03:34,637 DEBUG A1 - idle:19
+2018-01-15 10:03:34,641 DEBUG A1 - active:1
+2018-01-15 10:03:34,941 DEBUG A1 - Search
 ps is closed by jdbc4.0
-2018-01-13 16:06:50,668 DEBUG A1 - idle:19
-2018-01-13 16:06:50,668 DEBUG A1 - active:1
-2018-01-13 16:06:50,819 DEBUG A1 - Search
+2018-01-15 10:03:35,950 DEBUG A1 - idle:19
+2018-01-15 10:03:35,951 DEBUG A1 - active:1
+2018-01-15 10:03:35,987 DEBUG A1 - GetOrderSummary
 ps is closed by jdbc4.0
-2018-01-13 16:06:59,240 DEBUG A1 - idle:19
-2018-01-13 16:06:59,241 DEBUG A1 - active:1
-2018-01-13 16:06:59,415 DEBUG A1 - GetSummary
-ps is closed by jdbc4.0
-2018-01-13 16:06:59,454 DEBUG A1 - idle:19
-2018-01-13 16:06:59,454 DEBUG A1 - active:1
-2018-01-13 16:06:59,577 DEBUG A1 - SetCombo
+2018-01-15 10:03:36,018 DEBUG A1 - idle:19
+2018-01-15 10:03:36,018 DEBUG A1 - active:1
+2018-01-15 10:03:36,021 DEBUG A1 - SetLabel
 ps closed by jdbc4.0
-2018-01-13 16:11:16,041 DEBUG A1 - idle:19
-2018-01-13 16:11:16,041 DEBUG A1 - active:1
-2018-01-13 16:11:16,094 DEBUG A1 - Search
+2018-01-15 10:03:36,740 DEBUG A1 - idle:19
+2018-01-15 10:03:36,740 DEBUG A1 - active:1
+2018-01-15 10:03:36,760 DEBUG A1 - GetOrderSummary
 ps is closed by jdbc4.0
-2018-01-13 16:11:16,961 DEBUG A1 - idle:19
-2018-01-13 16:11:16,961 DEBUG A1 - active:1
-2018-01-13 16:11:17,000 DEBUG A1 - GetSummary
-ps is closed by jdbc4.0
-2018-01-13 16:11:17,041 DEBUG A1 - idle:19
-2018-01-13 16:11:17,041 DEBUG A1 - active:1
-2018-01-13 16:11:17,052 DEBUG A1 - SetCombo
+2018-01-15 10:03:36,800 DEBUG A1 - idle:19
+2018-01-15 10:03:36,800 DEBUG A1 - active:1
+2018-01-15 10:03:36,802 DEBUG A1 - SetLabel
 ps closed by jdbc4.0
-2018-01-13 16:11:39,575 DEBUG A1 - idle:19
-2018-01-13 16:11:39,576 DEBUG A1 - active:1
-2018-01-13 16:11:39,660 DEBUG A1 - Search
+2018-01-15 10:05:01,669 DEBUG A1 - idle:19
+2018-01-15 10:05:01,669 DEBUG A1 - active:1
+2018-01-15 10:05:01,772  INFO A1 - T_在庫_子は7件処理されました。
+2018-01-15 10:05:01,777  INFO A1 - T_指定納品書は1件処理されました。
+2018-01-15 10:05:01,858 DEBUG A1 - idle:19
+2018-01-15 10:05:01,858 DEBUG A1 - active:1
+2018-01-15 10:05:01,877 DEBUG A1 - GetOrderSummary
 ps is closed by jdbc4.0
-2018-01-13 16:11:48,840 DEBUG A1 - idle:19
-2018-01-13 16:11:48,840 DEBUG A1 - active:1
-2018-01-13 16:11:48,864 DEBUG A1 - GetCandidate
-ps is closed by jdbc4.0
-2018-01-13 16:11:48,896 DEBUG A1 - idle:19
-2018-01-13 16:11:48,897 DEBUG A1 - active:1
-2018-01-13 16:11:48,901 DEBUG A1 - GetCandidate
-ps is closed by jdbc4.0
-2018-01-13 16:11:49,067 DEBUG A1 - idle:19
-2018-01-13 16:11:49,067 DEBUG A1 - active:1
-2018-01-13 16:11:49,073 DEBUG A1 - GetCandidate
-ps is closed by jdbc4.0
-2018-01-13 16:11:50,333 DEBUG A1 - idle:19
-2018-01-13 16:11:50,333 DEBUG A1 - active:1
-2018-01-13 16:11:50,343 DEBUG A1 - SetLabel
+2018-01-15 10:05:01,901 DEBUG A1 - idle:19
+2018-01-15 10:05:01,901 DEBUG A1 - active:1
+2018-01-15 10:05:01,902 DEBUG A1 - SetLabel
 ps closed by jdbc4.0
-2018-01-13 16:12:04,451 DEBUG A1 - idle:19
-2018-01-13 16:12:04,451 DEBUG A1 - active:1
-2018-01-13 16:12:04,469 DEBUG A1 - Auth
-ps is closed by jdbc4.0
-2018-01-13 16:12:04,693 DEBUG A1 - idle:19
-2018-01-13 16:12:04,693 DEBUG A1 - active:1
-2018-01-13 16:12:04,746 DEBUG A1 - GetSchedule
-ps is closed by jdbc4.0
-2018-01-13 16:12:05,017 DEBUG A1 - idle:19
-2018-01-13 16:12:05,018 DEBUG A1 - active:1
-2018-01-13 16:12:05,039 DEBUG A1 - GetSchedule
-ps is closed by jdbc4.0
-2018-01-13 16:12:07,192 DEBUG A1 - idle:19
-2018-01-13 16:12:07,192 DEBUG A1 - active:1
-2018-01-13 16:12:07,200 DEBUG A1 - GetSchedule
-ps is closed by jdbc4.0
-2018-01-13 16:12:07,317 DEBUG A1 - idle:19
-2018-01-13 16:12:07,317 DEBUG A1 - active:1
-2018-01-13 16:12:07,326 DEBUG A1 - GetSchedule
-ps is closed by jdbc4.0
-2018-01-13 16:12:16,440 DEBUG A1 - idle:19
-2018-01-13 16:12:16,440 DEBUG A1 - active:1
-2018-01-13 16:12:16,445 DEBUG A1 - GetSchedule
-ps is closed by jdbc4.0
-2018-01-13 16:12:16,689 DEBUG A1 - idle:19
-2018-01-13 16:12:16,689 DEBUG A1 - active:1
-2018-01-13 16:12:16,696 DEBUG A1 - GetSchedule
-ps is closed by jdbc4.0
-2018-01-13 16:12:16,860 DEBUG A1 - idle:19
-2018-01-13 16:12:16,860 DEBUG A1 - active:1
-2018-01-13 16:12:16,867 DEBUG A1 - GetSchedule
-ps is closed by jdbc4.0
-2018-01-13 16:12:17,053 DEBUG A1 - idle:19
-2018-01-13 16:12:17,053 DEBUG A1 - active:1
-2018-01-13 16:12:17,059 DEBUG A1 - GetSchedule
-ps is closed by jdbc4.0
-2018-01-13 16:12:17,773 DEBUG A1 - idle:19
-2018-01-13 16:12:17,773 DEBUG A1 - active:1
-2018-01-13 16:12:17,780 DEBUG A1 - GetSchedule
-ps is closed by jdbc4.0
-2018-01-13 16:12:18,521 DEBUG A1 - idle:19
-2018-01-13 16:12:18,521 DEBUG A1 - active:1
-2018-01-13 16:12:18,527 DEBUG A1 - GetSchedule
-ps is closed by jdbc4.0
-2018-01-13 16:33:30,865 DEBUG A1 - idle:19
-2018-01-13 16:33:30,865 DEBUG A1 - active:1
-2018-01-13 16:33:30,930 DEBUG A1 - Init
-ps is closed by jdbc4.0
-2018-01-13 16:33:44,395 DEBUG A1 - idle:19
-2018-01-13 16:33:44,395 DEBUG A1 - active:1
-2018-01-13 16:33:44,569 DEBUG A1 - Search
-ps is closed by jdbc4.0
-2018-01-13 16:33:51,420 DEBUG A1 - idle:19
-2018-01-13 16:33:51,420 DEBUG A1 - active:1
-2018-01-13 16:33:51,500 DEBUG A1 - Search
-ps is closed by jdbc4.0
-2018-01-13 16:34:21,688 DEBUG A1 - idle:19
-2018-01-13 16:34:21,688 DEBUG A1 - active:1
-2018-01-13 16:34:21,741 DEBUG A1 - Search
-ps is closed by jdbc4.0
-2018-01-13 16:34:27,117 DEBUG A1 - idle:19
-2018-01-13 16:34:27,118 DEBUG A1 - active:1
-2018-01-13 16:34:27,150 DEBUG A1 - GetOrderSummary
-ps is closed by jdbc4.0
-2018-01-13 16:34:27,174 DEBUG A1 - idle:19
-2018-01-13 16:34:27,174 DEBUG A1 - active:1
-2018-01-13 16:34:27,175 DEBUG A1 - SetLabel
+2018-01-15 10:05:02,021 DEBUG A1 - idle:19
+2018-01-15 10:05:02,021 DEBUG A1 - active:1
+2018-01-15 10:05:02,023 DEBUG A1 - SetLabel
 ps closed by jdbc4.0
-2018-01-13 16:38:17,079 DEBUG A1 - idle:19
-2018-01-13 16:38:17,079 DEBUG A1 - active:1
-2018-01-13 16:38:17,183  INFO A1 - T_在庫_子は7件処理されました。
-2018-01-13 16:38:17,183  INFO A1 - T_指定納品書は0件処理されました。
-2018-01-13 16:38:17,273 DEBUG A1 - idle:19
-2018-01-13 16:38:17,273 DEBUG A1 - active:1
-2018-01-13 16:38:17,291 DEBUG A1 - GetOrderSummary
+2018-01-15 10:05:04,315 DEBUG A1 - idle:19
+2018-01-15 10:05:04,315 DEBUG A1 - active:1
+2018-01-15 10:05:04,317 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:09:53,680 DEBUG A1 - idle:19
+2018-01-15 10:09:53,680 DEBUG A1 - active:1
+2018-01-15 10:09:53,698 DEBUG A1 - GetOrderSummary
 ps is closed by jdbc4.0
-2018-01-13 16:38:17,314 DEBUG A1 - idle:19
-2018-01-13 16:38:17,314 DEBUG A1 - active:1
-2018-01-13 16:38:17,315 DEBUG A1 - SetLabel
+2018-01-15 10:09:53,719 DEBUG A1 - idle:19
+2018-01-15 10:09:53,719 DEBUG A1 - active:1
+2018-01-15 10:09:53,721 DEBUG A1 - SetLabel
 ps closed by jdbc4.0
-2018-01-13 16:38:17,403 DEBUG A1 - idle:19
-2018-01-13 16:38:17,403 DEBUG A1 - active:1
-2018-01-13 16:38:17,405 DEBUG A1 - SetLabel
-ps closed by jdbc4.0
-2018-01-13 16:38:48,959 DEBUG A1 - idle:19
-2018-01-13 16:38:48,959 DEBUG A1 - active:1
-2018-01-13 16:38:48,961 DEBUG A1 - SetLabel
-ps closed by jdbc4.0
-2018-01-13 16:40:58,469 DEBUG A1 - idle:19
-2018-01-13 16:40:58,469 DEBUG A1 - active:1
-2018-01-13 16:40:58,473 DEBUG A1 - SetLabel
-ps closed by jdbc4.0
-2018-01-13 16:41:08,540 DEBUG A1 - idle:19
-2018-01-13 16:41:08,540 DEBUG A1 - active:1
-2018-01-13 16:41:08,543 DEBUG A1 - SetLabel
-ps closed by jdbc4.0
-2018-01-13 16:42:47,624 DEBUG A1 - idle:0
-2018-01-13 16:42:47,624 DEBUG A1 - active:1
-2018-01-13 16:42:47,638 DEBUG A1 - SetLabel
-ps closed by jdbc4.0
-2018-01-13 16:42:47,707 DEBUG A1 - idle:0
-2018-01-13 16:42:47,707 DEBUG A1 - active:1
-2018-01-13 16:42:47,857 DEBUG A1 - Search
+2018-01-15 10:09:54,893 DEBUG A1 - idle:19
+2018-01-15 10:09:54,894 DEBUG A1 - active:1
+2018-01-15 10:09:54,915 DEBUG A1 - GetOrderSummary
 ps is closed by jdbc4.0
-2018-01-13 16:42:49,301 DEBUG A1 - idle:0
-2018-01-13 16:42:49,301 DEBUG A1 - active:1
-2018-01-13 16:42:49,329 DEBUG A1 - GetOrderSummary
+2018-01-15 10:09:54,935 DEBUG A1 - idle:19
+2018-01-15 10:09:54,935 DEBUG A1 - active:1
+2018-01-15 10:09:54,937 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:09:55,310 DEBUG A1 - idle:19
+2018-01-15 10:09:55,310 DEBUG A1 - active:1
+2018-01-15 10:09:55,329 DEBUG A1 - GetOrderSummary
 ps is closed by jdbc4.0
-2018-01-13 16:42:49,353 DEBUG A1 - idle:0
-2018-01-13 16:42:49,353 DEBUG A1 - active:1
-2018-01-13 16:42:49,354 DEBUG A1 - SetLabel
+2018-01-15 10:09:55,357 DEBUG A1 - idle:19
+2018-01-15 10:09:55,357 DEBUG A1 - active:1
+2018-01-15 10:09:55,361 DEBUG A1 - SetLabel
 ps closed by jdbc4.0
-2018-01-13 16:42:59,483 DEBUG A1 - idle:0
-2018-01-13 16:42:59,483 DEBUG A1 - active:1
-2018-01-13 16:42:59,595  INFO A1 - T_在庫_子は7件処理されました。
-2018-01-13 16:42:59,622  INFO A1 - T_指定納品書は1件処理されました。
-2018-01-13 16:42:59,702 DEBUG A1 - idle:0
-2018-01-13 16:42:59,702 DEBUG A1 - active:1
-2018-01-13 16:42:59,720 DEBUG A1 - GetOrderSummary
+2018-01-15 10:09:55,939 DEBUG A1 - idle:19
+2018-01-15 10:09:55,939 DEBUG A1 - active:1
+2018-01-15 10:09:55,956 DEBUG A1 - GetOrderSummary
 ps is closed by jdbc4.0
-2018-01-13 16:42:59,742 DEBUG A1 - idle:0
-2018-01-13 16:42:59,742 DEBUG A1 - active:1
-2018-01-13 16:42:59,743 DEBUG A1 - SetLabel
+2018-01-15 10:09:56,007 DEBUG A1 - idle:19
+2018-01-15 10:09:56,007 DEBUG A1 - active:1
+2018-01-15 10:09:56,010 DEBUG A1 - SetLabel
 ps closed by jdbc4.0
-2018-01-13 16:42:59,798 DEBUG A1 - idle:0
-2018-01-13 16:42:59,798 DEBUG A1 - active:1
-2018-01-13 16:42:59,800 DEBUG A1 - SetLabel
-ps closed by jdbc4.0
-2018-01-13 16:43:06,340 DEBUG A1 - idle:0
-2018-01-13 16:43:06,341 DEBUG A1 - active:1
-2018-01-13 16:43:06,342 DEBUG A1 - SetLabel
-ps closed by jdbc4.0
-2018-01-13 16:46:15,709 DEBUG A1 - idle:0
-2018-01-13 16:46:15,709 DEBUG A1 - active:1
-2018-01-13 16:46:15,742 DEBUG A1 - GetSchedule
+2018-01-15 10:09:56,376 DEBUG A1 - idle:19
+2018-01-15 10:09:56,376 DEBUG A1 - active:1
+2018-01-15 10:09:56,397 DEBUG A1 - GetOrderSummary
 ps is closed by jdbc4.0
-2018-01-13 16:49:05,098 DEBUG A1 - idle:0
-2018-01-13 16:49:05,098 DEBUG A1 - active:1
-2018-01-13 16:49:05,164  INFO A1 - T_在庫_子は7件処理されました。
-2018-01-13 16:49:05,164  INFO A1 - T_指定納品書は1件処理されました。
-2018-01-13 16:49:05,245 DEBUG A1 - idle:0
-2018-01-13 16:49:05,245 DEBUG A1 - active:1
-2018-01-13 16:49:05,261 DEBUG A1 - GetOrderSummary
+2018-01-15 10:09:56,423 DEBUG A1 - idle:19
+2018-01-15 10:09:56,423 DEBUG A1 - active:1
+2018-01-15 10:09:56,426 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:09:56,714 DEBUG A1 - idle:19
+2018-01-15 10:09:56,714 DEBUG A1 - active:1
+2018-01-15 10:09:56,731 DEBUG A1 - GetOrderSummary
 ps is closed by jdbc4.0
-2018-01-13 16:49:05,285 DEBUG A1 - idle:0
-2018-01-13 16:49:05,285 DEBUG A1 - active:1
-2018-01-13 16:49:05,286 DEBUG A1 - SetLabel
+2018-01-15 10:09:56,755 DEBUG A1 - idle:19
+2018-01-15 10:09:56,756 DEBUG A1 - active:1
+2018-01-15 10:09:56,757 DEBUG A1 - SetLabel
 ps closed by jdbc4.0
-2018-01-13 16:49:05,331 DEBUG A1 - idle:0
-2018-01-13 16:49:05,331 DEBUG A1 - active:1
-2018-01-13 16:49:05,332 DEBUG A1 - SetLabel
-ps closed by jdbc4.0
-2018-01-13 16:49:08,160 DEBUG A1 - idle:0
-2018-01-13 16:49:08,160 DEBUG A1 - active:1
-2018-01-13 16:49:08,161 DEBUG A1 - SetLabel
-ps closed by jdbc4.0
-2018-01-13 16:49:17,016 DEBUG A1 - idle:0
-2018-01-13 16:49:17,016 DEBUG A1 - active:1
-2018-01-13 16:49:17,081  INFO A1 - T_在庫_子は7件処理されました。
-2018-01-13 16:49:17,082  INFO A1 - T_指定納品書は1件処理されました。
-2018-01-13 16:49:17,152 DEBUG A1 - idle:0
-2018-01-13 16:49:17,152 DEBUG A1 - active:1
-2018-01-13 16:49:17,173 DEBUG A1 - GetOrderSummary
+2018-01-15 10:09:57,230 DEBUG A1 - idle:19
+2018-01-15 10:09:57,230 DEBUG A1 - active:1
+2018-01-15 10:09:57,245 DEBUG A1 - GetOrderSummary
 ps is closed by jdbc4.0
-2018-01-13 16:49:17,196 DEBUG A1 - idle:0
-2018-01-13 16:49:17,196 DEBUG A1 - active:1
-2018-01-13 16:49:17,198 DEBUG A1 - SetLabel
+2018-01-15 10:09:57,267 DEBUG A1 - idle:19
+2018-01-15 10:09:57,267 DEBUG A1 - active:1
+2018-01-15 10:09:57,268 DEBUG A1 - SetLabel
 ps closed by jdbc4.0
-2018-01-13 16:49:20,115 DEBUG A1 - idle:0
-2018-01-13 16:49:20,115 DEBUG A1 - active:1
-2018-01-13 16:49:20,116 DEBUG A1 - SetLabel
-ps closed by jdbc4.0
-2018-01-13 16:49:44,380 DEBUG A1 - idle:0
-2018-01-13 16:49:44,380 DEBUG A1 - active:1
-2018-01-13 16:49:44,455  INFO A1 - T_在庫_子は7件処理されました。
-2018-01-13 16:49:44,456  INFO A1 - T_指定納品書は1件処理されました。
-2018-01-13 16:49:44,517 DEBUG A1 - idle:0
-2018-01-13 16:49:44,517 DEBUG A1 - active:1
-2018-01-13 16:49:44,533 DEBUG A1 - GetOrderSummary
+2018-01-15 10:10:05,178 DEBUG A1 - idle:19
+2018-01-15 10:10:05,178 DEBUG A1 - active:1
+2018-01-15 10:10:05,194 DEBUG A1 - GetOrderSummary
 ps is closed by jdbc4.0
-2018-01-13 16:49:44,553 DEBUG A1 - idle:0
-2018-01-13 16:49:44,553 DEBUG A1 - active:1
-2018-01-13 16:49:44,555 DEBUG A1 - SetLabel
+2018-01-15 10:10:05,221 DEBUG A1 - idle:19
+2018-01-15 10:10:05,221 DEBUG A1 - active:1
+2018-01-15 10:10:05,223 DEBUG A1 - SetLabel
 ps closed by jdbc4.0
-2018-01-13 16:49:44,596 DEBUG A1 - idle:0
-2018-01-13 16:49:44,596 DEBUG A1 - active:1
-2018-01-13 16:49:44,597 DEBUG A1 - SetLabel
+2018-01-15 10:10:05,819 DEBUG A1 - idle:19
+2018-01-15 10:10:05,819 DEBUG A1 - active:1
+2018-01-15 10:10:05,834 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 10:10:05,860 DEBUG A1 - idle:19
+2018-01-15 10:10:05,860 DEBUG A1 - active:1
+2018-01-15 10:10:05,862 DEBUG A1 - SetLabel
 ps closed by jdbc4.0
-2018-01-13 16:49:46,706 DEBUG A1 - idle:0
-2018-01-13 16:49:46,707 DEBUG A1 - active:1
-2018-01-13 16:49:46,708 DEBUG A1 - SetLabel
+2018-01-15 10:10:19,692 DEBUG A1 - idle:19
+2018-01-15 10:10:19,692 DEBUG A1 - active:1
+2018-01-15 10:10:19,839 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 10:10:29,656 DEBUG A1 - idle:19
+2018-01-15 10:10:29,656 DEBUG A1 - active:1
+2018-01-15 10:10:29,664 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 10:10:30,582 DEBUG A1 - idle:19
+2018-01-15 10:10:30,582 DEBUG A1 - active:1
+2018-01-15 10:10:30,595 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 10:10:32,662 DEBUG A1 - idle:19
+2018-01-15 10:10:32,662 DEBUG A1 - active:1
+2018-01-15 10:10:32,695 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 10:10:46,790 DEBUG A1 - idle:19
+2018-01-15 10:10:46,790 DEBUG A1 - active:1
+2018-01-15 10:10:46,810 DEBUG A1 - GetCandidate
+ps is closed by jdbc4.0
+2018-01-15 10:10:50,528 DEBUG A1 - idle:19
+2018-01-15 10:10:50,528 DEBUG A1 - active:1
+2018-01-15 10:10:50,640 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 10:12:26,273 DEBUG A1 - idle:19
+2018-01-15 10:12:26,273 DEBUG A1 - active:1
+2018-01-15 10:12:26,367  INFO A1 - T_在庫_子は8件処理されました。
+2018-01-15 10:12:26,367  INFO A1 - T_指定納品書は0件処理されました。
+2018-01-15 10:12:26,449 DEBUG A1 - idle:19
+2018-01-15 10:12:26,449 DEBUG A1 - active:1
+2018-01-15 10:12:26,467 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 10:12:26,487 DEBUG A1 - idle:19
+2018-01-15 10:12:26,487 DEBUG A1 - active:1
+2018-01-15 10:12:26,489 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:12:26,542 DEBUG A1 - idle:19
+2018-01-15 10:12:26,542 DEBUG A1 - active:1
+2018-01-15 10:12:26,544 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:12:29,325 DEBUG A1 - idle:19
+2018-01-15 10:12:29,326 DEBUG A1 - active:1
+2018-01-15 10:12:29,327 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:13:37,689 DEBUG A1 - idle:19
+2018-01-15 10:13:37,689 DEBUG A1 - active:1
+2018-01-15 10:13:37,774  INFO A1 - T_在庫_子は7件処理されました。
+2018-01-15 10:13:37,774  INFO A1 - T_指定納品書は1件処理されました。
+2018-01-15 10:13:37,836 DEBUG A1 - idle:19
+2018-01-15 10:13:37,836 DEBUG A1 - active:1
+2018-01-15 10:13:37,850 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 10:13:37,871 DEBUG A1 - idle:19
+2018-01-15 10:13:37,871 DEBUG A1 - active:1
+2018-01-15 10:13:37,873 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:13:37,916 DEBUG A1 - idle:19
+2018-01-15 10:13:37,916 DEBUG A1 - active:1
+2018-01-15 10:13:37,917 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:13:42,022 DEBUG A1 - idle:19
+2018-01-15 10:13:42,022 DEBUG A1 - active:1
+2018-01-15 10:13:42,024 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:15:04,510 DEBUG A1 - idle:19
+2018-01-15 10:15:04,510 DEBUG A1 - active:1
+2018-01-15 10:15:04,573 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2018-01-15 10:20:24,836 DEBUG A1 - idle:19
+2018-01-15 10:20:24,836 DEBUG A1 - active:1
+2018-01-15 10:20:24,839 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:22:05,312 DEBUG A1 - idle:19
+2018-01-15 10:22:05,312 DEBUG A1 - active:1
+2018-01-15 10:22:05,398  INFO A1 - T_在庫_子は7件処理されました。
+2018-01-15 10:22:05,398  INFO A1 - T_指定納品書は1件処理されました。
+2018-01-15 10:22:05,472 DEBUG A1 - idle:19
+2018-01-15 10:22:05,472 DEBUG A1 - active:1
+2018-01-15 10:22:05,502 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 10:22:05,524 DEBUG A1 - idle:19
+2018-01-15 10:22:05,524 DEBUG A1 - active:1
+2018-01-15 10:22:05,525 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:22:05,567 DEBUG A1 - idle:19
+2018-01-15 10:22:05,567 DEBUG A1 - active:1
+2018-01-15 10:22:05,569 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:22:07,586 DEBUG A1 - idle:19
+2018-01-15 10:22:07,586 DEBUG A1 - active:1
+2018-01-15 10:22:07,587 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:22:19,988 DEBUG A1 - idle:19
+2018-01-15 10:22:19,989 DEBUG A1 - active:1
+2018-01-15 10:22:19,990 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:22:55,562 DEBUG A1 - idle:19
+2018-01-15 10:22:55,563 DEBUG A1 - active:1
+2018-01-15 10:22:55,565 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:23:54,762 DEBUG A1 - idle:19
+2018-01-15 10:23:54,763 DEBUG A1 - active:1
+2018-01-15 10:23:54,764 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:30:04,523 DEBUG A1 - idle:19
+2018-01-15 10:30:04,523 DEBUG A1 - active:1
+2018-01-15 10:30:04,538 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2018-01-15 10:33:54,003 DEBUG A1 - idle:19
+2018-01-15 10:33:54,003 DEBUG A1 - active:1
+2018-01-15 10:33:54,075  INFO A1 - T_在庫_子は8件処理されました。
+2018-01-15 10:33:54,076  INFO A1 - T_指定納品書は1件処理されました。
+2018-01-15 10:33:54,141 DEBUG A1 - idle:19
+2018-01-15 10:33:54,141 DEBUG A1 - active:1
+2018-01-15 10:33:54,157 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 10:33:54,178 DEBUG A1 - idle:19
+2018-01-15 10:33:54,178 DEBUG A1 - active:1
+2018-01-15 10:33:54,179 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:33:54,230 DEBUG A1 - idle:19
+2018-01-15 10:33:54,230 DEBUG A1 - active:1
+2018-01-15 10:33:54,232 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:34:22,967 DEBUG A1 - idle:19
+2018-01-15 10:34:22,967 DEBUG A1 - active:1
+2018-01-15 10:34:22,970 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:34:35,850 DEBUG A1 - idle:19
+2018-01-15 10:34:35,850 DEBUG A1 - active:1
+2018-01-15 10:34:35,851 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:35:45,146 DEBUG A1 - idle:19
+2018-01-15 10:35:45,146 DEBUG A1 - active:1
+2018-01-15 10:35:45,149 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:35:55,611 DEBUG A1 - idle:19
+2018-01-15 10:35:55,611 DEBUG A1 - active:1
+2018-01-15 10:35:55,617 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:36:26,145 DEBUG A1 - idle:19
+2018-01-15 10:36:26,145 DEBUG A1 - active:1
+2018-01-15 10:36:26,146 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:38:15,492 DEBUG A1 - idle:19
+2018-01-15 10:38:15,493 DEBUG A1 - active:1
+2018-01-15 10:38:15,495 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 10:59:48,800 DEBUG A1 - idle:19
+2018-01-15 10:59:48,800 DEBUG A1 - active:1
+2018-01-15 10:59:48,900 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:00:04,511 DEBUG A1 - idle:19
+2018-01-15 11:00:04,511 DEBUG A1 - active:1
+2018-01-15 11:00:04,540 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2018-01-15 11:04:05,048 DEBUG A1 - idle:0
+2018-01-15 11:04:05,048 DEBUG A1 - active:1
+2018-01-15 11:04:05,212 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 11:04:05,765 DEBUG A1 - idle:0
+2018-01-15 11:04:05,765 DEBUG A1 - active:1
+2018-01-15 11:04:05,800 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 11:04:05,818 DEBUG A1 - idle:0
+2018-01-15 11:04:05,818 DEBUG A1 - active:1
+2018-01-15 11:04:05,821 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:08:15,374 DEBUG A1 - idle:0
+2018-01-15 11:08:15,374 DEBUG A1 - active:1
+2018-01-15 11:08:15,484  INFO A1 - T_在庫_子は11件処理されました。
+2018-01-15 11:08:15,514 ERROR A1 - OrderRegistration
+java.sql.BatchUpdateException: 制約 'PK_T_指定納品書' の PRIMARY KEY 違反。オブジェクト 'dbo.T_指定納品書' には重複するキーを挿入できません。重複するキーの値は (34436) です。
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:1178)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+fukaisystem.OrderRegistration.service(OrderRegistration.java:355)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2018-01-15 11:08:15,561 DEBUG A1 - rollback
+2018-01-15 11:10:37,851 DEBUG A1 - idle:0
+2018-01-15 11:10:37,851 DEBUG A1 - active:1
+2018-01-15 11:10:37,876 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 11:10:37,908 DEBUG A1 - idle:0
+2018-01-15 11:10:37,908 DEBUG A1 - active:1
+2018-01-15 11:10:37,909 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:10:41,462 DEBUG A1 - idle:0
+2018-01-15 11:10:41,462 DEBUG A1 - active:1
+2018-01-15 11:10:41,482 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 11:10:41,500 DEBUG A1 - idle:0
+2018-01-15 11:10:41,500 DEBUG A1 - active:1
+2018-01-15 11:10:41,502 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:10:42,337 DEBUG A1 - idle:0
+2018-01-15 11:10:42,338 DEBUG A1 - active:1
+2018-01-15 11:10:42,355 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 11:10:42,375 DEBUG A1 - idle:0
+2018-01-15 11:10:42,375 DEBUG A1 - active:1
+2018-01-15 11:10:42,376 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:10:42,936 DEBUG A1 - idle:0
+2018-01-15 11:10:42,936 DEBUG A1 - active:1
+2018-01-15 11:10:42,957 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 11:10:42,981 DEBUG A1 - idle:0
+2018-01-15 11:10:42,981 DEBUG A1 - active:1
+2018-01-15 11:10:42,983 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:10:43,344 DEBUG A1 - idle:0
+2018-01-15 11:10:43,344 DEBUG A1 - active:1
+2018-01-15 11:10:43,362 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 11:10:43,382 DEBUG A1 - idle:0
+2018-01-15 11:10:43,382 DEBUG A1 - active:1
+2018-01-15 11:10:43,384 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:10:43,643 DEBUG A1 - idle:0
+2018-01-15 11:10:43,643 DEBUG A1 - active:1
+2018-01-15 11:10:43,661 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 11:10:43,694 DEBUG A1 - idle:0
+2018-01-15 11:10:43,695 DEBUG A1 - active:1
+2018-01-15 11:10:43,697 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:10:44,072 DEBUG A1 - idle:0
+2018-01-15 11:10:44,072 DEBUG A1 - active:1
+2018-01-15 11:10:44,099 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 11:10:44,124 DEBUG A1 - idle:0
+2018-01-15 11:10:44,124 DEBUG A1 - active:1
+2018-01-15 11:10:44,127 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:10:59,906 DEBUG A1 - idle:0
+2018-01-15 11:10:59,906 DEBUG A1 - active:1
+2018-01-15 11:10:59,989  INFO A1 - T_在庫_子は11件処理されました。
+2018-01-15 11:10:59,992 ERROR A1 - OrderRegistration
+java.sql.BatchUpdateException: 制約 'PK_T_指定納品書' の PRIMARY KEY 違反。オブジェクト 'dbo.T_指定納品書' には重複するキーを挿入できません。重複するキーの値は (34436) です。
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:1178)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+fukaisystem.OrderRegistration.service(OrderRegistration.java:355)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2018-01-15 11:11:00,039 DEBUG A1 - rollback
+2018-01-15 11:11:03,729 DEBUG A1 - idle:0
+2018-01-15 11:11:03,729 DEBUG A1 - active:1
+2018-01-15 11:11:03,803  INFO A1 - T_在庫_子は11件処理されました。
+2018-01-15 11:11:03,806 ERROR A1 - OrderRegistration
+java.sql.BatchUpdateException: 制約 'PK_T_指定納品書' の PRIMARY KEY 違反。オブジェクト 'dbo.T_指定納品書' には重複するキーを挿入できません。重複するキーの値は (34436) です。
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:1178)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+fukaisystem.OrderRegistration.service(OrderRegistration.java:355)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2018-01-15 11:11:03,842 DEBUG A1 - rollback
+2018-01-15 11:11:17,075 DEBUG A1 - idle:0
+2018-01-15 11:11:17,075 DEBUG A1 - active:1
+2018-01-15 11:11:17,177  INFO A1 - T_在庫_子は10件処理されました。
+2018-01-15 11:11:17,177  INFO A1 - T_指定納品書は1件処理されました。
+2018-01-15 11:11:17,239 DEBUG A1 - idle:0
+2018-01-15 11:11:17,239 DEBUG A1 - active:1
+2018-01-15 11:11:17,256 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 11:11:17,275 DEBUG A1 - idle:0
+2018-01-15 11:11:17,275 DEBUG A1 - active:1
+2018-01-15 11:11:17,276 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:11:17,322 DEBUG A1 - idle:0
+2018-01-15 11:11:17,322 DEBUG A1 - active:1
+2018-01-15 11:11:17,324 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:11:47,889 DEBUG A1 - idle:0
+2018-01-15 11:11:47,889 DEBUG A1 - active:1
+2018-01-15 11:11:47,890 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 11:15:04,514 DEBUG A1 - idle:0
+2018-01-15 11:15:04,514 DEBUG A1 - active:1
+2018-01-15 11:15:04,542 DEBUG A1 - GetSchedule
+ps is closed by jdbc4.0
+2018-01-15 11:20:10,538 DEBUG A1 - idle:0
+2018-01-15 11:20:10,538 DEBUG A1 - active:1
+2018-01-15 11:20:10,678 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2018-01-15 11:20:10,713 DEBUG A1 - idle:0
+2018-01-15 11:20:10,714 DEBUG A1 - active:1
+2018-01-15 11:20:12,338 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 11:21:58,284 DEBUG A1 - idle:0
+2018-01-15 11:21:58,284 DEBUG A1 - active:1
+2018-01-15 11:21:58,293 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2018-01-15 11:22:11,647 DEBUG A1 - idle:0
+2018-01-15 11:22:11,647 DEBUG A1 - active:1
+2018-01-15 11:22:12,016 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 11:23:05,679 DEBUG A1 - idle:0
+2018-01-15 11:23:05,680 DEBUG A1 - active:1
+2018-01-15 11:23:05,972 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 11:23:20,360 DEBUG A1 - idle:0
+2018-01-15 11:23:20,360 DEBUG A1 - active:1
+2018-01-15 11:23:20,558 DEBUG A1 - GetSummary
+ps is closed by jdbc4.0
+2018-01-15 11:23:20,581 DEBUG A1 - idle:0
+2018-01-15 11:23:20,581 DEBUG A1 - active:1
+2018-01-15 11:23:20,588 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2018-01-15 11:23:27,359 DEBUG A1 - idle:0
+2018-01-15 11:23:27,359 DEBUG A1 - active:1
+2018-01-15 11:23:27,366 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2018-01-15 11:23:33,247 DEBUG A1 - idle:0
+2018-01-15 11:23:33,248 DEBUG A1 - active:1
+2018-01-15 11:23:33,255 DEBUG A1 - SetCombo
+ps closed by jdbc4.0
+2018-01-15 12:53:45,055 DEBUG A1 - idle:19
+2018-01-15 12:53:45,055 DEBUG A1 - active:1
+2018-01-15 12:53:45,192 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2018-01-15 12:54:00,223 DEBUG A1 - idle:19
+2018-01-15 12:54:00,223 DEBUG A1 - active:1
+2018-01-15 12:54:00,252 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 12:54:01,086 DEBUG A1 - idle:19
+2018-01-15 12:54:01,087 DEBUG A1 - active:1
+2018-01-15 12:54:01,104 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 12:54:01,133 DEBUG A1 - idle:19
+2018-01-15 12:54:01,133 DEBUG A1 - active:1
+2018-01-15 12:54:01,135 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 12:54:41,150 DEBUG A1 - idle:19
+2018-01-15 12:54:41,150 DEBUG A1 - active:1
+2018-01-15 12:54:41,213  INFO A1 - T_在庫_子は10件処理されました。
+2018-01-15 12:54:41,214  INFO A1 - T_指定納品書は1件処理されました。
+2018-01-15 12:54:41,278 DEBUG A1 - idle:19
+2018-01-15 12:54:41,278 DEBUG A1 - active:1
+2018-01-15 12:54:41,292 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 12:54:41,316 DEBUG A1 - idle:19
+2018-01-15 12:54:41,316 DEBUG A1 - active:1
+2018-01-15 12:54:41,317 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 12:54:41,408 DEBUG A1 - idle:19
+2018-01-15 12:54:41,408 DEBUG A1 - active:1
+2018-01-15 12:54:41,409 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 12:54:44,933 DEBUG A1 - idle:19
+2018-01-15 12:54:44,933 DEBUG A1 - active:1
+2018-01-15 12:54:44,935 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:36:50,983 DEBUG A1 - idle:0
+2018-01-15 13:36:50,983 DEBUG A1 - active:1
+2018-01-15 13:36:51,107 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 13:36:51,139 DEBUG A1 - idle:0
+2018-01-15 13:36:51,139 DEBUG A1 - active:1
+2018-01-15 13:36:51,143 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:40:48,636 DEBUG A1 - idle:0
+2018-01-15 13:40:48,637 DEBUG A1 - active:1
+2018-01-15 13:40:48,713  INFO A1 - T_在庫_子は12件処理されました。
+2018-01-15 13:40:48,719 ERROR A1 - OrderRegistration
+java.sql.BatchUpdateException: 制約 'PK_T_指定納品書' の PRIMARY KEY 違反。オブジェクト 'dbo.T_指定納品書' には重複するキーを挿入できません。重複するキーの値は (34436) です。
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:1178)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+fukaisystem.OrderRegistration.service(OrderRegistration.java:355)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2018-01-15 13:40:48,792 DEBUG A1 - rollback
+2018-01-15 13:40:53,927 DEBUG A1 - idle:0
+2018-01-15 13:40:53,927 DEBUG A1 - active:1
+2018-01-15 13:40:53,990  INFO A1 - T_在庫_子は12件処理されました。
+2018-01-15 13:40:53,992 ERROR A1 - OrderRegistration
+java.sql.BatchUpdateException: 制約 'PK_T_指定納品書' の PRIMARY KEY 違反。オブジェクト 'dbo.T_指定納品書' には重複するキーを挿入できません。重複するキーの値は (34436) です。
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:1178)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+fukaisystem.OrderRegistration.service(OrderRegistration.java:355)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2018-01-15 13:40:54,030 DEBUG A1 - rollback
+2018-01-15 13:41:05,023 DEBUG A1 - idle:0
+2018-01-15 13:41:05,023 DEBUG A1 - active:1
+2018-01-15 13:41:05,086  INFO A1 - T_在庫_子は12件処理されました。
+2018-01-15 13:41:05,088 ERROR A1 - OrderRegistration
+java.sql.BatchUpdateException: 制約 'PK_T_指定納品書' の PRIMARY KEY 違反。オブジェクト 'dbo.T_指定納品書' には重複するキーを挿入できません。重複するキーの値は (34436) です。
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:1178)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+fukaisystem.OrderRegistration.service(OrderRegistration.java:355)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2018-01-15 13:41:05,125 DEBUG A1 - rollback
+2018-01-15 13:41:21,952 DEBUG A1 - idle:0
+2018-01-15 13:41:21,952 DEBUG A1 - active:1
+2018-01-15 13:41:22,012  INFO A1 - T_在庫_子は12件処理されました。
+2018-01-15 13:41:22,013  INFO A1 - T_指定納品書は2件処理されました。
+2018-01-15 13:41:22,079 DEBUG A1 - idle:0
+2018-01-15 13:41:22,079 DEBUG A1 - active:1
+2018-01-15 13:41:22,095 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 13:41:22,121 DEBUG A1 - idle:0
+2018-01-15 13:41:22,121 DEBUG A1 - active:1
+2018-01-15 13:41:22,122 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:41:22,173 DEBUG A1 - idle:0
+2018-01-15 13:41:22,173 DEBUG A1 - active:1
+2018-01-15 13:41:22,174 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:41:48,820 DEBUG A1 - idle:0
+2018-01-15 13:41:48,820 DEBUG A1 - active:1
+2018-01-15 13:41:48,822 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:49:30,825 DEBUG A1 - idle:19
+2018-01-15 13:49:30,825 DEBUG A1 - active:1
+2018-01-15 13:49:30,906  INFO A1 - T_在庫_子は12件処理されました。
+2018-01-15 13:49:30,907  INFO A1 - T_指定納品書は2件処理されました。
+2018-01-15 13:50:04,860 DEBUG A1 - idle:19
+2018-01-15 13:50:04,860 DEBUG A1 - active:1
+2018-01-15 13:50:04,878 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 13:50:04,909 DEBUG A1 - idle:19
+2018-01-15 13:50:04,909 DEBUG A1 - active:1
+2018-01-15 13:50:04,911 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:50:17,764 DEBUG A1 - idle:19
+2018-01-15 13:50:17,764 DEBUG A1 - active:1
+2018-01-15 13:50:17,845  INFO A1 - T_在庫_子は12件処理されました。
+2018-01-15 13:50:17,845  INFO A1 - T_指定納品書は2件処理されました。
+2018-01-15 13:50:22,248 DEBUG A1 - idle:19
+2018-01-15 13:50:22,248 DEBUG A1 - active:1
+2018-01-15 13:50:22,264 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 13:50:22,289 DEBUG A1 - idle:19
+2018-01-15 13:50:22,289 DEBUG A1 - active:1
+2018-01-15 13:50:22,293 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:50:43,033 DEBUG A1 - idle:19
+2018-01-15 13:50:43,033 DEBUG A1 - active:1
+2018-01-15 13:50:43,095  INFO A1 - T_在庫_子は12件処理されました。
+2018-01-15 13:50:43,099 ERROR A1 - OrderRegistration
+java.sql.BatchUpdateException: 制約 'PK_T_指定納品書' の PRIMARY KEY 違反。オブジェクト 'dbo.T_指定納品書' には重複するキーを挿入できません。重複するキーの値は (34436) です。
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:1178)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+fukaisystem.OrderRegistration.service(OrderRegistration.java:356)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2018-01-15 13:50:43,135 DEBUG A1 - rollback
+2018-01-15 13:57:26,709 DEBUG A1 - idle:19
+2018-01-15 13:57:26,709 DEBUG A1 - active:1
+2018-01-15 13:57:26,783  INFO A1 - T_在庫_子は12件処理されました。
+2018-01-15 13:57:26,789 ERROR A1 - OrderRegistration
+java.sql.BatchUpdateException: 制約 'PK_T_指定納品書' の PRIMARY KEY 違反。オブジェクト 'dbo.T_指定納品書' には重複するキーを挿入できません。重複するキーの値は (34436) です。
+com.microsoft.sqlserver.jdbc.SQLServerPreparedStatement.executeBatch(SQLServerPreparedStatement.java:1178)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+org.apache.tomcat.dbcp.dbcp.DelegatingStatement.executeBatch(DelegatingStatement.java:297)
+fukaisystem.OrderRegistration.service(OrderRegistration.java:345)
+org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:224)
+org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:472)
+org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+org.apache.coyote.ajp.AjpProcessor.process(AjpProcessor.java:200)
+org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:579)
+org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:307)
+java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+java.lang.Thread.run(Thread.java:745)
+
+2018-01-15 13:57:26,826 DEBUG A1 - rollback
+2018-01-15 13:57:41,254 DEBUG A1 - idle:19
+2018-01-15 13:57:41,254 DEBUG A1 - active:1
+2018-01-15 13:57:41,271 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 13:57:41,293 DEBUG A1 - idle:19
+2018-01-15 13:57:41,293 DEBUG A1 - active:1
+2018-01-15 13:57:41,294 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:57:42,556 DEBUG A1 - idle:19
+2018-01-15 13:57:42,556 DEBUG A1 - active:1
+2018-01-15 13:57:42,571 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 13:57:42,591 DEBUG A1 - idle:19
+2018-01-15 13:57:42,591 DEBUG A1 - active:1
+2018-01-15 13:57:42,592 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:57:48,568 DEBUG A1 - idle:19
+2018-01-15 13:57:48,568 DEBUG A1 - active:1
+2018-01-15 13:57:48,629  INFO A1 - T_在庫_子は12件処理されました。
+2018-01-15 13:57:48,629  INFO A1 - T_指定納品書は2件処理されました。
+2018-01-15 13:57:48,694 DEBUG A1 - idle:19
+2018-01-15 13:57:48,694 DEBUG A1 - active:1
+2018-01-15 13:57:48,709 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 13:57:48,731 DEBUG A1 - idle:19
+2018-01-15 13:57:48,731 DEBUG A1 - active:1
+2018-01-15 13:57:48,733 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:57:54,115 DEBUG A1 - idle:19
+2018-01-15 13:57:54,115 DEBUG A1 - active:1
+2018-01-15 13:57:54,116 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:58:40,386 DEBUG A1 - idle:19
+2018-01-15 13:58:40,386 DEBUG A1 - active:1
+2018-01-15 13:58:40,446  INFO A1 - T_在庫_子は12件処理されました。
+2018-01-15 13:58:40,447  INFO A1 - T_指定納品書は2件処理されました。
+2018-01-15 13:58:40,511 DEBUG A1 - idle:19
+2018-01-15 13:58:40,511 DEBUG A1 - active:1
+2018-01-15 13:58:40,528 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 13:58:40,549 DEBUG A1 - idle:19
+2018-01-15 13:58:40,549 DEBUG A1 - active:1
+2018-01-15 13:58:40,551 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:58:42,714 DEBUG A1 - idle:19
+2018-01-15 13:58:42,714 DEBUG A1 - active:1
+2018-01-15 13:58:42,716 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 13:58:47,416 DEBUG A1 - idle:19
+2018-01-15 13:58:47,416 DEBUG A1 - active:1
+2018-01-15 13:58:47,444  INFO A1 - T_在庫_子は12件処理されました。
+2018-01-15 13:58:47,444  INFO A1 - T_指定納品書は0件処理されました。
+2018-01-15 13:58:47,502 DEBUG A1 - idle:19
+2018-01-15 13:58:47,502 DEBUG A1 - active:1
+2018-01-15 13:58:47,519 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 13:58:47,542 DEBUG A1 - idle:19
+2018-01-15 13:58:47,542 DEBUG A1 - active:1
+2018-01-15 13:58:47,543 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 14:28:25,525 DEBUG A1 - idle:19
+2018-01-15 14:28:25,526 DEBUG A1 - active:1
+2018-01-15 14:28:25,633 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2018-01-15 14:28:49,699 DEBUG A1 - idle:19
+2018-01-15 14:28:49,699 DEBUG A1 - active:1
+2018-01-15 14:28:49,757 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 14:28:50,469 DEBUG A1 - idle:19
+2018-01-15 14:28:50,469 DEBUG A1 - active:1
+2018-01-15 14:28:50,483 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 14:28:50,520 DEBUG A1 - idle:19
+2018-01-15 14:28:50,520 DEBUG A1 - active:1
+2018-01-15 14:28:50,521 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 14:30:27,199 DEBUG A1 - idle:19
+2018-01-15 14:30:27,199 DEBUG A1 - active:1
+2018-01-15 14:30:27,299 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2018-01-15 14:30:39,371 DEBUG A1 - idle:19
+2018-01-15 14:30:39,371 DEBUG A1 - active:1
+2018-01-15 14:30:39,400 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 14:30:40,045 DEBUG A1 - idle:19
+2018-01-15 14:30:40,045 DEBUG A1 - active:1
+2018-01-15 14:30:40,059 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 14:30:40,094 DEBUG A1 - idle:19
+2018-01-15 14:30:40,094 DEBUG A1 - active:1
+2018-01-15 14:30:40,095 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 14:30:40,698 DEBUG A1 - idle:19
+2018-01-15 14:30:40,698 DEBUG A1 - active:1
+2018-01-15 14:30:40,712 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 14:30:40,735 DEBUG A1 - idle:19
+2018-01-15 14:30:40,735 DEBUG A1 - active:1
+2018-01-15 14:30:40,736 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 14:30:41,723 DEBUG A1 - idle:19
+2018-01-15 14:30:41,723 DEBUG A1 - active:1
+2018-01-15 14:30:41,738 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 14:30:41,761 DEBUG A1 - idle:19
+2018-01-15 14:30:41,761 DEBUG A1 - active:1
+2018-01-15 14:30:41,762 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 15:04:13,648 DEBUG A1 - idle:0
+2018-01-15 15:04:13,648 DEBUG A1 - active:1
+2018-01-15 15:04:13,753 DEBUG A1 - Init
+ps is closed by jdbc4.0
+2018-01-15 15:04:21,424 DEBUG A1 - idle:0
+2018-01-15 15:04:21,424 DEBUG A1 - active:1
+2018-01-15 15:04:21,608 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 15:04:31,341 DEBUG A1 - idle:0
+2018-01-15 15:04:31,341 DEBUG A1 - active:1
+2018-01-15 15:04:31,394 DEBUG A1 - Search
+ps is closed by jdbc4.0
+2018-01-15 15:04:32,100 DEBUG A1 - idle:0
+2018-01-15 15:04:32,100 DEBUG A1 - active:1
+2018-01-15 15:04:32,125 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 15:04:32,159 DEBUG A1 - idle:0
+2018-01-15 15:04:32,160 DEBUG A1 - active:1
+2018-01-15 15:04:32,163 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 15:04:42,631 DEBUG A1 - idle:0
+2018-01-15 15:04:42,631 DEBUG A1 - active:1
+2018-01-15 15:04:42,659 DEBUG dbtool - ps is closed by jdbc4.0
+2018-01-15 15:04:45,440 DEBUG A1 - idle:0
+2018-01-15 15:04:45,440 DEBUG A1 - active:1
+2018-01-15 15:04:45,501  INFO A1 - T_在庫_子は7件処理されました。
+2018-01-15 15:04:45,501  INFO A1 - T_指定納品書は0件処理されました。
+2018-01-15 15:04:45,584 DEBUG A1 - idle:0
+2018-01-15 15:04:45,584 DEBUG A1 - active:1
+2018-01-15 15:04:45,601 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 15:04:45,626 DEBUG A1 - idle:0
+2018-01-15 15:04:45,626 DEBUG A1 - active:1
+2018-01-15 15:04:45,627 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 15:04:45,721 DEBUG A1 - idle:0
+2018-01-15 15:04:45,721 DEBUG A1 - active:1
+2018-01-15 15:04:45,723 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 15:04:51,982 DEBUG A1 - idle:0
+2018-01-15 15:04:51,983 DEBUG A1 - active:1
+2018-01-15 15:04:51,984 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 15:05:16,012 DEBUG A1 - idle:0
+2018-01-15 15:05:16,012 DEBUG A1 - active:1
+2018-01-15 15:05:16,071  INFO A1 - T_在庫_子は7件処理されました。
+2018-01-15 15:05:16,075  INFO A1 - T_指定納品書は1件処理されました。
+2018-01-15 15:05:16,147 DEBUG A1 - idle:0
+2018-01-15 15:05:16,147 DEBUG A1 - active:1
+2018-01-15 15:05:16,161 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 15:05:16,183 DEBUG A1 - idle:0
+2018-01-15 15:05:16,183 DEBUG A1 - active:1
+2018-01-15 15:05:16,184 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 15:05:16,236 DEBUG A1 - idle:0
+2018-01-15 15:05:16,236 DEBUG A1 - active:1
+2018-01-15 15:05:16,237 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 15:05:18,698 DEBUG A1 - idle:0
+2018-01-15 15:05:18,698 DEBUG A1 - active:1
+2018-01-15 15:05:18,699 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 15:05:18,806 DEBUG A1 - idle:0
+2018-01-15 15:05:18,806 DEBUG A1 - active:1
+2018-01-15 15:05:18,834 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 15:05:18,859 DEBUG A1 - idle:0
+2018-01-15 15:05:18,859 DEBUG A1 - active:1
+2018-01-15 15:05:18,861 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 15:05:20,092 DEBUG A1 - idle:0
+2018-01-15 15:05:20,092 DEBUG A1 - active:1
+2018-01-15 15:05:20,121 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 15:05:20,161 DEBUG A1 - idle:0
+2018-01-15 15:05:20,161 DEBUG A1 - active:1
+2018-01-15 15:05:20,162 DEBUG A1 - SetLabel
+ps closed by jdbc4.0
+2018-01-15 15:05:20,477 DEBUG A1 - idle:0
+2018-01-15 15:05:20,477 DEBUG A1 - active:1
+2018-01-15 15:05:20,492 DEBUG A1 - GetOrderSummary
+ps is closed by jdbc4.0
+2018-01-15 15:05:20,516 DEBUG A1 - idle:0
+2018-01-15 15:05:20,516 DEBUG A1 - active:1
+2018-01-15 15:05:20,518 DEBUG A1 - SetLabel
 ps closed by jdbc4.0

@@ -83,48 +83,68 @@ public class OrderRegistration extends GenericServlet {
 			}
 
 			//////////////////////////////////////////////////////////////////////////////////////////////////////
-			boolean isDelivery = false; //納品書番号が入ったデータが１つでもあるか
+			boolean isParentEditable = true; //納品書番号が入ったデータが１つでもあるか
 			taxMap = new HashMap<Integer, DeliverySlip>(); //指定納品書のデータ
+			List<Vector<Object>> regVector = new ArrayList<Vector<Object>>();
 			for(Vector<Object> v : odd.getVector(0)) {
 				boolean closeFlg = false;
-				if(v.get(14) != null && (Boolean)v.get(17)) { //納品書番号がnullでなく納品書チェック入り
-					//1行でも指定納品書が〆られていたら親データの編集を不可に
-					PreparedStatement ps = c.prepareStatement("select 〆FLG from T_指定納品書 WHERE ID=?");
-					ps.setInt(1, (Integer)v.get(14));
+				boolean matchFlg = false;
+				if(v.get(14) == null || v.get(15) == null || !(Boolean)v.get(17)) {//納品書番号か納品日がnullまたは納品書チェックなし
+					//納品書入力をクリアし、登録用データに追加
+					v.set(14, 0);
+					v.set(15, null);
+					v.set(16, 0);
+					v.set(17, false);
+					regVector.add(v);
+				} else {
+					//〆後の日付の指定納品書を追加させない
+					PreparedStatement ps = c.prepareStatement("select * from T_指定納品書 WHERE 納品書日>=?　and 納品書日<? and 〆FLG='true'");
+					java.util.Date d = (java.util.Date)v.get(15);
+					Calendar cal = Calendar.getInstance();
+					cal.setTime(d);
+					cal.set(Calendar.DATE, 1);//その月の１日
+					ps.setDate(1, new Date(cal.getTimeInMillis()));
+					cal.add(Calendar.MONTH, 1);//翌月１日
+					ps.setDate(2, new Date(cal.getTimeInMillis()));
 					ResultSet rs = ps.executeQuery();
-					if(rs.next()) {
-						if(rs.getBoolean("〆FLG")) isDelivery = true;
-					}
-					if(v.get(15) != null) {//納品書日が入っている
-						//〆後の日付の指定納品書を追加させない
-						ps = c.prepareStatement("select * from T_指定納品書 WHERE 納品書日>=?　and 納品書日<? and 〆FLG='true'");
-						java.util.Date d = (java.util.Date)v.get(15);
-						Calendar cal = Calendar.getInstance();
-						cal.setTime(d);
-						cal.set(Calendar.DATE, 1);//その月の１日
-						ps.setDate(1, new Date(cal.getTimeInMillis()));
-						cal.add(Calendar.MONTH, 1);//翌月１日
-						ps.setDate(2, new Date(cal.getTimeInMillis()));
-						rs = ps.executeQuery();
-						while(rs.next()) {
-							//入力された納品月は〆られているので指定納品書データが登録されていればそのデータをセット
-							if(rs.getInt("ID") == (Integer)v.get(14)) {
-								v.set(15, rs.getDate("納品書日"));//納品書日
-								v.set(16, rs.getInt("消費税"));//消費税
-								v.set(17, true);//指定納品書のﾁｪｯｸ
+					while(rs.next()) {
+						//一致する納品書データがあるか
+						if(rs.getInt("ID") == (Integer)v.get(14)) {
+							if((Boolean)v.get(18)) {
+								matchFlg = true;
+								//1行でも指定納品書が〆られていたら親データの編集を不可に
+								isParentEditable = false;
+								//〆後なので変更されてはいないはずだが念のため登録データをセットしておく(IDは一致確認済)
+								v.set(15, rs.getDate("納品書日"));
+								v.set(16, rs.getInt("消費税"));
+								v.set(17, true);
+								v.set(18, true);
+								regVector.add(v);
 							}
-							//一致する納品書データがなくてもその月が〆られてさえいればcloseFlgをtrueに
-							closeFlg = true;
 						}
-						if(!closeFlg) {//その行の納品書日が〆られていなければ
-							//納品書にチェックがあれば納品書番号、納品書日、消費税、〆FLGをMapにセット（後でT_指定納品書にmergeするため）
-							if((Boolean)v.get(17)) {
-								if(!taxMap.containsKey(v.get(14)) || !(Boolean)v.get(18)) {
-									//納品書番号が同じデータ又は〆後データは省く
-									//〆られた月のデータも省く
-									taxMap.put((Integer)v.get(14), new DeliverySlip(v.get(15) == null ? null : new Date(((java.util.Date)v.get(15)).getTime()), v.get(16) == null ? 0 : (Integer)v.get(16)));
-								}
-							}
+						//一致する納品書データがなくてもその月が〆られてさえいれば(その行の)closeFlgをtrueに
+						closeFlg = true;
+					}
+					if(!closeFlg) {//その行の納品書日が〆後の日付でなければ
+						//データはそのまま使用
+						regVector.add(v);
+						//納品書番号、納品書日、消費税、〆FLGをMapにセット（後でT_指定納品書にmergeするため）
+						if(!taxMap.containsKey(v.get(14)) || !(Boolean)v.get(18)) {
+							//納品書番号が同じデータ又は〆後データは省く
+							taxMap.put((Integer)v.get(14), new DeliverySlip(new Date(((java.util.Date)v.get(15)).getTime()), v.get(16) == null ? 0 : (Integer)v.get(16)));
+						}
+					} else {
+						//〆後の日付で
+						if(!matchFlg) {
+							//登録されていない番号　または
+							//登録はあるが〆Flgがfalse(=番号入力ミス)
+							//クリアし、登録用データに追加
+							v.set(14, 0);
+							v.set(15, null);
+							v.set(16, 0);
+							v.set(17, false);
+							regVector.add(v);
+							err.append("〆後の納品書日では登録できません");
 						}
 					}
 				}
@@ -134,9 +154,7 @@ public class OrderRegistration extends GenericServlet {
 			orderID = odd.getInt(4);
 			if(odd.getInt(1) + odd.getInt(2) == 0) {
 				//注文期と注文番号を0に変更したということは、消去せよということ
-				if(isDelivery) {
-					//削除不可
-				} else {
+				if(isParentEditable) {
 					//削除
 					if(orderID != 0) {
 						try {
@@ -222,9 +240,7 @@ public class OrderRegistration extends GenericServlet {
 				} else {
 					//更新
 					try {
-						if(isDelivery) {
-							//更新不可
-						} else {
+						if(isParentEditable) {
 							PreparedStatement ps = c.prepareStatement("UPDATE T_在庫_親 SET" +
 								" 注文期=?, 注文番号=?, 注文枝番=?, 仕入先CD=?, 注文年月日=?, 指定納期=?," +
 								" 摘要=?, 納入先指定=?, 更新日=?, 更新者CD=?" +
@@ -274,7 +290,7 @@ public class OrderRegistration extends GenericServlet {
 						"INSERT INTO T_在庫_子 VALUES(" +
 						"?, ?, ?, ?, ?, ?, ?, ?, ?, ?," +
 						"?, ?, ?, ?, ?, ?)");
-					for(Vector<Object> v : odd.getVector(0)) {
+					for(Vector<Object> v : regVector) {
 						int tag = (Integer)v.get(0);
 						if(tag != 0) {
 							int i = 1;
@@ -294,7 +310,7 @@ public class OrderRegistration extends GenericServlet {
 							ps.setInt(i, (Integer)v.get(j)); i++; j++;//金額
 							ps.setString(i, (String)v.get(j)); i++; j++;//備考
 							ps.setDate(i, v.get(j) == null ? null : new java.sql.Date(((java.util.Date)v.get(j)).getTime())); i++; j += 2;//入庫年月日（チェックボックスを飛ばすためj+=2）
-							ps.setInt(i, v.get(j) == null ? 0 : (Integer)v.get(j)); i++; j += 4;//納品書番号
+							ps.setInt(i, v.get(j) == null ? 0 : (Integer)v.get(j));//納品書番号
 							ps.addBatch();
 							k++;
 						}
@@ -331,7 +347,7 @@ public class OrderRegistration extends GenericServlet {
 				} catch(SQLException ex) {
 					ex.printStackTrace();
 					isError = true;
-					err.append("指定納品書データを更新できません\n納品書番号が〆後の番号でないか、日付が正しいか確認してください");
+					err.append("〆後の納品書番号では登録できません");
 					Logging.logStackTrace(ex, lg, className);
 				}
 
