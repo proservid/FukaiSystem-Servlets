@@ -62,24 +62,23 @@ public class SetMember extends GenericServlet {
 
 			try {
 				ps = c.prepareStatement( "MERGE INTO M_人員 AS m" +
-						 " USING (SELECT ? AS 管理ID, ? AS CD, ? AS 姓, ? AS 名, ? AS 所属部署CD, ? AS 表示CD, ? AS 在籍FLG) AS temp" +
-						 "  ON m.管理ID=temp.管理ID and temp.CD<>0" +
+						 " USING (SELECT ? AS CD, ? AS 姓, ? AS 名, ? AS 所属部署CD, ? AS 表示CD, ? AS 在籍FLG) AS temp" +
+						 "  ON m.CD=temp.CD AND temp.CD<>0 " +
 						 " WHEN MATCHED THEN" +
-						 " UPDATE SET m.CD=temp.CD, m.姓=temp.姓, m.名=temp.名, m.所属部署CD=temp.所属部署CD," +
+						 " UPDATE SET m.姓=temp.姓, m.名=temp.名, m.所属部署CD=temp.所属部署CD," +
 						 " m.表示CD=temp.表示CD, m.在籍FLG=temp.在籍FLG" +
 						 " WHEN NOT MATCHED THEN" +
 						 " 	INSERT VALUES(temp.CD, temp.姓, temp.名, temp.所属部署CD, temp.表示CD, 0, temp.在籍FLG, '00000', '00000');");
 				int i = 1;
 				for(Vector v : data) {
-					if(v.get(1).toString().equals("0") || (v.get(2).equals("") && v.get(3).equals(""))) {
+					if(v.get(0).toString().equals("0") || (v.get(1).equals("") && v.get(2).equals(""))) {
 					} else {
-						ps.setInt(1, (Integer)v.get(0)); //管理ID
-						ps.setInt(2, (Integer)v.get(1)); //CD
-						ps.setString(3, (String)v.get(2)); //姓
-						ps.setString(4, (String)v.get(3)); //名
-						ps.setString(5, dept); //所属部署CD
-						ps.setInt(6, i++); //表示CD
-						ps.setBoolean(7, (Boolean)v.get(4)); //在籍FLG
+						ps.setInt(1, (Integer)v.get(0)); //CD
+						ps.setString(2, (String)v.get(1)); //姓
+						ps.setString(3, (String)v.get(2)); //名
+						ps.setString(4, dept); //所属部署CD
+						ps.setInt(5, i++); //表示CD
+						ps.setBoolean(6, (Boolean)v.get(3)); //在籍FLG
 						ps.addBatch();
 					}
 				}

@@ -30,7 +30,7 @@
 
 <servlet>
  <servlet-name> getShelf </servlet-name>
- <servlet-class> fukaisystem.aggregate.GetShelf </servlet-class>
+ <servlet-class> fukaisystem.aggregate.GetShelf2 </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getShelf </servlet-name>

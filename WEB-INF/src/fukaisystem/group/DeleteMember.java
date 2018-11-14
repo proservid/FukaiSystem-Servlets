@@ -55,7 +55,7 @@ public class DeleteMember extends GenericServlet {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				ps = c.prepareStatement("delete from M_lˆõ where ŠÇ—ID=?");
+				ps = c.prepareStatement("delete from M_lˆõ where CD=?");
 				for(int m : delMembers) {
 					ps.setInt(1, m);
 					ps.addBatch();

@@ -60,7 +60,7 @@ public class GetOrderSummary extends GenericServlet {
 			}
 			try {
 				ps = c.prepareStatement("SELECT * FROM T_在庫_子 s LEFT OUTER JOIN T_指定納品書 slip " +
-						"ON s.納品書番号=slip.ID WHERE 在庫親ID=?");
+						"ON s.納品書番号=slip.ID WHERE 在庫親ID=? ORDER BY s.ID");
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
 				while(rs.next()) {

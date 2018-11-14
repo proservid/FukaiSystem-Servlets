@@ -56,7 +56,7 @@ package fukaisystem.group;
 						dept.put(rs.getString("•”CD"), rs.getString("•”–¼"));
 						name.put(rs.getString("•”CD"), new Vector<Vector>());
 					}
-					ps = c.prepareStatement("SELECT CD,©,–¼ ,RIGHT('00' + CONVERT(varchar, Š‘®•”CD), 3) AS •”CD,İĞFLG FROM M_lˆõ WHERE CD>0 ORDER BY Š‘®•”CD,•\¦CD");
+					ps = c.prepareStatement("SELECT CD,©,–¼ ,RIGHT('00' + CONVERT(varchar, Š‘®•”CD), 3) AS •”CD,İĞFLG FROM M_lˆõ WHERE CD>0 ORDER BY •”CD,CD");
 					rs = ps.executeQuery();
 					while(rs.next()) {
 						Vector v = new Vector();

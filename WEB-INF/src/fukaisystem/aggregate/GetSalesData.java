@@ -84,24 +84,25 @@ public class GetSalesData extends GenericServlet {
 				while(rs.next()) {
 					m.put(rs.getString("得意先CD"), rs.getInt("税額"));
 				}
-				
+				System.out.println("!!!!!");
 				ps = c.prepareStatement(
 					 "select 得意先CD,得意先名,受注番号,日付,sum(金額) as 金額 from (" +
 						 " select " +
-						 " sp.得意先CD," +
+						 " s.得意先CD," +
 						 " CASE WHEN 種別CD=1 THEN '㈱'+会社名 + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END" +
 						 "      WHEN 種別CD=2 THEN 会社名+'㈱' + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END" +
 						 "      WHEN 種別CD=3 THEN '㈲'+会社名 + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END" +
 						 "      WHEN 種別CD=4 THEN 会社名+'㈲' + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END" +
 						 "      ELSE 会社名 END AS 得意先名," +
 						 " convert(varchar, pp.製作期)+'-'+convert(varchar, pp.製作番号)+pp.製作枝番 as 受注番号," +
-						 " sp.売上年月日 as 日付," +
-						 " sc.金額 " +
-						 " FROM T_売上_子 sc" +
+						 " s.売上年月日 as 日付," +
+						 " s.金額 " +
+						 " FROM (select 製作親ID,金額,得意先CD,売上年月日,売上FLG from T_売上_子 sc" +
 						 " left outer join T_売上_親 sp on sc.売上親ID=sp.売上親ID" +
-						 " left outer join M_法人 c on sp.得意先CD=c.得意先CD" +
-						 " left outer join T_製作_親 pp on sc.製作親ID=pp.製作親ID" +
-						 " WHERE 売上年月日>=? AND 売上年月日<? and 売上FLG='true' and 製作番号<9000 and 納品区分CD<5" +
+						 " where 売上年月日>=? AND 売上年月日<? and 売上FLG='true' and 納品区分CD<5) s" +
+						 " left outer join M_法人 c on s.得意先CD=c.得意先CD" +
+						 " left outer join T_製作_親 pp on s.製作親ID=pp.製作親ID" +
+						 " WHERE 製作番号<9000" +
 					 ") a group by 得意先CD,得意先名,受注番号,日付");
 				ps.setDate(1, from);
 				ps.setDate(2, to);
