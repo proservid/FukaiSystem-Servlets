@@ -11,9 +11,9 @@ import java.util.Vector;
 	public class DMDTO implements Serializable {
 
 		Map<String, String> dept;
-		Map<String, Vector<Vector>> name;
+		Map<String, Vector<Vector<Object>>> name;
 
-		public DMDTO(Map<String, String> dept, Map<String, Vector<Vector>> name) {
+		public DMDTO(Map<String, String> dept, Map<String, Vector<Vector<Object>>> name) {
 			this.dept = dept;
 			this.name = name;
 		}
@@ -21,7 +21,7 @@ import java.util.Vector;
 		public Map<String, String> getDept() {
 			return dept;
 		}
-		public Map<String, Vector<Vector>> getName() {
+		public Map<String, Vector<Vector<Object>>> getName() {
 			return name;
 		}
 	}

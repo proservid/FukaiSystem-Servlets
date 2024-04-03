@@ -37,7 +37,7 @@ package fukaisystem.group;
 			StringBuilder err = new StringBuilder();
 
 			TreeMap<String, String> dept = new TreeMap<String, String>();
-			Map<String, Vector<Vector>> name = new LinkedHashMap<String, Vector<Vector>>();
+			Map<String, Vector<Vector<Object>>> name = new LinkedHashMap<String, Vector<Vector<Object>>>();
 			DMDTO dmd = null;
 
 			try {
@@ -54,17 +54,23 @@ package fukaisystem.group;
 					rs = ps.executeQuery();
 					while(rs.next()) {
 						dept.put(rs.getString("•”CD"), rs.getString("•”–¼"));
-						name.put(rs.getString("•”CD"), new Vector<Vector>());
+						name.put(rs.getString("•”CD"), new Vector<Vector<Object>>());
 					}
-					ps = c.prepareStatement("SELECT CD,©,–¼ ,RIGHT('00' + CONVERT(varchar, Š‘®•”CD), 3) AS •”CD,İĞFLG FROM M_lˆõ WHERE CD>0 ORDER BY •”CD,CD");
+					ps = c.prepareStatement("SELECT CD,©,–¼ ,RIGHT('00' + CONVERT(varchar, Š‘®•”CD), 3) AS •”CD,İĞFLG,"
+							+ "(CASE WHEN ’S“–ÒCD IS NULL THEN 0 ELSE 1 END) AS H”FLG"
+							+ " FROM M_lˆõ JIN"
+							+ " LEFT OUTER JOIN (SELECT DISTINCT ’S“–ÒCD FROM T_‰ÁHÀÑ) JIS"
+							+ " ON JIN.CD=JIS.’S“–ÒCD"
+							+ " WHERE CD>0 ORDER BY •”CD,CD");
 					rs = ps.executeQuery();
 					while(rs.next()) {
-						Vector v = new Vector();
+						Vector<Object> v = new Vector<Object>();
 						//v.add(rs.getInt("ŠÇ—ID"));
 						v.add(rs.getInt("CD"));
 						v.add(rs.getString("©"));
 						v.add(rs.getString("–¼"));
 						v.add(rs.getBoolean("İĞFLG"));
+						v.add(rs.getBoolean("H”FLG"));
 						if(name.containsKey(rs.getString("•”CD"))) name.get(rs.getString("•”CD")).add(v);
 					}
 					dmd = new DMDTO(dept, name);

@@ -195,12 +195,13 @@ public class CorpRegistration extends GenericServlet {
 					}
 				} catch(SQLException ex) {
 					isError = true;
+					err.append(ex);
 					Logging.logStackTrace(ex, lg, className);
 				}
 			}
 
 		} catch(Exception ex) {
-			ex.printStackTrace();
+			err.append(ex);
 			isError = true;lg.debug("error");
 			Logging.logStackTrace(ex, lg, className);
 		}

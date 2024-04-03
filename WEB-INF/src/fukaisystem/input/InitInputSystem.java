@@ -71,7 +71,7 @@ public class InitInputSystem extends GenericServlet {
 					name.get(subKey).put(rs.getString("個人CD"), rs.getString("氏名"));
 				}
 
-				ps = c.prepareStatement("SELECT RIGHT('00' + CONVERT(varchar, CD), 2) AS 小分類CD,小分類名 FROM M_加工_子 WHERE 使用FLG='true' AND CD<100 ORDER BY 大分類CD,中分類CD");
+				ps = c.prepareStatement("SELECT RIGHT('00' + CONVERT(varchar, CD), 2) AS 小分類CD,小分類名 FROM M_加工_子 WHERE 使用FLG='true' AND CD<200 ORDER BY 大分類CD,中分類CD");
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					process.put(rs.getString("小分類CD"), rs.getString("小分類名"));

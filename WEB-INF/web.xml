@@ -378,6 +378,14 @@
  <servlet-name> osearch </servlet-name>
  <url-pattern> /osearch </url-pattern>
  </servlet-mapping>
+ <servlet>
+ <servlet-name> osearch2 </servlet-name>
+ <servlet-class> fukaisystem.OrderSearch </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> osearch2 </servlet-name>
+ <url-pattern> /osearch2 </url-pattern>
+ </servlet-mapping>
 
  <servlet>
  <servlet-name> dsearch </servlet-name>

@@ -101,13 +101,13 @@ public class DispatchingRegistration extends GenericServlet {
 							" OUTPUT inserted.出庫親ID as newId, inserted.更新日" +
 							" VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
 						int i = 1;
-						ps.setInt(i, dispDTO.getInt(0)); i++;//製作期
-						ps.setInt(i, dispDTO.getInt(1)); i++;//製作番号
-						ps.setString(i, dispDTO.getStr(0)); i++;//製作枝番
-						ps.setDate(i, dispDTO.getDate(0)); i++;//出庫年月日
-						ps.setString(i, dispDTO.getStr(4)); i++;//用途
-						ps.setString(i, dispDTO.getStr(5)); i++;//用途2
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//更新日
+						ps.setInt(i++, dispDTO.getInt(0)); //製作期
+						ps.setInt(i++, dispDTO.getInt(1)); //製作番号
+						ps.setString(i++, dispDTO.getStr(0)); //製作枝番
+						ps.setDate(i++, dispDTO.getDate(0)); //出庫年月日
+						ps.setString(i++, dispDTO.getStr(4)); //用途
+						ps.setString(i++, dispDTO.getStr(5)); //用途2
+						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); //更新日
 						ps.setInt(i, 0);//更新者CD
 						boolean isResultSet = ps.execute();
 						int   updateCount = 0;
@@ -139,14 +139,14 @@ public class DispatchingRegistration extends GenericServlet {
 						ps = c.prepareStatement("UPDATE T_出庫_親 SET 製作期=?, 製作番号=?, 製作枝番=?, 出庫年月日=?, 用途=?, 摘要=?, 更新日=?, 更新者CD=?" +
 								" WHERE 出庫親ID=?");
 						int i = 1;
-						ps.setInt(i, dispDTO.getInt(0)); i++;//製作期
-						ps.setInt(i, dispDTO.getInt(1)); i++;//製作番号
-						ps.setString(i, dispDTO.getStr(0)); i++;//製作枝番
-						ps.setDate(i, dispDTO.getDate(0)); i++;//出庫年月日
-						ps.setString(i, dispDTO.getStr(4)); i++;//用途
-						ps.setString(i, dispDTO.getStr(5)); i++;//用途2
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//更新日
-						ps.setInt(i, 0); i++;//更新者CD
+						ps.setInt(i++, dispDTO.getInt(0)); //製作期
+						ps.setInt(i++, dispDTO.getInt(1)); //製作番号
+						ps.setString(i++, dispDTO.getStr(0)); //製作枝番
+						ps.setDate(i++, dispDTO.getDate(0)); //出庫年月日
+						ps.setString(i++, dispDTO.getStr(4)); //用途
+						ps.setString(i++, dispDTO.getStr(5)); //用途2
+						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); //更新日
+						ps.setInt(i++, 0); //更新者CD
 						ps.setInt(i, dispatchingID);
 						ps.executeUpdate();
 						ps = c.prepareStatement("DELETE FROM T_出庫_子 WHERE 出庫親ID=?");
@@ -168,21 +168,21 @@ public class DispatchingRegistration extends GenericServlet {
 						int i = 1;
 						int j = 0;
 						if(v.get(0) != null && (Integer)v.get(0) != 0) {
-							ps.setInt(i, k); i++;//ID
-							ps.setInt(i, dispatchingID); i++;//出庫親ID
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer)v.get(j)); i++; j++;//大分類CD
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer)v.get(j)); i++; j++;//中分類CD
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer)v.get(j)); i++; j++;//小分類CD
-							ps.setString(i, (String)v.get(j)); i++; j++;//名称
-							ps.setBoolean(i, (Boolean)v.get(j)); i++; j++;//各FLG
-							ps.setDouble(i, (Double)v.get(j)); i++; j++;//数量
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//数量単位CD
-							ps.setDouble(i, (Double)v.get(j)); i++; j++;//重量長さ（単位を要検討のこと）
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//単価
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//金額
-							ps.setString(i, (String)v.get(j)); i++; j++;//備考
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//在庫親ID
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//在庫子ID
+							ps.setInt(i++, k);//ID
+							ps.setInt(i++, dispatchingID);//出庫親ID
+							ps.setInt(i++, (v.get(j) == null) ? 0 : (Integer)v.get(j)); j++;//大分類CD
+							ps.setInt(i++, (v.get(j) == null) ? 0 : (Integer)v.get(j)); j++;//中分類CD
+							ps.setInt(i++, (v.get(j) == null) ? 0 : (Integer)v.get(j)); j++;//小分類CD
+							ps.setString(i++, (String)v.get(j++)); //名称
+							ps.setBoolean(i++, (Boolean)v.get(j++)); //各FLG
+							ps.setDouble(i++, (Double)v.get(j++)); //数量
+							ps.setInt(i++, (Integer)v.get(j++)); //数量単位CD
+							ps.setDouble(i++, (Double)v.get(j++)); //重量長さ（単位を要検討のこと）
+							ps.setInt(i++, (Integer)v.get(j++)); //単価
+							ps.setInt(i++, (Integer)v.get(j++)); //金額
+							ps.setString(i++, (String)v.get(j++)); //備考
+							ps.setInt(i++, (Integer)v.get(j++)); //在庫親ID
+							ps.setInt(i++, (Integer)v.get(j++)); //在庫子ID
 							ps.addBatch();
 							k++;
 						}

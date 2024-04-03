@@ -3,11 +3,9 @@ package fukaisystem.group;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Map;
 import java.util.Vector;
 
 import javax.servlet.GenericServlet;
@@ -27,7 +25,7 @@ public class SetMember extends GenericServlet {
 	private static final String className = "SetMember\n";
 	private DMDTO dmd;
 	private String dept;
-	private Vector<Vector> data;
+	private Vector<Vector<Object>> data;
 	private int[] updateCounts;
 
 	public void service(ServletRequest request, ServletResponse response) {
@@ -70,7 +68,7 @@ public class SetMember extends GenericServlet {
 						 " WHEN NOT MATCHED THEN" +
 						 " 	INSERT VALUES(temp.CD, temp.ê©, temp.ñº, temp.èäëÆïîèêCD, temp.ï\é¶CD, 0, temp.ç›ê–FLG, '00000', '00000');");
 				int i = 1;
-				for(Vector v : data) {
+				for(Vector<Object> v : data) {
 					if(v.get(0).toString().equals("0") || (v.get(1).equals("") && v.get(2).equals(""))) {
 					} else {
 						ps.setInt(1, (Integer)v.get(0)); //CD

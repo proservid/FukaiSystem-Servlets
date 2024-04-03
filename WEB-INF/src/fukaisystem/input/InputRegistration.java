@@ -208,7 +208,12 @@ public class InputRegistration extends GenericServlet {
 
 		if(id == 0) {
 			try {
-				ps = c.prepareStatement("INSERT INTO T_加工実績 (製作期,製作番号,製作枝番,加工CD,時間,着手日時,終了日時,担当者CD,備考,入力日時) VALUES(?,?,?,?,?,?,?,?,?,?)");
+				ps = c.prepareStatement("INSERT INTO T_加工実績 (製作期,製作番号,製作枝番,加工CD,時間,着手日時,終了日時,単価,担当者CD,備考,入力日時)"
+						+ " VALUES(?,?,?,?,?,?,?,"
+						+ "(select 単価 from M_加工_単価 wp1 where wp1.CD=? and 適用開始日<? AND NOT EXISTS ("
+						+ "	SELECT 1 FROM M_加工_単価 wp2"
+						+ "	WHERE wp1.適用開始日<wp2.適用開始日 AND wp1.CD=wp2.CD AND 適用開始日<?)),"
+						+ "?,?,?)");
 				/*
 				"MERGE INTO T_加工実績2 AS t"+//(製作期,製作番号,製作枝番,加工CD,時間,着手日時,終了日時,担当者CD,備考)" +
 				" USING (SELECT ? AS 製作期, ? AS 製作番号, ? AS 製作枝番, ? AS 加工CD, ? AS 時間, ? AS 着手日時, ? AS 終了日時, ? AS 担当者CD, ? AS 備考) AS w" +
@@ -220,16 +225,21 @@ public class InputRegistration extends GenericServlet {
 				" OUTPUT deleted.ID as oldId, inserted.着手日時 as newId;");
 	*/
 				int i = 1;
-				ps.setInt(i, inputDTO.getInt(1) == 0 ? 0 : inputDTO.getInt(0)); i++;//番号が0なら期も0
-				ps.setInt(i, inputDTO.getInt(1)); i++;
-				ps.setString(i, inputDTO.getInt(1) == 0 ? "" : inputDTO.getString(3));i++;//番号が0なら枝番なし
-				ps.setString(i, inputDTO.getString(2)); i++;//加工CD
-				ps.setInt(i, time); i++;//時間
-				ps.setTimestamp(i, new Timestamp(from.getTime())); i++;//着手日時
-				ps.setTimestamp(i, new Timestamp(to.getTime())); i++;//終了日時
-				ps.setString(i, inputDTO.getString(1)); i++;//担当者CD
-				ps.setString(i, inputDTO.getString(2).equals("17") ? "休憩"+rest+"分" : ""); i++;//備考
-				ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;
+				ps.setInt(i++, inputDTO.getInt(1) == 0 ? 0 : inputDTO.getInt(0)); //番号が0なら期も0
+				ps.setInt(i++, inputDTO.getInt(1));
+				ps.setString(i++, inputDTO.getInt(1) == 0 ? "" : inputDTO.getString(3)); //番号が0なら枝番なし
+				ps.setString(i++, inputDTO.getString(2)); //加工CD
+				ps.setInt(i++, time); //時間
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //着手日時
+				ps.setTimestamp(i++, new Timestamp(to.getTime())); //終了日時
+
+				ps.setString(i++, inputDTO.getString(2)); //加工CD
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //着手日時
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //着手日時
+
+				ps.setString(i++, inputDTO.getString(1)); //担当者CD
+				ps.setString(i++, inputDTO.getString(2).equals("17") ? "休憩"+rest+"分" : ""); //備考
+				ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime()));
 				ps.executeUpdate();
 	 		} catch(SQLException ex) {
 				ex.printStackTrace();
@@ -238,18 +248,24 @@ public class InputRegistration extends GenericServlet {
 			}
 		} else {
 			try {
-				ps = c.prepareStatement("UPDATE T_加工実績  SET 製作期=?,製作番号=?,製作枝番=?,加工CD=?,時間=?,着手日時=?,終了日時=?,担当者CD=?,備考=?,入力日時=? WHERE ID=?");
+				ps = c.prepareStatement("UPDATE T_加工実績  SET 製作期=?,製作番号=?,製作枝番=?,加工CD=?,時間=?,着手日時=?,終了日時=?,"
+						+ "単価=(select 単価 from M_加工_単価 p where p.CD=加工CD and 適用開始日<? AND NOT EXISTS ("
+						+ "	SELECT 1 FROM M_加工_単価 wp2"
+						+ "	WHERE wp1.適用開始日<wp2.適用開始日 AND wp1.CD=wp2.CD AND 適用開始日<?)),"
+						+ "担当者CD=?,備考=?,入力日時=? WHERE ID=?");
 				int i = 1;
-				ps.setInt(i, inputDTO.getInt(1) == 0 ? 0 : inputDTO.getInt(0)); i++;//番号が0なら期も0
-				ps.setInt(i, inputDTO.getInt(1)); i++;
-				ps.setString(i, inputDTO.getInt(1) == 0 ? "" : inputDTO.getString(3));i++;//番号が0なら枝番なし
-				ps.setString(i, inputDTO.getString(2)); i++;//加工CD
-				ps.setInt(i, time); i++;//時間
-				ps.setTimestamp(i, new Timestamp(from.getTime())); i++;//着手日時
-				ps.setTimestamp(i, new Timestamp(to.getTime())); i++;//終了日時
-				ps.setString(i, inputDTO.getString(1)); i++;//担当者CD
-				ps.setString(i, inputDTO.getString(2).equals("17") ? "休憩"+rest+"分" : ""); i++;//備考
-				ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;
+				ps.setInt(i++, inputDTO.getInt(1) == 0 ? 0 : inputDTO.getInt(0)); //番号が0なら期も0
+				ps.setInt(i++, inputDTO.getInt(1));
+				ps.setString(i++, inputDTO.getInt(1) == 0 ? "" : inputDTO.getString(3)); //番号が0なら枝番なし
+				ps.setString(i++, inputDTO.getString(2)); //加工CD
+				ps.setInt(i++, time); //時間
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //着手日時
+				ps.setTimestamp(i++, new Timestamp(to.getTime())); //終了日時
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //着手日時
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //着手日時
+				ps.setString(i++, inputDTO.getString(1)); //担当者CD
+				ps.setString(i++, inputDTO.getString(2).equals("17") ? "休憩"+rest+"分" : ""); //備考
+				ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime()));
 				ps.setInt(i, id);
 				ps.executeUpdate();
 	 		} catch(SQLException ex) {

@@ -80,7 +80,7 @@ import fukaisystem.util.Logging;
 							m = param.get(2);
 							if(l > 100) {
 								ps = c.prepareStatement("select wc.CD as ¬•ª—ŞCD,¬•ª—Ş–¼,©+' '+–¼ as d“üæ–¼,substring(convert(varchar,’…è“ú,20),1,16)+'`'+substring(convert(varchar,I—¹“ú,108),1,5) as –¼," +
-									" convert(money,ŠÔ)/100 as ”—Ê,’P‰¿,w.ŠÔ*wc.’P‰¿/100 as ‹àŠz " +
+									" convert(money,ŠÔ)/100 as ”—Ê,w.’P‰¿,w.ŠÔ*w.’P‰¿/100 as ‹àŠz " +
 									" from T_»ì_e pp" +
 									" left outer join T_‰ÁHÀÑ w on pp.»ìŠú=w.»ìŠú and pp.»ì”Ô†=w.»ì”Ô† and pp.»ì}”Ô=w.»ì}”Ô" +
 									" left outer join M_‰ÁH_q wc on wc.CD=w.‰ÁHCD" +
@@ -156,7 +156,7 @@ import fukaisystem.util.Logging;
 							title.add("‹àŠz");
 						} else {//’†
 							if(l > 100) {
-								ps = c.prepareStatement("select ’†•ª—ŞCD,’†•ª—Ş–¼,sum(w.ŠÔ*wc.’P‰¿/100) as ‹àŠz " +
+								ps = c.prepareStatement("select ’†•ª—ŞCD,’†•ª—Ş–¼,sum(w.ŠÔ*w.’P‰¿/100) as ‹àŠz " +
 									" from T_»ì_e pp" +
 									" left outer join T_‰ÁHÀÑ w on pp.»ìŠú=w.»ìŠú and pp.»ì”Ô†=w.»ì”Ô† and pp.»ì}”Ô=w.»ì}”Ô" +
 									" left outer join M_‰ÁH_q wc on wc.CD=w.‰ÁHCD" +
@@ -233,7 +233,7 @@ import fukaisystem.util.Logging;
 							" where »ìeID=? and ‘å•ª—ŞCD is not null" +
 							" group by ‘å•ª—ŞCD,‘å•ª—Ş–¼" +
 							" union all" +
-							" select ‘å•ª—ŞCD,‘å•ª—Ş–¼,sum(w.ŠÔ*wc.’P‰¿/100) as ‹àŠz " +
+							" select ‘å•ª—ŞCD,‘å•ª—Ş–¼,sum(w.ŠÔ*w.’P‰¿/100) as ‹àŠz " +
 							" from T_»ì_e pp" +
 							" left outer join T_‰ÁHÀÑ w on pp.»ìŠú=w.»ìŠú and pp.»ì”Ô†=w.»ì”Ô† and pp.»ì}”Ô=w.»ì}”Ô" +
 							" left outer join M_‰ÁH_q wc on wc.CD=w.‰ÁHCD" +
