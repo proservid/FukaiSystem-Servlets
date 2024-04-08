@@ -1,4 +1,4 @@
-package fukaisystem.aggregate;
+package fukaisystem;
 
 import java.io.*;
 import java.sql.*;
@@ -18,7 +18,7 @@ import org.apache.log4j.Logger;
 public class GetShelf extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static Logger lg = Logger.getLogger("dbtool");
+	private static Logger lg = Logger.getLogger("A1");
 
 	public void service(ServletRequest request, ServletResponse response) {
 
@@ -83,19 +83,16 @@ String sql =
 "when ŒJ‰zoŒÉ is null then ŒJ‰zd“ü" + "\n" +
 "else ŒJ‰zd“ü+ŒJ‰zoŒÉ" + "\n" +
 "end as ŒJ‰z‹àŠz," + "\n" +
-"case when sum(ŒJ‰z90) is null then 0 else sum(ŒJ‰z90) end as ŒJ‰z90," + "\n" +
 "case when d“ü‹àŠz is null then 0 else d“ü‹àŠz end as d“ü‹àŠz," + "\n" +
 "case when oŒÉ‹àŠz is null then 0 else oŒÉ‹àŠz end as oŒÉ‹àŠz," + "\n" +
-"case when sum(oŒÉ90) is null then 0 else sum(oŒÉ90) end as oŒÉ90," + "\n" +
 "case when H” is null then '0.00' else H” end as H”," + "\n" +
 "case when H”—İŒv is null then '0.00' else H”—İŒv end as H”—İŒv" + "\n" +
 //"-------------------------------------------------------------------------------------------------------" + "\n" +
 //" --•\¦»”Ô" + "\n" +
 //" --¡Œ”„ã{”„ã‚ª‚Ü‚¾ or ¡Œd“ü or ¡ŒoŒÉ or ¡ŒH”" + "\n" +
 " from (" + "\n" +
-"	select p.»ìeID,pc.ID,p.»ìŠú,p.»ì”Ô†,p.»ì}”Ô,”„ã”NŒ“ú,”[•i‹æ•ªCD from T_»ì_e p" + "\n" +
+"	select p.»ìŠú,p.»ì”Ô†,p.»ì}”Ô,”„ã”NŒ“ú,”[•i‹æ•ªCD from T_»ì_e p" + "\n" +
 "	left outer join T_”„ã_q sc on p.»ìeID=sc.»ìeID" + "\n" +
-"	left outer join T_»ì_q pc on p.»ìeID=pc.»ìeID and (pc.ID=sc.»ìqID or (pc.ID is not null and sc.»ìqID is null))" + "\n" +
 "	left outer join T_”„ã_e sp on sc.”„ãeID=sp.”„ãeID" + "\n" +
 "	left outer join (" + "\n" +
 "		select ’•¶Šú,’•¶”Ô†,’•¶}”Ô,”[•i‘“ú from T_İŒÉ_e op " + "\n" +
@@ -128,19 +125,6 @@ String sql =
 "	group by »ìŠú,»ì”Ô†,»ì}”Ô) sdp" + "\n" +
 "	on p2.»ìŠú=sdp.»ìŠú and p2.»ì”Ô†=sdp.»ì”Ô† and p2.»ì}”Ô=sdp.»ì}”Ô" + "\n" +
 "left outer join (" + "\n" +
-"	select İŒÉeID,İŒÉqID,sum(‹àŠz)*-1 as ŒJ‰z90 from T_oŒÉ_q dc" + "\n" +
-"	left outer join T_oŒÉ_e dp on dc.oŒÉeID=dp.oŒÉeID" + "\n" +
-"	where oŒÉ”NŒ“ú<?" + "\n" +
-"	group by İŒÉeID,İŒÉqID) sdp90" + "\n" +
-"	on İŒÉeID=p2.»ìeID AND İŒÉqID=p2.ID" + "\n" +
-"left outer join (" + "\n" +
-"	select İŒÉeID,İŒÉqID,sum(‹àŠz)*-1 as oŒÉ90 from T_oŒÉ_q dc" + "\n" +
-"	left outer join T_oŒÉ_e dp on dc.oŒÉeID=dp.oŒÉeID" + "\n" +
-"	where oŒÉ”NŒ“ú<? AND oŒÉ”NŒ“ú>=?" + "\n" +
-"	group by İŒÉeID,İŒÉqID) dp90" + "\n" +
-"	on dp90.İŒÉeID=p2.»ìeID AND dp90.İŒÉqID=p2.ID" + "\n" +
-
-"left outer join (" + "\n" +
 "	select »ìŠú,»ì”Ô†,»ì}”Ô,convert(varchar,convert(money,sum(ŠÔ))/100) as H”—İŒv from T_‰ÁHÀÑ" + "\n" +
 "	where ’…è“ú<?" + "\n" +
 "	group by »ìŠú,»ì”Ô†,»ì}”Ô) w on w.»ìŠú=p2.»ìŠú and w.»ì”Ô†=p2.»ì”Ô† and w.»ì}”Ô=p2.»ì}”Ô" + "\n" +
@@ -172,7 +156,6 @@ String sql =
 ") z on z.»ìŠú=p2.»ìŠú and z.»ì”Ô†=p2.»ì”Ô† and z.»ì}”Ô=p2.»ì}”Ô" + "\n" +
 //"-------------------------------------------------------------------------------------------------------" + "\n" +
 "where (p2.»ì”Ô†>0 or p2.»ì”Ô† is null) and (z.»ì”Ô†>0 or z.»ì”Ô† is null) and (ŒJ‰zd“ü<>0 or ŒJ‰zoŒÉ<>0 or H”—İŒv<>'0' or d“ü‹àŠz<>0 or oŒÉ‹àŠz<>0 or H”<>'0')" + "\n" +
-"group by p2.»ìŠú,p2.»ì”Ô†,p2.»ì}”Ô,z.»ìŠú,z.»ì”Ô†,z.»ì}”Ô,d“ü‹àŠz,oŒÉ‹àŠz,H”,H”—İŒv,p2.”„ã”NŒ“ú,p2.”[•i‹æ•ªCD,ŒJ‰zd“ü,ŒJ‰zoŒÉ" + "\n" +
 "order by substring(convert(varchar,case when p2.»ì”Ô† is null then z.»ì”Ô† else p2.»ì”Ô† end),1,1),»”Ô";
 			try {
 				ps = c.prepareStatement(sql);
@@ -188,11 +171,7 @@ int n = 1;
 				ps.setDate(n++, from);//”„
 				ps.setDate(n++, month == 1 ? from : from2);//”[•i
 				ps.setDate(n++, from);//oŒÉ
-				ps.setDate(n++, from);//ŒJ‰z90
-				ps.setDate(n++, to);//oŒÉ90
-				ps.setDate(n++, from);//oŒÉ90
 				ps.setDate(n++, to);//’…è
-
 				ps.setDate(n++, month == 1 ? from : from2);//”[•i
 				ps.setDate(n++, month == 12 ? to : to2);//”[•i
 				ps.setDate(n++, from);//oŒÉ
@@ -205,11 +184,11 @@ int n = 1;
 					Vector<Object> row = new Vector<Object>();
 					row.add(rs.getString("»”Ô"));
 					row.add(rs.getString("”„"));
-					row.add(rs.getInt("ŒJ‰z‹àŠz")+rs.getInt("ŒJ‰z90"));
+					row.add(rs.getInt("ŒJ‰z‹àŠz"));
 					row.add(rs.getInt("d“ü‹àŠz"));
-					row.add(rs.getInt("oŒÉ‹àŠz")+rs.getInt("oŒÉ90"));
-					row.add(rs.getInt("d“ü‹àŠz")+rs.getInt("oŒÉ‹àŠz")+rs.getInt("oŒÉ90"));
-					row.add(rs.getInt("ŒJ‰z‹àŠz")+rs.getInt("ŒJ‰z90")+rs.getInt("d“ü‹àŠz")+rs.getInt("oŒÉ‹àŠz")+rs.getInt("oŒÉ90"));
+					row.add(rs.getInt("oŒÉ‹àŠz"));
+					row.add(rs.getInt("d“ü‹àŠz")+rs.getInt("oŒÉ‹àŠz"));
+					row.add(rs.getInt("ŒJ‰z‹àŠz")+rs.getInt("d“ü‹àŠz")+rs.getInt("oŒÉ‹àŠz"));
 					row.add(rs.getString("H”"));
 					row.add(rs.getString("H”—İŒv"));
 					data.add(row);

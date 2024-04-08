@@ -22,7 +22,7 @@ import fukaisystem.util.Logging;
 
 
 
-public class OrderSearch extends GenericServlet {
+public class OrderSearch2 extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
@@ -70,7 +70,7 @@ public class OrderSearch extends GenericServlet {
 			try {
 				StringBuilder query = new StringBuilder(
 				 "SELECT top 30000 s.在庫親ID,注文期,注文番号,注文枝番," +
-				 " 伝票番号,s.仕入先CD,注文年月日,指定納期," +
+				 " 伝票番号,s.仕入先CD,注文年月日,指定納期,入庫年月日," +
 				 " 摘要,納入先指定,納品書番号,納品書日," +
 				 " CASE" +
 					" WHEN 種別CD = 1 THEN '㈱'+会社名" +
@@ -79,7 +79,7 @@ public class OrderSearch extends GenericServlet {
 					" WHEN 種別CD = 4 THEN 会社名+'㈲'" +
 					" ELSE 会社名 END AS 社名" +
 				 " FROM (" +
-				 "	SELECT sp.在庫親ID,納品書番号,納品書日 FROM T_在庫_親 sp" +
+				 "	SELECT sp.在庫親ID,入庫年月日,納品書番号,納品書日 FROM T_在庫_親 sp" +
 				 "	 LEFT OUTER JOIN (SELECT * FROM T_在庫_子 WHERE 表示CD=2) sc ON sp.在庫親ID=sc.在庫親ID" +
 				 "	 LEFT OUTER JOIN T_指定納品書 d on d.ID=sc.納品書番号");
 				boolean isFirst = true;
@@ -110,7 +110,7 @@ public class OrderSearch extends GenericServlet {
 					}
 				}
 				if(!isFirst) query.append(")");
-				 query.append(" GROUP BY sp.在庫親ID,納品書番号,納品書日) spc" +
+				query.append(" GROUP BY sp.在庫親ID,入庫年月日,納品書番号,納品書日) spc" +
 				 " LEFT OUTER JOIN T_在庫_親 s ON s.在庫親ID=spc.在庫親ID" +
 				 " LEFT OUTER JOIN M_法人 c ON s.仕入先CD=c.仕入先CD");
 
@@ -164,6 +164,7 @@ public class OrderSearch extends GenericServlet {
 					}
 					v2.add(rs.getDate("注文年月日"));
 					v2.add(rs.getDate("指定納期"));
+					v2.add(rs.getDate("入庫年月日"));
 					v2.add(rs.getString("摘要"));
 					v2.add(rs.getString("納入先指定"));
 					v2.add(rs.getInt("納品書番号"));

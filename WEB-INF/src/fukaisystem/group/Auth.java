@@ -61,13 +61,13 @@ public class Auth extends GenericServlet {
 //				ps.setString(2, digestMd5((char[])obj[1]));
 //				rs = ps.executeQuery();
 //				if(rs.next()) {
-					ps = c.prepareStatement("SELECT RIGHT('00' + CONVERT(varchar, CD), 3) AS 部署CD,部署名 FROM M_部署");
+					ps = c.prepareStatement("SELECT RIGHT('00' + CONVERT(varchar, CD), 2) AS 部署CD,部署名 FROM M_部署");
 					rs = ps.executeQuery();
 					while(rs.next()) {
 						dept.put(rs.getString("部署CD"), rs.getString("部署名"));
 						name.put(rs.getString("部署CD"), new LinkedHashMap<String, String>());
 					}
-					ps = c.prepareStatement("SELECT CD AS 個人CD,姓+' '+名 AS 氏名,RIGHT('00' + CONVERT(varchar, 所属部署CD), 3) AS 部署CD FROM M_人員 WHERE 在籍FLG='true' AND CD>0 ORDER BY 所属部署CD,表示CD");
+					ps = c.prepareStatement("SELECT CD AS 個人CD,姓+' '+名 AS 氏名,RIGHT('00' + CONVERT(varchar, 所属部署CD), 2) AS 部署CD FROM M_人員 WHERE 在籍FLG='true' AND CD>0 ORDER BY 所属部署CD,表示CD");
 					rs = ps.executeQuery();
 					while(rs.next()) {
 						if(name.containsKey(rs.getString("部署CD"))) name.get(rs.getString("部署CD")).put(rs.getString("個人CD"), rs.getString("氏名"));

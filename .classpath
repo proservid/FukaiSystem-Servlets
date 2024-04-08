@@ -8,9 +8,8 @@
 	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
 	<classpathentry kind="src" path="WEB-INF/src"/>
 	<classpathentry kind="src" output="work" path="work"/>
-	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/tomcat-dbcp.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/log4j-1.2.16.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/sqljdbc4.jar"/>
-	<classpathentry kind="lib" path="C:/Users/kameura/Documents/NetBeansProjects/PrintUtility/dist/PrintUtility.jar"/>
+	<classpathentry kind="lib" path="C:/Users/p2/eclipse-workspace/FukaiSystem/WEB-INF/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/p2/eclipse-workspace/FukaiSystem/WEB-INF/lib/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/p2/eclipse-workspace/FukaiSystem/WEB-INF/lib/tomcat-dbcp2.jar"/>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>

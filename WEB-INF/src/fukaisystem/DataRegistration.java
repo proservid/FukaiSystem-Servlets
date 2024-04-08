@@ -14,7 +14,7 @@ import fukaisystem.sql.DBConnection;
 public class DataRegistration extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static Logger lg = Logger.getLogger("dbtool");
+	private static Logger lg = Logger.getLogger("A1");
 
 
 	public void service(ServletRequest request, ServletResponse response) {
@@ -27,6 +27,7 @@ public class DataRegistration extends GenericServlet {
 		ResultSet rs = null;
 		StringBuilder msg = new StringBuilder();
 		StringBuilder err = new StringBuilder();
+
 		try {
 
 			Object obj = null;
@@ -72,7 +73,7 @@ public class DataRegistration extends GenericServlet {
 				}
 
 
-				c.setAutoCommit(false);
+				c.setAutoCommit(false);//System.out.println(sql.toString());
 				ps = c.prepareStatement(sql.toString());
 				for(int i = 1; i < lines.size(); i++) {
 					String[] strs = lines.get(i).split("\t", cols);

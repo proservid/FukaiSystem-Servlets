@@ -45,9 +45,9 @@ public class Hello extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
         throws IOException, ServletException {
 
-		DBConnection dbc = new DBConnection();
-		Connection c = dbc.getConnection();
-		DatabaseMetaData dbmd;
+//		DBConnection dbc = new DBConnection();
+//		Connection c = dbc.getConnection();
+//		DatabaseMetaData dbmd;
 
 //		String qualifier = null, name = null;
 //		int position = 0, cardinality = 0;
@@ -80,8 +80,8 @@ public class Hello extends HttpServlet {
 //        out.println("<a href=\"../index.html\">");
 //        out.println("<img src=\"../images/return.gif\" height=24 " +
 //                    "width=24 align=right border=0 alt=\"return\"></a>");
- //       out.println("<h1>" + title + "</h1>");
-		try {
+       out.println("<h1>OK</h1>");
+/*		try {
 			dbmd = c.getMetaData();
 			ResultSet rs = dbmd.getIndexInfo("FukaiSystem", null, "M_ä˙", true, false);
 			while(rs.next()) {
@@ -93,7 +93,7 @@ public class Hello extends HttpServlet {
 		} catch (SQLException e) {
 			// TODO é©ìÆê∂ê¨Ç≥ÇÍÇΩ catch ÉuÉçÉbÉN
 			e.printStackTrace();
-		}
+		}*/
         out.println("</body>");
         out.println("</html>");
     }

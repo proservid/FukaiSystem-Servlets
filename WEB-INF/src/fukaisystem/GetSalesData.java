@@ -1,4 +1,4 @@
-package fukaisystem.aggregate;
+package fukaisystem;
 
 import java.io.*;
 import java.sql.*;
@@ -21,7 +21,7 @@ import org.apache.log4j.Logger;
 public class GetSalesData extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static Logger lg = Logger.getLogger("dbtool");
+	private static Logger lg = Logger.getLogger("A1");
 
 	public void service(ServletRequest request, ServletResponse response) {
 

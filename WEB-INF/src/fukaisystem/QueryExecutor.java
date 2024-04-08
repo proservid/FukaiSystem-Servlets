@@ -19,7 +19,7 @@ import org.apache.log4j.Logger;
 public class QueryExecutor extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static Logger lg = Logger.getLogger("dbtool");
+	private static Logger lg = Logger.getLogger("A1");
 
 	public void service(ServletRequest request, ServletResponse response) {
 

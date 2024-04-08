@@ -20,7 +20,7 @@ import org.apache.log4j.Logger;
 public class GetTableData extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
-	private static Logger lg = Logger.getLogger("dbtool");
+	private static Logger lg = Logger.getLogger("A1");
 
 	public void service(ServletRequest request, ServletResponse response) {
 
@@ -132,7 +132,6 @@ public class GetTableData extends GenericServlet {
 
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			if(output == null) System.out.println("e:"+err.toString());
 
 			out.writeObject(output);
 			out.writeUTF(err.toString());
@@ -140,7 +139,6 @@ public class GetTableData extends GenericServlet {
 			out.close();
 		}catch(Exception ex) {
 			lg.error(ex);
-			ex.printStackTrace();
 		} finally {
 			try {
 				if(c != null && !c.isClosed()) c.close();

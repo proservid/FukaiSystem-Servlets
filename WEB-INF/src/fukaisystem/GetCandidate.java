@@ -81,8 +81,8 @@ public class GetCandidate extends GenericServlet {
 						" WHERE " + key + " IS NOT NULL AND (会社名 LIKE ? OR 支店名 LIKE ? OR カイシャメイ LIKE ? OR シテンメイ LIKE ? OR アルファベット LIKE ? OR 仕入先CD LIKE ? OR 得意先CD LIKE ?)");
 				if(isValidOnly) {
 					sql.append(" AND 有効FLG='true'");
-				}
-				sql.append(" ORDER BY " + key);
+				}//System.out.println(input);
+				sql.append(" ORDER BY " + key);//System.out.println(sql.toString());
 				ps = c.prepareStatement(sql.toString());
 				int i = 1;
 				ps.setString(i++, "%" + input + "%");

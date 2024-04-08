@@ -63,11 +63,11 @@ public class GetDispatchingSummary extends GenericServlet {
 				ps = c.prepareStatement("SELECT 大分類CD,中分類CD,小分類CD,品名,各FLG,数量,数量単位CD,重量長さ,"
 						+ "単価,金額,備考,c.在庫親ID,在庫子ID,注文期,注文番号,注文枝番 FROM T_出庫_子 c"
 						+ " LEFT OUTER JOIN ("
-						+ " SELECT 在庫親ID,注文期,注文番号,注文枝番 FROM T_在庫_親"
-						+ " UNION"
-						+ " SELECT 製作親ID,製作期,製作番号,製作枝番 FROM T_製作_親"
-						+ ") p ON c.在庫親ID=p.在庫親ID" +
-						" WHERE 出庫親ID=?");
+						+ "  SELECT 在庫親ID,注文期,注文番号,注文枝番 FROM T_在庫_親"
+						+ "  UNION"
+						+ "  SELECT 製作親ID,製作期,製作番号,製作枝番 FROM T_製作_親"
+						+ " ) p ON c.在庫親ID=p.在庫親ID"
+						+ " WHERE 出庫親ID=?");
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
 				while(rs.next()) {

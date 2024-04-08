@@ -249,7 +249,7 @@ public class InputRegistration extends GenericServlet {
 		} else {
 			try {
 				ps = c.prepareStatement("UPDATE T_加工実績  SET 製作期=?,製作番号=?,製作枝番=?,加工CD=?,時間=?,着手日時=?,終了日時=?,"
-						+ "単価=(select 単価 from M_加工_単価 p where p.CD=加工CD and 適用開始日<? AND NOT EXISTS ("
+						+ "単価=(select 単価 from M_加工_単価 wp1 where wp1.CD=加工CD and 適用開始日<? AND NOT EXISTS ("
 						+ "	SELECT 1 FROM M_加工_単価 wp2"
 						+ "	WHERE wp1.適用開始日<wp2.適用開始日 AND wp1.CD=wp2.CD AND 適用開始日<?)),"
 						+ "担当者CD=?,備考=?,入力日時=? WHERE ID=?");

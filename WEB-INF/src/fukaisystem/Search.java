@@ -289,7 +289,7 @@ public class Search extends GenericServlet {
 				String conditionStr = condition.toString();
 				if(!conditionStr.equals("")) query.append(" WHERE " + conditionStr);
 				ps = c.prepareStatement(query.toString());
-System.out.println(query.toString());
+
 				//////////////////////条件のセット
 				int j = 1;
 				/*

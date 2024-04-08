@@ -10,24 +10,6 @@
                 <res-type>javax.sql.DataSource</res-type>
                 <res-auth>Container</res-auth>
         </resource-ref>
- <servlet>
- <servlet-name> h </servlet-name>
- <servlet-class> fukaisystem.Hello </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> h </servlet-name>
- <url-pattern> /h </url-pattern>
- </servlet-mapping>
-
- <servlet>
- <servlet-name> tbInit </servlet-name>
- <servlet-class> fukaisystem.TbInit </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> tbInit </servlet-name>
- <url-pattern> /tbInit </url-pattern>
- </servlet-mapping>
-
 <servlet>
  <servlet-name> getShelf </servlet-name>
  <servlet-class> fukaisystem.aggregate.GetShelf2 </servlet-class>
@@ -53,6 +35,24 @@
  <servlet-mapping>
  <servlet-name> getSalesData </servlet-name>
  <url-pattern> /getSalesData </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> tbInit </servlet-name>
+ <servlet-class> fukaisystem.TbInit </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> tbInit </servlet-name>
+ <url-pattern> /tbInit </url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+ <servlet-name> getData </servlet-name>
+ <servlet-class> fukaisystem.GetData </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getData </servlet-name>
+ <url-pattern> /getData </url-pattern>
  </servlet-mapping>
 
  <servlet>
@@ -81,7 +81,6 @@
  <servlet-name> queryExecutor </servlet-name>
  <url-pattern> /queryExecutor </url-pattern>
  </servlet-mapping>
-
 
 
  <servlet>
@@ -380,7 +379,7 @@
  </servlet-mapping>
  <servlet>
  <servlet-name> osearch2 </servlet-name>
- <servlet-class> fukaisystem.OrderSearch </servlet-class>
+ <servlet-class> fukaisystem.OrderSearch2 </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> osearch2 </servlet-name>
@@ -466,15 +465,6 @@
  <servlet-mapping>
  <servlet-name> getColInfo </servlet-name>
  <url-pattern> /getColInfo </url-pattern>
- </servlet-mapping>
-
- <servlet>
- <servlet-name> getData </servlet-name>
- <servlet-class> fukaisystem.GetData </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> getData </servlet-name>
- <url-pattern> /getData </url-pattern>
  </servlet-mapping>
 
  <servlet>
@@ -576,12 +566,12 @@
  </servlet-mapping>
 
  <servlet>
- <servlet-name> setHoliday </servlet-name>
- <servlet-class> fukaisystem.group.SetHoliday </servlet-class>
+ <servlet-name> getState </servlet-name>
+ <servlet-class> fukaisystem.aggregate.GetState </servlet-class>
  </servlet>
  <servlet-mapping>
- <servlet-name> setHoliday </servlet-name>
- <url-pattern> /setHoliday </url-pattern>
+ <servlet-name> getState </servlet-name>
+ <url-pattern> /getState </url-pattern>
  </servlet-mapping>
 
  <servlet>
@@ -603,12 +593,12 @@
  </servlet-mapping>
 
  <servlet>
- <servlet-name> getState </servlet-name>
- <servlet-class> fukaisystem.aggregate.GetState </servlet-class>
+ <servlet-name> setHoliday </servlet-name>
+ <servlet-class> fukaisystem.group.SetHoliday </servlet-class>
  </servlet>
  <servlet-mapping>
- <servlet-name> getState </servlet-name>
- <url-pattern> /getState </url-pattern>
+ <servlet-name> setHoliday </servlet-name>
+ <url-pattern> /setHoliday </url-pattern>
  </servlet-mapping>
 
  <servlet>
@@ -638,4 +628,12 @@
  <url-pattern> /deleteMember </url-pattern>
  </servlet-mapping>
 
+ <servlet>
+ <servlet-name> hello </servlet-name>
+ <servlet-class> fukaisystem.Hello </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> hello </servlet-name>
+ <url-pattern> /hello </url-pattern>
+ </servlet-mapping>
  </web-app>

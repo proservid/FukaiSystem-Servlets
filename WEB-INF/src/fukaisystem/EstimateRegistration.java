@@ -108,7 +108,6 @@ public class EstimateRegistration extends GenericServlet {
 					estimateID = 0;
 				} catch(SQLException ex) {
 					isError = true;
-					System.out.println(ex);
 					err.append(className + "Œ©Ïƒe[ƒuƒ‹‚Ìíœ‚É¸”s‚µ‚Ü‚µ‚½\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
