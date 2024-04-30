@@ -101,34 +101,40 @@ public class GetData extends GenericServlet {
 						"得意先CD," +
 						"出荷伝票番号," +
 						"社名," +
-						"見出し+' ( \\'+REPLACE(CONVERT(VARCHAR, CAST(納入合計 AS MONEY), 1), '.00', '')+' )\n* 消費税' AS 納入見出し1," +
-						"見出し+'\n* 消費税' AS 納入見出し2," +
+						"見出し + ' ( \\' + REPLACE(CONVERT(VARCHAR, CAST(納入合計 AS MONEY), 1), '.00', '') + ' )\n' + 消費税表示 AS 納入見出し1," +
+						"見出し + '\n' + 消費税表示 AS 納入見出し2," +
 						"REPLACE(CONVERT(VARCHAR, CAST(納入合計 AS MONEY), 1), '.00', '') AS 納入額," +
 						"数量," +
-						"REPLACE(CONVERT(varchar, CAST(ROUND(CAST(税合計 AS DECIMAL(18,9)),2) AS MONEY), 1), '.00', '') AS 税額," +
-						"REPLACE(CONVERT(VARCHAR, CAST(納入合計+税合計 AS MONEY), 1), '.00', '') AS 合計額," +
+						"REPLACE(CONVERT(VARCHAR, CAST(ROUND(CAST(ROUND(納入合計 * 適用税率, 0) AS DECIMAL(18, 9)), 2) AS MONEY), 1), '.00', '') AS 税額," +
+						"REPLACE(CONVERT(VARCHAR, CAST(納入合計 + ROUND(納入合計 * 適用税率, 0) AS MONEY), 1), '.00', '') AS 合計額," +
 						"売上日" +
 						" FROM (" +
 							"SELECT " +
 							"得意先CD," +
-							"'9-'+CONVERT(varchar,ROW_NUMBER() OVER (" + orderStr + ")) AS 出荷伝票番号," +
+							"'9-' + CONVERT(VARCHAR, ROW_NUMBER() OVER (" + orderStr + ")) AS 出荷伝票番号," +
 							"MIN(社名) AS 社名," +
-							"CONVERT(varchar,MONTH(?))+'月度納入額' AS 見出し," +//current
+							"CONVERT(VARCHAR, MONTH(?)) + '月度納入額' AS 見出し," +
 							"SUM(金額) AS 納入合計," +
+							"'* 消費税（税率' + REPLACE(CONVERT(VARCHAR, CAST(適用税率 * 100 AS MONEY)), '.00', '') + '%）' AS 消費税表示," +
+							"適用税率," +
 							"'1式' AS 数量," +
-							"ROUND(SUM(金額) * " +
-							"(SELECT 税率 FROM M_消費税 t WHERE 適用開始日<=? AND NOT EXISTS" +//last
-							" (SELECT 1 FROM M_消費税 t2 WHERE t.適用開始日<t2.適用開始日 AND 適用開始日<=?)),0) AS 税合計," +//last
-							"dbo.F_和暦表示(?) AS 売上日" +//last
-							" FROM V_売上集計ヘッダ" +
-							" WHERE 売上年月日>=? AND 売上年月日<?" +//current,next
-							" GROUP BY 得意先CD) a");
+							"dbo.F_和暦表示(?) AS 売上日" +
+							" FROM (" +
+								"SELECT 得意先CD, 社名, 金額, 売上年月日," +
+									"(SELECT 税率 FROM M_消費税 t WHERE 適用開始日 <= ? AND NOT EXISTS (" +
+										"SELECT 1 FROM M_消費税 t2 WHERE t.適用開始日 < t2.適用開始日 AND 適用開始日 <= ?" +
+									")) AS 適用税率" +
+								" FROM V_売上集計ヘッダ" +
+							") h" +
+							" WHERE 売上年月日 >= ? AND 売上年月日 < ?" +
+							" GROUP BY 得意先CD, 適用税率" +
+						") a");
 					if(values[2].equals("0")) {//その月の対象社一覧を表示する場合
 						ps = c.prepareStatement(query.toString());
 						ps.setDate(1, current);//月度納入額
-						ps.setDate(2, last);//消費税
+						ps.setDate(2, last);//売上日
 						ps.setDate(3, last);//消費税
-						ps.setDate(4, last);//売上日
+						ps.setDate(4, last);//消費税
 						ps.setDate(5, current);//抽出(from)
 						ps.setDate(6, next);//抽出(to)
 						rs = ps.executeQuery();
