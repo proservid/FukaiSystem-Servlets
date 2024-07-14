@@ -288,15 +288,6 @@
  </servlet-mapping>
 
 <servlet>
- <servlet-name> registration </servlet-name>
- <servlet-class> fukaisystem.Registration </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> registration </servlet-name>
- <url-pattern> /registration </url-pattern>
- </servlet-mapping>
-
-<servlet>
  <servlet-name> orderRegistration </servlet-name>
  <servlet-class> fukaisystem.OrderRegistration </servlet-class>
  </servlet>
