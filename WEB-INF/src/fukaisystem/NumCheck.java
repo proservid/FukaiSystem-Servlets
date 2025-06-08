@@ -39,26 +39,26 @@ public class NumCheck extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof ProductNumber) {
 					input = (ProductNumber)obj;
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			try {
-				ps = c.prepareStatement("SELECT 1 FROM T_Œ©Ï_e WHERE Œ©ÏŠú=? AND Œ©Ï”Ô†=? AND Œ©Ï}”Ô=?");
+				ps = c.prepareStatement("SELECT 1 FROM T_è¦‹ç©_è¦ª WHERE è¦‹ç©æœŸ=? AND è¦‹ç©ç•ªå·=? AND è¦‹ç©æç•ª=?");
 				ps.setInt(1, input.getPeriod());
 				ps.setInt(2, input.getNumber());
 				ps.setString(3, input.getBranch());
@@ -66,7 +66,7 @@ public class NumCheck extends GenericServlet {
 				if(rs.next()) {
 					result += 1;
 				}
-				ps = c.prepareStatement("SELECT 1 FROM T_»ì_e WHERE »ìŠú=? AND »ì”Ô†=? AND »ì}”Ô=?");
+				ps = c.prepareStatement("SELECT 1 FROM T_è£½ä½œ_è¦ª WHERE è£½ä½œæœŸ=? AND è£½ä½œç•ªå·=? AND è£½ä½œæç•ª=?");
 				ps.setInt(1, input.getPeriod());
 				ps.setInt(2, input.getNumber());
 				ps.setString(3, input.getBranch());
@@ -76,7 +76,7 @@ public class NumCheck extends GenericServlet {
 				}
 				result++;
 			} catch(SQLException ex) {
-				err.append("ƒe[ƒuƒ‹uT_ƒe[ƒuƒ‹–¼v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append("ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ãƒ†ãƒ¼ãƒ–ãƒ«åã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
@@ -85,7 +85,7 @@ public class NumCheck extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

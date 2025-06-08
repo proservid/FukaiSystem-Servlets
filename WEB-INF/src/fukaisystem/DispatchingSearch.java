@@ -42,50 +42,50 @@ public class DispatchingSearch extends GenericServlet {
 		Vector<Vector<Object>> v = new Vector<Vector<Object>>();
 
 		String[] constStrs = {
-			"»ì}”Ô like ?",
-			"SUBSTRING(CONVERT(VARCHAR, oŒÉ”NŒ“ú),1,4) like ?",
-			"SUBSTRING(CONVERT(VARCHAR, oŒÉ”NŒ“ú),6,2) like ?",
-			"SUBSTRING(CONVERT(VARCHAR, oŒÉ”NŒ“ú),9,2) like ?",
-			"—p“r like ?",
-			"“E—v like ?",
-			"’•¶}”Ô like ?",
-			"•i–¼ like ?"
+			"è£½ä½œæç•ª like ?",
+			"SUBSTRING(CONVERT(VARCHAR, å‡ºåº«å¹´æœˆæ—¥),1,4) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, å‡ºåº«å¹´æœˆæ—¥),6,2) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, å‡ºåº«å¹´æœˆæ—¥),9,2) like ?",
+			"ç”¨é€” like ?",
+			"æ‘˜è¦ like ?",
+			"æ³¨æ–‡æç•ª like ?",
+			"å“å like ?"
 		};
-		String[] constInts = {"»ìŠú=?", "»ì”Ô†=?", "‘å•ª—ŞCD=?", "’†•ª—ŞCD=?", "¬•ª—ŞCD=?", "’•¶Šú=?", "’•¶”Ô†=?"};
+		String[] constInts = {"è£½ä½œæœŸ=?", "è£½ä½œç•ªå·=?", "å¤§åˆ†é¡CD=?", "ä¸­åˆ†é¡CD=?", "å°åˆ†é¡CD=?", "æ³¨æ–‡æœŸ=?", "æ³¨æ–‡ç•ªå·=?"};
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof DispatchingDTO) {
 					dispatchingDTO = (DispatchingDTO)obj;
 				} else {
-					err.append(className + "readObject‚ªProjectSearchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªProjectSearchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒProjectSearchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒProjectSearchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 			try {
 				StringBuilder query = new StringBuilder(
-				 "SELECT top 30000 oŒÉeID,»ìŠú,»ì”Ô†,»ì}”Ô,oŒÉ”NŒ“ú,—p“r,“E—v FROM (" +
-				 " SELECT p.oŒÉeID,p.»ìŠú,p.»ì”Ô†,p.»ì}”Ô,oŒÉ”NŒ“ú,—p“r,p.“E—v,’•¶Šú,’•¶”Ô†,’•¶}”Ô FROM T_oŒÉ_e p" +
-				 " LEFT OUTER JOIN T_oŒÉ_q c ON p.oŒÉeID=c.oŒÉeID" +
+				 "SELECT top 30000 å‡ºåº«è¦ªID,è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,å‡ºåº«å¹´æœˆæ—¥,ç”¨é€”,æ‘˜è¦ FROM (" +
+				 " SELECT p.å‡ºåº«è¦ªID,p.è£½ä½œæœŸ,p.è£½ä½œç•ªå·,p.è£½ä½œæç•ª,å‡ºåº«å¹´æœˆæ—¥,ç”¨é€”,p.æ‘˜è¦,æ³¨æ–‡æœŸ,æ³¨æ–‡ç•ªå·,æ³¨æ–‡æç•ª FROM T_å‡ºåº«_è¦ª p" +
+				 " LEFT OUTER JOIN T_å‡ºåº«_å­ c ON p.å‡ºåº«è¦ªID=c.å‡ºåº«è¦ªID" +
 				 " LEFT OUTER JOIN (" +
-				 "  SELECT İŒÉeID,’•¶Šú,’•¶”Ô†,’•¶}”Ô FROM T_İŒÉ_e zp" +
+				 "  SELECT åœ¨åº«è¦ªID,æ³¨æ–‡æœŸ,æ³¨æ–‡ç•ªå·,æ³¨æ–‡æç•ª FROM T_åœ¨åº«_è¦ª zp" +
 				 "  UNION" +
-				 "  SELECT »ìeID,»ìŠú,»ì”Ô†,»ì}”Ô FROM T_»ì_e pp" +
-				 " ) z on z.İŒÉeID=c.İŒÉeID");
+				 "  SELECT è£½ä½œè¦ªID,è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª FROM T_è£½ä½œ_è¦ª pp" +
+				 " ) z on z.åœ¨åº«è¦ªID=c.åœ¨åº«è¦ªID");
 				boolean isFirst = true;
-				//•¶š—ñ‚ÌŒŸõğŒ‚ÍAsearchDTO.getStr(0`7)
+				//æ–‡å­—åˆ—ã®æ¤œç´¢æ¡ä»¶ã¯ã€searchDTO.getStr(0ï½7)
 				for(int i = 0; i < 8; i++) {
-					if(!dispatchingDTO.getStr(i).equals("")) {//ŒŸõğŒ‚ª“ü‚Á‚Ä‚¢‚ê‚Î
+					if(!dispatchingDTO.getStr(i).equals("")) {//æ¤œç´¢æ¡ä»¶ãŒå…¥ã£ã¦ã„ã‚Œã°
 						strIndex.add(i);
 						if(isFirst) {
 							query.append(" WHERE ");
@@ -98,9 +98,9 @@ public class DispatchingSearch extends GenericServlet {
 					}
 				}
 
-				//”’l‚ÌŒŸõğŒ‚ÍAsearchDTO.getInt(0`6)
+				//æ•°å€¤ã®æ¤œç´¢æ¡ä»¶ã¯ã€searchDTO.getInt(0ï½6)
 				for(int i = 0; i < 7; i++) {
-					if(dispatchingDTO.getInt(i) != 0) {//ŒŸõğŒ‚ª“ü‚Á‚Ä‚¢‚ê‚Î
+					if(dispatchingDTO.getInt(i) != 0) {//æ¤œç´¢æ¡ä»¶ãŒå…¥ã£ã¦ã„ã‚Œã°
 						intIndex.add(i);
 						if(isFirst) {
 							query.append(" WHERE " + constInts[i]);
@@ -111,7 +111,7 @@ public class DispatchingSearch extends GenericServlet {
 						}
 					}
 				}
-				query.append(") a GROUP BY oŒÉeID,»ìŠú,»ì”Ô†,»ì}”Ô,oŒÉ”NŒ“ú,—p“r,“E—v");
+				query.append(") a GROUP BY å‡ºåº«è¦ªID,è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,å‡ºåº«å¹´æœˆæ—¥,ç”¨é€”,æ‘˜è¦");
 				ps = c.prepareStatement(query.toString());
 				int j = 1;
 				for(int i : strIndex) {
@@ -123,20 +123,20 @@ public class DispatchingSearch extends GenericServlet {
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					Vector<Object> v2 = new Vector<Object>();
-					v2.add(rs.getInt("oŒÉeID"));
-					if(rs.getInt("»ìŠú") != 0 && rs.getInt("»ì”Ô†") != 0) {
-						v2.add(rs.getInt("»ìŠú") + "-" + rs.getInt("»ì”Ô†") + " " + rs.getString("»ì}”Ô"));
+					v2.add(rs.getInt("å‡ºåº«è¦ªID"));
+					if(rs.getInt("è£½ä½œæœŸ") != 0 && rs.getInt("è£½ä½œç•ªå·") != 0) {
+						v2.add(rs.getInt("è£½ä½œæœŸ") + "-" + rs.getInt("è£½ä½œç•ªå·") + " " + rs.getString("è£½ä½œæç•ª"));
 					} else {
 						v2.add("");
 					}
-					v2.add(rs.getDate("oŒÉ”NŒ“ú"));
-					v2.add(rs.getString("—p“r"));
-					v2.add(rs.getString("“E—v"));
+					v2.add(rs.getDate("å‡ºåº«å¹´æœˆæ—¥"));
+					v2.add(rs.getString("ç”¨é€”"));
+					v2.add(rs.getString("æ‘˜è¦"));
 					v.add(v2);
 				}
 
 			} catch(SQLException ex) {
-				err.append(className + "ƒe[ƒuƒ‹uT_Œ©Ï_ev‚Ì“Ç‚İo‚µ‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_è¦‹ç©_è¦ªã€ã®èª­ã¿å‡ºã—ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}catch(Exception ex) {
@@ -144,7 +144,7 @@ public class DispatchingSearch extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

@@ -37,7 +37,7 @@ public class DeleteSlip extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
@@ -52,29 +52,29 @@ public class DeleteSlip extends GenericServlet {
 					id = param[1];
 					switch(type) {
 						case 1 :
-							query1 ="DELETE FROM T_Œ©Ï_e WHERE Œ©ÏeID=?";
-							query2 ="DELETE FROM T_Œ©Ï_q WHERE Œ©ÏeID=?";
+							query1 ="DELETE FROM T_è¦‹ç©_è¦ª WHERE è¦‹ç©è¦ªID=?";
+							query2 ="DELETE FROM T_è¦‹ç©_å­ WHERE è¦‹ç©è¦ªID=?";
 							break;
 						case 2 :
-							query1 ="DELETE FROM T_»ì_e WHERE »ìeID=?";
-							query2 ="DELETE FROM T_»ì_q WHERE »ìeID=?";
+							query1 ="DELETE FROM T_è£½ä½œ_è¦ª WHERE è£½ä½œè¦ªID=?";
+							query2 ="DELETE FROM T_è£½ä½œ_å­ WHERE è£½ä½œè¦ªID=?";
 							break;
 						case 3 :
-							query1 ="DELETE FROM T_İŒÉ_e WHERE İŒÉeID=?";
-							query2 ="DELETE FROM T_İŒÉ_q WHERE İŒÉeID=?";
+							query1 ="DELETE FROM T_åœ¨åº«_è¦ª WHERE åœ¨åº«è¦ªID=?";
+							query2 ="DELETE FROM T_åœ¨åº«_å­ WHERE åœ¨åº«è¦ªID=?";
 							break;
 						case 4 :
-							query1 ="DELETE FROM T_”„ã_e WHERE ”„ãeID=?";
-							query2 ="DELETE FROM T_”„ã_q WHERE ”„ãeID=?";
+							query1 ="DELETE FROM T_å£²ä¸Š_è¦ª WHERE å£²ä¸Šè¦ªID=?";
+							query2 ="DELETE FROM T_å£²ä¸Š_å­ WHERE å£²ä¸Šè¦ªID=?";
 							break;
 						case 5 :
-							query1 ="DELETE FROM T_oŒÉ_e WHERE oŒÉeID=?";
-							query2 ="DELETE FROM T_oŒÉ_q WHERE oŒÉeID=?";
+							query1 ="DELETE FROM T_å‡ºåº«_è¦ª WHERE å‡ºåº«è¦ªID=?";
+							query2 ="DELETE FROM T_å‡ºåº«_å­ WHERE å‡ºåº«è¦ªID=?";
 							break;
 					}
 				} else {
-					err.append(className + "readObject‚ªIntegerŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªIntegerŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒIntegerå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒIntegerå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 		}catch(Exception ex) {
@@ -87,7 +87,7 @@ public class DeleteSlip extends GenericServlet {
 				ps.setInt(1, id);
 				ps.executeUpdate();
 
-				//–¾×
+				//æ˜ç´°
 				ps = c.prepareStatement(query2);
 				ps.setInt(1, id);
 				ps.executeUpdate();
@@ -99,7 +99,7 @@ public class DeleteSlip extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

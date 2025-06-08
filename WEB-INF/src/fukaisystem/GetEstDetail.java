@@ -53,22 +53,22 @@ import fukaisystem.util.Logging;
 			try {
 
 				/**
-				 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+				 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 				 */
 				ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 				Object obj = in.readObject();
 				in.close();
 
 				if(obj == null) {
-					err.append(className + "readObject‚ªnull‚Å‚·\n");
-					lg.error(className + "readObject‚ªnull‚Å‚·");
+					err.append(className + "readObjectãŒnullã§ã™\n");
+					lg.error(className + "readObjectãŒnullã§ã™");
 				} else {
 					if(obj instanceof List<?>) {
 						param = (List<Integer>)obj;
 						estimateID = param.get(0);
 					} else {
-						err.append(className + "readObject‚ªListŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-						lg.error(className + "readObject‚ªListŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+						err.append(className + "readObjectãŒListå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+						lg.error(className + "readObjectãŒListå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 					}
 				}
 
@@ -76,36 +76,36 @@ import fukaisystem.util.Logging;
 				try {
 					if(param.size() > 1) {
 						l = param.get(1);
-						if(param.size() == 3) {//¬
+						if(param.size() == 3) {//å°
 							m = param.get(2);
-							if(l > 100) {//‰ÁH‚Ìê‡
+							if(l > 100) {//åŠ å·¥ã®å ´åˆ
 								ps = c.prepareStatement(
-									"select wc.CD as ¬•ª—ŞCD,¬•ª—Ş–¼,–¼Ì as d“üæ–¼,'' as –¼," +
-									" convert(money,ŠÔ) as ”—Ê,w.’P‰¿,w.ŠÔ*wc.’P‰¿ as ‹àŠz " +
-									" from T_Œ©Ï_‰ÁH w" +
-									" left outer join M_‰ÁH_q wc on wc.CD=w.¬•ª—ŞCD" +
-									" left outer join M_‰ÁH_e wp on wp.‘å•ª—ŞCD=wc.‘å•ª—ŞCD and wp.CD=wc.’†•ª—ŞCD" +
-									" where Œ©ÏeID=? and w.‘å•ª—ŞCD=? and w.’†•ª—ŞCD=?" +
-									" order by ¬•ª—ŞCD");
+									"select wc.CD as å°åˆ†é¡CD,å°åˆ†é¡å,åç§° as ä»•å…¥å…ˆå,'' as å," +
+									" convert(money,æ™‚é–“) as æ•°é‡,w.å˜ä¾¡,w.æ™‚é–“*wc.å˜ä¾¡ as é‡‘é¡ " +
+									" from T_è¦‹ç©_åŠ å·¥ w" +
+									" left outer join M_åŠ å·¥_å­ wc on wc.CD=w.å°åˆ†é¡CD" +
+									" left outer join M_åŠ å·¥_è¦ª wp on wp.å¤§åˆ†é¡CD=wc.å¤§åˆ†é¡CD and wp.CD=wc.ä¸­åˆ†é¡CD" +
+									" where è¦‹ç©è¦ªID=? and w.å¤§åˆ†é¡CD=? and w.ä¸­åˆ†é¡CD=?" +
+									" order by å°åˆ†é¡CD");
 								ps.setInt(1, estimateID);
 								ps.setInt(2, l);
 								ps.setInt(3, m);
 							} else {
 								ps = c.prepareStatement(
-									"select ¬•ª—ŞCD,¬•ª—Ş–¼," +
+									"select å°åˆ†é¡CD,å°åˆ†é¡å," +
 									" CASE" +
-									" WHEN í•ÊCD = 1 THEN '‡Š'+‰ïĞ–¼" +
-									" WHEN í•ÊCD = 2 THEN ‰ïĞ–¼+'‡Š'" +
-									" WHEN í•ÊCD = 3 THEN '‡‹'+‰ïĞ–¼" +
-									" WHEN í•ÊCD = 4 THEN ‰ïĞ–¼+'‡‹'" +
-									" ELSE ‰ïĞ–¼ END AS d“üæ–¼," +
-									"–¼Ì as –¼,”—Ê,’P‰¿,’P‰¿*”—Ê as ‹àŠz " +
-									" from T_Œ©Ï_Ş—¿ em" +
-									" left outer join M_–@l co on em.d“üæCD=co.d“üæCD" +
-									" left outer join M_Œ´‰¿ c on em.‘å•ª—ŞCD=c.CD" +
-									" left outer join M_Ş—¿_q mc on mc.‘å•ª—ŞCD=em.‘å•ª—ŞCD and mc.’†•ª—ŞCD=em.’†•ª—ŞCD and mc.CD=em.¬•ª—ŞCD" +
-									" where Œ©ÏeID=? and em.‘å•ª—ŞCD=? and em.’†•ª—ŞCD=?" +
-									" order by ¬•ª—ŞCD");
+									" WHEN ç¨®åˆ¥CD = 1 THEN 'ãˆ±'+ä¼šç¤¾å" +
+									" WHEN ç¨®åˆ¥CD = 2 THEN ä¼šç¤¾å+'ãˆ±'" +
+									" WHEN ç¨®åˆ¥CD = 3 THEN 'ãˆ²'+ä¼šç¤¾å" +
+									" WHEN ç¨®åˆ¥CD = 4 THEN ä¼šç¤¾å+'ãˆ²'" +
+									" ELSE ä¼šç¤¾å END AS ä»•å…¥å…ˆå," +
+									"åç§° as å,æ•°é‡,å˜ä¾¡,å˜ä¾¡*æ•°é‡ as é‡‘é¡ " +
+									" from T_è¦‹ç©_ææ–™ em" +
+									" left outer join M_æ³•äºº co on em.ä»•å…¥å…ˆCD=co.ä»•å…¥å…ˆCD" +
+									" left outer join M_åŸä¾¡ c on em.å¤§åˆ†é¡CD=c.CD" +
+									" left outer join M_ææ–™_å­ mc on mc.å¤§åˆ†é¡CD=em.å¤§åˆ†é¡CD and mc.ä¸­åˆ†é¡CD=em.ä¸­åˆ†é¡CD and mc.CD=em.å°åˆ†é¡CD" +
+									" where è¦‹ç©è¦ªID=? and em.å¤§åˆ†é¡CD=? and em.ä¸­åˆ†é¡CD=?" +
+									" order by å°åˆ†é¡CD");
 								ps.setInt(1, estimateID);
 								ps.setInt(2, l);
 								ps.setInt(3, m);
@@ -113,118 +113,118 @@ import fukaisystem.util.Logging;
 							rs = ps.executeQuery();
 							while(rs.next()) {
 								Vector<Object> v = new Vector<Object>();
-								v.add(rs.getInt("¬•ª—ŞCD"));
-								v.add(rs.getString("¬•ª—Ş–¼"));
-								v.add(rs.getString("d“üæ–¼"));
-								v.add(rs.getString("–¼"));
-								v.add(rs.getDouble("”—Ê"));
-								v.add(rs.getInt("’P‰¿"));
-								v.add(rs.getInt("‹àŠz"));
-								ntotal += rs.getDouble("”—Ê");
-								total += rs.getInt("‹àŠz");
+								v.add(rs.getInt("å°åˆ†é¡CD"));
+								v.add(rs.getString("å°åˆ†é¡å"));
+								v.add(rs.getString("ä»•å…¥å…ˆå"));
+								v.add(rs.getString("å"));
+								v.add(rs.getDouble("æ•°é‡"));
+								v.add(rs.getInt("å˜ä¾¡"));
+								v.add(rs.getInt("é‡‘é¡"));
+								ntotal += rs.getDouble("æ•°é‡");
+								total += rs.getInt("é‡‘é¡");
 								data.add(v);
 							}
 							Vector<Object> v = new Vector<Object>();
 							v.add(0);
 							v.add("");
 							v.add("");
-							v.add("‡Œv");
+							v.add("åˆè¨ˆ");
 							v.add(ntotal);
 							v.add(0);
 							v.add(total);
 							data.add(v);
-							title.add("¬•ª—ŞCD");
-							title.add("¬•ª—Ş–¼");
-							title.add((l > 100) ? "’S“–Ò–¼" : "d“üæ–¼");
-							title.add((l > 100) ? "“ú" : "•i–¼");
-							title.add((l > 100) ? "ŠÔ" : "”—Ê");
-							title.add("’P‰¿");
-							title.add("‹àŠz");
-						} else {//’†
+							title.add("å°åˆ†é¡CD");
+							title.add("å°åˆ†é¡å");
+							title.add((l > 100) ? "æ‹…å½“è€…å" : "ä»•å…¥å…ˆå");
+							title.add((l > 100) ? "æ—¥æ™‚" : "å“å");
+							title.add((l > 100) ? "æ™‚é–“" : "æ•°é‡");
+							title.add("å˜ä¾¡");
+							title.add("é‡‘é¡");
+						} else {//ä¸­
 							if(l > 100) {
 								ps = c.prepareStatement(
-									"select w.’†•ª—ŞCD,’†•ª—Ş–¼,sum(w.ŠÔ*wc.’P‰¿) as ‹àŠz " +
-									" from T_Œ©Ï_‰ÁH w" +
-									" left outer join M_‰ÁH_q wc on wc.CD=w.¬•ª—ŞCD" +
-									" left outer join M_‰ÁH_e wp on wp.‘å•ª—ŞCD=wc.‘å•ª—ŞCD and wp.CD=wc.’†•ª—ŞCD" +
-									" left outer join M_Œ´‰¿ c on wp.‘å•ª—ŞCD=c.CD" +
-									" where Œ©ÏeID=? and wp.‘å•ª—ŞCD=?" +
-									" group by w.’†•ª—ŞCD,’†•ª—Ş–¼" +
-									" order by ’†•ª—ŞCD");
+									"select w.ä¸­åˆ†é¡CD,ä¸­åˆ†é¡å,sum(w.æ™‚é–“*wc.å˜ä¾¡) as é‡‘é¡ " +
+									" from T_è¦‹ç©_åŠ å·¥ w" +
+									" left outer join M_åŠ å·¥_å­ wc on wc.CD=w.å°åˆ†é¡CD" +
+									" left outer join M_åŠ å·¥_è¦ª wp on wp.å¤§åˆ†é¡CD=wc.å¤§åˆ†é¡CD and wp.CD=wc.ä¸­åˆ†é¡CD" +
+									" left outer join M_åŸä¾¡ c on wp.å¤§åˆ†é¡CD=c.CD" +
+									" where è¦‹ç©è¦ªID=? and wp.å¤§åˆ†é¡CD=?" +
+									" group by w.ä¸­åˆ†é¡CD,ä¸­åˆ†é¡å" +
+									" order by ä¸­åˆ†é¡CD");
 								ps.setInt(1, estimateID);
 								ps.setInt(2, l);
 							} else {
 								ps = c.prepareStatement(
-									"select ’†•ª—ŞCD,’†•ª—Ş–¼,sum(’P‰¿*”—Ê) as ‹àŠz " +
-									" from T_Œ©Ï_Ş—¿ em" +
-									" left outer join M_Œ´‰¿ c on em.‘å•ª—ŞCD=c.CD" +
-									" left outer join M_Ş—¿_e mp on mp.‘å•ª—ŞCD=em.‘å•ª—ŞCD and mp.CD=em.’†•ª—ŞCD" +
-									" where Œ©ÏeID=? and em.‘å•ª—ŞCD=?" +
-									" group by ’†•ª—ŞCD,’†•ª—Ş–¼" +
-									" order by ’†•ª—ŞCD");
+									"select ä¸­åˆ†é¡CD,ä¸­åˆ†é¡å,sum(å˜ä¾¡*æ•°é‡) as é‡‘é¡ " +
+									" from T_è¦‹ç©_ææ–™ em" +
+									" left outer join M_åŸä¾¡ c on em.å¤§åˆ†é¡CD=c.CD" +
+									" left outer join M_ææ–™_è¦ª mp on mp.å¤§åˆ†é¡CD=em.å¤§åˆ†é¡CD and mp.CD=em.ä¸­åˆ†é¡CD" +
+									" where è¦‹ç©è¦ªID=? and em.å¤§åˆ†é¡CD=?" +
+									" group by ä¸­åˆ†é¡CD,ä¸­åˆ†é¡å" +
+									" order by ä¸­åˆ†é¡CD");
 								ps.setInt(1, estimateID);
 								ps.setInt(2, l);
 							}
 							rs = ps.executeQuery();
 							while(rs.next()) {
 								Vector<Object> v = new Vector<Object>();
-								v.add(rs.getInt("’†•ª—ŞCD"));
-								v.add(rs.getString("’†•ª—Ş–¼"));
-								v.add(rs.getInt("‹àŠz"));
-								total += rs.getInt("‹àŠz");
+								v.add(rs.getInt("ä¸­åˆ†é¡CD"));
+								v.add(rs.getString("ä¸­åˆ†é¡å"));
+								v.add(rs.getInt("é‡‘é¡"));
+								total += rs.getInt("é‡‘é¡");
 								data.add(v);
 							}
 							Vector<Object> v = new Vector<Object>();
 							v.add(0);
-							v.add("‡Œv");
+							v.add("åˆè¨ˆ");
 							v.add(total);
 							data.add(v);
-							title.add("’†•ª—ŞCD");
-							title.add("’†•ª—Ş–¼");
-							title.add("‹àŠz");
+							title.add("ä¸­åˆ†é¡CD");
+							title.add("ä¸­åˆ†é¡å");
+							title.add("é‡‘é¡");
 						}
 
-					} else {//‘å
+					} else {//å¤§
 						ps = c.prepareStatement(
-							"select ‘å•ª—ŞCD,case when ‘å•ª—Ş–¼ is null then '(–¢•ª—Ş)' else ‘å•ª—Ş–¼ end as ‘å•ª—Ş–¼,sum(‹àŠz) as ‹àŠz from (" +
-							"select ‘å•ª—ŞCD,‘å•ª—Ş–¼,sum(’P‰¿*”—Ê) as ‹àŠz " +
-							" from T_Œ©Ï_Ş—¿ em" +
-							" left outer join M_Œ´‰¿ c on em.‘å•ª—ŞCD=c.CD" +
-							" where Œ©ÏeID=? and ‘å•ª—ŞCD is not null " +
-							" group by ‘å•ª—ŞCD,‘å•ª—Ş–¼" +
+							"select å¤§åˆ†é¡CD,case when å¤§åˆ†é¡å is null then '(æœªåˆ†é¡)' else å¤§åˆ†é¡å end as å¤§åˆ†é¡å,sum(é‡‘é¡) as é‡‘é¡ from (" +
+							"select å¤§åˆ†é¡CD,å¤§åˆ†é¡å,sum(å˜ä¾¡*æ•°é‡) as é‡‘é¡ " +
+							" from T_è¦‹ç©_ææ–™ em" +
+							" left outer join M_åŸä¾¡ c on em.å¤§åˆ†é¡CD=c.CD" +
+							" where è¦‹ç©è¦ªID=? and å¤§åˆ†é¡CD is not null " +
+							" group by å¤§åˆ†é¡CD,å¤§åˆ†é¡å" +
 							"  union all" +
-							" select ‘å•ª—ŞCD,‘å•ª—Ş–¼,sum(’P‰¿*ŠÔ) as ‹àŠz " +
-							" from T_Œ©Ï_‰ÁH ew" +
-							" left outer join M_Œ´‰¿ c on ew.‘å•ª—ŞCD=c.CD" +
-							" where Œ©ÏeID=? and ‘å•ª—ŞCD is not null  " +
-							" group by ‘å•ª—ŞCD,‘å•ª—Ş–¼" +
+							" select å¤§åˆ†é¡CD,å¤§åˆ†é¡å,sum(å˜ä¾¡*æ™‚é–“) as é‡‘é¡ " +
+							" from T_è¦‹ç©_åŠ å·¥ ew" +
+							" left outer join M_åŸä¾¡ c on ew.å¤§åˆ†é¡CD=c.CD" +
+							" where è¦‹ç©è¦ªID=? and å¤§åˆ†é¡CD is not null  " +
+							" group by å¤§åˆ†é¡CD,å¤§åˆ†é¡å" +
 							"  ) z" +
-							" group by ‘å•ª—ŞCD,‘å•ª—Ş–¼" +
-							" order by ‘å•ª—ŞCD");
+							" group by å¤§åˆ†é¡CD,å¤§åˆ†é¡å" +
+							" order by å¤§åˆ†é¡CD");
 						ps.setInt(1, estimateID);
 						ps.setInt(2, estimateID);
 						rs = ps.executeQuery();
 	
 						while(rs.next()) {
 							Vector<Object> v = new Vector<Object>();
-	//						v.add(rs.getString("»ìŠú") + "-" + rs.getString("»ì”Ô†") + rs.getString("»ì}”Ô"));
-							v.add(rs.getInt("‘å•ª—ŞCD"));
-							v.add(rs.getString("‘å•ª—Ş–¼"));
-							v.add(rs.getInt("‹àŠz"));
-							total += rs.getInt("‹àŠz");
+	//						v.add(rs.getString("è£½ä½œæœŸ") + "-" + rs.getString("è£½ä½œç•ªå·") + rs.getString("è£½ä½œæç•ª"));
+							v.add(rs.getInt("å¤§åˆ†é¡CD"));
+							v.add(rs.getString("å¤§åˆ†é¡å"));
+							v.add(rs.getInt("é‡‘é¡"));
+							total += rs.getInt("é‡‘é¡");
 							data.add(v);
 						}
 						Vector<Object> v = new Vector<Object>();
 						v.add(0);
-						v.add("‡Œv");
+						v.add("åˆè¨ˆ");
 						v.add(total);
 						data.add(v);
-						title.add("‘å•ª—ŞCD");
-						title.add("‘å•ª—Ş–¼");
-						title.add("‹àŠz");
+						title.add("å¤§åˆ†é¡CD");
+						title.add("å¤§åˆ†é¡å");
+						title.add("é‡‘é¡");
 					}
 				} catch(SQLException ex) {
-					err.append("ƒe[ƒuƒ‹uT_ƒe[ƒuƒ‹–¼v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append("ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ãƒ†ãƒ¼ãƒ–ãƒ«åã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 
@@ -233,7 +233,7 @@ import fukaisystem.util.Logging;
 			}
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 			try {
 				response.setContentType("application/octet-stream");

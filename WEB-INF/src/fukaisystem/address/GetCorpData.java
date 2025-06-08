@@ -40,49 +40,49 @@ public class GetCorpData extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof String) {
 					input = (String)obj;
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			try {
 				ps = c.prepareStatement("select " +
-					"‰ïĞ–¼, ƒJƒCƒVƒƒƒƒC, x“X–¼, ƒVƒeƒ“ƒƒC, •\¦–¼," +
-					"alpha_2, co.—X•Ö”Ô†, co.—X•Ö}”Ô, “s“¹•{Œ§,s‹æ’¬‘º,’¬ˆæ," +
-					"”Ô’n,Œš•¨“™,TEL1,TEL2,TEL3,FAX1,FAX2,FAX3,ƒ[ƒ‹,URL," +
-					"”õl,ƒAƒ‹ƒtƒ@ƒxƒbƒg,d“üæCD,“¾ˆÓæCD,í•ÊCD,—LŒøFLG,‘¡“šFLG,”N‰êóCD" +
-					" from M_–@l co" +
-					" left outer join V_—X•Ö”Ô† pc on replace(co.—X•Ö”Ô†,'-','')=pc.—X•Ö”Ô† and co.—X•Ö}”Ô=pc.—X•Ö}”Ô" +
-					" left outer join M_“s“¹•{Œ§ p on pc.“s“¹•{Œ§CD=p.CD" +
-					" left outer join M_s‹æ’¬‘º c on pc.“s“¹•{Œ§CD=c.“s“¹•{Œ§CD and pc.s‹æ’¬‘ºCD=c.CD" +
+					"ä¼šç¤¾å, ã‚«ã‚¤ã‚·ãƒ£ãƒ¡ã‚¤, æ”¯åº—å, ã‚·ãƒ†ãƒ³ãƒ¡ã‚¤, è¡¨ç¤ºå," +
+					"alpha_2, co.éƒµä¾¿ç•ªå·, co.éƒµä¾¿æç•ª, éƒ½é“åºœçœŒ,å¸‚åŒºç”ºæ‘,ç”ºåŸŸ," +
+					"ç•ªåœ°,å»ºç‰©ç­‰,TEL1,TEL2,TEL3,FAX1,FAX2,FAX3,ãƒ¡ãƒ¼ãƒ«,URL," +
+					"å‚™è€ƒ,ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ,ä»•å…¥å…ˆCD,å¾—æ„å…ˆCD,ç¨®åˆ¥CD,æœ‰åŠ¹FLG,è´ˆç­”FLG,å¹´è³€çŠ¶CD" +
+					" from M_æ³•äºº co" +
+					" left outer join V_éƒµä¾¿ç•ªå· pc on replace(co.éƒµä¾¿ç•ªå·,'-','')=pc.éƒµä¾¿ç•ªå· and co.éƒµä¾¿æç•ª=pc.éƒµä¾¿æç•ª" +
+					" left outer join M_éƒ½é“åºœçœŒ p on pc.éƒ½é“åºœçœŒCD=p.CD" +
+					" left outer join M_å¸‚åŒºç”ºæ‘ c on pc.éƒ½é“åºœçœŒCD=c.éƒ½é“åºœçœŒCD and pc.å¸‚åŒºç”ºæ‘CD=c.CD" +
 					" where co.CD=?");
 				ps.setString(1, input);
 				rs = ps.executeQuery();
 				if(rs.next()) {
 					output = new CorpDTO(
-						rs.getString("‰ïĞ–¼"), rs.getString("ƒJƒCƒVƒƒƒƒC"), rs.getString("x“X–¼"), rs.getString("ƒVƒeƒ“ƒƒC"), rs.getString("•\¦–¼"),
-						rs.getString("alpha_2"), rs.getString("—X•Ö”Ô†"), rs.getString("—X•Ö}”Ô"), rs.getString("“s“¹•{Œ§"), rs.getString("s‹æ’¬‘º"),
-						rs.getString("’¬ˆæ"), rs.getString("”Ô’n"), rs.getString("Œš•¨“™"), rs.getString("TEL1"), rs.getString("TEL2"), rs.getString("TEL3"),
-						rs.getString("FAX1"), rs.getString("FAX2"), rs.getString("FAX3"), rs.getString("ƒ[ƒ‹"), rs.getString("URL"), rs.getString("”õl"),
-						input, rs.getString("ƒAƒ‹ƒtƒ@ƒxƒbƒg"), rs.getInt("d“üæCD"), rs.getInt("“¾ˆÓæCD"), rs.getInt("í•ÊCD"), rs.getInt("”N‰êóCD"),
-						rs.getBoolean("—LŒøFLG"), rs.getBoolean("‘¡“šFLG")
+						rs.getString("ä¼šç¤¾å"), rs.getString("ã‚«ã‚¤ã‚·ãƒ£ãƒ¡ã‚¤"), rs.getString("æ”¯åº—å"), rs.getString("ã‚·ãƒ†ãƒ³ãƒ¡ã‚¤"), rs.getString("è¡¨ç¤ºå"),
+						rs.getString("alpha_2"), rs.getString("éƒµä¾¿ç•ªå·"), rs.getString("éƒµä¾¿æç•ª"), rs.getString("éƒ½é“åºœçœŒ"), rs.getString("å¸‚åŒºç”ºæ‘"),
+						rs.getString("ç”ºåŸŸ"), rs.getString("ç•ªåœ°"), rs.getString("å»ºç‰©ç­‰"), rs.getString("TEL1"), rs.getString("TEL2"), rs.getString("TEL3"),
+						rs.getString("FAX1"), rs.getString("FAX2"), rs.getString("FAX3"), rs.getString("ãƒ¡ãƒ¼ãƒ«"), rs.getString("URL"), rs.getString("å‚™è€ƒ"),
+						input, rs.getString("ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ"), rs.getInt("ä»•å…¥å…ˆCD"), rs.getInt("å¾—æ„å…ˆCD"), rs.getInt("ç¨®åˆ¥CD"), rs.getInt("å¹´è³€çŠ¶CD"),
+						rs.getBoolean("æœ‰åŠ¹FLG"), rs.getBoolean("è´ˆç­”FLG")
 						);
 				}
 			} catch(SQLException ex) {
-				err.append("ƒe[ƒuƒ‹uT_ƒe[ƒuƒ‹–¼v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append("ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ãƒ†ãƒ¼ãƒ–ãƒ«åã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
@@ -91,7 +91,7 @@ public class GetCorpData extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

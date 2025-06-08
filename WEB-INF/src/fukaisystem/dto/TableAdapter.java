@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * DB‚Ìƒe[ƒuƒ‹‚ÆJTable‚Æ‚ÌƒAƒ_ƒvƒ^[ƒNƒ‰ƒX
+ * DBã®ãƒ†ãƒ¼ãƒ–ãƒ«ã¨JTableã¨ã®ã‚¢ãƒ€ãƒ—ã‚¿ãƒ¼ã‚¯ãƒ©ã‚¹
  * @author kameura
  */
 public class TableAdapter implements Serializable {
@@ -40,7 +40,7 @@ public class TableAdapter implements Serializable {
 	}
 
 	/**
-	 * ƒvƒ‰ƒCƒ}ƒŠƒL[‚Ì—ñ–¼
+	 * ãƒ—ãƒ©ã‚¤ãƒãƒªã‚­ãƒ¼ã®åˆ—å
 	 * @return
 	 */
 	public String[] getKeyNames() {
@@ -112,7 +112,7 @@ public class TableAdapter implements Serializable {
 	}
 
 	/**
-	 * ƒe[ƒuƒ‹ƒf[ƒ^
+	 * ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ‡ãƒ¼ã‚¿
 	 * @return
 	 */
 	public Object[][] getArrayData() {
@@ -128,7 +128,7 @@ public class TableAdapter implements Serializable {
 	}
 
 	/**
-	 * ƒe[ƒuƒ‹ƒf[ƒ^‚ÌÅIs‚É‹ó”’‚ğ’Ç‰Á‚µ‚½ƒf[ƒ^
+	 * ãƒ†ãƒ¼ãƒ–ãƒ«ãƒ‡ãƒ¼ã‚¿ã®æœ€çµ‚è¡Œã«ç©ºç™½ã‚’è¿½åŠ ã—ãŸãƒ‡ãƒ¼ã‚¿
 	 * @return
 	 */
 	public Object[][] getEditData() {
@@ -143,7 +143,7 @@ public class TableAdapter implements Serializable {
 	}
 
 	/**
-	 * —p“r•s–¾AÅ‰‚Ì—ñ‚Ì‚İ‚Ì”z—ñ‚ğ•Ô‚·H
+	 * ç”¨é€”ä¸æ˜ã€æœ€åˆã®åˆ—ã®ã¿ã®é…åˆ—ã‚’è¿”ã™ï¼Ÿ
 	 * @return
 	 */
 	public String[] getComboData() {

@@ -41,36 +41,36 @@ public class SetSlipFormat extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof Vector) {
 					input = (Vector<Vector<String>>)obj;
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			try {
 				ps = c.prepareStatement(
-						 "UPDATE T_“`•[ SET ƒtƒH[ƒ}ƒbƒg–¼=? WHERE “`•[–¼=?");
+						 "UPDATE T_ä¼ç¥¨ SET ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå=? WHERE ä¼ç¥¨å=?");
 				for(Vector<String> v : input) {
 					ps.setString(1, v.get(1));
 					ps.setString(2, v.get(0));
 					ps.addBatch();
 				}
 				int[] updateCounts = ps.executeBatch();
-				output = updateCounts.length + "ŒXV‚³‚ê‚Ü‚µ‚½B";
+				output = updateCounts.length + "ä»¶æ›´æ–°ã•ã‚Œã¾ã—ãŸã€‚";
 			} catch(SQLException ex) {
-				err.append("ƒe[ƒuƒ‹uT_“`•[v‚ğXV‚Å‚«‚Ü‚¹‚ñ\n");
+				err.append("ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ä¼ç¥¨ã€ã‚’æ›´æ–°ã§ãã¾ã›ã‚“\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
@@ -79,7 +79,7 @@ public class SetSlipFormat extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

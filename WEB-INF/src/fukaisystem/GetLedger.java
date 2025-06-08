@@ -15,7 +15,7 @@ import fukaisystem.sql.DBConnection;
 import org.apache.log4j.Logger;
 
 /**
- * ƒe[ƒuƒ‹‚Ì“à—e‚Æ—ñî•ñ‚ğæ“¾‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX
+ * ãƒ†ãƒ¼ãƒ–ãƒ«ã®å†…å®¹ã¨åˆ—æƒ…å ±ã‚’å–å¾—ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹
  * @author kameura
  *
  */
@@ -42,7 +42,7 @@ public class GetLedger extends GenericServlet {
 		Map<String, Amount> m = new HashMap<String, Amount>();
 		DecimalFormat df = new DecimalFormat("#,###");
 		try {
-	//ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç“Ç‚İ‚İ
+	//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰èª­ã¿è¾¼ã¿
 
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
@@ -66,24 +66,24 @@ public class GetLedger extends GenericServlet {
 			try {
 				ps = c.prepareStatement(
 					"SELECT" +
-					" “¾ˆÓæCD," +
-					" ‡ŒvŠz," +
-					" ROUND(CAST(Å‡Œv AS DECIMAL(18,9)),2) AS ÅŠz" +
+					" å¾—æ„å…ˆCD," +
+					" åˆè¨ˆé¡," +
+					" ROUND(CAST(ç¨åˆè¨ˆ AS DECIMAL(18,9)),2) AS ç¨é¡" +
 					" FROM (" +
 						"SELECT" +
-						" “¾ˆÓæCD," +
-						" SUM(‹àŠz) AS ‡ŒvŠz," +
-						" ROUND(SUM(‹àŠz) * (" +
-							"SELECT Å—¦" +
-							" FROM M_Á”ïÅ t" +
-							" WHERE “K—pŠJn“ú<? AND NOT EXISTS (" +
-								"SELECT 1 FROM M_Á”ïÅ t2" +
-								" WHERE t.“K—pŠJn“ú<t2.“K—pŠJn“ú AND “K—pŠJn“ú<?" +
+						" å¾—æ„å…ˆCD," +
+						" SUM(é‡‘é¡) AS åˆè¨ˆé¡," +
+						" ROUND(SUM(é‡‘é¡) * (" +
+							"SELECT ç¨ç‡" +
+							" FROM M_æ¶ˆè²»ç¨ t" +
+							" WHERE é©ç”¨é–‹å§‹æ—¥<? AND NOT EXISTS (" +
+								"SELECT 1 FROM M_æ¶ˆè²»ç¨ t2" +
+								" WHERE t.é©ç”¨é–‹å§‹æ—¥<t2.é©ç”¨é–‹å§‹æ—¥ AND é©ç”¨é–‹å§‹æ—¥<?" +
 							")" +
-						"),0) AS Å‡Œv" +
-						" FROM V_”„ãWŒvƒwƒbƒ_ " +
-						" WHERE ”„ã”NŒ“ú>=? AND ”„ã”NŒ“ú<?" +
-						" GROUP BY “¾ˆÓæCD" +
+						"),0) AS ç¨åˆè¨ˆ" +
+						" FROM V_å£²ä¸Šé›†è¨ˆãƒ˜ãƒƒãƒ€ " +
+						" WHERE å£²ä¸Šå¹´æœˆæ—¥>=? AND å£²ä¸Šå¹´æœˆæ—¥<?" +
+						" GROUP BY å¾—æ„å…ˆCD" +
 					") a");
 				ps.setDate(1, to);
 				ps.setDate(2, to);
@@ -91,35 +91,35 @@ public class GetLedger extends GenericServlet {
 				ps.setDate(4, to);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					m.put(rs.getString("“¾ˆÓæCD"), new Amount(rs.getInt("‡ŒvŠz"), rs.getInt("ÅŠz")));
+					m.put(rs.getString("å¾—æ„å…ˆCD"), new Amount(rs.getInt("åˆè¨ˆé¡"), rs.getInt("ç¨é¡")));
 				}
 				
 				ps = c.prepareStatement(
-					 "select sp.“¾ˆÓæCD," +
-//					 "sc.”„ãeID,ID," +
-					 "CASE WHEN í•ÊCD = 1 THEN '‡Š' + ‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END WHEN í•ÊCD = 2 THEN ‰ïĞ–¼ + '‡Š' + CASE WHEN x“X–¼ IS NULL" +
-					 "                     THEN '' ELSE ' ' + x“X–¼ END WHEN í•ÊCD = 3 THEN '‡‹' + ‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL " +
-					 "                     THEN '' ELSE ' ' + x“X–¼ END WHEN í•ÊCD = 4 THEN ‰ïĞ–¼ + '‡‹' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END ELSE ‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL" +
-					 "                     THEN '' ELSE ' ' + x“X–¼ END END AS “¾ˆÓæ–¼," +
-					 "”„ã”NŒ“ú as ”[“üŒ“ú," +
-					 "•i–¼," +
-					 "case when ”—Ê=0 then ''" +
-					 "     when ŠeFLG = 1 then 'Še' + convert(varchar,”—Ê) + ”—Ê’PˆÊ else convert(varchar,”—Ê) + ”—Ê’PˆÊ end as ”—Ê," +
-					 "‹àŠz," +
-					 "convert(varchar,»ìŠú)+'-'+convert(varchar,»ì”Ô†) + »ì}”Ô as ó’”Ô†," +
-					 "ó’”Ô† as ’•¶‘”Ô†" +
-					 " from T_”„ã_q sc" +
-					 " left outer join T_”„ã_e sp on sp.”„ãeID=sc.”„ãeID" +
-					 " left outer join M_”—Ê’PˆÊ u on sc.”—Ê’PˆÊCD=u.CD" +
-					 " left outer join M_–@l co on sp.“¾ˆÓæCD=co.“¾ˆÓæCD" +
-					 " left outer join T_»ì_e pp on sc.»ìeID=pp.»ìeID" +
-					 " where ”„ã”NŒ“ú>=? and ”„ã”NŒ“ú<? and ”„ãFLG='true' and »ì”Ô†<9000 and ”[•i‹æ•ªCD<5" +
-					 " order by “¾ˆÓæCD,”„ã”NŒ“ú,ó’”Ô†,ID");
+					 "select sp.å¾—æ„å…ˆCD," +
+//					 "sc.å£²ä¸Šè¦ªID,ID," +
+					 "CASE WHEN ç¨®åˆ¥CD = 1 THEN 'ãˆ±' + ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END WHEN ç¨®åˆ¥CD = 2 THEN ä¼šç¤¾å + 'ãˆ±' + CASE WHEN æ”¯åº—å IS NULL" +
+					 "                     THEN '' ELSE ' ' + æ”¯åº—å END WHEN ç¨®åˆ¥CD = 3 THEN 'ãˆ²' + ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL " +
+					 "                     THEN '' ELSE ' ' + æ”¯åº—å END WHEN ç¨®åˆ¥CD = 4 THEN ä¼šç¤¾å + 'ãˆ²' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END ELSE ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL" +
+					 "                     THEN '' ELSE ' ' + æ”¯åº—å END END AS å¾—æ„å…ˆå," +
+					 "å£²ä¸Šå¹´æœˆæ—¥ as ç´å…¥æœˆæ—¥," +
+					 "å“å," +
+					 "case when æ•°é‡=0 then ''" +
+					 "     when å„FLG = 1 then 'å„' + convert(varchar,æ•°é‡) + æ•°é‡å˜ä½ else convert(varchar,æ•°é‡) + æ•°é‡å˜ä½ end as æ•°é‡," +
+					 "é‡‘é¡," +
+					 "convert(varchar,è£½ä½œæœŸ)+'-'+convert(varchar,è£½ä½œç•ªå·) + è£½ä½œæç•ª as å—æ³¨ç•ªå·," +
+					 "å—æ³¨ç•ªå· as æ³¨æ–‡æ›¸ç•ªå·" +
+					 " from T_å£²ä¸Š_å­ sc" +
+					 " left outer join T_å£²ä¸Š_è¦ª sp on sp.å£²ä¸Šè¦ªID=sc.å£²ä¸Šè¦ªID" +
+					 " left outer join M_æ•°é‡å˜ä½ u on sc.æ•°é‡å˜ä½CD=u.CD" +
+					 " left outer join M_æ³•äºº co on sp.å¾—æ„å…ˆCD=co.å¾—æ„å…ˆCD" +
+					 " left outer join T_è£½ä½œ_è¦ª pp on sc.è£½ä½œè¦ªID=pp.è£½ä½œè¦ªID" +
+					 " where å£²ä¸Šå¹´æœˆæ—¥>=? and å£²ä¸Šå¹´æœˆæ—¥<? and å£²ä¸ŠFLG='true' and è£½ä½œç•ªå·<9000 and ç´å“åŒºåˆ†CD<5" +
+					 " order by å¾—æ„å…ˆCD,å£²ä¸Šå¹´æœˆæ—¥,å—æ³¨ç•ªå·,ID");
 				ps.setDate(1, from);
 				ps.setDate(2, to);
 				rs = ps.executeQuery();
 				ResultSetMetaData rsmd = rs.getMetaData();
-				for(int i = 2; i <= rsmd.getColumnCount(); i++) {//Å‰‚Ì—ñi“¾ˆÓæCDj‚ÍƒXƒLƒbƒv
+				for(int i = 2; i <= rsmd.getColumnCount(); i++) {//æœ€åˆã®åˆ—ï¼ˆå¾—æ„å…ˆCDï¼‰ã¯ã‚¹ã‚­ãƒƒãƒ—
 					ColInfoDTO ci = new ColInfoDTO(rsmd.getColumnName(i), rsmd.getColumnTypeName(i), rsmd.getColumnType(i), rsmd.getColumnDisplaySize(i));
 					colInfos.add(ci);
 				}
@@ -131,55 +131,55 @@ public class GetLedger extends GenericServlet {
 				int total = 0;
 				int inclusive = 0;
 				while(rs.next()) {
-					//“Áêƒf[ƒ^‚Ì’Ç‰Á
-					if(rs.getString("ó’”Ô†") != null) {
-					if(!accept.equals(rs.getString("ó’”Ô†")) && !accept.equals("")) {//Ÿ‚Ìó’”Ô†‚Ö•Ï‚í‚éƒ^ƒCƒ~ƒ“ƒO‚Å¬Œv‚ğ’Ç‰Á
+					//ç‰¹æ®Šãƒ‡ãƒ¼ã‚¿ã®è¿½åŠ 
+					if(rs.getString("å—æ³¨ç•ªå·") != null) {
+					if(!accept.equals(rs.getString("å—æ³¨ç•ªå·")) && !accept.equals("")) {//æ¬¡ã®å—æ³¨ç•ªå·ã¸å¤‰ã‚ã‚‹ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§å°è¨ˆã‚’è¿½åŠ 
 						List<Object> row = new ArrayList<Object>();
 //						row.add(acNum);
 						row.add(acName);
 						row.add("");
-						row.add("¬Œv");
-						row.add("");//”—Ê
-						row.add(subtotal);//‹àŠz
-						row.add("");//ó’”Ô†
-						row.add("");//’•¶‘”Ô†
+						row.add("å°è¨ˆ");
+						row.add("");//æ•°é‡
+						row.add(subtotal);//é‡‘é¡
+						row.add("");//å—æ³¨ç•ªå·
+						row.add("");//æ³¨æ–‡æ›¸ç•ªå·
 						contents.add(row);
 						subtotal = 0;
-//System.out.println("bbb:"+acNum+":"+rs.getString("“¾ˆÓæCD"));
-						if(!acNum.equals(rs.getString("“¾ˆÓæCD")) && !acNum.equals("")) {//‚³‚ç‚ÉŸ‚Ì“¾ˆÓæCD‚Ö•Ï‚í‚éƒ^ƒCƒ~ƒ“ƒO‚ÅiÁ”ïÅ•Ê“r‚Ì“¾ˆÓæ‚ÌÁ”ïÅ‚Æj‡Œv‚ğ’Ç‰Á
-							if(m.containsKey(acNum)) {//Á”ïÅ‚ğ•Ê“rŒvZ‚µ‚Ä‚¢‚½“¾ˆÓæ‚É‚Â‚¢‚Ä‚ÍA’Ç‰Á
+//System.out.println("bbb:"+acNum+":"+rs.getString("å¾—æ„å…ˆCD"));
+						if(!acNum.equals(rs.getString("å¾—æ„å…ˆCD")) && !acNum.equals("")) {//ã•ã‚‰ã«æ¬¡ã®å¾—æ„å…ˆCDã¸å¤‰ã‚ã‚‹ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§ï¼ˆæ¶ˆè²»ç¨åˆ¥é€”ã®å¾—æ„å…ˆã®æ¶ˆè²»ç¨ã¨ï¼‰åˆè¨ˆã‚’è¿½åŠ 
+							if(m.containsKey(acNum)) {//æ¶ˆè²»ç¨ã‚’åˆ¥é€”è¨ˆç®—ã—ã¦ã„ãŸå¾—æ„å…ˆã«ã¤ã„ã¦ã¯ã€è¿½åŠ 
 //System.out.println("ccc:"+m);
 								row = new ArrayList<Object>();
 //								row.add(acNum);
 								row.add(acName);
 								row.add(last);
-								row.add(month + "Œ“x”[“üŠz(\\"+df.format(m.get(acNum).getPrice())+")");
-								row.add("");//”—Ê
-								row.add("");//‹àŠz
-								row.add("");//ó’”Ô†
-								row.add("");//’•¶‘”Ô†
+								row.add(month + "æœˆåº¦ç´å…¥é¡(\\"+df.format(m.get(acNum).getPrice())+")");
+								row.add("");//æ•°é‡
+								row.add("");//é‡‘é¡
+								row.add("");//å—æ³¨ç•ªå·
+								row.add("");//æ³¨æ–‡æ›¸ç•ªå·
 								contents.add(row);
 
 								row = new ArrayList<Object>();
 //								row.add(acNum);
 								row.add(acName);
 								row.add(last);
-								row.add("* Á”ïÅ");
-								row.add("");//”—Ê
-								row.add(m.get(acNum).getTax());//‹àŠz
-								row.add("");//ó’”Ô†
-								row.add("");//’•¶‘”Ô†
+								row.add("* æ¶ˆè²»ç¨");
+								row.add("");//æ•°é‡
+								row.add(m.get(acNum).getTax());//é‡‘é¡
+								row.add("");//å—æ³¨ç•ªå·
+								row.add("");//æ³¨æ–‡æ›¸ç•ªå·
 								contents.add(row);
 
 								row = new ArrayList<Object>();
 //								row.add(acNum);
 								row.add(acName);
 								row.add("");
-								row.add("¬Œv");
-								row.add("");//”—Ê
-								row.add(m.get(acNum).getTax());//‹àŠz
-								row.add("");//ó’”Ô†
-								row.add("");//’•¶‘”Ô†
+								row.add("å°è¨ˆ");
+								row.add("");//æ•°é‡
+								row.add(m.get(acNum).getTax());//é‡‘é¡
+								row.add("");//å—æ³¨ç•ªå·
+								row.add("");//æ³¨æ–‡æ›¸ç•ªå·
 								contents.add(row);
 								total += m.get(acNum).getTax();
 								inclusive += m.get(acNum).getTax();
@@ -188,81 +188,81 @@ public class GetLedger extends GenericServlet {
 //							row.add(acNum);
 							row.add(acName);
 							row.add("");
-							row.add("‡Œv");
-							row.add("");//”—Ê
-							row.add(total);//‹àŠz
-							row.add("");//ó’”Ô†
-							row.add("");//’•¶‘”Ô†
+							row.add("åˆè¨ˆ");
+							row.add("");//æ•°é‡
+							row.add(total);//é‡‘é¡
+							row.add("");//å—æ³¨ç•ªå·
+							row.add("");//æ³¨æ–‡æ›¸ç•ªå·
 							contents.add(row);
 							total = 0;
 						}
 					}
-					//’Êíƒf[ƒ^‚Ì’Ç‰Á
+					//é€šå¸¸ãƒ‡ãƒ¼ã‚¿ã®è¿½åŠ 
 					List<Object> row = new ArrayList<Object>();
-//					row.add(rs.getString("“¾ˆÓæCD"));
-					row.add(rs.getString("“¾ˆÓæ–¼"));
-					row.add(rs.getString("”[“üŒ“ú"));
-					row.add(rs.getString("•i–¼"));
-					row.add(rs.getString("”—Ê"));
-					row.add(rs.getInt("‹àŠz"));
-					row.add(rs.getString("ó’”Ô†"));
-					row.add(rs.getString("’•¶‘”Ô†"));
+//					row.add(rs.getString("å¾—æ„å…ˆCD"));
+					row.add(rs.getString("å¾—æ„å…ˆå"));
+					row.add(rs.getString("ç´å…¥æœˆæ—¥"));
+					row.add(rs.getString("å“å"));
+					row.add(rs.getString("æ•°é‡"));
+					row.add(rs.getInt("é‡‘é¡"));
+					row.add(rs.getString("å—æ³¨ç•ªå·"));
+					row.add(rs.getString("æ³¨æ–‡æ›¸ç•ªå·"));
 					contents.add(row);
-					acNum = rs.getString("“¾ˆÓæCD");
-					acName = rs.getString("“¾ˆÓæ–¼");
-					accept = rs.getString("ó’”Ô†");
-					subtotal += rs.getInt("‹àŠz");
-					total += rs.getInt("‹àŠz");
-					inclusive += rs.getInt("‹àŠz");
+					acNum = rs.getString("å¾—æ„å…ˆCD");
+					acName = rs.getString("å¾—æ„å…ˆå");
+					accept = rs.getString("å—æ³¨ç•ªå·");
+					subtotal += rs.getInt("é‡‘é¡");
+					total += rs.getInt("é‡‘é¡");
+					inclusive += rs.getInt("é‡‘é¡");
 					}
 				}
 				rs.close();
 
-				//ÅIƒf[ƒ^•ª‚Ì¬Œv‡Œv‚»‚µ‚Ä‘‡Œv
+				//æœ€çµ‚ãƒ‡ãƒ¼ã‚¿åˆ†ã®å°è¨ˆåˆè¨ˆãã—ã¦ç·åˆè¨ˆ
 				List<Object> row = new ArrayList<Object>();
 //				row.add(acNum);
 				row.add(acName);
 				row.add("");
-				row.add("¬Œv");
-				row.add("");//”—Ê
-				row.add(subtotal);//‹àŠz
-				row.add("");//ó’”Ô†
-				row.add("");//’•¶‘”Ô†
+				row.add("å°è¨ˆ");
+				row.add("");//æ•°é‡
+				row.add(subtotal);//é‡‘é¡
+				row.add("");//å—æ³¨ç•ªå·
+				row.add("");//æ³¨æ–‡æ›¸ç•ªå·
 				contents.add(row);
 				subtotal = 0;
 
-				if(m.containsKey(acNum)) {//Á”ïÅ‚ğ•Ê“rŒvZ‚µ‚Ä‚¢‚½“¾ˆÓæ‚É‚Â‚¢‚Ä‚ÍA’Ç‰Á
+				if(m.containsKey(acNum)) {//æ¶ˆè²»ç¨ã‚’åˆ¥é€”è¨ˆç®—ã—ã¦ã„ãŸå¾—æ„å…ˆã«ã¤ã„ã¦ã¯ã€è¿½åŠ 
 					row = new ArrayList<Object>();
 //					row.add(acNum);
 					row.add(acName);
 					row.add(last);
-					row.add(month + "Œ“x”[“üŠz(\\"+df.format(m.get(acNum).getPrice())+")");
-					row.add("");//”—Ê
-					row.add("");//‹àŠz
-					row.add("");//ó’”Ô†
-					row.add("");//’•¶‘”Ô†
+					row.add(month + "æœˆåº¦ç´å…¥é¡(\\"+df.format(m.get(acNum).getPrice())+")");
+					row.add("");//æ•°é‡
+					row.add("");//é‡‘é¡
+					row.add("");//å—æ³¨ç•ªå·
+					row.add("");//æ³¨æ–‡æ›¸ç•ªå·
 					contents.add(row);
 
 					row = new ArrayList<Object>();
 //					row.add(acNum);
 					row.add(acName);
 					row.add(last);
-					row.add("* Á”ïÅ");
-					row.add("");//”—Ê
-					row.add(m.get(acNum).getTax());//‹àŠz
-					row.add("");//ó’”Ô†
-					row.add("");//’•¶‘”Ô†
+					row.add("* æ¶ˆè²»ç¨");
+					row.add("");//æ•°é‡
+					row.add(m.get(acNum).getTax());//é‡‘é¡
+					row.add("");//å—æ³¨ç•ªå·
+					row.add("");//æ³¨æ–‡æ›¸ç•ªå·
 					contents.add(row);
 
 					row = new ArrayList<Object>();
 //					row.add(acNum);
 					row.add(acName);
 					row.add("");
-					row.add("¬Œv");
-					row.add("");//”—Ê
-					row.add(m.get(acNum).getTax());//‹àŠz
-					row.add("");//ó’”Ô†
-					row.add("");//’•¶‘”Ô†
+					row.add("å°è¨ˆ");
+					row.add("");//æ•°é‡
+					row.add(m.get(acNum).getTax());//é‡‘é¡
+					row.add("");//å—æ³¨ç•ªå·
+					row.add("");//æ³¨æ–‡æ›¸ç•ªå·
 					contents.add(row);
 					total += m.get(acNum).getTax();
 					inclusive += m.get(acNum).getTax();
@@ -271,21 +271,21 @@ public class GetLedger extends GenericServlet {
 //				row.add(acNum);
 				row.add(acName);
 				row.add("");
-				row.add("‡Œv");
-				row.add("");//”—Ê
-				row.add(total);//‹àŠz
-				row.add("");//ó’”Ô†
-				row.add("");//’•¶‘”Ô†
+				row.add("åˆè¨ˆ");
+				row.add("");//æ•°é‡
+				row.add(total);//é‡‘é¡
+				row.add("");//å—æ³¨ç•ªå·
+				row.add("");//æ³¨æ–‡æ›¸ç•ªå·
 				contents.add(row);
 				row = new ArrayList<Object>();
 //				row.add(acNum);
 				row.add(acName);
 				row.add("");
-				row.add("‘‡Œv");
-				row.add("");//”—Ê
-				row.add(inclusive);//‹àŠz
-				row.add("");//ó’”Ô†
-				row.add("");//’•¶‘”Ô†
+				row.add("ç·åˆè¨ˆ");
+				row.add("");//æ•°é‡
+				row.add(inclusive);//é‡‘é¡
+				row.add("");//å—æ³¨ç•ªå·
+				row.add("");//æ³¨æ–‡æ›¸ç•ªå·
 				contents.add(row);
 
 				if(!tableName.equals("")) {
@@ -304,7 +304,7 @@ public class GetLedger extends GenericServlet {
 				lg.error("GetElements3 " + ex);
 			}
 
-	//ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+	//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());

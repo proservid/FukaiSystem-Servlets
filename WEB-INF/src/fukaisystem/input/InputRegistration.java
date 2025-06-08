@@ -42,7 +42,7 @@ public class InputRegistration extends GenericServlet {
 		StringBuilder err = new StringBuilder();
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 		 */
 		ObjectInputStream in;
 		try {
@@ -50,18 +50,18 @@ public class InputRegistration extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof InputDTO) {
 					inputDTO = (InputDTO)obj;
 				} else {
-					err.append(className + "readObject‚ªShippingDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªShippingDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒShippingDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒShippingDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 		} catch (Exception e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
 			e.printStackTrace();
 		}
 
@@ -83,20 +83,20 @@ public class InputRegistration extends GenericServlet {
 		to = new Date(cal.getTimeInMillis());
 
 		try {
-			ps = c.prepareStatement("SELECT * FROM M_A‹ÆŠÔ");
+			ps = c.prepareStatement("SELECT * FROM M_å°±æ¥­æ™‚é–“");
 			rs = ps.executeQuery();
 			if(rs.next()) {
-				int w0 = rs.getInt("n‹Æ");
-				int w1 = rs.getInt("n‹Æ•ª");
-				int w2 = rs.getInt("I‹Æ");
-				int w3 = rs.getInt("I‹Æ•ª");
-				int w4 = rs.getInt("‹xŒen");
-				int w5 = rs.getInt("‹xŒen•ª");
-				int w6 = rs.getInt("‹xŒeI");
-				int w7 = rs.getInt("‹xŒeI•ª");
-				int w8 = rs.getInt("c‹Æn");
-				int w9 = rs.getInt("c‹Æn•ª");
-				//Šî–{î•ñ
+				int w0 = rs.getInt("å§‹æ¥­æ™‚");
+				int w1 = rs.getInt("å§‹æ¥­åˆ†");
+				int w2 = rs.getInt("çµ‚æ¥­æ™‚");
+				int w3 = rs.getInt("çµ‚æ¥­åˆ†");
+				int w4 = rs.getInt("ä¼‘æ†©å§‹æ™‚");
+				int w5 = rs.getInt("ä¼‘æ†©å§‹åˆ†");
+				int w6 = rs.getInt("ä¼‘æ†©çµ‚æ™‚");
+				int w7 = rs.getInt("ä¼‘æ†©çµ‚åˆ†");
+				int w8 = rs.getInt("æ®‹æ¥­å§‹æ™‚");
+				int w9 = rs.getInt("æ®‹æ¥­å§‹åˆ†");
+				//åŸºæœ¬æƒ…å ±
 				cal.set(year, month, day, w0, w1, -1);
 				t0820 = new Date(cal.getTimeInMillis());
 				cal.set(year, month, day, w4, w5, -1);
@@ -108,89 +108,89 @@ public class InputRegistration extends GenericServlet {
 				cal.set(year, month, day, w8, w9, -1);
 				t1715 = new Date(cal.getTimeInMillis());
 
-				int br1 = (int)((t1245.getTime() - t1200.getTime()) / (1000 * 60));//45•ª
-				int br2 = (int)((t1715.getTime() - t1700.getTime()) / (1000 * 60));//15•ª
+				int br1 = (int)((t1245.getTime() - t1200.getTime()) / (1000 * 60));//45åˆ†
+				int br2 = (int)((t1715.getTime() - t1700.getTime()) / (1000 * 60));//15åˆ†
 
-				if(inputDTO.getString(2).equals("17")) {//o’£‚Ìê‡
+				if(inputDTO.getString(2).equals("17")) {//å‡ºå¼µã®å ´åˆ
 					cal.setTime(to);
 					cal.add(Calendar.MINUTE, rest*(-1));
 					setTime(cal.getTimeInMillis() - from.getTime());
 				} else {
 					if(from.before(t0820)) {
-						//ŠJn‚ğ0820‚É
+						//é–‹å§‹ã‚’0820ã«
 						cal.set(year, month, day, w0, w1, 0);
 						long adjustedFrom = cal.getTimeInMillis();
 						if(to.after(t1715)){
-							//I—¹‚©‚ç45•ª+15•ª=1ŠÔˆø‚­
+							//çµ‚äº†ã‹ã‚‰45åˆ†+15åˆ†=1æ™‚é–“å¼•ã
 							cal.setTime(to);
 							cal.add(Calendar.MINUTE, -br1-br2);
 						} else if(to.after(t1700)) {
-							//45•ªˆø‚«AI‚è‚ğ1700‚ÅŒvZ
+							//45åˆ†å¼•ãã€çµ‚ã‚Šã‚’1700ã§è¨ˆç®—
 							cal.set(year, month, day, w2, w3, 0);
 							cal.add(Calendar.MINUTE, -br1);
 						} else if(to.after(t1245)) {
-							//45•ªˆø‚­‚Ì‚İ
+							//45åˆ†å¼•ãã®ã¿
 							cal.setTime(to);
 							cal.add(Calendar.MINUTE, -br1);
 						} else if(to.before(t1200)) {
-							//‚»‚Ì‚Ü‚Ü
+							//ãã®ã¾ã¾
 							cal.setTime(to);
 						} else {
-							//I—¹‚ğ1200‚É
+							//çµ‚äº†ã‚’1200ã«
 							cal.set(year, month, day, w4, w5, 0);
 						}
 						setTime(cal.getTimeInMillis() - adjustedFrom);
 					} else if(from.before(t1200)) {
 						if(to.after(t1715)){
-							//I—¹‚©‚ç45•ª+15•ª=1ŠÔˆø‚­
+							//çµ‚äº†ã‹ã‚‰45åˆ†+15åˆ†=1æ™‚é–“å¼•ã
 							cal.setTime(to);
 							cal.add(Calendar.MINUTE, -br1-br2);
 						} else if(to.after(t1700)) {//TODO 1659
-							//I—¹‚ğ1700‚Æ‚µA45•ªˆø‚­
+							//çµ‚äº†ã‚’1700ã¨ã—ã€45åˆ†å¼•ã
 							cal.set(year, month, day, w2, w3, 0);
 							cal.add(Calendar.MINUTE, -br1);
 						} else if(to.after(t1245)) {
-							//I—¹‚©‚ç45•ªˆø‚­
+							//çµ‚äº†ã‹ã‚‰45åˆ†å¼•ã
 							cal.setTime(to);
 							cal.add(Calendar.MINUTE, -br1);
 						} else if(to.after(t1200)) {
-							//I—¹‚ğ1200‚É
+							//çµ‚äº†ã‚’1200ã«
 							cal.set(year, month, day, w4, w5, 0);
 						} else {
-							//I—¹‚ª12‘O‚È‚ç‚»‚Ì‚Ü‚Ü
+							//çµ‚äº†ãŒ12æ™‚å‰ãªã‚‰ãã®ã¾ã¾
 							cal.setTime(to);
 						}
 						setTime(cal.getTimeInMillis() - from.getTime());
 					} else if(from.after(t1715)) {
-						//ˆêØ’²®•s—v
+						//ä¸€åˆ‡èª¿æ•´ä¸è¦
 						setTime(to.getTime() - from.getTime());
 					} else if(from.after(t1700)) {
-						//ŠJn‚ğ1715‚É‚·‚é‚Ì‚İ
+						//é–‹å§‹ã‚’1715ã«ã™ã‚‹ã®ã¿
 						cal.set(year, month, day, w8, w9, 0);
 						setTime(to.getTime() - cal.getTimeInMillis());
 					} else if(from.after(t1245)) {
-						//ŠJn‚Í’²®•s—v
+						//é–‹å§‹æ™‚åˆ»ã¯èª¿æ•´ä¸è¦
 						if(to.after(t1715)) {
 							cal.setTime(to);
-							cal.add(Calendar.MINUTE, -br2);//I—¹ŠÔ‚©‚ç15•ªˆø‚­
+							cal.add(Calendar.MINUTE, -br2);//çµ‚äº†æ™‚é–“ã‹ã‚‰15åˆ†å¼•ã
 							setTime(cal.getTimeInMillis() - from.getTime());//
 						} else if(to.after(t1700)) {
-							//I—¹‚ğ1700‚É
+							//çµ‚äº†ã‚’1700ã«
 							cal.set(year, month, day, w2, w3);
 							setTime(cal.getTimeInMillis() - from.getTime());
 						} else {
 							setTime(to.getTime() - from.getTime());
 						}
-					} else {//12‚©‚ç1245•ª‚ÌŠÔ‚Én‚Ü‚Á‚Ä‚¢‚½‚ç
-						//ŠJn‚ğ1245‚É
+					} else {//12æ™‚ã‹ã‚‰12æ™‚45åˆ†ã®é–“ã«å§‹ã¾ã£ã¦ã„ãŸã‚‰
+						//é–‹å§‹ã‚’1245ã«
 						cal.set(year, month, day, w6, w7, 0);
 						long adjustedFrom = cal.getTimeInMillis();
 						if(to.after(t1715)) {
 							cal.setTime(to);
-							cal.add(Calendar.MINUTE, -br2);//15•ªˆø‚­
+							cal.add(Calendar.MINUTE, -br2);//15åˆ†å¼•ã
 							setTime(cal.getTimeInMillis() - adjustedFrom);
 						} else if(to.after(t1700)) {
-							//I—¹‚ğ1700‚É
+							//çµ‚äº†ã‚’1700ã«
 							cal.set(year, month, day, w2, w3, 0);
 							setTime(cal.getTimeInMillis() - adjustedFrom);
 						} else {
@@ -201,90 +201,90 @@ public class InputRegistration extends GenericServlet {
 			}
 		} catch(SQLException ex) {
 			ex.printStackTrace();
-			err.append(className + "ƒe[ƒuƒ‹uM_A‹ÆŠÔv‚Ì“Ç‚İo‚µ‚É¸”s‚µ‚Ü‚µ‚½\n");
+			err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒM_å°±æ¥­æ™‚é–“ã€ã®èª­ã¿å‡ºã—ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 			Logging.logStackTrace(ex, lg, className);
 		}
 
 
 		if(id == 0) {
 			try {
-				ps = c.prepareStatement("INSERT INTO T_‰ÁHÀÑ (»ìŠú,»ì”Ô†,»ì}”Ô,‰ÁHCD,ŠÔ,’…è“ú,I—¹“ú,’P‰¿,’S“–ÒCD,”õl,“ü—Í“ú)"
+				ps = c.prepareStatement("INSERT INTO T_åŠ å·¥å®Ÿç¸¾ (è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,åŠ å·¥CD,æ™‚é–“,ç€æ‰‹æ—¥æ™‚,çµ‚äº†æ—¥æ™‚,å˜ä¾¡,æ‹…å½“è€…CD,å‚™è€ƒ,å…¥åŠ›æ—¥æ™‚)"
 						+ " VALUES(?,?,?,?,?,?,?,"
-						+ "(select ’P‰¿ from M_‰ÁH_’P‰¿ wp1 where wp1.CD=? and “K—pŠJn“ú<? AND NOT EXISTS ("
-						+ "	SELECT 1 FROM M_‰ÁH_’P‰¿ wp2"
-						+ "	WHERE wp1.“K—pŠJn“ú<wp2.“K—pŠJn“ú AND wp1.CD=wp2.CD AND “K—pŠJn“ú<?)),"
+						+ "(select å˜ä¾¡ from M_åŠ å·¥_å˜ä¾¡ wp1 where wp1.CD=? and é©ç”¨é–‹å§‹æ—¥<? AND NOT EXISTS ("
+						+ "	SELECT 1 FROM M_åŠ å·¥_å˜ä¾¡ wp2"
+						+ "	WHERE wp1.é©ç”¨é–‹å§‹æ—¥<wp2.é©ç”¨é–‹å§‹æ—¥ AND wp1.CD=wp2.CD AND é©ç”¨é–‹å§‹æ—¥<?)),"
 						+ "?,?,?)");
 				/*
-				"MERGE INTO T_‰ÁHÀÑ2 AS t"+//(»ìŠú,»ì”Ô†,»ì}”Ô,‰ÁHCD,ŠÔ,’…è“ú,I—¹“ú,’S“–ÒCD,”õl)" +
-				" USING (SELECT ? AS »ìŠú, ? AS »ì”Ô†, ? AS »ì}”Ô, ? AS ‰ÁHCD, ? AS ŠÔ, ? AS ’…è“ú, ? AS I—¹“ú, ? AS ’S“–ÒCD, ? AS ”õl) AS w" +
-				" ON t.’…è“ú=w.’…è“ú AND t.’S“–ÒCD=w.’S“–ÒCD" +
+				"MERGE INTO T_åŠ å·¥å®Ÿç¸¾2 AS t"+//(è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,åŠ å·¥CD,æ™‚é–“,ç€æ‰‹æ—¥æ™‚,çµ‚äº†æ—¥æ™‚,æ‹…å½“è€…CD,å‚™è€ƒ)" +
+				" USING (SELECT ? AS è£½ä½œæœŸ, ? AS è£½ä½œç•ªå·, ? AS è£½ä½œæç•ª, ? AS åŠ å·¥CD, ? AS æ™‚é–“, ? AS ç€æ‰‹æ—¥æ™‚, ? AS çµ‚äº†æ—¥æ™‚, ? AS æ‹…å½“è€…CD, ? AS å‚™è€ƒ) AS w" +
+				" ON t.ç€æ‰‹æ—¥æ™‚=w.ç€æ‰‹æ—¥æ™‚ AND t.æ‹…å½“è€…CD=w.æ‹…å½“è€…CD" +
 				" WHEN MATCHED THEN" +
-				"   UPDATE SET t.»ìŠú=w.»ìŠú, t.»ì”Ô†=w.»ì”Ô†, t.»ì}”Ô=w.»ì}”Ô, t.‰ÁHCD=w.‰ÁHCD, t.ŠÔ=w.ŠÔ, t.’…è“ú=w.’…è“ú, t.I—¹“ú=w.I—¹“ú, t.’S“–ÒCD=w.’S“–ÒCD, t.”õl=w.”õl, t.“ü—Í”NŒ“ú=?" +
+				"   UPDATE SET t.è£½ä½œæœŸ=w.è£½ä½œæœŸ, t.è£½ä½œç•ªå·=w.è£½ä½œç•ªå·, t.è£½ä½œæç•ª=w.è£½ä½œæç•ª, t.åŠ å·¥CD=w.åŠ å·¥CD, t.æ™‚é–“=w.æ™‚é–“, t.ç€æ‰‹æ—¥æ™‚=w.ç€æ‰‹æ—¥æ™‚, t.çµ‚äº†æ—¥æ™‚=w.çµ‚äº†æ—¥æ™‚, t.æ‹…å½“è€…CD=w.æ‹…å½“è€…CD, t.å‚™è€ƒ=w.å‚™è€ƒ, t.å…¥åŠ›å¹´æœˆæ—¥=?" +
 				" WHEN NOT MATCHED THEN" +
-				"   INSERT VALUES(w.»ìŠú, w.»ì”Ô†, w.»ì}”Ô, w.‰ÁHCD, w.ŠÔ, w.’…è“ú, w.I—¹“ú, w.’S“–ÒCD, w.”õl, ?)" +
-				" OUTPUT deleted.ID as oldId, inserted.’…è“ú as newId;");
+				"   INSERT VALUES(w.è£½ä½œæœŸ, w.è£½ä½œç•ªå·, w.è£½ä½œæç•ª, w.åŠ å·¥CD, w.æ™‚é–“, w.ç€æ‰‹æ—¥æ™‚, w.çµ‚äº†æ—¥æ™‚, w.æ‹…å½“è€…CD, w.å‚™è€ƒ, ?)" +
+				" OUTPUT deleted.ID as oldId, inserted.ç€æ‰‹æ—¥æ™‚ as newId;");
 	*/
 				int i = 1;
-				ps.setInt(i++, inputDTO.getInt(1) == 0 ? 0 : inputDTO.getInt(0)); //”Ô†‚ª0‚È‚çŠú‚à0
+				ps.setInt(i++, inputDTO.getInt(1) == 0 ? 0 : inputDTO.getInt(0)); //ç•ªå·ãŒ0ãªã‚‰æœŸã‚‚0
 				ps.setInt(i++, inputDTO.getInt(1));
-				ps.setString(i++, inputDTO.getInt(1) == 0 ? "" : inputDTO.getString(3)); //”Ô†‚ª0‚È‚ç}”Ô‚È‚µ
-				ps.setString(i++, inputDTO.getString(2)); //‰ÁHCD
-				ps.setInt(i++, time); //ŠÔ
-				ps.setTimestamp(i++, new Timestamp(from.getTime())); //’…è“ú
-				ps.setTimestamp(i++, new Timestamp(to.getTime())); //I—¹“ú
+				ps.setString(i++, inputDTO.getInt(1) == 0 ? "" : inputDTO.getString(3)); //ç•ªå·ãŒ0ãªã‚‰æç•ªãªã—
+				ps.setString(i++, inputDTO.getString(2)); //åŠ å·¥CD
+				ps.setInt(i++, time); //æ™‚é–“
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //ç€æ‰‹æ—¥æ™‚
+				ps.setTimestamp(i++, new Timestamp(to.getTime())); //çµ‚äº†æ—¥æ™‚
 
-				ps.setString(i++, inputDTO.getString(2)); //‰ÁHCD
-				ps.setTimestamp(i++, new Timestamp(from.getTime())); //’…è“ú
-				ps.setTimestamp(i++, new Timestamp(from.getTime())); //’…è“ú
+				ps.setString(i++, inputDTO.getString(2)); //åŠ å·¥CD
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //ç€æ‰‹æ—¥æ™‚
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //ç€æ‰‹æ—¥æ™‚
 
-				ps.setString(i++, inputDTO.getString(1)); //’S“–ÒCD
-				ps.setString(i++, inputDTO.getString(2).equals("17") ? "‹xŒe"+rest+"•ª" : ""); //”õl
+				ps.setString(i++, inputDTO.getString(1)); //æ‹…å½“è€…CD
+				ps.setString(i++, inputDTO.getString(2).equals("17") ? "ä¼‘æ†©"+rest+"åˆ†" : ""); //å‚™è€ƒ
 				ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime()));
 				ps.executeUpdate();
 	 		} catch(SQLException ex) {
 				ex.printStackTrace();
-				err.append(className + "ƒe[ƒuƒ‹uT_‰ÁHÀÑv‚ÌXV‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_åŠ å·¥å®Ÿç¸¾ã€ã®æ›´æ–°ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 		} else {
 			try {
-				ps = c.prepareStatement("UPDATE T_‰ÁHÀÑ  SET »ìŠú=?,»ì”Ô†=?,»ì}”Ô=?,‰ÁHCD=?,ŠÔ=?,’…è“ú=?,I—¹“ú=?,"
-						+ "’P‰¿=(select ’P‰¿ from M_‰ÁH_’P‰¿ wp1 where wp1.CD=‰ÁHCD and “K—pŠJn“ú<? AND NOT EXISTS ("
-						+ "	SELECT 1 FROM M_‰ÁH_’P‰¿ wp2"
-						+ "	WHERE wp1.“K—pŠJn“ú<wp2.“K—pŠJn“ú AND wp1.CD=wp2.CD AND “K—pŠJn“ú<?)),"
-						+ "’S“–ÒCD=?,”õl=?,“ü—Í“ú=? WHERE ID=?");
+				ps = c.prepareStatement("UPDATE T_åŠ å·¥å®Ÿç¸¾  SET è£½ä½œæœŸ=?,è£½ä½œç•ªå·=?,è£½ä½œæç•ª=?,åŠ å·¥CD=?,æ™‚é–“=?,ç€æ‰‹æ—¥æ™‚=?,çµ‚äº†æ—¥æ™‚=?,"
+						+ "å˜ä¾¡=(select å˜ä¾¡ from M_åŠ å·¥_å˜ä¾¡ wp1 where wp1.CD=åŠ å·¥CD and é©ç”¨é–‹å§‹æ—¥<? AND NOT EXISTS ("
+						+ "	SELECT 1 FROM M_åŠ å·¥_å˜ä¾¡ wp2"
+						+ "	WHERE wp1.é©ç”¨é–‹å§‹æ—¥<wp2.é©ç”¨é–‹å§‹æ—¥ AND wp1.CD=wp2.CD AND é©ç”¨é–‹å§‹æ—¥<?)),"
+						+ "æ‹…å½“è€…CD=?,å‚™è€ƒ=?,å…¥åŠ›æ—¥æ™‚=? WHERE ID=?");
 				int i = 1;
-				ps.setInt(i++, inputDTO.getInt(1) == 0 ? 0 : inputDTO.getInt(0)); //”Ô†‚ª0‚È‚çŠú‚à0
+				ps.setInt(i++, inputDTO.getInt(1) == 0 ? 0 : inputDTO.getInt(0)); //ç•ªå·ãŒ0ãªã‚‰æœŸã‚‚0
 				ps.setInt(i++, inputDTO.getInt(1));
-				ps.setString(i++, inputDTO.getInt(1) == 0 ? "" : inputDTO.getString(3)); //”Ô†‚ª0‚È‚ç}”Ô‚È‚µ
-				ps.setString(i++, inputDTO.getString(2)); //‰ÁHCD
-				ps.setInt(i++, time); //ŠÔ
-				ps.setTimestamp(i++, new Timestamp(from.getTime())); //’…è“ú
-				ps.setTimestamp(i++, new Timestamp(to.getTime())); //I—¹“ú
-				ps.setTimestamp(i++, new Timestamp(from.getTime())); //’…è“ú
-				ps.setTimestamp(i++, new Timestamp(from.getTime())); //’…è“ú
-				ps.setString(i++, inputDTO.getString(1)); //’S“–ÒCD
-				ps.setString(i++, inputDTO.getString(2).equals("17") ? "‹xŒe"+rest+"•ª" : ""); //”õl
+				ps.setString(i++, inputDTO.getInt(1) == 0 ? "" : inputDTO.getString(3)); //ç•ªå·ãŒ0ãªã‚‰æç•ªãªã—
+				ps.setString(i++, inputDTO.getString(2)); //åŠ å·¥CD
+				ps.setInt(i++, time); //æ™‚é–“
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //ç€æ‰‹æ—¥æ™‚
+				ps.setTimestamp(i++, new Timestamp(to.getTime())); //çµ‚äº†æ—¥æ™‚
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //ç€æ‰‹æ—¥æ™‚
+				ps.setTimestamp(i++, new Timestamp(from.getTime())); //ç€æ‰‹æ—¥æ™‚
+				ps.setString(i++, inputDTO.getString(1)); //æ‹…å½“è€…CD
+				ps.setString(i++, inputDTO.getString(2).equals("17") ? "ä¼‘æ†©"+rest+"åˆ†" : ""); //å‚™è€ƒ
 				ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime()));
 				ps.setInt(i, id);
 				ps.executeUpdate();
 	 		} catch(SQLException ex) {
 				ex.printStackTrace();
-				err.append(className + "ƒe[ƒuƒ‹uT_‰ÁHÀÑv‚ÌXV‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_åŠ å·¥å®Ÿç¸¾ã€ã®æ›´æ–°ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}
 
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			//–¢“ü—Í‚Ì»”Ô‚ª‚ ‚é‚Ì‚Å“––Ê»”Ô‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñƒGƒ‰[‚ğo‚³‚È‚¢
-			//out.writeObject(inputDTO.getInt(1) == 0 ? -1 : update);//»ì”Ô†‚ª0‚È‚çAŠY“–‚·‚é»ìƒf[ƒ^‚ª“o˜^‚³‚ê‚Ä‚¢‚È‚­‚Ä‚àOK‚É‚·‚é
-			out.writeObject(-1);//»ì”Ô†‚ª0‚È‚çAŠY“–‚·‚é»ìƒf[ƒ^‚ª“o˜^‚³‚ê‚Ä‚¢‚È‚­‚Ä‚àOK‚É‚·‚é
+			//æœªå…¥åŠ›ã®è£½ç•ªãŒã‚ã‚‹ã®ã§å½“é¢è£½ç•ªãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã‚¨ãƒ©ãƒ¼ã‚’å‡ºã•ãªã„
+			//out.writeObject(inputDTO.getInt(1) == 0 ? -1 : update);//è£½ä½œç•ªå·ãŒ0ãªã‚‰ã€è©²å½“ã™ã‚‹è£½ä½œãƒ‡ãƒ¼ã‚¿ãŒç™»éŒ²ã•ã‚Œã¦ã„ãªãã¦ã‚‚OKã«ã™ã‚‹
+			out.writeObject(-1);//è£½ä½œç•ªå·ãŒ0ãªã‚‰ã€è©²å½“ã™ã‚‹è£½ä½œãƒ‡ãƒ¼ã‚¿ãŒç™»éŒ²ã•ã‚Œã¦ã„ãªãã¦ã‚‚OKã«ã™ã‚‹
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
@@ -317,8 +317,8 @@ public class InputRegistration extends GenericServlet {
 	}
 
 	private void setTime(long value) {
-		long remainder = value % (1000 * 60 * 15);//ƒ~ƒŠ•b‚ğ100•ª‚Ì1•b‚É‚µ‚Ä•ª‚É‚µ‚Ä15•ª’PˆÊ‚É‚·‚é
-		//‚RÌ‚S“ü
+		long remainder = value % (1000 * 60 * 15);//ãƒŸãƒªç§’ã‚’100åˆ†ã®1ç§’ã«ã—ã¦åˆ†ã«ã—ã¦15åˆ†å˜ä½ã«ã™ã‚‹
+		//ï¼“æ¨ï¼”å…¥
 		time = ((float)remainder / (1000 * 60 * 15) >= 0.4) ? ((int)(value / (1000 * 60 * 15)) + 1) * 25 : ((int)(value / (1000 * 60 * 15))) * 25;
 	}
 

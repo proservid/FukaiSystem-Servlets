@@ -43,15 +43,15 @@ public class CorpRegistration extends GenericServlet {
 
 		try {
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 			if(obj == null) {
 				isError = true;
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof CorpDTO) {
 					corpDTO = (CorpDTO)obj;
@@ -60,36 +60,36 @@ public class CorpRegistration extends GenericServlet {
 					isDel = true;
 				} else {
 					isError = true;
-					err.append(className + "readObject‚ªCorpDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªCorpDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒCorpDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒCorpDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			if(isDel) {
 				try {
 					ps = c.prepareStatement(
-							"DELETE FROM M_–@l WHERE CD=?");
+							"DELETE FROM M_æ³•äºº WHERE CD=?");
 					ps.setString(1, idStr);
 					ps.executeUpdate();
-					//íœ‚µ‚½–@l‚É‚Â‚¢‚Ä‚ÍAŒÂl‚ÌŠÖ˜A•t‚¯‚ğiíœ‚³‚ê‚½–@lj‚É•ÏX‚·‚é
+					//å‰Šé™¤ã—ãŸæ³•äººã«ã¤ã„ã¦ã¯ã€å€‹äººã®é–¢é€£ä»˜ã‘ã‚’ï¼ˆå‰Šé™¤ã•ã‚ŒãŸæ³•äººï¼‰ã«å¤‰æ›´ã™ã‚‹
 					ps = c.prepareStatement(
-							"UPDATE M_ŒÂl SET –@lCD=1 WHERE –@lCD=?");
+							"UPDATE M_å€‹äºº SET æ³•äººCD=1 WHERE æ³•äººCD=?");
 					ps.setString(1, idStr);
 					ps.executeUpdate();
 				} catch(SQLException ex) {
 					isError = true;
-					err.append(className + "ƒe[ƒuƒ‹‚Ìíœ‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã®å‰Šé™¤ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 			} else {
 				cd = corpDTO.getStr(22);
 				try {
-					if(cd.equals("0") || cd == null) {//V‹K’Ç‰Á
-						ps = c.prepareStatement("INSERT INTO M_–@l" +
-							" (d“üæCD, “¾ˆÓæCD, í•ÊCD, ‰ïĞ–¼, ƒJƒCƒVƒƒƒƒC," +
-							" x“X–¼, ƒVƒeƒ“ƒƒC, •\¦–¼, ƒAƒ‹ƒtƒ@ƒxƒbƒg, alpha_2, —X•Ö”Ô†, —X•Ö}”Ô," +//7
-							" ”Ô’n, Œš•¨“™, TEL1, TEL2, TEL3, FAX1, FAX2, FAX3," +//9
-							" ƒ[ƒ‹, URL, ”õl, —LŒøFLG, ‘¡“šFLG, ”N‰êóCD)" +
+					if(cd.equals("0") || cd == null) {//æ–°è¦è¿½åŠ 
+						ps = c.prepareStatement("INSERT INTO M_æ³•äºº" +
+							" (ä»•å…¥å…ˆCD, å¾—æ„å…ˆCD, ç¨®åˆ¥CD, ä¼šç¤¾å, ã‚«ã‚¤ã‚·ãƒ£ãƒ¡ã‚¤," +
+							" æ”¯åº—å, ã‚·ãƒ†ãƒ³ãƒ¡ã‚¤, è¡¨ç¤ºå, ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ, alpha_2, éƒµä¾¿ç•ªå·, éƒµä¾¿æç•ª," +//7
+							" ç•ªåœ°, å»ºç‰©ç­‰, TEL1, TEL2, TEL3, FAX1, FAX2, FAX3," +//9
+							" ãƒ¡ãƒ¼ãƒ«, URL, å‚™è€ƒ, æœ‰åŠ¹FLG, è´ˆç­”FLG, å¹´è³€çŠ¶CD)" +
 							" OUTPUT inserted.CD as newId" +
 							" VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?," +
 									" ?, ?, ?, ?, ?, ?, ?, ?, ?, ?," +
@@ -148,12 +148,12 @@ public class CorpRegistration extends GenericServlet {
 						   }
 						   isResultSet = ps.getMoreResults();
 						}
-					} else {//XV
-						ps = c.prepareStatement("UPDATE M_–@l SET" +
-							" d“üæCD=?, “¾ˆÓæCD=?, í•ÊCD=?, ‰ïĞ–¼=?, ƒJƒCƒVƒƒƒƒC=?," +
-							" x“X–¼=?, ƒVƒeƒ“ƒƒC=?, •\¦–¼=?, ƒAƒ‹ƒtƒ@ƒxƒbƒg=?, alpha_2=?, —X•Ö”Ô†=?, —X•Ö}”Ô=?," +//7
-							" ”Ô’n=?, Œš•¨“™=?, TEL1=?, TEL2=?, TEL3=?, FAX1=?, FAX2=?, FAX3=?," +//9
-							" ƒ[ƒ‹=?, URL=?, ”õl=?, —LŒøFLG=?, ‘¡“šFLG=?, ”N‰êóCD=?" +//6
+					} else {//æ›´æ–°
+						ps = c.prepareStatement("UPDATE M_æ³•äºº SET" +
+							" ä»•å…¥å…ˆCD=?, å¾—æ„å…ˆCD=?, ç¨®åˆ¥CD=?, ä¼šç¤¾å=?, ã‚«ã‚¤ã‚·ãƒ£ãƒ¡ã‚¤=?," +
+							" æ”¯åº—å=?, ã‚·ãƒ†ãƒ³ãƒ¡ã‚¤=?, è¡¨ç¤ºå=?, ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ=?, alpha_2=?, éƒµä¾¿ç•ªå·=?, éƒµä¾¿æç•ª=?," +//7
+							" ç•ªåœ°=?, å»ºç‰©ç­‰=?, TEL1=?, TEL2=?, TEL3=?, FAX1=?, FAX2=?, FAX3=?," +//9
+							" ãƒ¡ãƒ¼ãƒ«=?, URL=?, å‚™è€ƒ=?, æœ‰åŠ¹FLG=?, è´ˆç­”FLG=?, å¹´è³€çŠ¶CD=?" +//6
 							" WHERE CD=?");
 						int i = 1;
 						if(corpDTO.getInt(0) == 0) {
@@ -206,7 +206,7 @@ public class CorpRegistration extends GenericServlet {
 			Logging.logStackTrace(ex, lg, className);
 		}
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

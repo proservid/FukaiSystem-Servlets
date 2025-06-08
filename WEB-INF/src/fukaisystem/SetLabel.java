@@ -38,33 +38,33 @@ public class SetLabel extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof Integer) {
 					code = (Integer)obj;
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			try {
 				ps = c.prepareStatement("SELECT" +
 					" CASE" +
-					" WHEN í•ÊCD = 1 THEN '‡Š'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" WHEN í•ÊCD = 2 THEN ‰ïĞ–¼+'‡Š' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" WHEN í•ÊCD = 3 THEN '‡‹'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" WHEN í•ÊCD = 4 THEN ‰ïĞ–¼+'‡‹' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" ELSE ‰ïĞ–¼ END" +
-					" FROM M_–@l c" +
-					" WHERE d“üæCD=?");
+					" WHEN ç¨®åˆ¥CD = 1 THEN 'ãˆ±'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" WHEN ç¨®åˆ¥CD = 2 THEN ä¼šç¤¾å+'ãˆ±' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" WHEN ç¨®åˆ¥CD = 3 THEN 'ãˆ²'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" WHEN ç¨®åˆ¥CD = 4 THEN ä¼šç¤¾å+'ãˆ²' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" ELSE ä¼šç¤¾å END" +
+					" FROM M_æ³•äºº c" +
+					" WHERE ä»•å…¥å…ˆCD=?");
 				ps.setInt(1, code);
 				rs = ps.executeQuery();
 				if(rs.next()) {
@@ -76,7 +76,7 @@ public class SetLabel extends GenericServlet {
 
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 
 			response.setContentType("application/octet-stream");

@@ -13,7 +13,7 @@ import fukaisystem.sql.DBConnection;
 import org.apache.log4j.Logger;
 
 /**
- * �e�[�u���̓��e�Ɨ�����擾���邽�߂̃N���X
+ * テーブルの内容と列情報を取得するためのクラス
  * @author kameura
  *
  */
@@ -33,7 +33,7 @@ public class GetTableData extends GenericServlet {
 		StringBuilder err = new StringBuilder("");
 
 		try {
-	//�N���C�A���g����ǂݍ���
+	//クライアントから読み込み
 
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
@@ -96,7 +96,7 @@ public class GetTableData extends GenericServlet {
 						} else {
 							if (element instanceof String) {
 								String strElement = ((String)element).trim();
-								//�F���Ȃ�AColor�^��Ԃ�
+								//色情報なら、Color型を返す
 //								if(strElement.startsWith("#")){
 	//								strElement = strElement.substring(1);
 		//							int color = Integer.parseInt(strElement, 16);
@@ -128,7 +128,7 @@ public class GetTableData extends GenericServlet {
 				lg.error("GetElements3 " + ex);
 			}
 
-	//�N���C�A���g�ɑ��M
+	//クライアントに送信
 
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());

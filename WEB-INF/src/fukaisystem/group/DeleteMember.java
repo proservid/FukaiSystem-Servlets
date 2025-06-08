@@ -37,7 +37,7 @@ public class DeleteMember extends GenericServlet {
 			try {
 
 				/**
-				 * クライアントデータ受け取り
+				 * 繧ｯ繝ｩ繧､繧｢繝ｳ繝医ョ繝ｼ繧ｿ蜿励￠蜿悶ｊ
 				 */
 				ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 				Object obj = in.readObject();
@@ -47,15 +47,15 @@ public class DeleteMember extends GenericServlet {
 					if(obj instanceof List<?>) {
 						delMembers = (List<Integer>)obj;
 					} else {
-//						err.append(className + "readObjectがInteger[]型ではありません\n");
-//						lg.error(className + "readObjectがInteger[]型ではありません");
+//						err.append(className + "readObject縺栗nteger[]蝙九〒縺ｯ縺ゅｊ縺ｾ縺帙ｓ\n");
+//						lg.error(className + "readObject縺栗nteger[]蝙九〒縺ｯ縺ゅｊ縺ｾ縺帙ｓ");
 					}
 				}
 			}catch(Exception ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				ps = c.prepareStatement("delete from M_人員 where CD=?");
+				ps = c.prepareStatement("delete from M_莠ｺ蜩｡ where CD=?");
 				for(int m : delMembers) {
 					ps.setInt(1, m);
 					ps.addBatch();
@@ -68,7 +68,7 @@ public class DeleteMember extends GenericServlet {
 			}
 
 			/**
-			 * クライアントに送信
+			 * 繧ｯ繝ｩ繧､繧｢繝ｳ繝医↓騾∽ｿ｡
 			 */
 			try {
 				response.setContentType("application/octet-stream");

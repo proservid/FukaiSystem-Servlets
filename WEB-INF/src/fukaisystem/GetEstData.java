@@ -42,57 +42,57 @@ public class GetEstData extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof List<?>) {
 					nums = (List<String>)obj;
 				} else {
-					err.append(className + "readObject‚ªProjectSearchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªProjectSearchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒProjectSearchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒProjectSearchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 			try {
 				StringBuilder query = new StringBuilder(
-				 "select * from T_Œ©Ï_q where Œ©ÏeID IN (select Œ©ÏeID from (" +
-				 "select Œ©ÏeID,convert(varchar,Œ©ÏŠú)+'-'+right('000' + convert(varchar, Œ©Ï”Ô†), 3)+Œ©Ï}”Ô as Œ©Ï”Ô from T_Œ©Ï_e) a" +
+				 "select * from T_è¦‹ç©_å­ where è¦‹ç©è¦ªID IN (select è¦‹ç©è¦ªID from (" +
+				 "select è¦‹ç©è¦ªID,convert(varchar,è¦‹ç©æœŸ)+'-'+right('000' + convert(varchar, è¦‹ç©ç•ªå·), 3)+è¦‹ç©æç•ª as è¦‹ç©ç•ª from T_è¦‹ç©_è¦ª) a" +
 				 " where ");
 				boolean isFirst = true;
 				for(String s : nums) {
 					if(isFirst) {
-						query.append("Œ©Ï”Ô like '" + s + "'");
+						query.append("è¦‹ç©ç•ª like '" + s + "'");
 						isFirst = false;
 					} else {
-						query.append(" OR Œ©Ï”Ô like '" + s + "'");
+						query.append(" OR è¦‹ç©ç•ª like '" + s + "'");
 					}
 				}
-				query.append(") order by Œ©ÏeID,ID");
+				query.append(") order by è¦‹ç©è¦ªID,ID");
 				ps = c.prepareStatement(query.toString());
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					Vector<Object> line = new Vector<Object>();
 					line.add(rs.getInt("ID"));
-					line.add(rs.getInt("•\¦CD"));
-					line.add(rs.getString("–¼Ì"));
-					line.add(rs.getBoolean("ŠeFLG"));
-					line.add(rs.getInt("”—Ê"));
-					line.add(rs.getInt("”—Ê’PˆÊCD"));
-					line.add(rs.getInt("’P‰¿"));
-					line.add(rs.getInt("’ñ¦Šz"));
-					line.add(rs.getString("}”Ô"));
-					line.add(rs.getString("”õl"));
+					line.add(rs.getInt("è¡¨ç¤ºCD"));
+					line.add(rs.getString("åç§°"));
+					line.add(rs.getBoolean("å„FLG"));
+					line.add(rs.getInt("æ•°é‡"));
+					line.add(rs.getInt("æ•°é‡å˜ä½CD"));
+					line.add(rs.getInt("å˜ä¾¡"));
+					line.add(rs.getInt("æç¤ºé¡"));
+					line.add(rs.getString("å›³ç•ª"));
+					line.add(rs.getString("å‚™è€ƒ"));
 					v.add(line);
 				}
 
 			} catch(SQLException ex) {
-				err.append(className + "ƒe[ƒuƒ‹uT_İŒÉ_ev‚Ì“Ç‚İo‚µ‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_åœ¨åº«_è¦ªã€ã®èª­ã¿å‡ºã—ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}catch(Exception ex) {
@@ -100,7 +100,7 @@ public class GetEstData extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

@@ -42,26 +42,26 @@ public class GetInType extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			in.close();
 			try {
-				ps = c.prepareStatement("SELECT ŒhÌ FROM M_ŒhÌ");
+				ps = c.prepareStatement("SELECT æ•¬ç§° FROM M_æ•¬ç§°");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					types.add(rs.getString("ŒhÌ"));
+					types.add(rs.getString("æ•¬ç§°"));
 				}
 
 			} catch(SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCodeF"+ex.getErrorCode());
-				err.append("SQLStateF"+ex.getSQLState());
+				err.append("ErrorCodeï¼š"+ex.getErrorCode());
+				err.append("SQLStateï¼š"+ex.getSQLState());
 				Logging.logStackTrace(ex, lg, className);
 			}
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 
 			response.setContentType("application/octet-stream");

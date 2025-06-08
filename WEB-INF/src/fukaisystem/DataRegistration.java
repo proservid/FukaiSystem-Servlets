@@ -77,9 +77,9 @@ public class DataRegistration extends GenericServlet {
 				ps = c.prepareStatement(sql.toString());
 				for(int i = 1; i < lines.size(); i++) {
 					String[] strs = lines.get(i).split("\t", cols);
-					for(int j = 0; j < cols; j++) {//ƒe[ƒuƒ‹‚Ì—ñ”‚ð’´‚¦‚éƒf[ƒ^‚Í–³Ž‹
+					for(int j = 0; j < cols; j++) {//ãƒ†ãƒ¼ãƒ–ãƒ«ã®åˆ—æ•°ã‚’è¶…ãˆã‚‹ãƒ‡ãƒ¼ã‚¿ã¯ç„¡è¦–
 						boolean isEmpty = false;
-						if(strs.length <= j) {//ƒe[ƒuƒ‹‚Ì—ñ”‚É–ž‚½‚È‚¢ê‡‚Í‹óƒf[ƒ^‚Å–„‚ß‚é
+						if(strs.length <= j) {//ãƒ†ãƒ¼ãƒ–ãƒ«ã®åˆ—æ•°ã«æº€ãŸãªã„å ´åˆã¯ç©ºãƒ‡ãƒ¼ã‚¿ã§åŸ‹ã‚ã‚‹
 							isEmpty = true;
 						} else if(strs[j].equals("")) {
 							isEmpty = true;
@@ -128,10 +128,10 @@ public class DataRegistration extends GenericServlet {
 
 				int[] updateCounts = ps.executeBatch();
 				c.commit();
-				msg.append(updateCounts.length + "Œˆ—‚³‚ê‚Ü‚µ‚½B");
+				msg.append(updateCounts.length + "ä»¶å‡¦ç†ã•ã‚Œã¾ã—ãŸã€‚");
 			} catch(SQLException ex) {
 				ex.printStackTrace();
-				String errStr = String.valueOf(k + 1) + "s–ÚF" + ex;
+				String errStr = String.valueOf(k + 1) + "è¡Œç›®ï¼š" + ex;
 				err.append(errStr);
 				lg.error(errStr);
 			} catch(Exception ex) {
@@ -145,7 +145,7 @@ public class DataRegistration extends GenericServlet {
 
 
 
-	//ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+	//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());

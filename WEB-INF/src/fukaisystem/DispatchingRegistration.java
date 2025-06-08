@@ -46,22 +46,22 @@ public class DispatchingRegistration extends GenericServlet {
 
 		try {
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 			if(obj == null) {
 				isError = true;
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof DispatchingDTO) {
 					dispDTO = (DispatchingDTO)obj;
 				} else {
 					isError = true;
-					err.append(className + "readObject‚ªDispatchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªDispatchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒDispatchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒDispatchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
@@ -71,25 +71,25 @@ public class DispatchingRegistration extends GenericServlet {
 				st.executeUpdate("BEGIN TRANSACTION");
 			} catch(SQLException ex) {
 				isError = true;
-				err.append(className + "ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“‚ÌŠJn‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã®é–‹å§‹ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
 			dispatchingID = dispDTO.getInt(7);
 			if(dispDTO.getInt(0) * dispDTO.getInt(1) == 0) {
-				//’•¶Šú‚Ü‚½‚Í’•¶”Ô†‚ğ0‚É•ÏX‚µ‚½‚Æ‚¢‚¤‚±‚Æ‚ÍAÁ‹‚¹‚æ‚Æ‚¢‚¤‚±‚Æ
+				//æ³¨æ–‡æœŸã¾ãŸã¯æ³¨æ–‡ç•ªå·ã‚’0ã«å¤‰æ›´ã—ãŸã¨ã„ã†ã“ã¨ã¯ã€æ¶ˆå»ã›ã‚ˆã¨ã„ã†ã“ã¨
 				if(dispatchingID != 0) {
 					try {
-						ps = c.prepareStatement("DELETE FROM T_oŒÉ_e WHERE ID=?");
+						ps = c.prepareStatement("DELETE FROM T_å‡ºåº«_è¦ª WHERE ID=?");
 						ps.setInt(1, dispatchingID);
 						ps.executeUpdate();
-						ps = c.prepareStatement("DELETE FROM T_oŒÉ_q WHERE ID=?");
+						ps = c.prepareStatement("DELETE FROM T_å‡ºåº«_å­ WHERE ID=?");
 						ps.setInt(1, dispatchingID);
 						ps.executeUpdate();
 						dispatchingID = 0;
 					} catch(SQLException ex) {
 						isError = true;
-						err.append(className + "oŒÉƒe[ƒuƒ‹‚Ìíœ‚É¸”s‚µ‚Ü‚µ‚½\n");
+						err.append(className + "å‡ºåº«ãƒ†ãƒ¼ãƒ–ãƒ«ã®å‰Šé™¤ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 				}
@@ -97,18 +97,18 @@ public class DispatchingRegistration extends GenericServlet {
 				if(dispatchingID == 0) {
 					try {
 						ps = c.prepareStatement(
-						"INSERT INTO T_oŒÉ_e" +
-							" OUTPUT inserted.oŒÉeID as newId, inserted.XV“ú" +
+						"INSERT INTO T_å‡ºåº«_è¦ª" +
+							" OUTPUT inserted.å‡ºåº«è¦ªID as newId, inserted.æ›´æ–°æ—¥" +
 							" VALUES(?, ?, ?, ?, ?, ?, ?, ?)");
 						int i = 1;
-						ps.setInt(i, dispDTO.getInt(0)); i++;//»ìŠú
-						ps.setInt(i, dispDTO.getInt(1)); i++;//»ì”Ô†
-						ps.setString(i, dispDTO.getStr(0)); i++;//»ì}”Ô
-						ps.setDate(i, dispDTO.getDate(0)); i++;//oŒÉ”NŒ“ú
-						ps.setString(i, dispDTO.getStr(4)); i++;//—p“r
-						ps.setString(i, dispDTO.getStr(5)); i++;//—p“r2
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//XV“ú
-						ps.setInt(i, 0);//XVÒCD
+						ps.setInt(i, dispDTO.getInt(0)); i++;//è£½ä½œæœŸ
+						ps.setInt(i, dispDTO.getInt(1)); i++;//è£½ä½œç•ªå·
+						ps.setString(i, dispDTO.getStr(0)); i++;//è£½ä½œæç•ª
+						ps.setDate(i, dispDTO.getDate(0)); i++;//å‡ºåº«å¹´æœˆæ—¥
+						ps.setString(i, dispDTO.getStr(4)); i++;//ç”¨é€”
+						ps.setString(i, dispDTO.getStr(5)); i++;//ç”¨é€”2
+						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//æ›´æ–°æ—¥
+						ps.setInt(i, 0);//æ›´æ–°è€…CD
 						boolean isResultSet = ps.execute();
 						int   updateCount = 0;
 						while (true) {
@@ -129,70 +129,70 @@ public class DispatchingRegistration extends GenericServlet {
 						}
 					} catch(SQLException ex) {
 						isError = true;
-						err.append(className + "ƒe[ƒuƒ‹uT_oŒÉ_ev‚ÌXV‚É¸”s‚µ‚Ü‚µ‚½\n");
+						err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_å‡ºåº«_è¦ªã€ã®æ›´æ–°ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 	
 	
 				} else {
 					try {
-						ps = c.prepareStatement("UPDATE T_oŒÉ_e SET »ìŠú=?, »ì”Ô†=?, »ì}”Ô=?, oŒÉ”NŒ“ú=?, —p“r=?, “E—v=?, XV“ú=?, XVÒCD=?" +
-								" WHERE oŒÉeID=?");
+						ps = c.prepareStatement("UPDATE T_å‡ºåº«_è¦ª SET è£½ä½œæœŸ=?, è£½ä½œç•ªå·=?, è£½ä½œæç•ª=?, å‡ºåº«å¹´æœˆæ—¥=?, ç”¨é€”=?, æ‘˜è¦=?, æ›´æ–°æ—¥=?, æ›´æ–°è€…CD=?" +
+								" WHERE å‡ºåº«è¦ªID=?");
 						int i = 1;
-						ps.setInt(i, dispDTO.getInt(0)); i++;//»ìŠú
-						ps.setInt(i, dispDTO.getInt(1)); i++;//»ì”Ô†
-						ps.setString(i, dispDTO.getStr(0)); i++;//»ì}”Ô
-						ps.setDate(i, dispDTO.getDate(0)); i++;//oŒÉ”NŒ“ú
-						ps.setString(i, dispDTO.getStr(4)); i++;//—p“r
-						ps.setString(i, dispDTO.getStr(5)); i++;//—p“r2
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//XV“ú
-						ps.setInt(i, 0); i++;//XVÒCD
+						ps.setInt(i, dispDTO.getInt(0)); i++;//è£½ä½œæœŸ
+						ps.setInt(i, dispDTO.getInt(1)); i++;//è£½ä½œç•ªå·
+						ps.setString(i, dispDTO.getStr(0)); i++;//è£½ä½œæç•ª
+						ps.setDate(i, dispDTO.getDate(0)); i++;//å‡ºåº«å¹´æœˆæ—¥
+						ps.setString(i, dispDTO.getStr(4)); i++;//ç”¨é€”
+						ps.setString(i, dispDTO.getStr(5)); i++;//ç”¨é€”2
+						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//æ›´æ–°æ—¥
+						ps.setInt(i, 0); i++;//æ›´æ–°è€…CD
 						ps.setInt(i, dispatchingID);
 						ps.executeUpdate();
-						ps = c.prepareStatement("DELETE FROM T_oŒÉ_q WHERE oŒÉeID=?");
+						ps = c.prepareStatement("DELETE FROM T_å‡ºåº«_å­ WHERE å‡ºåº«è¦ªID=?");
 						ps.setInt(1, dispatchingID);
 						ps.executeUpdate();
 					} catch(SQLException ex) {
 						isError = true;
-						err.append(className + "oŒÉƒe[ƒuƒ‹‚Ìíœ‚É¸”s‚µ‚Ü‚µ‚½\n");
+						err.append(className + "å‡ºåº«ãƒ†ãƒ¼ãƒ–ãƒ«ã®å‰Šé™¤ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 				}
-	//UPDATE¸”s‚µ‚½‚çINSERT‚³‚¹‚È‚¢
+	//UPDATEå¤±æ•—ã—ãŸã‚‰INSERTã•ã›ãªã„
 				int k = 1;
 				try {
 					ps = c.prepareStatement(
-						"INSERT INTO T_oŒÉ_q VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");// +
-						//"UPDATE T_»ì_q SET ”[•i”NŒ“ú=? WHERE ID=? AND »ìeID=?");
+						"INSERT INTO T_å‡ºåº«_å­ VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");// +
+						//"UPDATE T_è£½ä½œ_å­ SET ç´å“å¹´æœˆæ—¥=? WHERE ID=? AND è£½ä½œè¦ªID=?");
 					for(Vector<Object> v : dispDTO.getVector(0)) {
 						int i = 1;
 						int j = 0;
 						if(v.get(0) != null && (Integer)v.get(0) != 0) {
 							ps.setInt(i, k); i++;//ID
-							ps.setInt(i, dispatchingID); i++;//oŒÉeID
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer)v.get(j)); i++; j++;//‘å•ª—ŞCD
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer)v.get(j)); i++; j++;//’†•ª—ŞCD
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer)v.get(j)); i++; j++;//¬•ª—ŞCD
-							ps.setString(i, (String)v.get(j)); i++; j++;//–¼Ì
-							ps.setBoolean(i, (Boolean)v.get(j)); i++; j++;//ŠeFLG
-							ps.setDouble(i, (Double)v.get(j)); i++; j++;//”—Ê
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//”—Ê’PˆÊCD
-							ps.setDouble(i, (Double)v.get(j)); i++; j++;//d—Ê’·‚³i’PˆÊ‚ğ—vŒŸ“¢‚Ì‚±‚Æj
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//’P‰¿
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//‹àŠz
-							ps.setString(i, (String)v.get(j)); i++; j++;//”õl
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//İŒÉeID
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//İŒÉqID
+							ps.setInt(i, dispatchingID); i++;//å‡ºåº«è¦ªID
+							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer)v.get(j)); i++; j++;//å¤§åˆ†é¡CD
+							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer)v.get(j)); i++; j++;//ä¸­åˆ†é¡CD
+							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer)v.get(j)); i++; j++;//å°åˆ†é¡CD
+							ps.setString(i, (String)v.get(j)); i++; j++;//åç§°
+							ps.setBoolean(i, (Boolean)v.get(j)); i++; j++;//å„FLG
+							ps.setDouble(i, (Double)v.get(j)); i++; j++;//æ•°é‡
+							ps.setInt(i, (Integer)v.get(j)); i++; j++;//æ•°é‡å˜ä½CD
+							ps.setDouble(i, (Double)v.get(j)); i++; j++;//é‡é‡é•·ã•ï¼ˆå˜ä½ã‚’è¦æ¤œè¨ã®ã“ã¨ï¼‰
+							ps.setInt(i, (Integer)v.get(j)); i++; j++;//å˜ä¾¡
+							ps.setInt(i, (Integer)v.get(j)); i++; j++;//é‡‘é¡
+							ps.setString(i, (String)v.get(j)); i++; j++;//å‚™è€ƒ
+							ps.setInt(i, (Integer)v.get(j)); i++; j++;//åœ¨åº«è¦ªID
+							ps.setInt(i, (Integer)v.get(j)); i++; j++;//åœ¨åº«å­ID
 							ps.addBatch();
 							k++;
 						}
 					}
 	
 					int[] updateCounts = ps.executeBatch();
-					lg.info("T_oŒÉ_q‚Í" + updateCounts.length + "Œˆ—‚³‚ê‚Ü‚µ‚½B");
+					lg.info("T_å‡ºåº«_å­ã¯" + updateCounts.length + "ä»¶å‡¦ç†ã•ã‚Œã¾ã—ãŸã€‚");
 				} catch(SQLException ex) {
 					isError = true;
-					err.append(className + "ƒe[ƒuƒ‹uT_oŒÉ_qv‚ÌXV‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_å‡ºåº«_å­ã€ã®æ›´æ–°ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 			}
@@ -203,7 +203,7 @@ public class DispatchingRegistration extends GenericServlet {
 					st.executeUpdate("COMMIT");
 				} catch(SQLException ex) {
 					isError = true;
-					err.append(className + "ƒRƒ~ƒbƒg‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append(className + "ã‚³ãƒŸãƒƒãƒˆã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 			}
@@ -218,13 +218,13 @@ public class DispatchingRegistration extends GenericServlet {
 					st = c.createStatement();
 					st.executeUpdate("ROLLBACK");
 				} catch(SQLException ex) {
-					err.append(className + "ƒ[ƒ‹ƒoƒbƒN‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append(className + "ãƒ­ãƒ¼ãƒ«ãƒãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 			}
 		}
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

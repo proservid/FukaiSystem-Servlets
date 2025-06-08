@@ -60,11 +60,11 @@ public class CorpDTO implements Serializable {
 	public String getStr(int order) {
 		String s = "";
 		switch(order) {
-			case  0: s = name; break;//‰ïĞ–¼/–¼
-			case  1: s = name2; break;//ƒJƒCƒVƒƒƒƒC/ƒVƒƒC
-			case  2: s = branch; break;//x“X–¼/Š‘®•”
-			case  3: s = branch2; break;//ƒVƒeƒ“ƒƒC/–ğE–¼
-			case  4: s = disp; break;//•\¦/‰ïĞƒR[ƒh
+			case  0: s = name; break;//ä¼šç¤¾å/æ°å
+			case  1: s = name2; break;//ã‚«ã‚¤ã‚·ãƒ£ãƒ¡ã‚¤/ã‚·ãƒ¡ã‚¤
+			case  2: s = branch; break;//æ”¯åº—å/æ‰€å±éƒ¨ç½²
+			case  3: s = branch2; break;//ã‚·ãƒ†ãƒ³ãƒ¡ã‚¤/å½¹è·å
+			case  4: s = disp; break;//è¡¨ç¤º/ä¼šç¤¾ã‚³ãƒ¼ãƒ‰
 			case  5: s = country; break;//
 			case  6: s = zip; break;//
 			case  7: s = zip2; break;//
@@ -105,6 +105,6 @@ public class CorpDTO implements Serializable {
 			case 0:	b = isValid; break;
 			case 1:	b = isZou; break;
 		}
-		return b;//•sg—p
+		return b;//ä¸ä½¿ç”¨
 	}
 }

@@ -51,7 +51,7 @@ public class EstimateRegistration extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
@@ -59,27 +59,27 @@ public class EstimateRegistration extends GenericServlet {
 
 			if(obj == null) {
 				isError = true;
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof ProjectSummaryDTO) {
 					summaryDTO = (ProjectSummaryDTO)obj;
 				} else {
 					isError = true;
-					err.append(className + "readObject‚ªProjectSummaryDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªProjectSummaryDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒProjectSummaryDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒProjectSummaryDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 			try {
-				//ƒRƒ~ƒbƒgŒã‚Å‚ ‚è‚³‚¦‚·‚ê‚Î‚æ‚¢B
-				//ƒRƒ~ƒbƒgŒã‚Æ‚¢‚¤‚±‚Æ‚ÍAqE‘·‚Æ‚à‚Ç‚àXV‚³‚ê‚Ä‚¢‚é‚Í‚¸‚ÅA–â‘è‚Í¶‚¶‚È‚¢
-				//e¨q¨‘·i‰ÁH¨Ş—¿j‚Ì‡‚ªç‚ç‚ê‚Ä‚¢‚éŒÀ‚èAƒfƒbƒhƒƒbƒN‚Í”­¶‚µ‚È‚¢‚Í‚¸
+				//ã‚³ãƒŸãƒƒãƒˆå¾Œã§ã‚ã‚Šã•ãˆã™ã‚Œã°ã‚ˆã„ã€‚
+				//ã‚³ãƒŸãƒƒãƒˆå¾Œã¨ã„ã†ã“ã¨ã¯ã€å­ãƒ»å­«ã¨ã‚‚ã©ã‚‚æ›´æ–°ã•ã‚Œã¦ã„ã‚‹ã¯ãšã§ã€å•é¡Œã¯ç”Ÿã˜ãªã„
+				//è¦ªâ†’å­â†’å­«ï¼ˆåŠ å·¥â†’ææ–™ï¼‰ã®é †ãŒå®ˆã‚‰ã‚Œã¦ã„ã‚‹é™ã‚Šã€ãƒ‡ãƒƒãƒ‰ãƒ­ãƒƒã‚¯ã¯ç™ºç”Ÿã—ãªã„ã¯ãš
 				st = c.createStatement();
 				st.executeUpdate("SET TRANSACTION ISOLATION LEVEL READ COMMITTED");
 				st.executeUpdate("BEGIN TRANSACTION");
 			} catch(SQLException ex) {
 				isError = true;
-				err.append(className + "ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“‚ÌŠJn‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã®é–‹å§‹ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
@@ -89,15 +89,15 @@ public class EstimateRegistration extends GenericServlet {
 			productID = summaryDTO.getInt(17);
 
 			if(estimatePer == 0 && estimateNum == 0 && estimateID != 0) {
-				//Œ©ÏID‚ª‚ ‚éƒf[ƒ^‚ÌŒ©ÏŠú‚ÆŒ©Ï”Ô†‚ğ0‚É•ÏX‚µ‚½‚Æ‚¢‚¤‚±‚Æ‚ÍAÁ‹‚¹‚æ‚Æ‚¢‚¤‚±‚Æ
+				//è¦‹ç©IDãŒã‚ã‚‹ãƒ‡ãƒ¼ã‚¿ã®è¦‹ç©æœŸã¨è¦‹ç©ç•ªå·ã‚’0ã«å¤‰æ›´ã—ãŸã¨ã„ã†ã“ã¨ã¯ã€æ¶ˆå»ã›ã‚ˆã¨ã„ã†ã“ã¨
 				try {
 					ps = c.prepareStatement("" +
-							"DELETE FROM T_Œ©Ï_e WHERE Œ©ÏeID=?;" +
-							"DELETE FROM T_Œ©Ï_q WHERE Œ©ÏeID=?;" +
-							"DELETE FROM T_Œ©Ï_Ş—¿ WHERE Œ©ÏeID=?;" +
-							"DELETE FROM T_Œ©Ï_‰ÁH WHERE Œ©ÏeID=?;" +
-							"UPDATE T_»ì_e SET Œ©ÏeID=0 WHERE Œ©ÏeID=?;" +
-							"DELETE FROM T_Œ©Ï»ì WHERE Œ©ÏeID=?");
+							"DELETE FROM T_è¦‹ç©_è¦ª WHERE è¦‹ç©è¦ªID=?;" +
+							"DELETE FROM T_è¦‹ç©_å­ WHERE è¦‹ç©è¦ªID=?;" +
+							"DELETE FROM T_è¦‹ç©_ææ–™ WHERE è¦‹ç©è¦ªID=?;" +
+							"DELETE FROM T_è¦‹ç©_åŠ å·¥ WHERE è¦‹ç©è¦ªID=?;" +
+							"UPDATE T_è£½ä½œ_è¦ª SET è¦‹ç©è¦ªID=0 WHERE è¦‹ç©è¦ªID=?;" +
+							"DELETE FROM T_è¦‹ç©è£½ä½œ WHERE è¦‹ç©è¦ªID=?");
 					ps.setInt(1, estimateID);
 					ps.setInt(2, estimateID);
 					ps.setInt(3, estimateID);
@@ -108,24 +108,24 @@ public class EstimateRegistration extends GenericServlet {
 					estimateID = 0;
 				} catch(SQLException ex) {
 					isError = true;
-					err.append(className + "Œ©Ïƒe[ƒuƒ‹‚Ìíœ‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append(className + "è¦‹ç©ãƒ†ãƒ¼ãƒ–ãƒ«ã®å‰Šé™¤ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 			} else {
-				//”[Šú
+				//ç´æœŸ
 				int deadline = 0;
 				int place = 0;
 				int terms = 0;
 				int validity = 0;
 				try {
 					ps = c.prepareStatement(
-					"MERGE INTO M_—LŒøŠúŠÔ AS v" +
-					" USING (SELECT ? AS —LŒøŠúŠÔ) AS w" +
-					" ON replace(replace(v.—LŒøŠúŠÔ,' ',''),'@','')=replace(replace(w.—LŒøŠúŠÔ,' ',''),'@','')" +
+					"MERGE INTO M_æœ‰åŠ¹æœŸé–“ AS v" +
+					" USING (SELECT ? AS æœ‰åŠ¹æœŸé–“) AS w" +
+					" ON replace(replace(v.æœ‰åŠ¹æœŸé–“,' ',''),'ã€€','')=replace(replace(w.æœ‰åŠ¹æœŸé–“,' ',''),'ã€€','')" +
 					" WHEN MATCHED THEN" +
-					"	UPDATE SET v.—LŒøŠúŠÔ=v.—LŒøŠúŠÔ" +
+					"	UPDATE SET v.æœ‰åŠ¹æœŸé–“=v.æœ‰åŠ¹æœŸé–“" +
 					" WHEN NOT MATCHED THEN" +
-					"	INSERT VALUES(w.—LŒøŠúŠÔ)" +
+					"	INSERT VALUES(w.æœ‰åŠ¹æœŸé–“)" +
 					" OUTPUT deleted.CD as oldId, inserted.CD as newId;");
 					ps.setString(1, summaryDTO.getStr(8));
 					boolean isResultSet = ps.execute();
@@ -147,13 +147,13 @@ public class EstimateRegistration extends GenericServlet {
 					   isResultSet = ps.getMoreResults();
 					}
 					ps = c.prepareStatement(
-					"MERGE INTO M_”[Šú AS v" +
-					" USING (SELECT ? AS ”[Šú) AS w" +
-					" ON replace(replace(v.”[Šú,' ',''),'@','')=replace(replace(w.”[Šú,' ',''),'@','')" +
+					"MERGE INTO M_ç´æœŸ AS v" +
+					" USING (SELECT ? AS ç´æœŸ) AS w" +
+					" ON replace(replace(v.ç´æœŸ,' ',''),'ã€€','')=replace(replace(w.ç´æœŸ,' ',''),'ã€€','')" +
 					" WHEN MATCHED THEN" +
-					"	UPDATE SET v.”[Šú=v.”[Šú" +
+					"	UPDATE SET v.ç´æœŸ=v.ç´æœŸ" +
 					" WHEN NOT MATCHED THEN" +
-					"	INSERT VALUES(w.”[Šú)" +
+					"	INSERT VALUES(w.ç´æœŸ)" +
 					" OUTPUT deleted.CD as oldId, inserted.CD as newId;");
 					ps.setString(1, summaryDTO.getStr(5));
 					isResultSet = ps.execute();
@@ -175,13 +175,13 @@ public class EstimateRegistration extends GenericServlet {
 					   isResultSet = ps.getMoreResults();
 					}
 					ps = c.prepareStatement(
-					"MERGE INTO M_ó“nêŠ AS v" +
-					" USING (SELECT ? AS ó“nêŠ) AS w" +
-					" ON replace(replace(v.ó“nêŠ,' ',''),'@','')=replace(replace(w.ó“nêŠ,' ',''),'@','')" +
+					"MERGE INTO M_å—æ¸¡å ´æ‰€ AS v" +
+					" USING (SELECT ? AS å—æ¸¡å ´æ‰€) AS w" +
+					" ON replace(replace(v.å—æ¸¡å ´æ‰€,' ',''),'ã€€','')=replace(replace(w.å—æ¸¡å ´æ‰€,' ',''),'ã€€','')" +
 					" WHEN MATCHED THEN" +
-					"	UPDATE SET v.ó“nêŠ=v.ó“nêŠ" +
+					"	UPDATE SET v.å—æ¸¡å ´æ‰€=v.å—æ¸¡å ´æ‰€" +
 					" WHEN NOT MATCHED THEN" +
-					"	INSERT VALUES(w.ó“nêŠ)" +
+					"	INSERT VALUES(w.å—æ¸¡å ´æ‰€)" +
 					" OUTPUT deleted.CD as oldId, inserted.CD as newId;");
 					ps.setString(1, summaryDTO.getStr(6));
 					isResultSet = ps.execute();
@@ -203,13 +203,13 @@ public class EstimateRegistration extends GenericServlet {
 					   isResultSet = ps.getMoreResults();
 					}
 					ps = c.prepareStatement(
-					"MERGE INTO M_æˆøğŒ AS v" +
-					" USING (SELECT ? AS æˆøğŒ) AS w" +
-					" ON replace(replace(v.æˆøğŒ,' ',''),'@','')=replace(replace(w.æˆøğŒ,' ',''),'@','')" +
+					"MERGE INTO M_å–å¼•æ¡ä»¶ AS v" +
+					" USING (SELECT ? AS å–å¼•æ¡ä»¶) AS w" +
+					" ON replace(replace(v.å–å¼•æ¡ä»¶,' ',''),'ã€€','')=replace(replace(w.å–å¼•æ¡ä»¶,' ',''),'ã€€','')" +
 					" WHEN MATCHED THEN" +
-					"	UPDATE SET v.æˆøğŒ=v.æˆøğŒ" +
+					"	UPDATE SET v.å–å¼•æ¡ä»¶=v.å–å¼•æ¡ä»¶" +
 					" WHEN NOT MATCHED THEN" +
-					"	INSERT VALUES(w.æˆøğŒ)" +
+					"	INSERT VALUES(w.å–å¼•æ¡ä»¶)" +
 					" OUTPUT deleted.CD as oldId, inserted.CD as newId;");
 					ps.setString(1, summaryDTO.getStr(7));
 					isResultSet = ps.execute();
@@ -233,93 +233,93 @@ public class EstimateRegistration extends GenericServlet {
 				} catch(SQLException ex) {
 					isError = true;
 					ex.printStackTrace();
-					err.append(className + "ƒe[ƒuƒ‹uT_Œ©Ï_ev‚ÌXV‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_è¦‹ç©_è¦ªã€ã®æ›´æ–°ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 				if(estimateNum == 0) {
 					try {
-						ps = c.prepareStatement("SELECT MAX(Œ©Ï”Ô†) AS ÅIŒ©Ï”Ô† FROM T_Œ©Ï_e WHERE Œ©ÏŠú=?");
-						ps.setInt(1, estimatePer);//Œ©ÏŠú
+						ps = c.prepareStatement("SELECT MAX(è¦‹ç©ç•ªå·) AS æœ€çµ‚è¦‹ç©ç•ªå· FROM T_è¦‹ç©_è¦ª WHERE è¦‹ç©æœŸ=?");
+						ps.setInt(1, estimatePer);//è¦‹ç©æœŸ
 						rs = ps.executeQuery();
 						if(rs.next()) {
-							estimateNum = rs.getInt("ÅIŒ©Ï”Ô†") + 1;
+							estimateNum = rs.getInt("æœ€çµ‚è¦‹ç©ç•ªå·") + 1;
 						}
 					} catch(SQLException ex) {
 						ex.printStackTrace();
 						isError = true;
-						err.append(className + "Œ©Ï”Ô†‚Ì“Ç‚İ‚İ‚É¸”s‚µ‚Ü‚µ‚½\n");
+						err.append(className + "è¦‹ç©ç•ªå·ã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 				} else {
 					try {
-						ps = c.prepareStatement("SELECT Œ©ÏeID FROM T_Œ©Ï_e WHERE Œ©ÏŠú=? AND Œ©Ï”Ô†=? AND Œ©Ï}”Ô=?");
+						ps = c.prepareStatement("SELECT è¦‹ç©è¦ªID FROM T_è¦‹ç©_è¦ª WHERE è¦‹ç©æœŸ=? AND è¦‹ç©ç•ªå·=? AND è¦‹ç©æç•ª=?");
 						int i = 1;
-						ps.setInt(i, estimatePer); i++;//Œ©ÏŠú
-						ps.setInt(i, estimateNum); i++;//Œ©Ï”Ô†
-						ps.setString(i, summaryDTO.getStr(4)); i++;//Œ©Ï}”Ô
+						ps.setInt(i, estimatePer); i++;//è¦‹ç©æœŸ
+						ps.setInt(i, estimateNum); i++;//è¦‹ç©ç•ªå·
+						ps.setString(i, summaryDTO.getStr(4)); i++;//è¦‹ç©æç•ª
 						rs = ps.executeQuery();
 						if(rs.next()) {
-							if(rs.getInt("Œ©ÏeID") != 0) {
-								estimateID = rs.getInt("Œ©ÏeID");
+							if(rs.getInt("è¦‹ç©è¦ªID") != 0) {
+								estimateID = rs.getInt("è¦‹ç©è¦ªID");
 							}
 						}
 					} catch(SQLException ex) {
 						ex.printStackTrace();
 						isError = true;
-						err.append(className + "Œ©ÏeID‚Ì“Ç‚İ‚İ‚É¸”s‚µ‚Ü‚µ‚½\n");
+						err.append(className + "è¦‹ç©è¦ªIDã®èª­ã¿è¾¼ã¿ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 				}
-				if(estimateID == 0) {//Œ©Ï‘V‹Kì¬
+				if(estimateID == 0) {//è¦‹ç©æ›¸æ–°è¦ä½œæˆ
 					try {
 						ps = c.prepareStatement(
-								"INSERT INTO T_Œ©Ï_e" +
-								" (Œ©ÏŠú, Œ©Ï”Ô†, Œ©Ï}”Ô, Œ³»ìeID, ˆÄŒ–¼, ˆÄ“à•¶, “¾ˆÓæCD, “¾ˆÓæ•\¦–¼," +
-								" ”[ŠúCD, ó“nêŠCD, æˆøğŒCD, —LŒøŠúŠÔCD, ’ñoÏCD, Œ©Ï”NŒ“ú, ’ño”NŒ“ú," +
-								" ’Ê‰İCD, Œ©Ï‹àŠz, “E—v, XV“ú, XVÒCD)" +
-								" OUTPUT inserted.Œ©ÏeID as newId, inserted.XV“ú" +
+								"INSERT INTO T_è¦‹ç©_è¦ª" +
+								" (è¦‹ç©æœŸ, è¦‹ç©ç•ªå·, è¦‹ç©æç•ª, å…ƒè£½ä½œè¦ªID, æ¡ˆä»¶å, æ¡ˆå†…æ–‡, å¾—æ„å…ˆCD, å¾—æ„å…ˆè¡¨ç¤ºå," +
+								" ç´æœŸCD, å—æ¸¡å ´æ‰€CD, å–å¼•æ¡ä»¶CD, æœ‰åŠ¹æœŸé–“CD, æå‡ºæ¸ˆCD, è¦‹ç©å¹´æœˆæ—¥, æå‡ºå¹´æœˆæ—¥," +
+								" é€šè²¨CD, è¦‹ç©é‡‘é¡, æ‘˜è¦, æ›´æ–°æ—¥, æ›´æ–°è€…CD)" +
+								" OUTPUT inserted.è¦‹ç©è¦ªID as newId, inserted.æ›´æ–°æ—¥" +
 								" SELECT" +
 								" ?, ?, ?," +
 								" CASE WHEN (?=0 AND ?=0 AND ?='' AND ?=0)" +
-								"  THEN 0" +//í—ŞA’a¶»”Ô‚ª‚·‚×‚Ä‹ó‚È‚ç©g‚ªV‹@‚Æ‚È‚é‚½‚ßAe‚È‚µ‚Æ‚µ‚Ä“o˜^
-								"  ELSE (SELECT CASE WHEN MIN(»ìeID) IS NULL THEN 0 ELSE MIN(»ìeID) END FROM T_»ì_e" +
-								" WHERE (“¾ˆÓæCD=? AND ‹@ŠB”Ô†=?) OR (»ìŠú=? AND »ì”Ô†=? AND »ì}”Ô=?)) END," +
+								"  THEN 0" +//ç¨®é¡ã€èª•ç”Ÿè£½ç•ªãŒã™ã¹ã¦ç©ºãªã‚‰è‡ªèº«ãŒæ–°æ©Ÿã¨ãªã‚‹ãŸã‚ã€è¦ªãªã—ã¨ã—ã¦ç™»éŒ²
+								"  ELSE (SELECT CASE WHEN MIN(è£½ä½œè¦ªID) IS NULL THEN 0 ELSE MIN(è£½ä½œè¦ªID) END FROM T_è£½ä½œ_è¦ª" +
+								" WHERE (å¾—æ„å…ˆCD=? AND æ©Ÿæ¢°ç•ªå·=?) OR (è£½ä½œæœŸ=? AND è£½ä½œç•ªå·=? AND è£½ä½œæç•ª=?)) END," +
 								" ?, ?, ?, ?, ?, ?, ?, ?, ?, ?," +
 								" ?, ?, ?, ?, ?, ?");
 						int i = 1;
-						ps.setInt(i, estimatePer); i++;//Œ©ÏŠú
-						ps.setInt(i, estimateNum); i++;//Œ©Ï”Ô†
-						ps.setString(i, summaryDTO.getStr(4)); i++;//Œ©Ï}”Ô
-						//Œ³»ìeIDƒTƒuƒNƒGƒŠ---------------------------------
-						ps.setInt(i, summaryDTO.getInt(18)); i++;//’a¶Šú
-						ps.setInt(i, summaryDTO.getInt(19)); i++;//’a¶”Ô†
-						ps.setString(i, summaryDTO.getStr(14)); i++;//’a¶}”Ô
-						ps.setInt(i, summaryDTO.getInt(2)); i++;//”[“ü‹@EEE‚±‚ê‚ç‚ª“ü—Í‚³‚ê‚Ä‚¢‚È‚¯‚ê‚Î0A“ü—Í‚³‚ê‚Ä‚¢‚ê‚Î‚»‚êi“ü—Í‚Éˆê’v‚·‚éƒf[ƒ^‚ª‚È‚¯‚ê‚Î0)
-						ps.setInt(i, summaryDTO.getInt(22)); i++;//w“üÒCD
-						ps.setInt(i, summaryDTO.getInt(2) == 0 ? -1 : summaryDTO.getInt(2)); i++;//”[“ü‹@EEE‚±‚ê‚ª0‚¾‚Æƒqƒbƒg‚µ‚Ä‚µ‚Ü‚¤‚Ì‚ÅA-1‚É‚·‚é
-						ps.setInt(i, summaryDTO.getInt(18)); i++;//’a¶Šú
-						ps.setInt(i, summaryDTO.getInt(19)); i++;//’a¶”Ô†
-						ps.setString(i, summaryDTO.getStr(14)); i++;//’a¶}”Ô
+						ps.setInt(i, estimatePer); i++;//è¦‹ç©æœŸ
+						ps.setInt(i, estimateNum); i++;//è¦‹ç©ç•ªå·
+						ps.setString(i, summaryDTO.getStr(4)); i++;//è¦‹ç©æç•ª
+						//å…ƒè£½ä½œè¦ªIDã‚µãƒ–ã‚¯ã‚¨ãƒª---------------------------------
+						ps.setInt(i, summaryDTO.getInt(18)); i++;//èª•ç”ŸæœŸ
+						ps.setInt(i, summaryDTO.getInt(19)); i++;//èª•ç”Ÿç•ªå·
+						ps.setString(i, summaryDTO.getStr(14)); i++;//èª•ç”Ÿæç•ª
+						ps.setInt(i, summaryDTO.getInt(2)); i++;//ç´å…¥æ©Ÿãƒ»ãƒ»ãƒ»ã“ã‚Œã‚‰ãŒå…¥åŠ›ã•ã‚Œã¦ã„ãªã‘ã‚Œã°0ã€å…¥åŠ›ã•ã‚Œã¦ã„ã‚Œã°ãã‚Œï¼ˆå…¥åŠ›ã«ä¸€è‡´ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãŒãªã‘ã‚Œã°0)
+						ps.setInt(i, summaryDTO.getInt(22)); i++;//è³¼å…¥è€…CD
+						ps.setInt(i, summaryDTO.getInt(2) == 0 ? -1 : summaryDTO.getInt(2)); i++;//ç´å…¥æ©Ÿãƒ»ãƒ»ãƒ»ã“ã‚ŒãŒ0ã ã¨ãƒ’ãƒƒãƒˆã—ã¦ã—ã¾ã†ã®ã§ã€-1ã«ã™ã‚‹
+						ps.setInt(i, summaryDTO.getInt(18)); i++;//èª•ç”ŸæœŸ
+						ps.setInt(i, summaryDTO.getInt(19)); i++;//èª•ç”Ÿç•ªå·
+						ps.setString(i, summaryDTO.getStr(14)); i++;//èª•ç”Ÿæç•ª
 						//-----------------------------------------------------
-						ps.setString(i, summaryDTO.getStr(2)); i++;//ˆÄŒ–¼
-						ps.setString(i, summaryDTO.getStr(15)); i++;//ˆÄ“à•¶
-						ps.setInt(i, summaryDTO.getInt(0)); i++;//“¾ˆÓæCD
-						ps.setString(i, summaryDTO.getStr(0)); i++;//“¾ˆÓæ•\¦–¼
-//						ps.setInt(i, summaryDTO.getInt(5)); i++;//ŒÂlCD
-//						ps.setInt(i, summaryDTO.getInt(6)); i++;//ˆË—Šè’iCD
-						ps.setInt(i, deadline); i++;//”[ŠúCD
-						ps.setInt(i, place); i++;//ó“nêŠCD
-						ps.setInt(i, terms); i++;//æˆøğŒCD
-						ps.setInt(i, validity); i++;//—LŒøŠúŠÔCD
-						ps.setInt(i, summaryDTO.getInt(7)); i++;//’ñoÏCD
-//						ps.setDate(i, summaryDTO.getDate(0)); i++;//ˆË—Š”NŒ“ú
-						ps.setDate(i, summaryDTO.getDate(1)); i++;//Œ©Ï”NŒ“ú
-						ps.setDate(i, summaryDTO.getDate(2)); i++;//’ño”NŒ“ú
-						ps.setInt(i, summaryDTO.getInt(8)); i++;//’Ê‰İCD
-						ps.setInt(i, summaryDTO.getInt(9)); i++;//Œ©Ï‹àŠz
-						ps.setString(i, summaryDTO.getStr(9)); i++;//“E—v
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//XV“ú
-						ps.setInt(i, 0); i++;//XVÒCD
+						ps.setString(i, summaryDTO.getStr(2)); i++;//æ¡ˆä»¶å
+						ps.setString(i, summaryDTO.getStr(15)); i++;//æ¡ˆå†…æ–‡
+						ps.setInt(i, summaryDTO.getInt(0)); i++;//å¾—æ„å…ˆCD
+						ps.setString(i, summaryDTO.getStr(0)); i++;//å¾—æ„å…ˆè¡¨ç¤ºå
+//						ps.setInt(i, summaryDTO.getInt(5)); i++;//å€‹äººCD
+//						ps.setInt(i, summaryDTO.getInt(6)); i++;//ä¾é ¼æ‰‹æ®µCD
+						ps.setInt(i, deadline); i++;//ç´æœŸCD
+						ps.setInt(i, place); i++;//å—æ¸¡å ´æ‰€CD
+						ps.setInt(i, terms); i++;//å–å¼•æ¡ä»¶CD
+						ps.setInt(i, validity); i++;//æœ‰åŠ¹æœŸé–“CD
+						ps.setInt(i, summaryDTO.getInt(7)); i++;//æå‡ºæ¸ˆCD
+//						ps.setDate(i, summaryDTO.getDate(0)); i++;//ä¾é ¼å¹´æœˆæ—¥
+						ps.setDate(i, summaryDTO.getDate(1)); i++;//è¦‹ç©å¹´æœˆæ—¥
+						ps.setDate(i, summaryDTO.getDate(2)); i++;//æå‡ºå¹´æœˆæ—¥
+						ps.setInt(i, summaryDTO.getInt(8)); i++;//é€šè²¨CD
+						ps.setInt(i, summaryDTO.getInt(9)); i++;//è¦‹ç©é‡‘é¡
+						ps.setString(i, summaryDTO.getStr(9)); i++;//æ‘˜è¦
+						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//æ›´æ–°æ—¥
+						ps.setInt(i, 0); i++;//æ›´æ–°è€…CD
 						boolean isResultSet = ps.execute();
 						int   updateCount = 0;
 						while (true) {
@@ -338,89 +338,89 @@ public class EstimateRegistration extends GenericServlet {
 						   }
 						   isResultSet = ps.getMoreResults();
 						}
-						//»ì“`•[‚ªì¬‚³‚ê‚Ä‚¢‚½‚çAT_»ì_eƒe[ƒuƒ‹‚ÌŒ©ÏeID‚ğXV‚·‚éi‹Œd—lj
+						//è£½ä½œä¼ç¥¨ãŒä½œæˆã•ã‚Œã¦ã„ãŸã‚‰ã€T_è£½ä½œ_è¦ªãƒ†ãƒ¼ãƒ–ãƒ«ã®è¦‹ç©è¦ªIDã‚’æ›´æ–°ã™ã‚‹ï¼ˆæ—§ä»•æ§˜ï¼‰
 						if(productID != 0) {
-							ps = c.prepareStatement("UPDATE T_»ì_e SET Œ©ÏeID=? WHERE »ìeID=?");
-							ps.setInt(1, estimateID);//Œ©ÏeID
+							ps = c.prepareStatement("UPDATE T_è£½ä½œ_è¦ª SET è¦‹ç©è¦ªID=? WHERE è£½ä½œè¦ªID=?");
+							ps.setInt(1, estimateID);//è¦‹ç©è¦ªID
 							ps.setInt(2, productID);
 							ps.executeUpdate();
-							//Vd—l
-							ps = c.prepareStatement("INSERT INTO T_Œ©Ï»ì VALUES(?,?)");
+							//æ–°ä»•æ§˜
+							ps = c.prepareStatement("INSERT INTO T_è¦‹ç©è£½ä½œ VALUES(?,?)");
 							ps.setInt(1, estimateID);
 							ps.setInt(2, productID);
 							ps.executeUpdate();
 						}
 					} catch(SQLException ex) {
 						isError = true;
-						err.append(className + "ƒe[ƒuƒ‹uT_Œ©Ï_ev‚ÌXV‚É¸”s‚µ‚Ü‚µ‚½\n");
+						err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_è¦‹ç©_è¦ªã€ã®æ›´æ–°ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 
-				} else {//Šù‘¶Œ©Ï‘XV
+				} else {//æ—¢å­˜è¦‹ç©æ›¸æ›´æ–°
 					try {
-						ps = c.prepareStatement("UPDATE T_Œ©Ï_e SET" +
-								" Œ©ÏŠú=?, Œ©Ï”Ô†=?, Œ©Ï}”Ô=?," +
-								" Œ³»ìeID=" +
+						ps = c.prepareStatement("UPDATE T_è¦‹ç©_è¦ª SET" +
+								" è¦‹ç©æœŸ=?, è¦‹ç©ç•ªå·=?, è¦‹ç©æç•ª=?," +
+								" å…ƒè£½ä½œè¦ªID=" +
 
 								" CASE WHEN (?=0 AND ?=0 AND ?='' AND ?=0)" +
-								"  THEN 0" +//í—ŞA’a¶»”Ô‚ª‚·‚×‚Ä‹ó‚È‚ç©g‚ªV‹@‚Æ‚È‚é‚½‚ßAe‚È‚µ‚Æ‚µ‚Ä“o˜^
-								"  ELSE (SELECT CASE WHEN MIN(»ìeID) IS NULL THEN 0 ELSE MIN(»ìeID) END FROM T_»ì_e" +
-								" WHERE (“¾ˆÓæCD=? AND ‹@ŠB”Ô†=?) OR (»ìŠú=? AND »ì”Ô†=? AND »ì}”Ô=?)) END," +
+								"  THEN 0" +//ç¨®é¡ã€èª•ç”Ÿè£½ç•ªãŒã™ã¹ã¦ç©ºãªã‚‰è‡ªèº«ãŒæ–°æ©Ÿã¨ãªã‚‹ãŸã‚ã€è¦ªãªã—ã¨ã—ã¦ç™»éŒ²
+								"  ELSE (SELECT CASE WHEN MIN(è£½ä½œè¦ªID) IS NULL THEN 0 ELSE MIN(è£½ä½œè¦ªID) END FROM T_è£½ä½œ_è¦ª" +
+								" WHERE (å¾—æ„å…ˆCD=? AND æ©Ÿæ¢°ç•ªå·=?) OR (è£½ä½œæœŸ=? AND è£½ä½œç•ªå·=? AND è£½ä½œæç•ª=?)) END," +
 
-								" ˆÄŒ–¼=?, ˆÄ“à•¶=?, “¾ˆÓæCD=?, “¾ˆÓæ•\¦–¼=?," +
-								" ”[ŠúCD=?, ó“nêŠCD=?, æˆøğŒCD=?, —LŒøŠúŠÔCD=?, ’ñoÏCD=?, Œ©Ï”NŒ“ú=?, ’ño”NŒ“ú=?," +
-								" ’Ê‰İCD=?, Œ©Ï‹àŠz=?, “E—v=?, XV“ú=?, XVÒCD=? WHERE Œ©ÏeID=?");
+								" æ¡ˆä»¶å=?, æ¡ˆå†…æ–‡=?, å¾—æ„å…ˆCD=?, å¾—æ„å…ˆè¡¨ç¤ºå=?," +
+								" ç´æœŸCD=?, å—æ¸¡å ´æ‰€CD=?, å–å¼•æ¡ä»¶CD=?, æœ‰åŠ¹æœŸé–“CD=?, æå‡ºæ¸ˆCD=?, è¦‹ç©å¹´æœˆæ—¥=?, æå‡ºå¹´æœˆæ—¥=?," +
+								" é€šè²¨CD=?, è¦‹ç©é‡‘é¡=?, æ‘˜è¦=?, æ›´æ–°æ—¥=?, æ›´æ–°è€…CD=? WHERE è¦‹ç©è¦ªID=?");
 						int i = 1;
 						for(int g = 0; g < 18; g++)
-						ps.setInt(i, estimatePer); i++;//Œ©ÏŠú
-						ps.setInt(i, estimateNum); i++;//Œ©Ï”Ô†
-						ps.setString(i, summaryDTO.getStr(4)); i++;//Œ©Ï}”Ô
-						//Œ³»ìeIDƒTƒuƒNƒGƒŠ---------------------------------
-						ps.setInt(i, summaryDTO.getInt(18)); i++;//’a¶Šú
-						ps.setInt(i, summaryDTO.getInt(19)); i++;//’a¶”Ô†
-						ps.setString(i, summaryDTO.getStr(14)); i++;//’a¶}”Ô
-						ps.setInt(i, summaryDTO.getInt(2)); i++;//”[“ü‹@EEE‚±‚ê‚ç‚ª“ü—Í‚³‚ê‚Ä‚¢‚È‚¯‚ê‚Î0A“ü—Í‚³‚ê‚Ä‚¢‚ê‚Î‚»‚êi“ü—Í‚Éˆê’v‚·‚éƒf[ƒ^‚ª‚È‚¯‚ê‚Î0)
-						ps.setInt(i, summaryDTO.getInt(22)); i++;//w“üÒCD
-						ps.setInt(i, summaryDTO.getInt(2) == 0 ? -1 : summaryDTO.getInt(2)); i++;//”[“ü‹@EEE‚±‚ê‚ª0‚¾‚Æƒqƒbƒg‚µ‚Ä‚µ‚Ü‚¤‚Ì‚ÅA-1‚É‚·‚é
-						ps.setInt(i, summaryDTO.getInt(18)); i++;//’a¶Šú
-						ps.setInt(i, summaryDTO.getInt(19)); i++;//’a¶”Ô†
-						ps.setString(i, summaryDTO.getStr(14)); i++;//’a¶}”Ô
+						ps.setInt(i, estimatePer); i++;//è¦‹ç©æœŸ
+						ps.setInt(i, estimateNum); i++;//è¦‹ç©ç•ªå·
+						ps.setString(i, summaryDTO.getStr(4)); i++;//è¦‹ç©æç•ª
+						//å…ƒè£½ä½œè¦ªIDã‚µãƒ–ã‚¯ã‚¨ãƒª---------------------------------
+						ps.setInt(i, summaryDTO.getInt(18)); i++;//èª•ç”ŸæœŸ
+						ps.setInt(i, summaryDTO.getInt(19)); i++;//èª•ç”Ÿç•ªå·
+						ps.setString(i, summaryDTO.getStr(14)); i++;//èª•ç”Ÿæç•ª
+						ps.setInt(i, summaryDTO.getInt(2)); i++;//ç´å…¥æ©Ÿãƒ»ãƒ»ãƒ»ã“ã‚Œã‚‰ãŒå…¥åŠ›ã•ã‚Œã¦ã„ãªã‘ã‚Œã°0ã€å…¥åŠ›ã•ã‚Œã¦ã„ã‚Œã°ãã‚Œï¼ˆå…¥åŠ›ã«ä¸€è‡´ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãŒãªã‘ã‚Œã°0)
+						ps.setInt(i, summaryDTO.getInt(22)); i++;//è³¼å…¥è€…CD
+						ps.setInt(i, summaryDTO.getInt(2) == 0 ? -1 : summaryDTO.getInt(2)); i++;//ç´å…¥æ©Ÿãƒ»ãƒ»ãƒ»ã“ã‚ŒãŒ0ã ã¨ãƒ’ãƒƒãƒˆã—ã¦ã—ã¾ã†ã®ã§ã€-1ã«ã™ã‚‹
+						ps.setInt(i, summaryDTO.getInt(18)); i++;//èª•ç”ŸæœŸ
+						ps.setInt(i, summaryDTO.getInt(19)); i++;//èª•ç”Ÿç•ªå·
+						ps.setString(i, summaryDTO.getStr(14)); i++;//èª•ç”Ÿæç•ª
 						//-----------------------------------------------------
-						ps.setString(i, summaryDTO.getStr(2)); i++;//ˆÄŒ–¼
-						ps.setString(i, summaryDTO.getStr(15)); i++;//ˆÄ“à•¶
-						ps.setInt(i, summaryDTO.getInt(0)); i++;//“¾ˆÓæCD
-						ps.setString(i, summaryDTO.getStr(0)); i++;//“¾ˆÓæ•\¦–¼
-//						ps.setInt(i, summaryDTO.getInt(5)); i++;//ŒÂlCD
-//						ps.setInt(i, summaryDTO.getInt(6)); i++;//ˆË—Šè’iCD
-						ps.setInt(i, deadline); i++;//”[ŠúCD
-						ps.setInt(i, place); i++;//ó“nêŠCD
-						ps.setInt(i, terms); i++;//æˆøğŒCD
-						ps.setInt(i, validity); i++;//—LŒøŠúŠÔCD
-						ps.setInt(i, summaryDTO.getInt(7)); i++;//’ñoÏCD
-//						ps.setDate(i, summaryDTO.getDate(0)); i++;//ˆË—Š”NŒ“ú
-						ps.setDate(i, summaryDTO.getDate(1)); i++;//Œ©Ï”NŒ“ú
-						ps.setDate(i, summaryDTO.getDate(2)); i++;//’ño”NŒ“ú
-						ps.setInt(i, summaryDTO.getInt(8)); i++;//’Ê‰İCD
-						ps.setInt(i, summaryDTO.getInt(9)); i++;//Œ©Ï‹àŠz
-						ps.setString(i, summaryDTO.getStr(9)); i++;//“E—v
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//XV“ú
-						ps.setInt(i, 0); i++;//XVÒCD
+						ps.setString(i, summaryDTO.getStr(2)); i++;//æ¡ˆä»¶å
+						ps.setString(i, summaryDTO.getStr(15)); i++;//æ¡ˆå†…æ–‡
+						ps.setInt(i, summaryDTO.getInt(0)); i++;//å¾—æ„å…ˆCD
+						ps.setString(i, summaryDTO.getStr(0)); i++;//å¾—æ„å…ˆè¡¨ç¤ºå
+//						ps.setInt(i, summaryDTO.getInt(5)); i++;//å€‹äººCD
+//						ps.setInt(i, summaryDTO.getInt(6)); i++;//ä¾é ¼æ‰‹æ®µCD
+						ps.setInt(i, deadline); i++;//ç´æœŸCD
+						ps.setInt(i, place); i++;//å—æ¸¡å ´æ‰€CD
+						ps.setInt(i, terms); i++;//å–å¼•æ¡ä»¶CD
+						ps.setInt(i, validity); i++;//æœ‰åŠ¹æœŸé–“CD
+						ps.setInt(i, summaryDTO.getInt(7)); i++;//æå‡ºæ¸ˆCD
+//						ps.setDate(i, summaryDTO.getDate(0)); i++;//ä¾é ¼å¹´æœˆæ—¥
+						ps.setDate(i, summaryDTO.getDate(1)); i++;//è¦‹ç©å¹´æœˆæ—¥
+						ps.setDate(i, summaryDTO.getDate(2)); i++;//æå‡ºå¹´æœˆæ—¥
+						ps.setInt(i, summaryDTO.getInt(8)); i++;//é€šè²¨CD
+						ps.setInt(i, summaryDTO.getInt(9)); i++;//è¦‹ç©é‡‘é¡
+						ps.setString(i, summaryDTO.getStr(9)); i++;//æ‘˜è¦
+						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++;//æ›´æ–°æ—¥
+						ps.setInt(i, 0); i++;//æ›´æ–°è€…CD
 						ps.setInt(i, estimateID);//ID
 						ps.executeUpdate();
-						//q‘·‚Ìƒf[ƒ^XV‚ÍAíœ¨’Ç‰Á‚É‚Ä
-						ps = c.prepareStatement("DELETE FROM T_Œ©Ï_q WHERE Œ©ÏeID=?");
+						//å­å­«ã®ãƒ‡ãƒ¼ã‚¿æ›´æ–°ã¯ã€å‰Šé™¤â†’è¿½åŠ ã«ã¦
+						ps = c.prepareStatement("DELETE FROM T_è¦‹ç©_å­ WHERE è¦‹ç©è¦ªID=?");
 						ps.setInt(1, estimateID);
 						ps.executeUpdate();
-						ps = c.prepareStatement("DELETE FROM T_Œ©Ï_Ş—¿ WHERE Œ©ÏeID=?");
+						ps = c.prepareStatement("DELETE FROM T_è¦‹ç©_ææ–™ WHERE è¦‹ç©è¦ªID=?");
 						ps.setInt(1, estimateID);
 						ps.executeUpdate();
-						ps = c.prepareStatement("DELETE FROM T_Œ©Ï_‰ÁH WHERE Œ©ÏeID=?");
+						ps = c.prepareStatement("DELETE FROM T_è¦‹ç©_åŠ å·¥ WHERE è¦‹ç©è¦ªID=?");
 						ps.setInt(1, estimateID);
 						ps.executeUpdate();
 					} catch(SQLException ex) {
 						isError = true;
 						ex.printStackTrace();
-						err.append(className + "Œ©Ïƒe[ƒuƒ‹‚Ìíœ‚É¸”s‚µ‚Ü‚µ‚½\n");
+						err.append(className + "è¦‹ç©ãƒ†ãƒ¼ãƒ–ãƒ«ã®å‰Šé™¤ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 				}
@@ -428,7 +428,7 @@ public class EstimateRegistration extends GenericServlet {
 				int k = 1;
 				try {
 					ps = c.prepareStatement(
-						"INSERT INTO T_Œ©Ï_q VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+						"INSERT INTO T_è¦‹ç©_å­ VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 					for(Vector<Object> v : summaryDTO.getVector(0)) {
 						int tag = (Integer)v.get(1);
 						if(tag != 0) {
@@ -436,26 +436,26 @@ public class EstimateRegistration extends GenericServlet {
 							int i = 1;
 							int j = 2;
 							ps.setInt(i, k); i++;//ID
-							ps.setInt(i, estimateID); i++;//Œ©ÏeID
-							ps.setInt(i, tag); i++;//•\¦CD
-							ps.setString(i, (String)v.get(j)); i++; j++;//–¼Ì
-							ps.setBoolean(i, (Boolean)v.get(j)); i++; j++;//ŠeFLG
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//”—Ê
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//”—Ê’PˆÊCD
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//’P‰¿
-							ps.setInt(i, (Integer)v.get(j)); i++; j++;//’ñ¦Šz
-							ps.setString(i, (String)v.get(j)); i++; j++;//}”Ô
-							ps.setString(i, (String)v.get(j));//”õl
+							ps.setInt(i, estimateID); i++;//è¦‹ç©è¦ªID
+							ps.setInt(i, tag); i++;//è¡¨ç¤ºCD
+							ps.setString(i, (String)v.get(j)); i++; j++;//åç§°
+							ps.setBoolean(i, (Boolean)v.get(j)); i++; j++;//å„FLG
+							ps.setInt(i, (Integer)v.get(j)); i++; j++;//æ•°é‡
+							ps.setInt(i, (Integer)v.get(j)); i++; j++;//æ•°é‡å˜ä½CD
+							ps.setInt(i, (Integer)v.get(j)); i++; j++;//å˜ä¾¡
+							ps.setInt(i, (Integer)v.get(j)); i++; j++;//æç¤ºé¡
+							ps.setString(i, (String)v.get(j)); i++; j++;//å›³ç•ª
+							ps.setString(i, (String)v.get(j));//å‚™è€ƒ
 							ps.addBatch();
 							k++;
 						}
 					}
 					int[] updateCounts = ps.executeBatch();
-					lg.info("T_Œ©Ï_q‚Í" + updateCounts.length + "Œˆ—‚³‚ê‚Ü‚µ‚½B");
+					lg.info("T_è¦‹ç©_å­ã¯" + updateCounts.length + "ä»¶å‡¦ç†ã•ã‚Œã¾ã—ãŸã€‚");
 				} catch(SQLException ex) {
 					isError = true;
 					ex.printStackTrace();
-					err.append(className + "ƒe[ƒuƒ‹uT_Œ©Ï_qv‚ÌXV‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_è¦‹ç©_å­ã€ã®æ›´æ–°ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 
@@ -463,9 +463,9 @@ public class EstimateRegistration extends GenericServlet {
 				int l = 1;
 				try {
 					PreparedStatement ps1 = c.prepareStatement(
-						"INSERT INTO T_Œ©Ï_‰ÁH VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+						"INSERT INTO T_è¦‹ç©_åŠ å·¥ VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 					PreparedStatement ps2 = c.prepareStatement(
-						"INSERT INTO T_Œ©Ï_Ş—¿ VALUES(" +
+						"INSERT INTO T_è¦‹ç©_ææ–™ VALUES(" +
 						" ?, ?, ?, ?, ?, ?, ?, ?, ?, ?," +
 						" ?, ?, ?, ?, ?, ?)");
 					for(int key : keys) {
@@ -476,42 +476,42 @@ public class EstimateRegistration extends GenericServlet {
 
 								if((Integer)v.get(1) != 0 || !((String)v.get(4)).equals("")) {
 									if(((Integer)v.get(1)).intValue() > 100) {
-										//‰ÁH“™
+										//åŠ å·¥ç­‰
 										int i = 1;
 
 										ps1.setInt(i, m); i++;//ID
-										ps1.setInt(i, l); i++;//qID
-										ps1.setInt(i, estimateID); i++;//eID
-										ps1.setInt(i, (Integer)v.get(1)); i++;//‘å•ª—Ş
-										ps1.setInt(i, (v.get(2) == null) ? 0 : (Integer)v.get(2)); i++;//‰ÁHCD
-										ps1.setInt(i, (v.get(3) == null) ? 0 : (Integer)v.get(3)); i++;//‰ÁHCD
-										ps1.setString(i, (String)v.get(4)); i++;//–¼Ì
-										ps1.setInt(i, (Integer)v.get(5)); i++;//’P‰¿
-										ps1.setDouble(i, (Double)v.get(6)); i++;//”—Ê
-										ps1.setDouble(i, (Double)v.get(8)); i++;//Š|—¦
-										ps1.setString(i, (String)v.get(15));//”õl
+										ps1.setInt(i, l); i++;//å­ID
+										ps1.setInt(i, estimateID); i++;//è¦ªID
+										ps1.setInt(i, (Integer)v.get(1)); i++;//å¤§åˆ†é¡
+										ps1.setInt(i, (v.get(2) == null) ? 0 : (Integer)v.get(2)); i++;//åŠ å·¥CD
+										ps1.setInt(i, (v.get(3) == null) ? 0 : (Integer)v.get(3)); i++;//åŠ å·¥CD
+										ps1.setString(i, (String)v.get(4)); i++;//åç§°
+										ps1.setInt(i, (Integer)v.get(5)); i++;//å˜ä¾¡
+										ps1.setDouble(i, (Double)v.get(6)); i++;//æ•°é‡
+										ps1.setDouble(i, (Double)v.get(8)); i++;//æ›ç‡
+										ps1.setString(i, (String)v.get(15));//å‚™è€ƒ
 										ps1.addBatch();
 
 									} else {
-										//Ş—¿
+										//ææ–™
 										int i = 1;
-										ps2.setInt(i, m); i++;//‘·ID
-										ps2.setInt(i, l); i++;//qID
-										ps2.setInt(i, estimateID); i++;//eID
-										ps2.setInt(i, (v.get(1) == null) ? 0 : (Integer)v.get(1)); i++;//‘å•ª—Ş
-										ps2.setInt(i, (v.get(2) == null) ? 0 : (Integer)v.get(2)); i++;//’†•ª—Ş
-										ps2.setInt(i, (v.get(3) == null) ? 0 : (Integer)v.get(3)); i++;//¬•ª—Ş
-										ps2.setString(i, (String)v.get(4)); i++;//–¼Ì
-										ps2.setInt(i, (Integer)v.get(5)); i++;//’P‰¿
-										ps2.setDouble(i, (Double)v.get(6)); i++;//”—Ê
-										ps2.setDouble(i, (Double)v.get(8)); i++;//Š|—¦
-										ps2.setInt(i, (Integer)v.get(10)); i++;//•i”Ô
-										ps2.setDouble(i, (Double)v.get(11)); i++;//d—Ê
-										ps2.setInt(i, (Integer)v.get(12)); i++;//d“üæCD
-//										ps2.setInt(i, 0); i++;//d“üæCD
-										ps2.setBoolean(i, (Boolean)v.get(13)); i++;//d“üŒ©ÏFLG
-										ps2.setString(i, (String)v.get(14)); i++;//d“ü”[Šú
-										ps2.setString(i, (String)v.get(15));//”õl
+										ps2.setInt(i, m); i++;//å­«ID
+										ps2.setInt(i, l); i++;//å­ID
+										ps2.setInt(i, estimateID); i++;//è¦ªID
+										ps2.setInt(i, (v.get(1) == null) ? 0 : (Integer)v.get(1)); i++;//å¤§åˆ†é¡
+										ps2.setInt(i, (v.get(2) == null) ? 0 : (Integer)v.get(2)); i++;//ä¸­åˆ†é¡
+										ps2.setInt(i, (v.get(3) == null) ? 0 : (Integer)v.get(3)); i++;//å°åˆ†é¡
+										ps2.setString(i, (String)v.get(4)); i++;//åç§°
+										ps2.setInt(i, (Integer)v.get(5)); i++;//å˜ä¾¡
+										ps2.setDouble(i, (Double)v.get(6)); i++;//æ•°é‡
+										ps2.setDouble(i, (Double)v.get(8)); i++;//æ›ç‡
+										ps2.setInt(i, (Integer)v.get(10)); i++;//å“ç•ª
+										ps2.setDouble(i, (Double)v.get(11)); i++;//é‡é‡
+										ps2.setInt(i, (Integer)v.get(12)); i++;//ä»•å…¥å…ˆCD
+//										ps2.setInt(i, 0); i++;//ä»•å…¥å…ˆCD
+										ps2.setBoolean(i, (Boolean)v.get(13)); i++;//ä»•å…¥è¦‹ç©FLG
+										ps2.setString(i, (String)v.get(14)); i++;//ä»•å…¥ç´æœŸ
+										ps2.setString(i, (String)v.get(15));//å‚™è€ƒ
 										ps2.addBatch();
 
 									}
@@ -525,11 +525,11 @@ public class EstimateRegistration extends GenericServlet {
 					int[] updateCounts2 = ps2.executeBatch();
 
 
-					lg.info("T_Œ©Ï_‰ÁH‚Í" + updateCounts1.length + "Œˆ—‚³‚ê‚Ü‚µ‚½B");
-					lg.info("T_Œ©Ï_Ş—¿‚Í" + updateCounts2.length + "Œˆ—‚³‚ê‚Ü‚µ‚½B");
+					lg.info("T_è¦‹ç©_åŠ å·¥ã¯" + updateCounts1.length + "ä»¶å‡¦ç†ã•ã‚Œã¾ã—ãŸã€‚");
+					lg.info("T_è¦‹ç©_ææ–™ã¯" + updateCounts2.length + "ä»¶å‡¦ç†ã•ã‚Œã¾ã—ãŸã€‚");
 				} catch(SQLException ex) {
 					ex.printStackTrace();
-					err.append(className + "ƒe[ƒuƒ‹uT_Œ©Ï_‘·v‚ÌXV‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_è¦‹ç©_å­«ã€ã®æ›´æ–°ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 			}
@@ -543,7 +543,7 @@ public class EstimateRegistration extends GenericServlet {
 				} catch(SQLException ex) {
 					isError = true;
 					ex.printStackTrace();
-					err.append(className + "ƒRƒ~ƒbƒg‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append(className + "ã‚³ãƒŸãƒƒãƒˆã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 			}
@@ -557,13 +557,13 @@ public class EstimateRegistration extends GenericServlet {
 					st = c.createStatement();
 					st.executeUpdate("ROLLBACK");
 				} catch(SQLException ex) {
-					err.append(className + "ƒ[ƒ‹ƒoƒbƒN‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append(className + "ãƒ­ãƒ¼ãƒ«ãƒãƒƒã‚¯ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 			}
 		}
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

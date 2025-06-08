@@ -41,87 +41,87 @@ public class GetOrderSummary extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof Number) {
 					id = ((Number)obj).intValue();
 				} else {
-					err.append(className + "readObject‚ªSetSummaryDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªSetSummaryDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒSetSummaryDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒSetSummaryDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 			try {
-				ps = c.prepareStatement("SELECT * FROM T_İŒÉ_q s LEFT OUTER JOIN T_w’è”[•i‘ slip " +
-						"ON s.”[•i‘”Ô†=slip.ID WHERE İŒÉeID=? ORDER BY s.ID");
+				ps = c.prepareStatement("SELECT * FROM T_åœ¨åº«_å­ s LEFT OUTER JOIN T_æŒ‡å®šç´å“æ›¸ slip " +
+						"ON s.ç´å“æ›¸ç•ªå·=slip.ID WHERE åœ¨åº«è¦ªID=? ORDER BY s.ID");
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					Vector<Object> line = new Vector<Object>();
-					line.add(rs.getInt("•\¦CD"));
-					line.add(rs.getInt("‘å•ª—ŞCD"));
-					line.add(rs.getInt("’†•ª—ŞCD"));
-					line.add(rs.getInt("¬•ª—ŞCD"));
-					line.add(rs.getString("Ş—¿•i–¼"));
-					line.add(rs.getBoolean("ŠeFLG"));
-					line.add(rs.getInt("”—Ê"));
-					line.add(rs.getInt("”—Ê’PˆÊCD"));
-					line.add(rs.getDouble("d—Ê’·‚³"));
-					line.add(rs.getInt("’P‰¿"));
-					line.add(rs.getInt("‹àŠz"));
-					line.add(rs.getString("”õl"));
-					line.add(rs.getDate("“üŒÉ”NŒ“ú"));
-					line.add(rs.getDate("“üŒÉ”NŒ“ú") != null);
-					line.add(rs.getInt("”[•i‘”Ô†"));
-					line.add(rs.getDate("”[•i‘“ú"));
-					line.add(rs.getInt("Á”ïÅ"));
-					line.add(rs.getInt("”[•i‘”Ô†") != 0);
-					line.add(rs.getBoolean("YFLG"));
+					line.add(rs.getInt("è¡¨ç¤ºCD"));
+					line.add(rs.getInt("å¤§åˆ†é¡CD"));
+					line.add(rs.getInt("ä¸­åˆ†é¡CD"));
+					line.add(rs.getInt("å°åˆ†é¡CD"));
+					line.add(rs.getString("ææ–™å“å"));
+					line.add(rs.getBoolean("å„FLG"));
+					line.add(rs.getInt("æ•°é‡"));
+					line.add(rs.getInt("æ•°é‡å˜ä½CD"));
+					line.add(rs.getDouble("é‡é‡é•·ã•"));
+					line.add(rs.getInt("å˜ä¾¡"));
+					line.add(rs.getInt("é‡‘é¡"));
+					line.add(rs.getString("å‚™è€ƒ"));
+					line.add(rs.getDate("å…¥åº«å¹´æœˆæ—¥"));
+					line.add(rs.getDate("å…¥åº«å¹´æœˆæ—¥") != null);
+					line.add(rs.getInt("ç´å“æ›¸ç•ªå·"));
+					line.add(rs.getDate("ç´å“æ›¸æ—¥"));
+					line.add(rs.getInt("æ¶ˆè²»ç¨"));
+					line.add(rs.getInt("ç´å“æ›¸ç•ªå·") != 0);
+					line.add(rs.getBoolean("ã€†FLG"));
 					data.add(line);
 				}
 
-				ps = c.prepareStatement("SELECT İŒÉeID,’•¶Šú,’•¶”Ô†,’•¶}”Ô," +
-					 " “`•[”Ô†,s.d“üæCD,’•¶”NŒ“ú,w’è”[Šú," +
-					 " “E—v,”[“üæw’è," +
+				ps = c.prepareStatement("SELECT åœ¨åº«è¦ªID,æ³¨æ–‡æœŸ,æ³¨æ–‡ç•ªå·,æ³¨æ–‡æç•ª," +
+					 " ä¼ç¥¨ç•ªå·,s.ä»•å…¥å…ˆCD,æ³¨æ–‡å¹´æœˆæ—¥,æŒ‡å®šç´æœŸ," +
+					 " æ‘˜è¦,ç´å…¥å…ˆæŒ‡å®š," +
 					 " CASE" +
-						" WHEN í•ÊCD = 1 THEN '‡Š'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						" WHEN í•ÊCD = 2 THEN ‰ïĞ–¼+'‡Š' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						" WHEN í•ÊCD = 3 THEN '‡‹'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						" WHEN í•ÊCD = 4 THEN ‰ïĞ–¼+'‡‹' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						" ELSE ‰ïĞ–¼ END AS Ğ–¼" +
-					 " FROM T_İŒÉ_e s" +
-					 " LEFT OUTER JOIN M_–@l c" +
-					 " ON s.d“üæCD=c.d“üæCD" +
-					 " WHERE İŒÉeID=?");
+						" WHEN ç¨®åˆ¥CD = 1 THEN 'ãˆ±'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						" WHEN ç¨®åˆ¥CD = 2 THEN ä¼šç¤¾å+'ãˆ±' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						" WHEN ç¨®åˆ¥CD = 3 THEN 'ãˆ²'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						" WHEN ç¨®åˆ¥CD = 4 THEN ä¼šç¤¾å+'ãˆ²' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						" ELSE ä¼šç¤¾å END AS ç¤¾å" +
+					 " FROM T_åœ¨åº«_è¦ª s" +
+					 " LEFT OUTER JOIN M_æ³•äºº c" +
+					 " ON s.ä»•å…¥å…ˆCD=c.ä»•å…¥å…ˆCD" +
+					 " WHERE åœ¨åº«è¦ªID=?");
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					odDTO = new OrderDocumentDTO(
 					 data,
-					 rs.getString("Ğ–¼"),
-					 rs.getString("’•¶}”Ô"),
-					 rs.getString("“E—v"),
-					 rs.getString("”[“üæw’è"),
-					 rs.getInt("d“üæCD"),
-					 rs.getInt("’•¶Šú"),
-					 rs.getInt("’•¶”Ô†"),
-					 rs.getInt("“`•[”Ô†"),
-					 rs.getInt("İŒÉeID"),
-					 rs.getDate("’•¶”NŒ“ú"),
-					 rs.getDate("w’è”[Šú"),
+					 rs.getString("ç¤¾å"),
+					 rs.getString("æ³¨æ–‡æç•ª"),
+					 rs.getString("æ‘˜è¦"),
+					 rs.getString("ç´å…¥å…ˆæŒ‡å®š"),
+					 rs.getInt("ä»•å…¥å…ˆCD"),
+					 rs.getInt("æ³¨æ–‡æœŸ"),
+					 rs.getInt("æ³¨æ–‡ç•ªå·"),
+					 rs.getInt("ä¼ç¥¨ç•ªå·"),
+					 rs.getInt("åœ¨åº«è¦ªID"),
+					 rs.getDate("æ³¨æ–‡å¹´æœˆæ—¥"),
+					 rs.getDate("æŒ‡å®šç´æœŸ"),
 					 null,null);
 				}
 
 
 			} catch(SQLException ex) {
-				err.append(className + "DBƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½\n");
+				err.append(className + "DBã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}catch(Exception ex) {
@@ -129,7 +129,7 @@ public class GetOrderSummary extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

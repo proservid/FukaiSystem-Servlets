@@ -43,15 +43,15 @@ public class GetIndCandidate extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof CandidateInputDTO) {
 					CandidateInputDTO ciDTO = (CandidateInputDTO)obj;
@@ -59,21 +59,21 @@ public class GetIndCandidate extends GenericServlet {
 					key = ciDTO.getKey();
 					isValidOnly = ciDTO.isValidOnly();
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			try {
-				StringBuilder sql = new StringBuilder("SELECT i.CD, •”–¼, –ğE–¼, –¼, case when ‰ïĞ–¼ is null then '' else '(' + ‰ïĞ–¼ + ')' end AS ‰ïĞ–¼" +
-						" FROM M_ŒÂl i" +
-						" LEFT OUTER JOIN M_–@l c ON i.–@lCD=c.CD" +
-						" WHERE i.CD IS NOT NULL AND (–¼ LIKE ? OR ƒVƒƒC LIKE ? OR •”–¼+–ğE–¼ LIKE ?)");
+				StringBuilder sql = new StringBuilder("SELECT i.CD, éƒ¨ç½²å, å½¹è·å, æ°å, case when ä¼šç¤¾å is null then '' else '(' + ä¼šç¤¾å + ')' end AS ä¼šç¤¾å" +
+						" FROM M_å€‹äºº i" +
+						" LEFT OUTER JOIN M_æ³•äºº c ON i.æ³•äººCD=c.CD" +
+						" WHERE i.CD IS NOT NULL AND (æ°å LIKE ? OR ã‚·ãƒ¡ã‚¤ LIKE ? OR éƒ¨ç½²å+å½¹è·å LIKE ?)");
 				if(isValidOnly) {
-					sql.append(" AND i.—LŒøFLG='true'");
+					sql.append(" AND i.æœ‰åŠ¹FLG='true'");
 				}
 				if(key > 0) {
-					sql.append(" AND –@lCD=?");
+					sql.append(" AND æ³•äººCD=?");
 				}
 				sql.append(" ORDER BY i.CD");
 				ps = c.prepareStatement(sql.toString());
@@ -91,25 +91,25 @@ public class GetIndCandidate extends GenericServlet {
 					v.add(rs.getString("CD"));
 					StringBuilder sb = new StringBuilder();
 					/*
-					if(!rs.getString("•”–¼").equals("")) {
-						sb.append(rs.getString("•”–¼") + " ");
+					if(!rs.getString("éƒ¨ç½²å").equals("")) {
+						sb.append(rs.getString("éƒ¨ç½²å") + " ");
 					}
-					if(!rs.getString("–ğE–¼").equals("")) {
-						sb.append(rs.getString("–ğE–¼") + " ");
+					if(!rs.getString("å½¹è·å").equals("")) {
+						sb.append(rs.getString("å½¹è·å") + " ");
 					}
 					*/
-					if(!rs.getString("–¼").equals("")) {
-						sb.append(rs.getString("–¼") + " ");
+					if(!rs.getString("æ°å").equals("")) {
+						sb.append(rs.getString("æ°å") + " ");
 					}
-					sb.append(rs.getString("‰ïĞ–¼"));
+					sb.append(rs.getString("ä¼šç¤¾å"));
 					v.add(sb.toString());
 					candidate.add(v);
 				}
 			} catch(SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCodeF"+ex.getErrorCode());
-				err.append("SQLStateF"+ex.getSQLState());
-				err.append("ƒe[ƒuƒ‹uT_ƒe[ƒuƒ‹–¼v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append("ErrorCodeï¼š"+ex.getErrorCode());
+				err.append("SQLStateï¼š"+ex.getSQLState());
+				err.append("ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ãƒ†ãƒ¼ãƒ–ãƒ«åã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 				ex.printStackTrace();
 			}
@@ -120,7 +120,7 @@ public class GetIndCandidate extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

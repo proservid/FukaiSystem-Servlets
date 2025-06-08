@@ -10,9 +10,9 @@ import fukaisystem.sql.DBConnection;
 import org.apache.log4j.Logger;
 
 /**
- * ƒNƒGƒŠ‚ğÀs‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX
- * ƒNƒGƒŠÀs‚ÌŒ‹‰ÊAƒe[ƒuƒ‹‚ª‘Œ¸‚·‚é‰Â”\«‚ª‚ ‚é‚½‚ßA
- * ƒe[ƒuƒ‹ƒŠƒXƒg‚ğƒNƒ‰ƒCƒAƒ“ƒg‚É•Ô‚·‚æ‚¤‚É‚µ‚Ä‚¢‚é
+ * ã‚¯ã‚¨ãƒªã‚’å®Ÿè¡Œã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹
+ * ã‚¯ã‚¨ãƒªå®Ÿè¡Œã®çµæœã€ãƒ†ãƒ¼ãƒ–ãƒ«ãŒå¢—æ¸›ã™ã‚‹å¯èƒ½æ€§ãŒã‚ã‚‹ãŸã‚ã€
+ * ãƒ†ãƒ¼ãƒ–ãƒ«ãƒªã‚¹ãƒˆã‚’ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«è¿”ã™ã‚ˆã†ã«ã—ã¦ã„ã‚‹
  * @author kameura
  *
  */
@@ -35,7 +35,7 @@ public class QueryExecutor extends GenericServlet {
 			String sql = "";
 			int processed = 0;
 
-	//ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç“Ç‚İ‚İ
+	//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰èª­ã¿è¾¼ã¿
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			sql = (String)in.readObject();
 			in.close();
@@ -43,21 +43,21 @@ public class QueryExecutor extends GenericServlet {
 
 			if(sql.toUpperCase().startsWith("SELECT")) {
 
-			} else if(sql.toUpperCase().startsWith("EXPORT")) {//ƒGƒNƒXƒ|[ƒg
+			} else if(sql.toUpperCase().startsWith("EXPORT")) {//ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆ
 				String ip = sql.substring(7);
 				backup(true, ip, c, err);
-			} else if(sql.toUpperCase().startsWith("IMPORT")) {//ƒCƒ“ƒ|[ƒg
+			} else if(sql.toUpperCase().startsWith("IMPORT")) {//ã‚¤ãƒ³ãƒãƒ¼ãƒˆ
 				String ip = sql.substring(7);
 				backup(false, ip, c, err);
-			} else {//XVƒNƒGƒŠ
+			} else {//æ›´æ–°ã‚¯ã‚¨ãƒª
 				lg.warn("Query was sent \"" + sql + "\"");
 				try {
 					st = c.createStatement();
 					processed = st.executeUpdate(sql);
 					msg.append(processed);
-					msg.append("Œˆ—‚³‚ê‚Ü‚µ‚½B\n");
+					msg.append("ä»¶å‡¦ç†ã•ã‚Œã¾ã—ãŸã€‚\n");
 				} catch(SQLException ex) {
-					err.append("ƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B\n" + ex);
+					err.append("ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚\n" + ex);
 					lg.error("[2] " + ex);
 				}
 			}
@@ -71,12 +71,12 @@ public class QueryExecutor extends GenericServlet {
 					tableName.add(rs.getString("TABLE_NAME").trim());
 				}
 			} catch(SQLException ex) {
-				err.append("ƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B\n" + ex);
+				err.append("ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚\n" + ex);
 				lg.error("[3] " + ex);
 			}
 
 
-//ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
 			out.writeObject(new StringDTO(msg.toString(), tableName));
@@ -107,7 +107,7 @@ public class QueryExecutor extends GenericServlet {
 
 
 
-	//ƒCƒ“ƒ|[ƒgAƒGƒNƒXƒ|[ƒg
+	//ã‚¤ãƒ³ãƒãƒ¼ãƒˆã€ã‚¨ã‚¯ã‚¹ãƒãƒ¼ãƒˆ
 	public void backup(Boolean isPut, String ip, Connection c, StringBuilder err) {
 
 		Connection fromConnection = null, toConnection = null;
@@ -121,7 +121,7 @@ public class QueryExecutor extends GenericServlet {
 		try {
 			c_bk = DriverManager.getConnection(jdbc);
 		} catch(SQLException ex) {
-			err.append("ƒoƒbƒNƒAƒbƒv‹@‚ÉÚ‘±‚Å‚«‚Ü‚¹‚ñB\n" + ex);
+			err.append("ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—æ©Ÿã«æ¥ç¶šã§ãã¾ã›ã‚“ã€‚\n" + ex);
 			lg.fatal("[1] " + ex);
 		}
 
@@ -138,23 +138,23 @@ public class QueryExecutor extends GenericServlet {
 			DatabaseMetaData dmd = fromConnection.getMetaData();
 			rs_f = dmd.getTables(null, "%", "%", types);
 		} catch(SQLException ex) {
-			err.append("ƒRƒs[Œ³‚Ìƒe[ƒuƒ‹î•ñ‚ªæ“¾‚Å‚«‚Ü‚¹‚ñB\n" + ex);
+			err.append("ã‚³ãƒ”ãƒ¼å…ƒã®ãƒ†ãƒ¼ãƒ–ãƒ«æƒ…å ±ãŒå–å¾—ã§ãã¾ã›ã‚“ã€‚\n" + ex);
 			lg.error("[7] " + ex);
 		}
 
 		try {
 			while(rs_f.next()) {
 				String tableName = rs_f.getString("TABLE_NAME").trim();
-//ƒRƒs[æƒe[ƒuƒ‹íœ
+//ã‚³ãƒ”ãƒ¼å…ˆãƒ†ãƒ¼ãƒ–ãƒ«å‰Šé™¤
 				try {
 					st_t = toConnection.createStatement();///
 					st_t.executeUpdate("DROP TABLE " + tableName);///
 				} catch(SQLException ex) {
-					err.append("ƒRƒs[æ‚Ìƒe[ƒuƒ‹ " + tableName + " ‚ğíœ’†‚ÉƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B\n" + ex);
+					err.append("ã‚³ãƒ”ãƒ¼å…ˆã®ãƒ†ãƒ¼ãƒ–ãƒ« " + tableName + " ã‚’å‰Šé™¤ä¸­ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚\n" + ex);
 					lg.error("[8] " + ex);
 				}
 
-//ƒe[ƒuƒ‹‚Ì—ñ–¼‚ÆŒ^‚ğƒRƒs[
+//ãƒ†ãƒ¼ãƒ–ãƒ«ã®åˆ—åã¨å‹ã‚’ã‚³ãƒ”ãƒ¼
 				try {
 					st_f = fromConnection.createStatement();///
 					rs_f = st_f.executeQuery("SELECT * FROM " + tableName);///
@@ -187,7 +187,7 @@ public class QueryExecutor extends GenericServlet {
 					st_t = toConnection.createStatement();///
 					st_t.executeUpdate(sql);///
 
-//ƒe[ƒuƒ‹‚Ì’†g‚ğƒRƒs[
+//ãƒ†ãƒ¼ãƒ–ãƒ«ã®ä¸­èº«ã‚’ã‚³ãƒ”ãƒ¼
 					toConnection.setAutoCommit(false);///
 
 					StringBuilder sqlData = new StringBuilder();///
@@ -240,16 +240,16 @@ public class QueryExecutor extends GenericServlet {
 					rs_f.close();///
 					int[] updateCounts = ps.executeBatch();///
 					toConnection.commit();///
-					toConnection.setAutoCommit(true);///autoCommit‚É–ß‚·
-					lg.debug(updateCounts.length + "Œˆ—‚³‚ê‚Ü‚µ‚½B");
+					toConnection.setAutoCommit(true);///autoCommitã«æˆ»ã™
+					lg.debug(updateCounts.length + "ä»¶å‡¦ç†ã•ã‚Œã¾ã—ãŸã€‚");
 
 				} catch(SQLException ex) {
-					err.append("ƒf[ƒ^‚ÌƒoƒbƒNƒAƒbƒv’†‚ÉƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B\n" + ex);
+					err.append("ãƒ‡ãƒ¼ã‚¿ã®ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—ä¸­ã«ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚\n" + ex);
 					lg.error("[9] " + ex);
 				}
 			}
 		} catch(SQLException ex) {
-			err.append("ƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½B\n" + ex);
+			err.append("ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚\n" + ex);
 			lg.error("[10] " + ex);
 		}
 

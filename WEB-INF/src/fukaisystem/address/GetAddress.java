@@ -43,48 +43,48 @@ public class GetAddress extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof String) {
 					input = (String)obj;
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 			try {
 				ps = c.prepareStatement(
-					"select “s“¹•{Œ§,s‹æ’¬‘º," +
-					"case when ’¬ˆæ is null then ’¬ˆæ•â‘« else ’¬ˆæ end as ’¬ˆæ," +
-					"case when ‹“s’Ê‚è–¼ is null then '' else ‹“s’Ê‚è–¼ end as ‹“s’Ê‚è–¼," +
-					"case when š’š–Ú is null then '' else š’š–Ú end as š’š–Ú," +
-					"case when •â‘« is null then '' else •â‘« end as •â‘«," +
-					"case when –‹ÆŠ–¼ is null then '' else –‹ÆŠ–¼ end as –‹ÆŠ–¼," +
-					"case when –‹ÆŠZŠ is null then '' else –‹ÆŠZŠ end as –‹ÆŠZŠ," +
-					"—X•Ö}”Ô" +
-					" from V_—X•Ö”Ô† pc" +
-					" left outer join M_“s“¹•{Œ§ p on pc.“s“¹•{Œ§CD=p.CD" +
-					" left outer join M_s‹æ’¬‘º c on pc.“s“¹•{Œ§CD=c.“s“¹•{Œ§CD and pc.s‹æ’¬‘ºCD=c.CD" +
-					(input.length() == 7 ? " where —X•Ö”Ô†=?" : " where —X•Ö”Ô†+—X•Ö}”Ô=?"));
+					"select éƒ½é“åºœçœŒ,å¸‚åŒºç”ºæ‘," +
+					"case when ç”ºåŸŸ is null then ç”ºåŸŸè£œè¶³ else ç”ºåŸŸ end as ç”ºåŸŸ," +
+					"case when äº¬éƒ½é€šã‚Šå is null then '' else äº¬éƒ½é€šã‚Šå end as äº¬éƒ½é€šã‚Šå," +
+					"case when å­—ä¸ç›® is null then '' else å­—ä¸ç›® end as å­—ä¸ç›®," +
+					"case when è£œè¶³ is null then '' else è£œè¶³ end as è£œè¶³," +
+					"case when äº‹æ¥­æ‰€å is null then '' else äº‹æ¥­æ‰€å end as äº‹æ¥­æ‰€å," +
+					"case when äº‹æ¥­æ‰€ä½æ‰€ is null then '' else äº‹æ¥­æ‰€ä½æ‰€ end as äº‹æ¥­æ‰€ä½æ‰€," +
+					"éƒµä¾¿æç•ª" +
+					" from V_éƒµä¾¿ç•ªå· pc" +
+					" left outer join M_éƒ½é“åºœçœŒ p on pc.éƒ½é“åºœçœŒCD=p.CD" +
+					" left outer join M_å¸‚åŒºç”ºæ‘ c on pc.éƒ½é“åºœçœŒCD=c.éƒ½é“åºœçœŒCD and pc.å¸‚åŒºç”ºæ‘CD=c.CD" +
+					(input.length() == 7 ? " where éƒµä¾¿ç•ªå·=?" : " where éƒµä¾¿ç•ªå·+éƒµä¾¿æç•ª=?"));
 				ps.setString(1, input);
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					Vector<String> v = new Vector<String>();
-					v.add(rs.getString("“s“¹•{Œ§"));
-					v.add(rs.getString("s‹æ’¬‘º"));
-					v.add(rs.getString("’¬ˆæ") + rs.getString("‹“s’Ê‚è–¼"));
-					v.add(rs.getString("š’š–Ú") + rs.getString("•â‘«"));
-					v.add(rs.getString("–‹ÆŠ–¼"));
-					v.add(rs.getString("–‹ÆŠZŠ"));
-					v.add(rs.getString("—X•Ö}”Ô"));
+					v.add(rs.getString("éƒ½é“åºœçœŒ"));
+					v.add(rs.getString("å¸‚åŒºç”ºæ‘"));
+					v.add(rs.getString("ç”ºåŸŸ") + rs.getString("äº¬éƒ½é€šã‚Šå"));
+					v.add(rs.getString("å­—ä¸ç›®") + rs.getString("è£œè¶³"));
+					v.add(rs.getString("äº‹æ¥­æ‰€å"));
+					v.add(rs.getString("äº‹æ¥­æ‰€ä½æ‰€"));
+					v.add(rs.getString("éƒµä¾¿æç•ª"));
 					output.add(v);
 				}
 				if(output.size() == 0) {
@@ -95,7 +95,7 @@ public class GetAddress extends GenericServlet {
 					output.add(v);
 				}
 			} catch(SQLException ex) {
-				err.append("ƒe[ƒuƒ‹uT_ƒe[ƒuƒ‹–¼v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append("ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ãƒ†ãƒ¼ãƒ–ãƒ«åã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
@@ -104,7 +104,7 @@ public class GetAddress extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

@@ -47,42 +47,42 @@ public class UpdateCandidate extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			in.close();
 			try {
-				ps = c.prepareStatement("SELECT * FROM M_”[Šú");
+				ps = c.prepareStatement("SELECT * FROM M_ç´æœŸ");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					deadlines.add(rs.getString("”[Šú"));
+					deadlines.add(rs.getString("ç´æœŸ"));
 				}
-				ps = c.prepareStatement("SELECT * FROM M_ó“nêŠ");
+				ps = c.prepareStatement("SELECT * FROM M_å—æ¸¡å ´æ‰€");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					places.add(rs.getString("ó“nêŠ"));
+					places.add(rs.getString("å—æ¸¡å ´æ‰€"));
 				}
-				ps = c.prepareStatement("SELECT * FROM M_æˆøğŒ");
+				ps = c.prepareStatement("SELECT * FROM M_å–å¼•æ¡ä»¶");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					terms.add(rs.getString("æˆøğŒ"));
+					terms.add(rs.getString("å–å¼•æ¡ä»¶"));
 				}
-				ps = c.prepareStatement("SELECT * FROM M_—LŒøŠúŠÔ");
+				ps = c.prepareStatement("SELECT * FROM M_æœ‰åŠ¹æœŸé–“");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					validities.add(rs.getString("—LŒøŠúŠÔ"));
+					validities.add(rs.getString("æœ‰åŠ¹æœŸé–“"));
 				}
 
 			} catch(SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCodeF"+ex.getErrorCode());
-				err.append("SQLStateF"+ex.getSQLState());
+				err.append("ErrorCodeï¼š"+ex.getErrorCode());
+				err.append("SQLStateï¼š"+ex.getSQLState());
 				Logging.logStackTrace(ex, lg, className);
 			}
 
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 
 			InitialDTO id = new InitialDTO(null, null, null, deadlines, places, terms,

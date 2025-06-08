@@ -10,7 +10,7 @@ import fukaisystem.sql.DBConnection;
 import org.apache.log4j.Logger;
 
 /**
- * ƒe[ƒuƒ‹‚Ì“à—e‚Æ—ñî•ñ‚ğæ“¾‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX
+ * ãƒ†ãƒ¼ãƒ–ãƒ«ã®å†…å®¹ã¨åˆ—æƒ…å ±ã‚’å–å¾—ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹
  * @author kameura
  *
  */
@@ -35,48 +35,48 @@ public class SetClose extends GenericServlet {
 		StringBuilder err = new StringBuilder("");
 
 		try {
-	//ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç“Ç‚İ‚İ
+	//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰èª­ã¿è¾¼ã¿
 
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			if(obj instanceof Date) {
 				from = (Date)obj;
 				Calendar target = Calendar.getInstance();
-				target.setTime(from);//¡Œ1“ú
+				target.setTime(from);//ä»Šæœˆ1æ—¥
 				month = target.get(Calendar.MONTH) + 1;
-				target.add(Calendar.MONTH, 1);//—‚Œ1“ú
+				target.add(Calendar.MONTH, 1);//ç¿Œæœˆ1æ—¥
 				to = new Date(target.getTimeInMillis());
-				target.setTime(from);//¡Œ1“úiŸ‚Ì2014”N”»’è‚Ì‚½‚ß‚É‚±‚Ìƒ^ƒCƒ~ƒ“ƒO‚ÅƒZƒbƒg‚·‚é•K—v‚ª‚ ‚éj
-				if(target.get(Calendar.YEAR) < 2014) {//2013”NˆÈ‘O‚Í25“úY
-					if(target.get(Calendar.MONTH) == 11) {//12Œ‚Í11Œ26“ú‚©‚ç12Œ31“ú
+				target.setTime(from);//ä»Šæœˆ1æ—¥ï¼ˆæ¬¡ã®2014å¹´åˆ¤å®šã®ãŸã‚ã«ã“ã®ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§ã‚»ãƒƒãƒˆã™ã‚‹å¿…è¦ãŒã‚ã‚‹ï¼‰
+				if(target.get(Calendar.YEAR) < 2014) {//2013å¹´ä»¥å‰ã¯25æ—¥ã€†
+					if(target.get(Calendar.MONTH) == 11) {//12æœˆã¯11æœˆ26æ—¥ã‹ã‚‰12æœˆ31æ—¥
 						to2 = to;
-						target.add(Calendar.DATE, 25);//¡Œ26“ú
-						target.add(Calendar.MONTH, -1);//æŒ26“ú
+						target.add(Calendar.DATE, 25);//ä»Šæœˆ26æ—¥
+						target.add(Calendar.MONTH, -1);//å…ˆæœˆ26æ—¥
 						from2 = new Date(target.getTimeInMillis());
 					} else {
-						target.add(Calendar.DATE, 25);//¡Œ26“ú
+						target.add(Calendar.DATE, 25);//ä»Šæœˆ26æ—¥
 						to2 = new Date(target.getTimeInMillis());
-						if(target.get(Calendar.MONTH) == 0) {//1Œ‚Í1Œ1“ú‚©‚ç1Œ25“ú
+						if(target.get(Calendar.MONTH) == 0) {//1æœˆã¯1æœˆ1æ—¥ã‹ã‚‰1æœˆ25æ—¥
 							from2 = from;
 						} else {
-							target.add(Calendar.MONTH, -1);//æŒ26“ú
+							target.add(Calendar.MONTH, -1);//å…ˆæœˆ26æ—¥
 							from2 = new Date(target.getTimeInMillis());
 						}
 					}
-				} else {//2014”NˆÈŒã‚ÍŒ––Y
+				} else {//2014å¹´ä»¥å¾Œã¯æœˆæœ«ã€†
 					to2 = to;
 					from2 = from;
 				}
 			}
 			in.close();
-			String sql = "UPDATE T_w’è”[•i‘"
-					+ " SET YFLG = 'true'"
-					+ " WHERE ”[•i‘“ú>=? and ”[•i‘“ú<?";
+			String sql = "UPDATE T_æŒ‡å®šç´å“æ›¸"
+					+ " SET ã€†FLG = 'true'"
+					+ " WHERE ç´å“æ›¸æ—¥>=? and ç´å“æ›¸æ—¥<?";
 			try {
 				ps = c.prepareStatement(sql);
 				int n = 1;
-				ps.setDate(n++, month == 1 ? from : from2);//”[•i
-				ps.setDate(n++, month == 12 ? to : to2);//”[•i
+				ps.setDate(n++, month == 1 ? from : from2);//ç´å“
+				ps.setDate(n++, month == 12 ? to : to2);//ç´å“
 				ps.executeUpdate();
 				b = true;
 			} catch(SQLException ex) {
@@ -85,7 +85,7 @@ public class SetClose extends GenericServlet {
 				lg.error("GetElements3 " + ex);
 			}
 
-	//ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+	//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());

@@ -39,35 +39,35 @@ public class GetTaxRate extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof String) {
 					input = (String)obj;
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			try {
-				ps = c.prepareStatement("SELECT Å—¦ FROM M_Á”ïÅ t WHERE “K—pŠJn“ú<=? AND NOT EXISTS" +
-						" (SELECT 1 FROM M_Á”ïÅ t2 WHERE t.“K—pŠJn“ú<t2.“K—pŠJn“ú AND “K—pŠJn“ú<=?)");
+				ps = c.prepareStatement("SELECT ç¨ç‡ FROM M_æ¶ˆè²»ç¨ t WHERE é©ç”¨é–‹å§‹æ—¥<=? AND NOT EXISTS" +
+						" (SELECT 1 FROM M_æ¶ˆè²»ç¨ t2 WHERE t.é©ç”¨é–‹å§‹æ—¥<t2.é©ç”¨é–‹å§‹æ—¥ AND é©ç”¨é–‹å§‹æ—¥<=?)");
 				ps.setString(1, input);
 				ps.setString(2, input);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					output = rs.getString("Å—¦");
+					output = rs.getString("ç¨ç‡");
 				}
 			} catch(SQLException ex) {
-				err.append("ƒe[ƒuƒ‹uT_ƒe[ƒuƒ‹–¼v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append("ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ãƒ†ãƒ¼ãƒ–ãƒ«åã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
@@ -76,7 +76,7 @@ public class GetTaxRate extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

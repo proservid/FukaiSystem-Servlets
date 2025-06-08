@@ -1,4 +1,4 @@
-﻿package fukaisystem;
+package fukaisystem;
 
 
 import java.io.ByteArrayInputStream;

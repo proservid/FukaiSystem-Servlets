@@ -49,58 +49,58 @@ public class SetCombo extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof Integer) {
 					code = (Integer)obj;
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			try {
 				ps = c.prepareStatement("SELECT" +
 					" CASE" +
-					" WHEN í•ÊCD = 1 THEN '‡Š'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" WHEN í•ÊCD = 2 THEN ‰ïĞ–¼+'‡Š' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" WHEN í•ÊCD = 3 THEN '‡‹'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" WHEN í•ÊCD = 4 THEN ‰ïĞ–¼+'‡‹' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" ELSE ‰ïĞ–¼ END," +
-					" •\¦–¼" +
-					" FROM  M_–@l c" +
-					" WHERE “¾ˆÓæCD=?");
+					" WHEN ç¨®åˆ¥CD = 1 THEN 'ãˆ±'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" WHEN ç¨®åˆ¥CD = 2 THEN ä¼šç¤¾å+'ãˆ±' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" WHEN ç¨®åˆ¥CD = 3 THEN 'ãˆ²'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" WHEN ç¨®åˆ¥CD = 4 THEN ä¼šç¤¾å+'ãˆ²' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" ELSE ä¼šç¤¾å END," +
+					" è¡¨ç¤ºå" +
+					" FROM  M_æ³•äºº c" +
+					" WHERE å¾—æ„å…ˆCD=?");
 				ps.setInt(1, code);
 				rs = ps.executeQuery();
 				if(rs.next()) {
 					name = rs.getString(1);
 					display = rs.getString(2);
 				}
-				ps = c.prepareStatement("SELECT ‹@ŠB”Ô†,ˆÄŒ–¼,»ìŠú,»ì”Ô†,»ì}”Ô FROM T_»ì_e" +
-						" WHERE “¾ˆÓæCD=? AND ‹@ŠB”Ô†>0 ORDER BY »ìŠú,»ì”Ô†");
+				ps = c.prepareStatement("SELECT æ©Ÿæ¢°ç•ªå·,æ¡ˆä»¶å,è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª FROM T_è£½ä½œ_è¦ª" +
+						" WHERE å¾—æ„å…ˆCD=? AND æ©Ÿæ¢°ç•ªå·>0 ORDER BY è£½ä½œæœŸ,è£½ä½œç•ªå·");
 				ps.setInt(1, code);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					models.put(rs.getInt("‹@ŠB”Ô†"), rs.getString("ˆÄŒ–¼"));
-					numbers.put(rs.getInt("‹@ŠB”Ô†"), new ProductNumber(rs.getInt("»ìŠú"),rs.getInt("»ì”Ô†"),rs.getString("»ì}”Ô")));
+					models.put(rs.getInt("æ©Ÿæ¢°ç•ªå·"), rs.getString("æ¡ˆä»¶å"));
+					numbers.put(rs.getInt("æ©Ÿæ¢°ç•ªå·"), new ProductNumber(rs.getInt("è£½ä½œæœŸ"),rs.getInt("è£½ä½œç•ªå·"),rs.getString("è£½ä½œæç•ª")));
 				}
 
-				ps = c.prepareStatement("SELECT p.CD,–¼ FROM M_ŒÂl p" +
-						 " LEFT OUTER JOIN M_–@l c" +
-						 " ON p.–@lCD=c.CD" +
-						" WHERE “¾ˆÓæCD=? ORDER BY p.CD");
+				ps = c.prepareStatement("SELECT p.CD,æ°å FROM M_å€‹äºº p" +
+						 " LEFT OUTER JOIN M_æ³•äºº c" +
+						 " ON p.æ³•äººCD=c.CD" +
+						" WHERE å¾—æ„å…ˆCD=? ORDER BY p.CD");
 				ps.setInt(1, code);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					contacts.put(rs.getInt("CD"), rs.getString("–¼"));
+					contacts.put(rs.getInt("CD"), rs.getString("æ°å"));
 				}
 			} catch(SQLException ex) {
 				ex.printStackTrace();
@@ -109,7 +109,7 @@ public class SetCombo extends GenericServlet {
 
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 
 			ChartDTO cd = new ChartDTO(name, display, contacts, models, numbers);

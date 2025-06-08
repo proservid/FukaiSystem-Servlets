@@ -40,38 +40,38 @@ public class TbInit extends GenericServlet {
 		List<Map<String, String>> list = new ArrayList<Map<String, String>>();
 
 		try {
-			ps = c.prepareStatement("select distinct ’S“–ÒCD,©+–¼ as –¼ from T_‰ÁHÀÑ h" +
-					" left outer join M_lˆõ m on h.’S“–ÒCD=m.CD" +
-					" where İĞFLG='true'" +
-					" order by ’S“–ÒCD");
+			ps = c.prepareStatement("select distinct æ‹…å½“è€…CD,å§“+å as æ°å from T_åŠ å·¥å®Ÿç¸¾ h" +
+					" left outer join M_äººå“¡ m on h.æ‹…å½“è€…CD=m.CD" +
+					" where åœ¨ç±FLG='true'" +
+					" order by æ‹…å½“è€…CD");
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				validMembers.put(rs.getString("’S“–ÒCD"), rs.getString("–¼"));
+				validMembers.put(rs.getString("æ‹…å½“è€…CD"), rs.getString("æ°å"));
 			}
 			list.add(validMembers);
-			ps = c.prepareStatement("select distinct ’S“–ÒCD,©+–¼ as –¼ from T_‰ÁHÀÑ h" +
-					" left outer join M_lˆõ m on h.’S“–ÒCD=m.CD" +
-					" order by ’S“–ÒCD");
+			ps = c.prepareStatement("select distinct æ‹…å½“è€…CD,å§“+å as æ°å from T_åŠ å·¥å®Ÿç¸¾ h" +
+					" left outer join M_äººå“¡ m on h.æ‹…å½“è€…CD=m.CD" +
+					" order by æ‹…å½“è€…CD");
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				allMembers.put(rs.getString("’S“–ÒCD"), rs.getString("–¼"));
+				allMembers.put(rs.getString("æ‹…å½“è€…CD"), rs.getString("æ°å"));
 			}
 			list.add(allMembers);
-			ps = c.prepareStatement("select distinct ‰ÁHCD,¬•ª—Ş–¼ from T_‰ÁHÀÑ h" +
-					" left outer join M_‰ÁH_q w on h.‰ÁHCD=w.CD" +
-					" where g—pFLG='true'" +
-					" order by ‰ÁHCD");
+			ps = c.prepareStatement("select distinct åŠ å·¥CD,å°åˆ†é¡å from T_åŠ å·¥å®Ÿç¸¾ h" +
+					" left outer join M_åŠ å·¥_å­ w on h.åŠ å·¥CD=w.CD" +
+					" where ä½¿ç”¨FLG='true'" +
+					" order by åŠ å·¥CD");
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				validWorks.put(rs.getString("‰ÁHCD"), rs.getString("¬•ª—Ş–¼"));
+				validWorks.put(rs.getString("åŠ å·¥CD"), rs.getString("å°åˆ†é¡å"));
 			}
 			list.add(validWorks);
-			ps = c.prepareStatement("select distinct ‰ÁHCD,¬•ª—Ş–¼ from T_‰ÁHÀÑ h" +
-					" left outer join M_‰ÁH_q w on h.‰ÁHCD=w.CD" +
-					" order by ‰ÁHCD");
+			ps = c.prepareStatement("select distinct åŠ å·¥CD,å°åˆ†é¡å from T_åŠ å·¥å®Ÿç¸¾ h" +
+					" left outer join M_åŠ å·¥_å­ w on h.åŠ å·¥CD=w.CD" +
+					" order by åŠ å·¥CD");
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				allWorks.put(rs.getString("‰ÁHCD"), rs.getString("¬•ª—Ş–¼"));
+				allWorks.put(rs.getString("åŠ å·¥CD"), rs.getString("å°åˆ†é¡å"));
 			}
 			list.add(allWorks);
 		} catch(SQLException ex) {
@@ -80,7 +80,7 @@ public class TbInit extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

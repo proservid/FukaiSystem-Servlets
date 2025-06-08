@@ -41,15 +41,15 @@ public class IndRegistration extends GenericServlet {
 
 		try {
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 			if(obj == null) {
 				isError = true;
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof IndDTO) {
 					indDTO = (IndDTO)obj;
@@ -59,17 +59,17 @@ public class IndRegistration extends GenericServlet {
 					isDel = true;
 				} else {
 					isError = true;
-					err.append(className + "readObject‚ªIndDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªIndDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒIndDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒIndDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			if(corpCD != null) {
-				ps = c.prepareStatement("select * from M_–@l where CD=?");
+				ps = c.prepareStatement("select * from M_æ³•äºº where CD=?");
 				ps.setString(1, corpCD);
 				rs = ps.executeQuery();
 				if(!rs.next()) {
-					//ŒÂl‚ªŠ‘®‚·‚é‰ïĞ‚ªM_–@l‚É‚È‚¯‚ê‚Î‰ğœ‚·‚é
+					//å€‹äººãŒæ‰€å±ã™ã‚‹ä¼šç¤¾ãŒM_æ³•äººã«ãªã‘ã‚Œã°è§£é™¤ã™ã‚‹
 					corpCD = "0";
 				}
 			}
@@ -77,22 +77,22 @@ public class IndRegistration extends GenericServlet {
 			if(isDel) {
 				try {
 					ps = c.prepareStatement(
-						"DELETE FROM M_ŒÂl WHERE CD=?;DELETE FROM M_ŒÂlZŠ WHERE ŒÂlCD=?");
+						"DELETE FROM M_å€‹äºº WHERE CD=?;DELETE FROM M_å€‹äººä½æ‰€ WHERE å€‹äººCD=?");
 					ps.setString(1, idStr);
 					ps.setString(2, idStr);
 					ps.executeUpdate();
 				} catch(SQLException ex) {
 					isError = true;
-					err.append(className + "ƒe[ƒuƒ‹‚Ìíœ‚É¸”s‚µ‚Ü‚µ‚½\n");
+					err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã®å‰Šé™¤ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
 			} else {
 				cd = indDTO.getStr(22);
 				try {
-					if(cd.equals("0") || cd == null) {//V‹K’Ç‰Á
-						ps = c.prepareStatement("INSERT INTO M_ŒÂl" +
-							" (–@lCD, •”–¼, –ğE–¼, –¼, ƒVƒƒC, ŒhÌ, TEL1, TEL2, TEL3, FAX1, FAX2, FAX3, ƒ[ƒ‹, ”õl," +
-							"ZŠFLG,—LŒøFLG, ‘¡“šFLG, ‘rFLG, ”N‰êóCD)" +
+					if(cd.equals("0") || cd == null) {//æ–°è¦è¿½åŠ 
+						ps = c.prepareStatement("INSERT INTO M_å€‹äºº" +
+							" (æ³•äººCD, éƒ¨ç½²å, å½¹è·å, æ°å, ã‚·ãƒ¡ã‚¤, æ•¬ç§°, TEL1, TEL2, TEL3, FAX1, FAX2, FAX3, ãƒ¡ãƒ¼ãƒ«, å‚™è€ƒ," +
+							"ä½æ‰€FLG,æœ‰åŠ¹FLG, è´ˆç­”FLG, å–ªFLG, å¹´è³€çŠ¶CD)" +
 							" OUTPUT inserted.CD as newId" +
 							" VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 						int i = 1;
@@ -134,7 +134,7 @@ public class IndRegistration extends GenericServlet {
 						   isResultSet = ps.getMoreResults();
 						}
 						if(indDTO.getBool(3)) {
-							ps = c.prepareStatement("INSERT INTO M_ŒÂlZŠ" +
+							ps = c.prepareStatement("INSERT INTO M_å€‹äººä½æ‰€" +
 									" VALUES( ?, ?, ?, ?, ?, ?)");
 							int j = 1;
 							ps.setString(j++, cd);
@@ -145,11 +145,11 @@ public class IndRegistration extends GenericServlet {
 							ps.setString(j++, indDTO.getStr(12));
 							ps.executeUpdate();
 						}
-					} else {//XV
-						ps = c.prepareStatement("UPDATE M_ŒÂl SET" +
-							" –@lCD=?, •”–¼=?, –ğE–¼=?, –¼=?, ƒVƒƒC=?, ŒhÌ=?," +
-							" TEL1=?, TEL2=?, TEL3=?, FAX1=?, FAX2=?, FAX3=?, ƒ[ƒ‹=?, ”õl=?," +
-							" ZŠFLG=?, —LŒøFLG=?, ‘¡“šFLG=?, ‘rFLG=?, ”N‰êóCD=?" +//6
+					} else {//æ›´æ–°
+						ps = c.prepareStatement("UPDATE M_å€‹äºº SET" +
+							" æ³•äººCD=?, éƒ¨ç½²å=?, å½¹è·å=?, æ°å=?, ã‚·ãƒ¡ã‚¤=?, æ•¬ç§°=?," +
+							" TEL1=?, TEL2=?, TEL3=?, FAX1=?, FAX2=?, FAX3=?, ãƒ¡ãƒ¼ãƒ«=?, å‚™è€ƒ=?," +
+							" ä½æ‰€FLG=?, æœ‰åŠ¹FLG=?, è´ˆç­”FLG=?, å–ªFLG=?, å¹´è³€çŠ¶CD=?" +//6
 							" WHERE CD=?");
 						int i = 1;
 						ps.setString(i++, corpCD);
@@ -174,18 +174,18 @@ public class IndRegistration extends GenericServlet {
 						ps.setString(i, indDTO.getStr(22));
 						ps.executeUpdate();
 						if(indDTO.getBool(3)) {
-							//ŒÂlZŠ‚ ‚è
+							//å€‹äººä½æ‰€ã‚ã‚Š
 							ps = c.prepareStatement(
-								"MERGE INTO M_ŒÂlZŠ AS addr" +
-								" USING (SELECT ? AS ŒÂlCD, ? AS alpha_2, ? AS —X•Ö”Ô†, ? AS —X•Ö}”Ô," +//7
-								" ? AS ”Ô’n, ? AS Œš•¨“™, ? AS ©‘îFLG) AS w" +
-								" ON addr.ŒÂlCD=w.ŒÂlCD" +
+								"MERGE INTO M_å€‹äººä½æ‰€ AS addr" +
+								" USING (SELECT ? AS å€‹äººCD, ? AS alpha_2, ? AS éƒµä¾¿ç•ªå·, ? AS éƒµä¾¿æç•ª," +//7
+								" ? AS ç•ªåœ°, ? AS å»ºç‰©ç­‰, ? AS è‡ªå®…FLG) AS w" +
+								" ON addr.å€‹äººCD=w.å€‹äººCD" +
 								" WHEN MATCHED THEN" +
-								"   UPDATE SET addr.alpha_2=w.alpha_2, addr.—X•Ö”Ô†=w.—X•Ö”Ô†, addr.—X•Ö}”Ô=w.—X•Ö}”Ô," +
-								" addr.”Ô’n=w.”Ô’n, addr.Œš•¨“™=w.Œš•¨“™, addr.©‘îFLG=w.©‘îFLG" +
+								"   UPDATE SET addr.alpha_2=w.alpha_2, addr.éƒµä¾¿ç•ªå·=w.éƒµä¾¿ç•ªå·, addr.éƒµä¾¿æç•ª=w.éƒµä¾¿æç•ª," +
+								" addr.ç•ªåœ°=w.ç•ªåœ°, addr.å»ºç‰©ç­‰=w.å»ºç‰©ç­‰, addr.è‡ªå®…FLG=w.è‡ªå®…FLG" +
 								" WHEN NOT MATCHED THEN" +
-								"   INSERT VALUES(w.ŒÂlCD, w.alpha_2, w.—X•Ö”Ô†, w.—X•Ö}”Ô," +
-								" w.”Ô’n, w.Œš•¨“™, w.©‘îFLG);");
+								"   INSERT VALUES(w.å€‹äººCD, w.alpha_2, w.éƒµä¾¿ç•ªå·, w.éƒµä¾¿æç•ª," +
+								" w.ç•ªåœ°, w.å»ºç‰©ç­‰, w.è‡ªå®…FLG);");
 							int j = 1;
 							ps.setString(j++, indDTO.getStr(22));
 							ps.setString(j++, indDTO.getStr(5));
@@ -196,8 +196,8 @@ public class IndRegistration extends GenericServlet {
 							ps.setBoolean(j++, indDTO.getBool(5));
 							ps.executeUpdate();
 						} else {
-							//ŒÂlZŠ‚È‚µ
-							ps = c.prepareStatement("DELETE FROM M_ŒÂlZŠ WHERE ŒÂlCD=?");
+							//å€‹äººä½æ‰€ãªã—
+							ps = c.prepareStatement("DELETE FROM M_å€‹äººä½æ‰€ WHERE å€‹äººCD=?");
 							ps.setString(1, cd);
 							ps.executeUpdate();
 						}
@@ -214,7 +214,7 @@ public class IndRegistration extends GenericServlet {
 			lg.error(ex);
 		}
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

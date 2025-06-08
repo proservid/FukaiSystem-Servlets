@@ -43,44 +43,44 @@ public class GetCandidate extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof CandidateInputDTO) {
 					CandidateInputDTO ciDTO = (CandidateInputDTO)obj;
 					input = ciDTO.getInput();
 					switch(ciDTO.getKey()) {
 						case 0: key = "CD"; break;
-						case 1: key = "“¾ˆÓæCD"; break;
-						case 2: key = "d“üæCD"; break;
+						case 1: key = "å¾—æ„å…ˆCD"; break;
+						case 2: key = "ä»•å…¥å…ˆCD"; break;
 					}
 					isValidOnly = ciDTO.isValidOnly();
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			try {
 				StringBuilder sql = new StringBuilder("SELECT CD AS ID," + key + "," +
 						"CASE" +
-						" WHEN í•ÊCD = 1 THEN '‡Š'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						" WHEN í•ÊCD = 2 THEN ‰ïĞ–¼+'‡Š' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						" WHEN í•ÊCD = 3 THEN '‡‹'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						" WHEN í•ÊCD = 4 THEN ‰ïĞ–¼+'‡‹' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						" ELSE ‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						" END AS Ğ–¼" +
-						" FROM M_–@l" +
-						" WHERE " + key + " IS NOT NULL AND (‰ïĞ–¼ LIKE ? OR x“X–¼ LIKE ? OR ƒJƒCƒVƒƒƒƒC LIKE ? OR ƒVƒeƒ“ƒƒC LIKE ? OR ƒAƒ‹ƒtƒ@ƒxƒbƒg LIKE ? OR d“üæCD LIKE ? OR “¾ˆÓæCD LIKE ?)");
+						" WHEN ç¨®åˆ¥CD = 1 THEN 'ãˆ±'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						" WHEN ç¨®åˆ¥CD = 2 THEN ä¼šç¤¾å+'ãˆ±' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						" WHEN ç¨®åˆ¥CD = 3 THEN 'ãˆ²'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						" WHEN ç¨®åˆ¥CD = 4 THEN ä¼šç¤¾å+'ãˆ²' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						" ELSE ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						" END AS ç¤¾å" +
+						" FROM M_æ³•äºº" +
+						" WHERE " + key + " IS NOT NULL AND (ä¼šç¤¾å LIKE ? OR æ”¯åº—å LIKE ? OR ã‚«ã‚¤ã‚·ãƒ£ãƒ¡ã‚¤ LIKE ? OR ã‚·ãƒ†ãƒ³ãƒ¡ã‚¤ LIKE ? OR ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ LIKE ? OR ä»•å…¥å…ˆCD LIKE ? OR å¾—æ„å…ˆCD LIKE ?)");
 				if(isValidOnly) {
-					sql.append(" AND —LŒøFLG='true'");
+					sql.append(" AND æœ‰åŠ¹FLG='true'");
 				}//System.out.println(input);
 				sql.append(" ORDER BY " + key);//System.out.println(sql.toString());
 				ps = c.prepareStatement(sql.toString());
@@ -97,14 +97,14 @@ public class GetCandidate extends GenericServlet {
 					Vector<String> v = new Vector<String>();
 					v.add(rs.getString("ID"));
 					v.add(rs.getString(key));
-					v.add(rs.getString("Ğ–¼"));
+					v.add(rs.getString("ç¤¾å"));
 					candidate.add(v);
 				}
 			} catch(SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCodeF"+ex.getErrorCode());
-				err.append("SQLStateF"+ex.getSQLState());
-				err.append("ƒe[ƒuƒ‹uT_ƒe[ƒuƒ‹–¼v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append("ErrorCodeï¼š"+ex.getErrorCode());
+				err.append("SQLStateï¼š"+ex.getSQLState());
+				err.append("ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ãƒ†ãƒ¼ãƒ–ãƒ«åã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 				ex.printStackTrace();
 			}
@@ -115,7 +115,7 @@ public class GetCandidate extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

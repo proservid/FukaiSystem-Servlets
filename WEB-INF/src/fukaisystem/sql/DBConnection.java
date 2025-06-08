@@ -1,4 +1,4 @@
-﻿package fukaisystem.sql;
+package fukaisystem.sql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

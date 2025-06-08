@@ -42,69 +42,69 @@ public class GetDispatchingSummary extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof Number) {
 					id = ((Number)obj).intValue();
 				} else {
-					err.append(className + "readObject‚ªSetSummaryDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªSetSummaryDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒSetSummaryDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒSetSummaryDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 			try {
-				ps = c.prepareStatement("SELECT ‘å•ª—ŞCD,’†•ª—ŞCD,¬•ª—ŞCD,•i–¼,ŠeFLG,”—Ê,”—Ê’PˆÊCD,d—Ê’·‚³,"
-						+ "’P‰¿,‹àŠz,”õl,c.İŒÉeID,İŒÉqID,’•¶Šú,’•¶”Ô†,’•¶}”Ô FROM T_oŒÉ_q c"
+				ps = c.prepareStatement("SELECT å¤§åˆ†é¡CD,ä¸­åˆ†é¡CD,å°åˆ†é¡CD,å“å,å„FLG,æ•°é‡,æ•°é‡å˜ä½CD,é‡é‡é•·ã•,"
+						+ "å˜ä¾¡,é‡‘é¡,å‚™è€ƒ,c.åœ¨åº«è¦ªID,åœ¨åº«å­ID,æ³¨æ–‡æœŸ,æ³¨æ–‡ç•ªå·,æ³¨æ–‡æç•ª FROM T_å‡ºåº«_å­ c"
 						+ " LEFT OUTER JOIN ("
-						+ "  SELECT İŒÉeID,’•¶Šú,’•¶”Ô†,’•¶}”Ô FROM T_İŒÉ_e"
+						+ "  SELECT åœ¨åº«è¦ªID,æ³¨æ–‡æœŸ,æ³¨æ–‡ç•ªå·,æ³¨æ–‡æç•ª FROM T_åœ¨åº«_è¦ª"
 						+ "  UNION"
-						+ "  SELECT »ìeID,»ìŠú,»ì”Ô†,»ì}”Ô FROM T_»ì_e"
-						+ " ) p ON c.İŒÉeID=p.İŒÉeID"
-						+ " WHERE oŒÉeID=?");
+						+ "  SELECT è£½ä½œè¦ªID,è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª FROM T_è£½ä½œ_è¦ª"
+						+ " ) p ON c.åœ¨åº«è¦ªID=p.åœ¨åº«è¦ªID"
+						+ " WHERE å‡ºåº«è¦ªID=?");
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					Vector<Object> line = new Vector<Object>();
-					line.add(rs.getInt("‘å•ª—ŞCD"));
-					line.add(rs.getInt("’†•ª—ŞCD"));
-					line.add(rs.getInt("¬•ª—ŞCD"));
-					line.add(rs.getString("•i–¼"));
-					line.add(rs.getBoolean("ŠeFLG"));
-					line.add(rs.getDouble("”—Ê"));
-					line.add(rs.getInt("”—Ê’PˆÊCD"));
-					line.add(rs.getDouble("d—Ê’·‚³"));
-					line.add(rs.getInt("’P‰¿"));
-					line.add(rs.getInt("‹àŠz"));
-					line.add(rs.getString("”õl"));
-					line.add(rs.getInt("İŒÉeID"));
-					line.add(rs.getInt("İŒÉqID"));
-					line.add(rs.getString("’•¶Šú") == null ? "" : rs.getString("’•¶Šú") + "-" + rs.getString("’•¶”Ô†") + " " + rs.getString("’•¶}”Ô"));
+					line.add(rs.getInt("å¤§åˆ†é¡CD"));
+					line.add(rs.getInt("ä¸­åˆ†é¡CD"));
+					line.add(rs.getInt("å°åˆ†é¡CD"));
+					line.add(rs.getString("å“å"));
+					line.add(rs.getBoolean("å„FLG"));
+					line.add(rs.getDouble("æ•°é‡"));
+					line.add(rs.getInt("æ•°é‡å˜ä½CD"));
+					line.add(rs.getDouble("é‡é‡é•·ã•"));
+					line.add(rs.getInt("å˜ä¾¡"));
+					line.add(rs.getInt("é‡‘é¡"));
+					line.add(rs.getString("å‚™è€ƒ"));
+					line.add(rs.getInt("åœ¨åº«è¦ªID"));
+					line.add(rs.getInt("åœ¨åº«å­ID"));
+					line.add(rs.getString("æ³¨æ–‡æœŸ") == null ? "" : rs.getString("æ³¨æ–‡æœŸ") + "-" + rs.getString("æ³¨æ–‡ç•ªå·") + " " + rs.getString("æ³¨æ–‡æç•ª"));
 					data.add(line);
 				}
 
 
-				ps = c.prepareStatement("SELECT * FROM T_oŒÉ_e p WHERE oŒÉeID=?");
+				ps = c.prepareStatement("SELECT * FROM T_å‡ºåº«_è¦ª p WHERE å‡ºåº«è¦ªID=?");
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					dispDTO = new DispatchingDTO(
-					 rs.getInt("oŒÉeID"),
+					 rs.getInt("å‡ºåº«è¦ªID"),
 					 0,0,"",
-					 rs.getInt("»ìŠú"),
-					 rs.getInt("»ì”Ô†"),
-					 rs.getString("»ì}”Ô"),
+					 rs.getInt("è£½ä½œæœŸ"),
+					 rs.getInt("è£½ä½œç•ªå·"),
+					 rs.getString("è£½ä½œæç•ª"),
 					 "","","","",
-					 rs.getString("—p“r"),
-					 rs.getString("“E—v"),
+					 rs.getString("ç”¨é€”"),
+					 rs.getString("æ‘˜è¦"),
 					 data,
-					 rs.getDate("oŒÉ”NŒ“ú"),
+					 rs.getDate("å‡ºåº«å¹´æœˆæ—¥"),
 					 0,
 					 0,
 					 0,
@@ -112,7 +112,7 @@ public class GetDispatchingSummary extends GenericServlet {
 				}
 
 			} catch(SQLException ex) {
-				err.append(className + "DBƒGƒ‰[‚ª”­¶‚µ‚Ü‚µ‚½\n");
+				err.append(className + "DBã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}catch(Exception ex) {
@@ -120,7 +120,7 @@ public class GetDispatchingSummary extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

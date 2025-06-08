@@ -70,197 +70,197 @@ public class Init extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			in.close();
 			try {
-				ps = c.prepareStatement("SELECT ƒtƒH[ƒ}ƒbƒg–¼ FROM T_“`•[ƒtƒH[ƒ}ƒbƒg ORDER BY ƒtƒH[ƒ}ƒbƒg–¼");
+				ps = c.prepareStatement("SELECT ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå FROM T_ä¼ç¥¨ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ ORDER BY ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					slips.add(rs.getString("ƒtƒH[ƒ}ƒbƒg–¼"));
+					slips.add(rs.getString("ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_»•ií•Ê");
+				ps = c.prepareStatement("SELECT * FROM M_è£½å“ç¨®åˆ¥");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					types.put(rs.getInt("CD"), rs.getString("»•ií•Ê"));
+					types.put(rs.getInt("CD"), rs.getString("è£½å“ç¨®åˆ¥"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_ˆË—Šè’i");
+				ps = c.prepareStatement("SELECT * FROM M_ä¾é ¼æ‰‹æ®µ");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					routes.put(rs.getInt("CD"), rs.getString("ˆË—Šè’i"));
+					routes.put(rs.getInt("CD"), rs.getString("ä¾é ¼æ‰‹æ®µ"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_”[Šú WHERE CD<25");
+				ps = c.prepareStatement("SELECT * FROM M_ç´æœŸ WHERE CD<25");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					deadlines.add(rs.getString("”[Šú"));
+					deadlines.add(rs.getString("ç´æœŸ"));
 				}
-				ps = c.prepareStatement("SELECT * FROM M_ó“nêŠ");
+				ps = c.prepareStatement("SELECT * FROM M_å—æ¸¡å ´æ‰€");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					places.add(rs.getString("ó“nêŠ"));
+					places.add(rs.getString("å—æ¸¡å ´æ‰€"));
 				}
-				ps = c.prepareStatement("SELECT * FROM M_æˆøğŒ");
+				ps = c.prepareStatement("SELECT * FROM M_å–å¼•æ¡ä»¶");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					terms.add(rs.getString("æˆøğŒ"));
+					terms.add(rs.getString("å–å¼•æ¡ä»¶"));
 				}
-				ps = c.prepareStatement("SELECT * FROM M_—LŒøŠúŠÔ");
+				ps = c.prepareStatement("SELECT * FROM M_æœ‰åŠ¹æœŸé–“");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					validities.add(rs.getString("—LŒøŠúŠÔ"));
-				}
-
-				ps = c.prepareStatement("SELECT * FROM M_Œ©Ï’ño");
-				rs = ps.executeQuery();
-				while(rs.next()) {
-					submits.put(rs.getInt("CD"), rs.getString("Œ©Ï’ño"));
+					validities.add(rs.getString("æœ‰åŠ¹æœŸé–“"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_g—p’Ê‰İ");
+				ps = c.prepareStatement("SELECT * FROM M_è¦‹ç©æå‡º");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					currencies.put(rs.getInt("CD"), rs.getString("’Ê‰İ‹L†"));
+					submits.put(rs.getInt("CD"), rs.getString("è¦‹ç©æå‡º"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_”[•i‹æ•ª");
+				ps = c.prepareStatement("SELECT * FROM M_ä½¿ç”¨é€šè²¨");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					states.put(rs.getInt("CD"), rs.getString("”[•i‹æ•ª"));
+					currencies.put(rs.getInt("CD"), rs.getString("é€šè²¨è¨˜å·"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_”[“üè’i");
+				ps = c.prepareStatement("SELECT * FROM M_ç´å“åŒºåˆ†");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					ways.put(rs.getInt("CD"), rs.getString("”[“üè’i"));
+					states.put(rs.getInt("CD"), rs.getString("ç´å“åŒºåˆ†"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_”[•i‹æ•ª");
+				ps = c.prepareStatement("SELECT * FROM M_ç´å…¥æ‰‹æ®µ");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					partials.put(rs.getInt("CD"), rs.getString("”[•i‹æ•ª"));
+					ways.put(rs.getInt("CD"), rs.getString("ç´å…¥æ‰‹æ®µ"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_Œ©Ï•\¦");
+				ps = c.prepareStatement("SELECT * FROM M_ç´å“åŒºåˆ†");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					indication.put(rs.getInt("CD"), rs.getString("•\¦í•Ê"));
+					partials.put(rs.getInt("CD"), rs.getString("ç´å“åŒºåˆ†"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_”—Ê’PˆÊ");
+				ps = c.prepareStatement("SELECT * FROM M_è¦‹ç©è¡¨ç¤º");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					units.put(rs.getInt("CD"), rs.getString("”—Ê’PˆÊ"));
+					indication.put(rs.getInt("CD"), rs.getString("è¡¨ç¤ºç¨®åˆ¥"));
 				}
 
-				ps = c.prepareStatement("SELECT d“üæCD,‰ïĞ–¼ FROM M_–@l WHERE d“üæCD IS NOT NULL");
+				ps = c.prepareStatement("SELECT * FROM M_æ•°é‡å˜ä½");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					suppliers.put(rs.getInt("d“üæCD"), rs.getString("‰ïĞ–¼"));
+					units.put(rs.getInt("CD"), rs.getString("æ•°é‡å˜ä½"));
+				}
+
+				ps = c.prepareStatement("SELECT ä»•å…¥å…ˆCD,ä¼šç¤¾å FROM M_æ³•äºº WHERE ä»•å…¥å…ˆCD IS NOT NULL");
+				rs = ps.executeQuery();
+				while(rs.next()) {
+					suppliers.put(rs.getInt("ä»•å…¥å…ˆCD"), rs.getString("ä¼šç¤¾å"));
 				}
 /*
 				Calendar cal = Calendar.getInstance();
-				ps = c.prepareStatement("SELECT wc.CD,wp.’P‰¿ FROM M_‰ÁH_q wc"
-						+ "@left outer join (select CD,’P‰¿ from M_‰ÁH_’P‰¿ wp1"
-						+ " where “K—pŠJn“ú<? AND NOT EXISTS ("
-						+ "		SELECT 1 FROM M_‰ÁH_’P‰¿ wp2"
-						+ "		WHERE wp1.“K—pŠJn“ú<wp2.“K—pŠJn“ú AND wp1.CD=wp2.CD AND “K—pŠJn“ú<?)"
+				ps = c.prepareStatement("SELECT wc.CD,wp.å˜ä¾¡ FROM M_åŠ å·¥_å­ wc"
+						+ "ã€€left outer join (select CD,å˜ä¾¡ from M_åŠ å·¥_å˜ä¾¡ wp1"
+						+ " where é©ç”¨é–‹å§‹æ—¥<? AND NOT EXISTS ("
+						+ "		SELECT 1 FROM M_åŠ å·¥_å˜ä¾¡ wp2"
+						+ "		WHERE wp1.é©ç”¨é–‹å§‹æ—¥<wp2.é©ç”¨é–‹å§‹æ—¥ AND wp1.CD=wp2.CD AND é©ç”¨é–‹å§‹æ—¥<?)"
 						+ "	) wp on wp.CD=wc.CD");
 				ps.setDate(1, new java.sql.Date(cal.getTimeInMillis()));
 				ps.setDate(2, new java.sql.Date(cal.getTimeInMillis()));
 				rs = ps.executeQuery();
 				System.out.println(new java.sql.Date(cal.getTimeInMillis()));
 				while(rs.next()) {
-					System.out.println(rs.getInt("CD") +":"+ rs.getInt("’P‰¿"));
-					works.put(rs.getInt("CD"), rs.getInt("’P‰¿"));
+					System.out.println(rs.getInt("CD") +":"+ rs.getInt("å˜ä¾¡"));
+					works.put(rs.getInt("CD"), rs.getInt("å˜ä¾¡"));
 				}
 */
-				ps = c.prepareStatement("SELECT * FROM M_Œ´‰¿ WHERE CD<101");
+				ps = c.prepareStatement("SELECT * FROM M_åŸä¾¡ WHERE CD<101");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					material.put(rs.getInt("CD"), rs.getString("‘å•ª—Ş–¼"));
+					material.put(rs.getInt("CD"), rs.getString("å¤§åˆ†é¡å"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_Œ´‰¿");
+				ps = c.prepareStatement("SELECT * FROM M_åŸä¾¡");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					categoryL.put(rs.getInt("CD"), rs.getString("‘å•ª—Ş–¼"));
+					categoryL.put(rs.getInt("CD"), rs.getString("å¤§åˆ†é¡å"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_Ş—¿_e");
+				ps = c.prepareStatement("SELECT * FROM M_ææ–™_è¦ª");
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					List<Integer> subKey = new ArrayList<Integer>();
-					subKey.add(rs.getInt("‘å•ª—ŞCD"));
+					subKey.add(rs.getInt("å¤§åˆ†é¡CD"));
 					if(!categoryM.containsKey(subKey)) {
 						categoryM.put(subKey, new LinkedHashMap<Integer, String>());
 					}
-					categoryM.get(subKey).put(rs.getInt("CD"), rs.getString("’†•ª—Ş–¼"));
+					categoryM.get(subKey).put(rs.getInt("CD"), rs.getString("ä¸­åˆ†é¡å"));
 				}
-				ps = c.prepareStatement("SELECT * FROM M_‰ÁH_e");
+				ps = c.prepareStatement("SELECT * FROM M_åŠ å·¥_è¦ª");
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					List<Integer> subKey = new ArrayList<Integer>();
-					subKey.add(rs.getInt("‘å•ª—ŞCD"));
+					subKey.add(rs.getInt("å¤§åˆ†é¡CD"));
 					if(!categoryM.containsKey(subKey)) {
 						categoryM.put(subKey, new LinkedHashMap<Integer, String>());
 					}
-					categoryM.get(subKey).put(rs.getInt("CD"), rs.getString("’†•ª—Ş–¼"));
+					categoryM.get(subKey).put(rs.getInt("CD"), rs.getString("ä¸­åˆ†é¡å"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM M_”äd");
+				ps = c.prepareStatement("SELECT * FROM M_æ¯”é‡");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					sg.put(rs.getInt("í—Ş"), rs.getDouble("”äd"));
+					sg.put(rs.getInt("ç¨®é¡"), rs.getDouble("æ¯”é‡"));
 				}
 
 			} catch(SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCodeF"+ex.getErrorCode());
-				err.append("SQLStateF"+ex.getSQLState());
+				err.append("ErrorCodeï¼š"+ex.getErrorCode());
+				err.append("SQLStateï¼š"+ex.getSQLState());
 				Logging.logStackTrace(ex, lg, className);
 			}
 
 
 			try {
-				ps = c.prepareStatement("SELECT * FROM M_Ş—¿_q");
+				ps = c.prepareStatement("SELECT * FROM M_ææ–™_å­");
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					List<Integer> subKey = new ArrayList<Integer>();
-					subKey.add(rs.getInt("‘å•ª—ŞCD"));
-					subKey.add(rs.getInt("’†•ª—ŞCD"));
+					subKey.add(rs.getInt("å¤§åˆ†é¡CD"));
+					subKey.add(rs.getInt("ä¸­åˆ†é¡CD"));
 					if(!categoryS.containsKey(subKey)) {
 						categoryS.put(subKey, new LinkedHashMap<Integer, String>());
 					}
-					categoryS.get(subKey).put(rs.getInt("CD"), rs.getString("¬•ª—Ş–¼"));
+					categoryS.get(subKey).put(rs.getInt("CD"), rs.getString("å°åˆ†é¡å"));
 				}
 			} catch(SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCodeF"+ex.getErrorCode());
-				err.append("SQLStateF"+ex.getSQLState());
+				err.append("ErrorCodeï¼š"+ex.getErrorCode());
+				err.append("SQLStateï¼š"+ex.getSQLState());
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
 				Calendar cal = Calendar.getInstance();
-				ps = c.prepareStatement("SELECT wc.CD,’†•ª—ŞCD,‘å•ª—ŞCD,¬•ª—Ş–¼,wp.’P‰¿ FROM M_‰ÁH_q wc"
-				+ "@left outer join (select CD,’P‰¿ from M_‰ÁH_’P‰¿ wp1"
-				+ " where “K—pŠJn“ú<? AND NOT EXISTS ("
-				+ "		SELECT 1 FROM M_‰ÁH_’P‰¿ wp2"
-				+ "		WHERE wp1.“K—pŠJn“ú<wp2.“K—pŠJn“ú AND wp1.CD=wp2.CD AND “K—pŠJn“ú<?)"
+				ps = c.prepareStatement("SELECT wc.CD,ä¸­åˆ†é¡CD,å¤§åˆ†é¡CD,å°åˆ†é¡å,wp.å˜ä¾¡ FROM M_åŠ å·¥_å­ wc"
+				+ "ã€€left outer join (select CD,å˜ä¾¡ from M_åŠ å·¥_å˜ä¾¡ wp1"
+				+ " where é©ç”¨é–‹å§‹æ—¥<? AND NOT EXISTS ("
+				+ "		SELECT 1 FROM M_åŠ å·¥_å˜ä¾¡ wp2"
+				+ "		WHERE wp1.é©ç”¨é–‹å§‹æ—¥<wp2.é©ç”¨é–‹å§‹æ—¥ AND wp1.CD=wp2.CD AND é©ç”¨é–‹å§‹æ—¥<?)"
 				+ "	) wp on wp.CD=wc.CD"
-				+ " WHERE g—pFLG='true'");
+				+ " WHERE ä½¿ç”¨FLG='true'");
 		ps.setDate(1, new java.sql.Date(cal.getTimeInMillis()));
 		ps.setDate(2, new java.sql.Date(cal.getTimeInMillis()));
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					int l = rs.getInt("‘å•ª—ŞCD");
-					int m = rs.getInt("’†•ª—ŞCD");
+					int l = rs.getInt("å¤§åˆ†é¡CD");
+					int m = rs.getInt("ä¸­åˆ†é¡CD");
 					int s = rs.getInt("CD");
-					int price = rs.getInt("’P‰¿");
-					String name = rs.getString("¬•ª—Ş–¼");
+					int price = rs.getInt("å˜ä¾¡");
+					String name = rs.getString("å°åˆ†é¡å");
 					if(prices.containsKey(l)) {
 						Map<Integer, Map<Integer, Integer>> map_m = prices.get(l);
 						if(map_m.containsKey(m)) {
@@ -288,15 +288,15 @@ public class Init extends GenericServlet {
 				}
 			} catch(SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCodeF"+ex.getErrorCode());
-				err.append("SQLStateF"+ex.getSQLState());
+				err.append("ErrorCodeï¼š"+ex.getErrorCode());
+				err.append("SQLStateï¼š"+ex.getSQLState());
 				Logging.logStackTrace(ex, lg, className);
 			}
 
 
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 
 			InitialDTO id = new InitialDTO(slips, types, routes, deadlines, places, terms,

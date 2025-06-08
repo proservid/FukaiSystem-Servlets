@@ -43,63 +43,63 @@ import fukaisystem.util.Logging;
 			try {
 
 				/**
-				 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+				 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 				 */
 				ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 				Object obj = in.readObject();
 				in.close();
 
 				if(obj == null) {
-					err.append(className + "readObject‚ªnull‚Å‚·\n");
-					lg.error(className + "readObject‚ªnull‚Å‚·");
+					err.append(className + "readObjectãŒnullã§ã™\n");
+					lg.error(className + "readObjectãŒnullã§ã™");
 				} else {
 					if(obj instanceof String) {
 						input = (String)obj;
 					} else {
-						err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-						lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+						err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+						lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 					}
 				}
 
 				if(input.equals("")) {
-					candidate.add("");//‚Ü‚¸A‹óƒf[ƒ^‚ğ’Ç‰Á
-					//“o˜^‚³‚ê‚Ä‚¢‚éì¬ƒf[ƒ^‚ğæ“¾
+					candidate.add("");//ã¾ãšã€ç©ºãƒ‡ãƒ¼ã‚¿ã‚’è¿½åŠ 
+					//ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹ä½œæˆãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—
 					try {
-						ps = c.prepareStatement("SELECT ƒtƒH[ƒ}ƒbƒg–¼ FROM T_“`•[ƒtƒH[ƒ}ƒbƒg ORDER BY ƒtƒH[ƒ}ƒbƒg–¼");
+						ps = c.prepareStatement("SELECT ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå FROM T_ä¼ç¥¨ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ ORDER BY ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå");
 						rs = ps.executeQuery();
 						while(rs.next()) {
-							candidate.add(rs.getString("ƒtƒH[ƒ}ƒbƒg–¼"));
+							candidate.add(rs.getString("ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå"));
 						}
 					} catch(SQLException ex) {
-						err.append(className + "ƒe[ƒuƒ‹uT_“`•[ƒtƒH[ƒ}ƒbƒgv‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+						err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ä¼ç¥¨ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 					//
 					try {
-						ps = c.prepareStatement("SELECT “`•[–¼,ƒtƒH[ƒ}ƒbƒg–¼ FROM T_“`•[");
+						ps = c.prepareStatement("SELECT ä¼ç¥¨å,ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå FROM T_ä¼ç¥¨");
 						rs = ps.executeQuery();
 						while(rs.next()) {
 							Vector<String> v = new Vector<String>();
-							v.add(rs.getString("“`•[–¼"));
-							v.add(rs.getString("ƒtƒH[ƒ}ƒbƒg–¼"));
+							v.add(rs.getString("ä¼ç¥¨å"));
+							v.add(rs.getString("ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå"));
 							tableData.add(v);
 						}
 						output = tableData;
 					} catch(SQLException ex) {
-						err.append(className + "ƒe[ƒuƒ‹uT_“`•[v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+						err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ä¼ç¥¨ã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 					output = new SlipSelectDTO(candidate, tableData);
 				} else {
 					try {
-						ps = c.prepareStatement("SELECT ƒtƒH[ƒ}ƒbƒg–¼ FROM T_“`•[ WHERE “`•[–¼=?");
+						ps = c.prepareStatement("SELECT ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå FROM T_ä¼ç¥¨ WHERE ä¼ç¥¨å=?");
 						ps.setString(1, input);
 						rs = ps.executeQuery();
 						while(rs.next()) {
-							output = rs.getString("ƒtƒH[ƒ}ƒbƒg–¼");
+							output = rs.getString("ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå");
 						}
 					} catch(SQLException ex) {
-						err.append(className + "ƒe[ƒuƒ‹uT_“`•[v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+						err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ä¼ç¥¨ã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 						Logging.logStackTrace(ex, lg, className);
 					}
 				}
@@ -109,7 +109,7 @@ import fukaisystem.util.Logging;
 			}
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 			try {
 				response.setContentType("application/octet-stream");

@@ -32,7 +32,7 @@ public class SetHoliday extends GenericServlet {
 		StringBuilder err = new StringBuilder();
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 		 */
 		ObjectInputStream in;
 		try {
@@ -40,46 +40,46 @@ public class SetHoliday extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof Date) {
 					holiday = (Date)obj;
 				} else {
-					err.append("Œ^‚ªˆê’v‚µ‚Ü‚¹‚ñ\n");
-					lg.error(className + "Œ^‚ªˆê’v‚µ‚Ü‚¹‚ñ");
+					err.append("å‹ãŒä¸€è‡´ã—ã¾ã›ã‚“\n");
+					lg.error(className + "å‹ãŒä¸€è‡´ã—ã¾ã›ã‚“");
 				}
 			}
 
 			try {
 				ps = c.prepareStatement(
-					"DELETE FROM T_j“ú WHERE j“ú=?");
+					"DELETE FROM T_ç¥æ—¥ WHERE ç¥æ—¥=?");
 				ps.setDate(1, holiday);
-				if(ps.executeUpdate() == 0) {//íœ‚Å‚«‚È‚¯‚ê‚Î“o˜^‚³‚ê‚Ä‚¢‚È‚¢‚Ì‚Å“o˜^
-					ps = c.prepareStatement("INSERT INTO T_j“ú VALUES (?)");
+				if(ps.executeUpdate() == 0) {//å‰Šé™¤ã§ããªã‘ã‚Œã°ç™»éŒ²ã•ã‚Œã¦ã„ãªã„ã®ã§ç™»éŒ²
+					ps = c.prepareStatement("INSERT INTO T_ç¥æ—¥ VALUES (?)");
 					ps.setDate(1, holiday);
 					ps.executeUpdate();
 				}
 
 	 		} catch(SQLException ex) {
 				ex.printStackTrace();
-				err.append(className + "XV‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "æ›´æ–°ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
 		} catch (Exception e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
 			e.printStackTrace();
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
 
-			out.writeObject(-1);//»ì”Ô†‚ª0‚È‚çAŠY“–‚·‚é»ìƒf[ƒ^‚ª“o˜^‚³‚ê‚Ä‚¢‚È‚­‚Ä‚àOK‚É‚·‚é
+			out.writeObject(-1);//è£½ä½œç•ªå·ãŒ0ãªã‚‰ã€è©²å½“ã™ã‚‹è£½ä½œãƒ‡ãƒ¼ã‚¿ãŒç™»éŒ²ã•ã‚Œã¦ã„ãªãã¦ã‚‚OKã«ã™ã‚‹
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

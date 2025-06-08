@@ -52,23 +52,23 @@ public class GetState extends GenericServlet {
 			in.close();
 			try {
 				ps = c.prepareStatement(
-					"SELECT YFLG from T_İŒÉ_q c"
-					+ " INNER JOIN T_w’è”[•i‘ s"
-					+ " ON c.”[•i‘”Ô† = s.ID"
-					+ " AND ”[•i‘“ú>=? and ”[•i‘“ú<?"
+					"SELECT ã€†FLG from T_åœ¨åº«_å­ c"
+					+ " INNER JOIN T_æŒ‡å®šç´å“æ›¸ s"
+					+ " ON c.ç´å“æ›¸ç•ªå· = s.ID"
+					+ " AND ç´å“æ›¸æ—¥>=? and ç´å“æ›¸æ—¥<?"
 				);
 				ps.setDate(1, from);
 				ps.setDate(2, to);
 				rs = ps.executeQuery();
 				if(rs.next()) {
-					b = rs.getBoolean("YFLG");
+					b = rs.getBoolean("ã€†FLG");
 				}
 			} catch(SQLException ex) {
 				ex.printStackTrace();
 				err.append(ex + "\n");
 				lg.error("GetState " + ex);
 			}
-			//ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
 			out.writeObject(b);

@@ -65,11 +65,11 @@ public class IndDTO implements Serializable {
 	public String getStr(int order) {
 		String s = "";
 		switch(order) {
-			case  0: s = name; break;//–¼
-			case  1: s = name2; break;//ƒVƒƒC
-			case  2: s = dept; break;//Š‘®•”
-			case  3: s = post; break;//–ğE–¼
-			case  4: s = corpCD; break;//‰ïĞƒR[ƒh
+			case  0: s = name; break;//æ°å
+			case  1: s = name2; break;//ã‚·ãƒ¡ã‚¤
+			case  2: s = dept; break;//æ‰€å±éƒ¨ç½²
+			case  3: s = post; break;//å½¹è·å
+			case  4: s = corpCD; break;//ä¼šç¤¾ã‚³ãƒ¼ãƒ‰
 			case  5: s = country; break;//
 			case  6: s = zip; break;//
 			case  7: s = zip2; break;//
@@ -112,7 +112,7 @@ public class IndDTO implements Serializable {
 			case 4: b = hasCorpDTO; break;
 			case 5: b = isHome; break;
 		}
-		return b;//•sg—p
+		return b;//ä¸ä½¿ç”¨
 	}
 
 	public CorpDTO getCorpDTO() {

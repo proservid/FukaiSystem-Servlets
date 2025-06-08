@@ -50,15 +50,15 @@ public class GetSchedule extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof Date) {
 					from = (Date)obj;
@@ -67,43 +67,43 @@ public class GetSchedule extends GenericServlet {
 					cal.add(Calendar.DATE, 6);
 					to = new Date(cal.getTimeInMillis());
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			try {
-				ps = c.prepareStatement("SELECT * FROM T_j“ú WHERE j“ú>=? and j“ú<=?");
+				ps = c.prepareStatement("SELECT * FROM T_ç¥æ—¥ WHERE ç¥æ—¥>=? and ç¥æ—¥<=?");
 				ps.setDate(1, from);
 				ps.setDate(2, to);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					holidays.add(rs.getDate("j“ú"));
+					holidays.add(rs.getDate("ç¥æ—¥"));
 				}
 
-				ps = c.prepareStatement("SELECT * FROM T_—\’è WHERE ”NŒ“ú>=? and ”NŒ“ú<=? order by lˆõCD,”NŒ“ú");
+				ps = c.prepareStatement("SELECT * FROM T_äºˆå®š WHERE å¹´æœˆæ—¥>=? and å¹´æœˆæ—¥<=? order by äººå“¡CD,å¹´æœˆæ—¥");
 				ps.setDate(1, from);
 				ps.setDate(2, to);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					String cd = rs.getString("lˆõCD");
-					String contents = rs.getString("“à—e");
+					String cd = rs.getString("äººå“¡CD");
+					String contents = rs.getString("å†…å®¹");
 					if(map.containsKey(cd)) {
 						Map<Date, String> innerMap = map.get(cd).getText();
-						Date d = rs.getDate("”NŒ“ú");
+						Date d = rs.getDate("å¹´æœˆæ—¥");
 						if(innerMap.containsKey(d)) {
-							//d•¡‚·‚é‚Í‚¸‚Í‚È‚¢
+							//é‡è¤‡ã™ã‚‹ã¯ãšã¯ãªã„
 						} else {
 							innerMap.put(d, contents);
 						}
 					} else {
 						Map<Date, String> innerMap = new HashMap<Date, String>();
-						innerMap.put(rs.getDate("”NŒ“ú"), contents);
+						innerMap.put(rs.getDate("å¹´æœˆæ—¥"), contents);
 						map.put(cd, new Schedule(innerMap, null, null));
 					}
 				}
-				//ŠJn“ú‚ª¡T‚Ü‚½‚ÍI—¹“ú‚ª¡T‚Ü‚½‚ÍŠJn“ú‚ªæTˆÈ‘O‚©‚ÂI—¹“ú‚ª—ˆTˆÈ~
-				ps = c.prepareStatement("SELECT * FROM T_ƒoƒi[ WHERE (ŠJn“ú>=? and ŠJn“ú<=?) or (I—¹“ú>=? and I—¹“ú<=?) or (ŠJn“ú<? and I—¹“ú>?) order by lˆõCD,ŠJn“ú,I—¹“ú");
+				//é–‹å§‹æ—¥ãŒä»Šé€±ã¾ãŸã¯çµ‚äº†æ—¥ãŒä»Šé€±ã¾ãŸã¯é–‹å§‹æ—¥ãŒå…ˆé€±ä»¥å‰ã‹ã¤çµ‚äº†æ—¥ãŒæ¥é€±ä»¥é™
+				ps = c.prepareStatement("SELECT * FROM T_ãƒãƒŠãƒ¼ WHERE (é–‹å§‹æ—¥>=? and é–‹å§‹æ—¥<=?) or (çµ‚äº†æ—¥>=? and çµ‚äº†æ—¥<=?) or (é–‹å§‹æ—¥<? and çµ‚äº†æ—¥>?) order by äººå“¡CD,é–‹å§‹æ—¥,çµ‚äº†æ—¥");
 				ps.setDate(1, from);
 				ps.setDate(2, to);
 				ps.setDate(3, from);
@@ -112,38 +112,38 @@ public class GetSchedule extends GenericServlet {
 				ps.setDate(6, to);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					String cd = rs.getString("lˆõCD");
+					String cd = rs.getString("äººå“¡CD");
 					if(map.containsKey(cd)) {
 						Schedule schedule = map.get(cd);
 						List<Banner> banners = schedule.getBanners();
 						if(banners == null) banners = new ArrayList<Banner>();
-						banners.add(new Banner(rs.getInt("ID"), rs.getDate("ŠJn“ú"), rs.getDate("I—¹“ú"), rs.getString("“à—e")));
+						banners.add(new Banner(rs.getInt("ID"), rs.getDate("é–‹å§‹æ—¥"), rs.getDate("çµ‚äº†æ—¥"), rs.getString("å†…å®¹")));
 						schedule.setBanners(banners);
 					} else {
 						List<Banner> banners = new ArrayList<Banner>();
-						banners.add(new Banner(rs.getInt("ID"), rs.getDate("ŠJn“ú"), rs.getDate("I—¹“ú"), rs.getString("“à—e")));
+						banners.add(new Banner(rs.getInt("ID"), rs.getDate("é–‹å§‹æ—¥"), rs.getDate("çµ‚äº†æ—¥"), rs.getString("å†…å®¹")));
 						map.put(cd, new Schedule(null, banners, null));
 					}
 				}
 
-				ps = c.prepareStatement("SELECT * FROM T_ŒJ‚è•Ô‚µ order by lˆõCD");
+				ps = c.prepareStatement("SELECT * FROM T_ç¹°ã‚Šè¿”ã— order by äººå“¡CD");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					String cd = rs.getString("lˆõCD");
+					String cd = rs.getString("äººå“¡CD");
 					if(map.containsKey(cd)) {
 						Schedule schedule = map.get(cd);
 						List<Repeat> repeats = schedule.getRepeats();
 						if(repeats == null) repeats = new ArrayList<Repeat>();
-						repeats.add(new Repeat(rs.getBoolean("—j“ú‚²‚ÆFLG"), rs.getInt("‚²‚Æ"), rs.getString("“à—e")));
+						repeats.add(new Repeat(rs.getBoolean("æ›œæ—¥ã”ã¨FLG"), rs.getInt("ã”ã¨"), rs.getString("å†…å®¹")));
 						schedule.setRepeats(repeats);
 					} else {
 						List<Repeat> repeats = new ArrayList<Repeat>();
-						repeats.add(new Repeat(rs.getBoolean("—j“ú‚²‚ÆFLG"), rs.getInt("‚²‚Æ"), rs.getString("“à—e")));
+						repeats.add(new Repeat(rs.getBoolean("æ›œæ—¥ã”ã¨FLG"), rs.getInt("ã”ã¨"), rs.getString("å†…å®¹")));
 						map.put(cd, new Schedule(null, null, repeats));
 					}
 				}
 			} catch(SQLException ex) {
-				err.append("ƒe[ƒuƒ‹uT_ƒe[ƒuƒ‹–¼v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append("ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ãƒ†ãƒ¼ãƒ–ãƒ«åã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
@@ -152,7 +152,7 @@ public class GetSchedule extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

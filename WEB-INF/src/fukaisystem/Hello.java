@@ -83,7 +83,7 @@ public class Hello extends HttpServlet {
        out.println("<h1>OK</h1>");
 /*		try {
 			dbmd = c.getMetaData();
-			ResultSet rs = dbmd.getIndexInfo("FukaiSystem", null, "M_Šú", true, false);
+			ResultSet rs = dbmd.getIndexInfo("FukaiSystem", null, "M_æœŸ", true, false);
 			while(rs.next()) {
 		        out.println("qualifier:" +  rs.getString("INDEX_QUALIFIER") + "<br>");
 		        out.println("name:" + rs.getString("INDEX_NAME") + "<br>");
@@ -91,7 +91,7 @@ public class Hello extends HttpServlet {
 		        out.println("cardinality:" + rs.getInt("CARDINALITY") + "<br>");
 			}
 		} catch (SQLException e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
 			e.printStackTrace();
 		}*/
         out.println("</body>");

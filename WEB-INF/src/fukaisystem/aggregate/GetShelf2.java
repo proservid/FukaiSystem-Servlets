@@ -11,7 +11,7 @@ import fukaisystem.sql.DBConnection;
 import org.apache.log4j.Logger;
 
 /**
- * ƒe[ƒuƒ‹‚Ì“à—e‚Æ—ñî•ñ‚ğæ“¾‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX
+ * ãƒ†ãƒ¼ãƒ–ãƒ«ã®å†…å®¹ã¨åˆ—æƒ…å ±ã‚’å–å¾—ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹
  * @author kameura
  *
  */
@@ -27,50 +27,50 @@ long t1 = System.currentTimeMillis();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 
-		Date from = null;//”„‚èWŒv‚Ì‰“ú
-		Date to = null;//—‚Œ”„‚èWŒv‚Ì‰“ú
-		Date from2 = null;//’•¶WŒv‚Ì‰“ú
-		Date to2 = null;//—‚Œ’•¶WŒv‚Ì‰“ú
+		Date from = null;//å£²ã‚Šé›†è¨ˆã®åˆæ—¥
+		Date to = null;//ç¿Œæœˆå£²ã‚Šé›†è¨ˆã®åˆæ—¥
+		Date from2 = null;//æ³¨æ–‡é›†è¨ˆã®åˆæ—¥
+		Date to2 = null;//ç¿Œæœˆæ³¨æ–‡é›†è¨ˆã®åˆæ—¥
 		int month = 0;
 
 		StringBuilder err = new StringBuilder("");
 
 		Map<Integer, Map<String, Shelf>> shelfMaps = new HashMap<Integer, Map<String, Shelf>>();
-		for(int i = 1; i < 10; i++) {//10`90
+		for(int i = 1; i < 10; i++) {//10ï½90
 			Map<String, Shelf> shelfMap = new TreeMap<String, Shelf>();
 			shelfMaps.put(i, shelfMap);
 		}
 		List<Seiban> added = new ArrayList<Seiban>();
 		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 		try {
-			//ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç“Ç‚İ‚İ
+			//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰èª­ã¿è¾¼ã¿
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			if(obj instanceof Date) {
 				from = (Date)obj;
 				Calendar target = Calendar.getInstance();
-				target.setTime(from);//¡Œ1“ú
+				target.setTime(from);//ä»Šæœˆ1æ—¥
 				month = target.get(Calendar.MONTH) + 1;
-				target.add(Calendar.MONTH, 1);//—‚Œ1“ú
+				target.add(Calendar.MONTH, 1);//ç¿Œæœˆ1æ—¥
 				to = new Date(target.getTimeInMillis());
-				target.setTime(from);//¡Œ1“úiŸ‚Ì2014”N”»’è‚Ì‚½‚ß‚É‚±‚Ìƒ^ƒCƒ~ƒ“ƒO‚ÅƒZƒbƒg‚·‚é•K—v‚ª‚ ‚éj
-				if(target.get(Calendar.YEAR) < 2014) {//2013”NˆÈ‘O‚Í25“úY
-					if(target.get(Calendar.MONTH) == 11) {//12Œ‚Í11Œ26“ú‚©‚ç12Œ31“ú
+				target.setTime(from);//ä»Šæœˆ1æ—¥ï¼ˆæ¬¡ã®2014å¹´åˆ¤å®šã®ãŸã‚ã«ã“ã®ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§ã‚»ãƒƒãƒˆã™ã‚‹å¿…è¦ãŒã‚ã‚‹ï¼‰
+				if(target.get(Calendar.YEAR) < 2014) {//2013å¹´ä»¥å‰ã¯25æ—¥ã€†
+					if(target.get(Calendar.MONTH) == 11) {//12æœˆã¯11æœˆ26æ—¥ã‹ã‚‰12æœˆ31æ—¥
 						to2 = to;
-						target.add(Calendar.DATE, 25);//¡Œ26“ú
-						target.add(Calendar.MONTH, -1);//æŒ26“ú
+						target.add(Calendar.DATE, 25);//ä»Šæœˆ26æ—¥
+						target.add(Calendar.MONTH, -1);//å…ˆæœˆ26æ—¥
 						from2 = new Date(target.getTimeInMillis());
 					} else {
-						target.add(Calendar.DATE, 25);//¡Œ26“ú
+						target.add(Calendar.DATE, 25);//ä»Šæœˆ26æ—¥
 						to2 = new Date(target.getTimeInMillis());
-						if(target.get(Calendar.MONTH) == 0) {//1Œ‚Í1Œ1“ú‚©‚ç1Œ25“ú
+						if(target.get(Calendar.MONTH) == 0) {//1æœˆã¯1æœˆ1æ—¥ã‹ã‚‰1æœˆ25æ—¥
 							from2 = from;
 						} else {
-							target.add(Calendar.MONTH, -1);//æŒ26“ú
+							target.add(Calendar.MONTH, -1);//å…ˆæœˆ26æ—¥
 							from2 = new Date(target.getTimeInMillis());
 						}
 					}
-				} else {//2014”NˆÈŒã‚ÍŒ––Y
+				} else {//2014å¹´ä»¥å¾Œã¯æœˆæœ«ã€†
 					to2 = to;
 					from2 = from;
 				}
@@ -81,23 +81,23 @@ long t1 = System.currentTimeMillis();
 			try {
 				String sql
 						= "select "
-						+ "	floor(»ì”Ô†/1000) as ‘ä, convert(varchar, »ìŠú)+'-'+convert(varchar, »ì”Ô†)+»ì}”Ô as »”Ô,"
-						+ "	case when (”„ã”NŒ“ú>=? and ”„ã”NŒ“ú<?) and (”[•i‹æ•ªCD=2 or ”[•i‹æ•ªCD=4 or ”[•i‹æ•ªCD=5 or ”[•i‹æ•ªCD=6) then '*'"
-						+ "		else '' end as ”„"
-						+ " from (select * from T_»ì_e where (»ìŠú>50 or (»ìŠú=43 and »ì”Ô†=8014) or (»ìŠú=47 and »ì”Ô†=8009)) and »ì”Ô†<>0) pp"
-						+ " left outer join (select ”„ãeID, »ìeID from T_”„ã_q group by ”„ãeID, »ìeID) sc on pp.»ìeID=sc.»ìeID"
-						+ " left outer join T_”„ã_e sp on sc.”„ãeID=sp.”„ãeID"
-						+ "	where ”„ã”NŒ“ú>=? or ”„ã”NŒ“ú is null";
+						+ "	floor(è£½ä½œç•ªå·/1000) as å°, convert(varchar, è£½ä½œæœŸ)+'-'+convert(varchar, è£½ä½œç•ªå·)+è£½ä½œæç•ª as è£½ç•ª,"
+						+ "	case when (å£²ä¸Šå¹´æœˆæ—¥>=? and å£²ä¸Šå¹´æœˆæ—¥<?) and (ç´å“åŒºåˆ†CD=2 or ç´å“åŒºåˆ†CD=4 or ç´å“åŒºåˆ†CD=5 or ç´å“åŒºåˆ†CD=6) then '*'"
+						+ "		else '' end as å£²"
+						+ " from (select * from T_è£½ä½œ_è¦ª where (è£½ä½œæœŸ>50 or (è£½ä½œæœŸ=43 and è£½ä½œç•ªå·=8014) or (è£½ä½œæœŸ=47 and è£½ä½œç•ªå·=8009)) and è£½ä½œç•ªå·<>0) pp"
+						+ " left outer join (select å£²ä¸Šè¦ªID, è£½ä½œè¦ªID from T_å£²ä¸Š_å­ group by å£²ä¸Šè¦ªID, è£½ä½œè¦ªID) sc on pp.è£½ä½œè¦ªID=sc.è£½ä½œè¦ªID"
+						+ " left outer join T_å£²ä¸Š_è¦ª sp on sc.å£²ä¸Šè¦ªID=sp.å£²ä¸Šè¦ªID"
+						+ "	where å£²ä¸Šå¹´æœˆæ—¥>=? or å£²ä¸Šå¹´æœˆæ—¥ is null";
 				//System.out.println(sql);
 				ps = c.prepareStatement(sql);
 				int n = 1;
-				ps.setDate(n++, from);//”„
+				ps.setDate(n++, from);//å£²
 				ps.setDate(n++, to);
 				ps.setDate(n++, from);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					if(shelfMaps.containsKey(rs.getInt("‘ä"))) {
-						shelfMaps.get(rs.getInt("‘ä")).put(rs.getString("»”Ô"), new Shelf(rs.getString("”„")));
+					if(shelfMaps.containsKey(rs.getInt("å°"))) {
+						shelfMaps.get(rs.getInt("å°")).put(rs.getString("è£½ç•ª"), new Shelf(rs.getString("å£²")));
 					}
 				}
 				ps.close();
@@ -106,18 +106,18 @@ long t1 = System.currentTimeMillis();
 //System.out.println("b:"+(t2-t1));t1=t2;
 
 				sql = "select"
-						+ "	 floor(’•¶”Ô†/1000) as ‘ä, convert(varchar, ’•¶Šú)+'-'+convert(varchar, ’•¶”Ô†)+’•¶}”Ô as ’”Ô, sum(oc.‹àŠz) as ‡ŒvŠz"
-						+ "	 from (select * from T_İŒÉ_e z where exists ("
-						+ "    select * from (select * from T_»ì_e where (»ìŠú>50 or (»ìŠú=43 and »ì”Ô†=8014) or (»ìŠú=47 and »ì”Ô†=8009)) and »ì”Ô†<>0) pp"
+						+ "	 floor(æ³¨æ–‡ç•ªå·/1000) as å°, convert(varchar, æ³¨æ–‡æœŸ)+'-'+convert(varchar, æ³¨æ–‡ç•ªå·)+æ³¨æ–‡æç•ª as æ³¨ç•ª, sum(oc.é‡‘é¡) as åˆè¨ˆé¡"
+						+ "	 from (select * from T_åœ¨åº«_è¦ª z where exists ("
+						+ "    select * from (select * from T_è£½ä½œ_è¦ª where (è£½ä½œæœŸ>50 or (è£½ä½œæœŸ=43 and è£½ä½œç•ªå·=8014) or (è£½ä½œæœŸ=47 and è£½ä½œç•ªå·=8009)) and è£½ä½œç•ªå·<>0) pp"
 						+ "    left outer join ("
-						+ "	     select ”„ãeID, »ìeID from T_”„ã_q group by ”„ãeID, »ìeID) sc on sc.»ìeID=pp.»ìeID"
-						+ "		 left outer join T_”„ã_e sp on sc.”„ãeID=sp.”„ãeID"
-						+ "		 where z.’•¶Šú=»ìŠú and z.’•¶”Ô†=»ì”Ô† and z.’•¶}”Ô=»ì}”Ô and (”„ã”NŒ“ú>=? or ”„ã”NŒ“ú is null))"
+						+ "	     select å£²ä¸Šè¦ªID, è£½ä½œè¦ªID from T_å£²ä¸Š_å­ group by å£²ä¸Šè¦ªID, è£½ä½œè¦ªID) sc on sc.è£½ä½œè¦ªID=pp.è£½ä½œè¦ªID"
+						+ "		 left outer join T_å£²ä¸Š_è¦ª sp on sc.å£²ä¸Šè¦ªID=sp.å£²ä¸Šè¦ªID"
+						+ "		 where z.æ³¨æ–‡æœŸ=è£½ä½œæœŸ and z.æ³¨æ–‡ç•ªå·=è£½ä½œç•ªå· and z.æ³¨æ–‡æç•ª=è£½ä½œæç•ª and (å£²ä¸Šå¹´æœˆæ—¥>=? or å£²ä¸Šå¹´æœˆæ—¥ is null))"
 						+ "	) op"
-						+ "	left outer join T_İŒÉ_q oc on oc.İŒÉeID=op.İŒÉeID"
-						+ "	left outer join T_w’è”[•i‘ s on oc.”[•i‘”Ô†=s.ID"
-						+ "	where ”[•i‘“ú<?"
-						+ "	group by ’•¶Šú, ’•¶”Ô†, ’•¶}”Ô";
+						+ "	left outer join T_åœ¨åº«_å­ oc on oc.åœ¨åº«è¦ªID=op.åœ¨åº«è¦ªID"
+						+ "	left outer join T_æŒ‡å®šç´å“æ›¸ s on oc.ç´å“æ›¸ç•ªå·=s.ID"
+						+ "	where ç´å“æ›¸æ—¥<?"
+						+ "	group by æ³¨æ–‡æœŸ, æ³¨æ–‡ç•ªå·, æ³¨æ–‡æç•ª";
 				//System.out.println(sql);
 				ps = c.prepareStatement(sql);
 				n = 1;
@@ -125,11 +125,11 @@ long t1 = System.currentTimeMillis();
 				ps.setDate(n++, from);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 					if(shelfMap != null) {
-						if(shelfMap.containsKey(rs.getString("’”Ô"))) {
-							Shelf shelf = shelfMap.get(rs.getString("’”Ô"));
-							shelf.setCarriedO(rs.getInt("‡ŒvŠz"));
+						if(shelfMap.containsKey(rs.getString("æ³¨ç•ª"))) {
+							Shelf shelf = shelfMap.get(rs.getString("æ³¨ç•ª"));
+							shelf.setCarriedO(rs.getInt("åˆè¨ˆé¡"));
 						}
 					}
 				}
@@ -138,20 +138,20 @@ long t1 = System.currentTimeMillis();
 //t2 = System.currentTimeMillis();
 //System.out.println("c2:"+(t2-t1));t1=t2;
 
-				sql = "select floor(d.»ì”Ô†/1000) as ‘ä, convert(varchar, d.»ìŠú)+'-'+convert(varchar, d.»ì”Ô†)+d.»ì}”Ô as oŒÉ”Ô, sum(d.‹àŠz) as ‡ŒvŠz"
+				sql = "select floor(d.è£½ä½œç•ªå·/1000) as å°, convert(varchar, d.è£½ä½œæœŸ)+'-'+convert(varchar, d.è£½ä½œç•ªå·)+d.è£½ä½œæç•ª as å‡ºåº«ç•ª, sum(d.é‡‘é¡) as åˆè¨ˆé¡"
 						+ "		 from ("
-						+ "			   select dc.oŒÉeID,»ìŠú,»ì”Ô†,»ì}”Ô,İŒÉeID,oŒÉ”NŒ“ú,‹àŠz from T_oŒÉ_q dc"
-						+ "			   left outer join T_oŒÉ_e dp on dc.oŒÉeID=dp.oŒÉeID) d"
-						+ "			 left outer join T_»ì_e pd on d.İŒÉeID=pd.»ìeID"
-						+ "			 left outer join (select ”„ãeID, »ìeID from T_”„ã_q group by ”„ãeID, »ìeID) sc on pd.»ìeID=sc.»ìeID"
-						+ "			 where oŒÉ”NŒ“ú<? and exists ("
+						+ "			   select dc.å‡ºåº«è¦ªID,è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,åœ¨åº«è¦ªID,å‡ºåº«å¹´æœˆæ—¥,é‡‘é¡ from T_å‡ºåº«_å­ dc"
+						+ "			   left outer join T_å‡ºåº«_è¦ª dp on dc.å‡ºåº«è¦ªID=dp.å‡ºåº«è¦ªID) d"
+						+ "			 left outer join T_è£½ä½œ_è¦ª pd on d.åœ¨åº«è¦ªID=pd.è£½ä½œè¦ªID"
+						+ "			 left outer join (select å£²ä¸Šè¦ªID, è£½ä½œè¦ªID from T_å£²ä¸Š_å­ group by å£²ä¸Šè¦ªID, è£½ä½œè¦ªID) sc on pd.è£½ä½œè¦ªID=sc.è£½ä½œè¦ªID"
+						+ "			 where å‡ºåº«å¹´æœˆæ—¥<? and exists ("
 						+ "				select *"
-						+ "				from (select * from T_»ì_e where »ìŠú>50 or (»ìŠú=43 and »ì”Ô†=8014) or (»ìŠú=47 and »ì”Ô†=8009) and »ì”Ô†<>0) pp"
-						+ "				left outer join (select ”„ãeID, »ìeID from T_”„ã_q group by ”„ãeID, »ìeID) sc on pp.»ìeID=sc.»ìeID"
-						+ "				left outer join T_”„ã_e sp on sc.”„ãeID=sp.”„ãeID"
-						+ "				where (”„ã”NŒ“ú>=? or ”„ã”NŒ“ú is null) and d.»ìŠú=pp.»ìŠú and d.»ì”Ô†=pp.»ì”Ô† and d.»ì}”Ô=pp.»ì}”Ô"
+						+ "				from (select * from T_è£½ä½œ_è¦ª where è£½ä½œæœŸ>50 or (è£½ä½œæœŸ=43 and è£½ä½œç•ªå·=8014) or (è£½ä½œæœŸ=47 and è£½ä½œç•ªå·=8009) and è£½ä½œç•ªå·<>0) pp"
+						+ "				left outer join (select å£²ä¸Šè¦ªID, è£½ä½œè¦ªID from T_å£²ä¸Š_å­ group by å£²ä¸Šè¦ªID, è£½ä½œè¦ªID) sc on pp.è£½ä½œè¦ªID=sc.è£½ä½œè¦ªID"
+						+ "				left outer join T_å£²ä¸Š_è¦ª sp on sc.å£²ä¸Šè¦ªID=sp.å£²ä¸Šè¦ªID"
+						+ "				where (å£²ä¸Šå¹´æœˆæ—¥>=? or å£²ä¸Šå¹´æœˆæ—¥ is null) and d.è£½ä½œæœŸ=pp.è£½ä½œæœŸ and d.è£½ä½œç•ªå·=pp.è£½ä½œç•ªå· and d.è£½ä½œæç•ª=pp.è£½ä½œæç•ª"
 						+ "			 )"
-						+ "			 group by d.»ìŠú, d.»ì”Ô†, d.»ì}”Ô";
+						+ "			 group by d.è£½ä½œæœŸ, d.è£½ä½œç•ªå·, d.è£½ä½œæç•ª";
 				//System.out.println(sql);
 				ps = c.prepareStatement(sql);
 				n = 1;
@@ -159,11 +159,11 @@ long t1 = System.currentTimeMillis();
 				ps.setDate(n++, from);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 					if(shelfMap != null) {
-						if(shelfMap.containsKey(rs.getString("oŒÉ”Ô"))) {
-							Shelf shelf = shelfMap.get(rs.getString("oŒÉ”Ô"));
-							shelf.setCarriedD(rs.getInt("‡ŒvŠz"));
+						if(shelfMap.containsKey(rs.getString("å‡ºåº«ç•ª"))) {
+							Shelf shelf = shelfMap.get(rs.getString("å‡ºåº«ç•ª"));
+							shelf.setCarriedD(rs.getInt("åˆè¨ˆé¡"));
 						}
 					}
 				}
@@ -172,25 +172,25 @@ long t1 = System.currentTimeMillis();
 //t2 = System.currentTimeMillis();
 //System.out.println("d:"+(t2-t1));t1=t2;
 				sql
-						= "select floor(pd.»ì”Ô†/1000) as ‘ä, convert(varchar, pd.»ìŠú)+'-'+convert(varchar, pd.»ì”Ô†)+pd.»ì}”Ô as oŒÉ”Ô,"
-						+ "	sum(dc.‹àŠz)*-1 as ‡ŒvŠz"
-						+ " from T_oŒÉ_q dc"
-						+ " left outer join T_oŒÉ_e dp on dc.oŒÉeID=dp.oŒÉeID"
-						+ " left outer join T_»ì_e pd on dc.İŒÉeID=pd.»ìeID"
-						+ " left outer join (select ”„ãeID, »ìeID from T_”„ã_q group by ”„ãeID, »ìeID) sc on pd.»ìeID=sc.»ìeID"
-						+ " left outer join T_”„ã_e sp on sc.”„ãeID=sp.”„ãeID"
-						+ " where oŒÉ”NŒ“ú<? and"
-						+ "	 (convert(varchar, pd.»ìŠú)+'-'+convert(varchar, pd.»ì”Ô†)+pd.»ì}”Ô in ("
+						= "select floor(pd.è£½ä½œç•ªå·/1000) as å°, convert(varchar, pd.è£½ä½œæœŸ)+'-'+convert(varchar, pd.è£½ä½œç•ªå·)+pd.è£½ä½œæç•ª as å‡ºåº«ç•ª,"
+						+ "	sum(dc.é‡‘é¡)*-1 as åˆè¨ˆé¡"
+						+ " from T_å‡ºåº«_å­ dc"
+						+ " left outer join T_å‡ºåº«_è¦ª dp on dc.å‡ºåº«è¦ªID=dp.å‡ºåº«è¦ªID"
+						+ " left outer join T_è£½ä½œ_è¦ª pd on dc.åœ¨åº«è¦ªID=pd.è£½ä½œè¦ªID"
+						+ " left outer join (select å£²ä¸Šè¦ªID, è£½ä½œè¦ªID from T_å£²ä¸Š_å­ group by å£²ä¸Šè¦ªID, è£½ä½œè¦ªID) sc on pd.è£½ä½œè¦ªID=sc.è£½ä½œè¦ªID"
+						+ " left outer join T_å£²ä¸Š_è¦ª sp on sc.å£²ä¸Šè¦ªID=sp.å£²ä¸Šè¦ªID"
+						+ " where å‡ºåº«å¹´æœˆæ—¥<? and"
+						+ "	 (convert(varchar, pd.è£½ä½œæœŸ)+'-'+convert(varchar, pd.è£½ä½œç•ªå·)+pd.è£½ä½œæç•ª in ("
 						+ "		select "
-						+ "			convert(varchar, pp.»ìŠú)+'-'+convert(varchar, pp.»ì”Ô†)+pp.»ì}”Ô as »”Ô"
-						+ "		from T_»ì_e pp"
-						+ "		left outer join (select ”„ãeID, »ìeID from T_”„ã_q group by ”„ãeID, »ìeID) sc on pp.»ìeID=sc.»ìeID"
-						+ "		left outer join T_”„ã_e sp on sc.”„ãeID=sp.”„ãeID"
+						+ "			convert(varchar, pp.è£½ä½œæœŸ)+'-'+convert(varchar, pp.è£½ä½œç•ªå·)+pp.è£½ä½œæç•ª as è£½ç•ª"
+						+ "		from T_è£½ä½œ_è¦ª pp"
+						+ "		left outer join (select å£²ä¸Šè¦ªID, è£½ä½œè¦ªID from T_å£²ä¸Š_å­ group by å£²ä¸Šè¦ªID, è£½ä½œè¦ªID) sc on pp.è£½ä½œè¦ªID=sc.è£½ä½œè¦ªID"
+						+ "		left outer join T_å£²ä¸Š_è¦ª sp on sc.å£²ä¸Šè¦ªID=sp.å£²ä¸Šè¦ªID"
 						+ "			where"
-						+ "			(”„ã”NŒ“ú>=? or ”„ã”NŒ“ú is null)"
-						+ "			and (pp.»ìŠú>50 or (pp.»ìŠú=43 and pp.»ì”Ô†=8014) or (pp.»ìŠú=47 and pp.»ì”Ô†=8009)) and pp.»ì”Ô†<>0"
+						+ "			(å£²ä¸Šå¹´æœˆæ—¥>=? or å£²ä¸Šå¹´æœˆæ—¥ is null)"
+						+ "			and (pp.è£½ä½œæœŸ>50 or (pp.è£½ä½œæœŸ=43 and pp.è£½ä½œç•ªå·=8014) or (pp.è£½ä½œæœŸ=47 and pp.è£½ä½œç•ªå·=8009)) and pp.è£½ä½œç•ªå·<>0"
 						+ "	 ))"
-						+ " group by pd.»ì”Ô†, convert(varchar, pd.»ìŠú)+'-'+convert(varchar, pd.»ì”Ô†)+pd.»ì}”Ô";
+						+ " group by pd.è£½ä½œç•ªå·, convert(varchar, pd.è£½ä½œæœŸ)+'-'+convert(varchar, pd.è£½ä½œç•ªå·)+pd.è£½ä½œæç•ª";
 				//System.out.println(sql);
 				ps = c.prepareStatement(sql);
 				n = 1;
@@ -198,11 +198,11 @@ long t1 = System.currentTimeMillis();
 				ps.setDate(n++, from);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 					if(shelfMap != null) {
-						if(shelfMap.containsKey(rs.getString("oŒÉ”Ô"))) {
-							Shelf shelf = shelfMap.get(rs.getString("oŒÉ”Ô"));
-							shelf.setCarriedD(rs.getInt("‡ŒvŠz"));
+						if(shelfMap.containsKey(rs.getString("å‡ºåº«ç•ª"))) {
+							Shelf shelf = shelfMap.get(rs.getString("å‡ºåº«ç•ª"));
+							shelf.setCarriedD(rs.getInt("åˆè¨ˆé¡"));
 						}
 					}
 				}
@@ -212,14 +212,14 @@ long t1 = System.currentTimeMillis();
 //t2 = System.currentTimeMillis();
 //System.out.println("e:"+(t2-t1));t1=t2;
 				sql
-						= "select floor(’•¶”Ô†/1000) as ‘ä, ’•¶Šú, ’•¶”Ô†, ’•¶}”Ô,"
-						+ " convert(varchar, ’•¶Šú)+'-'+convert(varchar, ’•¶”Ô†)+’•¶}”Ô as ’”Ô,"
-						+ "	sum(oc.‹àŠz) as ‡ŒvŠz from T_İŒÉ_q oc"
-						+ " left outer join T_İŒÉ_e op on oc.İŒÉeID=op.İŒÉeID"
-						+ " left outer join T_w’è”[•i‘ s on oc.”[•i‘”Ô†=s.ID"
-						+ " left outer join T_»ì_e pp on op.’•¶Šú=pp.»ìŠú and op.’•¶”Ô†=pp.»ì”Ô† and op.’•¶}”Ô=pp.»ì}”Ô"
-						+ " where ”[•i‘“ú>=? and ”[•i‘“ú<? and »ìeID is not null"
-						+ " group by ’•¶Šú, ’•¶”Ô†, ’•¶}”Ô";
+						= "select floor(æ³¨æ–‡ç•ªå·/1000) as å°, æ³¨æ–‡æœŸ, æ³¨æ–‡ç•ªå·, æ³¨æ–‡æç•ª,"
+						+ " convert(varchar, æ³¨æ–‡æœŸ)+'-'+convert(varchar, æ³¨æ–‡ç•ªå·)+æ³¨æ–‡æç•ª as æ³¨ç•ª,"
+						+ "	sum(oc.é‡‘é¡) as åˆè¨ˆé¡ from T_åœ¨åº«_å­ oc"
+						+ " left outer join T_åœ¨åº«_è¦ª op on oc.åœ¨åº«è¦ªID=op.åœ¨åº«è¦ªID"
+						+ " left outer join T_æŒ‡å®šç´å“æ›¸ s on oc.ç´å“æ›¸ç•ªå·=s.ID"
+						+ " left outer join T_è£½ä½œ_è¦ª pp on op.æ³¨æ–‡æœŸ=pp.è£½ä½œæœŸ and op.æ³¨æ–‡ç•ªå·=pp.è£½ä½œç•ªå· and op.æ³¨æ–‡æç•ª=pp.è£½ä½œæç•ª"
+						+ " where ç´å“æ›¸æ—¥>=? and ç´å“æ›¸æ—¥<? and è£½ä½œè¦ªID is not null"
+						+ " group by æ³¨æ–‡æœŸ, æ³¨æ–‡ç•ªå·, æ³¨æ–‡æç•ª";
 				//System.out.println(sql);
 				ps = c.prepareStatement(sql);
 				n = 1;
@@ -227,14 +227,14 @@ long t1 = System.currentTimeMillis();
 				ps.setDate(n++, to2);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 					if(shelfMap != null) {
-						if(shelfMap.containsKey(rs.getString("’”Ô"))) {
-							Shelf shelf = shelfMap.get(rs.getString("’”Ô"));
-							shelf.setO(rs.getInt("‡ŒvŠz"));
+						if(shelfMap.containsKey(rs.getString("æ³¨ç•ª"))) {
+							Shelf shelf = shelfMap.get(rs.getString("æ³¨ç•ª"));
+							shelf.setO(rs.getInt("åˆè¨ˆé¡"));
 						} else {
-							shelfMap.put(rs.getString("’”Ô"), new Shelf("#"));
-							added.add(new Seiban(rs.getInt("’•¶Šú"), rs.getInt("’•¶”Ô†"), rs.getString("’•¶}”Ô")));
+							shelfMap.put(rs.getString("æ³¨ç•ª"), new Shelf("#"));
+							added.add(new Seiban(rs.getInt("æ³¨æ–‡æœŸ"), rs.getInt("æ³¨æ–‡ç•ªå·"), rs.getString("æ³¨æ–‡æç•ª")));
 						}
 					}
 				}
@@ -243,13 +243,13 @@ long t1 = System.currentTimeMillis();
 //t2 = System.currentTimeMillis();
 //System.out.println("f:"+(t2-t1));t1=t2;
 				sql
-						= "select floor(dp.»ì”Ô†/1000) as ‘ä, dp.»ìŠú, dp.»ì”Ô†, dp.»ì}”Ô,"
-						+ "convert(varchar, dp.»ìŠú)+'-'+convert(varchar, dp.»ì”Ô†)+dp.»ì}”Ô as oŒÉ”Ô,"
-						+ "	sum(dc.‹àŠz) as ‡ŒvŠz from (select * from T_oŒÉ_e where oŒÉ”NŒ“ú>=? and oŒÉ”NŒ“ú<?) dp"
-						+ " left outer join T_oŒÉ_q dc on dc.oŒÉeID=dp.oŒÉeID"
-						+ " left outer join T_»ì_e pp on dp.»ìŠú=pp.»ìŠú and dp.»ì”Ô†=pp.»ì”Ô† and dp.»ì}”Ô=pp.»ì}”Ô"
-						+ " where »ìeID is not null"
-						+ " group by dp.»ìŠú, dp.»ì”Ô†, dp.»ì}”Ô";
+						= "select floor(dp.è£½ä½œç•ªå·/1000) as å°, dp.è£½ä½œæœŸ, dp.è£½ä½œç•ªå·, dp.è£½ä½œæç•ª,"
+						+ "convert(varchar, dp.è£½ä½œæœŸ)+'-'+convert(varchar, dp.è£½ä½œç•ªå·)+dp.è£½ä½œæç•ª as å‡ºåº«ç•ª,"
+						+ "	sum(dc.é‡‘é¡) as åˆè¨ˆé¡ from (select * from T_å‡ºåº«_è¦ª where å‡ºåº«å¹´æœˆæ—¥>=? and å‡ºåº«å¹´æœˆæ—¥<?) dp"
+						+ " left outer join T_å‡ºåº«_å­ dc on dc.å‡ºåº«è¦ªID=dp.å‡ºåº«è¦ªID"
+						+ " left outer join T_è£½ä½œ_è¦ª pp on dp.è£½ä½œæœŸ=pp.è£½ä½œæœŸ and dp.è£½ä½œç•ªå·=pp.è£½ä½œç•ªå· and dp.è£½ä½œæç•ª=pp.è£½ä½œæç•ª"
+						+ " where è£½ä½œè¦ªID is not null"
+						+ " group by dp.è£½ä½œæœŸ, dp.è£½ä½œç•ªå·, dp.è£½ä½œæç•ª";
 				//System.out.println(sql);
 				ps = c.prepareStatement(sql);
 				n = 1;
@@ -257,14 +257,14 @@ long t1 = System.currentTimeMillis();
 				ps.setDate(n++, to2);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 					if(shelfMap != null) {
-						if(shelfMap.containsKey(rs.getString("oŒÉ”Ô"))) {
-							Shelf shelf = shelfMap.get(rs.getString("oŒÉ”Ô"));
-							shelf.setD(rs.getInt("‡ŒvŠz"));
+						if(shelfMap.containsKey(rs.getString("å‡ºåº«ç•ª"))) {
+							Shelf shelf = shelfMap.get(rs.getString("å‡ºåº«ç•ª"));
+							shelf.setD(rs.getInt("åˆè¨ˆé¡"));
 						} else {
-							shelfMap.put(rs.getString("oŒÉ”Ô"), new Shelf("#"));
-							added.add(new Seiban(rs.getInt("»ìŠú"), rs.getInt("»ì”Ô†"), rs.getString("»ì}”Ô")));
+							shelfMap.put(rs.getString("å‡ºåº«ç•ª"), new Shelf("#"));
+							added.add(new Seiban(rs.getInt("è£½ä½œæœŸ"), rs.getInt("è£½ä½œç•ªå·"), rs.getString("è£½ä½œæç•ª")));
 						}
 					}
 				}
@@ -273,13 +273,13 @@ long t1 = System.currentTimeMillis();
 //t2 = System.currentTimeMillis();
 //System.out.println("g:"+(t2-t1));
 				sql
-						= "select floor(pd.»ì”Ô†/1000) as ‘ä, pd.»ìŠú, pd.»ì”Ô†, pd.»ì}”Ô,"
-						+ " convert(varchar, pd.»ìŠú)+'-'+convert(varchar, pd.»ì”Ô†)+pd.»ì}”Ô as oŒÉ”Ô,"
-						+ "	sum(dc.‹àŠz)*-1 as ‡ŒvŠz from (select * from T_oŒÉ_e where oŒÉ”NŒ“ú>=? and oŒÉ”NŒ“ú<?) dp"
-						+ " left outer join T_oŒÉ_q dc on dc.oŒÉeID=dp.oŒÉeID"
-						+ " left outer join T_»ì_e pd on dc.İŒÉeID=pd.»ìeID"
-						+ " where »ìeID is not null"
-						+ " group by pd.»ìŠú, pd.»ì”Ô†, pd.»ì}”Ô";
+						= "select floor(pd.è£½ä½œç•ªå·/1000) as å°, pd.è£½ä½œæœŸ, pd.è£½ä½œç•ªå·, pd.è£½ä½œæç•ª,"
+						+ " convert(varchar, pd.è£½ä½œæœŸ)+'-'+convert(varchar, pd.è£½ä½œç•ªå·)+pd.è£½ä½œæç•ª as å‡ºåº«ç•ª,"
+						+ "	sum(dc.é‡‘é¡)*-1 as åˆè¨ˆé¡ from (select * from T_å‡ºåº«_è¦ª where å‡ºåº«å¹´æœˆæ—¥>=? and å‡ºåº«å¹´æœˆæ—¥<?) dp"
+						+ " left outer join T_å‡ºåº«_å­ dc on dc.å‡ºåº«è¦ªID=dp.å‡ºåº«è¦ªID"
+						+ " left outer join T_è£½ä½œ_è¦ª pd on dc.åœ¨åº«è¦ªID=pd.è£½ä½œè¦ªID"
+						+ " where è£½ä½œè¦ªID is not null"
+						+ " group by pd.è£½ä½œæœŸ, pd.è£½ä½œç•ªå·, pd.è£½ä½œæç•ª";
 				//System.out.println(sql);
 				ps = c.prepareStatement(sql);
 				n = 1;
@@ -287,14 +287,14 @@ long t1 = System.currentTimeMillis();
 				ps.setDate(n++, to2);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 					if(shelfMap != null) {
-						if(shelfMap.containsKey(rs.getString("oŒÉ”Ô"))) {
-							Shelf shelf = shelfMap.get(rs.getString("oŒÉ”Ô"));
-							shelf.setD(rs.getInt("‡ŒvŠz"));
+						if(shelfMap.containsKey(rs.getString("å‡ºåº«ç•ª"))) {
+							Shelf shelf = shelfMap.get(rs.getString("å‡ºåº«ç•ª"));
+							shelf.setD(rs.getInt("åˆè¨ˆé¡"));
 						} else {
-							shelfMap.put(rs.getString("oŒÉ”Ô"), new Shelf("#"));
-							added.add(new Seiban(rs.getInt("»ìŠú"), rs.getInt("»ì”Ô†"), rs.getString("»ì}”Ô")));
+							shelfMap.put(rs.getString("å‡ºåº«ç•ª"), new Shelf("#"));
+							added.add(new Seiban(rs.getInt("è£½ä½œæœŸ"), rs.getInt("è£½ä½œç•ªå·"), rs.getString("è£½ä½œæç•ª")));
 						}
 					}
 				}
@@ -304,13 +304,13 @@ long t1 = System.currentTimeMillis();
 //System.out.println("h:"+(t2-t1));
 				sql
 						= "select"
-						+ "	floor(w.»ì”Ô†/1000) as ‘ä, w.»ìŠú, w.»ì”Ô†, w.»ì}”Ô,"
-						+ " convert(varchar, w.»ìŠú)+'-'+convert(varchar, w.»ì”Ô†)+w.»ì}”Ô as »”Ô,"
-						+ "	convert(varchar,convert(money,sum(ŠÔ))/100) as H”"
-						+ " from (select * from T_‰ÁHÀÑ where »ìŠú<>0 and »ì”Ô†<>0 and ’…è“ú>=? and ’…è“ú<?) w"
-						+ " left outer join T_»ì_e pp on w.»ìŠú=pp.»ìŠú and w.»ì”Ô†=pp.»ì”Ô† and w.»ì}”Ô=pp.»ì}”Ô"
-						+ " where »ìeID is not null"
-						+ " group by w.»ìŠú, w.»ì”Ô†, w.»ì}”Ô";
+						+ "	floor(w.è£½ä½œç•ªå·/1000) as å°, w.è£½ä½œæœŸ, w.è£½ä½œç•ªå·, w.è£½ä½œæç•ª,"
+						+ " convert(varchar, w.è£½ä½œæœŸ)+'-'+convert(varchar, w.è£½ä½œç•ªå·)+w.è£½ä½œæç•ª as è£½ç•ª,"
+						+ "	convert(varchar,convert(money,sum(æ™‚é–“))/100) as å·¥æ•°"
+						+ " from (select * from T_åŠ å·¥å®Ÿç¸¾ where è£½ä½œæœŸ<>0 and è£½ä½œç•ªå·<>0 and ç€æ‰‹æ—¥æ™‚>=? and ç€æ‰‹æ—¥æ™‚<?) w"
+						+ " left outer join T_è£½ä½œ_è¦ª pp on w.è£½ä½œæœŸ=pp.è£½ä½œæœŸ and w.è£½ä½œç•ªå·=pp.è£½ä½œç•ªå· and w.è£½ä½œæç•ª=pp.è£½ä½œæç•ª"
+						+ " where è£½ä½œè¦ªID is not null"
+						+ " group by w.è£½ä½œæœŸ, w.è£½ä½œç•ªå·, w.è£½ä½œæç•ª";
 				//System.out.println(sql);
 				ps = c.prepareStatement(sql);
 				n = 1;
@@ -318,14 +318,14 @@ long t1 = System.currentTimeMillis();
 				ps.setDate(n++, to);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 					if(shelfMap != null) {
-						if(shelfMap.containsKey(rs.getString("»”Ô"))) {
-							Shelf shelf = shelfMap.get(rs.getString("»”Ô"));
-							shelf.setW(rs.getString("H”"));
+						if(shelfMap.containsKey(rs.getString("è£½ç•ª"))) {
+							Shelf shelf = shelfMap.get(rs.getString("è£½ç•ª"));
+							shelf.setW(rs.getString("å·¥æ•°"));
 						} else {
-							shelfMap.put(rs.getString("»”Ô"), new Shelf("#"));
-							added.add(new Seiban(rs.getInt("»ìŠú"), rs.getInt("»ì”Ô†"), rs.getString("»ì}”Ô")));
+							shelfMap.put(rs.getString("è£½ç•ª"), new Shelf("#"));
+							added.add(new Seiban(rs.getInt("è£½ä½œæœŸ"), rs.getInt("è£½ä½œç•ªå·"), rs.getString("è£½ä½œæç•ª")));
 						}
 					}
 				}
@@ -335,22 +335,22 @@ long t1 = System.currentTimeMillis();
 //System.out.println("i:"+(t2-t1));t1=t2;
 				sql
 						= "select"
-						+ "	floor(w.»ì”Ô†/1000) as ‘ä, w.»ìŠú, w.»ì”Ô†, w.»ì}”Ô,"
-						+ " convert(varchar, w.»ìŠú)+'-'+convert(varchar, w.»ì”Ô†)+w.»ì}”Ô as »”Ô,"
-						+ "	convert(varchar,convert(money,sum(ŠÔ))/100) as H”"
-						+ " from (select * from T_‰ÁHÀÑ where ’…è“ú<?) w"
+						+ "	floor(w.è£½ä½œç•ªå·/1000) as å°, w.è£½ä½œæœŸ, w.è£½ä½œç•ªå·, w.è£½ä½œæç•ª,"
+						+ " convert(varchar, w.è£½ä½œæœŸ)+'-'+convert(varchar, w.è£½ä½œç•ªå·)+w.è£½ä½œæç•ª as è£½ç•ª,"
+						+ "	convert(varchar,convert(money,sum(æ™‚é–“))/100) as å·¥æ•°"
+						+ " from (select * from T_åŠ å·¥å®Ÿç¸¾ where ç€æ‰‹æ—¥æ™‚<?) w"
 						+ " where"
-						+ "	 (convert(varchar, w.»ìŠú)+'-'+convert(varchar, w.»ì”Ô†)+w.»ì}”Ô in ("
+						+ "	 (convert(varchar, w.è£½ä½œæœŸ)+'-'+convert(varchar, w.è£½ä½œç•ªå·)+w.è£½ä½œæç•ª in ("
 						+ "		select "
-						+ "			convert(varchar, pp.»ìŠú)+'-'+convert(varchar, pp.»ì”Ô†)+pp.»ì}”Ô as »”Ô"
-						+ "		from T_»ì_e pp"
-						+ "		left outer join (select ”„ãeID, »ìeID from T_”„ã_q group by ”„ãeID, »ìeID) sc on pp.»ìeID=sc.»ìeID"
-						+ "		left outer join T_”„ã_e sp on sc.”„ãeID=sp.”„ãeID"
+						+ "			convert(varchar, pp.è£½ä½œæœŸ)+'-'+convert(varchar, pp.è£½ä½œç•ªå·)+pp.è£½ä½œæç•ª as è£½ç•ª"
+						+ "		from T_è£½ä½œ_è¦ª pp"
+						+ "		left outer join (select å£²ä¸Šè¦ªID, è£½ä½œè¦ªID from T_å£²ä¸Š_å­ group by å£²ä¸Šè¦ªID, è£½ä½œè¦ªID) sc on pp.è£½ä½œè¦ªID=sc.è£½ä½œè¦ªID"
+						+ "		left outer join T_å£²ä¸Š_è¦ª sp on sc.å£²ä¸Šè¦ªID=sp.å£²ä¸Šè¦ªID"
 						+ "			where"
-						+ "			(”„ã”NŒ“ú>=? or ”„ã”NŒ“ú is null)"
-						+ "			and (pp.»ìŠú>50 or (pp.»ìŠú=43 and pp.»ì”Ô†=8014) or (pp.»ìŠú=47 and pp.»ì”Ô†=8009)) and pp.»ì”Ô†<>0"
+						+ "			(å£²ä¸Šå¹´æœˆæ—¥>=? or å£²ä¸Šå¹´æœˆæ—¥ is null)"
+						+ "			and (pp.è£½ä½œæœŸ>50 or (pp.è£½ä½œæœŸ=43 and pp.è£½ä½œç•ªå·=8014) or (pp.è£½ä½œæœŸ=47 and pp.è£½ä½œç•ªå·=8009)) and pp.è£½ä½œç•ªå·<>0"
 						+ "	 ))"
-						+ " group by w.»ìŠú, w.»ì”Ô†, w.»ì}”Ô";
+						+ " group by w.è£½ä½œæœŸ, w.è£½ä½œç•ªå·, w.è£½ä½œæç•ª";
 				//System.out.println(sql);
 				ps = c.prepareStatement(sql);
 				n = 1;
@@ -358,14 +358,14 @@ long t1 = System.currentTimeMillis();
 				ps.setDate(n++, from);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+					Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 					if(shelfMap != null) {
-						if(shelfMap.containsKey(rs.getString("»”Ô"))) {
-							Shelf shelf = shelfMap.get(rs.getString("»”Ô"));
-							shelf.setCarriesW(rs.getString("H”"));
+						if(shelfMap.containsKey(rs.getString("è£½ç•ª"))) {
+							Shelf shelf = shelfMap.get(rs.getString("è£½ç•ª"));
+							shelf.setCarriesW(rs.getString("å·¥æ•°"));
 						} else {
-							shelfMap.put(rs.getString("»”Ô"), new Shelf("#"));
-							added.add(new Seiban(rs.getInt("»ìŠú"), rs.getInt("»ì”Ô†"), rs.getString("»ì}”Ô")));
+							shelfMap.put(rs.getString("è£½ç•ª"), new Shelf("#"));
+							added.add(new Seiban(rs.getInt("è£½ä½œæœŸ"), rs.getInt("è£½ä½œç•ªå·"), rs.getString("è£½ä½œæç•ª")));
 						}
 					}
 				}
@@ -375,18 +375,18 @@ long t1 = System.currentTimeMillis();
 //System.out.println("j:"+(t2-t1));t1=t2;
 				if(added.size() > 0) {
 					StringBuilder sb = new StringBuilder
-							( "select floor(’•¶”Ô†/1000) as ‘ä, convert(varchar, ’•¶Šú)+'-'+convert(varchar, ’•¶”Ô†)+’•¶}”Ô as ’”Ô,"
-							+ "	sum(‹àŠz) as ‡ŒvŠz from"
-							+ "  (select İŒÉeID, ’•¶Šú, ’•¶”Ô†, ’•¶}”Ô from T_İŒÉ_e where");
+							( "select floor(æ³¨æ–‡ç•ªå·/1000) as å°, convert(varchar, æ³¨æ–‡æœŸ)+'-'+convert(varchar, æ³¨æ–‡ç•ªå·)+æ³¨æ–‡æç•ª as æ³¨ç•ª,"
+							+ "	sum(é‡‘é¡) as åˆè¨ˆé¡ from"
+							+ "  (select åœ¨åº«è¦ªID, æ³¨æ–‡æœŸ, æ³¨æ–‡ç•ªå·, æ³¨æ–‡æç•ª from T_åœ¨åº«_è¦ª where");
 					for(int i = 0; i < added.size(); i++) {
 						if(i > 0) sb.append(" OR");
-						sb.append(" (’•¶Šú=? and ’•¶”Ô†=? and ’•¶}”Ô=?)");
+						sb.append(" (æ³¨æ–‡æœŸ=? and æ³¨æ–‡ç•ªå·=? and æ³¨æ–‡æç•ª=?)");
 					}
 					sb.append(") op"
-						+ " left outer join T_İŒÉ_q oc on oc.İŒÉeID=op.İŒÉeID"
-						+ " left outer join T_w’è”[•i‘ s on oc.”[•i‘”Ô†=s.ID"
-						+ " where ”[•i‘“ú<?");
-					sb.append( " group by ’•¶Šú, ’•¶”Ô†, ’•¶}”Ô");
+						+ " left outer join T_åœ¨åº«_å­ oc on oc.åœ¨åº«è¦ªID=op.åœ¨åº«è¦ªID"
+						+ " left outer join T_æŒ‡å®šç´å“æ›¸ s on oc.ç´å“æ›¸ç•ªå·=s.ID"
+						+ " where ç´å“æ›¸æ—¥<?");
+					sb.append( " group by æ³¨æ–‡æœŸ, æ³¨æ–‡ç•ªå·, æ³¨æ–‡æç•ª");
 					ps = c.prepareStatement(sb.toString());
 					n = 1;
 					for(Seiban num : added) {
@@ -397,11 +397,11 @@ long t1 = System.currentTimeMillis();
 					ps.setDate(n++, from2);
 					rs = ps.executeQuery();
 					while(rs.next()) {
-						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 						if(shelfMap != null) {
-							if(shelfMap.containsKey(rs.getString("’”Ô"))) {
-								Shelf shelf = shelfMap.get(rs.getString("’”Ô"));
-								shelf.setCarriedO(rs.getInt("‡ŒvŠz"));
+							if(shelfMap.containsKey(rs.getString("æ³¨ç•ª"))) {
+								Shelf shelf = shelfMap.get(rs.getString("æ³¨ç•ª"));
+								shelf.setCarriedO(rs.getInt("åˆè¨ˆé¡"));
 							}
 						}
 					}
@@ -410,19 +410,19 @@ long t1 = System.currentTimeMillis();
 //t2 = System.currentTimeMillis();
 //System.out.println("k:"+(t2-t1));t1=t2;
 					sb = new StringBuilder
-							( "select floor(dp.»ì”Ô†/1000) as ‘ä,"
-							+ " convert(varchar, dp.»ìŠú)+'-'+convert(varchar, dp.»ì”Ô†)+dp.»ì}”Ô as oŒÉ”Ô,"
-							+ "	sum(dc.‹àŠz) as ‡ŒvŠz"
-							+ " from (select * from T_oŒÉ_e where oŒÉ”NŒ“ú<?) dp"
-							+ " left outer join T_oŒÉ_q dc on dc.oŒÉeID=dp.oŒÉeID"
-							+ " left outer join T_»ì_e pd on dc.İŒÉeID=pd.»ìeID"
-							+ " left outer join (select ”„ãeID, »ìeID from T_”„ã_q group by ”„ãeID, »ìeID) sc on pd.»ìeID=sc.»ìeID"
+							( "select floor(dp.è£½ä½œç•ªå·/1000) as å°,"
+							+ " convert(varchar, dp.è£½ä½œæœŸ)+'-'+convert(varchar, dp.è£½ä½œç•ªå·)+dp.è£½ä½œæç•ª as å‡ºåº«ç•ª,"
+							+ "	sum(dc.é‡‘é¡) as åˆè¨ˆé¡"
+							+ " from (select * from T_å‡ºåº«_è¦ª where å‡ºåº«å¹´æœˆæ—¥<?) dp"
+							+ " left outer join T_å‡ºåº«_å­ dc on dc.å‡ºåº«è¦ªID=dp.å‡ºåº«è¦ªID"
+							+ " left outer join T_è£½ä½œ_è¦ª pd on dc.åœ¨åº«è¦ªID=pd.è£½ä½œè¦ªID"
+							+ " left outer join (select å£²ä¸Šè¦ªID, è£½ä½œè¦ªID from T_å£²ä¸Š_å­ group by å£²ä¸Šè¦ªID, è£½ä½œè¦ªID) sc on pd.è£½ä½œè¦ªID=sc.è£½ä½œè¦ªID"
 							+ " where");
 							for(int i = 0; i < added.size(); i++) {
 								if(i > 0) sb.append(" OR");
-								sb.append(" (dp.»ìŠú=? and dp.»ì”Ô†=? and dp.»ì}”Ô=?)");
+								sb.append(" (dp.è£½ä½œæœŸ=? and dp.è£½ä½œç•ªå·=? and dp.è£½ä½œæç•ª=?)");
 							}
-							sb.append(" group by dp.»ìŠú, dp.»ì”Ô†, dp.»ì}”Ô");
+							sb.append(" group by dp.è£½ä½œæœŸ, dp.è£½ä½œç•ªå·, dp.è£½ä½œæç•ª");
 					ps = c.prepareStatement(sb.toString());
 					n = 1;
 					ps.setDate(n++, from2);
@@ -433,11 +433,11 @@ long t1 = System.currentTimeMillis();
 					}
 					rs = ps.executeQuery();
 					while(rs.next()) {
-						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 						if(shelfMap != null) {
-							if(shelfMap.containsKey(rs.getString("oŒÉ”Ô"))) {
-								Shelf shelf = shelfMap.get(rs.getString("oŒÉ”Ô"));
-								shelf.setCarriedD(rs.getInt("‡ŒvŠz"));
+							if(shelfMap.containsKey(rs.getString("å‡ºåº«ç•ª"))) {
+								Shelf shelf = shelfMap.get(rs.getString("å‡ºåº«ç•ª"));
+								shelf.setCarriedD(rs.getInt("åˆè¨ˆé¡"));
 							}
 						}
 					}
@@ -446,20 +446,20 @@ long t1 = System.currentTimeMillis();
 //t2 = System.currentTimeMillis();
 //System.out.println("l:"+(t2-t1));t1=t2;
 					sb = new StringBuilder
-							( "select floor(pd.»ì”Ô†/1000) as ‘ä,"
-							+ " convert(varchar, pd.»ìŠú)+'-'+convert(varchar, pd.»ì”Ô†)+pd.»ì}”Ô as oŒÉ”Ô,"
-							+ "	sum(dc.‹àŠz)*-1 as ‡ŒvŠz"
-							+ " from (select * from T_oŒÉ_e where oŒÉ”NŒ“ú<?) dp"
-							+ " left outer join T_oŒÉ_q dc on dc.oŒÉeID=dp.oŒÉeID"
-							+ " left outer join T_»ì_e pd on dc.İŒÉeID=pd.»ìeID"
-							+ " left outer join (select ”„ãeID, »ìeID from T_”„ã_q group by ”„ãeID, »ìeID) sc on pd.»ìeID=sc.»ìeID"
-							+ " left outer join T_”„ã_e sp on sc.”„ãeID=sp.”„ãeID"
+							( "select floor(pd.è£½ä½œç•ªå·/1000) as å°,"
+							+ " convert(varchar, pd.è£½ä½œæœŸ)+'-'+convert(varchar, pd.è£½ä½œç•ªå·)+pd.è£½ä½œæç•ª as å‡ºåº«ç•ª,"
+							+ "	sum(dc.é‡‘é¡)*-1 as åˆè¨ˆé¡"
+							+ " from (select * from T_å‡ºåº«_è¦ª where å‡ºåº«å¹´æœˆæ—¥<?) dp"
+							+ " left outer join T_å‡ºåº«_å­ dc on dc.å‡ºåº«è¦ªID=dp.å‡ºåº«è¦ªID"
+							+ " left outer join T_è£½ä½œ_è¦ª pd on dc.åœ¨åº«è¦ªID=pd.è£½ä½œè¦ªID"
+							+ " left outer join (select å£²ä¸Šè¦ªID, è£½ä½œè¦ªID from T_å£²ä¸Š_å­ group by å£²ä¸Šè¦ªID, è£½ä½œè¦ªID) sc on pd.è£½ä½œè¦ªID=sc.è£½ä½œè¦ªID"
+							+ " left outer join T_å£²ä¸Š_è¦ª sp on sc.å£²ä¸Šè¦ªID=sp.å£²ä¸Šè¦ªID"
 							+ " where");
 							for(int i = 0; i < added.size(); i++) {
 								if(i > 0) sb.append(" OR");
-								sb.append(" (pd.»ìŠú=? and pd.»ì”Ô†=? and pd.»ì}”Ô=?)");
+								sb.append(" (pd.è£½ä½œæœŸ=? and pd.è£½ä½œç•ªå·=? and pd.è£½ä½œæç•ª=?)");
 							}
-					sb.append(" group by pd.»ìŠú, pd.»ì”Ô†, pd.»ì}”Ô");
+					sb.append(" group by pd.è£½ä½œæœŸ, pd.è£½ä½œç•ªå·, pd.è£½ä½œæç•ª");
 					ps = c.prepareStatement(sb.toString());
 					n = 1;
 					ps.setDate(n++, from2);
@@ -470,11 +470,11 @@ long t1 = System.currentTimeMillis();
 					}
 					rs = ps.executeQuery();
 					while(rs.next()) {
-						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 						if(shelfMap != null) {
-							if(shelfMap.containsKey(rs.getString("oŒÉ”Ô"))) {
-								Shelf shelf = shelfMap.get(rs.getString("oŒÉ”Ô"));
-								shelf.setCarriedD(rs.getInt("‡ŒvŠz"));
+							if(shelfMap.containsKey(rs.getString("å‡ºåº«ç•ª"))) {
+								Shelf shelf = shelfMap.get(rs.getString("å‡ºåº«ç•ª"));
+								shelf.setCarriedD(rs.getInt("åˆè¨ˆé¡"));
 							}
 						}
 					}
@@ -484,19 +484,19 @@ long t1 = System.currentTimeMillis();
 //t2 = System.currentTimeMillis();
 //System.out.println("m:"+(t2-t1));t1=t2;
 					sb = new StringBuilder
-							( "select floor(’•¶”Ô†/1000) as ‘ä,"
-							+ " convert(varchar, ’•¶Šú)+'-'+convert(varchar, ’•¶”Ô†)+’•¶}”Ô as ’”Ô,"
-							+ "	sum(oc.‹àŠz) as ‡ŒvŠz from T_İŒÉ_q oc"
-							+ " left outer join T_İŒÉ_e op on oc.İŒÉeID=op.İŒÉeID"
-							+ " left outer join T_w’è”[•i‘ s on oc.”[•i‘”Ô†=s.ID"
-							+ " left outer join T_»ì_e pp on op.’•¶Šú=pp.»ìŠú and op.’•¶”Ô†=pp.»ì”Ô† and op.’•¶}”Ô=pp.»ì}”Ô"
-							+ " where ”[•i‘“ú>=? and ”[•i‘“ú<? and (");
+							( "select floor(æ³¨æ–‡ç•ªå·/1000) as å°,"
+							+ " convert(varchar, æ³¨æ–‡æœŸ)+'-'+convert(varchar, æ³¨æ–‡ç•ªå·)+æ³¨æ–‡æç•ª as æ³¨ç•ª,"
+							+ "	sum(oc.é‡‘é¡) as åˆè¨ˆé¡ from T_åœ¨åº«_å­ oc"
+							+ " left outer join T_åœ¨åº«_è¦ª op on oc.åœ¨åº«è¦ªID=op.åœ¨åº«è¦ªID"
+							+ " left outer join T_æŒ‡å®šç´å“æ›¸ s on oc.ç´å“æ›¸ç•ªå·=s.ID"
+							+ " left outer join T_è£½ä½œ_è¦ª pp on op.æ³¨æ–‡æœŸ=pp.è£½ä½œæœŸ and op.æ³¨æ–‡ç•ªå·=pp.è£½ä½œç•ªå· and op.æ³¨æ–‡æç•ª=pp.è£½ä½œæç•ª"
+							+ " where ç´å“æ›¸æ—¥>=? and ç´å“æ›¸æ—¥<? and (");
 					for(int i = 0; i < added.size(); i++) {
 						if(i > 0) sb.append(" OR");
-						sb.append(" (’•¶Šú=? and ’•¶”Ô†=? and ’•¶}”Ô=?)");
+						sb.append(" (æ³¨æ–‡æœŸ=? and æ³¨æ–‡ç•ªå·=? and æ³¨æ–‡æç•ª=?)");
 					}
 					sb.append( ")");
-					sb.append(" group by ’•¶Šú, ’•¶”Ô†, ’•¶}”Ô");
+					sb.append(" group by æ³¨æ–‡æœŸ, æ³¨æ–‡ç•ªå·, æ³¨æ–‡æç•ª");
 					ps = c.prepareStatement(sb.toString());
 					n = 1;
 					ps.setDate(n++, from2);
@@ -508,11 +508,11 @@ long t1 = System.currentTimeMillis();
 					}
 					rs = ps.executeQuery();
 					while(rs.next()) {
-						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 						if(shelfMap != null) {
-							if(shelfMap.containsKey(rs.getString("’”Ô"))) {
-								Shelf shelf = shelfMap.get(rs.getString("’”Ô"));
-								shelf.setO(rs.getInt("‡ŒvŠz"));
+							if(shelfMap.containsKey(rs.getString("æ³¨ç•ª"))) {
+								Shelf shelf = shelfMap.get(rs.getString("æ³¨ç•ª"));
+								shelf.setO(rs.getInt("åˆè¨ˆé¡"));
 							}
 						}
 					}
@@ -521,17 +521,17 @@ long t1 = System.currentTimeMillis();
 //t2 = System.currentTimeMillis();
 //System.out.println("n:"+(t2-t1));t1=t2;
 					sb = new StringBuilder
-							( "select floor(dp.»ì”Ô†/1000) as ‘ä,"
-							+ " convert(varchar, dp.»ìŠú)+'-'+convert(varchar, dp.»ì”Ô†)+dp.»ì}”Ô as oŒÉ”Ô,"
-							+ "	sum(dc.‹àŠz) as ‡ŒvŠz from (select * from T_oŒÉ_e where oŒÉ”NŒ“ú>=? and oŒÉ”NŒ“ú<?) dp"
-							+ " left outer join T_oŒÉ_q dc on dc.oŒÉeID=dp.oŒÉeID"
-							+ " left outer join T_»ì_e pp on dp.»ìŠú=pp.»ìŠú and dp.»ì”Ô†=pp.»ì”Ô† and dp.»ì}”Ô=pp.»ì}”Ô"
+							( "select floor(dp.è£½ä½œç•ªå·/1000) as å°,"
+							+ " convert(varchar, dp.è£½ä½œæœŸ)+'-'+convert(varchar, dp.è£½ä½œç•ªå·)+dp.è£½ä½œæç•ª as å‡ºåº«ç•ª,"
+							+ "	sum(dc.é‡‘é¡) as åˆè¨ˆé¡ from (select * from T_å‡ºåº«_è¦ª where å‡ºåº«å¹´æœˆæ—¥>=? and å‡ºåº«å¹´æœˆæ—¥<?) dp"
+							+ " left outer join T_å‡ºåº«_å­ dc on dc.å‡ºåº«è¦ªID=dp.å‡ºåº«è¦ªID"
+							+ " left outer join T_è£½ä½œ_è¦ª pp on dp.è£½ä½œæœŸ=pp.è£½ä½œæœŸ and dp.è£½ä½œç•ªå·=pp.è£½ä½œç•ªå· and dp.è£½ä½œæç•ª=pp.è£½ä½œæç•ª"
 							+ " where");
 							for(int i = 0; i < added.size(); i++) {
 								if(i > 0) sb.append(" OR");
-								sb.append(" (dp.»ìŠú=? and dp.»ì”Ô†=? and dp.»ì}”Ô=?)");
+								sb.append(" (dp.è£½ä½œæœŸ=? and dp.è£½ä½œç•ªå·=? and dp.è£½ä½œæç•ª=?)");
 							}
-					sb.append(" group by dp.»ìŠú, dp.»ì”Ô†, dp.»ì}”Ô");
+					sb.append(" group by dp.è£½ä½œæœŸ, dp.è£½ä½œç•ªå·, dp.è£½ä½œæç•ª");
 					ps = c.prepareStatement(sb.toString());
 					n = 1;
 					ps.setDate(n++, from2);
@@ -543,11 +543,11 @@ long t1 = System.currentTimeMillis();
 					}
 					rs = ps.executeQuery();
 					while(rs.next()) {
-						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 						if(shelfMap != null) {
-							if(shelfMap.containsKey(rs.getString("oŒÉ”Ô"))) {
-								Shelf shelf = shelfMap.get(rs.getString("oŒÉ”Ô"));
-								shelf.setD(rs.getInt("‡ŒvŠz"));
+							if(shelfMap.containsKey(rs.getString("å‡ºåº«ç•ª"))) {
+								Shelf shelf = shelfMap.get(rs.getString("å‡ºåº«ç•ª"));
+								shelf.setD(rs.getInt("åˆè¨ˆé¡"));
 							}
 						}
 					}
@@ -556,16 +556,16 @@ long t1 = System.currentTimeMillis();
 //t2 = System.currentTimeMillis();
 //System.out.println("o:"+(t2-t1));t1=t2;
 					sb = new StringBuilder
-							( "select floor(pd.»ì”Ô†/1000) as ‘ä, convert(varchar, pd.»ìŠú)+'-'+convert(varchar, pd.»ì”Ô†)+pd.»ì}”Ô as oŒÉ”Ô,"
-							+ "	sum(dc.‹àŠz)*-1 as ‡ŒvŠz from (select * from T_oŒÉ_e where oŒÉ”NŒ“ú>=? and oŒÉ”NŒ“ú<?) dp"
-							+ " left outer join T_oŒÉ_q dc on dc.oŒÉeID=dp.oŒÉeID"
-							+ " left outer join T_»ì_e pd on dc.İŒÉeID=pd.»ìeID"
+							( "select floor(pd.è£½ä½œç•ªå·/1000) as å°, convert(varchar, pd.è£½ä½œæœŸ)+'-'+convert(varchar, pd.è£½ä½œç•ªå·)+pd.è£½ä½œæç•ª as å‡ºåº«ç•ª,"
+							+ "	sum(dc.é‡‘é¡)*-1 as åˆè¨ˆé¡ from (select * from T_å‡ºåº«_è¦ª where å‡ºåº«å¹´æœˆæ—¥>=? and å‡ºåº«å¹´æœˆæ—¥<?) dp"
+							+ " left outer join T_å‡ºåº«_å­ dc on dc.å‡ºåº«è¦ªID=dp.å‡ºåº«è¦ªID"
+							+ " left outer join T_è£½ä½œ_è¦ª pd on dc.åœ¨åº«è¦ªID=pd.è£½ä½œè¦ªID"
 							+ " where");
 							for(int i = 0; i < added.size(); i++) {
 								if(i > 0) sb.append(" OR");
-								sb.append(" (pd.»ìŠú=? and pd.»ì”Ô†=? and pd.»ì}”Ô=?)");
+								sb.append(" (pd.è£½ä½œæœŸ=? and pd.è£½ä½œç•ªå·=? and pd.è£½ä½œæç•ª=?)");
 							}
-					sb.append(" group by pd.»ìŠú, pd.»ì”Ô†, pd.»ì}”Ô");
+					sb.append(" group by pd.è£½ä½œæœŸ, pd.è£½ä½œç•ªå·, pd.è£½ä½œæç•ª");
 					ps = c.prepareStatement(sb.toString());
 					n = 1;
 					ps.setDate(n++, from2);
@@ -577,11 +577,11 @@ long t1 = System.currentTimeMillis();
 					}
 					rs = ps.executeQuery();
 					while(rs.next()) {
-						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 						if(shelfMap != null) {
-							if(shelfMap.containsKey(rs.getString("oŒÉ”Ô"))) {
-								Shelf shelf = shelfMap.get(rs.getString("oŒÉ”Ô"));
-								shelf.setD(rs.getInt("‡ŒvŠz"));
+							if(shelfMap.containsKey(rs.getString("å‡ºåº«ç•ª"))) {
+								Shelf shelf = shelfMap.get(rs.getString("å‡ºåº«ç•ª"));
+								shelf.setD(rs.getInt("åˆè¨ˆé¡"));
 							}
 						}
 					}
@@ -591,16 +591,16 @@ long t1 = System.currentTimeMillis();
 //System.out.println("p:"+(t2-t1));t1=t2;
 					sb = new StringBuilder
 							( "select"
-							+ "	floor(w.»ì”Ô†/1000) as ‘ä, convert(varchar, w.»ìŠú)+'-'+convert(varchar, w.»ì”Ô†)+w.»ì}”Ô as »”Ô,"
-							+ "	convert(varchar,convert(money,sum(ŠÔ))/100) as H”"
-							+ " from (select * from T_‰ÁHÀÑ where ’…è“ú>=? and ’…è“ú<?) w"
-							+ " left outer join T_»ì_e pp on w.»ìŠú=pp.»ìŠú and w.»ì”Ô†=pp.»ì”Ô† and w.»ì}”Ô=pp.»ì}”Ô"
+							+ "	floor(w.è£½ä½œç•ªå·/1000) as å°, convert(varchar, w.è£½ä½œæœŸ)+'-'+convert(varchar, w.è£½ä½œç•ªå·)+w.è£½ä½œæç•ª as è£½ç•ª,"
+							+ "	convert(varchar,convert(money,sum(æ™‚é–“))/100) as å·¥æ•°"
+							+ " from (select * from T_åŠ å·¥å®Ÿç¸¾ where ç€æ‰‹æ—¥æ™‚>=? and ç€æ‰‹æ—¥æ™‚<?) w"
+							+ " left outer join T_è£½ä½œ_è¦ª pp on w.è£½ä½œæœŸ=pp.è£½ä½œæœŸ and w.è£½ä½œç•ªå·=pp.è£½ä½œç•ªå· and w.è£½ä½œæç•ª=pp.è£½ä½œæç•ª"
 							+ " where ");
 							for(int i = 0; i < added.size(); i++) {
 								if(i > 0) sb.append(" OR");
-								sb.append(" (w.»ìŠú=? and w.»ì”Ô†=? and w.»ì}”Ô=?)");
+								sb.append(" (w.è£½ä½œæœŸ=? and w.è£½ä½œç•ªå·=? and w.è£½ä½œæç•ª=?)");
 							}
-					sb.append(" group by w.»ìŠú, w.»ì”Ô†, w.»ì}”Ô");
+					sb.append(" group by w.è£½ä½œæœŸ, w.è£½ä½œç•ªå·, w.è£½ä½œæç•ª");
 					ps = c.prepareStatement(sb.toString());
 					n = 1;
 					ps.setDate(n++, from);
@@ -612,11 +612,11 @@ long t1 = System.currentTimeMillis();
 					}
 					rs = ps.executeQuery();
 					while(rs.next()) {
-						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 						if(shelfMap != null) {
-							if(shelfMap.containsKey(rs.getString("»”Ô"))) {
-								Shelf shelf = shelfMap.get(rs.getString("»”Ô"));
-								shelf.setW(rs.getString("H”"));
+							if(shelfMap.containsKey(rs.getString("è£½ç•ª"))) {
+								Shelf shelf = shelfMap.get(rs.getString("è£½ç•ª"));
+								shelf.setW(rs.getString("å·¥æ•°"));
 							}
 						}
 					}
@@ -627,15 +627,15 @@ long t1 = System.currentTimeMillis();
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 					sb = new StringBuilder
 							( "select"
-							+ "	floor(w.»ì”Ô†/1000) as ‘ä, convert(varchar, w.»ìŠú)+'-'+convert(varchar, w.»ì”Ô†)+w.»ì}”Ô as »”Ô,"
-							+ "	convert(varchar,convert(money,sum(ŠÔ))/100) as H”"
-							+ " from (select * from T_‰ÁHÀÑ where ’…è“ú<?) w"
+							+ "	floor(w.è£½ä½œç•ªå·/1000) as å°, convert(varchar, w.è£½ä½œæœŸ)+'-'+convert(varchar, w.è£½ä½œç•ªå·)+w.è£½ä½œæç•ª as è£½ç•ª,"
+							+ "	convert(varchar,convert(money,sum(æ™‚é–“))/100) as å·¥æ•°"
+							+ " from (select * from T_åŠ å·¥å®Ÿç¸¾ where ç€æ‰‹æ—¥æ™‚<?) w"
 							+ " where");
 							for(int i = 0; i < added.size(); i++) {
 								if(i > 0) sb.append(" OR");
-								sb.append(" (w.»ìŠú=? and w.»ì”Ô†=? and w.»ì}”Ô=?)");
+								sb.append(" (w.è£½ä½œæœŸ=? and w.è£½ä½œç•ªå·=? and w.è£½ä½œæç•ª=?)");
 							}
-					sb.append(" group by w.»ìŠú, w.»ì”Ô†, w.»ì}”Ô");
+					sb.append(" group by w.è£½ä½œæœŸ, w.è£½ä½œç•ªå·, w.è£½ä½œæç•ª");
 					ps = c.prepareStatement(sb.toString());
 					n = 1;
 					ps.setDate(n++, to);
@@ -646,11 +646,11 @@ long t1 = System.currentTimeMillis();
 					}
 					rs = ps.executeQuery();
 					while(rs.next()) {
-						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("‘ä"));
+						Map<String, Shelf> shelfMap = shelfMaps.get(rs.getInt("å°"));
 						if(shelfMap != null) {
-							if(shelfMap.containsKey(rs.getString("»”Ô"))) {
-								Shelf shelf = shelfMap.get(rs.getString("»”Ô"));
-								shelf.setCarriesW(rs.getString("H”"));
+							if(shelfMap.containsKey(rs.getString("è£½ç•ª"))) {
+								Shelf shelf = shelfMap.get(rs.getString("è£½ç•ª"));
+								shelf.setCarriesW(rs.getString("å·¥æ•°"));
 							}
 						}
 					}
@@ -664,7 +664,7 @@ long t1 = System.currentTimeMillis();
 			}
 //t2 = System.currentTimeMillis();
 //System.out.println("r:"+(t2-t1));t1=t2;
-			//map ¨ vector
+			//map â†’ vector
 			for(int i = 1; i < 10; i++) {
 				for(Map.Entry<String, Shelf> e : shelfMaps.get(i).entrySet()) {
 					Shelf shelf = e.getValue();
@@ -687,7 +687,7 @@ long t1 = System.currentTimeMillis();
 			}
 //t2 = System.currentTimeMillis();
 //System.out.println("s:"+(t2-t1));t1=t2;
-			//ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
 			out.writeObject(data);
@@ -772,11 +772,11 @@ long t1 = System.currentTimeMillis();
 			isTarget = true;
 		}
 		private void setD(int d) {
-			this.d += d;//90‚Ìƒ}ƒCƒiƒX‚ğ‰Á–¡
+			this.d += d;//90ã®ãƒã‚¤ãƒŠã‚¹ã‚’åŠ å‘³
 			isTarget = true;
 		}
 		private void setCarriedD(int d) {
-			this.carriedD += d;//90‚Ìƒ}ƒCƒiƒX‚ğ‰Á–¡
+			this.carriedD += d;//90ã®ãƒã‚¤ãƒŠã‚¹ã‚’åŠ å‘³
 			isTarget = true;
 		}
 	}

@@ -42,26 +42,26 @@ public class GetNenga extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			in.close();
 			try {
-				ps = c.prepareStatement("SELECT í—Ş FROM M_”N‰êó");
+				ps = c.prepareStatement("SELECT ç¨®é¡ FROM M_å¹´è³€çŠ¶");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					types.add(rs.getString("í—Ş"));
+					types.add(rs.getString("ç¨®é¡"));
 				}
 
 			} catch(SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCodeF"+ex.getErrorCode());
-				err.append("SQLStateF"+ex.getSQLState());
+				err.append("ErrorCodeï¼š"+ex.getErrorCode());
+				err.append("SQLStateï¼š"+ex.getSQLState());
 				Logging.logStackTrace(ex, lg, className);
 			}
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 
 			response.setContentType("application/octet-stream");

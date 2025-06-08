@@ -44,21 +44,21 @@ public class Summary extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof Date) {
 					date = (Date)obj;
 				} else {
-					err.append(className + "readObject‚ªProjectSearchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªProjectSearchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒProjectSearchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒProjectSearchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
@@ -68,56 +68,56 @@ public class Summary extends GenericServlet {
 			cal.add(Calendar.DATE, -1);
 			try {
 				ps = c.prepareStatement(
-				"SELECT “¾ˆÓæCD,SUM(Å‡Œv) AS Á”ïÅ FROM (" +
+				"SELECT å¾—æ„å…ˆCD,SUM(ç¨åˆè¨ˆ) AS æ¶ˆè²»ç¨ FROM (" +
 					"SELECT " +
-						"“¾ˆÓæCD," +
-						"SUM(‹àŠz) AS ”[“ü‡Œv," +
-						"ROUND(SUM(‹àŠz) *" +
-						"(SELECT Å—¦ FROM M_Á”ïÅ t WHERE “K—pŠJn“ú<='2013/3/31' AND NOT EXISTS" +
-							"(SELECT 1 FROM M_Á”ïÅ t2 WHERE t.“K—pŠJn“ú<t2.“K—pŠJn“ú AND “K—pŠJn“ú<='2013/3/31')),0)" +
-							" AS Å‡Œv" +
-					 "FROM V_”„ãWŒvƒwƒbƒ_" +
-					 "WHERE ”„ã”NŒ“ú>='2013/3/1' AND ”„ã”NŒ“ú<'2013/4/1'" +
-					 "GROUP BY “¾ˆÓæCD" +
+						"å¾—æ„å…ˆCD," +
+						"SUM(é‡‘é¡) AS ç´å…¥åˆè¨ˆ," +
+						"ROUND(SUM(é‡‘é¡) *" +
+						"(SELECT ç¨ç‡ FROM M_æ¶ˆè²»ç¨ t WHERE é©ç”¨é–‹å§‹æ—¥<='2013/3/31' AND NOT EXISTS" +
+							"(SELECT 1 FROM M_æ¶ˆè²»ç¨ t2 WHERE t.é©ç”¨é–‹å§‹æ—¥<t2.é©ç”¨é–‹å§‹æ—¥ AND é©ç”¨é–‹å§‹æ—¥<='2013/3/31')),0)" +
+							" AS ç¨åˆè¨ˆ" +
+					 "FROM V_å£²ä¸Šé›†è¨ˆãƒ˜ãƒƒãƒ€" +
+					 "WHERE å£²ä¸Šå¹´æœˆæ—¥>='2013/3/1' AND å£²ä¸Šå¹´æœˆæ—¥<'2013/4/1'" +
+					 "GROUP BY å¾—æ„å…ˆCD" +
 					 "UNION" +
-					 "SELECT 0,0,‹àŠz FROM T_”„ã_q c" +
-					 "LEFT OUTER JOIN T_”„ã_e p" +
-					 "ON c.”„ãeID=p.”„ãeID" +
-					 "WHERE •\¦CD=5 AND ”„ã”NŒ“ú>='2013/3/1' AND ”„ã”NŒ“ú<'2013/4/1'" +
+					 "SELECT 0,0,é‡‘é¡ FROM T_å£²ä¸Š_å­ c" +
+					 "LEFT OUTER JOIN T_å£²ä¸Š_è¦ª p" +
+					 "ON c.å£²ä¸Šè¦ªID=p.å£²ä¸Šè¦ªID" +
+					 "WHERE è¡¨ç¤ºCD=5 AND å£²ä¸Šå¹´æœˆæ—¥>='2013/3/1' AND å£²ä¸Šå¹´æœˆæ—¥<'2013/4/1'" +
 				") a" +
-				"GROUP BY “¾ˆÓæCD");
+				"GROUP BY å¾—æ„å…ˆCD");
 //				ps.setDate(1, searchDTO.getStr(i));
 //				ps.setDate(2, x);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					taxes.put(rs.getInt("“¾ˆÓæCD"), rs.getInt("Á”ïÅ"));
+					taxes.put(rs.getInt("å¾—æ„å…ˆCD"), rs.getInt("æ¶ˆè²»ç¨"));
 				}
 
 				ps = c.prepareStatement(
-				"SELECT “¾ˆÓæCD,“¾ˆÓæ–¼,ó’”Ô†,SUM(‹àŠz) AS ‹àŠz FROM (" +
+				"SELECT å¾—æ„å…ˆCD,å¾—æ„å…ˆå,å—æ³¨ç•ªå·,SUM(é‡‘é¡) AS é‡‘é¡ FROM (" +
 					"SELECT " +
-						"sp.“¾ˆÓæCD," +
+						"sp.å¾—æ„å…ˆCD," +
 						"CASE" +
-						"WHEN í•ÊCD=1 THEN '‡Š'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						"WHEN í•ÊCD=2 THEN ‰ïĞ–¼+'‡Š' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						"WHEN í•ÊCD=3 THEN '‡‹'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						"WHEN í•ÊCD=4 THEN ‰ïĞ–¼+'‡‹' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						"ELSE ‰ïĞ–¼ END AS “¾ˆÓæ–¼," +
-						"CONVERT(VARCHAR, pp.»ìŠú)+'-'+CONVERT(VARCHAR, pp.»ì”Ô†) AS ó’”Ô†," +
-						"sc.‹àŠz" +
-					"FROM T_”„ã_q sc" +
-					"LEFT OUTER JOIN T_”„ã_e sp ON sc.”„ãeID=sp.”„ãeID" +
-					"LEFT OUTER JOIN M_–@l c ON sp.“¾ˆÓæCD=c.“¾ˆÓæCD" +
-					"LEFT OUTER JOIN T_»ì_e pp ON sc.»ìeID=pp.»ìeID" +
-					"WHERE ”„ã”NŒ“ú>='2013/3/1' AND ”„ã”NŒ“ú<'2013/4/1'" +
-				") a GROUP BY “¾ˆÓæCD,“¾ˆÓæ–¼,ó’”Ô†");
+						"WHEN ç¨®åˆ¥CD=1 THEN 'ãˆ±'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						"WHEN ç¨®åˆ¥CD=2 THEN ä¼šç¤¾å+'ãˆ±' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						"WHEN ç¨®åˆ¥CD=3 THEN 'ãˆ²'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						"WHEN ç¨®åˆ¥CD=4 THEN ä¼šç¤¾å+'ãˆ²' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						"ELSE ä¼šç¤¾å END AS å¾—æ„å…ˆå," +
+						"CONVERT(VARCHAR, pp.è£½ä½œæœŸ)+'-'+CONVERT(VARCHAR, pp.è£½ä½œç•ªå·) AS å—æ³¨ç•ªå·," +
+						"sc.é‡‘é¡" +
+					"FROM T_å£²ä¸Š_å­ sc" +
+					"LEFT OUTER JOIN T_å£²ä¸Š_è¦ª sp ON sc.å£²ä¸Šè¦ªID=sp.å£²ä¸Šè¦ªID" +
+					"LEFT OUTER JOIN M_æ³•äºº c ON sp.å¾—æ„å…ˆCD=c.å¾—æ„å…ˆCD" +
+					"LEFT OUTER JOIN T_è£½ä½œ_è¦ª pp ON sc.è£½ä½œè¦ªID=pp.è£½ä½œè¦ªID" +
+					"WHERE å£²ä¸Šå¹´æœˆæ—¥>='2013/3/1' AND å£²ä¸Šå¹´æœˆæ—¥<'2013/4/1'" +
+				") a GROUP BY å¾—æ„å…ˆCD,å¾—æ„å…ˆå,å—æ³¨ç•ªå·");
 				//				ps.setDate(1, searchDTO.getStr(i));
 //				ps.setDate(2, x)
 				rs = ps.executeQuery();
 				int accountID = 0;
 				int subTotal = 0;
 				while(rs.next()) {
-					int newAccountID = rs.getInt("“¾ˆÓæCD");
+					int newAccountID = rs.getInt("å¾—æ„å…ˆCD");
 					if(accountID != 0 && accountID == newAccountID) {
 						if(taxes.containsKey(accountID)) {
 							Vector<Object> v = new Vector<Object>();
@@ -134,8 +134,8 @@ public class Summary extends GenericServlet {
 					}
 					Vector<Object> v = new Vector<Object>();
 					v.add(newAccountID);
-					v.add(rs.getString("»”Ô"));
-					v.add(rs.getString("‹àŠz"));
+					v.add(rs.getString("è£½ç•ª"));
+					v.add(rs.getString("é‡‘é¡"));
 					data.add(v);
 				}
 				if(taxes.containsKey(accountID)) {
@@ -157,7 +157,7 @@ public class Summary extends GenericServlet {
 				data.add(v);
 
 			} catch(SQLException ex) {
-				err.append(className + "ƒe[ƒuƒ‹uT_Œ©Ï_ev‚Ì“Ç‚İo‚µ‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_è¦‹ç©_è¦ªã€ã®èª­ã¿å‡ºã—ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}catch(Exception ex) {
@@ -165,7 +165,7 @@ public class Summary extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

@@ -43,67 +43,67 @@ public class ChildSearch extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
-				//—¬—p
+				//æµç”¨
 				if(obj instanceof ProductNumber) {
 					ProductNumber pn = (ProductNumber)obj;
-					type = pn.getPeriod();//ŒŸõ‘ÎÛƒe[ƒuƒ‹‚Ìí—Ş
+					type = pn.getPeriod();//æ¤œç´¢å¯¾è±¡ãƒ†ãƒ¼ãƒ–ãƒ«ã®ç¨®é¡
 					conjunction = pn.getNumber() == 0 ? "AND" : "OR";
-					str = pn.getBranch();//ŒŸõƒL[ƒ[ƒh
+					str = pn.getBranch();//æ¤œç´¢ã‚­ãƒ¼ãƒ¯ãƒ¼ãƒ‰
 				} else {
-					err.append(className + "readObject‚ªProjectSearchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªProjectSearchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒProjectSearchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒProjectSearchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 			try {
 				StringBuilder query = new StringBuilder(
 					"select top 30000 " +
-					"e.Œ©ÏeID," +
-					"p.»ìeID," +
-					"s.”„ãeID," +
-					"Œ©ÏŠú," +
-					"right('000' + convert(varchar, e.Œ©Ï”Ô†), 3) AS Œ©Ï”Ô†," +
-					"CASE WHEN e.Œ©Ï}”Ô IS NULL THEN '' ELSE e.Œ©Ï}”Ô END AS Œ©Ï}”Ô," +
-					"CASE WHEN p.“¾ˆÓæCD=0 OR p.“¾ˆÓæCD IS NULL THEN e.ˆÄŒ–¼ ELSE p.ˆÄŒ–¼ END AS ˆÄŒ–¼," +
-					"right('00' + convert(varchar, p2.»ìŠú), 2) AS ’a¶Šú," +
-					"p2.»ì”Ô† AS ’a¶”Ô†," +
-					"p2.»ì}”Ô AS ’a¶}”Ô," +
-					"CASE WHEN p.“¾ˆÓæCD=0 OR p.“¾ˆÓæCD IS NULL THEN e.“¾ˆÓæCD ELSE p.“¾ˆÓæCD END AS “¾ˆÓæCD," +
+					"e.è¦‹ç©è¦ªID," +
+					"p.è£½ä½œè¦ªID," +
+					"s.å£²ä¸Šè¦ªID," +
+					"è¦‹ç©æœŸ," +
+					"right('000' + convert(varchar, e.è¦‹ç©ç•ªå·), 3) AS è¦‹ç©ç•ªå·," +
+					"CASE WHEN e.è¦‹ç©æç•ª IS NULL THEN '' ELSE e.è¦‹ç©æç•ª END AS è¦‹ç©æç•ª," +
+					"CASE WHEN p.å¾—æ„å…ˆCD=0 OR p.å¾—æ„å…ˆCD IS NULL THEN e.æ¡ˆä»¶å ELSE p.æ¡ˆä»¶å END AS æ¡ˆä»¶å," +
+					"right('00' + convert(varchar, p2.è£½ä½œæœŸ), 2) AS èª•ç”ŸæœŸ," +
+					"p2.è£½ä½œç•ªå· AS èª•ç”Ÿç•ªå·," +
+					"p2.è£½ä½œæç•ª AS èª•ç”Ÿæç•ª," +
+					"CASE WHEN p.å¾—æ„å…ˆCD=0 OR p.å¾—æ„å…ˆCD IS NULL THEN e.å¾—æ„å…ˆCD ELSE p.å¾—æ„å…ˆCD END AS å¾—æ„å…ˆCD," +
 					"CASE " +
-						 "WHEN í•ÊCD = 1 THEN '‡Š'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END " +
-						 "WHEN í•ÊCD = 2 THEN ‰ïĞ–¼+'‡Š' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END " +
-						 "WHEN í•ÊCD = 3 THEN '‡‹'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END " +
-						 "WHEN í•ÊCD = 4 THEN ‰ïĞ–¼+'‡‹' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END " +
-						 "ELSE ‰ïĞ–¼ END AS Ğ–¼," +
-					"e.Œ©Ï”NŒ“ú," +
-					"e.’ño”NŒ“ú," +
-					"e.Œ©Ï‹àŠz," +
-					"p.ó’”Ô†," +
-					"p.ó’”NŒ“ú," +
-					"p.”[Šú," +
-					"p.”[“üæ–¼," +
-					"right('00' + convert(varchar, p.»ìŠú), 2) AS »ìŠú," +
-					"p.»ì”Ô†," +
-					"CASE WHEN p.»ì}”Ô IS NULL THEN '' ELSE p.»ì}”Ô END AS »ì}”Ô," +
-					"p.”­s”NŒ“ú AS »ì”NŒ“ú," +
-					"p.Œ_–ñ‹àŠz," +
-					"p.o‰×”NŒ“ú," +
-					"p.ŒŸû”NŒ“ú" +
+						 "WHEN ç¨®åˆ¥CD = 1 THEN 'ãˆ±'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END " +
+						 "WHEN ç¨®åˆ¥CD = 2 THEN ä¼šç¤¾å+'ãˆ±' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END " +
+						 "WHEN ç¨®åˆ¥CD = 3 THEN 'ãˆ²'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END " +
+						 "WHEN ç¨®åˆ¥CD = 4 THEN ä¼šç¤¾å+'ãˆ²' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END " +
+						 "ELSE ä¼šç¤¾å END AS ç¤¾å," +
+					"e.è¦‹ç©å¹´æœˆæ—¥," +
+					"e.æå‡ºå¹´æœˆæ—¥," +
+					"e.è¦‹ç©é‡‘é¡," +
+					"p.å—æ³¨ç•ªå·," +
+					"p.å—æ³¨å¹´æœˆæ—¥," +
+					"p.ç´æœŸ," +
+					"p.ç´å…¥å…ˆå," +
+					"right('00' + convert(varchar, p.è£½ä½œæœŸ), 2) AS è£½ä½œæœŸ," +
+					"p.è£½ä½œç•ªå·," +
+					"CASE WHEN p.è£½ä½œæç•ª IS NULL THEN '' ELSE p.è£½ä½œæç•ª END AS è£½ä½œæç•ª," +
+					"p.ç™ºè¡Œå¹´æœˆæ—¥ AS è£½ä½œå¹´æœˆæ—¥," +
+					"p.å¥‘ç´„é‡‘é¡," +
+					"p.å‡ºè·å¹´æœˆæ—¥," +
+					"p.æ¤œåå¹´æœˆæ—¥" +
 				 " from ");
 //////////////////////////////////////////////////////////////////////////	
-				String col = "–¼Ì";
-				if(type == 3) col = "•i–¼";
+				String col = "åç§°";
+				if(type == 3) col = "å“å";
 				StringBuilder sb = new StringBuilder("");
-				str = str.replaceAll("@", " ");
+				str = str.replaceAll("ã€€", " ");
 				String[] words = str.split(" ");
 				int count = words.length;
 				for(int j = 0; j < count; j++) {
@@ -114,34 +114,34 @@ public class ChildSearch extends GenericServlet {
 				}
 //////////////////////////////////////////////////////////////////
 				switch(type) {
-					case 1://Œ©Ï
-						query.append("(select Œ©ÏeID from T_Œ©Ï_q where " + sb.toString() + " group by Œ©ÏeID) a" +
-							" left outer join T_»ì_e p on a.Œ©ÏeID=p.Œ©ÏeID" +
-							" left outer join T_Œ©Ï_e e on a.Œ©ÏeID=e.Œ©ÏeID" +
-							" left outer join T_»ì_e p2 on e.Œ³»ìeID=p2.»ìeID" +
-							" left outer join (select min(”„ãeID) as ”„ãeID,»ìeID from T_”„ã_q group by »ìeID) sc on p.»ìeID=sc.»ìeID" +
-							" left outer join T_”„ã_e s on s.”„ãeID=sc.”„ãeID" +
-							" left outer join M_–@l c on e.“¾ˆÓæCD=c.“¾ˆÓæCD" +
-							" where e.“¾ˆÓæCD is not null");
+					case 1://è¦‹ç©
+						query.append("(select è¦‹ç©è¦ªID from T_è¦‹ç©_å­ where " + sb.toString() + " group by è¦‹ç©è¦ªID) a" +
+							" left outer join T_è£½ä½œ_è¦ª p on a.è¦‹ç©è¦ªID=p.è¦‹ç©è¦ªID" +
+							" left outer join T_è¦‹ç©_è¦ª e on a.è¦‹ç©è¦ªID=e.è¦‹ç©è¦ªID" +
+							" left outer join T_è£½ä½œ_è¦ª p2 on e.å…ƒè£½ä½œè¦ªID=p2.è£½ä½œè¦ªID" +
+							" left outer join (select min(å£²ä¸Šè¦ªID) as å£²ä¸Šè¦ªID,è£½ä½œè¦ªID from T_å£²ä¸Š_å­ group by è£½ä½œè¦ªID) sc on p.è£½ä½œè¦ªID=sc.è£½ä½œè¦ªID" +
+							" left outer join T_å£²ä¸Š_è¦ª s on s.å£²ä¸Šè¦ªID=sc.å£²ä¸Šè¦ªID" +
+							" left outer join M_æ³•äºº c on e.å¾—æ„å…ˆCD=c.å¾—æ„å…ˆCD" +
+							" where e.å¾—æ„å…ˆCD is not null");
 						break;
-					case 2://»ì
-						query.append("(select »ìeID from T_»ì_q where " + sb.toString() + " group by »ìeID) a" +
-							" left outer join T_»ì_e p on a.»ìeID=p.»ìeID" +
-							" left outer join T_Œ©Ï_e e on p.Œ©ÏeID=e.Œ©ÏeID" +
-							" left outer join T_»ì_e p2 on e.Œ³»ìeID=p2.»ìeID" +
-							" left outer join (select min(”„ãeID) as ”„ãeID,»ìeID from T_”„ã_q group by »ìeID) sc on p.»ìeID=sc.»ìeID" +
-							" left outer join T_”„ã_e s on s.”„ãeID=sc.”„ãeID" +
-							" left outer join M_–@l c on p.“¾ˆÓæCD=c.“¾ˆÓæCD" +
-							" where p.“¾ˆÓæCD is not null");
+					case 2://è£½ä½œ
+						query.append("(select è£½ä½œè¦ªID from T_è£½ä½œ_å­ where " + sb.toString() + " group by è£½ä½œè¦ªID) a" +
+							" left outer join T_è£½ä½œ_è¦ª p on a.è£½ä½œè¦ªID=p.è£½ä½œè¦ªID" +
+							" left outer join T_è¦‹ç©_è¦ª e on p.è¦‹ç©è¦ªID=e.è¦‹ç©è¦ªID" +
+							" left outer join T_è£½ä½œ_è¦ª p2 on e.å…ƒè£½ä½œè¦ªID=p2.è£½ä½œè¦ªID" +
+							" left outer join (select min(å£²ä¸Šè¦ªID) as å£²ä¸Šè¦ªID,è£½ä½œè¦ªID from T_å£²ä¸Š_å­ group by è£½ä½œè¦ªID) sc on p.è£½ä½œè¦ªID=sc.è£½ä½œè¦ªID" +
+							" left outer join T_å£²ä¸Š_è¦ª s on s.å£²ä¸Šè¦ªID=sc.å£²ä¸Šè¦ªID" +
+							" left outer join M_æ³•äºº c on p.å¾—æ„å…ˆCD=c.å¾—æ„å…ˆCD" +
+							" where p.å¾—æ„å…ˆCD is not null");
 						break;
-					case 3://”„ã
-						query.append("(select »ìeID,”„ãeID from T_”„ã_q where " + sb.toString() + " group by »ìeID,”„ãeID) a" +
-							" left outer join T_»ì_e p on a.»ìeID=p.»ìeID" +
-							" left outer join T_Œ©Ï_e e on p.Œ©ÏeID=e.Œ©ÏeID" +
-							" left outer join T_»ì_e p2 on e.Œ³»ìeID=p2.»ìeID" +
-							" left outer join T_”„ã_e s on s.”„ãeID=a.”„ãeID" +
-							" left outer join M_–@l c on p.“¾ˆÓæCD=c.“¾ˆÓæCD" +
-							" where p.“¾ˆÓæCD is not null");
+					case 3://å£²ä¸Š
+						query.append("(select è£½ä½œè¦ªID,å£²ä¸Šè¦ªID from T_å£²ä¸Š_å­ where " + sb.toString() + " group by è£½ä½œè¦ªID,å£²ä¸Šè¦ªID) a" +
+							" left outer join T_è£½ä½œ_è¦ª p on a.è£½ä½œè¦ªID=p.è£½ä½œè¦ªID" +
+							" left outer join T_è¦‹ç©_è¦ª e on p.è¦‹ç©è¦ªID=e.è¦‹ç©è¦ªID" +
+							" left outer join T_è£½ä½œ_è¦ª p2 on e.å…ƒè£½ä½œè¦ªID=p2.è£½ä½œè¦ªID" +
+							" left outer join T_å£²ä¸Š_è¦ª s on s.å£²ä¸Šè¦ªID=a.å£²ä¸Šè¦ªID" +
+							" left outer join M_æ³•äºº c on p.å¾—æ„å…ˆCD=c.å¾—æ„å…ˆCD" +
+							" where p.å¾—æ„å…ˆCD is not null");
 						break;
 				}
 				ps = c.prepareStatement(query.toString());
@@ -151,47 +151,47 @@ public class ChildSearch extends GenericServlet {
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					Vector<Object> v2 = new Vector<Object>();
-					v2.add(new IDDTO(rs.getInt("Œ©ÏeID"), rs.getInt("»ìeID"), rs.getInt("”„ãeID")));
-					if(rs.getInt("Œ©Ï”Ô†") != 0) {
-						v2.add(rs.getString("Œ©ÏŠú") + "-" + rs.getString("Œ©Ï”Ô†") + " " + rs.getString("Œ©Ï}”Ô"));
+					v2.add(new IDDTO(rs.getInt("è¦‹ç©è¦ªID"), rs.getInt("è£½ä½œè¦ªID"), rs.getInt("å£²ä¸Šè¦ªID")));
+					if(rs.getInt("è¦‹ç©ç•ªå·") != 0) {
+						v2.add(rs.getString("è¦‹ç©æœŸ") + "-" + rs.getString("è¦‹ç©ç•ªå·") + " " + rs.getString("è¦‹ç©æç•ª"));
 					} else {
 						v2.add("");
 					}
-					if(rs.getInt("»ì”Ô†") != 0) {
-						v2.add(rs.getString("»ìŠú") + "-" + rs.getInt("»ì”Ô†") + " " + rs.getString("»ì}”Ô"));
+					if(rs.getInt("è£½ä½œç•ªå·") != 0) {
+						v2.add(rs.getString("è£½ä½œæœŸ") + "-" + rs.getInt("è£½ä½œç•ªå·") + " " + rs.getString("è£½ä½œæç•ª"));
 					} else {
 						v2.add("");
 					}
-					//v2.add(rs.getInt("í—Ş"));
-					if(rs.getInt("’a¶”Ô†") != 0) {
-						v2.add(rs.getString("’a¶Šú") + "-" + rs.getInt("’a¶”Ô†") + " " + rs.getString("’a¶}”Ô"));
+					//v2.add(rs.getInt("ç¨®é¡"));
+					if(rs.getInt("èª•ç”Ÿç•ªå·") != 0) {
+						v2.add(rs.getString("èª•ç”ŸæœŸ") + "-" + rs.getInt("èª•ç”Ÿç•ªå·") + " " + rs.getString("èª•ç”Ÿæç•ª"));
 					} else {
 						v2.add("");
 					}
 
-					if(rs.getInt("“¾ˆÓæCD") != 0) {
-						v2.add(/*rs.getInt("“¾ˆÓæCD") + "F" + */rs.getString("Ğ–¼"));
+					if(rs.getInt("å¾—æ„å…ˆCD") != 0) {
+						v2.add(/*rs.getInt("å¾—æ„å…ˆCD") + "ï¼š" + */rs.getString("ç¤¾å"));
 					} else {
 						v2.add("");
 					}
-					v2.add(rs.getString("”[“üæ–¼"));
-					v2.add(rs.getString("ˆÄŒ–¼"));
+					v2.add(rs.getString("ç´å…¥å…ˆå"));
+					v2.add(rs.getString("æ¡ˆä»¶å"));
 
-					v2.add(rs.getDate("Œ©Ï”NŒ“ú"));
-					v2.add(rs.getInt("Œ©Ï‹àŠz"));
-					v2.add(rs.getString("ó’”Ô†"));
-					v2.add(rs.getDate("ó’”NŒ“ú"));
-					v2.add(rs.getDate("»ì”NŒ“ú"));
-					v2.add(rs.getDate("”[Šú"));
-					v2.add(rs.getInt("Œ_–ñ‹àŠz"));
-					v2.add(rs.getDate("o‰×”NŒ“ú"));
-					v2.add(rs.getDate("ŒŸû”NŒ“ú"));
+					v2.add(rs.getDate("è¦‹ç©å¹´æœˆæ—¥"));
+					v2.add(rs.getInt("è¦‹ç©é‡‘é¡"));
+					v2.add(rs.getString("å—æ³¨ç•ªå·"));
+					v2.add(rs.getDate("å—æ³¨å¹´æœˆæ—¥"));
+					v2.add(rs.getDate("è£½ä½œå¹´æœˆæ—¥"));
+					v2.add(rs.getDate("ç´æœŸ"));
+					v2.add(rs.getInt("å¥‘ç´„é‡‘é¡"));
+					v2.add(rs.getDate("å‡ºè·å¹´æœˆæ—¥"));
+					v2.add(rs.getDate("æ¤œåå¹´æœˆæ—¥"));
 
 					v.add(v2);
 				}
 
 			} catch(SQLException ex) {
-				err.append(className + "ƒe[ƒuƒ‹uT_Œ©Ï_ev‚Ì“Ç‚İo‚µ‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_è¦‹ç©_è¦ªã€ã®èª­ã¿å‡ºã—ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}catch(Exception ex) {
@@ -199,7 +199,7 @@ public class ChildSearch extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

@@ -14,7 +14,7 @@ import fukaisystem.sql.DBConnection;
 import org.apache.log4j.Logger;
 
 /**
- * ƒe[ƒuƒ‹‚Ì“à—e‚Æ—ñî•ñ‚ğæ“¾‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX
+ * ãƒ†ãƒ¼ãƒ–ãƒ«ã®å†…å®¹ã¨åˆ—æƒ…å ±ã‚’å–å¾—ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹
  * @author kameura
  *
  */
@@ -38,7 +38,7 @@ public class GetSalesData extends GenericServlet {
 
 		Map<String, Integer> m = new HashMap<String, Integer>();
 		try {
-	//ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç“Ç‚İ‚İ
+	//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰èª­ã¿è¾¼ã¿
 
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
@@ -59,22 +59,22 @@ public class GetSalesData extends GenericServlet {
 			try {
 				ps = c.prepareStatement(
 					"SELECT" +
-					" “¾ˆÓæCD," +
-					" ROUND(CAST(Å‡Œv AS DECIMAL(18,9)),2) AS ÅŠz" +
+					" å¾—æ„å…ˆCD," +
+					" ROUND(CAST(ç¨åˆè¨ˆ AS DECIMAL(18,9)),2) AS ç¨é¡" +
 					" FROM (" +
 						"SELECT" +
-						" “¾ˆÓæCD," +
-						" ROUND(SUM(‹àŠz) * (" +
-							"SELECT Å—¦" +
-							" FROM M_Á”ïÅ t" +
-							" WHERE “K—pŠJn“ú<? AND NOT EXISTS (" +
-								"SELECT 1 FROM M_Á”ïÅ t2" +
-								" WHERE t.“K—pŠJn“ú<t2.“K—pŠJn“ú AND “K—pŠJn“ú<?" +
+						" å¾—æ„å…ˆCD," +
+						" ROUND(SUM(é‡‘é¡) * (" +
+							"SELECT ç¨ç‡" +
+							" FROM M_æ¶ˆè²»ç¨ t" +
+							" WHERE é©ç”¨é–‹å§‹æ—¥<? AND NOT EXISTS (" +
+								"SELECT 1 FROM M_æ¶ˆè²»ç¨ t2" +
+								" WHERE t.é©ç”¨é–‹å§‹æ—¥<t2.é©ç”¨é–‹å§‹æ—¥ AND é©ç”¨é–‹å§‹æ—¥<?" +
 							")" +
-						"),0) AS Å‡Œv" +
-						" FROM V_”„ãWŒvƒwƒbƒ_ " +
-						" WHERE ”„ã”NŒ“ú>=? AND ”„ã”NŒ“ú<?" +
-						" GROUP BY “¾ˆÓæCD" +
+						"),0) AS ç¨åˆè¨ˆ" +
+						" FROM V_å£²ä¸Šé›†è¨ˆãƒ˜ãƒƒãƒ€ " +
+						" WHERE å£²ä¸Šå¹´æœˆæ—¥>=? AND å£²ä¸Šå¹´æœˆæ—¥<?" +
+						" GROUP BY å¾—æ„å…ˆCD" +
 					") a");
 				ps.setDate(1, to);
 				ps.setDate(2, to);
@@ -82,27 +82,27 @@ public class GetSalesData extends GenericServlet {
 				ps.setDate(4, to);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					m.put(rs.getString("“¾ˆÓæCD"), rs.getInt("ÅŠz"));
+					m.put(rs.getString("å¾—æ„å…ˆCD"), rs.getInt("ç¨é¡"));
 				}
 				
 				ps = c.prepareStatement(
-					 "select “¾ˆÓæCD,“¾ˆÓæ–¼,ó’”Ô†,“ú•t,sum(‹àŠz) as ‹àŠz from (" +
+					 "select å¾—æ„å…ˆCD,å¾—æ„å…ˆå,å—æ³¨ç•ªå·,æ—¥ä»˜,sum(é‡‘é¡) as é‡‘é¡ from (" +
 						 " select " +
-						 " sp.“¾ˆÓæCD," +
-						 " CASE WHEN í•ÊCD=1 THEN '‡Š'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						 "      WHEN í•ÊCD=2 THEN ‰ïĞ–¼+'‡Š' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						 "      WHEN í•ÊCD=3 THEN '‡‹'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						 "      WHEN í•ÊCD=4 THEN ‰ïĞ–¼+'‡‹' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-						 "      ELSE ‰ïĞ–¼ END AS “¾ˆÓæ–¼," +
-						 " convert(varchar, pp.»ìŠú)+'-'+convert(varchar, pp.»ì”Ô†)+pp.»ì}”Ô as ó’”Ô†," +
-						 " sp.”„ã”NŒ“ú as “ú•t," +
-						 " sc.‹àŠz " +
-						 " FROM T_”„ã_q sc" +
-						 " left outer join T_”„ã_e sp on sc.”„ãeID=sp.”„ãeID" +
-						 " left outer join M_–@l c on sp.“¾ˆÓæCD=c.“¾ˆÓæCD" +
-						 " left outer join T_»ì_e pp on sc.»ìeID=pp.»ìeID" +
-						 " WHERE ”„ã”NŒ“ú>=? AND ”„ã”NŒ“ú<? and ”„ãFLG='true' and »ì”Ô†<9000 and ”[•i‹æ•ªCD<5" +
-					 ") a group by “¾ˆÓæCD,“¾ˆÓæ–¼,ó’”Ô†,“ú•t");
+						 " sp.å¾—æ„å…ˆCD," +
+						 " CASE WHEN ç¨®åˆ¥CD=1 THEN 'ãˆ±'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						 "      WHEN ç¨®åˆ¥CD=2 THEN ä¼šç¤¾å+'ãˆ±' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						 "      WHEN ç¨®åˆ¥CD=3 THEN 'ãˆ²'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						 "      WHEN ç¨®åˆ¥CD=4 THEN ä¼šç¤¾å+'ãˆ²' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+						 "      ELSE ä¼šç¤¾å END AS å¾—æ„å…ˆå," +
+						 " convert(varchar, pp.è£½ä½œæœŸ)+'-'+convert(varchar, pp.è£½ä½œç•ªå·)+pp.è£½ä½œæç•ª as å—æ³¨ç•ªå·," +
+						 " sp.å£²ä¸Šå¹´æœˆæ—¥ as æ—¥ä»˜," +
+						 " sc.é‡‘é¡ " +
+						 " FROM T_å£²ä¸Š_å­ sc" +
+						 " left outer join T_å£²ä¸Š_è¦ª sp on sc.å£²ä¸Šè¦ªID=sp.å£²ä¸Šè¦ªID" +
+						 " left outer join M_æ³•äºº c on sp.å¾—æ„å…ˆCD=c.å¾—æ„å…ˆCD" +
+						 " left outer join T_è£½ä½œ_è¦ª pp on sc.è£½ä½œè¦ªID=pp.è£½ä½œè¦ªID" +
+						 " WHERE å£²ä¸Šå¹´æœˆæ—¥>=? AND å£²ä¸Šå¹´æœˆæ—¥<? and å£²ä¸ŠFLG='true' and è£½ä½œç•ªå·<9000 and ç´å“åŒºåˆ†CD<5" +
+					 ") a group by å¾—æ„å…ˆCD,å¾—æ„å…ˆå,å—æ³¨ç•ªå·,æ—¥ä»˜");
 				ps.setDate(1, from);
 				ps.setDate(2, to);
 				rs = ps.executeQuery();
@@ -117,12 +117,12 @@ public class GetSalesData extends GenericServlet {
 				int subtotal = 0;
 				int total = 0;
 				while(rs.next()) {
-					if(!acNum.equals(rs.getString("“¾ˆÓæCD")) && !acNum.equals("")) {
+					if(!acNum.equals(rs.getString("å¾—æ„å…ˆCD")) && !acNum.equals("")) {
 						if(m.containsKey(acNum)) {
 							List<Object> row = new ArrayList<Object>();
 							row.add(acNum);
 							row.add(acName);
-							row.add("Á”ïÅ");
+							row.add("æ¶ˆè²»ç¨");
 							row.add("");
 							row.add(m.get(acNum));
 							contents.add(row);
@@ -146,23 +146,23 @@ public class GetSalesData extends GenericServlet {
 						subtotal = 0;
 					}
 					List<Object> row = new ArrayList<Object>();
-					row.add(rs.getString("“¾ˆÓæCD"));
-					row.add(rs.getString("“¾ˆÓæ–¼"));
-					row.add(rs.getString("ó’”Ô†"));
-					row.add(rs.getString("“ú•t"));
-					row.add(rs.getInt("‹àŠz"));
+					row.add(rs.getString("å¾—æ„å…ˆCD"));
+					row.add(rs.getString("å¾—æ„å…ˆå"));
+					row.add(rs.getString("å—æ³¨ç•ªå·"));
+					row.add(rs.getString("æ—¥ä»˜"));
+					row.add(rs.getInt("é‡‘é¡"));
 					contents.add(row);
-					acNum = rs.getString("“¾ˆÓæCD");
-					acName = rs.getString("“¾ˆÓæ–¼");
-					subtotal += rs.getInt("‹àŠz");
-					total += rs.getInt("‹àŠz");
+					acNum = rs.getString("å¾—æ„å…ˆCD");
+					acName = rs.getString("å¾—æ„å…ˆå");
+					subtotal += rs.getInt("é‡‘é¡");
+					total += rs.getInt("é‡‘é¡");
 				}
 				rs.close();
 				if(m.containsKey(acNum)) {
 					List<Object> row = new ArrayList<Object>();
 					row.add(acNum);
 					row.add(acName);
-					row.add("Á”ïÅ");
+					row.add("æ¶ˆè²»ç¨");
 					row.add("");
 					row.add(m.get(acNum));
 					contents.add(row);
@@ -187,7 +187,7 @@ public class GetSalesData extends GenericServlet {
 				row.add("");
 				row.add("");
 				row.add("");
-				row.add("‡Œv");
+				row.add("åˆè¨ˆ");
 				row.add(total);
 				contents.add(row);
 
@@ -207,7 +207,7 @@ public class GetSalesData extends GenericServlet {
 				lg.error("GetElements3 " + ex);
 			}
 
-	//ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+	//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());

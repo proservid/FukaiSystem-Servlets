@@ -45,39 +45,39 @@ public class ChangePassword extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object[] obj = (Object[])in.readObject();
 			in.close();
 
 			try {
-				ps = c.prepareStatement("update M_lˆõ set pass=? where CD=?");
+				ps = c.prepareStatement("update M_äººå“¡ set pass=? where CD=?");
 				ps.setString(1, digestMd5((char[])obj[1]));
 				ps.setString(2, (String)obj[0]);
 //				System.out.println((char[])obj[1] + ":" + digestMd5((char[])obj[1]));
 				int result = ps.executeUpdate();
-				if(result != 1) err.append("ƒpƒXƒ[ƒh‚ÍXV‚³‚ê‚Ü‚¹‚ñ‚Å‚µ‚½B\n");
+				if(result != 1) err.append("ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã¯æ›´æ–°ã•ã‚Œã¾ã›ã‚“ã§ã—ãŸã€‚\n");
 
-//‘Sˆõ•ª‚ÌƒfƒtƒHƒ‹ƒgƒpƒXƒ[ƒh©“®¶¬‚Ìˆ—
-//				ps = c.prepareStatement("select LoginID from M_lˆõ");
+//å…¨å“¡åˆ†ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰è‡ªå‹•ç”Ÿæˆã®å‡¦ç†
+//				ps = c.prepareStatement("select LoginID from M_äººå“¡");
 //				rs = ps.executeQuery();
 //				while(rs.next()) {
 //					System.out.println(rs.getString("LoginID"));
 //					System.out.println(digestMd5(rs.getString("LoginID").toCharArray()));
-//					PreparedStatement ps2 = c.prepareStatement("update M_lˆõ set pass=? where CD=?");
+//					PreparedStatement ps2 = c.prepareStatement("update M_äººå“¡ set pass=? where CD=?");
 //					ps2.setString(1, digestMd5(rs.getString("LoginID").toCharArray()));
 //					ps2.setString(2, rs.getString("LoginID"));
 //					ps2.executeUpdate();
 //				}
 			} catch(SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
-				err.append("DBƒGƒ‰[\n");
+				err.append("DBã‚¨ãƒ©ãƒ¼\n");
 			}
 
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
@@ -115,37 +115,37 @@ public class ChangePassword extends GenericServlet {
 	}
 
 	 /**
-	  * MD5‚Å•¶š—ñ‚ğˆÃ†‰»‚µAˆÃ†‰»‚³‚ê‚½ƒoƒCƒiƒŠ‚ğ16i”•\‹L‚Ì•¶š—ñ‚É•ÏŠ·‚µ‚½’l‚ğæ“¾‚·‚é
+	  * MD5ã§æ–‡å­—åˆ—ã‚’æš—å·åŒ–ã—ã€æš—å·åŒ–ã•ã‚ŒãŸãƒã‚¤ãƒŠãƒªã‚’16é€²æ•°è¡¨è¨˜ã®æ–‡å­—åˆ—ã«å¤‰æ›ã—ãŸå€¤ã‚’å–å¾—ã™ã‚‹
 	  * 
 	  * @param str
-	  *            ˆÃ†‰»‘ÎÛ‚Ì•¶š—ñ
-	  * @return ˆÃ†‰»‚µ‚½Œ‹‰Ê‚ğ16i”•\‹L‚É•ÏŠ·‚µ‚½•¶š—ñ
+	  *            æš—å·åŒ–å¯¾è±¡ã®æ–‡å­—åˆ—
+	  * @return æš—å·åŒ–ã—ãŸçµæœã‚’16é€²æ•°è¡¨è¨˜ã«å¤‰æ›ã—ãŸæ–‡å­—åˆ—
 	  */
 	  public static String digestMd5(char[] c) throws NoSuchAlgorithmException {
 		  String str = new String(c);
 	      if (str == null || str.length() == 0) {
-	          throw new IllegalArgumentException("•¶š—ñ‚ªNullA‚Ü‚½‚Í‹ó‚Å‚·B");
+	          throw new IllegalArgumentException("æ–‡å­—åˆ—ãŒNullã€ã¾ãŸã¯ç©ºã§ã™ã€‚");
 	      }
 
-	      // MD5‚ÅˆÃ†‰»‚µ‚½ByteŒ^”z—ñ‚ğæ“¾‚·‚é
+	      // MD5ã§æš—å·åŒ–ã—ãŸByteå‹é…åˆ—ã‚’å–å¾—ã™ã‚‹
 	      MessageDigest md5 = MessageDigest.getInstance("MD5");
 	      md5.update(str.getBytes());
 	      byte[] enclyptedHash = md5.digest();
 
-	      // ˆÃ†‰»‚³‚ê‚½ByteŒ^”z—ñ‚ğA16i”•\‹L•¶š—ñ‚É•ÏŠ·‚·‚é
+	      // æš—å·åŒ–ã•ã‚ŒãŸByteå‹é…åˆ—ã‚’ã€16é€²æ•°è¡¨è¨˜æ–‡å­—åˆ—ã«å¤‰æ›ã™ã‚‹
 	      return bytesToHexString(enclyptedHash);
 	  }
 	  /**
-	   * ByteŒ^”z—ñ‚©‚ç16i”•\‹L•¶š—ñ‚Ö•ÏŠ·‚·‚é
-	   * @param fromByte •ÏŠ·‘ÎÛByteŒ^”z—ñ
-	   * @return 16i”•\‹L‚É•ÏŠ·Œã‚Ì•¶š—ñ
+	   * Byteå‹é…åˆ—ã‹ã‚‰16é€²æ•°è¡¨è¨˜æ–‡å­—åˆ—ã¸å¤‰æ›ã™ã‚‹
+	   * @param fromByte å¤‰æ›å¯¾è±¡Byteå‹é…åˆ—
+	   * @return 16é€²æ•°è¡¨è¨˜ã«å¤‰æ›å¾Œã®æ–‡å­—åˆ—
 	   */
 	   public static String bytesToHexString(byte[] fromByte) {
 
 	       StringBuilder hexStrBuilder = new StringBuilder();
 	       for (int i = 0; i < fromByte.length; i++) {
 
-	           // 16i”•\‹L‚Å1Œ…”’l‚¾‚Á‚½ê‡A2Œ…–Ú‚ğ0‚Å–„‚ß‚é
+	           // 16é€²æ•°è¡¨è¨˜ã§1æ¡æ•°å€¤ã ã£ãŸå ´åˆã€2æ¡ç›®ã‚’0ã§åŸ‹ã‚ã‚‹
 	           if ((fromByte[i] & 0xff) < 0x10) {
 	               hexStrBuilder.append("0");
 	           }

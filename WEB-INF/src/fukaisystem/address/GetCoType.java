@@ -42,26 +42,26 @@ public class GetCoType extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			in.close();
 			try {
-				ps = c.prepareStatement("SELECT í•Ê FROM M_‰ïĞí•Ê");
+				ps = c.prepareStatement("SELECT ç¨®åˆ¥ FROM M_ä¼šç¤¾ç¨®åˆ¥");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					types.add(rs.getString("í•Ê"));
+					types.add(rs.getString("ç¨®åˆ¥"));
 				}
 
 			} catch(SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCodeF"+ex.getErrorCode());
-				err.append("SQLStateF"+ex.getSQLState());
+				err.append("ErrorCodeï¼š"+ex.getErrorCode());
+				err.append("SQLStateï¼š"+ex.getSQLState());
 				Logging.logStackTrace(ex, lg, className);
 			}
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 
 			response.setContentType("application/octet-stream");

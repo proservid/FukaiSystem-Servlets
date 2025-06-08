@@ -41,7 +41,7 @@ public class ChangeSlip extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
@@ -53,8 +53,8 @@ public class ChangeSlip extends GenericServlet {
 				if(obj instanceof Integer) {
 					deliveryID = (Integer)obj;
 				} else {
-					err.append(className + "readObject‚ªIntegerŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªIntegerŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒIntegerå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒIntegerå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 		}catch(Exception ex) {
@@ -63,61 +63,61 @@ public class ChangeSlip extends GenericServlet {
 
 		try {
 			ps = c.prepareStatement(
-					"SELECT ”[•i‹æ•ªCD,”[•iè’iCD,“¾ˆÓæCD,”„ã”NŒ“ú,”„ãFLG,¿‹FLG,Á”ïÅ,’lˆø‚«,“E—v FROM T_”„ã_e" +
-					" WHERE ”„ãeID=?");
+					"SELECT ç´å“åŒºåˆ†CD,ç´å“æ‰‹æ®µCD,å¾—æ„å…ˆCD,å£²ä¸Šå¹´æœˆæ—¥,å£²ä¸ŠFLG,è«‹æ±‚FLG,æ¶ˆè²»ç¨,å€¤å¼•ã,æ‘˜è¦ FROM T_å£²ä¸Š_è¦ª" +
+					" WHERE å£²ä¸Šè¦ªID=?");
 			ps.setInt(1, deliveryID);
 			rs = ps.executeQuery();
 			if(rs.next()) {
 				int type = 0;
-				if(!rs.getBoolean("”„ãFLG")) {
+				if(!rs.getBoolean("å£²ä¸ŠFLG")) {
 					type = 2;
-				} else if(!rs.getBoolean("¿‹FLG")) {
+				} else if(!rs.getBoolean("è«‹æ±‚FLG")) {
 					type = 1;
 				}
-				if(rs.getString("Á”ïÅ") == null) {
+				if(rs.getString("æ¶ˆè²»ç¨") == null) {
 					tax = -1;
 				} else {
-					tax = rs.getInt("Á”ïÅ");
+					tax = rs.getInt("æ¶ˆè²»ç¨");
 				}
 
-				discount = rs.getInt("’lˆø‚«");
-				//sDTO = new SalesDTO(deliveryID, rs.getInt("”[•i‹æ•ªCD"),rs.getInt("”[•iè’iCD"),rs.getInt("“¾ˆÓæCD"),type,rs.getDate("”„ã”NŒ“ú"),rs.getString("“E—v"),null);
-				dDTO = new DeliveryDTO(deliveryID, 0, 0, rs.getDate("”„ã”NŒ“ú"), rs.getInt("”[•i‹æ•ªCD"), rs.getInt("”[•iè’iCD"), tax, discount, type, rs.getString("“E—v"), null);
+				discount = rs.getInt("å€¤å¼•ã");
+				//sDTO = new SalesDTO(deliveryID, rs.getInt("ç´å“åŒºåˆ†CD"),rs.getInt("ç´å“æ‰‹æ®µCD"),rs.getInt("å¾—æ„å…ˆCD"),type,rs.getDate("å£²ä¸Šå¹´æœˆæ—¥"),rs.getString("æ‘˜è¦"),null);
+				dDTO = new DeliveryDTO(deliveryID, 0, 0, rs.getDate("å£²ä¸Šå¹´æœˆæ—¥"), rs.getInt("ç´å“åŒºåˆ†CD"), rs.getInt("ç´å“æ‰‹æ®µCD"), tax, discount, type, rs.getString("æ‘˜è¦"), null);
 			}
 
-			//”„ã–¾×
+			//å£²ä¸Šæ˜ç´°
 			ps = c.prepareStatement(
-//					"SELECT sc.»ìeID,sc.»ìqID,sc.•\¦CD,o‰×“`•[”Ô†,pp.ó’”NŒ“ú,sp.”„ã”NŒ“ú,pp.ó’”Ô†,sc.•i–¼,pc.ŠeFLG,pc.”—Ê,pc.”—Ê’PˆÊCD,pc.’P‰¿,pc.‹àŠz,sc.”õl,pc.Š®¬”NŒ“ú FROM T_”„ã_q sc" +
-					"SELECT sc.»ìeID,sc.»ìqID,sc.•\¦CD,o‰×“`•[”Ô†,pp.ó’”NŒ“ú,sp.”„ã”NŒ“ú,pp.ó’”Ô†,sc.•i–¼,sc.ŠeFLG,sc.”—Ê,sc.”—Ê’PˆÊCD,sc.’P‰¿,sc.‹àŠz,sc.”õl,pc.Š®¬”NŒ“ú FROM T_”„ã_q sc" +
-					" LEFT OUTER JOIN T_»ì_e pp ON sc.»ìeID=pp.»ìeID" +
-					" LEFT OUTER JOIN T_»ì_q pc ON sc.»ìeID=pc.»ìeID AND sc.»ìqID=pc.ID" +
-					" LEFT OUTER JOIN T_”„ã_e sp ON sc.”„ãeID=sp.”„ãeID" +
-					" WHERE sc.”„ãeID=? ORDER BY sc.ID");
+//					"SELECT sc.è£½ä½œè¦ªID,sc.è£½ä½œå­ID,sc.è¡¨ç¤ºCD,å‡ºè·ä¼ç¥¨ç•ªå·,pp.å—æ³¨å¹´æœˆæ—¥,sp.å£²ä¸Šå¹´æœˆæ—¥,pp.å—æ³¨ç•ªå·,sc.å“å,pc.å„FLG,pc.æ•°é‡,pc.æ•°é‡å˜ä½CD,pc.å˜ä¾¡,pc.é‡‘é¡,sc.å‚™è€ƒ,pc.å®Œæˆå¹´æœˆæ—¥ FROM T_å£²ä¸Š_å­ sc" +
+					"SELECT sc.è£½ä½œè¦ªID,sc.è£½ä½œå­ID,sc.è¡¨ç¤ºCD,å‡ºè·ä¼ç¥¨ç•ªå·,pp.å—æ³¨å¹´æœˆæ—¥,sp.å£²ä¸Šå¹´æœˆæ—¥,pp.å—æ³¨ç•ªå·,sc.å“å,sc.å„FLG,sc.æ•°é‡,sc.æ•°é‡å˜ä½CD,sc.å˜ä¾¡,sc.é‡‘é¡,sc.å‚™è€ƒ,pc.å®Œæˆå¹´æœˆæ—¥ FROM T_å£²ä¸Š_å­ sc" +
+					" LEFT OUTER JOIN T_è£½ä½œ_è¦ª pp ON sc.è£½ä½œè¦ªID=pp.è£½ä½œè¦ªID" +
+					" LEFT OUTER JOIN T_è£½ä½œ_å­ pc ON sc.è£½ä½œè¦ªID=pc.è£½ä½œè¦ªID AND sc.è£½ä½œå­ID=pc.ID" +
+					" LEFT OUTER JOIN T_å£²ä¸Š_è¦ª sp ON sc.å£²ä¸Šè¦ªID=sp.å£²ä¸Šè¦ªID" +
+					" WHERE sc.å£²ä¸Šè¦ªID=? ORDER BY sc.ID");
 			ps.setInt(1, deliveryID);
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				Vector<Object> line = new Vector<Object>();
-				int price = rs.getInt("‹àŠz");
-				if(rs.getInt("•\¦CD") == 5) {
+				int price = rs.getInt("é‡‘é¡");
+				if(rs.getInt("è¡¨ç¤ºCD") == 5) {
 					price = tax;
-				} else if(rs.getInt("•\¦CD") == 6) {
+				} else if(rs.getInt("è¡¨ç¤ºCD") == 6) {
 					price = discount;
 				}
-				line.add(rs.getInt("»ìeID"));
-				line.add(rs.getInt("»ìqID"));
-				line.add(rs.getInt("•\¦CD"));
-				line.add(rs.getString("o‰×“`•[”Ô†"));
-				line.add(rs.getDate("ó’”NŒ“ú"));
-				line.add(rs.getString("ó’”Ô†"));
-				line.add(rs.getString("•i–¼"));
-				line.add(rs.getBoolean("ŠeFLG"));
-				line.add(rs.getInt("”—Ê"));
-				line.add(rs.getInt("”—Ê’PˆÊCD"));
-				line.add(rs.getInt("’P‰¿"));
+				line.add(rs.getInt("è£½ä½œè¦ªID"));
+				line.add(rs.getInt("è£½ä½œå­ID"));
+				line.add(rs.getInt("è¡¨ç¤ºCD"));
+				line.add(rs.getString("å‡ºè·ä¼ç¥¨ç•ªå·"));
+				line.add(rs.getDate("å—æ³¨å¹´æœˆæ—¥"));
+				line.add(rs.getString("å—æ³¨ç•ªå·"));
+				line.add(rs.getString("å“å"));
+				line.add(rs.getBoolean("å„FLG"));
+				line.add(rs.getInt("æ•°é‡"));
+				line.add(rs.getInt("æ•°é‡å˜ä½CD"));
+				line.add(rs.getInt("å˜ä¾¡"));
 				line.add(price);
-				line.add(rs.getString("”õl"));
-				line.add(rs.getDate("Š®¬”NŒ“ú"));
-				line.add(rs.getDate("”„ã”NŒ“ú"));
+				line.add(rs.getString("å‚™è€ƒ"));
+				line.add(rs.getDate("å®Œæˆå¹´æœˆæ—¥"));
+				line.add(rs.getDate("å£²ä¸Šå¹´æœˆæ—¥"));
 				deliveryData.add(line);
 			}
 			if(dDTO != null) dDTO.setVector(deliveryData);
@@ -127,7 +127,7 @@ public class ChangeSlip extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

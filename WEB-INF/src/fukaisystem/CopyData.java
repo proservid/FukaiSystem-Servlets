@@ -44,7 +44,7 @@ public class CopyData extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
@@ -57,8 +57,8 @@ public class CopyData extends GenericServlet {
 					number = ((ProductNumberDTO)obj).getNumber();
 					branch = ((ProductNumberDTO)obj).getBranch();
 				} else {
-					err.append(className + "readObject‚ªIDDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªIDDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒIDDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒIDDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 		}catch(Exception ex) {
@@ -67,31 +67,31 @@ public class CopyData extends GenericServlet {
 
 		try {
 
-//»ì–¾×
+//è£½ä½œæ˜ç´°
 			ps = c.prepareStatement(
-					"SELECT ’•¶Œ“ú,’•¶”Ô†,•\¦CD,–¼Ì,ŠeFLG,”—Ê,”—Ê’PˆÊCD,’P‰¿,‹àŠz,}”Ô,”õl,Š®¬”NŒ“ú,”[•i”NŒ“ú" +
-					" FROM T_»ì_q c" +
-					" LEFT OUTER JOIN T_»ì_e p ON c.»ìeID=p.»ìeID WHERE »ìŠú=? AND »ì”Ô†=? AND »ì}”Ô=?");
+					"SELECT æ³¨æ–‡æœˆæ—¥,æ³¨æ–‡ç•ªå·,è¡¨ç¤ºCD,åç§°,å„FLG,æ•°é‡,æ•°é‡å˜ä½CD,å˜ä¾¡,é‡‘é¡,å›³ç•ª,å‚™è€ƒ,å®Œæˆå¹´æœˆæ—¥,ç´å“å¹´æœˆæ—¥" +
+					" FROM T_è£½ä½œ_å­ c" +
+					" LEFT OUTER JOIN T_è£½ä½œ_è¦ª p ON c.è£½ä½œè¦ªID=p.è£½ä½œè¦ªID WHERE è£½ä½œæœŸ=? AND è£½ä½œç•ªå·=? AND è£½ä½œæç•ª=?");
 			ps.setInt(1, period);
 			ps.setInt(2, number);
 			ps.setString(3, branch);
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				Vector<Object> line = new Vector<Object>();
-				line.add(rs.getInt("•\¦CD"));
+				line.add(rs.getInt("è¡¨ç¤ºCD"));
 				line.add("");
-				line.add(rs.getDate("’•¶Œ“ú"));
-				line.add(rs.getString("’•¶”Ô†"));
-				line.add(rs.getString("–¼Ì"));
-				line.add(rs.getBoolean("ŠeFLG"));
-				line.add(rs.getInt("”—Ê"));
-				line.add(rs.getInt("”—Ê’PˆÊCD"));
-				line.add(rs.getInt("’P‰¿"));
-				line.add(rs.getInt("‹àŠz"));
+				line.add(rs.getDate("æ³¨æ–‡æœˆæ—¥"));
+				line.add(rs.getString("æ³¨æ–‡ç•ªå·"));
+				line.add(rs.getString("åç§°"));
+				line.add(rs.getBoolean("å„FLG"));
+				line.add(rs.getInt("æ•°é‡"));
+				line.add(rs.getInt("æ•°é‡å˜ä½CD"));
+				line.add(rs.getInt("å˜ä¾¡"));
+				line.add(rs.getInt("é‡‘é¡"));
 				line.add(0);
 				line.add("");
-				line.add(rs.getDate("Š®¬”NŒ“ú"));
-				line.add(rs.getDate("”[•i”NŒ“ú"));
+				line.add(rs.getDate("å®Œæˆå¹´æœˆæ—¥"));
+				line.add(rs.getDate("ç´å“å¹´æœˆæ—¥"));
 				deliveryData.add(line);
 			}
 		}catch(SQLException ex) {
@@ -100,7 +100,7 @@ public class CopyData extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

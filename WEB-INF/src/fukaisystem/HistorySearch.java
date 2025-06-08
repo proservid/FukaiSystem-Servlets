@@ -43,102 +43,102 @@ public class HistorySearch extends GenericServlet {
 
 		boolean isStock = false;
 		String[] constStrs = {
-			"Ş—¿•i–¼ like ?", "’•¶}”Ô like ?",
-			"SUBSTRING(CONVERT(VARCHAR, ’•¶”NŒ“ú),1,4) like ?", "SUBSTRING(CONVERT(VARCHAR, ’•¶”NŒ“ú),6,2) like ?", "SUBSTRING(CONVERT(VARCHAR, ’•¶”NŒ“ú),9,2) like ?",
-			"SUBSTRING(CONVERT(VARCHAR, w’è”[Šú),1,4) like ?", "SUBSTRING(CONVERT(VARCHAR, w’è”[Šú),6,2) like ?", "SUBSTRING(CONVERT(VARCHAR, w’è”[Šú),9,2) like ?",
-			"SUBSTRING(CONVERT(VARCHAR, “üŒÉ”NŒ“ú),1,4) like ?", "SUBSTRING(CONVERT(VARCHAR, “üŒÉ”NŒ“ú),6,2) like ?", "SUBSTRING(CONVERT(VARCHAR, “üŒÉ”NŒ“ú),9,2) like ?",
+			"ææ–™å“å like ?", "æ³¨æ–‡æç•ª like ?",
+			"SUBSTRING(CONVERT(VARCHAR, æ³¨æ–‡å¹´æœˆæ—¥),1,4) like ?", "SUBSTRING(CONVERT(VARCHAR, æ³¨æ–‡å¹´æœˆæ—¥),6,2) like ?", "SUBSTRING(CONVERT(VARCHAR, æ³¨æ–‡å¹´æœˆæ—¥),9,2) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, æŒ‡å®šç´æœŸ),1,4) like ?", "SUBSTRING(CONVERT(VARCHAR, æŒ‡å®šç´æœŸ),6,2) like ?", "SUBSTRING(CONVERT(VARCHAR, æŒ‡å®šç´æœŸ),9,2) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, å…¥åº«å¹´æœˆæ—¥),1,4) like ?", "SUBSTRING(CONVERT(VARCHAR, å…¥åº«å¹´æœˆæ—¥),6,2) like ?", "SUBSTRING(CONVERT(VARCHAR, å…¥åº«å¹´æœˆæ—¥),9,2) like ?",
 			};
-		String[] constInts = {"d“üæCD=?", "’•¶Šú=?", "’•¶”Ô†=?", "‘å•ª—ŞCD=?", "’†•ª—ŞCD=?", "¬•ª—ŞCD=?"};
+		String[] constInts = {"ä»•å…¥å…ˆCD=?", "æ³¨æ–‡æœŸ=?", "æ³¨æ–‡ç•ªå·=?", "å¤§åˆ†é¡CD=?", "ä¸­åˆ†é¡CD=?", "å°åˆ†é¡CD=?"};
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof HistoryDTO) {
 					historyDTO = (HistoryDTO)obj;
 				} else {
-					err.append(className + "readObject‚ªProjectSearchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªProjectSearchDTOŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒProjectSearchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒProjectSearchDTOå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 			try {
 				isStock = historyDTO.getBool(1);
 				StringBuilder query = new StringBuilder("");
 				if(isStock) {
-					query.append("select top 30000 *,case when ”—Ê=1 then ‹àŠz*c” else ’P‰¿*c” end as ‹àŠz from (" +
-							"	select sc.İŒÉeID,sc.ID,sp.d“üæCD,'İŒÉ' as í•Ê,sc.‘å•ª—ŞCD,sc.’†•ª—ŞCD,sc.¬•ª—ŞCD,Ş—¿•i–¼,’•¶”NŒ“ú,“üŒÉ”NŒ“ú,w’è”[Šú," +
-							"	’•¶Šú,’•¶”Ô†,’•¶}”Ô,sc.”—Ê,sc.”—Ê-case when dis.g—p” is null then 0 else dis.g—p” end as c”," +
-							"	sc.”—Ê’PˆÊCD,sc.d—Ê’·‚³,sc.’P‰¿,sc.‹àŠz,“`•[”Ô†,”[•i‘”Ô†,sc.”õl,“E—v," +
-							"	CASE WHEN í•ÊCD=1 THEN '‡Š'+‰ïĞ–¼" +
-							"		 WHEN í•ÊCD=2 THEN ‰ïĞ–¼+'‡Š'" +
-							"		 WHEN í•ÊCD=3 THEN '‡‹'+‰ïĞ–¼" +
-							"		 WHEN í•ÊCD=4 THEN ‰ïĞ–¼+'‡‹'" +
-							"		 ELSE ‰ïĞ–¼ END AS d“üæ–¼" +
-							"	FROM T_İŒÉ_e sp" +
-							"	LEFT OUTER JOIN T_İŒÉ_q sc ON sp.İŒÉeID=sc.İŒÉeID" +
-							"	LEFT OUTER JOIN T_w’è”[•i‘ d on d.ID=sc.”[•i‘”Ô†" +
-							"	LEFT OUTER JOIN M_–@l c on sp.d“üæCD=c.d“üæCD" +
-							"	LEFT OUTER JOIN (select İŒÉeID,İŒÉqID,sum(”—Ê) as g—p” from T_oŒÉ_q group by İŒÉeID,İŒÉqID) dis" +
-							"	on sc.İŒÉeID=dis.İŒÉeID and sc.ID=dis.İŒÉqID" +
-							"	where sc.‘å•ª—ŞCD>=1 and sc.‘å•ª—ŞCD<=2 and ’•¶Šú>=1000" +
+					query.append("select top 30000 *,case when æ•°é‡=1 then é‡‘é¡*æ®‹æ•° else å˜ä¾¡*æ®‹æ•° end as é‡‘é¡ from (" +
+							"	select sc.åœ¨åº«è¦ªID,sc.ID,sp.ä»•å…¥å…ˆCD,'åœ¨åº«' as ç¨®åˆ¥,sc.å¤§åˆ†é¡CD,sc.ä¸­åˆ†é¡CD,sc.å°åˆ†é¡CD,ææ–™å“å,æ³¨æ–‡å¹´æœˆæ—¥,å…¥åº«å¹´æœˆæ—¥,æŒ‡å®šç´æœŸ," +
+							"	æ³¨æ–‡æœŸ,æ³¨æ–‡ç•ªå·,æ³¨æ–‡æç•ª,sc.æ•°é‡,sc.æ•°é‡-case when dis.ä½¿ç”¨æ•° is null then 0 else dis.ä½¿ç”¨æ•° end as æ®‹æ•°," +
+							"	sc.æ•°é‡å˜ä½CD,sc.é‡é‡é•·ã•,sc.å˜ä¾¡,sc.é‡‘é¡,ä¼ç¥¨ç•ªå·,ç´å“æ›¸ç•ªå·,sc.å‚™è€ƒ,æ‘˜è¦," +
+							"	CASE WHEN ç¨®åˆ¥CD=1 THEN 'ãˆ±'+ä¼šç¤¾å" +
+							"		 WHEN ç¨®åˆ¥CD=2 THEN ä¼šç¤¾å+'ãˆ±'" +
+							"		 WHEN ç¨®åˆ¥CD=3 THEN 'ãˆ²'+ä¼šç¤¾å" +
+							"		 WHEN ç¨®åˆ¥CD=4 THEN ä¼šç¤¾å+'ãˆ²'" +
+							"		 ELSE ä¼šç¤¾å END AS ä»•å…¥å…ˆå" +
+							"	FROM T_åœ¨åº«_è¦ª sp" +
+							"	LEFT OUTER JOIN T_åœ¨åº«_å­ sc ON sp.åœ¨åº«è¦ªID=sc.åœ¨åº«è¦ªID" +
+							"	LEFT OUTER JOIN T_æŒ‡å®šç´å“æ›¸ d on d.ID=sc.ç´å“æ›¸ç•ªå·" +
+							"	LEFT OUTER JOIN M_æ³•äºº c on sp.ä»•å…¥å…ˆCD=c.ä»•å…¥å…ˆCD" +
+							"	LEFT OUTER JOIN (select åœ¨åº«è¦ªID,åœ¨åº«å­ID,sum(æ•°é‡) as ä½¿ç”¨æ•° from T_å‡ºåº«_å­ group by åœ¨åº«è¦ªID,åœ¨åº«å­ID) dis" +
+							"	on sc.åœ¨åº«è¦ªID=dis.åœ¨åº«è¦ªID and sc.ID=dis.åœ¨åº«å­ID" +
+							"	where sc.å¤§åˆ†é¡CD>=1 and sc.å¤§åˆ†é¡CD<=2 and æ³¨æ–‡æœŸ>=1000" +
 							" UNION ALL" +
-							"	select p.»ìeID as İŒÉeID,c.ID,p.“¾ˆÓæCD,'İŒÉ' as í•Ê,99 as ‘å•ª—ŞCD,0 as ’†•ª—ŞCD,0 as ¬•ª—ŞCD,–¼Ì,”­s”NŒ“ú,Š®¬”NŒ“ú,”[Šú," +
-							"	»ìŠú,»ì”Ô†,»ì}”Ô,c.”—Ê,c.”—Ê-case when d.g—p” is null then 0 else d.g—p” end as c”," +
-							"	c.”—Ê’PˆÊCD,null as d—Ê,c.’P‰¿,c.‹àŠz,null as “`•[”Ô†,null as ”[•i‘”Ô†,c.”õl,“E—v,null as d“üæ–¼" +
-							"	FROM T_»ì_e p" +
-							"	LEFT OUTER JOIN T_»ì_q c on p.»ìeID=c.»ìeID and •\¦CD=2" +
-							"	LEFT OUTER JOIN (SELECT İŒÉeID,İŒÉqID,sum(”—Ê) as g—p” FROM T_oŒÉ_q WHERE ‘å•ª—ŞCD=99 group by İŒÉeID,İŒÉqID) d" +
-							"	ON p.»ìeID=d.İŒÉeID AND c.ID=d.İŒÉqID" +
-							"	WHERE »ì”Ô†>=9000 AND »ì”Ô†<10000" +
+							"	select p.è£½ä½œè¦ªID as åœ¨åº«è¦ªID,c.ID,p.å¾—æ„å…ˆCD,'åœ¨åº«' as ç¨®åˆ¥,99 as å¤§åˆ†é¡CD,0 as ä¸­åˆ†é¡CD,0 as å°åˆ†é¡CD,åç§°,ç™ºè¡Œå¹´æœˆæ—¥,å®Œæˆå¹´æœˆæ—¥,ç´æœŸ," +
+							"	è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,c.æ•°é‡,c.æ•°é‡-case when d.ä½¿ç”¨æ•° is null then 0 else d.ä½¿ç”¨æ•° end as æ®‹æ•°," +
+							"	c.æ•°é‡å˜ä½CD,null as é‡é‡,c.å˜ä¾¡,c.é‡‘é¡,null as ä¼ç¥¨ç•ªå·,null as ç´å“æ›¸ç•ªå·,c.å‚™è€ƒ,æ‘˜è¦,null as ä»•å…¥å…ˆå" +
+							"	FROM T_è£½ä½œ_è¦ª p" +
+							"	LEFT OUTER JOIN T_è£½ä½œ_å­ c on p.è£½ä½œè¦ªID=c.è£½ä½œè¦ªID and è¡¨ç¤ºCD=2" +
+							"	LEFT OUTER JOIN (SELECT åœ¨åº«è¦ªID,åœ¨åº«å­ID,sum(æ•°é‡) as ä½¿ç”¨æ•° FROM T_å‡ºåº«_å­ WHERE å¤§åˆ†é¡CD=99 group by åœ¨åº«è¦ªID,åœ¨åº«å­ID) d" +
+							"	ON p.è£½ä½œè¦ªID=d.åœ¨åº«è¦ªID AND c.ID=d.åœ¨åº«å­ID" +
+							"	WHERE è£½ä½œç•ªå·>=9000 AND è£½ä½œç•ªå·<10000" +
 							") s");
 				} else {
 					query.append(
 							 "select top 30000 * from (" +
-							 "SELECT sc.İŒÉeID,sc.ID,sp.d“üæCD,'’•¶' as í•Ê,‘å•ª—ŞCD,’†•ª—ŞCD,¬•ª—ŞCD,Ş—¿•i–¼,’•¶”NŒ“ú,“üŒÉ”NŒ“ú,w’è”[Šú," +
-							 " ’•¶Šú,’•¶”Ô†,’•¶}”Ô,”—Ê,0 as c”,”—Ê’PˆÊCD,d—Ê’·‚³,’P‰¿,‹àŠz,“`•[”Ô†,”[•i‘”Ô†,sc.”õl,“E—v," +
-							 " CASE WHEN í•ÊCD=1 THEN '‡Š'+‰ïĞ–¼" +
-							 "      WHEN í•ÊCD=2 THEN ‰ïĞ–¼+'‡Š'" +
-							 "      WHEN í•ÊCD=3 THEN '‡‹'+‰ïĞ–¼" +
-							 "      WHEN í•ÊCD=4 THEN ‰ïĞ–¼+'‡‹'" +
-							 "      ELSE ‰ïĞ–¼ END AS d“üæ–¼" +
-							 " FROM T_İŒÉ_e sp" +
-							 " LEFT OUTER JOIN T_İŒÉ_q sc ON sp.İŒÉeID=sc.İŒÉeID" +
-							 " LEFT OUTER JOIN T_w’è”[•i‘ d on d.ID=sc.”[•i‘”Ô†" +
-							 " LEFT OUTER JOIN M_–@l c on sp.d“üæCD=c.d“üæCD" +
-							 " where •\¦CD=2 AND ”[•i‘”Ô†>-1" +
+							 "SELECT sc.åœ¨åº«è¦ªID,sc.ID,sp.ä»•å…¥å…ˆCD,'æ³¨æ–‡' as ç¨®åˆ¥,å¤§åˆ†é¡CD,ä¸­åˆ†é¡CD,å°åˆ†é¡CD,ææ–™å“å,æ³¨æ–‡å¹´æœˆæ—¥,å…¥åº«å¹´æœˆæ—¥,æŒ‡å®šç´æœŸ," +
+							 " æ³¨æ–‡æœŸ,æ³¨æ–‡ç•ªå·,æ³¨æ–‡æç•ª,æ•°é‡,0 as æ®‹æ•°,æ•°é‡å˜ä½CD,é‡é‡é•·ã•,å˜ä¾¡,é‡‘é¡,ä¼ç¥¨ç•ªå·,ç´å“æ›¸ç•ªå·,sc.å‚™è€ƒ,æ‘˜è¦," +
+							 " CASE WHEN ç¨®åˆ¥CD=1 THEN 'ãˆ±'+ä¼šç¤¾å" +
+							 "      WHEN ç¨®åˆ¥CD=2 THEN ä¼šç¤¾å+'ãˆ±'" +
+							 "      WHEN ç¨®åˆ¥CD=3 THEN 'ãˆ²'+ä¼šç¤¾å" +
+							 "      WHEN ç¨®åˆ¥CD=4 THEN ä¼šç¤¾å+'ãˆ²'" +
+							 "      ELSE ä¼šç¤¾å END AS ä»•å…¥å…ˆå" +
+							 " FROM T_åœ¨åº«_è¦ª sp" +
+							 " LEFT OUTER JOIN T_åœ¨åº«_å­ sc ON sp.åœ¨åº«è¦ªID=sc.åœ¨åº«è¦ªID" +
+							 " LEFT OUTER JOIN T_æŒ‡å®šç´å“æ›¸ d on d.ID=sc.ç´å“æ›¸ç•ªå·" +
+							 " LEFT OUTER JOIN M_æ³•äºº c on sp.ä»•å…¥å…ˆCD=c.ä»•å…¥å…ˆCD" +
+							 " where è¡¨ç¤ºCD=2 AND ç´å“æ›¸ç•ªå·>-1" +
 							 //" union all" +
-							 //" SELECT sc.İŒÉeID,sc.ID,0 as d“üæCD,'oŒÉ',‘å•ª—ŞCD,’†•ª—ŞCD,¬•ª—ŞCD,•i–¼,oŒÉ”NŒ“ú,null,null," +
-							 //" »ìŠú,»ì”Ô†,»ì}”Ô,”—Ê,0 as c”,”—Ê’PˆÊCD,d—Ê’·‚³,’P‰¿,‹àŠz,'' as “`•[”Ô†,'' as ”[•i‘”Ô†,sc.”õl,—p“r,“E—v" +
-							 //" FROM T_oŒÉ_e sp" +
-							 //" LEFT OUTER JOIN T_oŒÉ_q sc ON sp.oŒÉeID=sc.oŒÉeID" +
+							 //" SELECT sc.åœ¨åº«è¦ªID,sc.ID,0 as ä»•å…¥å…ˆCD,'å‡ºåº«',å¤§åˆ†é¡CD,ä¸­åˆ†é¡CD,å°åˆ†é¡CD,å“å,å‡ºåº«å¹´æœˆæ—¥,null,null," +
+							 //" è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,æ•°é‡,0 as æ®‹æ•°,æ•°é‡å˜ä½CD,é‡é‡é•·ã•,å˜ä¾¡,é‡‘é¡,'' as ä¼ç¥¨ç•ªå·,'' as ç´å“æ›¸ç•ªå·,sc.å‚™è€ƒ,ç”¨é€”,æ‘˜è¦" +
+							 //" FROM T_å‡ºåº«_è¦ª sp" +
+							 //" LEFT OUTER JOIN T_å‡ºåº«_å­ sc ON sp.å‡ºåº«è¦ªID=sc.å‡ºåº«è¦ªID" +
 							 " union all" +
-							 " SELECT distinct 0,em.ID,em.d“üæCD,'Œ©Ï',‘å•ª—ŞCD,’†•ª—ŞCD,¬•ª—ŞCD,em.–¼Ì,Œ©Ï”NŒ“ú,null,null," +
-							 " »ìŠú,»ì”Ô†,»ì}”Ô,em.”—Ê,0 as c”, 0 as ”—Ê’PˆÊCD," +
-							 " d—Ê,em.’P‰¿,em.”—Ê*em.’P‰¿ as ‹àŠz,'' as “`•[”Ô†,'' as ”[•i‘”Ô†,em.”õl,ec.”õl," +
-							 " CASE WHEN í•ÊCD=1 THEN '‡Š'+‰ïĞ–¼" +
-							 "      WHEN í•ÊCD=2 THEN ‰ïĞ–¼+'‡Š'" +
-							 "      WHEN í•ÊCD=3 THEN '‡‹'+‰ïĞ–¼" +
-							 "      WHEN í•ÊCD=4 THEN ‰ïĞ–¼+'‡‹'" +
-							 "      ELSE ‰ïĞ–¼ END AS d“üæ–¼" +
-							 " FROM T_Œ©Ï_Ş—¿ em" +
-							 " LEFT OUTER JOIN T_Œ©Ï_q ec ON em.Œ©ÏqID=ec.ID and em.Œ©ÏeID=ec.Œ©ÏeID" +
-							 " LEFT OUTER JOIN T_Œ©Ï_e ep ON ec.Œ©ÏeID=ep.Œ©ÏeID" +
-							 " LEFT OUTER JOIN T_Œ©Ï»ì eppp on ec.Œ©ÏeID=eppp.Œ©ÏeID" +
-							 " LEFT OUTER JOIN T_»ì_e pp ON eppp.»ìeID=pp.»ìeID" +
-							 " LEFT OUTER JOIN M_–@l c on em.d“üæCD=c.d“üæCD" +
-							 " where d“üŒ©ÏFLG='true') z");
+							 " SELECT distinct 0,em.ID,em.ä»•å…¥å…ˆCD,'è¦‹ç©',å¤§åˆ†é¡CD,ä¸­åˆ†é¡CD,å°åˆ†é¡CD,em.åç§°,è¦‹ç©å¹´æœˆæ—¥,null,null," +
+							 " è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,em.æ•°é‡,0 as æ®‹æ•°, 0 as æ•°é‡å˜ä½CD," +
+							 " é‡é‡,em.å˜ä¾¡,em.æ•°é‡*em.å˜ä¾¡ as é‡‘é¡,'' as ä¼ç¥¨ç•ªå·,'' as ç´å“æ›¸ç•ªå·,em.å‚™è€ƒ,ec.å‚™è€ƒ," +
+							 " CASE WHEN ç¨®åˆ¥CD=1 THEN 'ãˆ±'+ä¼šç¤¾å" +
+							 "      WHEN ç¨®åˆ¥CD=2 THEN ä¼šç¤¾å+'ãˆ±'" +
+							 "      WHEN ç¨®åˆ¥CD=3 THEN 'ãˆ²'+ä¼šç¤¾å" +
+							 "      WHEN ç¨®åˆ¥CD=4 THEN ä¼šç¤¾å+'ãˆ²'" +
+							 "      ELSE ä¼šç¤¾å END AS ä»•å…¥å…ˆå" +
+							 " FROM T_è¦‹ç©_ææ–™ em" +
+							 " LEFT OUTER JOIN T_è¦‹ç©_å­ ec ON em.è¦‹ç©å­ID=ec.ID and em.è¦‹ç©è¦ªID=ec.è¦‹ç©è¦ªID" +
+							 " LEFT OUTER JOIN T_è¦‹ç©_è¦ª ep ON ec.è¦‹ç©è¦ªID=ep.è¦‹ç©è¦ªID" +
+							 " LEFT OUTER JOIN T_è¦‹ç©è£½ä½œ eppp on ec.è¦‹ç©è¦ªID=eppp.è¦‹ç©è¦ªID" +
+							 " LEFT OUTER JOIN T_è£½ä½œ_è¦ª pp ON eppp.è£½ä½œè¦ªID=pp.è£½ä½œè¦ªID" +
+							 " LEFT OUTER JOIN M_æ³•äºº c on em.ä»•å…¥å…ˆCD=c.ä»•å…¥å…ˆCD" +
+							 " where ä»•å…¥è¦‹ç©FLG='true') z");
 				}
 				boolean isFirst = true;
 				for(int i = 0; i < 12; i++) {
-					if(!historyDTO.getStr(i).equals("")) {//ŒŸõğŒ‚ª“ü‚Á‚Ä‚¢‚ê‚Î
+					if(!historyDTO.getStr(i).equals("")) {//æ¤œç´¢æ¡ä»¶ãŒå…¥ã£ã¦ã„ã‚Œã°
 						if(isFirst) {
 							query.append(" WHERE ");
 							isFirst = false;
@@ -146,18 +146,18 @@ public class HistorySearch extends GenericServlet {
 							if(historyDTO.isAnd()) query.append(" AND ");
 							else query.append(" OR ");
 						}
-						if(historyDTO.getStr(i).equals("–¢")) {
+						if(historyDTO.getStr(i).equals("æœª")) {
 							switch(i) {
 								case 2 :
-									query.append("’•¶”NŒ“ú IS NULL"); break;
+									query.append("æ³¨æ–‡å¹´æœˆæ—¥ IS NULL"); break;
 								case 5 :
-									query.append("w’è”[Šú IS NULL"); break;
+									query.append("æŒ‡å®šç´æœŸ IS NULL"); break;
 								case 8 :
-									query.append("”[•i‘“ú IS NULL"); break;
+									query.append("ç´å“æ›¸æ—¥ IS NULL"); break;
 							}
 						} else {
 							if(i == 0) {
-								String words = historyDTO.getStr(i).replaceAll("@", " ");
+								String words = historyDTO.getStr(i).replaceAll("ã€€", " ");
 								for(int j = 0; j < words.split(" ").length; j++) {
 									if(j > 0) {
 										if(historyDTO.isAnd()) query.append(" AND ");
@@ -173,9 +173,9 @@ public class HistorySearch extends GenericServlet {
 					}
 				}
 
-				//”’l‚ÌŒŸõğŒ‚ÍAsearchDTO.getInt(0`6)
+				//æ•°å€¤ã®æ¤œç´¢æ¡ä»¶ã¯ã€searchDTO.getInt(0ï½6)
 				for(int i = 0; i < 7; i++) {
-					if(historyDTO.getInt(i) != 0) {//ŒŸõğŒ‚ª“ü‚Á‚Ä‚¢‚ê‚Î
+					if(historyDTO.getInt(i) != 0) {//æ¤œç´¢æ¡ä»¶ãŒå…¥ã£ã¦ã„ã‚Œã°
 						intIndex.add(i);
 						if(isFirst) {
 							query.append(" WHERE " + constInts[i]);
@@ -188,17 +188,17 @@ public class HistorySearch extends GenericServlet {
 				}
 				if(isStock) {
 					if(isFirst) {
-						query.append(" WHERE c”>0");
+						query.append(" WHERE æ®‹æ•°>0");
 					} else {
-						query.append(" AND c”>0");
+						query.append(" AND æ®‹æ•°>0");
 					}
 				}
-				query.append(" order by ’•¶”NŒ“ú desc,í•Ê,ID");
+				query.append(" order by æ³¨æ–‡å¹´æœˆæ—¥ desc,ç¨®åˆ¥,ID");
 				ps = c.prepareStatement(query.toString());
 				int j = 1;
 				for(int i : strIndex) {
 					if(i == 0) {
-						String words = historyDTO.getStr(i).replaceAll("@", " ");
+						String words = historyDTO.getStr(i).replaceAll("ã€€", " ");
 						for(String word : words.split(" ")) {
 							ps.setString(j, "%" + word + "%"); j++;
 						}
@@ -212,37 +212,37 @@ public class HistorySearch extends GenericServlet {
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					Vector<Object> v2 = new Vector<Object>();
-					v2.add(rs.getString("í•Ê"));
-					v2.add(rs.getInt("‘å•ª—ŞCD"));
-					v2.add(rs.getInt("’†•ª—ŞCD"));
-					v2.add(rs.getInt("¬•ª—ŞCD"));
-					v2.add(rs.getString("Ş—¿•i–¼"));
-					v2.add(rs.getInt("”—Ê"));
-					v2.add(rs.getInt("c”"));
-					v2.add(rs.getInt("”—Ê’PˆÊCD"));
-					v2.add(rs.getDouble("d—Ê’·‚³"));
-					v2.add(rs.getInt("’P‰¿"));
-					v2.add(rs.getInt("‹àŠz"));
-					v2.add(rs.getString("d“üæ–¼"));
-					v2.add(rs.getDate("’•¶”NŒ“ú"));
-					v2.add(rs.getDate("“üŒÉ”NŒ“ú"));
-					v2.add(rs.getDate("w’è”[Šú"));
-					if(rs.getInt("’•¶Šú") != 0 && rs.getInt("’•¶”Ô†") != 0) {
-						v2.add(rs.getInt("’•¶Šú") + "-" + rs.getInt("’•¶”Ô†") + " " + rs.getString("’•¶}”Ô"));
+					v2.add(rs.getString("ç¨®åˆ¥"));
+					v2.add(rs.getInt("å¤§åˆ†é¡CD"));
+					v2.add(rs.getInt("ä¸­åˆ†é¡CD"));
+					v2.add(rs.getInt("å°åˆ†é¡CD"));
+					v2.add(rs.getString("ææ–™å“å"));
+					v2.add(rs.getInt("æ•°é‡"));
+					v2.add(rs.getInt("æ®‹æ•°"));
+					v2.add(rs.getInt("æ•°é‡å˜ä½CD"));
+					v2.add(rs.getDouble("é‡é‡é•·ã•"));
+					v2.add(rs.getInt("å˜ä¾¡"));
+					v2.add(rs.getInt("é‡‘é¡"));
+					v2.add(rs.getString("ä»•å…¥å…ˆå"));
+					v2.add(rs.getDate("æ³¨æ–‡å¹´æœˆæ—¥"));
+					v2.add(rs.getDate("å…¥åº«å¹´æœˆæ—¥"));
+					v2.add(rs.getDate("æŒ‡å®šç´æœŸ"));
+					if(rs.getInt("æ³¨æ–‡æœŸ") != 0 && rs.getInt("æ³¨æ–‡ç•ªå·") != 0) {
+						v2.add(rs.getInt("æ³¨æ–‡æœŸ") + "-" + rs.getInt("æ³¨æ–‡ç•ªå·") + " " + rs.getString("æ³¨æ–‡æç•ª"));
 					} else {
 						v2.add("");
 					}
-					v2.add(rs.getInt("“`•[”Ô†"));
-					v2.add(rs.getInt("”[•i‘”Ô†"));
-					v2.add(rs.getString("”õl"));
-					v2.add(rs.getString("“E—v"));
-					v2.add(rs.getInt("İŒÉeID"));
+					v2.add(rs.getInt("ä¼ç¥¨ç•ªå·"));
+					v2.add(rs.getInt("ç´å“æ›¸ç•ªå·"));
+					v2.add(rs.getString("å‚™è€ƒ"));
+					v2.add(rs.getString("æ‘˜è¦"));
+					v2.add(rs.getInt("åœ¨åº«è¦ªID"));
 					v2.add(rs.getInt("ID"));
 					v.add(v2);
 				}
 
 			} catch(SQLException ex) {
-				err.append(className + "ƒe[ƒuƒ‹uT_İŒÉ_ev‚Ì“Ç‚İo‚µ‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_åœ¨åº«_è¦ªã€ã®èª­ã¿å‡ºã—ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}catch(Exception ex) {
@@ -250,7 +250,7 @@ public class HistorySearch extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

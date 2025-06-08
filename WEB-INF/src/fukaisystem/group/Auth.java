@@ -49,40 +49,40 @@ public class Auth extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object[] obj = (Object[])in.readObject();
 			in.close();
 
 			try {
-//				ps = c.prepareStatement("select 1 from M_lˆõ where LoginID=? and pass=?");
+//				ps = c.prepareStatement("select 1 from M_äººå“¡ where LoginID=? and pass=?");
 //				ps.setString(1, (String)obj[0]);
 //				ps.setString(2, digestMd5((char[])obj[1]));
 //				rs = ps.executeQuery();
 //				if(rs.next()) {
-					ps = c.prepareStatement("SELECT RIGHT('00' + CONVERT(varchar, CD), 2) AS •”CD,•”–¼ FROM M_•”");
+					ps = c.prepareStatement("SELECT RIGHT('00' + CONVERT(varchar, CD), 2) AS éƒ¨ç½²CD,éƒ¨ç½²å FROM M_éƒ¨ç½²");
 					rs = ps.executeQuery();
 					while(rs.next()) {
-						dept.put(rs.getString("•”CD"), rs.getString("•”–¼"));
-						name.put(rs.getString("•”CD"), new LinkedHashMap<String, String>());
+						dept.put(rs.getString("éƒ¨ç½²CD"), rs.getString("éƒ¨ç½²å"));
+						name.put(rs.getString("éƒ¨ç½²CD"), new LinkedHashMap<String, String>());
 					}
-					ps = c.prepareStatement("SELECT CD AS ŒÂlCD,©+' '+–¼ AS –¼,RIGHT('00' + CONVERT(varchar, Š‘®•”CD), 2) AS •”CD FROM M_lˆõ WHERE İĞFLG='true' AND CD>0 ORDER BY Š‘®•”CD,•\¦CD");
+					ps = c.prepareStatement("SELECT CD AS å€‹äººCD,å§“+' '+å AS æ°å,RIGHT('00' + CONVERT(varchar, æ‰€å±éƒ¨ç½²CD), 2) AS éƒ¨ç½²CD FROM M_äººå“¡ WHERE åœ¨ç±FLG='true' AND CD>0 ORDER BY æ‰€å±éƒ¨ç½²CD,è¡¨ç¤ºCD");
 					rs = ps.executeQuery();
 					while(rs.next()) {
-						if(name.containsKey(rs.getString("•”CD"))) name.get(rs.getString("•”CD")).put(rs.getString("ŒÂlCD"), rs.getString("–¼"));
+						if(name.containsKey(rs.getString("éƒ¨ç½²CD"))) name.get(rs.getString("éƒ¨ç½²CD")).put(rs.getString("å€‹äººCD"), rs.getString("æ°å"));
 					}
 	
 					isd = new InitialScheduleDTO(dept, name);
 //				}
 			} catch(SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
-				err.append("DBƒGƒ‰[\n");
+				err.append("DBã‚¨ãƒ©ãƒ¼\n");
 			}
 
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 
 
@@ -122,37 +122,37 @@ public class Auth extends GenericServlet {
 	}
 
 	 /**
-	  * MD5‚Å•¶š—ñ‚ğˆÃ†‰»‚µAˆÃ†‰»‚³‚ê‚½ƒoƒCƒiƒŠ‚ğ16i”•\‹L‚Ì•¶š—ñ‚É•ÏŠ·‚µ‚½’l‚ğæ“¾‚·‚é
+	  * MD5ã§æ–‡å­—åˆ—ã‚’æš—å·åŒ–ã—ã€æš—å·åŒ–ã•ã‚ŒãŸãƒã‚¤ãƒŠãƒªã‚’16é€²æ•°è¡¨è¨˜ã®æ–‡å­—åˆ—ã«å¤‰æ›ã—ãŸå€¤ã‚’å–å¾—ã™ã‚‹
 	  * 
 	  * @param str
-	  *            ˆÃ†‰»‘ÎÛ‚Ì•¶š—ñ
-	  * @return ˆÃ†‰»‚µ‚½Œ‹‰Ê‚ğ16i”•\‹L‚É•ÏŠ·‚µ‚½•¶š—ñ
+	  *            æš—å·åŒ–å¯¾è±¡ã®æ–‡å­—åˆ—
+	  * @return æš—å·åŒ–ã—ãŸçµæœã‚’16é€²æ•°è¡¨è¨˜ã«å¤‰æ›ã—ãŸæ–‡å­—åˆ—
 	  */
 	  public static String digestMd5(char[] c) throws NoSuchAlgorithmException {
 		  String str = new String(c);
 	      if (str == null || str.length() == 0) {
-	          throw new IllegalArgumentException("•¶š—ñ‚ªNullA‚Ü‚½‚Í‹ó‚Å‚·B");
+	          throw new IllegalArgumentException("æ–‡å­—åˆ—ãŒNullã€ã¾ãŸã¯ç©ºã§ã™ã€‚");
 	      }
 
-	      // MD5‚ÅˆÃ†‰»‚µ‚½ByteŒ^”z—ñ‚ğæ“¾‚·‚é
+	      // MD5ã§æš—å·åŒ–ã—ãŸByteå‹é…åˆ—ã‚’å–å¾—ã™ã‚‹
 	      MessageDigest md5 = MessageDigest.getInstance("MD5");
 	      md5.update(str.getBytes());
 	      byte[] enclyptedHash = md5.digest();
 
-	      // ˆÃ†‰»‚³‚ê‚½ByteŒ^”z—ñ‚ğA16i”•\‹L•¶š—ñ‚É•ÏŠ·‚·‚é
+	      // æš—å·åŒ–ã•ã‚ŒãŸByteå‹é…åˆ—ã‚’ã€16é€²æ•°è¡¨è¨˜æ–‡å­—åˆ—ã«å¤‰æ›ã™ã‚‹
 	      return bytesToHexString(enclyptedHash);
 	  }
 	  /**
-	   * ByteŒ^”z—ñ‚©‚ç16i”•\‹L•¶š—ñ‚Ö•ÏŠ·‚·‚é
-	   * @param fromByte •ÏŠ·‘ÎÛByteŒ^”z—ñ
-	   * @return 16i”•\‹L‚É•ÏŠ·Œã‚Ì•¶š—ñ
+	   * Byteå‹é…åˆ—ã‹ã‚‰16é€²æ•°è¡¨è¨˜æ–‡å­—åˆ—ã¸å¤‰æ›ã™ã‚‹
+	   * @param fromByte å¤‰æ›å¯¾è±¡Byteå‹é…åˆ—
+	   * @return 16é€²æ•°è¡¨è¨˜ã«å¤‰æ›å¾Œã®æ–‡å­—åˆ—
 	   */
 	   public static String bytesToHexString(byte[] fromByte) {
 
 	       StringBuilder hexStrBuilder = new StringBuilder();
 	       for (int i = 0; i < fromByte.length; i++) {
 
-	           // 16i”•\‹L‚Å1Œ…”’l‚¾‚Á‚½ê‡A2Œ…–Ú‚ğ0‚Å–„‚ß‚é
+	           // 16é€²æ•°è¡¨è¨˜ã§1æ¡æ•°å€¤ã ã£ãŸå ´åˆã€2æ¡ç›®ã‚’0ã§åŸ‹ã‚ã‚‹
 	           if ((fromByte[i] & 0xff) < 0x10) {
 	               hexStrBuilder.append("0");
 	           }

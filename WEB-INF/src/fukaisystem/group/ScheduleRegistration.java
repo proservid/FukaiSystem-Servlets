@@ -41,7 +41,7 @@ public class ScheduleRegistration extends GenericServlet {
 		StringBuilder err = new StringBuilder();
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 		 */
 		ObjectInputStream in;
 		try {
@@ -49,14 +49,14 @@ public class ScheduleRegistration extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof Daily2) {
 					daily = (Daily2)obj;
 				} else {
-					err.append("Œ^‚ªˆê’v‚µ‚Ü‚¹‚ñ\n");
-					lg.error(className + "Œ^‚ªˆê’v‚µ‚Ü‚¹‚ñ");
+					err.append("å‹ãŒä¸€è‡´ã—ã¾ã›ã‚“\n");
+					lg.error(className + "å‹ãŒä¸€è‡´ã—ã¾ã›ã‚“");
 				}
 			}
 			String myCD = daily.getCD();
@@ -71,16 +71,16 @@ public class ScheduleRegistration extends GenericServlet {
 					limit = 0;
 				}
 				ps = c.prepareStatement(
-					"MERGE INTO T_—\’è AS y"+
-					" USING (SELECT ? AS lˆõCD, ? AS ”NŒ“ú, ? AS “à—e, ? AS “o˜^“ú) AS w" +
-					" ON y.lˆõCD=w.lˆõCD AND y.”NŒ“ú=w.”NŒ“ú" +
+					"MERGE INTO T_äºˆå®š AS y"+
+					" USING (SELECT ? AS äººå“¡CD, ? AS å¹´æœˆæ—¥, ? AS å†…å®¹, ? AS ç™»éŒ²æ—¥æ™‚) AS w" +
+					" ON y.äººå“¡CD=w.äººå“¡CD AND y.å¹´æœˆæ—¥=w.å¹´æœˆæ—¥" +
 					" WHEN MATCHED THEN" +
-					"   UPDATE SET y.lˆõCD=w.lˆõCD, y.”NŒ“ú=w.”NŒ“ú, y.“à—e=w.“à—e, y.“o˜^“ú=w.“o˜^“ú " +
+					"   UPDATE SET y.äººå“¡CD=w.äººå“¡CD, y.å¹´æœˆæ—¥=w.å¹´æœˆæ—¥, y.å†…å®¹=w.å†…å®¹, y.ç™»éŒ²æ—¥æ™‚=w.ç™»éŒ²æ—¥æ™‚ " +
 					" WHEN NOT MATCHED THEN" +
-					"   INSERT VALUES(w.lˆõCD, w.”NŒ“ú, w.“à—e, w.“o˜^“ú);");
+					"   INSERT VALUES(w.äººå“¡CD, w.å¹´æœˆæ—¥, w.å†…å®¹, w.ç™»éŒ²æ—¥æ™‚);");
 				for(int i = 0; i <= limit; i++) {
-					if(i == limit) ps.setString(1, myCD);//©•ª
-					else ps.setString(1, members[i].toString());//“¯sÒ
+					if(i == limit) ps.setString(1, myCD);//è‡ªåˆ†
+					else ps.setString(1, members[i].toString());//åŒè¡Œè€…
 					ps.setDate(2, daily.getDate());
 					ps.setString(3, daily.getText());
 					ps.setTimestamp(4, new Timestamp(new java.util.Date().getTime()));
@@ -93,25 +93,25 @@ public class ScheduleRegistration extends GenericServlet {
 				} else {
 					limit = 0;
 				}
-				StringBuilder query = new StringBuilder("DELETE FROM T_ŒJ‚è•Ô‚µ WHERE lˆõCD IN (?");
+				StringBuilder query = new StringBuilder("DELETE FROM T_ç¹°ã‚Šè¿”ã— WHERE äººå“¡CD IN (?");
 				for(int i = 0; i < limit; i++) {
 					query.append(",?");
 				}
 				query.append(")");
 				ps = c.prepareStatement(query.toString());
 				for(int i = 0; i <= limit; i++) {
-					if(i == limit) ps.setString(i + 1, myCD);//©•ª
-					else ps.setString(i + 1, members[i].toString());//“¯sÒ
+					if(i == limit) ps.setString(i + 1, myCD);//è‡ªåˆ†
+					else ps.setString(i + 1, members[i].toString());//åŒè¡Œè€…
 				}
 				ps.executeUpdate();
 
 				ps = c.prepareStatement(
-					"INSERT INTO T_ŒJ‚è•Ô‚µ (lˆõCD,—j“ú‚²‚ÆFLG,‚²‚Æ,“à—e,“o˜^“ú) VALUES(?,?,?,?,?)");
+					"INSERT INTO T_ç¹°ã‚Šè¿”ã— (äººå“¡CD,æ›œæ—¥ã”ã¨FLG,ã”ã¨,å†…å®¹,ç™»éŒ²æ—¥æ™‚) VALUES(?,?,?,?,?)");
 				for(Repeat r : daily.getRepeats()) {
 					if(r.getValue() > 0 && !r.getContent().equals("")) {
 						for(int i = 0; i <= limit; i++) {
-							if(i == limit) ps.setString(1, myCD);//©•ª
-							else ps.setString(1, members[i].toString());//“¯sÒ
+							if(i == limit) ps.setString(1, myCD);//è‡ªåˆ†
+							else ps.setString(1, members[i].toString());//åŒè¡Œè€…
 							ps.setBoolean(2, r.isWeekly());
 							ps.setInt(3, r.getValue());
 							ps.setString(4, r.getContent());
@@ -127,11 +127,11 @@ public class ScheduleRegistration extends GenericServlet {
 				} else {
 					limit = 0;
 				}
-				query = new StringBuilder("DELETE FROM T_ƒoƒi[ WHERE lˆõCD IN (?");
+				query = new StringBuilder("DELETE FROM T_ãƒãƒŠãƒ¼ WHERE äººå“¡CD IN (?");
 				for(int i = 0; i < limit; i++) {
 					query.append(",?");
 				}
-				query.append(") AND (ŠJn“ú<=? and I—¹“ú>=?)");
+				query.append(") AND (é–‹å§‹æ—¥<=? and çµ‚äº†æ—¥>=?)");
 				if(daily.getIds().size() > 0) {
 					query.append(" AND (");
 					boolean flg = false;
@@ -145,20 +145,20 @@ public class ScheduleRegistration extends GenericServlet {
 				}
 				ps = c.prepareStatement(query.toString());
 				for(int i = 0; i <= limit; i++) {
-					if(i == limit) ps.setString(i + 1, myCD);//©•ª
-					else ps.setString(i + 1, members[i].toString());//“¯sÒ
+					if(i == limit) ps.setString(i + 1, myCD);//è‡ªåˆ†
+					else ps.setString(i + 1, members[i].toString());//åŒè¡Œè€…
 				}
 				ps.setDate(limit + 2, daily.getDate());
 				ps.setDate(limit + 3, daily.getDate());
 				ps.executeUpdate();
 
 				ps = c.prepareStatement(
-					"INSERT INTO T_ƒoƒi[ (lˆõCD,ŠJn“ú,I—¹“ú,“à—e,“o˜^“ú) VALUES(?,?,?,?,?)");
+					"INSERT INTO T_ãƒãƒŠãƒ¼ (äººå“¡CD,é–‹å§‹æ—¥,çµ‚äº†æ—¥,å†…å®¹,ç™»éŒ²æ—¥æ™‚) VALUES(?,?,?,?,?)");
 				for(Banner b : daily.getBanners()) {
 					if(!b.getContent().equals("")) {
 						for(int i = 0; i <= limit; i++) {
-							if(i == limit) ps.setString(1, myCD);//©•ª
-							else ps.setString(1, members[i].toString());//“¯sÒ
+							if(i == limit) ps.setString(1, myCD);//è‡ªåˆ†
+							else ps.setString(1, members[i].toString());//åŒè¡Œè€…
 							ps.setDate(2, b.getFrom());
 							ps.setDate(3, b.getTo());
 							ps.setString(4, b.getContent());
@@ -170,24 +170,24 @@ public class ScheduleRegistration extends GenericServlet {
 				ps.executeBatch();
 	 		} catch(SQLException ex) {
 				ex.printStackTrace();
-				err.append(className + "XV‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "æ›´æ–°ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
 		} catch (Exception e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
 			e.printStackTrace();
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			//–¢“ü—Í‚Ì»”Ô‚ª‚ ‚é‚Ì‚Å“––Ê»”Ô‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñƒGƒ‰[‚ğo‚³‚È‚¢
-			//out.writeObject(inputDTO.getInt(1) == 0 ? -1 : update);//»ì”Ô†‚ª0‚È‚çAŠY“–‚·‚é»ìƒf[ƒ^‚ª“o˜^‚³‚ê‚Ä‚¢‚È‚­‚Ä‚àOK‚É‚·‚é
-			out.writeObject(-1);//»ì”Ô†‚ª0‚È‚çAŠY“–‚·‚é»ìƒf[ƒ^‚ª“o˜^‚³‚ê‚Ä‚¢‚È‚­‚Ä‚àOK‚É‚·‚é
+			//æœªå…¥åŠ›ã®è£½ç•ªãŒã‚ã‚‹ã®ã§å½“é¢è£½ç•ªãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã‚¨ãƒ©ãƒ¼ã‚’å‡ºã•ãªã„
+			//out.writeObject(inputDTO.getInt(1) == 0 ? -1 : update);//è£½ä½œç•ªå·ãŒ0ãªã‚‰ã€è©²å½“ã™ã‚‹è£½ä½œãƒ‡ãƒ¼ã‚¿ãŒç™»éŒ²ã•ã‚Œã¦ã„ãªãã¦ã‚‚OKã«ã™ã‚‹
+			out.writeObject(-1);//è£½ä½œç•ªå·ãŒ0ãªã‚‰ã€è©²å½“ã™ã‚‹è£½ä½œãƒ‡ãƒ¼ã‚¿ãŒç™»éŒ²ã•ã‚Œã¦ã„ãªãã¦ã‚‚OKã«ã™ã‚‹
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

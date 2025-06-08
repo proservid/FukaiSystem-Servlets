@@ -37,7 +37,7 @@ public class SetMember extends GenericServlet {
 		StringBuilder err = new StringBuilder();
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 		 */
 		ObjectInputStream in;
 		try {
@@ -45,38 +45,38 @@ public class SetMember extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof DMDTO) {
 					dmd = (DMDTO)obj;
 					dept = dmd.getName().keySet().iterator().next();
 					data = dmd.getName().get(dept);
 				} else {
-					err.append("Œ^‚ªˆê’v‚µ‚Ü‚¹‚ñ\n");
-					lg.error(className + "Œ^‚ªˆê’v‚µ‚Ü‚¹‚ñ");
+					err.append("å‹ãŒä¸€è‡´ã—ã¾ã›ã‚“\n");
+					lg.error(className + "å‹ãŒä¸€è‡´ã—ã¾ã›ã‚“");
 				}
 			}
 
 			try {
-				ps = c.prepareStatement( "MERGE INTO M_lˆõ AS m" +
-						 " USING (SELECT ? AS CD, ? AS ©, ? AS –¼, ? AS Š‘®•”CD, ? AS •\¦CD, ? AS İĞFLG) AS temp" +
+				ps = c.prepareStatement( "MERGE INTO M_äººå“¡ AS m" +
+						 " USING (SELECT ? AS CD, ? AS å§“, ? AS å, ? AS æ‰€å±éƒ¨ç½²CD, ? AS è¡¨ç¤ºCD, ? AS åœ¨ç±FLG) AS temp" +
 						 "  ON m.CD=temp.CD AND temp.CD<>0 " +
 						 " WHEN MATCHED THEN" +
-						 " UPDATE SET m.©=temp.©, m.–¼=temp.–¼, m.Š‘®•”CD=temp.Š‘®•”CD," +
-						 " m.•\¦CD=temp.•\¦CD, m.İĞFLG=temp.İĞFLG" +
+						 " UPDATE SET m.å§“=temp.å§“, m.å=temp.å, m.æ‰€å±éƒ¨ç½²CD=temp.æ‰€å±éƒ¨ç½²CD," +
+						 " m.è¡¨ç¤ºCD=temp.è¡¨ç¤ºCD, m.åœ¨ç±FLG=temp.åœ¨ç±FLG" +
 						 " WHEN NOT MATCHED THEN" +
-						 " 	INSERT VALUES(temp.CD, temp.©, temp.–¼, temp.Š‘®•”CD, temp.•\¦CD, 0, temp.İĞFLG, '00000', '00000');");
+						 " 	INSERT VALUES(temp.CD, temp.å§“, temp.å, temp.æ‰€å±éƒ¨ç½²CD, temp.è¡¨ç¤ºCD, 0, temp.åœ¨ç±FLG, '00000', '00000');");
 				int i = 1;
 				for(Vector<Object> v : data) {
 					if(v.get(0).toString().equals("0") || (v.get(1).equals("") && v.get(2).equals(""))) {
 					} else {
 						ps.setInt(1, (Integer)v.get(0)); //CD
-						ps.setString(2, (String)v.get(1)); //©
-						ps.setString(3, (String)v.get(2)); //–¼
-						ps.setString(4, dept); //Š‘®•”CD
-						ps.setInt(5, i++); //•\¦CD
-						ps.setBoolean(6, (Boolean)v.get(3)); //İĞFLG
+						ps.setString(2, (String)v.get(1)); //å§“
+						ps.setString(3, (String)v.get(2)); //å
+						ps.setString(4, dept); //æ‰€å±éƒ¨ç½²CD
+						ps.setInt(5, i++); //è¡¨ç¤ºCD
+						ps.setBoolean(6, (Boolean)v.get(3)); //åœ¨ç±FLG
 						ps.addBatch();
 					}
 				}
@@ -84,23 +84,23 @@ public class SetMember extends GenericServlet {
 
 	 		} catch(SQLException ex) {
 				ex.printStackTrace();
-				err.append(className + "XV‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append(className + "æ›´æ–°ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
 		} catch (Exception e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
 			e.printStackTrace();
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
 
-			out.writeObject(updateCounts.length);//»ì”Ô†‚ª0‚È‚çAŠY“–‚·‚é»ìƒf[ƒ^‚ª“o˜^‚³‚ê‚Ä‚¢‚È‚­‚Ä‚àOK‚É‚·‚é
+			out.writeObject(updateCounts.length);//è£½ä½œç•ªå·ãŒ0ãªã‚‰ã€è©²å½“ã™ã‚‹è£½ä½œãƒ‡ãƒ¼ã‚¿ãŒç™»éŒ²ã•ã‚Œã¦ã„ãªãã¦ã‚‚OKã«ã™ã‚‹
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

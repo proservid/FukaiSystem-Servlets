@@ -42,39 +42,39 @@ public class GetCountry extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof String) {
 					input = (String)obj;
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 			try {
 				ps = c.prepareStatement(
-					"select ccTLD,‘Û“d˜b‘”Ô†,‘–¼,‰pŒê–¼," +
-					"case when —X•Ö”Ô† is null then '#' else —X•Ö”Ô† end as —X•Ö”Ô†" +
-					" from M_‘ where alpha_2=?");
+					"select ccTLD,å›½éš›é›»è©±å›½ç•ªå·,å›½å,è‹±èªå," +
+					"case when éƒµä¾¿ç•ªå· is null then '#' else éƒµä¾¿ç•ªå· end as éƒµä¾¿ç•ªå·" +
+					" from M_å›½ where alpha_2=?");
 				ps.setString(1, input);
 				rs = ps.executeQuery();
 				if(rs.next()) {
 					output.add(rs.getString("ccTLD"));
-					output.add(rs.getString("‘Û“d˜b‘”Ô†"));
-					output.add(rs.getString("‘–¼"));
-					output.add(rs.getString("‰pŒê–¼"));
-					output.add(rs.getString("—X•Ö”Ô†"));
+					output.add(rs.getString("å›½éš›é›»è©±å›½ç•ªå·"));
+					output.add(rs.getString("å›½å"));
+					output.add(rs.getString("è‹±èªå"));
+					output.add(rs.getString("éƒµä¾¿ç•ªå·"));
 				}
 			} catch(SQLException ex) {
-				err.append("ƒe[ƒuƒ‹uT_ƒe[ƒuƒ‹–¼v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append("ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ãƒ†ãƒ¼ãƒ–ãƒ«åã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
@@ -83,7 +83,7 @@ public class GetCountry extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

@@ -11,7 +11,7 @@ import fukaisystem.sql.DBConnection;
 import org.apache.log4j.Logger;
 
 /**
- * ƒe[ƒuƒ‹‚Ì“à—e‚Æ—ñî•ñ‚ğæ“¾‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX
+ * ãƒ†ãƒ¼ãƒ–ãƒ«ã®å†…å®¹ã¨åˆ—æƒ…å ±ã‚’å–å¾—ã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹
  * @author kameura
  *
  */
@@ -37,35 +37,35 @@ public class GetShelf extends GenericServlet {
 
 		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 		try {
-	//ƒNƒ‰ƒCƒAƒ“ƒg‚©‚ç“Ç‚İ‚İ
+	//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã‹ã‚‰èª­ã¿è¾¼ã¿
 
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			if(obj instanceof Date) {
 				from = (Date)obj;
 				Calendar target = Calendar.getInstance();
-				target.setTime(from);//¡Œ1“ú
+				target.setTime(from);//ä»Šæœˆ1æ—¥
 				month = target.get(Calendar.MONTH) + 1;
-				target.add(Calendar.MONTH, 1);//—‚Œ1“ú
+				target.add(Calendar.MONTH, 1);//ç¿Œæœˆ1æ—¥
 				to = new Date(target.getTimeInMillis());
-				target.setTime(from);//¡Œ1“úiŸ‚Ì2014”N”»’è‚Ì‚½‚ß‚É‚±‚Ìƒ^ƒCƒ~ƒ“ƒO‚ÅƒZƒbƒg‚·‚é•K—v‚ª‚ ‚éj
-				if(target.get(Calendar.YEAR) < 2014) {//2013”NˆÈ‘O‚Í25“úY
-					if(target.get(Calendar.MONTH) == 11) {//12Œ‚Í11Œ26“ú‚©‚ç12Œ31“ú
+				target.setTime(from);//ä»Šæœˆ1æ—¥ï¼ˆæ¬¡ã®2014å¹´åˆ¤å®šã®ãŸã‚ã«ã“ã®ã‚¿ã‚¤ãƒŸãƒ³ã‚°ã§ã‚»ãƒƒãƒˆã™ã‚‹å¿…è¦ãŒã‚ã‚‹ï¼‰
+				if(target.get(Calendar.YEAR) < 2014) {//2013å¹´ä»¥å‰ã¯25æ—¥ã€†
+					if(target.get(Calendar.MONTH) == 11) {//12æœˆã¯11æœˆ26æ—¥ã‹ã‚‰12æœˆ31æ—¥
 						to2 = to;
-						target.add(Calendar.DATE, 25);//¡Œ26“ú
-						target.add(Calendar.MONTH, -1);//æŒ26“ú
+						target.add(Calendar.DATE, 25);//ä»Šæœˆ26æ—¥
+						target.add(Calendar.MONTH, -1);//å…ˆæœˆ26æ—¥
 						from2 = new Date(target.getTimeInMillis());
 					} else {
-						target.add(Calendar.DATE, 25);//¡Œ26“ú
+						target.add(Calendar.DATE, 25);//ä»Šæœˆ26æ—¥
 						to2 = new Date(target.getTimeInMillis());
-						if(target.get(Calendar.MONTH) == 0) {//1Œ‚Í1Œ1“ú‚©‚ç1Œ25“ú
+						if(target.get(Calendar.MONTH) == 0) {//1æœˆã¯1æœˆ1æ—¥ã‹ã‚‰1æœˆ25æ—¥
 							from2 = from;
 						} else {
-							target.add(Calendar.MONTH, -1);//æŒ26“ú
+							target.add(Calendar.MONTH, -1);//å…ˆæœˆ26æ—¥
 							from2 = new Date(target.getTimeInMillis());
 						}
 					}
-				} else {//2014”NˆÈŒã‚ÍŒ––Y
+				} else {//2014å¹´ä»¥å¾Œã¯æœˆæœ«ã€†
 					to2 = to;
 					from2 = from;
 				}
@@ -73,145 +73,145 @@ public class GetShelf extends GenericServlet {
 			in.close();
 String sql =
 "select distinct" + "\n" +
-"substring(convert(varchar,case when p2.»ì”Ô† is null then z.»ì”Ô† else p2.»ì”Ô† end),1,1) as x," + "\n" +
-"case when p2.»ì”Ô† is null" + "\n" +
-" then convert(varchar,z.»ìŠú)+'-'+convert(varchar,z.»ì”Ô†)+convert(varchar,z.»ì}”Ô)" + "\n" +
-" else convert(varchar,p2.»ìŠú)+'-'+convert(varchar,p2.»ì”Ô†)+convert(varchar,p2.»ì}”Ô) end as »”Ô," + "\n" +
-"case when (”[•i‹æ•ªCD=2 or ”[•i‹æ•ªCD=4 or ”[•i‹æ•ªCD=5 or ”[•i‹æ•ªCD=6) then (case when ”„ã”NŒ“ú<? then '#' else (case when ”„ã”NŒ“ú<? then '*' else '' end) end) else '' end as ”„," + "\n" +
-"case when ŒJ‰zd“ü is null and ŒJ‰zoŒÉ is null then 0" + "\n" +
-"when ŒJ‰zd“ü is null then ŒJ‰zoŒÉ" + "\n" +
-"when ŒJ‰zoŒÉ is null then ŒJ‰zd“ü" + "\n" +
-"else ŒJ‰zd“ü+ŒJ‰zoŒÉ" + "\n" +
-"end as ŒJ‰z‹àŠz," + "\n" +
-"case when sum(ŒJ‰z90) is null then 0 else sum(ŒJ‰z90) end as ŒJ‰z90," + "\n" +
-"case when d“ü‹àŠz is null then 0 else d“ü‹àŠz end as d“ü‹àŠz," + "\n" +
-"case when oŒÉ‹àŠz is null then 0 else oŒÉ‹àŠz end as oŒÉ‹àŠz," + "\n" +
-"case when sum(oŒÉ90) is null then 0 else sum(oŒÉ90) end as oŒÉ90," + "\n" +
-"case when H” is null then '0.00' else H” end as H”," + "\n" +
-"case when H”—İŒv is null then '0.00' else H”—İŒv end as H”—İŒv" + "\n" +
+"substring(convert(varchar,case when p2.è£½ä½œç•ªå· is null then z.è£½ä½œç•ªå· else p2.è£½ä½œç•ªå· end),1,1) as x," + "\n" +
+"case when p2.è£½ä½œç•ªå· is null" + "\n" +
+" then convert(varchar,z.è£½ä½œæœŸ)+'-'+convert(varchar,z.è£½ä½œç•ªå·)+convert(varchar,z.è£½ä½œæç•ª)" + "\n" +
+" else convert(varchar,p2.è£½ä½œæœŸ)+'-'+convert(varchar,p2.è£½ä½œç•ªå·)+convert(varchar,p2.è£½ä½œæç•ª) end as è£½ç•ª," + "\n" +
+"case when (ç´å“åŒºåˆ†CD=2 or ç´å“åŒºåˆ†CD=4 or ç´å“åŒºåˆ†CD=5 or ç´å“åŒºåˆ†CD=6) then (case when å£²ä¸Šå¹´æœˆæ—¥<? then '#' else (case when å£²ä¸Šå¹´æœˆæ—¥<? then '*' else '' end) end) else '' end as å£²," + "\n" +
+"case when ç¹°è¶Šä»•å…¥ is null and ç¹°è¶Šå‡ºåº« is null then 0" + "\n" +
+"when ç¹°è¶Šä»•å…¥ is null then ç¹°è¶Šå‡ºåº«" + "\n" +
+"when ç¹°è¶Šå‡ºåº« is null then ç¹°è¶Šä»•å…¥" + "\n" +
+"else ç¹°è¶Šä»•å…¥+ç¹°è¶Šå‡ºåº«" + "\n" +
+"end as ç¹°è¶Šé‡‘é¡," + "\n" +
+"case when sum(ç¹°è¶Š90) is null then 0 else sum(ç¹°è¶Š90) end as ç¹°è¶Š90," + "\n" +
+"case when ä»•å…¥é‡‘é¡ is null then 0 else ä»•å…¥é‡‘é¡ end as ä»•å…¥é‡‘é¡," + "\n" +
+"case when å‡ºåº«é‡‘é¡ is null then 0 else å‡ºåº«é‡‘é¡ end as å‡ºåº«é‡‘é¡," + "\n" +
+"case when sum(å‡ºåº«90) is null then 0 else sum(å‡ºåº«90) end as å‡ºåº«90," + "\n" +
+"case when å·¥æ•° is null then '0.00' else å·¥æ•° end as å·¥æ•°," + "\n" +
+"case when å·¥æ•°ç´¯è¨ˆ is null then '0.00' else å·¥æ•°ç´¯è¨ˆ end as å·¥æ•°ç´¯è¨ˆ" + "\n" +
 //"-------------------------------------------------------------------------------------------------------" + "\n" +
-//" --•\¦»”Ô" + "\n" +
-//" --¡Œ”„ã{”„ã‚ª‚Ü‚¾ or ¡Œd“ü or ¡ŒoŒÉ or ¡ŒH”" + "\n" +
+//" --è¡¨ç¤ºè£½ç•ª" + "\n" +
+//" --ä»Šæœˆå£²ä¸Šï¼‹å£²ä¸ŠãŒã¾ã  or ä»Šæœˆä»•å…¥ or ä»Šæœˆå‡ºåº« or ä»Šæœˆå·¥æ•°" + "\n" +
 " from (" + "\n" +
-"	select p.»ìeID,pc.ID,p.»ìŠú,p.»ì”Ô†,p.»ì}”Ô,”„ã”NŒ“ú,”[•i‹æ•ªCD from T_»ì_e p" + "\n" +
-"	left outer join T_”„ã_q sc on p.»ìeID=sc.»ìeID" + "\n" +
-"	left outer join T_»ì_q pc on p.»ìeID=pc.»ìeID and (pc.ID=sc.»ìqID or (pc.ID is not null and sc.»ìqID is null))" + "\n" +
-"	left outer join T_”„ã_e sp on sc.”„ãeID=sp.”„ãeID" + "\n" +
+"	select p.è£½ä½œè¦ªID,pc.ID,p.è£½ä½œæœŸ,p.è£½ä½œç•ªå·,p.è£½ä½œæç•ª,å£²ä¸Šå¹´æœˆæ—¥,ç´å“åŒºåˆ†CD from T_è£½ä½œ_è¦ª p" + "\n" +
+"	left outer join T_å£²ä¸Š_å­ sc on p.è£½ä½œè¦ªID=sc.è£½ä½œè¦ªID" + "\n" +
+"	left outer join T_è£½ä½œ_å­ pc on p.è£½ä½œè¦ªID=pc.è£½ä½œè¦ªID and (pc.ID=sc.è£½ä½œå­ID or (pc.ID is not null and sc.è£½ä½œå­ID is null))" + "\n" +
+"	left outer join T_å£²ä¸Š_è¦ª sp on sc.å£²ä¸Šè¦ªID=sp.å£²ä¸Šè¦ªID" + "\n" +
 "	left outer join (" + "\n" +
-"		select ’•¶Šú,’•¶”Ô†,’•¶}”Ô,”[•i‘“ú from T_İŒÉ_e op " + "\n" +
-"		left outer join T_İŒÉ_q oc on op.İŒÉeID=oc.İŒÉeID" + "\n" +
-"		left outer join T_w’è”[•i‘ s on oc.”[•i‘”Ô†=s.ID" + "\n" +
-"		where ”[•i‘“ú>=? and ”[•i‘“ú<?" + "\n" +
-"	) o on p.»ìŠú=’•¶Šú and p.»ì”Ô†=’•¶”Ô† and p.»ì}”Ô=’•¶}”Ô" + "\n" +
+"		select æ³¨æ–‡æœŸ,æ³¨æ–‡ç•ªå·,æ³¨æ–‡æç•ª,ç´å“æ›¸æ—¥ from T_åœ¨åº«_è¦ª op " + "\n" +
+"		left outer join T_åœ¨åº«_å­ oc on op.åœ¨åº«è¦ªID=oc.åœ¨åº«è¦ªID" + "\n" +
+"		left outer join T_æŒ‡å®šç´å“æ›¸ s on oc.ç´å“æ›¸ç•ªå·=s.ID" + "\n" +
+"		where ç´å“æ›¸æ—¥>=? and ç´å“æ›¸æ—¥<?" + "\n" +
+"	) o on p.è£½ä½œæœŸ=æ³¨æ–‡æœŸ and p.è£½ä½œç•ªå·=æ³¨æ–‡ç•ªå· and p.è£½ä½œæç•ª=æ³¨æ–‡æç•ª" + "\n" +
 "	left outer join (" + "\n" +
-"		select »ìŠú,»ì”Ô†,»ì}”Ô,oŒÉ”NŒ“ú from T_oŒÉ_e dp " + "\n" +
-"		where oŒÉ”NŒ“ú>=? and oŒÉ”NŒ“ú<?" + "\n" +
-"	) d on p.»ìŠú=d.»ìŠú and p.»ì”Ô†=d.»ì”Ô† and p.»ì}”Ô=d.»ì}”Ô" + "\n" +
+"		select è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,å‡ºåº«å¹´æœˆæ—¥ from T_å‡ºåº«_è¦ª dp " + "\n" +
+"		where å‡ºåº«å¹´æœˆæ—¥>=? and å‡ºåº«å¹´æœˆæ—¥<?" + "\n" +
+"	) d on p.è£½ä½œæœŸ=d.è£½ä½œæœŸ and p.è£½ä½œç•ªå·=d.è£½ä½œç•ªå· and p.è£½ä½œæç•ª=d.è£½ä½œæç•ª" + "\n" +
 "	left outer join (" + "\n" +
-"		select »ìŠú,»ì”Ô†,»ì}”Ô,’…è“ú from T_‰ÁHÀÑ" + "\n" +
-"		where ’…è“ú>=? and ’…è“ú<?" + "\n" +
-"	) w on p.»ìŠú=w.»ìŠú and p.»ì”Ô†=w.»ì”Ô† and p.»ì}”Ô=w.»ì}”Ô" + "\n" +
-"	where ”„ã”NŒ“ú>=? or ”„ã”NŒ“ú is null or ”[•i‘“ú is not null or oŒÉ”NŒ“ú is not null or ’…è“ú is not null) p2" + "\n" +
+"		select è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,ç€æ‰‹æ—¥æ™‚ from T_åŠ å·¥å®Ÿç¸¾" + "\n" +
+"		where ç€æ‰‹æ—¥æ™‚>=? and ç€æ‰‹æ—¥æ™‚<?" + "\n" +
+"	) w on p.è£½ä½œæœŸ=w.è£½ä½œæœŸ and p.è£½ä½œç•ªå·=w.è£½ä½œç•ªå· and p.è£½ä½œæç•ª=w.è£½ä½œæç•ª" + "\n" +
+"	where å£²ä¸Šå¹´æœˆæ—¥>=? or å£²ä¸Šå¹´æœˆæ—¥ is null or ç´å“æ›¸æ—¥ is not null or å‡ºåº«å¹´æœˆæ—¥ is not null or ç€æ‰‹æ—¥æ™‚ is not null) p2" + "\n" +
 //"-------------------------------------------------------------------------------------------------------" + "\n" +
-//"Œ‰—İŒv" + "\n" +
+//"æœˆåˆç´¯è¨ˆ" + "\n" +
 "left outer join (" + "\n" +
-"	select ’•¶Šú,p.’•¶”Ô†,p.’•¶}”Ô,sum(‹àŠz) as ŒJ‰zd“ü from T_İŒÉ_e p " + "\n" +
-"	left outer join T_İŒÉ_q c on p.İŒÉeID=c.İŒÉeID" + "\n" +
-"	left outer join T_w’è”[•i‘ s on c.”[•i‘”Ô†=s.ID" + "\n" +
-"	where ”[•i‘“ú<? " + "\n" +
-	"	group by ’•¶Šú,’•¶”Ô†,’•¶}”Ô) stp" + "\n" +
-"	on p2.»ìŠú=stp.’•¶Šú and p2.»ì”Ô†=stp.’•¶”Ô† and p2.»ì}”Ô=stp.’•¶}”Ô" + "\n" +
+"	select æ³¨æ–‡æœŸ,p.æ³¨æ–‡ç•ªå·,p.æ³¨æ–‡æç•ª,sum(é‡‘é¡) as ç¹°è¶Šä»•å…¥ from T_åœ¨åº«_è¦ª p " + "\n" +
+"	left outer join T_åœ¨åº«_å­ c on p.åœ¨åº«è¦ªID=c.åœ¨åº«è¦ªID" + "\n" +
+"	left outer join T_æŒ‡å®šç´å“æ›¸ s on c.ç´å“æ›¸ç•ªå·=s.ID" + "\n" +
+"	where ç´å“æ›¸æ—¥<? " + "\n" +
+	"	group by æ³¨æ–‡æœŸ,æ³¨æ–‡ç•ªå·,æ³¨æ–‡æç•ª) stp" + "\n" +
+"	on p2.è£½ä½œæœŸ=stp.æ³¨æ–‡æœŸ and p2.è£½ä½œç•ªå·=stp.æ³¨æ–‡ç•ªå· and p2.è£½ä½œæç•ª=stp.æ³¨æ–‡æç•ª" + "\n" +
 "left outer join (" + "\n" +
-"	select »ìŠú,»ì”Ô†,»ì}”Ô,sum(‹àŠz) as ŒJ‰zoŒÉ from T_oŒÉ_e p" + "\n" +
-"	left outer join T_oŒÉ_q c on p.oŒÉeID=c.oŒÉeID" + "\n" +
-"	where oŒÉ”NŒ“ú<? " + "\n" +
-"	group by »ìŠú,»ì”Ô†,»ì}”Ô) sdp" + "\n" +
-"	on p2.»ìŠú=sdp.»ìŠú and p2.»ì”Ô†=sdp.»ì”Ô† and p2.»ì}”Ô=sdp.»ì}”Ô" + "\n" +
+"	select è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,sum(é‡‘é¡) as ç¹°è¶Šå‡ºåº« from T_å‡ºåº«_è¦ª p" + "\n" +
+"	left outer join T_å‡ºåº«_å­ c on p.å‡ºåº«è¦ªID=c.å‡ºåº«è¦ªID" + "\n" +
+"	where å‡ºåº«å¹´æœˆæ—¥<? " + "\n" +
+"	group by è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª) sdp" + "\n" +
+"	on p2.è£½ä½œæœŸ=sdp.è£½ä½œæœŸ and p2.è£½ä½œç•ªå·=sdp.è£½ä½œç•ªå· and p2.è£½ä½œæç•ª=sdp.è£½ä½œæç•ª" + "\n" +
 "left outer join (" + "\n" +
-"	select İŒÉeID,İŒÉqID,sum(‹àŠz)*-1 as ŒJ‰z90 from T_oŒÉ_q dc" + "\n" +
-"	left outer join T_oŒÉ_e dp on dc.oŒÉeID=dp.oŒÉeID" + "\n" +
-"	where oŒÉ”NŒ“ú<?" + "\n" +
-"	group by İŒÉeID,İŒÉqID) sdp90" + "\n" +
-"	on İŒÉeID=p2.»ìeID AND İŒÉqID=p2.ID" + "\n" +
+"	select åœ¨åº«è¦ªID,åœ¨åº«å­ID,sum(é‡‘é¡)*-1 as ç¹°è¶Š90 from T_å‡ºåº«_å­ dc" + "\n" +
+"	left outer join T_å‡ºåº«_è¦ª dp on dc.å‡ºåº«è¦ªID=dp.å‡ºåº«è¦ªID" + "\n" +
+"	where å‡ºåº«å¹´æœˆæ—¥<?" + "\n" +
+"	group by åœ¨åº«è¦ªID,åœ¨åº«å­ID) sdp90" + "\n" +
+"	on åœ¨åº«è¦ªID=p2.è£½ä½œè¦ªID AND åœ¨åº«å­ID=p2.ID" + "\n" +
 "left outer join (" + "\n" +
-"	select İŒÉeID,İŒÉqID,sum(‹àŠz)*-1 as oŒÉ90 from T_oŒÉ_q dc" + "\n" +
-"	left outer join T_oŒÉ_e dp on dc.oŒÉeID=dp.oŒÉeID" + "\n" +
-"	where oŒÉ”NŒ“ú<? AND oŒÉ”NŒ“ú>=?" + "\n" +
-"	group by İŒÉeID,İŒÉqID) dp90" + "\n" +
-"	on dp90.İŒÉeID=p2.»ìeID AND dp90.İŒÉqID=p2.ID" + "\n" +
+"	select åœ¨åº«è¦ªID,åœ¨åº«å­ID,sum(é‡‘é¡)*-1 as å‡ºåº«90 from T_å‡ºåº«_å­ dc" + "\n" +
+"	left outer join T_å‡ºåº«_è¦ª dp on dc.å‡ºåº«è¦ªID=dp.å‡ºåº«è¦ªID" + "\n" +
+"	where å‡ºåº«å¹´æœˆæ—¥<? AND å‡ºåº«å¹´æœˆæ—¥>=?" + "\n" +
+"	group by åœ¨åº«è¦ªID,åœ¨åº«å­ID) dp90" + "\n" +
+"	on dp90.åœ¨åº«è¦ªID=p2.è£½ä½œè¦ªID AND dp90.åœ¨åº«å­ID=p2.ID" + "\n" +
 
 "left outer join (" + "\n" +
-"	select »ìŠú,»ì”Ô†,»ì}”Ô,convert(varchar,convert(money,sum(ŠÔ))/100) as H”—İŒv from T_‰ÁHÀÑ" + "\n" +
-"	where ’…è“ú<?" + "\n" +
-"	group by »ìŠú,»ì”Ô†,»ì}”Ô) w on w.»ìŠú=p2.»ìŠú and w.»ì”Ô†=p2.»ì”Ô† and w.»ì}”Ô=p2.»ì}”Ô" + "\n" +
+"	select è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,convert(varchar,convert(money,sum(æ™‚é–“))/100) as å·¥æ•°ç´¯è¨ˆ from T_åŠ å·¥å®Ÿç¸¾" + "\n" +
+"	where ç€æ‰‹æ—¥æ™‚<?" + "\n" +
+"	group by è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª) w on w.è£½ä½œæœŸ=p2.è£½ä½œæœŸ and w.è£½ä½œç•ªå·=p2.è£½ä½œç•ªå· and w.è£½ä½œæç•ª=p2.è£½ä½œæç•ª" + "\n" +
 //"-------------------------------------------------------------------------------------------------------" + "\n" +
-//"--“–Œ‚Ìd“üAoŒÉAH”‚Ì‡Œv" + "\n" +
+//"--å½“æœˆã®ä»•å…¥ã€å‡ºåº«ã€å·¥æ•°ã®åˆè¨ˆ" + "\n" +
 "left outer join (" + "\n" +
 "select" + "\n" +
-"pp.»ìŠú,pp.»ì”Ô†,pp.»ì}”Ô,d“ü‹àŠz,oŒÉ‹àŠz,H”" + "\n" +
-" from T_»ì_e pp" + "\n" +
+"pp.è£½ä½œæœŸ,pp.è£½ä½œç•ªå·,pp.è£½ä½œæç•ª,ä»•å…¥é‡‘é¡,å‡ºåº«é‡‘é¡,å·¥æ•°" + "\n" +
+" from T_è£½ä½œ_è¦ª pp" + "\n" +
 " left outer join (" + "\n" +
-"	select ’•¶Šú,’•¶”Ô†,’•¶}”Ô,sum(‹àŠz) as d“ü‹àŠz from T_İŒÉ_e p" + "\n" +
-"	left outer join T_İŒÉ_q c on p.İŒÉeID=c.İŒÉeID" + "\n" +
-"	left outer join T_w’è”[•i‘ s on c.”[•i‘”Ô†=s.ID" + "\n" +
-"	where ”[•i‘“ú>=? and ”[•i‘“ú<?" + "\n" +
-"	group by ’•¶Šú,’•¶”Ô†,’•¶}”Ô) stp" + "\n" +
-"	on stp.’•¶Šú=pp.»ìŠú and stp.’•¶”Ô†=pp.»ì”Ô† and stp.’•¶}”Ô=pp.»ì}”Ô" + "\n" +
+"	select æ³¨æ–‡æœŸ,æ³¨æ–‡ç•ªå·,æ³¨æ–‡æç•ª,sum(é‡‘é¡) as ä»•å…¥é‡‘é¡ from T_åœ¨åº«_è¦ª p" + "\n" +
+"	left outer join T_åœ¨åº«_å­ c on p.åœ¨åº«è¦ªID=c.åœ¨åº«è¦ªID" + "\n" +
+"	left outer join T_æŒ‡å®šç´å“æ›¸ s on c.ç´å“æ›¸ç•ªå·=s.ID" + "\n" +
+"	where ç´å“æ›¸æ—¥>=? and ç´å“æ›¸æ—¥<?" + "\n" +
+"	group by æ³¨æ–‡æœŸ,æ³¨æ–‡ç•ªå·,æ³¨æ–‡æç•ª) stp" + "\n" +
+"	on stp.æ³¨æ–‡æœŸ=pp.è£½ä½œæœŸ and stp.æ³¨æ–‡ç•ªå·=pp.è£½ä½œç•ªå· and stp.æ³¨æ–‡æç•ª=pp.è£½ä½œæç•ª" + "\n" +
 "left outer join (" + "\n" +
-"	select »ìŠú,»ì”Ô†,»ì}”Ô,sum(‹àŠz) as oŒÉ‹àŠz from T_oŒÉ_e p" + "\n" +
-"	left outer join T_oŒÉ_q c on p.oŒÉeID=c.oŒÉeID" + "\n" +
-"	where oŒÉ”NŒ“ú>=? and oŒÉ”NŒ“ú<?" + "\n" +
-"	group by »ìŠú,»ì”Ô†,»ì}”Ô) sdp" + "\n" +
-"	on sdp.»ìŠú=pp.»ìŠú and sdp.»ì”Ô†=pp.»ì”Ô† and sdp.»ì}”Ô=pp.»ì}”Ô" + "\n" +
+"	select è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,sum(é‡‘é¡) as å‡ºåº«é‡‘é¡ from T_å‡ºåº«_è¦ª p" + "\n" +
+"	left outer join T_å‡ºåº«_å­ c on p.å‡ºåº«è¦ªID=c.å‡ºåº«è¦ªID" + "\n" +
+"	where å‡ºåº«å¹´æœˆæ—¥>=? and å‡ºåº«å¹´æœˆæ—¥<?" + "\n" +
+"	group by è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª) sdp" + "\n" +
+"	on sdp.è£½ä½œæœŸ=pp.è£½ä½œæœŸ and sdp.è£½ä½œç•ªå·=pp.è£½ä½œç•ªå· and sdp.è£½ä½œæç•ª=pp.è£½ä½œæç•ª" + "\n" +
 "left outer join (" + "\n" +
-"	select »ìŠú,»ì”Ô†,»ì}”Ô,convert(varchar,convert(money,sum(ŠÔ))/100) as H” from T_‰ÁHÀÑ" + "\n" +
-"	where ’…è“ú>=? and ’…è“ú<?" + "\n" +
-"	group by »ìŠú,»ì”Ô†,»ì}”Ô) w" + "\n" +
-"	on w.»ìŠú=pp.»ìŠú and w.»ì”Ô†=pp.»ì”Ô† and w.»ì}”Ô=pp.»ì}”Ô" + "\n" +
-"where pp.»ì”Ô†>0 and (d“ü‹àŠz<>0 or oŒÉ‹àŠz<>0 or H”<>'0')" + "\n" +
-") z on z.»ìŠú=p2.»ìŠú and z.»ì”Ô†=p2.»ì”Ô† and z.»ì}”Ô=p2.»ì}”Ô" + "\n" +
+"	select è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª,convert(varchar,convert(money,sum(æ™‚é–“))/100) as å·¥æ•° from T_åŠ å·¥å®Ÿç¸¾" + "\n" +
+"	where ç€æ‰‹æ—¥æ™‚>=? and ç€æ‰‹æ—¥æ™‚<?" + "\n" +
+"	group by è£½ä½œæœŸ,è£½ä½œç•ªå·,è£½ä½œæç•ª) w" + "\n" +
+"	on w.è£½ä½œæœŸ=pp.è£½ä½œæœŸ and w.è£½ä½œç•ªå·=pp.è£½ä½œç•ªå· and w.è£½ä½œæç•ª=pp.è£½ä½œæç•ª" + "\n" +
+"where pp.è£½ä½œç•ªå·>0 and (ä»•å…¥é‡‘é¡<>0 or å‡ºåº«é‡‘é¡<>0 or å·¥æ•°<>'0')" + "\n" +
+") z on z.è£½ä½œæœŸ=p2.è£½ä½œæœŸ and z.è£½ä½œç•ªå·=p2.è£½ä½œç•ªå· and z.è£½ä½œæç•ª=p2.è£½ä½œæç•ª" + "\n" +
 //"-------------------------------------------------------------------------------------------------------" + "\n" +
-"where (p2.»ì”Ô†>0 or p2.»ì”Ô† is null) and (z.»ì”Ô†>0 or z.»ì”Ô† is null) and (ŒJ‰zd“ü<>0 or ŒJ‰zoŒÉ<>0 or H”—İŒv<>'0' or d“ü‹àŠz<>0 or oŒÉ‹àŠz<>0 or H”<>'0')" + "\n" +
-"group by p2.»ìŠú,p2.»ì”Ô†,p2.»ì}”Ô,z.»ìŠú,z.»ì”Ô†,z.»ì}”Ô,d“ü‹àŠz,oŒÉ‹àŠz,H”,H”—İŒv,p2.”„ã”NŒ“ú,p2.”[•i‹æ•ªCD,ŒJ‰zd“ü,ŒJ‰zoŒÉ" + "\n" +
-"order by substring(convert(varchar,case when p2.»ì”Ô† is null then z.»ì”Ô† else p2.»ì”Ô† end),1,1),»”Ô";
+"where (p2.è£½ä½œç•ªå·>0 or p2.è£½ä½œç•ªå· is null) and (z.è£½ä½œç•ªå·>0 or z.è£½ä½œç•ªå· is null) and (ç¹°è¶Šä»•å…¥<>0 or ç¹°è¶Šå‡ºåº«<>0 or å·¥æ•°ç´¯è¨ˆ<>'0' or ä»•å…¥é‡‘é¡<>0 or å‡ºåº«é‡‘é¡<>0 or å·¥æ•°<>'0')" + "\n" +
+"group by p2.è£½ä½œæœŸ,p2.è£½ä½œç•ªå·,p2.è£½ä½œæç•ª,z.è£½ä½œæœŸ,z.è£½ä½œç•ªå·,z.è£½ä½œæç•ª,ä»•å…¥é‡‘é¡,å‡ºåº«é‡‘é¡,å·¥æ•°,å·¥æ•°ç´¯è¨ˆ,p2.å£²ä¸Šå¹´æœˆæ—¥,p2.ç´å“åŒºåˆ†CD,ç¹°è¶Šä»•å…¥,ç¹°è¶Šå‡ºåº«" + "\n" +
+"order by substring(convert(varchar,case when p2.è£½ä½œç•ªå· is null then z.è£½ä½œç•ªå· else p2.è£½ä½œç•ªå· end),1,1),è£½ç•ª";
 			try {
 				ps = c.prepareStatement(sql);
 int n = 1;
-				ps.setDate(n++, from);//”„
+				ps.setDate(n++, from);//å£²
 				ps.setDate(n++, to);
-				ps.setDate(n++, month == 1 ? from : from2);//”[•i
-				ps.setDate(n++, month == 12 ? to : to2);//”[•i
-				ps.setDate(n++, from);//oŒÉ
-				ps.setDate(n++, to);//oŒÉ
-				ps.setDate(n++, from);//’…è
-				ps.setDate(n++, to);//’…è
-				ps.setDate(n++, from);//”„
-				ps.setDate(n++, month == 1 ? from : from2);//”[•i
-				ps.setDate(n++, from);//oŒÉ
-				ps.setDate(n++, from);//ŒJ‰z90
-				ps.setDate(n++, to);//oŒÉ90
-				ps.setDate(n++, from);//oŒÉ90
-				ps.setDate(n++, to);//’…è
+				ps.setDate(n++, month == 1 ? from : from2);//ç´å“
+				ps.setDate(n++, month == 12 ? to : to2);//ç´å“
+				ps.setDate(n++, from);//å‡ºåº«
+				ps.setDate(n++, to);//å‡ºåº«
+				ps.setDate(n++, from);//ç€æ‰‹
+				ps.setDate(n++, to);//ç€æ‰‹
+				ps.setDate(n++, from);//å£²
+				ps.setDate(n++, month == 1 ? from : from2);//ç´å“
+				ps.setDate(n++, from);//å‡ºåº«
+				ps.setDate(n++, from);//ç¹°è¶Š90
+				ps.setDate(n++, to);//å‡ºåº«90
+				ps.setDate(n++, from);//å‡ºåº«90
+				ps.setDate(n++, to);//ç€æ‰‹
 
-				ps.setDate(n++, month == 1 ? from : from2);//”[•i
-				ps.setDate(n++, month == 12 ? to : to2);//”[•i
-				ps.setDate(n++, from);//oŒÉ
-				ps.setDate(n++, to);//oŒÉ
-				ps.setDate(n++, from);//’…è
-				ps.setDate(n++, to);//’…è
+				ps.setDate(n++, month == 1 ? from : from2);//ç´å“
+				ps.setDate(n++, month == 12 ? to : to2);//ç´å“
+				ps.setDate(n++, from);//å‡ºåº«
+				ps.setDate(n++, to);//å‡ºåº«
+				ps.setDate(n++, from);//ç€æ‰‹
+				ps.setDate(n++, to);//ç€æ‰‹
 				rs = ps.executeQuery();
 
 				while(rs.next()) {
 					Vector<Object> row = new Vector<Object>();
-					row.add(rs.getString("»”Ô"));
-					row.add(rs.getString("”„"));
-					row.add(rs.getInt("ŒJ‰z‹àŠz")+rs.getInt("ŒJ‰z90"));
-					row.add(rs.getInt("d“ü‹àŠz"));
-					row.add(rs.getInt("oŒÉ‹àŠz")+rs.getInt("oŒÉ90"));
-					row.add(rs.getInt("d“ü‹àŠz")+rs.getInt("oŒÉ‹àŠz")+rs.getInt("oŒÉ90"));
-					row.add(rs.getInt("ŒJ‰z‹àŠz")+rs.getInt("ŒJ‰z90")+rs.getInt("d“ü‹àŠz")+rs.getInt("oŒÉ‹àŠz")+rs.getInt("oŒÉ90"));
-					row.add(rs.getString("H”"));
-					row.add(rs.getString("H”—İŒv"));
+					row.add(rs.getString("è£½ç•ª"));
+					row.add(rs.getString("å£²"));
+					row.add(rs.getInt("ç¹°è¶Šé‡‘é¡")+rs.getInt("ç¹°è¶Š90"));
+					row.add(rs.getInt("ä»•å…¥é‡‘é¡"));
+					row.add(rs.getInt("å‡ºåº«é‡‘é¡")+rs.getInt("å‡ºåº«90"));
+					row.add(rs.getInt("ä»•å…¥é‡‘é¡")+rs.getInt("å‡ºåº«é‡‘é¡")+rs.getInt("å‡ºåº«90"));
+					row.add(rs.getInt("ç¹°è¶Šé‡‘é¡")+rs.getInt("ç¹°è¶Š90")+rs.getInt("ä»•å…¥é‡‘é¡")+rs.getInt("å‡ºåº«é‡‘é¡")+rs.getInt("å‡ºåº«90"));
+					row.add(rs.getString("å·¥æ•°"));
+					row.add(rs.getString("å·¥æ•°ç´¯è¨ˆ"));
 					data.add(row);
 				}
 				rs.close();
@@ -222,7 +222,7 @@ int n = 1;
 				lg.error("GetElements3 " + ex);
 			}
 
-	//ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+	//ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());

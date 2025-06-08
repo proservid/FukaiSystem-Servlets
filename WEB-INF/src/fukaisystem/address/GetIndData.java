@@ -41,76 +41,76 @@ public class GetIndData extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			Object obj = in.readObject();
 			in.close();
 
 			if(obj == null) {
-				err.append(className + "readObject‚ªnull‚Å‚·\n");
-				lg.error(className + "readObject‚ªnull‚Å‚·");
+				err.append(className + "readObjectãŒnullã§ã™\n");
+				lg.error(className + "readObjectãŒnullã§ã™");
 			} else {
 				if(obj instanceof String) {
 					input = (String)obj;
 				} else {
-					err.append(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ\n");
-					lg.error(className + "readObject‚ªStringŒ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ");
+					err.append(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“\n");
+					lg.error(className + "readObjectãŒStringå‹ã§ã¯ã‚ã‚Šã¾ã›ã‚“");
 				}
 			}
 
 			try {
 				ps = c.prepareStatement("select " +
-					"ind.–@lCD as i–@lCD,ind.•”–¼ as i•”–¼,ind.–ğE–¼ as i–ğE–¼,ind.–¼ as i–¼,ind.ƒVƒƒC as iƒVƒƒC,ind.ŒhÌ as iŒhÌ," +
-					"ind.TEL1 as iTEL1,ind.TEL2 as iTEL2,ind.TEL3 as iTEL3,ind.FAX1 as iFAX1,ind.FAX2 as iFAX2,ind.FAX3 as iFAX3,ind.ƒ[ƒ‹ as iƒ[ƒ‹,ind.”õl as i”õl," +
-					"ind.ZŠFLG as iZŠFLG,ind.—LŒøFLG as i—LŒøFLG,ind.‘¡“šFLG as i‘¡“šFLG,ind.‘rFLG as i‘rFLG,ind.”N‰êóCD as i”N‰êóCD," +
-					"indad.alpha_2 as ialpha_2,indad.—X•Ö”Ô† as i—X•Ö”Ô†,indad.—X•Ö}”Ô as i—X•Ö}”Ô,indp.“s“¹•{Œ§ as i“s“¹•{Œ§,indc.s‹æ’¬‘º as is‹æ’¬‘º,indpc.’¬ˆæ as i’¬ˆæ,indad.”Ô’n as i”Ô’n,indad.Œš•¨“™ as iŒš•¨“™,indad.©‘îFLG as i©‘îFLG," +
-					"co.d“üæCD as cd“üæCD,co.“¾ˆÓæCD as c“¾ˆÓæCD,co.í•ÊCD as cí•ÊCD,co.‰ïĞ–¼ as c‰ïĞ–¼,co.ƒJƒCƒVƒƒƒƒC as cƒJƒCƒVƒƒƒƒC,co.x“X–¼ as cx“X–¼,co.ƒVƒeƒ“ƒƒC as cƒVƒeƒ“ƒƒC,co.•\¦–¼ as c•\¦–¼,co.ƒAƒ‹ƒtƒ@ƒxƒbƒg as cƒAƒ‹ƒtƒ@ƒxƒbƒg," +
-					"co.alpha_2 as calpha_2,co.—X•Ö”Ô† as c—X•Ö”Ô†,co.—X•Ö}”Ô as c—X•Ö}”Ô,cop.“s“¹•{Œ§ as c“s“¹•{Œ§,coc.s‹æ’¬‘º as cs‹æ’¬‘º,copc.’¬ˆæ as c’¬ˆæ,co.”Ô’n as c”Ô’n,co.Œš•¨“™ as cŒš•¨“™," +
-					"co.TEL1 as cTEL1,co.TEL2 as cTEL2,co.TEL3 as cTEL3,co.FAX1 as cFAX1,co.FAX2 as cFAX2,co.FAX3 as cFAX3,co.ƒ[ƒ‹ as cƒ[ƒ‹,co.URL as cURL,co.”õl as c”õl,co.—LŒøFLG as c—LŒøFLG,co.‘¡“šFLG as c‘¡“šFLG,co.”N‰êóCD as c”N‰êóCD," +
+					"ind.æ³•äººCD as iæ³•äººCD,ind.éƒ¨ç½²å as iéƒ¨ç½²å,ind.å½¹è·å as iå½¹è·å,ind.æ°å as iæ°å,ind.ã‚·ãƒ¡ã‚¤ as iã‚·ãƒ¡ã‚¤,ind.æ•¬ç§° as iæ•¬ç§°," +
+					"ind.TEL1 as iTEL1,ind.TEL2 as iTEL2,ind.TEL3 as iTEL3,ind.FAX1 as iFAX1,ind.FAX2 as iFAX2,ind.FAX3 as iFAX3,ind.ãƒ¡ãƒ¼ãƒ« as iãƒ¡ãƒ¼ãƒ«,ind.å‚™è€ƒ as iå‚™è€ƒ," +
+					"ind.ä½æ‰€FLG as iä½æ‰€FLG,ind.æœ‰åŠ¹FLG as iæœ‰åŠ¹FLG,ind.è´ˆç­”FLG as iè´ˆç­”FLG,ind.å–ªFLG as iå–ªFLG,ind.å¹´è³€çŠ¶CD as iå¹´è³€çŠ¶CD," +
+					"indad.alpha_2 as ialpha_2,indad.éƒµä¾¿ç•ªå· as iéƒµä¾¿ç•ªå·,indad.éƒµä¾¿æç•ª as iéƒµä¾¿æç•ª,indp.éƒ½é“åºœçœŒ as iéƒ½é“åºœçœŒ,indc.å¸‚åŒºç”ºæ‘ as iå¸‚åŒºç”ºæ‘,indpc.ç”ºåŸŸ as iç”ºåŸŸ,indad.ç•ªåœ° as iç•ªåœ°,indad.å»ºç‰©ç­‰ as iå»ºç‰©ç­‰,indad.è‡ªå®…FLG as iè‡ªå®…FLG," +
+					"co.ä»•å…¥å…ˆCD as cä»•å…¥å…ˆCD,co.å¾—æ„å…ˆCD as cå¾—æ„å…ˆCD,co.ç¨®åˆ¥CD as cç¨®åˆ¥CD,co.ä¼šç¤¾å as cä¼šç¤¾å,co.ã‚«ã‚¤ã‚·ãƒ£ãƒ¡ã‚¤ as cã‚«ã‚¤ã‚·ãƒ£ãƒ¡ã‚¤,co.æ”¯åº—å as cæ”¯åº—å,co.ã‚·ãƒ†ãƒ³ãƒ¡ã‚¤ as cã‚·ãƒ†ãƒ³ãƒ¡ã‚¤,co.è¡¨ç¤ºå as cè¡¨ç¤ºå,co.ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ as cã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ," +
+					"co.alpha_2 as calpha_2,co.éƒµä¾¿ç•ªå· as céƒµä¾¿ç•ªå·,co.éƒµä¾¿æç•ª as céƒµä¾¿æç•ª,cop.éƒ½é“åºœçœŒ as céƒ½é“åºœçœŒ,coc.å¸‚åŒºç”ºæ‘ as cå¸‚åŒºç”ºæ‘,copc.ç”ºåŸŸ as cç”ºåŸŸ,co.ç•ªåœ° as cç•ªåœ°,co.å»ºç‰©ç­‰ as cå»ºç‰©ç­‰," +
+					"co.TEL1 as cTEL1,co.TEL2 as cTEL2,co.TEL3 as cTEL3,co.FAX1 as cFAX1,co.FAX2 as cFAX2,co.FAX3 as cFAX3,co.ãƒ¡ãƒ¼ãƒ« as cãƒ¡ãƒ¼ãƒ«,co.URL as cURL,co.å‚™è€ƒ as cå‚™è€ƒ,co.æœ‰åŠ¹FLG as cæœ‰åŠ¹FLG,co.è´ˆç­”FLG as cè´ˆç­”FLG,co.å¹´è³€çŠ¶CD as cå¹´è³€çŠ¶CD," +
 					"CASE" +
-					" WHEN í•ÊCD = 1 THEN '‡Š'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" WHEN í•ÊCD = 2 THEN ‰ïĞ–¼+'‡Š' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" WHEN í•ÊCD = 3 THEN '‡‹'+‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" WHEN í•ÊCD = 4 THEN ‰ïĞ–¼+'‡‹' + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" ELSE ‰ïĞ–¼ + CASE WHEN x“X–¼ IS NULL THEN '' ELSE ' ' + x“X–¼ END" +
-					" END AS Ğ–¼" +
-					" from M_ŒÂl ind" +
-					" left outer join M_ŒÂlZŠ indad on ind.CD=indad.ŒÂlCD" +
-					" left outer join V_—X•Ö”Ô† indpc on replace(indad.—X•Ö”Ô†,'-','')=indpc.—X•Ö”Ô† and indad.—X•Ö}”Ô=indpc.—X•Ö}”Ô" +
-					" left outer join M_“s“¹•{Œ§ indp on indpc.“s“¹•{Œ§CD=indp.CD" +
-					" left outer join M_s‹æ’¬‘º indc on indpc.“s“¹•{Œ§CD=indc.“s“¹•{Œ§CD and indpc.s‹æ’¬‘ºCD=indc.CD" +
-					" left outer join M_–@l co on ind.–@lCD=co.CD" +
-					" left outer join V_—X•Ö”Ô† copc on replace(co.—X•Ö”Ô†,'-','')=copc.—X•Ö”Ô† and co.—X•Ö}”Ô=copc.—X•Ö}”Ô" +
-					" left outer join M_“s“¹•{Œ§ cop on copc.“s“¹•{Œ§CD=cop.CD" +
-					" left outer join M_s‹æ’¬‘º coc on copc.“s“¹•{Œ§CD=coc.“s“¹•{Œ§CD and copc.s‹æ’¬‘ºCD=coc.CD" +
+					" WHEN ç¨®åˆ¥CD = 1 THEN 'ãˆ±'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" WHEN ç¨®åˆ¥CD = 2 THEN ä¼šç¤¾å+'ãˆ±' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" WHEN ç¨®åˆ¥CD = 3 THEN 'ãˆ²'+ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" WHEN ç¨®åˆ¥CD = 4 THEN ä¼šç¤¾å+'ãˆ²' + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" ELSE ä¼šç¤¾å + CASE WHEN æ”¯åº—å IS NULL THEN '' ELSE ' ' + æ”¯åº—å END" +
+					" END AS ç¤¾å" +
+					" from M_å€‹äºº ind" +
+					" left outer join M_å€‹äººä½æ‰€ indad on ind.CD=indad.å€‹äººCD" +
+					" left outer join V_éƒµä¾¿ç•ªå· indpc on replace(indad.éƒµä¾¿ç•ªå·,'-','')=indpc.éƒµä¾¿ç•ªå· and indad.éƒµä¾¿æç•ª=indpc.éƒµä¾¿æç•ª" +
+					" left outer join M_éƒ½é“åºœçœŒ indp on indpc.éƒ½é“åºœçœŒCD=indp.CD" +
+					" left outer join M_å¸‚åŒºç”ºæ‘ indc on indpc.éƒ½é“åºœçœŒCD=indc.éƒ½é“åºœçœŒCD and indpc.å¸‚åŒºç”ºæ‘CD=indc.CD" +
+					" left outer join M_æ³•äºº co on ind.æ³•äººCD=co.CD" +
+					" left outer join V_éƒµä¾¿ç•ªå· copc on replace(co.éƒµä¾¿ç•ªå·,'-','')=copc.éƒµä¾¿ç•ªå· and co.éƒµä¾¿æç•ª=copc.éƒµä¾¿æç•ª" +
+					" left outer join M_éƒ½é“åºœçœŒ cop on copc.éƒ½é“åºœçœŒCD=cop.CD" +
+					" left outer join M_å¸‚åŒºç”ºæ‘ coc on copc.éƒ½é“åºœçœŒCD=coc.éƒ½é“åºœçœŒCD and copc.å¸‚åŒºç”ºæ‘CD=coc.CD" +
 					" where ind.CD=?");
 				ps.setString(1, input);
 				rs = ps.executeQuery();
 				if(rs.next()) {
 					CorpDTO corpDTO = null;
 					boolean hasCorpDTO = false;
-					if(rs.getInt("i–@lCD") > 0) {
+					if(rs.getInt("iæ³•äººCD") > 0) {
 						hasCorpDTO = true;
 						corpDTO = new CorpDTO(
-								rs.getString("c‰ïĞ–¼"), rs.getString("cƒJƒCƒVƒƒƒƒC"), rs.getString("cx“X–¼"), rs.getString("cƒVƒeƒ“ƒƒC"), rs.getString("c•\¦–¼"),
-								rs.getString("calpha_2"), rs.getString("c—X•Ö”Ô†"), rs.getString("c—X•Ö}”Ô"), rs.getString("c“s“¹•{Œ§"), rs.getString("cs‹æ’¬‘º"),
-								rs.getString("c’¬ˆæ"), rs.getString("c”Ô’n"), rs.getString("cŒš•¨“™"), rs.getString("cTEL1"), rs.getString("cTEL2"), rs.getString("cTEL3"),
-								rs.getString("cFAX1"), rs.getString("cFAX2"), rs.getString("cFAX3"), rs.getString("cƒ[ƒ‹"), rs.getString("cURL"), rs.getString("c”õl"),
-								rs.getString("i–@lCD"), rs.getString("cƒAƒ‹ƒtƒ@ƒxƒbƒg"), rs.getInt("cd“üæCD"), rs.getInt("c“¾ˆÓæCD"), rs.getInt("cí•ÊCD"), rs.getInt("c”N‰êóCD"),
-								rs.getBoolean("c—LŒøFLG"), rs.getBoolean("c‘¡“šFLG")
+								rs.getString("cä¼šç¤¾å"), rs.getString("cã‚«ã‚¤ã‚·ãƒ£ãƒ¡ã‚¤"), rs.getString("cæ”¯åº—å"), rs.getString("cã‚·ãƒ†ãƒ³ãƒ¡ã‚¤"), rs.getString("cè¡¨ç¤ºå"),
+								rs.getString("calpha_2"), rs.getString("céƒµä¾¿ç•ªå·"), rs.getString("céƒµä¾¿æç•ª"), rs.getString("céƒ½é“åºœçœŒ"), rs.getString("cå¸‚åŒºç”ºæ‘"),
+								rs.getString("cç”ºåŸŸ"), rs.getString("cç•ªåœ°"), rs.getString("cå»ºç‰©ç­‰"), rs.getString("cTEL1"), rs.getString("cTEL2"), rs.getString("cTEL3"),
+								rs.getString("cFAX1"), rs.getString("cFAX2"), rs.getString("cFAX3"), rs.getString("cãƒ¡ãƒ¼ãƒ«"), rs.getString("cURL"), rs.getString("cå‚™è€ƒ"),
+								rs.getString("iæ³•äººCD"), rs.getString("cã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆ"), rs.getInt("cä»•å…¥å…ˆCD"), rs.getInt("cå¾—æ„å…ˆCD"), rs.getInt("cç¨®åˆ¥CD"), rs.getInt("cå¹´è³€çŠ¶CD"),
+								rs.getBoolean("cæœ‰åŠ¹FLG"), rs.getBoolean("cè´ˆç­”FLG")
 								);
 					}
 					output = new IndDTO(
-						rs.getString("i–¼"), rs.getString("iƒVƒƒC"), rs.getString("i•”–¼"), rs.getString("i–ğE–¼"), rs.getString("i–@lCD"),
-						rs.getString("ialpha_2"), rs.getString("i—X•Ö”Ô†"), rs.getString("i—X•Ö}”Ô"), rs.getString("i“s“¹•{Œ§"), rs.getString("is‹æ’¬‘º"), rs.getString("i’¬ˆæ"), rs.getString("i”Ô’n"),
-						rs.getString("iŒš•¨“™"), rs.getString("iTEL1"), rs.getString("iTEL2"), rs.getString("iTEL3"), rs.getString("iFAX1"), rs.getString("iFAX2"), rs.getString("iFAX3"), rs.getString("iƒ[ƒ‹"), "", rs.getString("i”õl"), input, rs.getString("Ğ–¼"),
-						rs.getInt("iŒhÌ"), rs.getInt("i”N‰êóCD"),
-						rs.getBoolean("i—LŒøFLG"), rs.getBoolean("i‘¡“šFLG"), rs.getBoolean("i‘rFLG"), rs.getBoolean("i©‘îFLG"), rs.getBoolean("iZŠFLG"), hasCorpDTO, corpDTO
+						rs.getString("iæ°å"), rs.getString("iã‚·ãƒ¡ã‚¤"), rs.getString("iéƒ¨ç½²å"), rs.getString("iå½¹è·å"), rs.getString("iæ³•äººCD"),
+						rs.getString("ialpha_2"), rs.getString("iéƒµä¾¿ç•ªå·"), rs.getString("iéƒµä¾¿æç•ª"), rs.getString("iéƒ½é“åºœçœŒ"), rs.getString("iå¸‚åŒºç”ºæ‘"), rs.getString("iç”ºåŸŸ"), rs.getString("iç•ªåœ°"),
+						rs.getString("iå»ºç‰©ç­‰"), rs.getString("iTEL1"), rs.getString("iTEL2"), rs.getString("iTEL3"), rs.getString("iFAX1"), rs.getString("iFAX2"), rs.getString("iFAX3"), rs.getString("iãƒ¡ãƒ¼ãƒ«"), "", rs.getString("iå‚™è€ƒ"), input, rs.getString("ç¤¾å"),
+						rs.getInt("iæ•¬ç§°"), rs.getInt("iå¹´è³€çŠ¶CD"),
+						rs.getBoolean("iæœ‰åŠ¹FLG"), rs.getBoolean("iè´ˆç­”FLG"), rs.getBoolean("iå–ªFLG"), rs.getBoolean("iè‡ªå®…FLG"), rs.getBoolean("iä½æ‰€FLG"), hasCorpDTO, corpDTO
 						);
 				}
 			} catch(SQLException ex) {
-				err.append("ƒe[ƒuƒ‹uT_ƒe[ƒuƒ‹–¼v‚Ì“Ç‚É¸”s‚µ‚Ü‚µ‚½\n");
+				err.append("ãƒ†ãƒ¼ãƒ–ãƒ«ã€ŒT_ãƒ†ãƒ¼ãƒ–ãƒ«åã€ã®èª­è¾¼ã«å¤±æ•—ã—ã¾ã—ãŸ\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
@@ -119,7 +119,7 @@ public class GetIndData extends GenericServlet {
 		}
 
 		/**
-		 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+		 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 		 */
 		try {
 			response.setContentType("application/octet-stream");

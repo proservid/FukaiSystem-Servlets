@@ -46,42 +46,42 @@ public class InitInputSystem extends GenericServlet {
 		try {
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒgƒf[ƒ^ó‚¯æ‚è
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆãƒ‡ãƒ¼ã‚¿å—ã‘å–ã‚Š
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			in.close();
 
 			try {
-				ps = c.prepareStatement("SELECT RIGHT('00' + CONVERT(varchar, CD), 2) AS •”CD,•”–¼ FROM M_•”");
+				ps = c.prepareStatement("SELECT RIGHT('00' + CONVERT(varchar, CD), 2) AS éƒ¨ç½²CD,éƒ¨ç½²å FROM M_éƒ¨ç½²");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					dept.put(rs.getString("•”CD"), rs.getString("•”–¼"));
+					dept.put(rs.getString("éƒ¨ç½²CD"), rs.getString("éƒ¨ç½²å"));
 				}
 
 				ps = c.prepareStatement("" +
-					"SELECT CASE WHEN Š‘®•”CD IN(2,3,4) THEN RIGHT('00' + CONVERT(varchar, CD), 2) ELSE CONVERT(varchar, CD) END AS ŒÂlCD,©+' '+–¼ AS –¼,RIGHT('00' + CONVERT(varchar, Š‘®•”CD), 2) AS •”CD" +
-					" FROM M_lˆõ WHERE İĞFLG='true' ORDER BY •\¦CD");
+					"SELECT CASE WHEN æ‰€å±éƒ¨ç½²CD IN(2,3,4) THEN RIGHT('00' + CONVERT(varchar, CD), 2) ELSE CONVERT(varchar, CD) END AS å€‹äººCD,å§“+' '+å AS æ°å,RIGHT('00' + CONVERT(varchar, æ‰€å±éƒ¨ç½²CD), 2) AS éƒ¨ç½²CD" +
+					" FROM M_äººå“¡ WHERE åœ¨ç±FLG='true' ORDER BY è¡¨ç¤ºCD");
 				rs = ps.executeQuery();
 				while(rs.next()) {
 					List<String> subKey = new ArrayList<String>();
-					subKey.add(rs.getString("•”CD"));
+					subKey.add(rs.getString("éƒ¨ç½²CD"));
 					if(!name.containsKey(subKey)) {
 						name.put(subKey, new LinkedHashMap<String, String>());
 					}
-					name.get(subKey).put(rs.getString("ŒÂlCD"), rs.getString("–¼"));
+					name.get(subKey).put(rs.getString("å€‹äººCD"), rs.getString("æ°å"));
 				}
 
-				ps = c.prepareStatement("SELECT RIGHT('00' + CONVERT(varchar, CD), 2) AS ¬•ª—ŞCD,¬•ª—Ş–¼ FROM M_‰ÁH_q WHERE g—pFLG='true' AND CD<200 ORDER BY ‘å•ª—ŞCD,’†•ª—ŞCD");
+				ps = c.prepareStatement("SELECT RIGHT('00' + CONVERT(varchar, CD), 2) AS å°åˆ†é¡CD,å°åˆ†é¡å FROM M_åŠ å·¥_å­ WHERE ä½¿ç”¨FLG='true' AND CD<200 ORDER BY å¤§åˆ†é¡CD,ä¸­åˆ†é¡CD");
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					process.put(rs.getString("¬•ª—ŞCD"), rs.getString("¬•ª—Ş–¼"));
+					process.put(rs.getString("å°åˆ†é¡CD"), rs.getString("å°åˆ†é¡å"));
 				}
 
-				ps = c.prepareStatement("SELECT MAX(Šú) AS “–Šú FROM M_Šú WHERE © < ?");
+				ps = c.prepareStatement("SELECT MAX(æœŸ) AS å½“æœŸ FROM M_æœŸ WHERE è‡ª < ?");
 				ps.setDate(1, new java.sql.Date(new java.util.Date().getTime()));
 				rs = ps.executeQuery();
 				if(rs.next()) {
-					period = rs.getInt("“–Šú");
+					period = rs.getInt("å½“æœŸ");
 				}
 
 
@@ -91,7 +91,7 @@ public class InitInputSystem extends GenericServlet {
 
 
 			/**
-			 * ƒNƒ‰ƒCƒAƒ“ƒg‚É‘—M
+			 * ã‚¯ãƒ©ã‚¤ã‚¢ãƒ³ãƒˆã«é€ä¿¡
 			 */
 
 			InitialInputDTO iid = new InitialInputDTO(dept, name, process, period);
