@@ -24,6 +24,6 @@
   "[java]": {
     "editor.formatOnPaste": true,
     "editor.formatOnType": true,
-    "editor.formatOnSave": true,
+    // "editor.formatOnSave": true,
   }
 }
