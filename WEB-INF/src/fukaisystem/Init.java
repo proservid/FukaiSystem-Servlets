@@ -169,9 +169,7 @@ public class Init extends GenericServlet {
 				 * ps.setDate(1, new java.sql.Date(cal.getTimeInMillis()));
 				 * ps.setDate(2, new java.sql.Date(cal.getTimeInMillis()));
 				 * rs = ps.executeQuery();
-				 * System.out.println(new java.sql.Date(cal.getTimeInMillis()));
 				 * while(rs.next()) {
-				 * System.out.println(rs.getInt("CD") +":"+ rs.getInt("単価"));
 				 * works.put(rs.getInt("CD"), rs.getInt("単価"));
 				 * }
 				 */

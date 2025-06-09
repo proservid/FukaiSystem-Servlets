@@ -89,8 +89,8 @@ public class GetCandidate extends GenericServlet {
 				);
 				if (isValidOnly) {
 					sql.append(" AND 有効FLG='true'");
-				} // System.out.println(input);
-				sql.append(" ORDER BY " + key); // System.out.println(sql.toString());
+				}
+				sql.append(" ORDER BY " + key);
 				ps = c.prepareStatement(sql.toString());
 				int i = 1;
 				ps.setString(i++, "%" + input + "%");

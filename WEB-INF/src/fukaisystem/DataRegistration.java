@@ -76,7 +76,7 @@ public class DataRegistration extends GenericServlet {
 					types[i] = rsmd.getColumnType(i + 1);
 				}
 
-				c.setAutoCommit(false); // System.out.println(sql.toString());
+				c.setAutoCommit(false);
 				ps = c.prepareStatement(sql.toString());
 				for (int i = 1; i < lines.size(); i++) {
 					String[] strs = lines.get(i).split("\t", cols);

@@ -47,7 +47,6 @@ public class ChangePassword extends GenericServlet {
 				ps = c.prepareStatement("update M_人員 set pass=? where CD=?");
 				ps.setString(1, digestMd5((char[]) obj[1]));
 				ps.setString(2, (String) obj[0]);
-				// System.out.println((char[])obj[1] + ":" +
 				// digestMd5((char[])obj[1]));
 				int result = ps.executeUpdate();
 				if (result != 1)

@@ -106,7 +106,6 @@ public class GetAddress extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			System.out.println("output:" + output);
 			out.writeObject(output);
 			out.writeUTF(err.toString());
 			out.flush();

@@ -150,10 +150,8 @@ public class GetLedger extends GenericServlet {
 							row.add(""); // 注文書番号
 							contents.add(row);
 							subtotal = 0;
-							// System.out.println("bbb:"+acNum+":"+rs.getString("得意先CD"));
 							if (!acNum.equals(rs.getString("得意先CD")) && !acNum.equals("")) { // さらに次の得意先CDへ変わるタイミングで（消費税別途の得意先の消費税と）合計を追加
 								if (m.containsKey(acNum)) { // 消費税を別途計算していた得意先については、追加
-									// System.out.println("ccc:"+m);
 									row = new ArrayList<Object>();
 									// row.add(acNum);
 									row.add(acName);

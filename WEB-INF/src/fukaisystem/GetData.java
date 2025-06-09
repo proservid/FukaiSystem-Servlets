@@ -88,7 +88,6 @@ public class GetData extends GenericServlet {
 					Calendar cal = Calendar.getInstance();
 					cal.setTimeInMillis(format.parse(values[0]).getTime());
 					Date current = new Date(cal.getTimeInMillis());
-					// System.out.println(current);
 					cal.add(Calendar.MONTH, 1);
 					Date next = new Date(cal.getTimeInMillis());
 					cal.add(Calendar.DATE, -1);

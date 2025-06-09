@@ -26,7 +26,6 @@ public class ScheduleRegistration extends GenericServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
 	private static final String className = "ScheduleRegistration\n";
-	private Date from, to;
 
 	public void service(ServletRequest request, ServletResponse response) {
 
@@ -62,7 +61,7 @@ public class ScheduleRegistration extends GenericServlet {
 			int limit = 0;
 
 			try {
-				if ((withBit & daily.DAILY) == daily.DAILY) {
+				if ((withBit & Daily2.DAILY) == Daily2.DAILY) {
 					limit = members.length;
 				} else {
 					limit = 0;
@@ -88,7 +87,7 @@ public class ScheduleRegistration extends GenericServlet {
 				}
 				ps.executeBatch();
 
-				if ((withBit & daily.REPEAT) == daily.REPEAT) {
+				if ((withBit & Daily2.REPEAT) == Daily2.REPEAT) {
 					limit = members.length;
 				} else {
 					limit = 0;
@@ -127,7 +126,7 @@ public class ScheduleRegistration extends GenericServlet {
 				}
 				ps.executeBatch();
 
-				if ((withBit & daily.BANNER) == daily.BANNER) {
+				if ((withBit & Daily2.BANNER) == Daily2.BANNER) {
 					limit = members.length;
 				} else {
 					limit = 0;
