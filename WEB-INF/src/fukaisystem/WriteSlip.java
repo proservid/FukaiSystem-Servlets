@@ -1,6 +1,5 @@
 package fukaisystem;
 
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
@@ -16,15 +15,12 @@ import javax.servlet.ServletResponse;
 import org.apache.log4j.Logger;
 
 import fukaisystem.dto.SlipDTO;
-//import print.dto.SlipDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-
-
 public class WriteSlip extends GenericServlet {
 
-    /**
+	/**
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
@@ -53,15 +49,15 @@ public class WriteSlip extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 
-			if(obj == null) {
+			if (obj == null) {
 				isError = true;
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				if(obj instanceof SlipDTO) {
-					isOverwrite = ((SlipDTO)obj).isOverwrite();
-					name = ((SlipDTO)obj).getName();
-					byteSlip = ((SlipDTO)obj).getByteSlip();
+				if (obj instanceof SlipDTO) {
+					isOverwrite = ((SlipDTO) obj).isOverwrite();
+					name = ((SlipDTO) obj).getName();
+					byteSlip = ((SlipDTO) obj).getByteSlip();
 				} else {
 					isError = true;
 					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
@@ -70,7 +66,9 @@ public class WriteSlip extends GenericServlet {
 			}
 
 			try {
-				String query = isOverwrite ? "UPDATE T_伝票フォーマット SET デザインデータ=? WHERE フォーマット名=?" : "INSERT INTO T_伝票フォーマット VALUES(newid(), ?, ?)";
+				String query = isOverwrite
+					? "UPDATE T_伝票フォーマット SET デザインデータ=? WHERE フォーマット名=?"
+					: "INSERT INTO T_伝票フォーマット VALUES(newid(), ?, ?)";
 				InputStream is = new ByteArrayInputStream(byteSlip);
 				c.setAutoCommit(false);
 				ps = c.prepareStatement(query);
@@ -80,14 +78,13 @@ public class WriteSlip extends GenericServlet {
 				is.close();
 				c.commit();
 				lg.info("T_伝票フォーマットは" + updateCount + "件処理されました。");
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				isError = true;
 				err.append(className + "テーブル「T_伝票フォーマット」の更新に失敗しました\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
@@ -101,29 +98,30 @@ public class WriteSlip extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

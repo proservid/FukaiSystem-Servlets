@@ -12,13 +12,11 @@ import javax.servlet.GenericServlet;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-
 import org.apache.log4j.Logger;
 
 import fukaisystem.dto.ProductNumberDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
-
 
 public class CopyData extends GenericServlet {
 
@@ -37,8 +35,6 @@ public class CopyData extends GenericServlet {
 		int number = 0;
 		String branch = "";
 
-
-
 		Vector<Vector<Object>> deliveryData = new Vector<Vector<Object>>();
 
 		try {
@@ -50,33 +46,34 @@ public class CopyData extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 
-			if(obj == null) {
+			if (obj == null) {
 			} else {
-				if(obj instanceof ProductNumberDTO) {
-					period = ((ProductNumberDTO)obj).getPeriod();
-					number = ((ProductNumberDTO)obj).getNumber();
-					branch = ((ProductNumberDTO)obj).getBranch();
+				if (obj instanceof ProductNumberDTO) {
+					period = ((ProductNumberDTO) obj).getPeriod();
+					number = ((ProductNumberDTO) obj).getNumber();
+					branch = ((ProductNumberDTO) obj).getBranch();
 				} else {
 					err.append(className + "readObjectがIDDTO型ではありません\n");
 					lg.error(className + "readObjectがIDDTO型ではありません");
 				}
 			}
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
 		try {
 
-//製作明細
+			// 製作明細
 			ps = c.prepareStatement(
-					"SELECT 注文月日,注文番号,表示CD,名称,各FLG,数量,数量単位CD,単価,金額,図番,備考,完成年月日,納品年月日" +
-					" FROM T_製作_子 c" +
-					" LEFT OUTER JOIN T_製作_親 p ON c.製作親ID=p.製作親ID WHERE 製作期=? AND 製作番号=? AND 製作枝番=?");
+				"SELECT 注文月日,注文番号,表示CD,名称,各FLG,数量,数量単位CD,単価,金額,図番,備考,完成年月日,納品年月日"
+					+ " FROM T_製作_子 c"
+					+ " LEFT OUTER JOIN T_製作_親 p ON c.製作親ID=p.製作親ID WHERE 製作期=? AND 製作番号=? AND 製作枝番=?"
+			);
 			ps.setInt(1, period);
 			ps.setInt(2, number);
 			ps.setString(3, branch);
 			rs = ps.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				Vector<Object> line = new Vector<Object>();
 				line.add(rs.getInt("表示CD"));
 				line.add("");
@@ -94,7 +91,7 @@ public class CopyData extends GenericServlet {
 				line.add(rs.getDate("納品年月日"));
 				deliveryData.add(line);
 			}
-		}catch(SQLException ex) {
+		} catch (SQLException ex) {
 			err.append(ex.toString());
 			Logging.logStackTrace(ex, lg, className);
 		}
@@ -109,29 +106,30 @@ public class CopyData extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

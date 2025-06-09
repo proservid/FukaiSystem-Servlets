@@ -18,7 +18,6 @@ import fukaisystem.dto.CandidateInputDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-
 public class GetCandidate extends GenericServlet {
 
 	/**
@@ -49,17 +48,23 @@ public class GetCandidate extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 
-			if(obj == null) {
+			if (obj == null) {
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				if(obj instanceof CandidateInputDTO) {
-					CandidateInputDTO ciDTO = (CandidateInputDTO)obj;
+				if (obj instanceof CandidateInputDTO) {
+					CandidateInputDTO ciDTO = (CandidateInputDTO) obj;
 					input = ciDTO.getInput();
-					switch(ciDTO.getKey()) {
-						case 0: key = "CD"; break;
-						case 1: key = "得意先CD"; break;
-						case 2: key = "仕入先CD"; break;
+					switch (ciDTO.getKey()) {
+						case 0:
+							key = "CD";
+							break;
+						case 1:
+							key = "得意先CD";
+							break;
+						case 2:
+							key = "仕入先CD";
+							break;
 					}
 					isValidOnly = ciDTO.isValidOnly();
 				} else {
@@ -69,20 +74,23 @@ public class GetCandidate extends GenericServlet {
 			}
 
 			try {
-				StringBuilder sql = new StringBuilder("SELECT CD AS ID," + key + "," +
-						"CASE" +
-						" WHEN 種別CD = 1 THEN '㈱'+会社名 + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END" +
-						" WHEN 種別CD = 2 THEN 会社名+'㈱' + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END" +
-						" WHEN 種別CD = 3 THEN '㈲'+会社名 + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END" +
-						" WHEN 種別CD = 4 THEN 会社名+'㈲' + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END" +
-						" ELSE 会社名 + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END" +
-						" END AS 社名" +
-						" FROM M_法人" +
-						" WHERE " + key + " IS NOT NULL AND (会社名 LIKE ? OR 支店名 LIKE ? OR カイシャメイ LIKE ? OR シテンメイ LIKE ? OR アルファベット LIKE ? OR 仕入先CD LIKE ? OR 得意先CD LIKE ?)");
-				if(isValidOnly) {
+				StringBuilder sql = new StringBuilder(
+					"SELECT CD AS ID," + key + ","
+						+ "CASE"
+						+ " WHEN 種別CD = 1 THEN '㈱'+会社名 + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END"
+						+ " WHEN 種別CD = 2 THEN 会社名+'㈱' + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END"
+						+ " WHEN 種別CD = 3 THEN '㈲'+会社名 + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END"
+						+ " WHEN 種別CD = 4 THEN 会社名+'㈲' + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END"
+						+ " ELSE 会社名 + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END"
+						+ " END AS 社名"
+						+ " FROM M_法人"
+						+ " WHERE " + key + "IS NOT NULL"
+						+ " AND (会社名 LIKE ? OR 支店名 LIKE ? OR カイシャメイ LIKE ? OR シテンメイ LIKE ? OR アルファベット LIKE ? OR 仕入先CD LIKE ? OR 得意先CD LIKE ?)"
+				);
+				if (isValidOnly) {
 					sql.append(" AND 有効FLG='true'");
-				}//System.out.println(input);
-				sql.append(" ORDER BY " + key);//System.out.println(sql.toString());
+				} // System.out.println(input);
+				sql.append(" ORDER BY " + key); // System.out.println(sql.toString());
 				ps = c.prepareStatement(sql.toString());
 				int i = 1;
 				ps.setString(i++, "%" + input + "%");
@@ -93,23 +101,23 @@ public class GetCandidate extends GenericServlet {
 				ps.setString(i++, input + "%");
 				ps.setString(i++, input + "%");
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					Vector<String> v = new Vector<String>();
 					v.add(rs.getString("ID"));
 					v.add(rs.getString(key));
 					v.add(rs.getString("社名"));
 					candidate.add(v);
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCode："+ex.getErrorCode());
-				err.append("SQLState："+ex.getSQLState());
+				err.append("ErrorCode：" + ex.getErrorCode());
+				err.append("SQLState：" + ex.getSQLState());
 				err.append("テーブル「T_テーブル名」の読込に失敗しました\n");
 				Logging.logStackTrace(ex, lg, className);
 				ex.printStackTrace();
 			}
 
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 			ex.printStackTrace();
 		}
@@ -124,30 +132,31 @@ public class GetCandidate extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 			ex.printStackTrace();
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

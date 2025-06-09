@@ -19,8 +19,6 @@ import org.apache.log4j.Logger;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-
-
 public class GetColInfo extends GenericServlet {
 	private static final long serialVersionUID = 1L;
 	private static Logger lg = Logger.getLogger("A1");
@@ -36,9 +34,9 @@ public class GetColInfo extends GenericServlet {
 
 		try {
 
-	//クライアントから読み込み
+			// クライアントから読み込み
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
-			String tableName = (String)in.readObject();
+			String tableName = (String) in.readObject();
 			in.close();
 
 			try {
@@ -46,13 +44,16 @@ public class GetColInfo extends GenericServlet {
 				ResultSet rs = st.executeQuery("SELECT * FROM " + tableName);
 				ResultSetMetaData rsmd = rs.getMetaData();
 
-				for(int i = 1; i <= rsmd.getColumnCount(); i++) {
+				for (int i = 1; i <= rsmd.getColumnCount(); i++) {
 					if (!rs.wasNull()) {
-						switch(rsmd.getColumnType(i)) {
+						switch (rsmd.getColumnType(i)) {
 							case Types.CHAR:
 							case Types.VARCHAR:
-								v.add(rsmd.getColumnName(i) + " [" + rsmd.getColumnTypeName(i) +
-								 "(" + String.valueOf(rsmd.getColumnDisplaySize(i)) + ")]");
+								v.add(
+									rsmd.getColumnName(i)
+										+ " [" + rsmd.getColumnTypeName(i)
+										+ "(" + String.valueOf(rsmd.getColumnDisplaySize(i)) + ")]"
+								);
 								break;
 							default:
 								v.add(rsmd.getColumnName(i) + " [" + rsmd.getColumnTypeName(i) + "]");
@@ -60,10 +61,10 @@ public class GetColInfo extends GenericServlet {
 						}
 					}
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
@@ -77,12 +78,13 @@ public class GetColInfo extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

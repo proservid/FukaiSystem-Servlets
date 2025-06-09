@@ -13,9 +13,6 @@ import javax.servlet.GenericServlet;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-
-
-
 import org.apache.log4j.Logger;
 
 import fukaisystem.dto.InitialDTO;
@@ -28,7 +25,7 @@ public class UpdateCandidate extends GenericServlet {
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
-    private static final Logger lg = Logger.getLogger("A1");
+	private static final Logger lg = Logger.getLogger("A1");
 	private static final String className = "UpdateCandidate\n";
 
 	public void service(ServletRequest request, ServletResponse response) {
@@ -54,40 +51,41 @@ public class UpdateCandidate extends GenericServlet {
 			try {
 				ps = c.prepareStatement("SELECT * FROM M_納期");
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					deadlines.add(rs.getString("納期"));
 				}
 				ps = c.prepareStatement("SELECT * FROM M_受渡場所");
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					places.add(rs.getString("受渡場所"));
 				}
 				ps = c.prepareStatement("SELECT * FROM M_取引条件");
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					terms.add(rs.getString("取引条件"));
 				}
 				ps = c.prepareStatement("SELECT * FROM M_有効期間");
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					validities.add(rs.getString("有効期間"));
 				}
 
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCode："+ex.getErrorCode());
-				err.append("SQLState："+ex.getSQLState());
+				err.append("ErrorCode：" + ex.getErrorCode());
+				err.append("SQLState：" + ex.getSQLState());
 				Logging.logStackTrace(ex, lg, className);
 			}
-
 
 			/**
 			 * クライアントに送信
 			 */
 
-			InitialDTO id = new InitialDTO(null, null, null, deadlines, places, terms,
+			InitialDTO id = new InitialDTO(
+				null, null, null, deadlines, places, terms,
 				validities, null, null, null, null, null, null, null, null, null,
-				null, null, null, null, null, null);
+				null, null, null, null, null, null
+			);
 
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
@@ -96,29 +94,30 @@ public class UpdateCandidate extends GenericServlet {
 			out.flush();
 			out.close();
 
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

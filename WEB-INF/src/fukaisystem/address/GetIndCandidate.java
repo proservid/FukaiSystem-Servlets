@@ -18,7 +18,6 @@ import fukaisystem.dto.CandidateInputDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-
 public class GetIndCandidate extends GenericServlet {
 
 	/**
@@ -49,12 +48,12 @@ public class GetIndCandidate extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 
-			if(obj == null) {
+			if (obj == null) {
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				if(obj instanceof CandidateInputDTO) {
-					CandidateInputDTO ciDTO = (CandidateInputDTO)obj;
+				if (obj instanceof CandidateInputDTO) {
+					CandidateInputDTO ciDTO = (CandidateInputDTO) obj;
 					input = ciDTO.getInput();
 					key = ciDTO.getKey();
 					isValidOnly = ciDTO.isValidOnly();
@@ -65,14 +64,16 @@ public class GetIndCandidate extends GenericServlet {
 			}
 
 			try {
-				StringBuilder sql = new StringBuilder("SELECT i.CD, 部署名, 役職名, 氏名, case when 会社名 is null then '' else '(' + 会社名 + ')' end AS 会社名" +
-						" FROM M_個人 i" +
-						" LEFT OUTER JOIN M_法人 c ON i.法人CD=c.CD" +
-						" WHERE i.CD IS NOT NULL AND (氏名 LIKE ? OR シメイ LIKE ? OR 部署名+役職名 LIKE ?)");
-				if(isValidOnly) {
+				StringBuilder sql = new StringBuilder(
+					"SELECT i.CD, 部署名, 役職名, 氏名, case when 会社名 is null then '' else '(' + 会社名 + ')' end AS 会社名"
+						+ " FROM M_個人 i"
+						+ " LEFT OUTER JOIN M_法人 c ON i.法人CD=c.CD"
+						+ " WHERE i.CD IS NOT NULL AND (氏名 LIKE ? OR シメイ LIKE ? OR 部署名+役職名 LIKE ?)"
+				);
+				if (isValidOnly) {
 					sql.append(" AND i.有効FLG='true'");
 				}
-				if(key > 0) {
+				if (key > 0) {
 					sql.append(" AND 法人CD=?");
 				}
 				sql.append(" ORDER BY i.CD");
@@ -81,11 +82,11 @@ public class GetIndCandidate extends GenericServlet {
 				ps.setString(i++, "%" + input + "%");
 				ps.setString(i++, "%" + input + "%");
 				ps.setString(i++, "%" + input + "%");
-				if(key > 0) {
+				if (key > 0) {
 					ps.setInt(i++, key);
 				}
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					Vector<String> v = new Vector<String>();
 					v.add(rs.getString("CD"));
 					v.add(rs.getString("CD"));
@@ -97,24 +98,24 @@ public class GetIndCandidate extends GenericServlet {
 					if(!rs.getString("役職名").equals("")) {
 						sb.append(rs.getString("役職名") + " ");
 					}
-					*/
-					if(!rs.getString("氏名").equals("")) {
+					 */
+					if (!rs.getString("氏名").equals("")) {
 						sb.append(rs.getString("氏名") + " ");
 					}
 					sb.append(rs.getString("会社名"));
 					v.add(sb.toString());
 					candidate.add(v);
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				err.append(ex.getMessage());
-				err.append("ErrorCode："+ex.getErrorCode());
-				err.append("SQLState："+ex.getSQLState());
+				err.append("ErrorCode：" + ex.getErrorCode());
+				err.append("SQLState：" + ex.getSQLState());
 				err.append("テーブル「T_テーブル名」の読込に失敗しました\n");
 				Logging.logStackTrace(ex, lg, className);
 				ex.printStackTrace();
 			}
 
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 			ex.printStackTrace();
 		}
@@ -129,30 +130,31 @@ public class GetIndCandidate extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 			ex.printStackTrace();
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

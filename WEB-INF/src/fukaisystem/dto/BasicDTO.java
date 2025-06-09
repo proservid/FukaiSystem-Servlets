@@ -17,10 +17,16 @@ import java.util.Vector;
 public abstract class BasicDTO implements Serializable {
 
 	public abstract String getStr(int order);
+
 	public abstract int getInt(int order);
+
 	public abstract boolean getBool(int order);
+
 	public abstract Date getDate(int order);
+
 	public abstract Vector<Vector<Object>> getVector(int order);
+
 	public abstract List<String> getEsts();
+
 	public abstract List<Integer> getParents();
 }

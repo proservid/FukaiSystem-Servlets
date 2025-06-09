@@ -17,7 +17,6 @@ import org.apache.log4j.Logger;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-
 public class SetSlipFormat extends GenericServlet {
 
 	/**
@@ -47,12 +46,12 @@ public class SetSlipFormat extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 
-			if(obj == null) {
+			if (obj == null) {
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				if(obj instanceof Vector) {
-					input = (Vector<Vector<String>>)obj;
+				if (obj instanceof Vector) {
+					input = (Vector<Vector<String>>) obj;
 				} else {
 					err.append(className + "readObjectがString型ではありません\n");
 					lg.error(className + "readObjectがString型ではありません");
@@ -61,20 +60,21 @@ public class SetSlipFormat extends GenericServlet {
 
 			try {
 				ps = c.prepareStatement(
-						 "UPDATE T_伝票 SET フォーマット名=? WHERE 伝票名=?");
-				for(Vector<String> v : input) {
+					"UPDATE T_伝票 SET フォーマット名=? WHERE 伝票名=?"
+				);
+				for (Vector<String> v : input) {
 					ps.setString(1, v.get(1));
 					ps.setString(2, v.get(0));
 					ps.addBatch();
 				}
 				int[] updateCounts = ps.executeBatch();
 				output = updateCounts.length + "件更新されました。";
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				err.append("テーブル「T_伝票」を更新できません\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
@@ -88,29 +88,30 @@ public class SetSlipFormat extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

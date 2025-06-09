@@ -15,10 +15,8 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import fukaisystem.dto.CorpDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
-
 
 public class GetCountry extends GenericServlet {
 
@@ -48,12 +46,12 @@ public class GetCountry extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 
-			if(obj == null) {
+			if (obj == null) {
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				if(obj instanceof String) {
-					input = (String)obj;
+				if (obj instanceof String) {
+					input = (String) obj;
 				} else {
 					err.append(className + "readObjectがString型ではありません\n");
 					lg.error(className + "readObjectがString型ではありません");
@@ -61,24 +59,25 @@ public class GetCountry extends GenericServlet {
 			}
 			try {
 				ps = c.prepareStatement(
-					"select ccTLD,国際電話国番号,国名,英語名," +
-					"case when 郵便番号 is null then '#' else 郵便番号 end as 郵便番号" +
-					" from M_国 where alpha_2=?");
+					"select ccTLD,国際電話国番号,国名,英語名,"
+						+ "case when 郵便番号 is null then '#' else 郵便番号 end as 郵便番号"
+						+ " from M_国 where alpha_2=?"
+				);
 				ps.setString(1, input);
 				rs = ps.executeQuery();
-				if(rs.next()) {
+				if (rs.next()) {
 					output.add(rs.getString("ccTLD"));
 					output.add(rs.getString("国際電話国番号"));
 					output.add(rs.getString("国名"));
 					output.add(rs.getString("英語名"));
 					output.add(rs.getString("郵便番号"));
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				err.append("テーブル「T_テーブル名」の読込に失敗しました\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
@@ -92,29 +91,30 @@ public class GetCountry extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

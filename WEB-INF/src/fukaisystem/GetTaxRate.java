@@ -16,7 +16,6 @@ import org.apache.log4j.Logger;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-
 public class GetTaxRate extends GenericServlet {
 
 	/**
@@ -45,12 +44,12 @@ public class GetTaxRate extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 
-			if(obj == null) {
+			if (obj == null) {
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				if(obj instanceof String) {
-					input = (String)obj;
+				if (obj instanceof String) {
+					input = (String) obj;
 				} else {
 					err.append(className + "readObjectがString型ではありません\n");
 					lg.error(className + "readObjectがString型ではありません");
@@ -58,20 +57,22 @@ public class GetTaxRate extends GenericServlet {
 			}
 
 			try {
-				ps = c.prepareStatement("SELECT 税率 FROM M_消費税 t WHERE 適用開始日<=? AND NOT EXISTS" +
-						" (SELECT 1 FROM M_消費税 t2 WHERE t.適用開始日<t2.適用開始日 AND 適用開始日<=?)");
+				ps = c.prepareStatement(
+					"SELECT 税率 FROM M_消費税 t WHERE 適用開始日<=? AND NOT EXISTS"
+						+ " (SELECT 1 FROM M_消費税 t2 WHERE t.適用開始日<t2.適用開始日 AND 適用開始日<=?)"
+				);
 				ps.setString(1, input);
 				ps.setString(2, input);
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					output = rs.getString("税率");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				err.append("テーブル「T_テーブル名」の読込に失敗しました\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
@@ -85,29 +86,30 @@ public class GetTaxRate extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

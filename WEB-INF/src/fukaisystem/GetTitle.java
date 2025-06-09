@@ -18,7 +18,6 @@ import org.apache.log4j.Logger;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-
 public class GetTitle extends GenericServlet {
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
@@ -41,20 +40,19 @@ public class GetTitle extends GenericServlet {
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			in.close();
 
-
 			try {
-				String[] types = {"TABLE", "VIEW"};
+				String[] types = { "TABLE", "VIEW" };
 				DatabaseMetaData dmd = c.getMetaData();
 				rs = dmd.getTables(null, "dbo", "%", types);
-				while(rs.next()) {
+				while (rs.next()) {
 					tableName.add(rs.getString("TABLE_NAME").trim());
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				err.append(className + "エラーが発生しました。\n" + ex);
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
@@ -68,29 +66,30 @@ public class GetTitle extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

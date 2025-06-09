@@ -20,8 +20,6 @@ import fukaisystem.dto.OrderSearchDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-
-
 public class OrderSearch extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -41,12 +39,20 @@ public class OrderSearch extends GenericServlet {
 
 		Vector<Vector<Object>> v = new Vector<Vector<Object>>();
 
-		String[] constStrs = {"注文枝番 like ?",
-			"SUBSTRING(CONVERT(VARCHAR, 注文年月日),1,4) like ?", "SUBSTRING(CONVERT(VARCHAR, 注文年月日),6,2) like ?", "SUBSTRING(CONVERT(VARCHAR, 注文年月日),9,2) like ?",
-			"SUBSTRING(CONVERT(VARCHAR, 指定納期),1,4) like ?", "SUBSTRING(CONVERT(VARCHAR, 指定納期),6,2) like ?", "SUBSTRING(CONVERT(VARCHAR, 指定納期),9,2) like ?",
-			"SUBSTRING(CONVERT(VARCHAR, 入庫年月日),1,4) like ?", "SUBSTRING(CONVERT(VARCHAR, 入庫年月日),6,2) like ?", "SUBSTRING(CONVERT(VARCHAR, 入庫年月日),9,2) like ?",
-			"SUBSTRING(CONVERT(VARCHAR, 納品書日),1,4) like ?", "SUBSTRING(CONVERT(VARCHAR, 納品書日),6,2) like ?", "SUBSTRING(CONVERT(VARCHAR, 納品書日),9,2) like ?"};
-		String[] constInts = {"c.仕入先CD=?", "注文期=?", "注文番号=?", "伝票番号=?", "納品書番号=?"};
+		String[] constStrs = { "注文枝番 like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 注文年月日),1,4) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 注文年月日),6,2) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 注文年月日),9,2) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 指定納期),1,4) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 指定納期),6,2) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 指定納期),9,2) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 入庫年月日),1,4) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 入庫年月日),6,2) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 入庫年月日),9,2) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 納品書日),1,4) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 納品書日),6,2) like ?",
+			"SUBSTRING(CONVERT(VARCHAR, 納品書日),9,2) like ?" };
+		String[] constInts = { "c.仕入先CD=?", "注文期=?", "注文番号=?", "伝票番号=?", "納品書番号=?" };
 		try {
 
 			/**
@@ -56,12 +62,12 @@ public class OrderSearch extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 
-			if(obj == null) {
+			if (obj == null) {
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				if(obj instanceof OrderSearchDTO) {
-					searchDTO = (OrderSearchDTO)obj;
+				if (obj instanceof OrderSearchDTO) {
+					searchDTO = (OrderSearchDTO) obj;
 				} else {
 					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
 					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
@@ -69,96 +75,110 @@ public class OrderSearch extends GenericServlet {
 			}
 			try {
 				StringBuilder query = new StringBuilder(
-				 "SELECT top 30000 s.在庫親ID,注文期,注文番号,注文枝番," +
-				 " 伝票番号,s.仕入先CD,注文年月日,指定納期," +
-				 " 摘要,納入先指定,納品書番号,納品書日," +
-				 " CASE" +
-					" WHEN 種別CD = 1 THEN '㈱'+会社名" +
-					" WHEN 種別CD = 2 THEN 会社名+'㈱'" +
-					" WHEN 種別CD = 3 THEN '㈲'+会社名" +
-					" WHEN 種別CD = 4 THEN 会社名+'㈲'" +
-					" ELSE 会社名 END AS 社名" +
-				 " FROM (" +
-				 "	SELECT sp.在庫親ID,納品書番号,納品書日 FROM T_在庫_親 sp" +
-				 "	 LEFT OUTER JOIN (SELECT * FROM T_在庫_子 WHERE 表示CD=2) sc ON sp.在庫親ID=sc.在庫親ID" +
-				 "	 LEFT OUTER JOIN T_指定納品書 d on d.ID=sc.納品書番号");
+					"SELECT top 30000 s.在庫親ID,注文期,注文番号,注文枝番,"
+						+ " 伝票番号,s.仕入先CD,注文年月日,指定納期,"
+						+ " 摘要,納入先指定,納品書番号,納品書日,"
+						+ " CASE"
+						+ " WHEN 種別CD = 1 THEN '㈱'+会社名"
+						+ " WHEN 種別CD = 2 THEN 会社名+'㈱'"
+						+ " WHEN 種別CD = 3 THEN '㈲'+会社名"
+						+ " WHEN 種別CD = 4 THEN 会社名+'㈲'"
+						+ " ELSE 会社名 END AS 社名"
+						+ " FROM ("
+						+ "	SELECT sp.在庫親ID,納品書番号,納品書日 FROM T_在庫_親 sp"
+						+ "	 LEFT OUTER JOIN (SELECT * FROM T_在庫_子 WHERE 表示CD=2) sc ON sp.在庫親ID=sc.在庫親ID"
+						+ "	 LEFT OUTER JOIN T_指定納品書 d on d.ID=sc.納品書番号"
+				);
 				boolean isFirst = true;
-				for(int i = 1; i < 13; i++) {
-					if(!searchDTO.getStr(i).equals("")) {//検索条件が入っていれば
-						if(isFirst) {
+				for (int i = 1; i < 13; i++) {
+					if (!searchDTO.getStr(i).equals("")) { // 検索条件が入っていれば
+						if (isFirst) {
 							query.append(" WHERE (");
 							isFirst = false;
 						} else {
-							if(searchDTO.isAnd()) query.append(" AND ");
-							else query.append(" OR ");
+							if (searchDTO.isAnd())
+								query.append(" AND ");
+							else
+								query.append(" OR ");
 						}
 						strIndex.add(i);
-						if(searchDTO.getStr(i).equals("未")) {
-							switch(i) {
-								case 1 :
-								query.append("注文年月日 IS NULL"); break;
-								case 4 :
-								query.append("指定納期 IS NULL"); break;
-								case 7 :
-								query.append("入庫年月日 IS NULL"); break;
-								case 10 :
-								query.append("納品書日 IS NULL"); break;
+						if (searchDTO.getStr(i).equals("未")) {
+							switch (i) {
+								case 1:
+									query.append("注文年月日 IS NULL");
+									break;
+								case 4:
+									query.append("指定納期 IS NULL");
+									break;
+								case 7:
+									query.append("入庫年月日 IS NULL");
+									break;
+								case 10:
+									query.append("納品書日 IS NULL");
+									break;
 							}
 						} else {
 							query.append(constStrs[i]);
 						}
 					}
 				}
-				if(!isFirst) query.append(")");
-				 query.append(" GROUP BY sp.在庫親ID,納品書番号,納品書日) spc" +
-				 " LEFT OUTER JOIN T_在庫_親 s ON s.在庫親ID=spc.在庫親ID" +
-				 " LEFT OUTER JOIN M_法人 c ON s.仕入先CD=c.仕入先CD");
+				if (!isFirst)
+					query.append(")");
+				query.append(
+					" GROUP BY sp.在庫親ID,納品書番号,納品書日) spc"
+						+ " LEFT OUTER JOIN T_在庫_親 s ON s.在庫親ID=spc.在庫親ID"
+						+ " LEFT OUTER JOIN M_法人 c ON s.仕入先CD=c.仕入先CD"
+				);
 
 				isFirst = true;
-				if(!searchDTO.getStr(0).equals("")) {//検索条件が入っていれば
+				if (!searchDTO.getStr(0).equals("")) { // 検索条件が入っていれば
 					strIndex.add(0);
-					if(isFirst) {
+					if (isFirst) {
 						query.append(" WHERE ");
 						query.append(constStrs[0]);
 						isFirst = false;
 					}
 				}
 
-				//数値の検索条件は、searchDTO.getInt(0～4)
-				for(int i = 0; i < 5; i++) {
-					if(searchDTO.getInt(i) != 0) {//検索条件が入っていれば
+				// 数値の検索条件は、searchDTO.getInt(0～4)
+				for (int i = 0; i < 5; i++) {
+					if (searchDTO.getInt(i) != 0) { // 検索条件が入っていれば
 						intIndex.add(i);
-						if(isFirst) {
+						if (isFirst) {
 							query.append(" WHERE " + constInts[i]);
 							isFirst = false;
 						} else {
-							if(searchDTO.isAnd()) query.append(" AND " + constInts[i]);
-							else query.append(" OR " + constInts[i]);
+							if (searchDTO.isAnd())
+								query.append(" AND " + constInts[i]);
+							else
+								query.append(" OR " + constInts[i]);
 						}
 					}
 				}
 				ps = c.prepareStatement(query.toString());
 				int j = 1;
-				for(int i : strIndex) {
-					if(!searchDTO.getStr(i).equals("未")) {
-						ps.setString(j, searchDTO.getStr(i)); j++;
+				for (int i : strIndex) {
+					if (!searchDTO.getStr(i).equals("未")) {
+						ps.setString(j, searchDTO.getStr(i));
+						j++;
 					}
 				}
-				for(int i : intIndex) {
-					ps.setInt(j, searchDTO.getInt(i)); j++;
+				for (int i : intIndex) {
+					ps.setInt(j, searchDTO.getInt(i));
+					j++;
 				}
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					Vector<Object> v2 = new Vector<Object>();
 					v2.add(rs.getInt("在庫親ID"));
-					if(rs.getInt("注文期") != 0 && rs.getInt("注文番号") != 0) {
+					if (rs.getInt("注文期") != 0 && rs.getInt("注文番号") != 0) {
 						v2.add(rs.getInt("注文期") + "-" + rs.getInt("注文番号") + " " + rs.getString("注文枝番"));
 					} else {
 						v2.add("");
 					}
 					v2.add(rs.getInt("伝票番号"));
-					if(rs.getInt("仕入先CD") != 0) {
-						v2.add(/*rs.getInt("仕入先CD") + "：" + */rs.getString("社名"));
+					if (rs.getInt("仕入先CD") != 0) {
+						v2.add(/* rs.getInt("仕入先CD") + "：" + */rs.getString("社名"));
 					} else {
 						v2.add("");
 					}
@@ -171,11 +191,11 @@ public class OrderSearch extends GenericServlet {
 					v.add(v2);
 				}
 
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				err.append(className + "テーブル「T_見積_親」の読み出しに失敗しました\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
@@ -189,40 +209,43 @@ public class OrderSearch extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			lg.error(ex);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}
 	}
 
-
 	public String partialDateStr(String target, String ymd, int begin, int count) {
-		switch(begin) {
-			case 1 : return "substring(convert(varchar(" + count + "), " + target + ", 120), " + begin + ", " + count + ")='" + ymd + "'";
-			case 6 : return "substring(convert(varchar(" + (count + 5) + "), " + target + ", 120), " + begin + ", " + count + ")='" + ymd + "'";
-			default : return "substring(convert(varchar(10), " + target + ", 120), " + begin + ", " + count + ")='" + ymd + "'";
+		switch (begin) {
+			case 1:
+			return "substring(convert(varchar(" + count + "), " + target + ", 120), " + begin + ", " + count + ")='" + ymd + "'";
+			case 6:
+			return "substring(convert(varchar(" + (count + 5) + "), " + target + ", 120), " + begin + ", " + count + ")='" + ymd + "'";
+			default:
+			return "substring(convert(varchar(10), " + target + ", 120), " + begin + ", " + count + ")='" + ymd + "'";
 		}
 	}
 }

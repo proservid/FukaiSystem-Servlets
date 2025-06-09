@@ -6,8 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Vector;
 
 import javax.servlet.GenericServlet;
@@ -16,10 +14,8 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import fukaisystem.dto.CorpDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
-
 
 public class GetAddress extends GenericServlet {
 
@@ -49,12 +45,12 @@ public class GetAddress extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 
-			if(obj == null) {
+			if (obj == null) {
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				if(obj instanceof String) {
-					input = (String)obj;
+				if (obj instanceof String) {
+					input = (String) obj;
 				} else {
 					err.append(className + "readObjectがString型ではありません\n");
 					lg.error(className + "readObjectがString型ではありません");
@@ -62,21 +58,22 @@ public class GetAddress extends GenericServlet {
 			}
 			try {
 				ps = c.prepareStatement(
-					"select 都道府県,市区町村," +
-					"case when 町域 is null then 町域補足 else 町域 end as 町域," +
-					"case when 京都通り名 is null then '' else 京都通り名 end as 京都通り名," +
-					"case when 字丁目 is null then '' else 字丁目 end as 字丁目," +
-					"case when 補足 is null then '' else 補足 end as 補足," +
-					"case when 事業所名 is null then '' else 事業所名 end as 事業所名," +
-					"case when 事業所住所 is null then '' else 事業所住所 end as 事業所住所," +
-					"郵便枝番" +
-					" from V_郵便番号 pc" +
-					" left outer join M_都道府県 p on pc.都道府県CD=p.CD" +
-					" left outer join M_市区町村 c on pc.都道府県CD=c.都道府県CD and pc.市区町村CD=c.CD" +
-					(input.length() == 7 ? " where 郵便番号=?" : " where 郵便番号+郵便枝番=?"));
+					"select 都道府県,市区町村,"
+						+ "case when 町域 is null then 町域補足 else 町域 end as 町域,"
+						+ "case when 京都通り名 is null then '' else 京都通り名 end as 京都通り名,"
+						+ "case when 字丁目 is null then '' else 字丁目 end as 字丁目,"
+						+ "case when 補足 is null then '' else 補足 end as 補足,"
+						+ "case when 事業所名 is null then '' else 事業所名 end as 事業所名,"
+						+ "case when 事業所住所 is null then '' else 事業所住所 end as 事業所住所,"
+						+ "郵便枝番"
+						+ " from V_郵便番号 pc"
+						+ " left outer join M_都道府県 p on pc.都道府県CD=p.CD"
+						+ " left outer join M_市区町村 c on pc.都道府県CD=c.都道府県CD and pc.市区町村CD=c.CD" +
+						(input.length() == 7 ? " where 郵便番号=?" : " where 郵便番号+郵便枝番=?")
+				);
 				ps.setString(1, input);
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					Vector<String> v = new Vector<String>();
 					v.add(rs.getString("都道府県"));
 					v.add(rs.getString("市区町村"));
@@ -87,19 +84,19 @@ public class GetAddress extends GenericServlet {
 					v.add(rs.getString("郵便枝番"));
 					output.add(v);
 				}
-				if(output.size() == 0) {
+				if (output.size() == 0) {
 					Vector<String> v = new Vector<String>();
-					for(int i = 0; i < 7; i++) {
+					for (int i = 0; i < 7; i++) {
 						v.add("");
 					}
 					output.add(v);
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				err.append("テーブル「T_テーブル名」の読込に失敗しました\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
@@ -109,34 +106,35 @@ public class GetAddress extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			System.out.println("output:"+output);
+			System.out.println("output:" + output);
 			out.writeObject(output);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

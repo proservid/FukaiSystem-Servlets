@@ -10,12 +10,10 @@ import org.apache.log4j.Logger;
 
 import fukaisystem.sql.DBConnection;
 
-
 public class DataRegistration extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static Logger lg = Logger.getLogger("A1");
-
 
 	public void service(ServletRequest request, ServletResponse response) {
 
@@ -36,16 +34,19 @@ public class DataRegistration extends GenericServlet {
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
 			try {
 				obj = in.readObject();
-			} catch (ClassNotFoundException ex) {}
+			} catch (ClassNotFoundException ex) {
+				// TODO:
+			}
 			in.close();
 
 			String tableName = "";
-			if(obj instanceof StringDTO) {
-				StringDTO stringDTO = (StringDTO)obj;
+			if (obj instanceof StringDTO) {
+				StringDTO stringDTO = (StringDTO) obj;
 				tableName = stringDTO.getString();
 				lines = stringDTO.getData();
 			}
-			if(lines == null) lg.debug("linesnull");
+			if (lines == null)
+				lg.debug("linesnull");
 
 			int k = 0;
 			try {
@@ -55,37 +56,39 @@ public class DataRegistration extends GenericServlet {
 				int cols = rsmd.getColumnCount();
 				int[] types = new int[cols];
 
-
-//				StringBuilder sql = new StringBuilder("SET IDENTITY_INSERT " + tableName + " ON; INSERT INTO ");
+				// StringBuilder sql = new StringBuilder("SET IDENTITY_INSERT " + tableName + " ON; INSERT INTO ");
 				StringBuilder sql = new StringBuilder("INSERT INTO ");
 				sql.append(tableName);
 				sql.append(" (");
-				for(int i = 0; i < cols; i++) {
-					if(i == cols - 1) sql.append(rsmd.getColumnName(i+1)+") ");
-					else sql.append(rsmd.getColumnName(i+1)+", ");
+				for (int i = 0; i < cols; i++) {
+					if (i == cols - 1)
+						sql.append(rsmd.getColumnName(i + 1) + ") ");
+					else
+						sql.append(rsmd.getColumnName(i + 1) + ", ");
 				}
 				sql.append("VALUES (");
-				for(int i = 0; i < cols; i++) {
-//					if(i == cols - 1) sql.append("?); SET IDENTITY_INSERT " + tableName + " OFF");
-					if(i == cols - 1) sql.append("?);");
-					else sql.append("?, ");
+				for (int i = 0; i < cols; i++) {
+					// if(i == cols - 1) sql.append("?); SET IDENTITY_INSERT " + tableName + " OFF");
+					if (i == cols - 1)
+						sql.append("?);");
+					else
+						sql.append("?, ");
 					types[i] = rsmd.getColumnType(i + 1);
 				}
 
-
-				c.setAutoCommit(false);//System.out.println(sql.toString());
+				c.setAutoCommit(false); // System.out.println(sql.toString());
 				ps = c.prepareStatement(sql.toString());
-				for(int i = 1; i < lines.size(); i++) {
+				for (int i = 1; i < lines.size(); i++) {
 					String[] strs = lines.get(i).split("\t", cols);
-					for(int j = 0; j < cols; j++) {//テーブルの列数を超えるデータは無視
+					for (int j = 0; j < cols; j++) { // テーブルの列数を超えるデータは無視
 						boolean isEmpty = false;
-						if(strs.length <= j) {//テーブルの列数に満たない場合は空データで埋める
+						if (strs.length <= j) { // テーブルの列数に満たない場合は空データで埋める
 							isEmpty = true;
-						} else if(strs[j].equals("")) {
+						} else if (strs[j].equals("")) {
 							isEmpty = true;
 						}
-						if(isEmpty) {
-							switch(types[j]) {
+						if (isEmpty) {
+							switch (types[j]) {
 								case Types.BIT:
 								case Types.BOOLEAN:
 									ps.setBoolean(j + 1, false);
@@ -98,8 +101,8 @@ public class DataRegistration extends GenericServlet {
 									break;
 								case Types.CHAR:
 								case Types.VARCHAR:
-	//							case Types.NCHAR:
-	//							case Types.NVARCHAR:
+									// case Types.NCHAR:
+									// case Types.NVARCHAR:
 									ps.setString(j + 1, strs[j]);
 									break;
 								case Types.DATE:
@@ -129,12 +132,12 @@ public class DataRegistration extends GenericServlet {
 				int[] updateCounts = ps.executeBatch();
 				c.commit();
 				msg.append(updateCounts.length + "件処理されました。");
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				ex.printStackTrace();
 				String errStr = String.valueOf(k + 1) + "行目：" + ex;
 				err.append(errStr);
 				lg.error(errStr);
-			} catch(Exception ex) {
+			} catch (Exception ex) {
 				ex.printStackTrace();
 				StringWriter writer = new StringWriter();
 				PrintWriter writer2 = new PrintWriter(writer);
@@ -143,9 +146,7 @@ public class DataRegistration extends GenericServlet {
 				err.append(writer.toString());
 			}
 
-
-
-	//クライアントに送信
+			// クライアントに送信
 
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
@@ -153,30 +154,31 @@ public class DataRegistration extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			lg.error(ex);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				lg.error("c:" + ex);
 			}
 			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug("ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				lg.error("ps:" + ex);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug("rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				lg.error("rs:" + ex);
 			}
 		}

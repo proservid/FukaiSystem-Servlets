@@ -15,10 +15,8 @@ import javax.servlet.ServletResponse;
 import org.apache.log4j.Logger;
 
 import fukaisystem.dto.DispatchingDTO;
-import fukaisystem.dto.OrderDocumentDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
-
 
 public class GetDispatchingSummary extends GenericServlet {
 
@@ -48,29 +46,31 @@ public class GetDispatchingSummary extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 
-			if(obj == null) {
+			if (obj == null) {
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				if(obj instanceof Number) {
-					id = ((Number)obj).intValue();
+				if (obj instanceof Number) {
+					id = ((Number) obj).intValue();
 				} else {
 					err.append(className + "readObjectがSetSummaryDTO型ではありません\n");
 					lg.error(className + "readObjectがSetSummaryDTO型ではありません");
 				}
 			}
 			try {
-				ps = c.prepareStatement("SELECT 大分類CD,中分類CD,小分類CD,品名,各FLG,数量,数量単位CD,重量長さ,"
+				ps = c.prepareStatement(
+					"SELECT 大分類CD,中分類CD,小分類CD,品名,各FLG,数量,数量単位CD,重量長さ,"
 						+ "単価,金額,備考,c.在庫親ID,在庫子ID,注文期,注文番号,注文枝番 FROM T_出庫_子 c"
 						+ " LEFT OUTER JOIN ("
 						+ "  SELECT 在庫親ID,注文期,注文番号,注文枝番 FROM T_在庫_親"
 						+ "  UNION"
 						+ "  SELECT 製作親ID,製作期,製作番号,製作枝番 FROM T_製作_親"
 						+ " ) p ON c.在庫親ID=p.在庫親ID"
-						+ " WHERE 出庫親ID=?");
+						+ " WHERE 出庫親ID=?"
+				);
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					Vector<Object> line = new Vector<Object>();
 					line.add(rs.getInt("大分類CD"));
 					line.add(rs.getInt("中分類CD"));
@@ -85,37 +85,45 @@ public class GetDispatchingSummary extends GenericServlet {
 					line.add(rs.getString("備考"));
 					line.add(rs.getInt("在庫親ID"));
 					line.add(rs.getInt("在庫子ID"));
-					line.add(rs.getString("注文期") == null ? "" : rs.getString("注文期") + "-" + rs.getString("注文番号") + " " + rs.getString("注文枝番"));
+					line.add(
+						rs.getString("注文期") == null
+							? ""
+							: rs.getString("注文期") + "-" + rs.getString("注文番号") + " " + rs.getString("注文枝番")
+					);
 					data.add(line);
 				}
-
 
 				ps = c.prepareStatement("SELECT * FROM T_出庫_親 p WHERE 出庫親ID=?");
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					dispDTO = new DispatchingDTO(
-					 rs.getInt("出庫親ID"),
-					 0,0,"",
-					 rs.getInt("製作期"),
-					 rs.getInt("製作番号"),
-					 rs.getString("製作枝番"),
-					 "","","","",
-					 rs.getString("用途"),
-					 rs.getString("摘要"),
-					 data,
-					 rs.getDate("出庫年月日"),
-					 0,
-					 0,
-					 0,
-					 false);
+						rs.getInt("出庫親ID"),
+						0,
+						0,
+						"",
+						rs.getInt("製作期"),
+						rs.getInt("製作番号"),
+						rs.getString("製作枝番"),
+						"",
+						"",
+						"",
+						"",
+						rs.getString("用途"),
+						rs.getString("摘要"),
+						data,
+						rs.getDate("出庫年月日"),
+						0,
+						0,
+						0,
+						false
+					);
 				}
-
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				err.append(className + "DBエラーが発生しました\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
@@ -129,29 +137,30 @@ public class GetDispatchingSummary extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}

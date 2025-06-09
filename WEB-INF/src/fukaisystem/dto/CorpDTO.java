@@ -60,30 +60,30 @@ public class CorpDTO implements Serializable {
 	public String getStr(int order) {
 		String s = "";
 		switch(order) {
-			case  0: s = name; break;//会社名/氏名
-			case  1: s = name2; break;//カイシャメイ/シメイ
-			case  2: s = branch; break;//支店名/所属部署
-			case  3: s = branch2; break;//シテンメイ/役職名
-			case  4: s = disp; break;//表示/会社コード
-			case  5: s = country; break;//
-			case  6: s = zip; break;//
-			case  7: s = zip2; break;//
-			case  8: s = pref; break;//
-			case  9: s = city; break;//
-			case 10: s = area; break;//
-			case 11: s = st; break;//
-			case 12: s = bldg; break;//
-			case 13: s = tel1; break;//
-			case 14: s = tel2; break;//
-			case 15: s = tel3; break;//
-			case 16: s = fax1; break;//
-			case 17: s = fax2; break;//
-			case 18: s = fax3; break;//
-			case 19: s = mail; break;//
-			case 20: s = url; break;//
-			case 21: s = rem; break;//
-			case 22: s = id; break;//
-			case 23: s = alphabet; break;//
+			case  0: s = name; break; //会社名/氏名
+			case  1: s = name2; break; //カイシャメイ/シメイ
+			case  2: s = branch; break; //支店名/所属部署
+			case  3: s = branch2; break; //シテンメイ/役職名
+			case  4: s = disp; break; //表示/会社コード
+			case  5: s = country; break; //
+			case  6: s = zip; break; //
+			case  7: s = zip2; break; //
+			case  8: s = pref; break; //
+			case  9: s = city; break; //
+			case 10: s = area; break; //
+			case 11: s = st; break; //
+			case 12: s = bldg; break; //
+			case 13: s = tel1; break; //
+			case 14: s = tel2; break; //
+			case 15: s = tel3; break; //
+			case 16: s = fax1; break; //
+			case 17: s = fax2; break; //
+			case 18: s = fax3; break; //
+			case 19: s = mail; break; //
+			case 20: s = url; break; //
+			case 21: s = rem; break; //
+			case 22: s = id; break; //
+			case 23: s = alphabet; break; //
 		}
 		return s;
 	}
@@ -105,6 +105,6 @@ public class CorpDTO implements Serializable {
 			case 0:	b = isValid; break;
 			case 1:	b = isZou; break;
 		}
-		return b;//不使用
+		return b; //不使用
 	}
 }

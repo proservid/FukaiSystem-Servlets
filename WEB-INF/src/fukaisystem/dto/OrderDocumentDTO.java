@@ -83,7 +83,7 @@ public class OrderDocumentDTO extends BasicDTO {
 
 	@Override
 	public boolean getBool(int order) {
-		return false;//•sg—p
+		return false;//ä¸ä½¿ç”¨
 	}
 
 	@Override

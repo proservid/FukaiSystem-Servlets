@@ -98,10 +98,10 @@ public class ProjectSummaryDTO extends BasicDTO {
 			case  2: s = projectNameE; break;
 			case  3: s = placeName; break;
 			case  4: s = number_eb; break;
-			case  5: s = deadline; break;//納期
-			case  6: s = place; break;//受渡場所
-			case  7: s = terms; break;//取引条件
-			case  8: s = validity; break;//有効期間
+			case  5: s = deadline; break; //納期
+			case  6: s = place; break; //受渡場所
+			case  7: s = terms; break; //取引条件
+			case  8: s = validity; break; //有効期間
 			case  9: s = note_e; break;
 			case 10: s = acceptID; break;
 			case 11: s = number_pb; break;
@@ -152,12 +152,12 @@ public class ProjectSummaryDTO extends BasicDTO {
 			case 0: d = inquiryDate; break;
 			case 1: d = estimateDate; break;
 			case 2: d = submitDate; break;
-			case 3: d = acceptDate; break;//受注年月日
-			case 4: d = dueDate; break;//納期
-			case 5: d = publishDate; break;//発行年月日
-			case 6: d = shippingDate; break;//出荷年月日
-			case 7: d = inspectionDate; break;//検収年月日
-			case 8: d = salesDate; break;//売上年月日
+			case 3: d = acceptDate; break; //受注年月日
+			case 4: d = dueDate; break; //納期
+			case 5: d = publishDate; break; //発行年月日
+			case 6: d = shippingDate; break; //出荷年月日
+			case 7: d = inspectionDate; break; //検収年月日
+			case 8: d = salesDate; break; //売上年月日
 		}
 		return d;
 	}

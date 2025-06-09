@@ -56,12 +56,12 @@ public class GetSchedule extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 
-			if(obj == null) {
+			if (obj == null) {
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				if(obj instanceof Date) {
-					from = (Date)obj;
+				if (obj instanceof Date) {
+					from = (Date) obj;
 					Calendar cal = Calendar.getInstance();
 					cal.setTime(from);
 					cal.add(Calendar.DATE, 6);
@@ -77,7 +77,7 @@ public class GetSchedule extends GenericServlet {
 				ps.setDate(1, from);
 				ps.setDate(2, to);
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					holidays.add(rs.getDate("祝日"));
 				}
 
@@ -85,14 +85,14 @@ public class GetSchedule extends GenericServlet {
 				ps.setDate(1, from);
 				ps.setDate(2, to);
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					String cd = rs.getString("人員CD");
 					String contents = rs.getString("内容");
-					if(map.containsKey(cd)) {
+					if (map.containsKey(cd)) {
 						Map<Date, String> innerMap = map.get(cd).getText();
 						Date d = rs.getDate("年月日");
-						if(innerMap.containsKey(d)) {
-							//重複するはずはない
+						if (innerMap.containsKey(d)) {
+							// 重複するはずはない
 						} else {
 							innerMap.put(d, contents);
 						}
@@ -102,8 +102,10 @@ public class GetSchedule extends GenericServlet {
 						map.put(cd, new Schedule(innerMap, null, null));
 					}
 				}
-				//開始日が今週または終了日が今週または開始日が先週以前かつ終了日が来週以降
-				ps = c.prepareStatement("SELECT * FROM T_バナー WHERE (開始日>=? and 開始日<=?) or (終了日>=? and 終了日<=?) or (開始日<? and 終了日>?) order by 人員CD,開始日,終了日");
+				// 開始日が今週または終了日が今週または開始日が先週以前かつ終了日が来週以降
+				ps = c.prepareStatement(
+					"SELECT * FROM T_バナー WHERE (開始日>=? and 開始日<=?) or (終了日>=? and 終了日<=?) or (開始日<? and 終了日>?) order by 人員CD,開始日,終了日"
+				);
 				ps.setDate(1, from);
 				ps.setDate(2, to);
 				ps.setDate(3, from);
@@ -111,29 +113,33 @@ public class GetSchedule extends GenericServlet {
 				ps.setDate(5, from);
 				ps.setDate(6, to);
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					String cd = rs.getString("人員CD");
-					if(map.containsKey(cd)) {
+					if (map.containsKey(cd)) {
 						Schedule schedule = map.get(cd);
 						List<Banner> banners = schedule.getBanners();
-						if(banners == null) banners = new ArrayList<Banner>();
-						banners.add(new Banner(rs.getInt("ID"), rs.getDate("開始日"), rs.getDate("終了日"), rs.getString("内容")));
+						if (banners == null)
+							banners = new ArrayList<Banner>();
+						banners
+							.add(new Banner(rs.getInt("ID"), rs.getDate("開始日"), rs.getDate("終了日"), rs.getString("内容")));
 						schedule.setBanners(banners);
 					} else {
 						List<Banner> banners = new ArrayList<Banner>();
-						banners.add(new Banner(rs.getInt("ID"), rs.getDate("開始日"), rs.getDate("終了日"), rs.getString("内容")));
+						banners
+							.add(new Banner(rs.getInt("ID"), rs.getDate("開始日"), rs.getDate("終了日"), rs.getString("内容")));
 						map.put(cd, new Schedule(null, banners, null));
 					}
 				}
 
 				ps = c.prepareStatement("SELECT * FROM T_繰り返し order by 人員CD");
 				rs = ps.executeQuery();
-				while(rs.next()) {
+				while (rs.next()) {
 					String cd = rs.getString("人員CD");
-					if(map.containsKey(cd)) {
+					if (map.containsKey(cd)) {
 						Schedule schedule = map.get(cd);
 						List<Repeat> repeats = schedule.getRepeats();
-						if(repeats == null) repeats = new ArrayList<Repeat>();
+						if (repeats == null)
+							repeats = new ArrayList<Repeat>();
 						repeats.add(new Repeat(rs.getBoolean("曜日ごとFLG"), rs.getInt("ごと"), rs.getString("内容")));
 						schedule.setRepeats(repeats);
 					} else {
@@ -142,12 +148,12 @@ public class GetSchedule extends GenericServlet {
 						map.put(cd, new Schedule(null, null, repeats));
 					}
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				err.append("テーブル「T_テーブル名」の読込に失敗しました\n");
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
@@ -161,29 +167,30 @@ public class GetSchedule extends GenericServlet {
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();
-		}catch(Exception ex) {
+		} catch (Exception ex) {
 			Logging.logStackTrace(ex, lg, className);
 		} finally {
 			try {
-				if(c != null && !c.isClosed()) c.close();
-			} catch(SQLException ex) {
+				if (c != null && !c.isClosed())
+					c.close();
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
-// The following processes requires JDBC4.0.
+			// The following processes requires JDBC4.0.
 			try {
-				if(ps != null && !ps.isClosed()) {
+				if (ps != null && !ps.isClosed()) {
 					ps.close();
 					lg.debug(className + "ps is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 			try {
-				if(rs != null && !rs.isClosed()) {
+				if (rs != null && !rs.isClosed()) {
 					rs.close();
 					lg.debug(className + "rs is closed by jdbc4.0");
 				}
-			} catch(SQLException ex) {
+			} catch (SQLException ex) {
 				Logging.logStackTrace(ex, lg, className);
 			}
 		}
