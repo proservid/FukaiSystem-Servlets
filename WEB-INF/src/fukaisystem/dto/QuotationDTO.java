@@ -5,7 +5,7 @@
 
 package fukaisystem.dto;
 
-//import fukaisystem.net.dto.EstimateDocumentDTO.Item.Content;
+//import fukaisystem.net.dto.QuotationDTO.Item.Content;
 import java.io.Serializable;
 import java.util.List;
 
@@ -13,13 +13,13 @@ import java.util.List;
  *
  * @author kameura
  */
-public class EstimateDocumentDTO implements Serializable {
+public class QuotationDTO implements Serializable {
 
-	String estimateID;
+	String quotationID;
 	List<Item> documents;
 
-	public EstimateDocumentDTO(String estimateID, List<Item> documents) {
-		this.estimateID = estimateID;
+	public QuotationDTO(String quotationID, List<Item> documents) {
+		this.quotationID = quotationID;
 		this.documents = documents;
 	}
 
@@ -29,9 +29,18 @@ public class EstimateDocumentDTO implements Serializable {
 		int indication, quantity, unitPrice, itemNum, unitWeight, price;
 		List<Content> content;
 
-		public Item(int indication, String name, int quantity, int unitPrice,
-		String figureNum, int itemNum, int unitWeight, int price, String note,
-		List<Content> content) {
+		public Item(
+			int indication,
+			String name,
+			int quantity,
+			int unitPrice,
+			String figureNum,
+			int itemNum,
+			int unitWeight,
+			int price,
+			String note,
+			List<Content> content
+		) {
 			this.indication = indication;
 			this.name = name;
 			this.quantity = quantity;
@@ -46,15 +55,23 @@ public class EstimateDocumentDTO implements Serializable {
 
 		public class Content {
 
-			int categoryL, categoryM, categoryS, unitPrice, amount;
+			int coarseCategory, middleCategory, fineCategory, unitPrice, amount;
 			float ratio;
 			String material, note;
 
-			public Content(int categoryL, int categoryM, int categoryS, String material,
-			int unitPrice, int amount, float ratio, String note) {
-				this.categoryL = categoryL;
-				this.categoryM = categoryM;
-				this.categoryS = categoryS;
+			public Content(
+				int coarseCategory,
+				int middleCategory,
+				int fineCategory,
+				String material,
+				int unitPrice,
+				int amount,
+				float ratio,
+				String note
+			) {
+				this.coarseCategory = coarseCategory;
+				this.middleCategory = middleCategory;
+				this.fineCategory = fineCategory;
 				this.material = material;
 				this.unitPrice = unitPrice;
 				this.amount = amount;
@@ -64,4 +81,3 @@ public class EstimateDocumentDTO implements Serializable {
 		}
 	}
 }
-

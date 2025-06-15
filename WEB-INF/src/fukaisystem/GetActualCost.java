@@ -15,18 +15,18 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import fukaisystem.dto.DetailDTO;
+import fukaisystem.dto.CostDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class GetEstDetail extends GenericServlet {
+public class GetActualCost extends GenericServlet {
 
 	/**
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "GetEstDetail\n";
+	private static final String className = "GetDetail\n";
 
 	@SuppressWarnings("unchecked")
 	public void service(ServletRequest request, ServletResponse response) {
@@ -37,7 +37,7 @@ public class GetEstDetail extends GenericServlet {
 		ResultSet rs = null;
 
 		String caption = "";
-		int estimateID = 0;
+		int productID = 0;
 		int l = 0;
 		int m = 0;
 		double ntotal = 0;
@@ -64,7 +64,7 @@ public class GetEstDetail extends GenericServlet {
 			} else {
 				if (obj instanceof List<?>) {
 					param = (List<Integer>) obj;
-					estimateID = param.get(0);
+					productID = param.get(0);
 				} else {
 					err.append(className + "readObjectがList型ではありません\n");
 					lg.error(className + "readObjectがList型ではありません");
@@ -76,17 +76,19 @@ public class GetEstDetail extends GenericServlet {
 					l = param.get(1);
 					if (param.size() == 3) { // 小
 						m = param.get(2);
-						if (l > 100) { // 加工の場合
+						if (l > 100) {
 							ps = c.prepareStatement(
-								"select wc.CD as 小分類CD,小分類名,名称 as 仕入先名,'' as 名,"
-									+ " convert(money,時間) as 数量,w.単価,w.時間*wc.単価 as 金額 "
-									+ " from T_見積_加工 w"
-									+ " left outer join M_加工_子 wc on wc.CD=w.小分類CD"
+								"select wc.CD as 小分類CD,小分類名,姓+' '+名 as 仕入先名,substring(convert(varchar,着手日時,20),1,16)+'～'+substring(convert(varchar,終了日時,108),1,5) as 名,"
+									+ " convert(money,時間)/100 as 数量,w.単価,w.時間*w.単価/100 as 金額 "
+									+ " from T_製作_親 pp"
+									+ " left outer join T_加工実績 w on pp.製作期=w.製作期 and pp.製作番号=w.製作番号 and pp.製作枝番=w.製作枝番"
+									+ " left outer join M_加工_子 wc on wc.CD=w.加工CD"
 									+ " left outer join M_加工_親 wp on wp.大分類CD=wc.大分類CD and wp.CD=wc.中分類CD"
-									+ " where 見積親ID=? and w.大分類CD=? and w.中分類CD=?"
+									+ " left outer join M_人員 m on w.担当者CD=m.CD"
+									+ " where 製作親ID=? and wp.大分類CD=? and 中分類CD=?"
 									+ " order by 小分類CD"
 							);
-							ps.setInt(1, estimateID);
+							ps.setInt(1, productID);
 							ps.setInt(2, l);
 							ps.setInt(3, m);
 						} else {
@@ -98,17 +100,31 @@ public class GetEstDetail extends GenericServlet {
 									+ " WHEN 種別CD = 3 THEN '㈲'+会社名"
 									+ " WHEN 種別CD = 4 THEN 会社名+'㈲'"
 									+ " ELSE 会社名 END AS 仕入先名,"
-									+ "名称 as 名,数量,単価,単価*数量 as 金額 "
-									+ " from T_見積_材料 em"
-									+ " left outer join M_法人 co on em.仕入先CD=co.仕入先CD"
-									+ " left outer join M_原価 c on em.大分類CD=c.CD"
-									+ " left outer join M_材料_子 mc on mc.大分類CD=em.大分類CD and mc.中分類CD=em.中分類CD and mc.CD=em.小分類CD"
-									+ " where 見積親ID=? and em.大分類CD=? and em.中分類CD=?"
+									+ "材料品名 as 名,数量,単価,金額 "
+									+ " from T_製作_親 pp"
+									+ " left outer join T_在庫_親 sp on pp.製作期=sp.注文期 and pp.製作番号=sp.注文番号 and pp.製作枝番=sp.注文枝番"
+									+ " left outer join T_在庫_子 sc on sp.在庫親ID=sc.在庫親ID"
+									+ " left outer join M_法人 co on sp.仕入先CD=co.仕入先CD"
+									+ " left outer join T_指定納品書 d on sc.納品書番号=d.ID"
+									+ " left outer join M_原価 c on sc.大分類CD=c.CD"
+									+ " left outer join M_材料_子 mc on mc.大分類CD=sc.大分類CD and mc.中分類CD=sc.中分類CD and mc.CD=sc.小分類CD"
+									+ " where 製作親ID=? and sc.大分類CD=? and sc.中分類CD=? and 納品書日 is not null"
+									+ " union all"
+									+ " select 小分類CD,小分類名,'(出庫)' as 仕入先名,品名,数量,単価,金額 "
+									+ " from T_製作_親 pp"
+									+ " left outer join T_出庫_親 sp on pp.製作期=sp.製作期 and pp.製作番号=sp.製作番号 and pp.製作枝番=sp.製作枝番"
+									+ " left outer join T_出庫_子 sc on sp.出庫親ID=sc.出庫親ID"
+									+ " left outer join M_原価 c on sc.大分類CD=c.CD"
+									+ " left outer join M_材料_子 mc on mc.大分類CD=sc.大分類CD and mc.中分類CD=sc.中分類CD and mc.CD=sc.小分類CD"
+									+ " where 製作親ID=? and sc.大分類CD=? and sc.中分類CD=?"
 									+ " order by 小分類CD"
 							);
-							ps.setInt(1, estimateID);
+							ps.setInt(1, productID);
 							ps.setInt(2, l);
 							ps.setInt(3, m);
+							ps.setInt(4, productID);
+							ps.setInt(5, l);
+							ps.setInt(6, m);
 						}
 						rs = ps.executeQuery();
 						while (rs.next()) {
@@ -143,29 +159,47 @@ public class GetEstDetail extends GenericServlet {
 					} else { // 中
 						if (l > 100) {
 							ps = c.prepareStatement(
-								"select w.中分類CD,中分類名,sum(w.時間*wc.単価) as 金額 "
-									+ " from T_見積_加工 w"
-									+ " left outer join M_加工_子 wc on wc.CD=w.小分類CD"
+								"select 中分類CD,中分類名,sum(w.時間*w.単価/100) as 金額 "
+									+ " from T_製作_親 pp"
+									+ " left outer join T_加工実績 w on pp.製作期=w.製作期 and pp.製作番号=w.製作番号 and pp.製作枝番=w.製作枝番"
+									+ " left outer join M_加工_子 wc on wc.CD=w.加工CD"
 									+ " left outer join M_加工_親 wp on wp.大分類CD=wc.大分類CD and wp.CD=wc.中分類CD"
 									+ " left outer join M_原価 c on wp.大分類CD=c.CD"
-									+ " where 見積親ID=? and wp.大分類CD=?"
-									+ " group by w.中分類CD,中分類名"
-									+ " order by 中分類CD"
-							);
-							ps.setInt(1, estimateID);
-							ps.setInt(2, l);
-						} else {
-							ps = c.prepareStatement(
-								"select 中分類CD,中分類名,sum(単価*数量) as 金額 "
-									+ " from T_見積_材料 em"
-									+ " left outer join M_原価 c on em.大分類CD=c.CD"
-									+ " left outer join M_材料_親 mp on mp.大分類CD=em.大分類CD and mp.CD=em.中分類CD"
-									+ " where 見積親ID=? and em.大分類CD=?"
+									+ " where 製作親ID=? and wp.大分類CD=?"
 									+ " group by 中分類CD,中分類名"
 									+ " order by 中分類CD"
 							);
-							ps.setInt(1, estimateID);
+							ps.setInt(1, productID);
 							ps.setInt(2, l);
+						} else {
+							ps = c.prepareStatement(
+								"select 中分類CD,中分類名,sum(金額) as 金額  from ("
+									+ "select 中分類CD,中分類名,sum(金額) as 金額 "
+									+ " from T_製作_親 pp"
+									+ " left outer join T_在庫_親 sp on pp.製作期=sp.注文期 and pp.製作番号=sp.注文番号 and pp.製作枝番=sp.注文枝番"
+									+ " left outer join T_在庫_子 sc on sp.在庫親ID=sc.在庫親ID"
+									+ " left outer join T_指定納品書 d on sc.納品書番号=d.ID"
+									+ " left outer join M_原価 c on sc.大分類CD=c.CD"
+									+ " left outer join M_材料_親 mp on mp.大分類CD=sc.大分類CD and mp.CD=sc.中分類CD"
+									+ " where 製作親ID=? and sc.大分類CD=? and 納品書日 is not null"
+									+ " group by 中分類CD,中分類名"
+									+ " union all"
+									+ " select 中分類CD,中分類名,sum(金額) as 金額 "
+									+ " from T_製作_親 pp"
+									+ " left outer join T_出庫_親 dp on pp.製作期=dp.製作期 and pp.製作番号=dp.製作番号 and pp.製作枝番=dp.製作枝番"
+									+ " left outer join T_出庫_子 dc on dp.出庫親ID=dc.出庫親ID"
+									+ " left outer join M_原価 c on dc.大分類CD=c.CD"
+									+ " left outer join M_材料_親 mp on mp.大分類CD=dc.大分類CD and mp.CD=dc.中分類CD"
+									+ " where 製作親ID=? and dc.大分類CD=?"
+									+ " group by 中分類CD,中分類名"
+									+ ") z"
+									+ " group by 中分類CD,中分類名"
+									+ " order by 中分類CD"
+							);
+							ps.setInt(1, productID);
+							ps.setInt(2, l);
+							ps.setInt(3, productID);
+							ps.setInt(4, l);
 						}
 						rs = ps.executeQuery();
 						while (rs.next()) {
@@ -189,29 +223,42 @@ public class GetEstDetail extends GenericServlet {
 				} else { // 大
 					ps = c.prepareStatement(
 						"select 大分類CD,case when 大分類名 is null then '(未分類)' else 大分類名 end as 大分類名,sum(金額) as 金額 from ("
-							+ "select 大分類CD,大分類名,sum(単価*数量) as 金額 "
-							+ " from T_見積_材料 em"
-							+ " left outer join M_原価 c on em.大分類CD=c.CD"
-							+ " where 見積親ID=? and 大分類CD is not null "
+							+ "select 大分類CD,大分類名,sum(金額) as 金額 "
+							+ " from T_製作_親 pp"
+							+ " left outer join T_在庫_親 sp on pp.製作期=sp.注文期 and pp.製作番号=sp.注文番号 and pp.製作枝番=sp.注文枝番"
+							+ " left outer join T_在庫_子 sc on sp.在庫親ID=sc.在庫親ID"
+							+ " left outer join T_指定納品書 d on sc.納品書番号=d.ID"
+							+ " left outer join M_原価 c on sc.大分類CD=c.CD"
+							+ " where 製作親ID=? and 大分類CD is not null and 納品書日 is not null"
 							+ " group by 大分類CD,大分類名"
-							+ "  union all"
-							+ " select 大分類CD,大分類名,sum(単価*時間) as 金額 "
-							+ " from T_見積_加工 ew"
-							+ " left outer join M_原価 c on ew.大分類CD=c.CD"
-							+ " where 見積親ID=? and 大分類CD is not null  "
+							+ " union all"
+							+ " select 大分類CD,大分類名,sum(金額) as 金額 "
+							+ " from T_製作_親 pp"
+							+ " left outer join T_出庫_親 dp on pp.製作期=dp.製作期 and pp.製作番号=dp.製作番号 and pp.製作枝番=dp.製作枝番"
+							+ " left outer join T_出庫_子 dc on dp.出庫親ID=dc.出庫親ID"
+							+ " left outer join M_原価 c on dc.大分類CD=c.CD"
+							+ " where 製作親ID=? and 大分類CD is not null"
 							+ " group by 大分類CD,大分類名"
-							+ "  ) z"
+							+ " union all"
+							+ " select 大分類CD,大分類名,sum(w.時間*w.単価/100) as 金額 "
+							+ " from T_製作_親 pp"
+							+ " left outer join T_加工実績 w on pp.製作期=w.製作期 and pp.製作番号=w.製作番号 and pp.製作枝番=w.製作枝番"
+							+ " left outer join M_加工_子 wc on wc.CD=w.加工CD"
+							+ " left outer join M_原価 c on wc.大分類CD=c.CD"
+							+ " where 製作親ID=? and 大分類CD is not null"
+							+ " group by 大分類CD,大分類名"
+							+ ") z"
 							+ " group by 大分類CD,大分類名"
 							+ " order by 大分類CD"
 					);
-					ps.setInt(1, estimateID);
-					ps.setInt(2, estimateID);
+					ps.setInt(1, productID);
+					ps.setInt(2, productID);
+					ps.setInt(3, productID);
 					rs = ps.executeQuery();
 
 					while (rs.next()) {
 						Vector<Object> v = new Vector<Object>();
-						// v.add(rs.getString("製作期") + "-" +
-						// rs.getString("製作番号") + rs.getString("製作枝番"));
+						// v.add(rs.getString("製作期") + "-" + rs.getString("製作番号") + rs.getString("製作枝番"));
 						v.add(rs.getInt("大分類CD"));
 						v.add(rs.getString("大分類名"));
 						v.add(rs.getInt("金額"));
@@ -242,7 +289,7 @@ public class GetEstDetail extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(new DetailDTO(caption, total, title, data));
+			out.writeObject(new CostDTO(caption, total, title, data));
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

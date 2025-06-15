@@ -16,11 +16,11 @@ import fukaisystem.dto.IndDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class IndRegistration extends GenericServlet {
+public class IndRegister extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "IndRegistration\n";
+	private static final String className = "IndRegister\n";
 
 	public void service(ServletRequest request, ServletResponse response) {
 		DBConnection dbc = new DBConnection();

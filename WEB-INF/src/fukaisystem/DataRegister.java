@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 
 import fukaisystem.sql.DBConnection;
 
-public class DataRegistration extends GenericServlet {
+public class DataRegister extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static Logger lg = Logger.getLogger("A1");

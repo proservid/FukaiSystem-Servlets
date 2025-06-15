@@ -12,13 +12,13 @@ import java.util.Vector;
  *
  * @author kameura
  */
-public class DetailDTO implements Serializable {
+public class CostDTO implements Serializable {
 	String caption;
 	int total;
 	Vector<String> titles;
 	Vector<Vector<Object>> data;
 
-	public DetailDTO(String caption, int total, Vector<String> titles, Vector<Vector<Object>> data) {
+	public CostDTO(String caption, int total, Vector<String> titles, Vector<Vector<Object>> data) {
 		this.caption = caption;
 		this.total = total;
 		this.titles = titles;
@@ -28,12 +28,15 @@ public class DetailDTO implements Serializable {
 	public String getCaption() {
 		return caption;
 	}
+
 	public int getTotal() {
 		return total;
 	}
+
 	public Vector<String> getTableTitles() {
 		return titles;
 	}
+
 	public Vector<Vector<Object>> getTableData() {
 		return data;
 	}

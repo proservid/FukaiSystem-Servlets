@@ -118,8 +118,7 @@ public class GetOrderSummary extends GenericServlet {
 						rs.getInt("伝票番号"),
 						rs.getInt("在庫親ID"),
 						rs.getDate("注文年月日"),
-						rs.getDate("指定納期"),
-						null, null
+						rs.getDate("指定納期")
 					);
 				}
 

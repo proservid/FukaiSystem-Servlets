@@ -22,11 +22,11 @@ import fukaisystem.dto.ProjectSummaryDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class EstimateRegistration extends GenericServlet {
+public class QuotationRegister extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "EstimateRegistration\n";
+	private static final String className = "EstimateRegister\n";
 
 	public void service(ServletRequest request, ServletResponse response) {
 
@@ -480,9 +480,9 @@ public class EstimateRegistration extends GenericServlet {
 					);
 					for (int key : keys) {
 
-						if (summaryDTO.getMap(0).containsKey(key)) {
+						if (summaryDTO.getMap().containsKey(key)) {
 							int m = 1;
-							for (Vector<Object> v : summaryDTO.getMap(0).get(key)) {
+							for (Vector<Object> v : summaryDTO.getMap().get(key)) {
 
 								if ((Integer) v.get(1) != 0 || !((String) v.get(4)).equals("")) {
 									if (((Integer) v.get(1)).intValue() > 100) {

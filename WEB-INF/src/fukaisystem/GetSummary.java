@@ -62,9 +62,9 @@ public class GetSummary extends GenericServlet {
 				deliveryID = 0;
 			} else {
 				if (obj instanceof IDDTO) {
-					estimateID = ((IDDTO) obj).getEstID();
-					productID = ((IDDTO) obj).getPrdID();
-					deliveryID = ((IDDTO) obj).getDlvID();
+					estimateID = ((IDDTO) obj).getQuotationID();
+					productID = ((IDDTO) obj).getProductionID();
+					deliveryID = ((IDDTO) obj).getSalesID();
 				} else {
 					err.append(className + "readObjectがIDDTO型ではありません\n");
 					lg.error(className + "readObjectがIDDTO型ではありません");
@@ -177,7 +177,6 @@ public class GetSummary extends GenericServlet {
 					rs.getDate("発行年月日"), rs.getDate("出荷年月日"), rs.getDate("検収年月日"),
 					rs.getBoolean("新機FLG"), false, rs.getBoolean("出図FLG"), rs.getBoolean("手配FLG"),
 					null, // あとでsetVectorする。Vector<Vector<Object>> mainTable_p,
-					null, // あとでsetMapする。Map<Integer, Vector<Vector<Object>>> subTable_p,
 					// 出荷
 					rs.getString("摘要s"),
 					deliveryID,
@@ -254,7 +253,7 @@ public class GetSummary extends GenericServlet {
 			}
 			if (psDTO != null) {
 				psDTO.setVector(0, estimateData);
-				psDTO.setMap(0, map);
+				psDTO.setMap(map);
 			}
 
 			// 製作明細
@@ -352,12 +351,12 @@ public class GetSummary extends GenericServlet {
 				);
 				ps.setInt(1, productID);
 				rs = ps.executeQuery();
-				List<String> ests = new ArrayList<String>();
+				List<String> quoteNumbers = new ArrayList<String>();
 				while (rs.next()) {
-					ests.add(rs.getString("見積番号"));
+					quoteNumbers.add(rs.getString("見積番号"));
 				}
 				if (psDTO != null)
-					psDTO.setEsts(ests);
+					psDTO.setQuotationNumbers(quoteNumbers);
 
 				// カルテ履歴
 				// 見積の履歴はすでに入っており、製作データがあるときのみ、より詳細なデータを取得

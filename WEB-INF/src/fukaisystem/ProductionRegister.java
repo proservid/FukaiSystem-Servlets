@@ -22,11 +22,11 @@ import fukaisystem.dto.ProjectSummaryDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class ProductRegistration extends GenericServlet {
+public class ProductionRegister extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "ProductRegistration\n";
+	private static final String className = "ProductRegister\n";
 
 	public void service(ServletRequest request, ServletResponse response) {
 
@@ -327,7 +327,7 @@ public class ProductRegistration extends GenericServlet {
 								+ " select 見積親ID,convert(varchar,見積期)+'-'+right('000' + convert(varchar, 見積番号), 3)+見積枝番 as 見積番 from T_見積_親) a"
 								+ " where 見積番 like ?"
 						);
-						for (String s : summaryDTO.getEsts()) {
+						for (String s : summaryDTO.getQuotationNumbers()) {
 							ps.setInt(1, productID);
 							ps.setString(2, s);
 							ps.addBatch();

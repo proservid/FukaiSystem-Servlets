@@ -20,11 +20,11 @@ import fukaisystem.dto.DispatchingDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class DispatchingRegistration extends GenericServlet {
+public class DispatchingRegister extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "DispatchingRegistration\n";
+	private static final String className = "DispatchingRegister\n";
 
 	public void service(ServletRequest request, ServletResponse response) {
 		DBConnection dbc = new DBConnection();

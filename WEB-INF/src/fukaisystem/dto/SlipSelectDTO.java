@@ -24,6 +24,7 @@ public class SlipSelectDTO implements Serializable {
 	public Vector<String> getCandidate() {
 		return candidate;
 	}
+
 	public Vector<Vector<String>> getTableData() {
 		return tableData;
 	}

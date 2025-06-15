@@ -14,35 +14,48 @@ import java.util.Vector;
  * @author kameura
  */
 public class HistoryDTO extends BasicDTO {
-	int account, l, m, s, period, number;
-	String branch, article, y0, m0, d0, y1, m1, d1, y2, m2, d2;
+	int accountCode, coarseCategory, middleCategory, fineCategory, productionNum1, productionNum2;
+	String productionNum3, article, orderY, orderM, orderD, dueY, dueM, dueD, receiptY, receiptM, receiptD;
 	boolean isStock, isAndSearch;
 
 	public HistoryDTO(
-			int account, String article, int l, int m, int s,
-			int period, int number, String branch,
-			String y0, String m0, String d0,
-			String y1, String m1, String d1,
-			String y2, String m2, String d2,
-			boolean isStock,
-			boolean isAndSearch) {
-		this.account = account;
+		int accountCode,
+		String article,
+		int coarseCategory,
+		int middleCategory,
+		int fineCategory,
+		int productionNum1,
+		int productionNum2,
+		String productionNum3,
+		String orderY,
+		String orderM,
+		String orderD,
+		String dueY,
+		String dueM,
+		String dueD,
+		String receiptY,
+		String receiptM,
+		String receiptD,
+		boolean isStock,
+		boolean isAndSearch
+	) {
+		this.accountCode = accountCode;
 		this.article = article;
-		this.l = l;
-		this.m = m;
-		this.s = s;
-		this.period = period;
-		this.number = number;
-		this.branch = branch;
-		this.y0 = y0;
-		this.m0 = m0;
-		this.d0 = d0;
-		this.y1 = y1;
-		this.m1 = m1;
-		this.d1 = d1;
-		this.y2 = y2;
-		this.m2 = m2;
-		this.d2 = d2;
+		this.coarseCategory = coarseCategory;
+		this.middleCategory = middleCategory;
+		this.fineCategory = fineCategory;
+		this.productionNum1 = productionNum1;
+		this.productionNum2 = productionNum2;
+		this.productionNum3 = productionNum3;
+		this.orderY = orderY;
+		this.orderM = orderM;
+		this.orderD = orderD;
+		this.dueY = dueY;
+		this.dueM = dueM;
+		this.dueD = dueD;
+		this.receiptY = receiptY;
+		this.receiptM = receiptM;
+		this.receiptD = receiptD;
 		this.isStock = isStock;
 		this.isAndSearch = isAndSearch;
 	}
@@ -50,29 +63,40 @@ public class HistoryDTO extends BasicDTO {
 	@Override
 	public String getStr(int order) {
 		String str = "";
-		switch(order) {
+		switch (order) {
 			case 0:
-				str = article; break;
+				str = article;
+				break;
 			case 1:
-				str = branch; break;
+				str = productionNum3;
+				break;
 			case 2:
-				str = y0; break;
+				str = orderY;
+				break;
 			case 3:
-				str = m0; break;
+				str = orderM;
+				break;
 			case 4:
-				str = d0; break;
+				str = orderD;
+				break;
 			case 5:
-				str = y1; break;
+				str = dueY;
+				break;
 			case 6:
-				str = m1; break;
+				str = dueM;
+				break;
 			case 7:
-				str = d1; break;
+				str = dueD;
+				break;
 			case 8:
-				str = y2; break;
+				str = receiptY;
+				break;
 			case 9:
-				str = m2; break;
+				str = receiptM;
+				break;
 			case 10:
-				str = d2; break;
+				str = receiptD;
+				break;
 		}
 		return str;
 	}
@@ -80,19 +104,25 @@ public class HistoryDTO extends BasicDTO {
 	@Override
 	public int getInt(int order) {
 		int i = 0;
-		switch(order) {
+		switch (order) {
 			case 0:
-				i = account; break;
+				i = accountCode;
+				break;
 			case 1:
-				i = period; break;
+				i = productionNum1;
+				break;
 			case 2:
-				i = number; break;
+				i = productionNum2;
+				break;
 			case 3:
-				i = l; break;
+				i = coarseCategory;
+				break;
 			case 4:
-				i = m; break;
+				i = middleCategory;
+				break;
 			case 5:
-				i = s; break;
+				i = fineCategory;
+				break;
 		}
 		return i;
 	}
@@ -117,7 +147,7 @@ public class HistoryDTO extends BasicDTO {
 	}
 
 	@Override
-	public List<String> getEsts() {
+	public List<String> getQuotationNumbers() {
 		return null;
 	}
 
@@ -127,3 +157,4 @@ public class HistoryDTO extends BasicDTO {
 	}
 
 }
+ 

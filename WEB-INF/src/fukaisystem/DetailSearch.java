@@ -19,11 +19,11 @@ import fukaisystem.dto.ProductNumber;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class ChildSearch extends GenericServlet {
+public class DetailSearch extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "ChildSearch\n";
+	private static final String className = "DetailSearch\n";
 
 	@Override
 	public void service(ServletRequest request, ServletResponse response) {

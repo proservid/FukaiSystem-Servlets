@@ -18,11 +18,11 @@ import fukaisystem.dto.CorpDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class CorpRegistration extends GenericServlet {
+public class CorpRegister extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "CorpRegistration\n";
+	private static final String className = "CorpRegister\n";
 
 	public void service(ServletRequest request, ServletResponse response) {
 		DBConnection dbc = new DBConnection();

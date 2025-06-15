@@ -14,57 +14,82 @@ import java.util.Vector;
  * @author kameura
  */
 public class DispatchingDTO extends BasicDTO {
-	int dispatchingID, period1, period2, number1, number2, l, m, s;
-	String branch1, branch2, year, month, day, name, purpose, purpose2;
+	int dispatchingID, orderNum1, dispatchNum1, orderNum2, dispatchNum2, coarseCategory, middleCategory, fineCategory;
+	String orderNum3, dispatchNum3, year, month, day, name, use, remark;
 	Vector<Vector<Object>> vector;
 	Date date;
 	boolean isAndSearch;
 
-	public DispatchingDTO(int dispatchingID, int period1, int number1, String branch1,
-			int period2, int number2, String branch2, String year, String month, String day,
-			String name, String purpose, String purpose2, Vector<Vector<Object>> vector,
-			Date date, int l, int m, int s,	boolean isAndSearch) {
+	public DispatchingDTO(
+		int dispatchingID,
+		int orderNum1,
+		int orderNum2,
+		String orderNum3,
+		int dispatchNum1,
+		int dispatchNum2,
+		String dispatchNum3,
+		String year,
+		String month,
+		String day,
+		String name,
+		String use,
+		String remark,
+		Vector<Vector<Object>> vector,
+		Date date,
+		int coarseCategory,
+		int middleCategory,
+		int fineCategory,
+		boolean isAndSearch
+	) {
 		this.dispatchingID = dispatchingID;
-		this.period1 = period1;
-		this.number1 = number1;
-		this.branch1 = branch1;
-		this.period2 = period2;
-		this.number2 = number2;
-		this.branch2 = branch2;
+		this.orderNum1 = orderNum1;
+		this.orderNum2 = orderNum2;
+		this.orderNum3 = orderNum3;
+		this.dispatchNum1 = dispatchNum1;
+		this.dispatchNum2 = dispatchNum2;
+		this.dispatchNum3 = dispatchNum3;
 		this.name = name;
-		this.purpose = purpose;
-		this.purpose2 = purpose2;
+		this.use = use;
+		this.remark = remark;
 		this.year = year;
 		this.month = month;
 		this.day = day;
 		this.vector = vector;
 		this.date = date;
-		this.l = l;
-		this.m = m;
-		this.s = s;
+		this.coarseCategory = coarseCategory;
+		this.middleCategory = middleCategory;
+		this.fineCategory = fineCategory;
 		this.isAndSearch = isAndSearch;
 	}
 
 	@Override
 	public String getStr(int order) {
 		String str = "";
-		switch(order) {
+		switch (order) {
 			case 0:
-				str = branch2; break;
+				str = dispatchNum3;
+				break;
 			case 1:
-				str = year; break;
+				str = year;
+				break;
 			case 2:
-				str = month; break;
+				str = month;
+				break;
 			case 3:
-				str = day; break;
+				str = day;
+				break;
 			case 4:
-				str = purpose; break;
+				str = use;
+				break;
 			case 5:
-				str = purpose2; break;
+				str = remark;
+				break;
 			case 6:
-				str = branch1; break;
+				str = orderNum3;
+				break;
 			case 7:
-				str = name; break;
+				str = name;
+				break;
 		}
 		return str;
 	}
@@ -72,23 +97,31 @@ public class DispatchingDTO extends BasicDTO {
 	@Override
 	public int getInt(int order) {
 		int i = 0;
-		switch(order) {
+		switch (order) {
 			case 0:
-				i = period2; break;
+				i = dispatchNum1;
+				break;
 			case 1:
-				i = number2; break;
+				i = dispatchNum2;
+				break;
 			case 2:
-				i = l; break;
+				i = coarseCategory;
+				break;
 			case 3:
-				i = m; break;
+				i = middleCategory;
+				break;
 			case 4:
-				i = s; break;
+				i = fineCategory;
+				break;
 			case 5:
-				i = period1; break;
+				i = orderNum1;
+				break;
 			case 6:
-				i = number1; break;
-			case 7://5Å®7
-				i = dispatchingID; break;
+				i = orderNum2;
+				break;
+			case 7: // 5‚Üí7
+				i = dispatchingID;
+				break;
 		}
 		return i;
 	}
@@ -113,7 +146,7 @@ public class DispatchingDTO extends BasicDTO {
 	}
 
 	@Override
-	public List<String> getEsts() {
+	public List<String> getQuotationNumbers() {
 		return null;
 	}
 
@@ -123,3 +156,4 @@ public class DispatchingDTO extends BasicDTO {
 	}
 
 }
+ 

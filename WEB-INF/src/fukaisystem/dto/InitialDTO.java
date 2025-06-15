@@ -19,7 +19,7 @@ public class InitialDTO implements Serializable {
 	List<String> slips;
 	Map<Integer, String> types;
 	Map<Integer, String> routes;
-	Vector<String> deadlines;
+	Vector<String> dues;
 	Vector<String> places;
 	Vector<String> terms;
 	Vector<String> validities;
@@ -28,44 +28,46 @@ public class InitialDTO implements Serializable {
 	Map<Integer, String> states;
 	Map<Integer, String> ways;
 	Map<Integer, String> partials;
-	Map<Integer, String> indication;
+	Map<Integer, String> indications;
 	Map<Integer, String> units;
 	Map<Integer, String> suppliers;
 	Map<Integer, Integer> works;
-	Map<Integer, String> material;
-	Map<Integer, String> categoryL;
-	Map<List<Integer>, Map<Integer, String>> categoryM;
-	Map<List<Integer>, Map<Integer, String>> categoryS;
-	Map<Integer, Map<Integer, Map<Integer, Integer>>> prices;
-	Map<Integer, Double> sg;
+	Map<Integer, String> materials;
+	Map<Integer, String> coarseCategories;
+	Map<List<Integer>, Map<Integer, String>> middleCategories;
+	Map<List<Integer>, Map<Integer, String>> fineCategories;
+	Map<Integer, Map<Integer, Map<Integer, Integer>>> costs;
+	// 比重
+	Map<Integer, Double> sgs;
 
 	public InitialDTO(
-	 List<String> slips,
-	 Map<Integer, String> types,
-	 Map<Integer, String> routes,
-	 Vector<String> deadlines,
-	 Vector<String> places,
-	 Vector<String> terms,
-	 Vector<String> validities,
-	 Map<Integer, String> submits,
-	 Map<Integer, String> currencies,
-	 Map<Integer, String> states,
-	 Map<Integer, String> ways,
-	 Map<Integer, String> partials,
-	 Map<Integer, String> indication,
-	 Map<Integer, String> units,
-	 Map<Integer, String> suppliers,
-	 Map<Integer, Integer> works,
-	 Map<Integer, String> material,
-	 Map<Integer, String> categoryL,
-	 Map<List<Integer>, Map<Integer, String>> categoryM,
-	 Map<List<Integer>, Map<Integer, String>> categoryS,
-	 Map<Integer, Map<Integer, Map<Integer, Integer>>> prices,
-	 Map<Integer, Double> sg) {
+		List<String> slips,
+		Map<Integer, String> types,
+		Map<Integer, String> routes,
+		Vector<String> dues,
+		Vector<String> places,
+		Vector<String> terms,
+		Vector<String> validities,
+		Map<Integer, String> submits,
+		Map<Integer, String> currencies,
+		Map<Integer, String> states,
+		Map<Integer, String> ways,
+		Map<Integer, String> partials,
+		Map<Integer, String> indications,
+		Map<Integer, String> units,
+		Map<Integer, String> suppliers,
+		Map<Integer, Integer> works,
+		Map<Integer, String> materials,
+		Map<Integer, String> coarseCategories,
+		Map<List<Integer>, Map<Integer, String>> middleCategories,
+		Map<List<Integer>, Map<Integer, String>> fineCategories,
+		Map<Integer, Map<Integer, Map<Integer, Integer>>> costs,
+		Map<Integer, Double> sgs
+	) {
 		this.slips = slips;
 		this.types = types;
 		this.routes = routes;
-		this.deadlines = deadlines;
+		this.dues = dues;
 		this.places = places;
 		this.terms = terms;
 		this.validities = validities;
@@ -74,81 +76,104 @@ public class InitialDTO implements Serializable {
 		this.states = states;
 		this.ways = ways;
 		this.partials = partials;
-		this.indication = indication;
+		this.indications = indications;
 		this.units = units;
 		this.suppliers = suppliers;
 		this.works = works;
-		this.material = material;
-		this.categoryL = categoryL;
-		this.categoryM = categoryM;
-		this.categoryS = categoryS;
-		this.prices = prices;
-		this.sg = sg;
+		this.materials = materials;
+		this.coarseCategories = coarseCategories;
+		this.middleCategories = middleCategories;
+		this.fineCategories = fineCategories;
+		this.costs = costs;
+		this.sgs = sgs;
 	}
+
 	public List<String> getSlips() {
 		return slips;
 	}
+
 	public Map<Integer, String> getTypes() {
 		return types;
 	}
+
 	public Map<Integer, String> getRoutes() {
 		return routes;
 	}
+
 	public Vector<String> getTerms() {
 		return terms;
 	}
-	public Vector<String> getDeadlines() {
-		return deadlines;
+
+	public Vector<String> getDues() {
+		return dues;
 	}
+
 	public Vector<String> getPlaces() {
 		return places;
 	}
+
 	public Vector<String> getValidities() {
 		return validities;
 	}
+
 	public Map<Integer, String> getSubmits() {
 		return submits;
 	}
+
 	public Map<Integer, String> getCurrencies() {
 		return currencies;
 	}
+
 	public Map<Integer, String> getStates() {
 		return states;
 	}
+
 	public Map<Integer, String> getWays() {
 		return ways;
 	}
+
 	public Map<Integer, String> getPartials() {
 		return partials;
 	}
-	public Map<Integer, String> getIndication() {
-		return indication;
+
+	public Map<Integer, String> getIndications() {
+		return indications;
 	}
+
 	public Map<Integer, String> getUnits() {
 		return units;
 	}
+
 	public Map<Integer, String> getSuppliers() {
 		return suppliers;
 	}
+
 	public Map<Integer, Integer> getWorks() {
 		return works;
 	}
+
 	public Map<Integer, String> getMaterial() {
-		return material;
+		return materials;
 	}
-	public Map<Integer, String> getCategoryL() {
-		return categoryL;
+
+	public Map<Integer, String> getcoarseCategories() {
+		return coarseCategories;
 	}
-	public Map<List<Integer>, Map<Integer, String>> getCategoryM() {
-		return categoryM;
+
+	public Map<List<Integer>, Map<Integer, String>> getmiddleCategories() {
+		return middleCategories;
 	}
-	public Map<List<Integer>, Map<Integer, String>> getCategoryS() {
-		return categoryS;
+
+	public Map<List<Integer>, Map<Integer, String>> getfineCategories() {
+		return fineCategories;
 	}
-	public Map<Integer, Map<Integer, Map<Integer, Integer>>> getPrices() {
-		return prices;
+
+	public Map<Integer, Map<Integer, Map<Integer, Integer>>> getCosts() {
+		return costs;
 	}
-	public Map<Integer, Double> getSG() {
-		return sg;
+
+	public Map<Integer, Double> getSGs() {
+		return sgs;
 	}
 }
+ 

@@ -13,13 +13,25 @@ import java.util.Vector;
  *
  * @author kameura
  */
-public class DeliveryDTO implements Serializable {
+public class SalesDTO implements Serializable {
 	Date date;
 	int shippingID, productID, account, state, way, tax, discount, type;
 	String note;
 	Vector<Vector<Object>> child;
 
-	public DeliveryDTO(int shippingID, int productID, int account, Date date, int state, int way, int tax, int discount, int type, String note, Vector<Vector<Object>> child) {
+	public SalesDTO(
+		int shippingID,
+		int productID,
+		int account,
+		Date date,
+		int state,
+		int way,
+		int tax,
+		int discount,
+		int type,
+		String note,
+		Vector<Vector<Object>> child
+	) {
 		this.shippingID = shippingID;
 		this.productID = productID;
 		this.account = account;
@@ -39,23 +51,31 @@ public class DeliveryDTO implements Serializable {
 
 	public int getInt(int order) {
 		int i = 0;
-		switch(order) {
+		switch (order) {
 			case 0:
-				i = shippingID; break;
+				i = shippingID;
+				break;
 			case 1:
-				i = productID; break;
+				i = productID;
+				break;
 			case 2:
-				i = account; break;
+				i = account;
+				break;
 			case 3:
-				i = state; break;
+				i = state;
+				break;
 			case 4:
-				i = way; break;
+				i = way;
+				break;
 			case 5:
-				i = tax; break;
+				i = tax;
+				break;
 			case 6:
-				i = discount; break;
+				i = discount;
+				break;
 			case 7:
-				i = type; break;
+				i = type;
+				break;
 
 		}
 		return i;
@@ -68,7 +88,9 @@ public class DeliveryDTO implements Serializable {
 	public Vector<Vector<Object>> getVector() {
 		return child;
 	}
+
 	public void setVector(Vector<Vector<Object>> child) {
 		this.child = child;
 	}
 }
+ 

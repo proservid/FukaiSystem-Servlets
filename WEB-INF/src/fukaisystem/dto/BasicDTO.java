@@ -26,7 +26,8 @@ public abstract class BasicDTO implements Serializable {
 
 	public abstract Vector<Vector<Object>> getVector(int order);
 
-	public abstract List<String> getEsts();
+	public abstract List<String> getQuotationNumbers();
 
 	public abstract List<Integer> getParents();
 }
+ 

@@ -21,11 +21,11 @@ import fukaisystem.dto.Repeat;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class ScheduleRegistration extends GenericServlet {
+public class ScheduleRegister extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "ScheduleRegistration\n";
+	private static final String className = "ScheduleRegister\n";
 
 	public void service(ServletRequest request, ServletResponse response) {
 

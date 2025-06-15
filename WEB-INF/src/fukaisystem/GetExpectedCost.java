@@ -15,11 +15,11 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import fukaisystem.dto.DetailDTO;
+import fukaisystem.dto.CostDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class GetDetail2 extends GenericServlet {
+public class GetExpectedCost extends GenericServlet {
 
 	/**
 	 *
@@ -212,7 +212,7 @@ public class GetDetail2 extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(new DetailDTO(caption, total, title, data));
+			out.writeObject(new CostDTO(caption, total, title, data));
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

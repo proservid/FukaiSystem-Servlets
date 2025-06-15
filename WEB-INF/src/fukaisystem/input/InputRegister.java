@@ -20,11 +20,11 @@ import fukaisystem.dto.InputDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class InputRegistration extends GenericServlet {
+public class InputRegister extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "InputRegistration\n";
+	private static final String className = "InputRegister\n";
 	private Date from, to, t0820, t1200, t1245, t1700, t1715;
 	private int time;
 

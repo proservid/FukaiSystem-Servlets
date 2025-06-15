@@ -17,15 +17,15 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import fukaisystem.dto.DeliveryDTO;
+import fukaisystem.dto.SalesDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class DeliveryRegistration extends GenericServlet {
+public class DeliveryRegister extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "DeliveryRegistration\n";
+	private static final String className = "DeliveryRegister\n";
 
 	public void service(ServletRequest request, ServletResponse response) {
 		DBConnection dbc = new DBConnection();
@@ -34,7 +34,7 @@ public class DeliveryRegistration extends GenericServlet {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		boolean isError = false;
-		DeliveryDTO deliveryDTO = null;
+		SalesDTO deliveryDTO = null;
 		StringBuilder err = new StringBuilder();
 
 		int deliveryID = 0;
@@ -53,8 +53,8 @@ public class DeliveryRegistration extends GenericServlet {
 				err.append(className + "readObjectがnullです\n");
 				lg.error(className + "readObjectがnullです");
 			} else {
-				if (obj instanceof DeliveryDTO) {
-					deliveryDTO = (DeliveryDTO) obj;
+				if (obj instanceof SalesDTO) {
+					deliveryDTO = (SalesDTO) obj;
 				} else {
 					isError = true;
 					err.append(className + "readObjectがShippingDTO型ではありません\n");

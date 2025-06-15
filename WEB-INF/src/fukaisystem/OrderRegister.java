@@ -26,14 +26,14 @@ import fukaisystem.dto.OrderDocumentDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class OrderRegistration extends GenericServlet {
+public class OrderRegister extends GenericServlet {
 
 	/**
 	 *
 	 */
 	private static final long serialVersionUID = 1L;
 	static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "OrderRegistration\n";
+	private static final String className = "OrderRegister\n";
 
 	public void service(ServletRequest request, ServletResponse response) {
 

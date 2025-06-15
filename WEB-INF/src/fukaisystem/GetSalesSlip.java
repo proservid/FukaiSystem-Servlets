@@ -14,11 +14,11 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import fukaisystem.dto.DeliveryDTO;
+import fukaisystem.dto.SalesDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class ChangeSlip extends GenericServlet {
+public class GetSalesSlip extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
@@ -30,7 +30,7 @@ public class ChangeSlip extends GenericServlet {
 		Connection c = dbc.getConnection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		DeliveryDTO dDTO = null;
+		SalesDTO dDTO = null;
 		StringBuilder err = new StringBuilder();
 
 		int deliveryID = 0;
@@ -83,7 +83,7 @@ public class ChangeSlip extends GenericServlet {
 
 				discount = rs.getInt("値引き");
 				//sDTO = new SalesDTO(deliveryID, rs.getInt("納品区分CD"),rs.getInt("納品手段CD"),rs.getInt("得意先CD"),type,rs.getDate("売上年月日"),rs.getString("摘要"),null);
-				dDTO = new DeliveryDTO(
+				dDTO = new SalesDTO(
 					deliveryID,
 					0,
 					0,

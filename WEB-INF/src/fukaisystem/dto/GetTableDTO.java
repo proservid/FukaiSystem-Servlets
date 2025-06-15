@@ -19,7 +19,14 @@ public class GetTableDTO implements Serializable {
 	String[] id;
 	String order;
 
-	public GetTableDTO(String tableName, String columnName, String[] condition, String[] signs, String[] id, String order) {
+	public GetTableDTO(
+		String tableName,
+		String columnName,
+		String[] condition,
+		String[] signs,
+		String[] id,
+		String order
+	) {
 		this.tableName = tableName;
 		this.columnName = columnName;
 		this.condition = condition;
@@ -27,23 +34,32 @@ public class GetTableDTO implements Serializable {
 		this.id = id;
 		this.order = order;
 	}
+
 	public String getString(int i) {
 		String s = "";
-		switch(i) {
-			case 0 : s = tableName;break;
-			case 1 : s = columnName;break;
+		switch (i) {
+			case 0:
+				s = tableName;
+				break;
+			case 1:
+				s = columnName;
+				break;
 		}
 		return s;
 	}
+
 	public String[] getKeys() {
 		return condition;
 	}
+
 	public String[] getIDs() {
 		return id;
 	}
+
 	public String[] getSigns() {
 		return signs;
 	}
+
 	public String getOrder() {
 		return order;
 	}

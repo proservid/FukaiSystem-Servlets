@@ -51,8 +51,8 @@ public class GetLine extends GenericServlet {
 				lg.error(className + "readObjectがnullです");
 			} else {
 				if (obj instanceof IDDTO) {
-					estimateID = ((IDDTO) obj).getEstID();
-					productID = ((IDDTO) obj).getPrdID();
+					estimateID = ((IDDTO) obj).getQuotationID();
+					productID = ((IDDTO) obj).getProductionID();
 				} else {
 					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
 					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
