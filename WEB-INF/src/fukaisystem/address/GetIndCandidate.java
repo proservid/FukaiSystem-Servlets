@@ -87,9 +87,9 @@ public class GetIndCandidate extends GenericServlet {
 				}
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					Vector<String> v = new Vector<String>();
-					v.add(rs.getString("CD"));
-					v.add(rs.getString("CD"));
+					Vector<String> record = new Vector<String>();
+					record.add(rs.getString("CD"));
+					record.add(rs.getString("CD"));
 					StringBuilder sb = new StringBuilder();
 					/*
 					if(!rs.getString("部署名").equals("")) {
@@ -103,8 +103,8 @@ public class GetIndCandidate extends GenericServlet {
 						sb.append(rs.getString("氏名") + " ");
 					}
 					sb.append(rs.getString("会社名"));
-					v.add(sb.toString());
-					candidate.add(v);
+					record.add(sb.toString());
+					candidate.add(record);
 				}
 			} catch (SQLException ex) {
 				err.append(ex.getMessage());

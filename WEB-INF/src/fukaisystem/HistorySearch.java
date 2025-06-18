@@ -32,12 +32,12 @@ public class HistorySearch extends GenericServlet {
 		Connection c = dbc.getConnection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		HistoryDTO historyDTO = null;
+		HistoryDTO dto = null;
 		StringBuilder err = new StringBuilder();
-		List<Integer> strIndex = new ArrayList<Integer>();
-		List<Integer> intIndex = new ArrayList<Integer>();
+		List<Integer> stringConditionIndex = new ArrayList<Integer>();
+		List<Integer> intConditionIndex = new ArrayList<Integer>();
 
-		Vector<Vector<Object>> v = new Vector<Vector<Object>>();
+		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 
 		boolean isStock = false;
 		String[] constStrs = {
@@ -67,14 +67,14 @@ public class HistorySearch extends GenericServlet {
 				lg.error(className + "readObjectがnullです");
 			} else {
 				if (obj instanceof HistoryDTO) {
-					historyDTO = (HistoryDTO) obj;
+					dto = (HistoryDTO) obj;
 				} else {
 					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
 					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
 				}
 			}
 			try {
-				isStock = historyDTO.getBool(1);
+				isStock = dto.getBool(1);
 				StringBuilder query = new StringBuilder("");
 				if (isStock) {
 					query.append(
@@ -149,17 +149,17 @@ public class HistorySearch extends GenericServlet {
 				}
 				boolean isFirst = true;
 				for (int i = 0; i < 12; i++) {
-					if (!historyDTO.getStr(i).equals("")) { // 検索条件が入っていれば
+					if (!dto.getStr(i).equals("")) { // 検索条件が入っていれば
 						if (isFirst) {
 							query.append(" WHERE ");
 							isFirst = false;
 						} else {
-							if (historyDTO.isAnd())
+							if (dto.isAnd())
 								query.append(" AND ");
 							else
 								query.append(" OR ");
 						}
-						if (historyDTO.getStr(i).equals("未")) {
+						if (dto.getStr(i).equals("未")) {
 							switch (i) {
 								case 2:
 									query.append("注文年月日 IS NULL");
@@ -173,10 +173,10 @@ public class HistorySearch extends GenericServlet {
 							}
 						} else {
 							if (i == 0) {
-								String words = historyDTO.getStr(i).replaceAll("　", " ");
+								String words = dto.getStr(i).replaceAll("　", " ");
 								for (int j = 0; j < words.split(" ").length; j++) {
 									if (j > 0) {
-										if (historyDTO.isAnd())
+										if (dto.isAnd())
 											query.append(" AND ");
 										else
 											query.append(" OR ");
@@ -186,20 +186,20 @@ public class HistorySearch extends GenericServlet {
 							} else {
 								query.append(constStrs[i]);
 							}
-							strIndex.add(i);
+							stringConditionIndex.add(i);
 						}
 					}
 				}
 
 				// 数値の検索条件は、searchDTO.getInt(0～6)
 				for (int i = 0; i < 7; i++) {
-					if (historyDTO.getInt(i) != 0) { // 検索条件が入っていれば
-						intIndex.add(i);
+					if (dto.getInt(i) != 0) { // 検索条件が入っていれば
+						intConditionIndex.add(i);
 						if (isFirst) {
 							query.append(" WHERE " + constInts[i]);
 							isFirst = false;
 						} else {
-							if (historyDTO.isAnd())
+							if (dto.isAnd())
 								query.append(" AND " + constInts[i]);
 							else
 								query.append(" OR " + constInts[i]);
@@ -216,49 +216,49 @@ public class HistorySearch extends GenericServlet {
 				query.append(" order by 注文年月日 desc,種別,ID");
 				ps = c.prepareStatement(query.toString());
 				int j = 1;
-				for (int i : strIndex) {
+				for (int i : stringConditionIndex) {
 					if (i == 0) {
-						String words = historyDTO.getStr(i).replaceAll("　", " ");
+						String words = dto.getStr(i).replaceAll("　", " ");
 						for (String word : words.split(" ")) {
 							ps.setString(j, "%" + word + "%"); j++;
 						}
 					} else {
-						ps.setString(j, historyDTO.getStr(i)); j++;
+						ps.setString(j, dto.getStr(i)); j++;
 					}
 				}
-				for (int i : intIndex) {
-					ps.setInt(j, historyDTO.getInt(i)); j++;
+				for (int i : intConditionIndex) {
+					ps.setInt(j, dto.getInt(i)); j++;
 				}
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					Vector<Object> v2 = new Vector<Object>();
-					v2.add(rs.getString("種別"));
-					v2.add(rs.getInt("大分類CD"));
-					v2.add(rs.getInt("中分類CD"));
-					v2.add(rs.getInt("小分類CD"));
-					v2.add(rs.getString("材料品名"));
-					v2.add(rs.getInt("数量"));
-					v2.add(rs.getInt("残数"));
-					v2.add(rs.getInt("数量単位CD"));
-					v2.add(rs.getDouble("重量長さ"));
-					v2.add(rs.getInt("単価"));
-					v2.add(rs.getInt("金額"));
-					v2.add(rs.getString("仕入先名"));
-					v2.add(rs.getDate("注文年月日"));
-					v2.add(rs.getDate("入庫年月日"));
-					v2.add(rs.getDate("指定納期"));
+					Vector<Object> record = new Vector<Object>();
+					record.add(rs.getString("種別"));
+					record.add(rs.getInt("大分類CD"));
+					record.add(rs.getInt("中分類CD"));
+					record.add(rs.getInt("小分類CD"));
+					record.add(rs.getString("材料品名"));
+					record.add(rs.getInt("数量"));
+					record.add(rs.getInt("残数"));
+					record.add(rs.getInt("数量単位CD"));
+					record.add(rs.getDouble("重量長さ"));
+					record.add(rs.getInt("単価"));
+					record.add(rs.getInt("金額"));
+					record.add(rs.getString("仕入先名"));
+					record.add(rs.getDate("注文年月日"));
+					record.add(rs.getDate("入庫年月日"));
+					record.add(rs.getDate("指定納期"));
 					if (rs.getInt("注文期") != 0 && rs.getInt("注文番号") != 0) {
-						v2.add(rs.getInt("注文期") + "-" + rs.getInt("注文番号") + " " + rs.getString("注文枝番"));
+						record.add(rs.getInt("注文期") + "-" + rs.getInt("注文番号") + " " + rs.getString("注文枝番"));
 					} else {
-						v2.add("");
+						record.add("");
 					}
-					v2.add(rs.getInt("伝票番号"));
-					v2.add(rs.getInt("納品書番号"));
-					v2.add(rs.getString("備考"));
-					v2.add(rs.getString("摘要"));
-					v2.add(rs.getInt("在庫親ID"));
-					v2.add(rs.getInt("ID"));
-					v.add(v2);
+					record.add(rs.getInt("伝票番号"));
+					record.add(rs.getInt("納品書番号"));
+					record.add(rs.getString("備考"));
+					record.add(rs.getString("摘要"));
+					record.add(rs.getInt("在庫親ID"));
+					record.add(rs.getInt("ID"));
+					data.add(record);
 				}
 
 			} catch (SQLException ex) {
@@ -275,7 +275,7 @@ public class HistorySearch extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(v);
+			out.writeObject(data);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

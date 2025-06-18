@@ -162,12 +162,12 @@
 
 
  <servlet>
- <servlet-name> getEstData </servlet-name>
- <servlet-class> fukaisystem.GetEstData </servlet-class>
+ <servlet-name> getQuotationData </servlet-name>
+ <servlet-class> fukaisystem.GetQuotationData </servlet-class>
  </servlet>
  <servlet-mapping>
- <servlet-name> getEstData </servlet-name>
- <url-pattern> /getEstData </url-pattern>
+ <servlet-name> getQuotationData </servlet-name>
+ <url-pattern> /getQuotationData </url-pattern>
  </servlet-mapping>
 
  <servlet>
@@ -270,12 +270,12 @@
  </servlet-mapping>
 
  <servlet>
- <servlet-name> set </servlet-name>
- <servlet-class> fukaisystem.SetCombo </servlet-class>
+ <servlet-name> getChart </servlet-name>
+ <servlet-class> fukaisystem.GetChart </servlet-class>
  </servlet>
  <servlet-mapping>
- <servlet-name> set </servlet-name>
- <url-pattern> /set </url-pattern>
+ <servlet-name> getChart </servlet-name>
+ <url-pattern> /getChart </url-pattern>
  </servlet-mapping>
 
  <servlet>
@@ -315,12 +315,12 @@
  </servlet-mapping>
 
 <servlet>
- <servlet-name> deliveryRegister </servlet-name>
- <servlet-class> fukaisystem.DeliveryRegister </servlet-class>
+ <servlet-name> salesRegister </servlet-name>
+ <servlet-class> fukaisystem.SalesRegister </servlet-class>
  </servlet>
  <servlet-mapping>
- <servlet-name> deliveryRegister </servlet-name>
- <url-pattern> /deliveryRegister </url-pattern>
+ <servlet-name> salesRegister </servlet-name>
+ <url-pattern> /salesRegister </url-pattern>
  </servlet-mapping>
 
 <servlet>
@@ -477,12 +477,12 @@
  </servlet-mapping>
 
  <servlet>
- <servlet-name> getLine </servlet-name>
- <servlet-class> fukaisystem.GetLine </servlet-class>
+ <servlet-name> getRecord </servlet-name>
+ <servlet-class> fukaisystem.GetRecord </servlet-class>
  </servlet>
  <servlet-mapping>
- <servlet-name> getLine </servlet-name>
- <url-pattern> /getLine </url-pattern>
+ <servlet-name> getRecord </servlet-name>
+ <url-pattern> /getRecord </url-pattern>
  </servlet-mapping>
 
  <servlet>

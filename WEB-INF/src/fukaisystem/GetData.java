@@ -137,13 +137,13 @@ public class GetData extends GenericServlet {
 						ps.setDate(6, next); // 抽出(to)
 						rs = ps.executeQuery();
 						while (rs.next()) {
-							Vector<Object> v = new Vector<Object>();
-							v.add(rs.getString("得意先CD"));
-							v.add(rs.getString("出荷伝票番号"));
-							v.add(rs.getString("社名"));
-							v.add(rs.getString("納入額"));
-							v.add(rs.getString("税額"));
-							dataVector.add(v);
+							Vector<Object> record = new Vector<Object>();
+							record.add(rs.getString("得意先CD"));
+							record.add(rs.getString("出荷伝票番号"));
+							record.add(rs.getString("社名"));
+							record.add(rs.getString("納入額"));
+							record.add(rs.getString("税額"));
+							dataVector.add(record);
 						}
 						data = dataVector;
 					} else { // 対象社のうちの1社を選択した場合

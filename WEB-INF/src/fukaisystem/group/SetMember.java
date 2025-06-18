@@ -70,15 +70,15 @@ public class SetMember extends GenericServlet {
 						+ " 	INSERT VALUES(temp.CD, temp.姓, temp.名, temp.所属部署CD, temp.表示CD, 0, temp.在籍FLG, '00000', '00000');"
 				);
 				int i = 1;
-				for (Vector<Object> v : data) {
-					if (v.get(0).toString().equals("0") || (v.get(1).equals("") && v.get(2).equals(""))) {
+				for (Vector<Object> record : data) {
+					if (record.get(0).toString().equals("0") || (record.get(1).equals("") && record.get(2).equals(""))) {
 					} else {
-						ps.setInt(1, (Integer) v.get(0)); // CD
-						ps.setString(2, (String) v.get(1)); // 姓
-						ps.setString(3, (String) v.get(2)); // 名
+						ps.setInt(1, (Integer) record.get(0)); // CD
+						ps.setString(2, (String) record.get(1)); // 姓
+						ps.setString(3, (String) record.get(2)); // 名
 						ps.setString(4, dept); // 所属部署CD
 						ps.setInt(5, i++); // 表示CD
-						ps.setBoolean(6, (Boolean) v.get(3)); // 在籍FLG
+						ps.setBoolean(6, (Boolean) record.get(3)); // 在籍FLG
 						ps.addBatch();
 					}
 				}

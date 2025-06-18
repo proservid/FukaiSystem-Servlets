@@ -32,12 +32,12 @@ public class OrderSearch2 extends GenericServlet {
 		Connection c = dbc.getConnection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		OrderSearchDTO searchDTO = null;
+		OrderSearchDTO dto = null;
 		StringBuilder err = new StringBuilder();
-		List<Integer> strIndex = new ArrayList<Integer>();
-		List<Integer> intIndex = new ArrayList<Integer>();
+		List<Integer> stringConditonIndex = new ArrayList<Integer>();
+		List<Integer> intConditionIndex = new ArrayList<Integer>();
 
-		Vector<Vector<Object>> v = new Vector<Vector<Object>>();
+		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 
 		String[] constStrs = { "注文枝番 like ?",
 			"SUBSTRING(CONVERT(VARCHAR, 注文年月日),1,4) like ?",
@@ -67,7 +67,7 @@ public class OrderSearch2 extends GenericServlet {
 				lg.error(className + "readObjectがnullです");
 			} else {
 				if (obj instanceof OrderSearchDTO) {
-					searchDTO = (OrderSearchDTO) obj;
+					dto = (OrderSearchDTO) obj;
 				} else {
 					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
 					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
@@ -91,18 +91,18 @@ public class OrderSearch2 extends GenericServlet {
 				);
 				boolean isFirst = true;
 				for (int i = 1; i < 13; i++) {
-					if (!searchDTO.getStr(i).equals("")) { // 検索条件が入っていれば
+					if (!dto.getStr(i).equals("")) { // 検索条件が入っていれば
 						if (isFirst) {
 							query.append(" WHERE (");
 							isFirst = false;
 						} else {
-							if (searchDTO.isAnd())
+							if (dto.isAnd())
 								query.append(" AND ");
 							else
 								query.append(" OR ");
 						}
-						strIndex.add(i);
-						if (searchDTO.getStr(i).equals("未")) {
+						stringConditonIndex.add(i);
+						if (dto.getStr(i).equals("未")) {
 							switch (i) {
 								case 1:
 									query.append("注文年月日 IS NULL");
@@ -131,8 +131,8 @@ public class OrderSearch2 extends GenericServlet {
 				);
 
 				isFirst = true;
-				if (!searchDTO.getStr(0).equals("")) { // 検索条件が入っていれば
-					strIndex.add(0);
+				if (!dto.getStr(0).equals("")) { // 検索条件が入っていれば
+					stringConditonIndex.add(0);
 					if (isFirst) {
 						query.append(" WHERE ");
 						query.append(constStrs[0]);
@@ -142,13 +142,13 @@ public class OrderSearch2 extends GenericServlet {
 
 				// 数値の検索条件は、searchDTO.getInt(0～4)
 				for (int i = 0; i < 5; i++) {
-					if (searchDTO.getInt(i) != 0) { // 検索条件が入っていれば
-						intIndex.add(i);
+					if (dto.getInt(i) != 0) { // 検索条件が入っていれば
+						intConditionIndex.add(i);
 						if (isFirst) {
 							query.append(" WHERE " + constInts[i]);
 							isFirst = false;
 						} else {
-							if (searchDTO.isAnd())
+							if (dto.isAnd())
 								query.append(" AND " + constInts[i]);
 							else
 								query.append(" OR " + constInts[i]);
@@ -157,39 +157,39 @@ public class OrderSearch2 extends GenericServlet {
 				}
 				ps = c.prepareStatement(query.toString());
 				int j = 1;
-				for (int i : strIndex) {
-					if (!searchDTO.getStr(i).equals("未")) {
-						ps.setString(j, searchDTO.getStr(i));
+				for (int i : stringConditonIndex) {
+					if (!dto.getStr(i).equals("未")) {
+						ps.setString(j, dto.getStr(i));
 						j++;
 					}
 				}
-				for (int i : intIndex) {
-					ps.setInt(j, searchDTO.getInt(i));
+				for (int i : intConditionIndex) {
+					ps.setInt(j, dto.getInt(i));
 					j++;
 				}
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					Vector<Object> v2 = new Vector<Object>();
-					v2.add(rs.getInt("在庫親ID"));
+					Vector<Object> record = new Vector<Object>();
+					record.add(rs.getInt("在庫親ID"));
 					if (rs.getInt("注文期") != 0 && rs.getInt("注文番号") != 0) {
-						v2.add(rs.getInt("注文期") + "-" + rs.getInt("注文番号") + " " + rs.getString("注文枝番"));
+						record.add(rs.getInt("注文期") + "-" + rs.getInt("注文番号") + " " + rs.getString("注文枝番"));
 					} else {
-						v2.add("");
+						record.add("");
 					}
-					v2.add(rs.getInt("伝票番号"));
+					record.add(rs.getInt("伝票番号"));
 					if (rs.getInt("仕入先CD") != 0) {
-						v2.add(/* rs.getInt("仕入先CD") + "：" + */rs.getString("社名"));
+						record.add(/* rs.getInt("仕入先CD") + "：" + */rs.getString("社名"));
 					} else {
-						v2.add("");
+						record.add("");
 					}
-					v2.add(rs.getDate("注文年月日"));
-					v2.add(rs.getDate("指定納期"));
-					v2.add(rs.getDate("入庫年月日"));
-					v2.add(rs.getString("摘要"));
-					v2.add(rs.getString("納入先指定"));
-					v2.add(rs.getInt("納品書番号"));
-					v2.add(rs.getDate("納品書日"));
-					v.add(v2);
+					record.add(rs.getDate("注文年月日"));
+					record.add(rs.getDate("指定納期"));
+					record.add(rs.getDate("入庫年月日"));
+					record.add(rs.getString("摘要"));
+					record.add(rs.getString("納入先指定"));
+					record.add(rs.getInt("納品書番号"));
+					record.add(rs.getDate("納品書日"));
+					data.add(record);
 				}
 
 			} catch (SQLException ex) {
@@ -206,7 +206,7 @@ public class OrderSearch2 extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(v);
+			out.writeObject(data);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

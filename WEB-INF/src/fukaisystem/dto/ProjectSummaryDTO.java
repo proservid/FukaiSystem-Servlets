@@ -31,8 +31,8 @@ public class ProjectSummaryDTO extends BasicDTO {
 	boolean isNew, isAdd, isRelease, isOrder;
 	List<String> quotationNumbers;
 	List<Integer> parents;
-	Vector<Vector<Object>> quotationTable, productionTable, dispatchingTable, slipList;
-	Map<Integer, Vector<Vector<Object>>> quotationBasisTable;
+	Vector<Vector<Object>> quotationData, productionData, dispatchingData, salesSlips;
+	Map<Integer, Vector<Vector<Object>>> quotationBasisDataMap;
 
 	public ProjectSummaryDTO(
 		// 共通
@@ -67,8 +67,8 @@ public class ProjectSummaryDTO extends BasicDTO {
 		Date inquiryDate,
 		Date quotationDate,
 		Date submitDate,
-		Vector<Vector<Object>> quotationTable,
-		Map<Integer, Vector<Vector<Object>>> quotationBasisTable,
+		Vector<Vector<Object>> quotationData,
+		Map<Integer, Vector<Vector<Object>>> quotationBasisDataMap,
 		// 製作
 		String acceptID,
 		String productionNum3,
@@ -88,7 +88,7 @@ public class ProjectSummaryDTO extends BasicDTO {
 		boolean isAdd,
 		boolean isRelease,
 		boolean isOrder,
-		Vector<Vector<Object>> productionTable,
+		Vector<Vector<Object>> productionData,
 		// 売上
 		String salesNote,
 		int salesID,
@@ -96,8 +96,8 @@ public class ProjectSummaryDTO extends BasicDTO {
 		int deliveryCode,
 		int dispatchingAccountID,
 		Date salesSlipPublishDate,
-		Vector<Vector<Object>> dispatchingTable,
-		Vector<Vector<Object>> slipList
+		Vector<Vector<Object>> dispatchingData,
+		Vector<Vector<Object>> salesSlips
 	) {
 
 		this.quotationAccountName = quotationAccountName;
@@ -129,8 +129,8 @@ public class ProjectSummaryDTO extends BasicDTO {
 		this.inquiryDate = inquiryDate;
 		this.quotationDate = quotationDate;
 		this.submitDate = submitDate;
-		this.quotationTable = quotationTable;
-		this.quotationBasisTable = quotationBasisTable;
+		this.quotationData = quotationData;
+		this.quotationBasisDataMap = quotationBasisDataMap;
 
 		this.acceptID = acceptID;
 		this.productionNum3 = productionNum3;
@@ -149,7 +149,7 @@ public class ProjectSummaryDTO extends BasicDTO {
 		this.isNew = isNew;
 		this.isRelease = isRelease;
 		this.isOrder = isOrder;
-		this.productionTable = productionTable;
+		this.productionData = productionData;
 
 		this.salesNote = salesNote;
 		this.salesID = salesID;
@@ -157,8 +157,8 @@ public class ProjectSummaryDTO extends BasicDTO {
 		this.deliveryCode = deliveryCode;
 		this.dispatchingAccountID = dispatchingAccountID;
 		this.salesSlipPublishDate = salesSlipPublishDate;
-		this.dispatchingTable = dispatchingTable;
-		this.slipList = slipList;
+		this.dispatchingData = dispatchingData;
+		this.salesSlips = salesSlips;
 		this.buyerCode = buyerCode;
 		this.isAdd = isAdd;
 	}
@@ -356,47 +356,47 @@ public class ProjectSummaryDTO extends BasicDTO {
 
 	@Override
 	public Vector<Vector<Object>> getVector(int order) {
-		Vector<Vector<Object>> v = null;
+		Vector<Vector<Object>> data = null;
 		switch (order) {
 			case 0:
-				v = quotationTable;
+				data = quotationData;
 				break;
 			case 1:
-				v = productionTable;
+				data = productionData;
 				break;
 			case 2:
-				v = dispatchingTable;
+				data = dispatchingData;
 				break;
 			case 3:
-				v = slipList;
+				data = salesSlips;
 				break;
 		}
-		return v;
+		return data;
 	}
 
 	public void setVector(int order, Vector<Vector<Object>> vector) {
 		switch (order) {
 			case 0:
-				quotationTable = vector;
+				quotationData = vector;
 				break;
 			case 1:
-				productionTable = vector;
+				productionData = vector;
 				break;
 			case 2:
-				dispatchingTable = vector;
+				dispatchingData = vector;
 				break;
 			case 3:
-				slipList = vector;
+				salesSlips = vector;
 				break;
 		}
 	}
 
 	public Map<Integer, Vector<Vector<Object>>> getMap() {
-		return quotationBasisTable;
+		return quotationBasisDataMap;
 	}
 
 	public void setMap(Map<Integer, Vector<Vector<Object>>> map) {
-		quotationBasisTable = map;
+		quotationBasisDataMap = map;
 	}
 
 	public void setQuotationNumbers(List<String> quotationNumbers) {

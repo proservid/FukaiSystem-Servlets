@@ -33,7 +33,7 @@ public class DispatchingRegister extends GenericServlet {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		boolean isError = false;
-		DispatchingDTO dispDTO = null;
+		DispatchingDTO dto = null;
 		StringBuilder err = new StringBuilder();
 
 		int dispatchingID = 0;
@@ -51,7 +51,7 @@ public class DispatchingRegister extends GenericServlet {
 				lg.error(className + "readObjectがnullです");
 			} else {
 				if (obj instanceof DispatchingDTO) {
-					dispDTO = (DispatchingDTO) obj;
+					dto = (DispatchingDTO) obj;
 				} else {
 					isError = true;
 					err.append(className + "readObjectがDispatchDTO型ではありません\n");
@@ -69,8 +69,8 @@ public class DispatchingRegister extends GenericServlet {
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-			dispatchingID = dispDTO.getInt(7);
-			if (dispDTO.getInt(0) * dispDTO.getInt(1) == 0) {
+			dispatchingID = dto.getInt(7);
+			if (dto.getInt(0) * dto.getInt(1) == 0) {
 				// 注文期または注文番号を0に変更したということは、消去せよということ
 				if (dispatchingID != 0) {
 					try {
@@ -96,12 +96,12 @@ public class DispatchingRegister extends GenericServlet {
 								+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?)"
 						);
 						int i = 1;
-						ps.setInt(i, dispDTO.getInt(0)); i++; // 製作期
-						ps.setInt(i, dispDTO.getInt(1)); i++; // 製作番号
-						ps.setString(i, dispDTO.getStr(0)); i++; // 製作枝番
-						ps.setDate(i, dispDTO.getDate(0)); i++; // 出庫年月日
-						ps.setString(i, dispDTO.getStr(4)); i++; // 用途
-						ps.setString(i, dispDTO.getStr(5)); i++; // 用途2
+						ps.setInt(i, dto.getInt(0)); i++; // 製作期
+						ps.setInt(i, dto.getInt(1)); i++; // 製作番号
+						ps.setString(i, dto.getStr(0)); i++; // 製作枝番
+						ps.setDate(i, dto.getDate(0)); i++; // 出庫年月日
+						ps.setString(i, dto.getStr(4)); i++; // 用途
+						ps.setString(i, dto.getStr(5)); i++; // 用途2
 						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
 						ps.setInt(i, 0); // 更新者CD
 						boolean isResultSet = ps.execute();
@@ -134,12 +134,12 @@ public class DispatchingRegister extends GenericServlet {
 								+ " WHERE 出庫親ID=?"
 						);
 						int i = 1;
-						ps.setInt(i, dispDTO.getInt(0)); i++; // 製作期
-						ps.setInt(i, dispDTO.getInt(1)); i++; // 製作番号
-						ps.setString(i, dispDTO.getStr(0)); i++; // 製作枝番
-						ps.setDate(i, dispDTO.getDate(0)); i++; // 出庫年月日
-						ps.setString(i, dispDTO.getStr(4)); i++; // 用途
-						ps.setString(i, dispDTO.getStr(5)); i++; // 用途2
+						ps.setInt(i, dto.getInt(0)); i++; // 製作期
+						ps.setInt(i, dto.getInt(1)); i++; // 製作番号
+						ps.setString(i, dto.getStr(0)); i++; // 製作枝番
+						ps.setDate(i, dto.getDate(0)); i++; // 出庫年月日
+						ps.setString(i, dto.getStr(4)); i++; // 用途
+						ps.setString(i, dto.getStr(5)); i++; // 用途2
 						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
 						ps.setInt(i, 0); i++; // 更新者CD
 						ps.setInt(i, dispatchingID);
@@ -158,25 +158,25 @@ public class DispatchingRegister extends GenericServlet {
 				try {
 					ps = c.prepareStatement("INSERT INTO T_出庫_子 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"); // +
 					// "UPDATE T_製作_子 SET 納品年月日=? WHERE ID=? AND 製作親ID=?");
-					for (Vector<Object> v : dispDTO.getVector(0)) {
+					for (Vector<Object> record : dto.getVector(0)) {
 						int i = 1;
 						int j = 0;
-						if (v.get(0) != null && (Integer) v.get(0) != 0) {
+						if (record.get(0) != null && (Integer) record.get(0) != 0) {
 							ps.setInt(i, k); i++; // ID
 							ps.setInt(i, dispatchingID); i++; // 出庫親ID
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer) v.get(j)); i++; j++; // 大分類CD
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer) v.get(j)); i++; j++; // 中分類CD
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer) v.get(j)); i++; j++; // 小分類CD
-							ps.setString(i, (String) v.get(j)); i++; j++; // 名称
-							ps.setBoolean(i, (Boolean) v.get(j)); i++; j++; // 各FLG
-							ps.setDouble(i, (Double) v.get(j)); i++; j++; // 数量
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 数量単位CD
-							ps.setDouble(i, (Double) v.get(j)); i++; j++; // 重量長さ（単位を要検討のこと）
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 単価
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 金額
-							ps.setString(i, (String) v.get(j)); i++; j++; // 備考
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 在庫親ID
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 在庫子ID
+							ps.setInt(i, (record.get(j) == null) ? 0 : (Integer) record.get(j)); i++; j++; // 大分類CD
+							ps.setInt(i, (record.get(j) == null) ? 0 : (Integer) record.get(j)); i++; j++; // 中分類CD
+							ps.setInt(i, (record.get(j) == null) ? 0 : (Integer) record.get(j)); i++; j++; // 小分類CD
+							ps.setString(i, (String) record.get(j)); i++; j++; // 名称
+							ps.setBoolean(i, (Boolean) record.get(j)); i++; j++; // 各FLG
+							ps.setDouble(i, (Double) record.get(j)); i++; j++; // 数量
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量単位CD
+							ps.setDouble(i, (Double) record.get(j)); i++; j++; // 重量長さ（単位を要検討のこと）
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 単価
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 金額
+							ps.setString(i, (String) record.get(j)); i++; j++; // 備考
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 在庫親ID
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 在庫子ID
 							ps.addBatch();
 							k++;
 						}

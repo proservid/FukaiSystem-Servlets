@@ -85,22 +85,22 @@ public class OrderRegister extends GenericServlet {
 			boolean isParentEditable = true; // 納品書番号が入ったデータが１つでもあるか
 			taxMap = new HashMap<Integer, DeliverySlip>(); // 指定納品書のデータ
 			List<Vector<Object>> regVector = new ArrayList<Vector<Object>>();
-			for (Vector<Object> v : odd.getVector(0)) {
+			for (Vector<Object> record : odd.getVector(0)) {
 				boolean closeFlg = false;
 				boolean matchFlg = false;
-				if (v.get(14) == null || v.get(15) == null || !(Boolean) v.get(17)) { // 納品書番号か納品日がnullまたは納品書チェックなし
+				if (record.get(14) == null || record.get(15) == null || !(Boolean) record.get(17)) { // 納品書番号か納品日がnullまたは納品書チェックなし
 					// 納品書入力をクリアし、登録用データに追加
-					v.set(14, 0);
-					v.set(15, null);
-					v.set(16, 0);
-					v.set(17, false);
-					regVector.add(v);
+					record.set(14, 0);
+					record.set(15, null);
+					record.set(16, 0);
+					record.set(17, false);
+					regVector.add(record);
 				} else {
 					// 〆後の日付の指定納品書を追加させない
 					PreparedStatement ps = c.prepareStatement(
 						"select * from T_指定納品書 WHERE 納品書日>=? and 納品書日<? and 〆FLG='true'"
 					);
-					java.util.Date d = (java.util.Date) v.get(15);
+					java.util.Date d = (java.util.Date) record.get(15);
 					Calendar cal = Calendar.getInstance();
 					cal.setTime(d);
 					cal.set(Calendar.DATE, 1); // その月の１日
@@ -110,17 +110,17 @@ public class OrderRegister extends GenericServlet {
 					ResultSet rs = ps.executeQuery();
 					while (rs.next()) {
 						// 一致する納品書データがあるか
-						if (rs.getInt("ID") == (Integer) v.get(14)) {
-							if ((Boolean) v.get(18)) {
+						if (rs.getInt("ID") == (Integer) record.get(14)) {
+							if ((Boolean) record.get(18)) {
 								matchFlg = true;
 								// 1行でも指定納品書が〆られていたら親データの編集を不可に
 								isParentEditable = false;
 								// 〆後なので変更されてはいないはずだが念のため登録データをセットしておく(IDは一致確認済)
-								v.set(15, rs.getDate("納品書日"));
-								v.set(16, rs.getInt("消費税"));
-								v.set(17, true);
-								v.set(18, true);
-								regVector.add(v);
+								record.set(15, rs.getDate("納品書日"));
+								record.set(16, rs.getInt("消費税"));
+								record.set(17, true);
+								record.set(18, true);
+								regVector.add(record);
 							}
 						}
 						// 一致する納品書データがなくてもその月が〆られてさえいれば(その行の)closeFlgをtrueに
@@ -128,15 +128,15 @@ public class OrderRegister extends GenericServlet {
 					}
 					if (!closeFlg) { // その行の納品書日が〆後の日付でなければ
 						// データはそのまま使用
-						regVector.add(v);
+						regVector.add(record);
 						// 納品書番号、納品書日、消費税、〆FLGをMapにセット（後でT_指定納品書にmergeするため）
-						if (!taxMap.containsKey(v.get(14)) || !(Boolean) v.get(18)) {
+						if (!taxMap.containsKey(record.get(14)) || !(Boolean) record.get(18)) {
 							// 納品書番号が同じデータ又は〆後データは省く
 							taxMap.put(
-								(Integer) v.get(14),
+								(Integer) record.get(14),
 								new DeliverySlip(
-									new Date(((java.util.Date) v.get(15)).getTime()),
-									v.get(16) == null ? 0 : (Integer) v.get(16)
+									new Date(((java.util.Date) record.get(15)).getTime()),
+									record.get(16) == null ? 0 : (Integer) record.get(16)
 								)
 							);
 						}
@@ -146,11 +146,11 @@ public class OrderRegister extends GenericServlet {
 							// 登録されていない番号 または
 							// 登録はあるが〆Flgがfalse(=番号入力ミス)
 							// クリアし、登録用データに追加
-							v.set(14, 0);
-							v.set(15, null);
-							v.set(16, 0);
-							v.set(17, false);
-							regVector.add(v);
+							record.set(14, 0);
+							record.set(15, null);
+							record.set(16, 0);
+							record.set(17, false);
+							regVector.add(record);
 							err.append("〆後の納品書日では登録できません");
 						}
 					}
@@ -302,27 +302,27 @@ public class OrderRegister extends GenericServlet {
 							+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
 							+ "?, ?, ?, ?, ?, ?)"
 					);
-					for (Vector<Object> v : regVector) {
-						int tag = (Integer) v.get(0);
+					for (Vector<Object> record : regVector) {
+						int tag = (Integer) record.get(0);
 						if (tag != 0) {
 							int i = 1;
 							int j = 0;
 							ps.setInt(i, k); i++; // ID
 							ps.setInt(i, orderID); i++; // 親ID
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 表示CD
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer) v.get(j)); i++; j++; // 大分類CD
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer) v.get(j)); i++; j++; // 中分類CD
-							ps.setInt(i, (v.get(j) == null) ? 0 : (Integer) v.get(j)); i++; j++; // 小分類CD
-							ps.setString(i, (String) v.get(j)); i++; j++; // 名称
-							ps.setBoolean(i, (Boolean) v.get(j)); i++; j++; // 各FLG
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 数量
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 数量単位CD
-							ps.setDouble(i, (Double) v.get(j)); i++; j++; // 重量長さ（単位を要検討のこと）
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 単価
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 金額
-							ps.setString(i, (String) v.get(j)); i++; j++; // 備考
-							ps.setDate(i, v.get(j) == null ? null : new java.sql.Date(((java.util.Date) v.get(j)).getTime())); i++; j += 2; // 入庫年月日（チェックボックスを飛ばすためj+=2）
-							ps.setInt(i, v.get(j) == null ? 0 : (Integer) v.get(j)); // 納品書番号
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 表示CD
+							ps.setInt(i, (record.get(j) == null) ? 0 : (Integer) record.get(j)); i++; j++; // 大分類CD
+							ps.setInt(i, (record.get(j) == null) ? 0 : (Integer) record.get(j)); i++; j++; // 中分類CD
+							ps.setInt(i, (record.get(j) == null) ? 0 : (Integer) record.get(j)); i++; j++; // 小分類CD
+							ps.setString(i, (String) record.get(j)); i++; j++; // 名称
+							ps.setBoolean(i, (Boolean) record.get(j)); i++; j++; // 各FLG
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量単位CD
+							ps.setDouble(i, (Double) record.get(j)); i++; j++; // 重量長さ（単位を要検討のこと）
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 単価
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 金額
+							ps.setString(i, (String) record.get(j)); i++; j++; // 備考
+							ps.setDate(i, record.get(j) == null ? null : new java.sql.Date(((java.util.Date) record.get(j)).getTime())); i++; j += 2; // 入庫年月日（チェックボックスを飛ばすためj+=2）
+							ps.setInt(i, record.get(j) == null ? 0 : (Integer) record.get(j)); // 納品書番号
 							ps.addBatch();
 							k++;
 						}

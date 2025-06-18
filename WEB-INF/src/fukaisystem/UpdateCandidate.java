@@ -36,7 +36,7 @@ public class UpdateCandidate extends GenericServlet {
 		ResultSet rs = null;
 		StringBuilder err = new StringBuilder("");
 
-		Vector<String> deadlines = new Vector<String>();
+		Vector<String> dues = new Vector<String>();
 		Vector<String> places = new Vector<String>();
 		Vector<String> terms = new Vector<String>();
 		Vector<String> validities = new Vector<String>();
@@ -52,7 +52,7 @@ public class UpdateCandidate extends GenericServlet {
 				ps = c.prepareStatement("SELECT * FROM M_納期");
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					deadlines.add(rs.getString("納期"));
+					dues.add(rs.getString("納期"));
 				}
 				ps = c.prepareStatement("SELECT * FROM M_受渡場所");
 				rs = ps.executeQuery();
@@ -82,7 +82,7 @@ public class UpdateCandidate extends GenericServlet {
 			 */
 
 			InitialDTO id = new InitialDTO(
-				null, null, null, deadlines, places, terms,
+				null, null, null, dues, places, terms,
 				validities, null, null, null, null, null, null, null, null, null,
 				null, null, null, null, null, null
 			);

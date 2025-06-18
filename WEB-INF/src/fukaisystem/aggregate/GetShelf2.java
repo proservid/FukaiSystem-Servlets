@@ -681,19 +681,19 @@ public class GetShelf2 extends GenericServlet {
 				for (Map.Entry<String, Shelf> e : shelfMaps.get(i).entrySet()) {
 					Shelf shelf = e.getValue();
 					if (shelf.isTarget()) {
-						Vector<Object> v = new Vector<Object>();
-						v.add(e.getKey());
-						v.add(shelf.getS());
+						Vector<Object> record = new Vector<Object>();
+						record.add(e.getKey());
+						record.add(shelf.getS());
 						int carried = shelf.getO(true) + shelf.getD(true);
-						v.add(carried);
-						v.add(shelf.getO(false));
-						v.add(shelf.getD(false));
+						record.add(carried);
+						record.add(shelf.getO(false));
+						record.add(shelf.getD(false));
 						int od = shelf.getO(false) + shelf.getD(false);
-						v.add(od);
-						v.add(carried + od);
-						v.add(shelf.getW(false));
-						v.add(shelf.getW(true));
-						data.add(v);
+						record.add(od);
+						record.add(carried + od);
+						record.add(shelf.getW(false));
+						record.add(shelf.getW(true));
+						data.add(record);
 					}
 				}
 			}

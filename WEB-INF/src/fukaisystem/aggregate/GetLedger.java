@@ -139,78 +139,78 @@ public class GetLedger extends GenericServlet {
 					// 特殊データの追加
 					if (rs.getString("受注番号") != null) {
 						if (!accept.equals(rs.getString("受注番号")) && !accept.equals("")) { // 次の受注番号へ変わるタイミングで小計を追加
-							List<Object> row = new ArrayList<Object>();
-							// row.add(acNum);
-							row.add(acName);
-							row.add("");
-							row.add("小計");
-							row.add(""); // 数量
-							row.add(subtotal); // 金額
-							row.add(""); // 受注番号
-							row.add(""); // 注文書番号
-							contents.add(row);
+							List<Object> record = new ArrayList<Object>();
+							// record.add(acNum);
+							record.add(acName);
+							record.add("");
+							record.add("小計");
+							record.add(""); // 数量
+							record.add(subtotal); // 金額
+							record.add(""); // 受注番号
+							record.add(""); // 注文書番号
+							contents.add(record);
 							subtotal = 0;
 							if (!acNum.equals(rs.getString("得意先CD")) && !acNum.equals("")) { // さらに次の得意先CDへ変わるタイミングで（消費税別途の得意先の消費税と）合計を追加
 								if (m.containsKey(acNum)) { // 消費税を別途計算していた得意先については、追加
-									row = new ArrayList<Object>();
-									// row.add(acNum);
-									row.add(acName);
-									row.add(last);
-									row.add(month + "月度納入額(\\" + df.format(m.get(acNum).getPrice()) + ")");
-									row.add(""); // 数量
-									row.add(""); // 金額
-									row.add(""); // 受注番号
-									row.add(""); // 注文書番号
-									contents.add(row);
+									record = new ArrayList<Object>();
+									// record.add(acNum);
+									record.add(acName);
+									record.add(last);
+									record.add(month + "月度納入額(\\" + df.format(m.get(acNum).getPrice()) + ")");
+									record.add(""); // 数量
+									record.add(""); // 金額
+									record.add(""); // 受注番号
+									record.add(""); // 注文書番号
+									contents.add(record);
 
-									row = new ArrayList<Object>();
-									// row.add(acNum);
-									row.add(acName);
-									row.add(last);
-									row.add("* 消費税");
-									row.add(""); // 数量
-									row.add(m.get(acNum).getTax()); // 金額
-									row.add(""); // 受注番号
-									row.add(""); // 注文書番号
-									contents.add(row);
+									record = new ArrayList<Object>();
+									// record.add(acNum);
+									record.add(acName);
+									record.add(last);
+									record.add("* 消費税");
+									record.add(""); // 数量
+									record.add(m.get(acNum).getTax()); // 金額
+									record.add(""); // 受注番号
+									record.add(""); // 注文書番号
+									contents.add(record);
 
-									row = new ArrayList<Object>();
-									// row.add(acNum);
-									row.add(acName);
-									row.add("");
-									row.add("小計");
-									row.add(""); // 数量
-									row.add(m.get(acNum).getTax()); // 金額
-									row.add(""); // 受注番号
-									row.add(""); // 注文書番号
-									contents.add(row);
+									record = new ArrayList<Object>();
+									// record.add(acNum);
+									record.add(acName);
+									record.add("");
+									record.add("小計");
+									record.add(""); // 数量
+									record.add(m.get(acNum).getTax()); // 金額
+									record.add(""); // 受注番号
+									record.add(""); // 注文書番号
+									contents.add(record);
 									total += m.get(acNum).getTax();
 									inclusive += m.get(acNum).getTax();
 								}
-								row = new ArrayList<Object>();
-								// row.add(acNum);
-								row.add(acName);
-								row.add("");
-								row.add("合計");
-								row.add(""); // 数量
-								row.add(total); // 金額
-								row.add(""); // 受注番号
-								row.add(""); // 注文書番号
-								contents.add(row);
+								record = new ArrayList<Object>();
+								// record.add(acNum);
+								record.add(acName);
+								record.add("");
+								record.add("合計");
+								record.add(""); // 数量
+								record.add(total); // 金額
+								record.add(""); // 受注番号
+								record.add(""); // 注文書番号
+								contents.add(record);
 								total = 0;
 							}
 						}
 						// 通常データの追加
-						List<Object> row = new ArrayList<Object>();
-						// row.add(rs.getString("得意先CD"));
-						row.add(rs.getString("得意先名"));
-						row.add(rs.getString("納入月日"));
-						row.add(rs.getString("品名"));
-						row.add(rs.getString("数量"));
-						row.add(rs.getInt("金額"));
-						row.add(rs.getString("受注番号"));
-						row.add(rs.getString("注文書番号"));
-						contents.add(row);
+						List<Object> record = new ArrayList<Object>();
+						// record.add(rs.getString("得意先CD"));
+						record.add(rs.getString("得意先名"));
+						record.add(rs.getString("納入月日"));
+						record.add(rs.getString("品名"));
+						record.add(rs.getString("数量"));
+						record.add(rs.getInt("金額"));
+						record.add(rs.getString("受注番号"));
+						record.add(rs.getString("注文書番号"));
+						contents.add(record);
 						acNum = rs.getString("得意先CD");
 						acName = rs.getString("得意先名");
 						accept = rs.getString("受注番号");
@@ -222,74 +222,74 @@ public class GetLedger extends GenericServlet {
 				rs.close();
 
 				// 最終データ分の小計合計そして総合計
-				List<Object> row = new ArrayList<Object>();
-				// row.add(acNum);
-				row.add(acName);
-				row.add("");
-				row.add("小計");
-				row.add(""); // 数量
-				row.add(subtotal); // 金額
-				row.add(""); // 受注番号
-				row.add(""); // 注文書番号
-				contents.add(row);
+				List<Object> record = new ArrayList<Object>();
+				// record.add(acNum);
+				record.add(acName);
+				record.add("");
+				record.add("小計");
+				record.add(""); // 数量
+				record.add(subtotal); // 金額
+				record.add(""); // 受注番号
+				record.add(""); // 注文書番号
+				contents.add(record);
 				subtotal = 0;
 
 				if (m.containsKey(acNum)) { // 消費税を別途計算していた得意先については、追加
-					row = new ArrayList<Object>();
-					// row.add(acNum);
-					row.add(acName);
-					row.add(last);
-					row.add(month + "月度納入額(\\" + df.format(m.get(acNum).getPrice()) + ")");
-					row.add(""); // 数量
-					row.add(""); // 金額
-					row.add(""); // 受注番号
-					row.add(""); // 注文書番号
-					contents.add(row);
+					record = new ArrayList<Object>();
+					// record.add(acNum);
+					record.add(acName);
+					record.add(last);
+					record.add(month + "月度納入額(\\" + df.format(m.get(acNum).getPrice()) + ")");
+					record.add(""); // 数量
+					record.add(""); // 金額
+					record.add(""); // 受注番号
+					record.add(""); // 注文書番号
+					contents.add(record);
 
-					row = new ArrayList<Object>();
-					// row.add(acNum);
-					row.add(acName);
-					row.add(last);
-					row.add("* 消費税");
-					row.add(""); // 数量
-					row.add(m.get(acNum).getTax()); // 金額
-					row.add(""); // 受注番号
-					row.add(""); // 注文書番号
-					contents.add(row);
+					record = new ArrayList<Object>();
+					// record.add(acNum);
+					record.add(acName);
+					record.add(last);
+					record.add("* 消費税");
+					record.add(""); // 数量
+					record.add(m.get(acNum).getTax()); // 金額
+					record.add(""); // 受注番号
+					record.add(""); // 注文書番号
+					contents.add(record);
 
-					row = new ArrayList<Object>();
-					// row.add(acNum);
-					row.add(acName);
-					row.add("");
-					row.add("小計");
-					row.add(""); // 数量
-					row.add(m.get(acNum).getTax()); // 金額
-					row.add(""); // 受注番号
-					row.add(""); // 注文書番号
-					contents.add(row);
+					record = new ArrayList<Object>();
+					// record.add(acNum);
+					record.add(acName);
+					record.add("");
+					record.add("小計");
+					record.add(""); // 数量
+					record.add(m.get(acNum).getTax()); // 金額
+					record.add(""); // 受注番号
+					record.add(""); // 注文書番号
+					contents.add(record);
 					total += m.get(acNum).getTax();
 					inclusive += m.get(acNum).getTax();
 				}
-				row = new ArrayList<Object>();
-				// row.add(acNum);
-				row.add(acName);
-				row.add("");
-				row.add("合計");
-				row.add(""); // 数量
-				row.add(total); // 金額
-				row.add(""); // 受注番号
-				row.add(""); // 注文書番号
-				contents.add(row);
-				row = new ArrayList<Object>();
-				// row.add(acNum);
-				row.add(acName);
-				row.add("");
-				row.add("総合計");
-				row.add(""); // 数量
-				row.add(inclusive); // 金額
-				row.add(""); // 受注番号
-				row.add(""); // 注文書番号
-				contents.add(row);
+				record = new ArrayList<Object>();
+				// record.add(acNum);
+				record.add(acName);
+				record.add("");
+				record.add("合計");
+				record.add(""); // 数量
+				record.add(total); // 金額
+				record.add(""); // 受注番号
+				record.add(""); // 注文書番号
+				contents.add(record);
+				record = new ArrayList<Object>();
+				// record.add(acNum);
+				record.add(acName);
+				record.add("");
+				record.add("総合計");
+				record.add(""); // 数量
+				record.add(inclusive); // 金額
+				record.add(""); // 受注番号
+				record.add(""); // 注文書番号
+				contents.add(record);
 
 				if (!tableName.equals("")) {
 					ps = c.prepareStatement(

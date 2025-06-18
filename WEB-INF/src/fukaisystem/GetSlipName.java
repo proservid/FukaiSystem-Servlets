@@ -78,10 +78,10 @@ public class GetSlipName extends GenericServlet {
 					ps = c.prepareStatement("SELECT 伝票名,フォーマット名 FROM T_伝票");
 					rs = ps.executeQuery();
 					while (rs.next()) {
-						Vector<String> v = new Vector<String>();
-						v.add(rs.getString("伝票名"));
-						v.add(rs.getString("フォーマット名"));
-						tableData.add(v);
+						Vector<String> record = new Vector<String>();
+						record.add(rs.getString("伝票名"));
+						record.add(rs.getString("フォーマット名"));
+						tableData.add(record);
 					}
 					output = tableData;
 				} catch (SQLException ex) {

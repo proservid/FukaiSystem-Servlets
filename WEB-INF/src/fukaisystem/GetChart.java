@@ -21,7 +21,7 @@ import fukaisystem.dto.ProductNumber;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class SetCombo extends GenericServlet {
+public class GetChart extends GenericServlet {
 
 	/**
 	 *

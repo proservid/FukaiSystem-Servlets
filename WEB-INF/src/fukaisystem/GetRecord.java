@@ -18,7 +18,7 @@ import fukaisystem.dto.IDDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class GetLine extends GenericServlet {
+public class GetRecord extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
@@ -32,10 +32,10 @@ public class GetLine extends GenericServlet {
 		ResultSet rs = null;
 		StringBuilder err = new StringBuilder();
 
-		Vector<Object> v = new Vector<Object>();
+		Vector<Object> record = new Vector<Object>();
 
-		int estimateID = 0;
-		int productID = 0;
+		int quotationID = 0;
+		int productionID = 0;
 
 		try {
 
@@ -51,8 +51,8 @@ public class GetLine extends GenericServlet {
 				lg.error(className + "readObjectがnullです");
 			} else {
 				if (obj instanceof IDDTO) {
-					estimateID = ((IDDTO) obj).getQuotationID();
-					productID = ((IDDTO) obj).getProductionID();
+					quotationID = ((IDDTO) obj).getQuotationID();
+					productionID = ((IDDTO) obj).getProductionID();
 				} else {
 					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
 					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
@@ -107,69 +107,69 @@ public class GetLine extends GenericServlet {
 						+ " ON (CASE WHEN e.得意先CD=0 OR e.得意先CD IS NULL THEN p.得意先CD ELSE e.得意先CD END)=c.得意先CD"
 						+ " WHERE "
 				);
-				if (estimateID != 0) {
+				if (quotationID != 0) {
 					query.append("e.見積親ID=? AND ");
 				}
-				if (productID == 0) {
+				if (productionID == 0) {
 					query.append("p.製作親ID IS NULL");
 				} else {
 					query.append("p.製作親ID=?");
 				}
 				ps = c.prepareStatement(query.toString());
 				int i = 1;
-				if (estimateID != 0) {
-					ps.setInt(i, estimateID);
+				if (quotationID != 0) {
+					ps.setInt(i, quotationID);
 					i++;
 				}
-				if (productID != 0) {
-					ps.setInt(i, productID);
+				if (productionID != 0) {
+					ps.setInt(i, productionID);
 				}
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					v.add(new IDDTO(rs.getInt("見積親ID"), rs.getInt("製作親ID"), rs.getInt("売上親ID")));
-					int estNum = rs.getInt("見積番号");
-					if (estNum != 0) {
-						if (estNum < 10) {
-							v.add(
+					record.add(new IDDTO(rs.getInt("見積親ID"), rs.getInt("製作親ID"), rs.getInt("売上親ID")));
+					int quotationNum = rs.getInt("見積番号");
+					if (quotationNum != 0) {
+						if (quotationNum < 10) {
+							record.add(
 								rs.getString("見積期") + "-00" + rs.getString("見積番号") + " " + rs.getString("見積枝番")
 							);
-						} else if (estNum < 100) {
-							v.add(
+						} else if (quotationNum < 100) {
+							record.add(
 								rs.getString("見積期") + "-0" + rs.getString("見積番号") + " " + rs.getString("見積枝番")
 							);
 						} else {
-							v.add(rs.getString("見積期") + "-" + rs.getString("見積番号") + " " + rs.getString("見積枝番"));
+							record.add(rs.getString("見積期") + "-" + rs.getString("見積番号") + " " + rs.getString("見積枝番"));
 						}
 					} else {
-						v.add("");
+						record.add("");
 					}
 					if (rs.getInt("製作期") != 0 && rs.getInt("製作番号") != 0) {
-						v.add(rs.getInt("製作期") + "-" + rs.getInt("製作番号") + " " + rs.getString("製作枝番"));
+						record.add(rs.getInt("製作期") + "-" + rs.getInt("製作番号") + " " + rs.getString("製作枝番"));
 					} else {
-						v.add("");
+						record.add("");
 					}
 					if (rs.getInt("誕生期") != 0 && rs.getInt("誕生番号") != 0) {
-						v.add(rs.getInt("誕生期") + "-" + rs.getInt("誕生番号") + " " + rs.getString("誕生枝番"));
+						record.add(rs.getInt("誕生期") + "-" + rs.getInt("誕生番号") + " " + rs.getString("誕生枝番"));
 					} else {
-						v.add("");
+						record.add("");
 					}
 					if (rs.getInt("得意先CD") != 0) {
-						v.add(/* rs.getInt("得意先CD") + "：" + */rs.getString("社名"));
+						record.add(/* rs.getInt("得意先CD") + "：" + */rs.getString("社名"));
 					} else {
-						v.add("");
+						record.add("");
 					}
-					v.add(rs.getString("納入先名"));
-					v.add(rs.getString("案件名"));
-					// v.add(rs.getInt("種類"));
-					v.add(rs.getDate("提出年月日"));
-					v.add(rs.getInt("見積金額"));
-					v.add(rs.getString("受注番号"));
-					v.add(rs.getDate("受注年月日"));
-					v.add(rs.getDate("製作年月日"));
-					v.add(rs.getDate("納期"));
-					v.add(rs.getInt("契約金額"));
-					v.add(rs.getDate("出荷年月日"));
-					v.add(rs.getDate("検収年月日"));
+					record.add(rs.getString("納入先名"));
+					record.add(rs.getString("案件名"));
+					// record.add(rs.getInt("種類"));
+					record.add(rs.getDate("提出年月日"));
+					record.add(rs.getInt("見積金額"));
+					record.add(rs.getString("受注番号"));
+					record.add(rs.getDate("受注年月日"));
+					record.add(rs.getDate("製作年月日"));
+					record.add(rs.getDate("納期"));
+					record.add(rs.getInt("契約金額"));
+					record.add(rs.getDate("出荷年月日"));
+					record.add(rs.getDate("検収年月日"));
 
 				}
 
@@ -187,7 +187,7 @@ public class GetLine extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(v);
+			out.writeObject(record);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

@@ -30,7 +30,7 @@ public class GetColInfo extends GenericServlet {
 		DBConnection dbc = new DBConnection();
 		Connection c = dbc.getConnection();
 
-		Vector<String> v = new Vector<String>();
+		Vector<String> data = new Vector<String>();
 
 		try {
 
@@ -49,14 +49,14 @@ public class GetColInfo extends GenericServlet {
 						switch (rsmd.getColumnType(i)) {
 							case Types.CHAR:
 							case Types.VARCHAR:
-								v.add(
+								data.add(
 									rsmd.getColumnName(i)
 										+ " [" + rsmd.getColumnTypeName(i)
 										+ "(" + String.valueOf(rsmd.getColumnDisplaySize(i)) + ")]"
 								);
 								break;
 							default:
-								v.add(rsmd.getColumnName(i) + " [" + rsmd.getColumnTypeName(i) + "]");
+								data.add(rsmd.getColumnName(i) + " [" + rsmd.getColumnTypeName(i) + "]");
 
 						}
 					}
@@ -74,7 +74,7 @@ public class GetColInfo extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(v);
+			out.writeObject(data);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

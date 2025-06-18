@@ -68,15 +68,15 @@ public class GetDandM extends GenericServlet {
 				);
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					Vector<Object> v = new Vector<Object>();
-					// v.add(rs.getInt("管理ID"));
-					v.add(rs.getInt("CD"));
-					v.add(rs.getString("姓"));
-					v.add(rs.getString("名"));
-					v.add(rs.getBoolean("在籍FLG"));
-					v.add(rs.getBoolean("工数FLG"));
+					Vector<Object> record = new Vector<Object>();
+					// record.add(rs.getInt("管理ID"));
+					record.add(rs.getInt("CD"));
+					record.add(rs.getString("姓"));
+					record.add(rs.getString("名"));
+					record.add(rs.getBoolean("在籍FLG"));
+					record.add(rs.getBoolean("工数FLG"));
 					if (name.containsKey(rs.getString("部署CD")))
-						name.get(rs.getString("部署CD")).add(v);
+						name.get(rs.getString("部署CD")).add(record);
 				}
 				dmd = new DMDTO(dept, name);
 			} catch (SQLException ex) {

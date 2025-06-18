@@ -39,10 +39,10 @@ public class QuotationRegister extends GenericServlet {
 		ProjectSummaryDTO summaryDTO = null;
 		StringBuilder err = new StringBuilder();
 		List<Integer> keys = new ArrayList<Integer>();
-		int estimateID = 0;
-		int productID = 0;
-		int estimatePer = 0;
-		int estimateNum = 0;
+		int quotationID = 0;
+		int productionID = 0;
+		int quotationNum1 = 0;
+		int quotationNum2 = 0;
 
 		try {
 
@@ -79,12 +79,12 @@ public class QuotationRegister extends GenericServlet {
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-			estimatePer = summaryDTO.getInt(3);
-			estimateNum = summaryDTO.getInt(4);
-			estimateID = summaryDTO.getInt(16);
-			productID = summaryDTO.getInt(17);
+			quotationNum1 = summaryDTO.getInt(3);
+			quotationNum2 = summaryDTO.getInt(4);
+			quotationID = summaryDTO.getInt(16);
+			productionID = summaryDTO.getInt(17);
 
-			if (estimatePer == 0 && estimateNum == 0 && estimateID != 0) {
+			if (quotationNum1 == 0 && quotationNum2 == 0 && quotationID != 0) {
 				// 見積IDがあるデータの見積期と見積番号を0に変更したということは、消去せよということ
 				try {
 					ps = c.prepareStatement(
@@ -95,14 +95,14 @@ public class QuotationRegister extends GenericServlet {
 							+ "UPDATE T_製作_親 SET 見積親ID=0 WHERE 見積親ID=?;"
 							+ "DELETE FROM T_見積製作 WHERE 見積親ID=?"
 					);
-					ps.setInt(1, estimateID);
-					ps.setInt(2, estimateID);
-					ps.setInt(3, estimateID);
-					ps.setInt(4, estimateID);
-					ps.setInt(5, estimateID);
-					ps.setInt(6, estimateID);
+					ps.setInt(1, quotationID);
+					ps.setInt(2, quotationID);
+					ps.setInt(3, quotationID);
+					ps.setInt(4, quotationID);
+					ps.setInt(5, quotationID);
+					ps.setInt(6, quotationID);
 					ps.executeUpdate();
-					estimateID = 0;
+					quotationID = 0;
 				} catch (SQLException ex) {
 					isError = true;
 					err.append(className + "見積テーブルの削除に失敗しました\n");
@@ -110,7 +110,7 @@ public class QuotationRegister extends GenericServlet {
 				}
 			} else {
 				// 納期
-				int deadline = 0;
+				int due = 0;
 				int place = 0;
 				int terms = 0;
 				int validity = 0;
@@ -160,7 +160,7 @@ public class QuotationRegister extends GenericServlet {
 						if (isResultSet) {
 							rs = ps.getResultSet();
 							while (rs.next()) {
-								deadline = rs.getInt(2);
+								due = rs.getInt(2);
 							}
 							rs.close();
 						} else {
@@ -233,13 +233,13 @@ public class QuotationRegister extends GenericServlet {
 					err.append(className + "テーブル「T_見積_親」の更新に失敗しました\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
-				if (estimateNum == 0) {
+				if (quotationNum2 == 0) {
 					try {
 						ps = c.prepareStatement("SELECT MAX(見積番号) AS 最終見積番号 FROM T_見積_親 WHERE 見積期=?");
-						ps.setInt(1, estimatePer); // 見積期
+						ps.setInt(1, quotationNum1); // 見積期
 						rs = ps.executeQuery();
 						if (rs.next()) {
-							estimateNum = rs.getInt("最終見積番号") + 1;
+							quotationNum2 = rs.getInt("最終見積番号") + 1;
 						}
 					} catch (SQLException ex) {
 						ex.printStackTrace();
@@ -253,13 +253,13 @@ public class QuotationRegister extends GenericServlet {
 							"SELECT 見積親ID FROM T_見積_親 WHERE 見積期=? AND 見積番号=? AND 見積枝番=?"
 						);
 						int i = 1;
-						ps.setInt(i, estimatePer); i++; // 見積期
-						ps.setInt(i, estimateNum); i++; // 見積番号
+						ps.setInt(i, quotationNum1); i++; // 見積期
+						ps.setInt(i, quotationNum2); i++; // 見積番号
 						ps.setString(i, summaryDTO.getStr(4)); i++; // 見積枝番
 						rs = ps.executeQuery();
 						if (rs.next()) {
 							if (rs.getInt("見積親ID") != 0) {
-								estimateID = rs.getInt("見積親ID");
+								quotationID = rs.getInt("見積親ID");
 							}
 						}
 					} catch (SQLException ex) {
@@ -269,7 +269,7 @@ public class QuotationRegister extends GenericServlet {
 						Logging.logStackTrace(ex, lg, className);
 					}
 				}
-				if (estimateID == 0) { // 見積書新規作成
+				if (quotationID == 0) { // 見積書新規作成
 					try {
 						ps = c.prepareStatement(
 							"INSERT INTO T_見積_親"
@@ -287,8 +287,8 @@ public class QuotationRegister extends GenericServlet {
 								+ " ?, ?, ?, ?, ?, ?"
 						);
 						int i = 1;
-						ps.setInt(i, estimatePer); i++; // 見積期
-						ps.setInt(i, estimateNum); i++; // 見積番号
+						ps.setInt(i, quotationNum1); i++; // 見積期
+						ps.setInt(i, quotationNum2); i++; // 見積番号
 						ps.setString(i, summaryDTO.getStr(4)); i++; // 見積枝番
 						// 元製作親IDサブクエリ---------------------------------
 						ps.setInt(i, summaryDTO.getInt(18)); i++; // 誕生期
@@ -311,7 +311,7 @@ public class QuotationRegister extends GenericServlet {
 						ps.setString(i, summaryDTO.getStr(0)); i++; // 得意先表示名
 						// ps.setInt(i, summaryDTO.getInt(5)); i++; //個人CD
 						// ps.setInt(i, summaryDTO.getInt(6)); i++; //依頼手段CD
-						ps.setInt(i, deadline); i++; // 納期CD
+						ps.setInt(i, due); i++; // 納期CD
 						ps.setInt(i, place); i++; // 受渡場所CD
 						ps.setInt(i, terms); i++; // 取引条件CD
 						ps.setInt(i, validity); i++; // 有効期間CD
@@ -330,7 +330,7 @@ public class QuotationRegister extends GenericServlet {
 							if (isResultSet) {
 								rs = ps.getResultSet();
 								while (rs.next()) {
-									estimateID = rs.getInt(1);
+									quotationID = rs.getInt(1);
 								}
 								rs.close();
 							} else {
@@ -342,15 +342,15 @@ public class QuotationRegister extends GenericServlet {
 							isResultSet = ps.getMoreResults();
 						}
 						// 製作伝票が作成されていたら、T_製作_親テーブルの見積親IDを更新する（旧仕様）
-						if (productID != 0) {
+						if (productionID != 0) {
 							ps = c.prepareStatement("UPDATE T_製作_親 SET 見積親ID=? WHERE 製作親ID=?");
-							ps.setInt(1, estimateID); // 見積親ID
-							ps.setInt(2, productID);
+							ps.setInt(1, quotationID); // 見積親ID
+							ps.setInt(2, productionID);
 							ps.executeUpdate();
 							// 新仕様
 							ps = c.prepareStatement("INSERT INTO T_見積製作 VALUES(?,?)");
-							ps.setInt(1, estimateID);
-							ps.setInt(2, productID);
+							ps.setInt(1, quotationID);
+							ps.setInt(2, productionID);
 							ps.executeUpdate();
 						}
 					} catch (SQLException ex) {
@@ -375,8 +375,8 @@ public class QuotationRegister extends GenericServlet {
 						);
 						int i = 1;
 						for (int g = 0; g < 18; g++)
-							ps.setInt(i, estimatePer); i++; // 見積期
-						ps.setInt(i, estimateNum); i++; // 見積番号
+							ps.setInt(i, quotationNum1); i++; // 見積期
+						ps.setInt(i, quotationNum2); i++; // 見積番号
 						ps.setString(i, summaryDTO.getStr(4)); i++; // 見積枝番
 						// 元製作親IDサブクエリ---------------------------------
 						ps.setInt(i, summaryDTO.getInt(18)); i++; // 誕生期
@@ -399,7 +399,7 @@ public class QuotationRegister extends GenericServlet {
 						ps.setString(i, summaryDTO.getStr(0)); i++; // 得意先表示名
 						// ps.setInt(i, summaryDTO.getInt(5)); i++; //個人CD
 						// ps.setInt(i, summaryDTO.getInt(6)); i++; //依頼手段CD
-						ps.setInt(i, deadline); i++; // 納期CD
+						ps.setInt(i, due); i++; // 納期CD
 						ps.setInt(i, place); i++; // 受渡場所CD
 						ps.setInt(i, terms); i++; // 取引条件CD
 						ps.setInt(i, validity); i++; // 有効期間CD
@@ -412,17 +412,17 @@ public class QuotationRegister extends GenericServlet {
 						ps.setString(i, summaryDTO.getStr(9)); i++; // 摘要
 						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
 						ps.setInt(i, 0); i++; // 更新者CD
-						ps.setInt(i, estimateID); // ID
+						ps.setInt(i, quotationID); // ID
 						ps.executeUpdate();
 						// 子孫のデータ更新は、削除→追加にて
 						ps = c.prepareStatement("DELETE FROM T_見積_子 WHERE 見積親ID=?");
-						ps.setInt(1, estimateID);
+						ps.setInt(1, quotationID);
 						ps.executeUpdate();
 						ps = c.prepareStatement("DELETE FROM T_見積_材料 WHERE 見積親ID=?");
-						ps.setInt(1, estimateID);
+						ps.setInt(1, quotationID);
 						ps.executeUpdate();
 						ps = c.prepareStatement("DELETE FROM T_見積_加工 WHERE 見積親ID=?");
-						ps.setInt(1, estimateID);
+						ps.setInt(1, quotationID);
 						ps.executeUpdate();
 					} catch (SQLException ex) {
 						isError = true;
@@ -437,23 +437,23 @@ public class QuotationRegister extends GenericServlet {
 					ps = c.prepareStatement(
 						"INSERT INTO T_見積_子 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 					);
-					for (Vector<Object> v : summaryDTO.getVector(0)) {
-						int tag = (Integer) v.get(1);
+					for (Vector<Object> record : summaryDTO.getVector(0)) {
+						int tag = (Integer) record.get(1);
 						if (tag != 0) {
-							keys.add((Integer) v.get(0));
+							keys.add((Integer) record.get(0));
 							int i = 1;
 							int j = 2;
 							ps.setInt(i, k); i++; // ID
-							ps.setInt(i, estimateID); i++; // 見積親ID
+							ps.setInt(i, quotationID); i++; // 見積親ID
 							ps.setInt(i, tag); i++; // 表示CD
-							ps.setString(i, (String) v.get(j)); i++; j++; // 名称
-							ps.setBoolean(i, (Boolean) v.get(j)); i++; j++; // 各FLG
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 数量
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 数量単位CD
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 単価
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 提示額
-							ps.setString(i, (String) v.get(j)); i++; j++; // 図番
-							ps.setString(i, (String) v.get(j)); // 備考
+							ps.setString(i, (String) record.get(j)); i++; j++; // 名称
+							ps.setBoolean(i, (Boolean) record.get(j)); i++; j++; // 各FLG
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量単位CD
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 単価
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 提示額
+							ps.setString(i, (String) record.get(j)); i++; j++; // 図番
+							ps.setString(i, (String) record.get(j)); // 備考
 							ps.addBatch();
 							k++;
 						}
@@ -468,7 +468,7 @@ public class QuotationRegister extends GenericServlet {
 				}
 
 				// subTable
-				int l = 1;
+				int coarseCD = 1;
 				try {
 					PreparedStatement ps1 = c.prepareStatement(
 						"INSERT INTO T_見積_加工 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
@@ -481,54 +481,54 @@ public class QuotationRegister extends GenericServlet {
 					for (int key : keys) {
 
 						if (summaryDTO.getMap().containsKey(key)) {
-							int m = 1;
-							for (Vector<Object> v : summaryDTO.getMap().get(key)) {
+							int middleCD = 1;
+							for (Vector<Object> record : summaryDTO.getMap().get(key)) {
 
-								if ((Integer) v.get(1) != 0 || !((String) v.get(4)).equals("")) {
-									if (((Integer) v.get(1)).intValue() > 100) {
+								if ((Integer) record.get(1) != 0 || !((String) record.get(4)).equals("")) {
+									if (((Integer) record.get(1)).intValue() > 100) {
 										// 加工等
 										int i = 1;
 
-										ps1.setInt(i, m); i++; // ID
-										ps1.setInt(i, l); i++; // 子ID
-										ps1.setInt(i, estimateID); i++; // 親ID
-										ps1.setInt(i, (Integer) v.get(1)); i++; // 大分類
-										ps1.setInt(i, (v.get(2) == null) ? 0 : (Integer) v.get(2)); i++; // 加工CD
-										ps1.setInt(i, (v.get(3) == null) ? 0 : (Integer) v.get(3)); i++; // 加工CD
-										ps1.setString(i, (String) v.get(4)); i++; // 名称
-										ps1.setInt(i, (Integer) v.get(5)); i++; // 単価
-										ps1.setDouble(i, (Double) v.get(6)); i++; // 数量
-										ps1.setDouble(i, (Double) v.get(8)); i++; // 掛率
-										ps1.setString(i, (String) v.get(15)); // 備考
+										ps1.setInt(i, middleCD); i++; // ID
+										ps1.setInt(i, coarseCD); i++; // 子ID
+										ps1.setInt(i, quotationID); i++; // 親ID
+										ps1.setInt(i, (Integer) record.get(1)); i++; // 大分類
+										ps1.setInt(i, (record.get(2) == null) ? 0 : (Integer) record.get(2)); i++; // 加工CD
+										ps1.setInt(i, (record.get(3) == null) ? 0 : (Integer) record.get(3)); i++; // 加工CD
+										ps1.setString(i, (String) record.get(4)); i++; // 名称
+										ps1.setInt(i, (Integer) record.get(5)); i++; // 単価
+										ps1.setDouble(i, (Double) record.get(6)); i++; // 数量
+										ps1.setDouble(i, (Double) record.get(8)); i++; // 掛率
+										ps1.setString(i, (String) record.get(15)); // 備考
 										ps1.addBatch();
 
 									} else {
 										// 材料
 										int i = 1;
-										ps2.setInt(i, m); i++; // 孫ID
-										ps2.setInt(i, l); i++; // 子ID
-										ps2.setInt(i, estimateID); i++; // 親ID
-										ps2.setInt(i, (v.get(1) == null) ? 0 : (Integer) v.get(1)); i++; // 大分類
-										ps2.setInt(i, (v.get(2) == null) ? 0 : (Integer) v.get(2)); i++; // 中分類
-										ps2.setInt(i, (v.get(3) == null) ? 0 : (Integer) v.get(3)); i++; // 小分類
-										ps2.setString(i, (String) v.get(4)); i++; // 名称
-										ps2.setInt(i, (Integer) v.get(5)); i++; // 単価
-										ps2.setDouble(i, (Double) v.get(6)); i++; // 数量
-										ps2.setDouble(i, (Double) v.get(8)); i++; // 掛率
-										ps2.setInt(i, (Integer) v.get(10)); i++; // 品番
-										ps2.setDouble(i, (Double) v.get(11)); i++; // 重量
-										ps2.setInt(i, (Integer) v.get(12)); i++; // 仕入先CD
+										ps2.setInt(i, middleCD); i++; // 孫ID
+										ps2.setInt(i, coarseCD); i++; // 子ID
+										ps2.setInt(i, quotationID); i++; // 親ID
+										ps2.setInt(i, (record.get(1) == null) ? 0 : (Integer) record.get(1)); i++; // 大分類
+										ps2.setInt(i, (record.get(2) == null) ? 0 : (Integer) record.get(2)); i++; // 中分類
+										ps2.setInt(i, (record.get(3) == null) ? 0 : (Integer) record.get(3)); i++; // 小分類
+										ps2.setString(i, (String) record.get(4)); i++; // 名称
+										ps2.setInt(i, (Integer) record.get(5)); i++; // 単価
+										ps2.setDouble(i, (Double) record.get(6)); i++; // 数量
+										ps2.setDouble(i, (Double) record.get(8)); i++; // 掛率
+										ps2.setInt(i, (Integer) record.get(10)); i++; // 品番
+										ps2.setDouble(i, (Double) record.get(11)); i++; // 重量
+										ps2.setInt(i, (Integer) record.get(12)); i++; // 仕入先CD
 										// ps2.setInt(i, 0); i++; //仕入先CD
-										ps2.setBoolean(i, (Boolean) v.get(13)); i++; // 仕入見積FLG
-										ps2.setString(i, (String) v.get(14)); i++; // 仕入納期
-										ps2.setString(i, (String) v.get(15)); // 備考
+										ps2.setBoolean(i, (Boolean) record.get(13)); i++; // 仕入見積FLG
+										ps2.setString(i, (String) record.get(14)); i++; // 仕入納期
+										ps2.setString(i, (String) record.get(15)); // 備考
 										ps2.addBatch();
 									}
-									m++;
+									middleCD++;
 								}
 							}
 						}
-						l++;
+						coarseCD++;
 					}
 					int[] updateCounts1 = ps1.executeBatch();
 					int[] updateCounts2 = ps2.executeBatch();
@@ -576,7 +576,7 @@ public class QuotationRegister extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(estimateID);
+			out.writeObject(quotationID);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

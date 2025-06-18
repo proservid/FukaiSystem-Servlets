@@ -38,9 +38,9 @@ public class ProductionRegister extends GenericServlet {
 		boolean isError = false;
 		ProjectSummaryDTO summaryDTO = null;
 		StringBuilder err = new StringBuilder();
-		int estimateID = 0;
-		int productID = 0;
-		int productNum = 0;
+		int quotationID = 0;
+		int productionID = 0;
+		int productNum2 = 0;
 
 		try {
 
@@ -78,11 +78,11 @@ public class ProductionRegister extends GenericServlet {
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-			estimateID = summaryDTO.getInt(16);
-			productID = summaryDTO.getInt(17);
+			quotationID = summaryDTO.getInt(16);
+			productionID = summaryDTO.getInt(17);
 
-			productNum = summaryDTO.getInt(11);
-			if (productNum == 0 && productID != 0) {
+			productNum2 = summaryDTO.getInt(11);
+			if (productNum2 == 0 && productionID != 0) {
 				// 製作期または製作番号が0なら
 				try {
 					ps = c.prepareStatement(
@@ -93,13 +93,13 @@ public class ProductionRegister extends GenericServlet {
 							+ "DELETE FROM T_売上_子 WHERE 製作親ID=?;"
 							+ "DELETE FROM T_見積製作 WHERE 製作親ID=?"
 					); // 売上親はリレーションで消える
-					ps.setInt(1, productID);
-					ps.setInt(2, productID);
-					ps.setInt(3, productID);
-					ps.setInt(4, productID);
-					ps.setInt(5, productID);
+					ps.setInt(1, productionID);
+					ps.setInt(2, productionID);
+					ps.setInt(3, productionID);
+					ps.setInt(4, productionID);
+					ps.setInt(5, productionID);
 					ps.executeUpdate();
-					productID = 0;
+					productionID = 0;
 				} catch (SQLException ex) {
 					ex.printStackTrace();
 					isError = true;
@@ -118,7 +118,7 @@ public class ProductionRegister extends GenericServlet {
 					rs = ps.executeQuery();
 					if(rs.next()) {
 						if(rs.getInt("製作親ID") != 0) {
-							productID = rs.getInt("製作親ID");
+							productionID = rs.getInt("製作親ID");
 						}
 					}
 				} catch(SQLException ex) {
@@ -128,7 +128,7 @@ public class ProductionRegister extends GenericServlet {
 					Logging.logStackTrace(ex, lg, className);
 				}
 				 */
-				if (productID == 0) { // 製作伝票新規作成
+				if (productionID == 0) { // 製作伝票新規作成
 					try {
 						ps = c.prepareStatement(
 							"INSERT INTO T_製作_親"
@@ -149,7 +149,7 @@ public class ProductionRegister extends GenericServlet {
 						ps.setString(i, summaryDTO.getStr(11)); i++; // 製作枝番
 						ps.setString(i, summaryDTO.getStr(10)); i++; // 受注番号
 						ps.setString(i, summaryDTO.getStr(16)); i++; // 案件名
-						ps.setInt(i, estimateID); i++; // 見積親ID
+						ps.setInt(i, quotationID); i++; // 見積親ID
 						ps.setInt(i, summaryDTO.getInt(1)); i++; // 得意先CD
 						// 機械番号サブクエリ-----------------------------------
 						ps.setBoolean(i, summaryDTO.getBool(2)); i++; // 新機FLG
@@ -174,7 +174,7 @@ public class ProductionRegister extends GenericServlet {
 							if (isResultSet) {
 								rs = ps.getResultSet();
 								while (rs.next()) {
-									productID = rs.getInt(1);
+									productionID = rs.getInt(1);
 								}
 								rs.close();
 							} else {
@@ -209,7 +209,7 @@ public class ProductionRegister extends GenericServlet {
 						ps.setString(i, summaryDTO.getStr(11)); i++; // 製作枝番
 						ps.setString(i, summaryDTO.getStr(10)); i++; // 受注番号
 						ps.setString(i, summaryDTO.getStr(16)); i++; // 案件名
-						ps.setInt(i, estimateID); i++; // 見積親ID
+						ps.setInt(i, quotationID); i++; // 見積親ID
 						ps.setInt(i, summaryDTO.getInt(1)); i++; // 得意先CD
 						// 機械番号サブクエリ-----------------------------------
 						ps.setBoolean(i, summaryDTO.getBool(2)); i++; // 新機FLG
@@ -228,10 +228,10 @@ public class ProductionRegister extends GenericServlet {
 						ps.setBoolean(i, summaryDTO.getBool(1)); i++; // 手配FLG
 						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
 						ps.setInt(i, 0); i++; // 更新者CD
-						ps.setInt(i, productID); // 製作親ID
+						ps.setInt(i, productionID); // 製作親ID
 						ps.executeUpdate();
 						ps = c.prepareStatement("DELETE FROM T_製作_子 WHERE 製作親ID=?");
-						ps.setInt(1, productID);
+						ps.setInt(1, productionID);
 						ps.executeUpdate();
 					} catch (SQLException ex) {
 						ex.printStackTrace();
@@ -244,7 +244,7 @@ public class ProductionRegister extends GenericServlet {
 				try {
 					// if(summaryDTO.getBool(3)) { //カルテ追加
 					ps = c.prepareStatement("DELETE FROM T_カルテ履歴 WHERE 製作親ID=?");
-					ps.setInt(1, productID);
+					ps.setInt(1, productionID);
 					ps.executeUpdate();
 
 					ps = c.prepareStatement(
@@ -257,9 +257,9 @@ public class ProductionRegister extends GenericServlet {
 					);
 					for (Integer parentCode : summaryDTO.getParents()) {
 						int i = 1;
-						ps.setInt(i, productID); i++; // 製作親ID
+						ps.setInt(i, productionID); i++; // 製作親ID
 						ps.setBoolean(i, summaryDTO.getBool(2)); i++; // 新機FLG
-						ps.setInt(i, productID); i++; // 製作親ID
+						ps.setInt(i, productionID); i++; // 製作親ID
 						ps.setInt(i, summaryDTO.getInt(22)); i++; // 購入者CD
 						ps.setInt(i, parentCode); i++; // 納入機
 						ps.addBatch();
@@ -271,38 +271,38 @@ public class ProductionRegister extends GenericServlet {
 					err.append(className + "テーブル「T_カルテ履歴」の更新に失敗しました\n");
 					Logging.logStackTrace(ex, lg, className);
 				}
-				if (productID != 0) {
+				if (productionID != 0) {
 					int k = 1;
 					try {
 						ps = c.prepareStatement(
 							"INSERT INTO T_製作_子 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 						);
-						for (Vector<Object> v : summaryDTO.getVector(1)) {
-							int tag = (Integer) v.get(1);
+						for (Vector<Object> record : summaryDTO.getVector(1)) {
+							int tag = (Integer) record.get(1);
 							if (tag != 0) {
 								int i = 1;
 								int j = 2;
 								ps.setInt(i, k); i++; // ID
-								ps.setInt(i, productID); i++; // 製作親ID
+								ps.setInt(i, productionID); i++; // 製作親ID
 								ps.setInt(i, tag); i++; // 表示CD
-								ps.setString(i, (String) v.get(j)); i++;
-								j++; // 名称 ps.setBoolean(i, (Boolean) v.get(j)); i++; j++; // 各FLG
-								ps.setInt(i, (Integer) v.get(j)); i++; j++; // 数量
-								ps.setInt(i, (Integer) v.get(j)); i++; j++; // 数量単位CD
-								ps.setInt(i, (Integer) v.get(j)); i++; j++; // 単価
-								ps.setInt(i, (Integer) v.get(j)); i++; j++; // 金額
-								ps.setString(i, (String) v.get(j)); i++; j++; // 図番
-								ps.setString(i, (String) v.get(j)); i++; j++; // 記事
-								ps.setDate(i, (v.get(j) == null || v.get(j).equals(""))
+								ps.setString(i, (String) record.get(j)); i++;
+								j++; // 名称 ps.setBoolean(i, (Boolean) record.get(j)); i++; j++; // 各FLG
+								ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量
+								ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量単位CD
+								ps.setInt(i, (Integer) record.get(j)); i++; j++; // 単価
+								ps.setInt(i, (Integer) record.get(j)); i++; j++; // 金額
+								ps.setString(i, (String) record.get(j)); i++; j++; // 図番
+								ps.setString(i, (String) record.get(j)); i++; j++; // 記事
+								ps.setDate(i, (record.get(j) == null || record.get(j).equals(""))
 										? null
-										: new Date(((java.util.Date) v.get(j)).getTime())
+										: new Date(((java.util.Date) record.get(j)).getTime())
 								);
 								i++; j += 2;
 								ps.setDate(
 									i,
-									(v.get(j) == null || v.get(j).equals(""))
+									(record.get(j) == null || record.get(j).equals(""))
 										? null
-										: new Date(((java.util.Date) v.get(j)).getTime())
+										: new Date(((java.util.Date) record.get(j)).getTime())
 								);
 								ps.addBatch();
 								k++;
@@ -319,7 +319,7 @@ public class ProductionRegister extends GenericServlet {
 
 					try {
 						ps = c.prepareStatement("DELETE FROM T_見積製作 WHERE 製作親ID=?");
-						ps.setInt(1, productID);
+						ps.setInt(1, productionID);
 						ps.executeUpdate();
 						ps = c.prepareStatement(
 							"INSERT INTO T_見積製作"
@@ -328,7 +328,7 @@ public class ProductionRegister extends GenericServlet {
 								+ " where 見積番 like ?"
 						);
 						for (String s : summaryDTO.getQuotationNumbers()) {
-							ps.setInt(1, productID);
+							ps.setInt(1, productionID);
 							ps.setString(2, s);
 							ps.addBatch();
 						}
@@ -377,7 +377,7 @@ public class ProductionRegister extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(productID);
+			out.writeObject(productionID);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

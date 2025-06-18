@@ -35,17 +35,17 @@ public class GetSummary extends GenericServlet {
 		Connection c = dbc.getConnection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		ProjectSummaryDTO psDTO = null;
+		ProjectSummaryDTO summaryDTO = null;
 		StringBuilder err = new StringBuilder();
 
-		int estimateID = 0, productID = 0, deliveryID = 0;
+		int quotationID = 0, productionID = 0, salesID = 0;
 		int tax = 0, discount = 0;
 
-		Vector<Vector<Object>> estimateData = new Vector<Vector<Object>>();
-		Vector<Vector<Object>> productData = new Vector<Vector<Object>>();
-		Vector<Vector<Object>> deliveryData = new Vector<Vector<Object>>();
-		Vector<Vector<Object>> slipListData = new Vector<Vector<Object>>();
-		Map<Integer, Vector<Vector<Object>>> map = new HashMap<Integer, Vector<Vector<Object>>>();
+		Vector<Vector<Object>> quotationData = new Vector<Vector<Object>>();
+		Vector<Vector<Object>> productionData = new Vector<Vector<Object>>();
+		Vector<Vector<Object>> salesData = new Vector<Vector<Object>>();
+		Vector<Vector<Object>> salesSlips = new Vector<Vector<Object>>();
+		Map<Integer, Vector<Vector<Object>>> quotationBasisDataMap = new HashMap<Integer, Vector<Vector<Object>>>();
 
 		try {
 
@@ -57,14 +57,14 @@ public class GetSummary extends GenericServlet {
 			in.close();
 
 			if (obj == null) {
-				estimateID = 0;
-				productID = 0;
-				deliveryID = 0;
+				quotationID = 0;
+				productionID = 0;
+				salesID = 0;
 			} else {
 				if (obj instanceof IDDTO) {
-					estimateID = ((IDDTO) obj).getQuotationID();
-					productID = ((IDDTO) obj).getProductionID();
-					deliveryID = ((IDDTO) obj).getSalesID();
+					quotationID = ((IDDTO) obj).getQuotationID();
+					productionID = ((IDDTO) obj).getProductionID();
+					salesID = ((IDDTO) obj).getSalesID();
 				} else {
 					err.append(className + "readObjectがIDDTO型ではありません\n");
 					lg.error(className + "readObjectがIDDTO型ではありません");
@@ -137,26 +137,26 @@ public class GetSummary extends GenericServlet {
 					+ " ON p.得意先CD=cp.得意先CD"
 					+ " WHERE "
 			);
-			if (estimateID != 0) {
+			if (quotationID != 0) {
 				query.append("e.見積親ID=? AND ");
 			}
-			if (productID == 0) {
+			if (productionID == 0) {
 				query.append("p.製作親ID IS NULL");
 			} else {
 				query.append("p.製作親ID=?");
 			}
 			ps = c.prepareStatement(query.toString());
 			int i = 1;
-			if (estimateID != 0) {
-				ps.setInt(i, estimateID);
+			if (quotationID != 0) {
+				ps.setInt(i, quotationID);
 				i++;
 			}
-			if (productID != 0) {
-				ps.setInt(i, productID);
+			if (productionID != 0) {
+				ps.setInt(i, productionID);
 			}
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				psDTO = new ProjectSummaryDTO(
+				summaryDTO = new ProjectSummaryDTO(
 					// 共通
 					rs.getString("社名e"), rs.getString("社名p"), rs.getString("案件名e"), rs.getString("案件名p"),
 					rs.getInt("得意先CDe"), rs.getInt("得意先CDp"), rs.getInt("親機番号"), // 今すぐセットされるのは見積の親機番号、製作のはあとでsetList
@@ -165,21 +165,21 @@ public class GetSummary extends GenericServlet {
 					// 見積
 					rs.getString("見積枝番"), rs.getString("納期de"), rs.getString("受渡場所"), rs.getString("取引条件"),
 					rs.getString("有効期間"), rs.getString("摘要e"), rs.getString("案内文"), rs.getString("誕生枝番"),
-					estimateID, rs.getInt("見積期"), rs.getInt("見積番号"), 0, 0, // rs.getInt("個人CD"), rs.getInt("依頼手段CD"),
+					quotationID, rs.getInt("見積期"), rs.getInt("見積番号"), 0, 0, // rs.getInt("個人CD"), rs.getInt("依頼手段CD"),
 					rs.getInt("提出済CD"), rs.getInt("通貨e"), rs.getInt("見積金額"), rs.getInt("誕生期"), rs.getInt("誕生番号"),
 					/* rs.getDate("依頼年月日") */null, rs.getDate("見積年月日"), rs.getDate("提出年月日"),
 					null, // あとでsetVectorする。Vector<Vector<Object>> mainTable_e,
 					null, // あとでsetMapする。Map<Integer, Vector<Vector<Object>>> subTable_e,
 					// 製作
 					rs.getString("受注番号"), rs.getString("製作枝番"), rs.getString("納入先名"), rs.getString("摘要p"),
-					productID, rs.getInt("製作期"), rs.getInt("製作番号"), rs.getInt("通貨p"),
+					productionID, rs.getInt("製作期"), rs.getInt("製作番号"), rs.getInt("通貨p"),
 					rs.getInt("契約金額"), rs.getDate("受注年月日"), rs.getDate("納期p"),
 					rs.getDate("発行年月日"), rs.getDate("出荷年月日"), rs.getDate("検収年月日"),
 					rs.getBoolean("新機FLG"), false, rs.getBoolean("出図FLG"), rs.getBoolean("手配FLG"),
 					null, // あとでsetVectorする。Vector<Vector<Object>> mainTable_p,
 					// 出荷
 					rs.getString("摘要s"),
-					deliveryID,
+					salesID,
 					rs.getInt("納品区分CD"), rs.getInt("納品手段CD"), rs.getInt("得意先CDd"),
 					rs.getDate("売上年月日"),
 					null, // あとでsetVectorする。Vector<Vector<Object>> mainTable_d
@@ -194,22 +194,22 @@ public class GetSummary extends GenericServlet {
 			}
 
 			ps = c.prepareStatement("SELECT * FROM T_見積_子 WHERE 見積親ID=?");
-			ps.setInt(1, estimateID);
+			ps.setInt(1, quotationID);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				int serial = rs.getInt("ID");
-				Vector<Object> line = new Vector<Object>();
-				line.add(serial);
-				line.add(rs.getInt("表示CD"));
-				line.add(rs.getString("名称"));
-				line.add(rs.getBoolean("各FLG"));
-				line.add(rs.getInt("数量"));
-				line.add(rs.getInt("数量単位CD"));
-				line.add(rs.getInt("単価"));
-				line.add(rs.getInt("提示額"));
-				line.add(rs.getString("図番"));
-				line.add(rs.getString("備考"));
-				estimateData.add(line);
+				Vector<Object> record = new Vector<Object>();
+				record.add(serial);
+				record.add(rs.getInt("表示CD"));
+				record.add(rs.getString("名称"));
+				record.add(rs.getBoolean("各FLG"));
+				record.add(rs.getInt("数量"));
+				record.add(rs.getInt("数量単位CD"));
+				record.add(rs.getInt("単価"));
+				record.add(rs.getInt("提示額"));
+				record.add(rs.getString("図番"));
+				record.add(rs.getString("備考"));
+				quotationData.add(record);
 			}
 
 			// 見積明細
@@ -221,65 +221,65 @@ public class GetSummary extends GenericServlet {
 					+ " FROM T_見積_加工"
 					+ "  WHERE 見積親ID=? ORDER BY ID"
 			);
-			ps.setInt(1, estimateID);
-			ps.setInt(2, estimateID);
+			ps.setInt(1, quotationID);
+			ps.setInt(2, quotationID);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				Vector<Object> line = new Vector<Object>();
-				line.add(rs.getInt("ID"));
+				Vector<Object> record = new Vector<Object>();
+				record.add(rs.getInt("ID"));
 				int id = rs.getInt("見積子ID");
-				line.add(rs.getInt("大分類CD"));
-				line.add(rs.getInt("中分類CD"));
-				line.add(rs.getInt("小分類CD"));
-				line.add(rs.getString("名称"));
-				line.add(rs.getInt("単価"));
-				line.add(rs.getDouble("数量"));
-				line.add(rs.getInt("原価")); // 計算
-				line.add(rs.getDouble("掛率"));
-				line.add(rs.getInt("小計")); // 計算
-				line.add(rs.getInt("品番"));
-				line.add(rs.getDouble("重量"));
-				line.add(rs.getInt("仕入先CD"));
-				line.add(rs.getBoolean("仕入見積FLG"));
-				line.add(rs.getString("仕入納期"));
-				line.add(rs.getString("備考"));
-				if (map.containsKey(id)) {
-					map.get(id).add(line);
+				record.add(rs.getInt("大分類CD"));
+				record.add(rs.getInt("中分類CD"));
+				record.add(rs.getInt("小分類CD"));
+				record.add(rs.getString("名称"));
+				record.add(rs.getInt("単価"));
+				record.add(rs.getDouble("数量"));
+				record.add(rs.getInt("原価")); // 計算
+				record.add(rs.getDouble("掛率"));
+				record.add(rs.getInt("小計")); // 計算
+				record.add(rs.getInt("品番"));
+				record.add(rs.getDouble("重量"));
+				record.add(rs.getInt("仕入先CD"));
+				record.add(rs.getBoolean("仕入見積FLG"));
+				record.add(rs.getString("仕入納期"));
+				record.add(rs.getString("備考"));
+				if (quotationBasisDataMap.containsKey(id)) {
+					quotationBasisDataMap.get(id).add(record);
 				} else {
 					Vector<Vector<Object>> data = new Vector<Vector<Object>>();
-					data.add(line);
-					map.put(id, data);
+					data.add(record);
+					quotationBasisDataMap.put(id, data);
 				}
 			}
-			if (psDTO != null) {
-				psDTO.setVector(0, estimateData);
-				psDTO.setMap(map);
+			if (summaryDTO != null) {
+				summaryDTO.setVector(0, quotationData);
+				summaryDTO.setMap(quotationBasisDataMap);
 			}
 
 			// 製作明細
 			ps = c.prepareStatement("SELECT * FROM T_製作_子 WHERE 製作親ID=?");
-			ps.setInt(1, productID);
+			ps.setInt(1, productionID);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				Vector<Object> line = new Vector<Object>();
-				line.add(rs.getInt("ID"));
-				line.add(rs.getInt("表示CD"));
-				line.add(rs.getString("名称"));
-				line.add(rs.getBoolean("各FLG"));
-				line.add(rs.getInt("数量"));
-				line.add(rs.getInt("数量単位CD"));
-				line.add(rs.getInt("単価"));
-				line.add(rs.getInt("金額"));
-				line.add(rs.getString("図番"));
-				line.add(rs.getString("備考"));
-				line.add(rs.getDate("完成年月日"));
-				line.add(rs.getDate("完成年月日") != null);
-				line.add(rs.getInt("表示CD") == 2 ? rs.getDate("納品年月日") : null);
-				line.add(rs.getDate("納品年月日") != null);
-				productData.add(line);
+				Vector<Object> record = new Vector<Object>();
+				record.add(rs.getInt("ID"));
+				record.add(rs.getInt("表示CD"));
+				record.add(rs.getString("名称"));
+				record.add(rs.getBoolean("各FLG"));
+				record.add(rs.getInt("数量"));
+				record.add(rs.getInt("数量単位CD"));
+				record.add(rs.getInt("単価"));
+				record.add(rs.getInt("金額"));
+				record.add(rs.getString("図番"));
+				record.add(rs.getString("備考"));
+				record.add(rs.getDate("完成年月日"));
+				record.add(rs.getDate("完成年月日") != null);
+				record.add(rs.getInt("表示CD") == 2 ? rs.getDate("納品年月日") : null);
+				record.add(rs.getDate("納品年月日") != null);
+				productionData.add(record);
 			}
-			if (psDTO != null)
-				psDTO.setVector(1, productData);
+			if (summaryDTO != null)
+				summaryDTO.setVector(1, productionData);
 
 			// 売上明細
 			ps = c.prepareStatement(
@@ -288,33 +288,33 @@ public class GetSummary extends GenericServlet {
 					+ " LEFT OUTER JOIN T_製作_子 pc ON sc.製作親ID=pc.製作親ID AND sc.製作子ID=pc.ID"
 					+ " WHERE 売上親ID=? ORDER BY sc.ID"
 			);
-			ps.setInt(1, deliveryID);
+			ps.setInt(1, salesID);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				Vector<Object> line = new Vector<Object>();
+				Vector<Object> record = new Vector<Object>();
 				int price = rs.getInt("金額");
 				if (rs.getInt("表示CD") == 5) {
 					price = tax;
 				} else if (rs.getInt("表示CD") == 6) {
 					price = discount;
 				}
-				line.add(productID);
-				line.add(rs.getInt("製作子ID"));
-				line.add(rs.getInt("表示CD"));
-				line.add(rs.getString("出荷伝票番号"));
-				line.add(rs.getDate("受注年月日"));
-				line.add(rs.getString("受注番号"));
-				line.add(rs.getString("品名"));
-				line.add(rs.getBoolean("各FLG"));
-				line.add(rs.getInt("数量"));
-				line.add(rs.getInt("数量単位CD"));
-				line.add(rs.getInt("単価"));
-				line.add(price);
-				line.add(rs.getString("備考"));
-				deliveryData.add(line);
+				record.add(productionID);
+				record.add(rs.getInt("製作子ID"));
+				record.add(rs.getInt("表示CD"));
+				record.add(rs.getString("出荷伝票番号"));
+				record.add(rs.getDate("受注年月日"));
+				record.add(rs.getString("受注番号"));
+				record.add(rs.getString("品名"));
+				record.add(rs.getBoolean("各FLG"));
+				record.add(rs.getInt("数量"));
+				record.add(rs.getInt("数量単位CD"));
+				record.add(rs.getInt("単価"));
+				record.add(price);
+				record.add(rs.getString("備考"));
+				salesData.add(record);
 			}
-			if (psDTO != null)
-				psDTO.setVector(2, deliveryData);
+			if (summaryDTO != null)
+				summaryDTO.setVector(2, salesData);
 
 			// 売伝一覧
 			ps = c.prepareStatement(
@@ -322,7 +322,7 @@ public class GetSummary extends GenericServlet {
 					+ " LEFT OUTER JOIN (SELECT DISTINCT 売上親ID,製作親ID FROM T_売上_子) sc ON sp.売上親ID=sc.売上親ID"
 					+ " WHERE 製作親ID=?"
 			);
-			ps.setInt(1, productID);
+			ps.setInt(1, productionID);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				int type = 0;
@@ -331,32 +331,32 @@ public class GetSummary extends GenericServlet {
 				} else if (!rs.getBoolean("請求FLG")) {
 					type = 1;
 				}
-				Vector<Object> line = new Vector<Object>();
-				line.add(rs.getInt("売上親ID"));
-				line.add(type);
-				line.add(rs.getDate("売上年月日"));
-				line.add(rs.getInt("納品区分CD"));
-				line.add(rs.getInt("納品手段CD"));
-				line.add(rs.getString("摘要"));
-				slipListData.add(line);
+				Vector<Object> record = new Vector<Object>();
+				record.add(rs.getInt("売上親ID"));
+				record.add(type);
+				record.add(rs.getDate("売上年月日"));
+				record.add(rs.getInt("納品区分CD"));
+				record.add(rs.getInt("納品手段CD"));
+				record.add(rs.getString("摘要"));
+				salesSlips.add(record);
 			}
-			if (psDTO != null)
-				psDTO.setVector(3, slipListData);
+			if (summaryDTO != null)
+				summaryDTO.setVector(3, salesSlips);
 
-			if (productID > 0) {
+			if (productionID > 0) {
 				ps = c.prepareStatement(
 					"SELECT convert(varchar,見積期)+'-'+right('000' + convert(varchar, 見積番号), 3)+見積枝番 AS 見積番号 FROM T_見積製作 ep"
 						+ " LEFT OUTER JOIN T_見積_親 e ON ep.見積親ID=e.見積親ID"
 						+ " WHERE 製作親ID=?"
 				);
-				ps.setInt(1, productID);
+				ps.setInt(1, productionID);
 				rs = ps.executeQuery();
 				List<String> quoteNumbers = new ArrayList<String>();
 				while (rs.next()) {
 					quoteNumbers.add(rs.getString("見積番号"));
 				}
-				if (psDTO != null)
-					psDTO.setQuotationNumbers(quoteNumbers);
+				if (summaryDTO != null)
+					summaryDTO.setQuotationNumbers(quoteNumbers);
 
 				// カルテ履歴
 				// 見積の履歴はすでに入っており、製作データがあるときのみ、より詳細なデータを取得
@@ -364,14 +364,14 @@ public class GetSummary extends GenericServlet {
 					"SELECT 機械番号 FROM T_カルテ履歴 h LEFT OUTER JOIN T_製作_親 p ON h.元製作親ID=p.製作親ID"
 						+ " WHERE h.製作親ID=? AND p.製作親ID > 0"
 				);
-				ps.setInt(1, productID);
+				ps.setInt(1, productionID);
 				rs = ps.executeQuery();
 				List<Integer> parents = new ArrayList<Integer>();
 				while (rs.next()) {
 					parents.add(rs.getInt("機械番号"));
 				}
-				if (psDTO != null)
-					psDTO.setParents(parents);
+				if (summaryDTO != null)
+					summaryDTO.setParents(parents);
 			}
 		} catch (SQLException ex) {
 			err.append(ex.toString());
@@ -384,7 +384,7 @@ public class GetSummary extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(psDTO);
+			out.writeObject(summaryDTO);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

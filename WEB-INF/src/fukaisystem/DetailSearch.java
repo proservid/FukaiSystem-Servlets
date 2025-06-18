@@ -36,7 +36,7 @@ public class DetailSearch extends GenericServlet {
 		String str = "";
 		String conjunction = "";
 
-		Vector<Vector<Object>> v = new Vector<Vector<Object>>();
+		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 
 		try {
 
@@ -156,44 +156,44 @@ public class DetailSearch extends GenericServlet {
 				}
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					Vector<Object> v2 = new Vector<Object>();
-					v2.add(new IDDTO(rs.getInt("見積親ID"), rs.getInt("製作親ID"), rs.getInt("売上親ID")));
+					Vector<Object> record = new Vector<Object>();
+					record.add(new IDDTO(rs.getInt("見積親ID"), rs.getInt("製作親ID"), rs.getInt("売上親ID")));
 					if (rs.getInt("見積番号") != 0) {
-						v2.add(rs.getString("見積期") + "-" + rs.getString("見積番号") + " " + rs.getString("見積枝番"));
+						record.add(rs.getString("見積期") + "-" + rs.getString("見積番号") + " " + rs.getString("見積枝番"));
 					} else {
-						v2.add("");
+						record.add("");
 					}
 					if (rs.getInt("製作番号") != 0) {
-						v2.add(rs.getString("製作期") + "-" + rs.getInt("製作番号") + " " + rs.getString("製作枝番"));
+						record.add(rs.getString("製作期") + "-" + rs.getInt("製作番号") + " " + rs.getString("製作枝番"));
 					} else {
-						v2.add("");
+						record.add("");
 					}
-					// v2.add(rs.getInt("種類"));
+					// record.add(rs.getInt("種類"));
 					if (rs.getInt("誕生番号") != 0) {
-						v2.add(rs.getString("誕生期") + "-" + rs.getInt("誕生番号") + " " + rs.getString("誕生枝番"));
+						record.add(rs.getString("誕生期") + "-" + rs.getInt("誕生番号") + " " + rs.getString("誕生枝番"));
 					} else {
-						v2.add("");
+						record.add("");
 					}
 
 					if (rs.getInt("得意先CD") != 0) {
-						v2.add(/* rs.getInt("得意先CD") + "：" + */rs.getString("社名"));
+						record.add(/* rs.getInt("得意先CD") + "：" + */rs.getString("社名"));
 					} else {
-						v2.add("");
+						record.add("");
 					}
-					v2.add(rs.getString("納入先名"));
-					v2.add(rs.getString("案件名"));
+					record.add(rs.getString("納入先名"));
+					record.add(rs.getString("案件名"));
 
-					v2.add(rs.getDate("見積年月日"));
-					v2.add(rs.getInt("見積金額"));
-					v2.add(rs.getString("受注番号"));
-					v2.add(rs.getDate("受注年月日"));
-					v2.add(rs.getDate("製作年月日"));
-					v2.add(rs.getDate("納期"));
-					v2.add(rs.getInt("契約金額"));
-					v2.add(rs.getDate("出荷年月日"));
-					v2.add(rs.getDate("検収年月日"));
+					record.add(rs.getDate("見積年月日"));
+					record.add(rs.getInt("見積金額"));
+					record.add(rs.getString("受注番号"));
+					record.add(rs.getDate("受注年月日"));
+					record.add(rs.getDate("製作年月日"));
+					record.add(rs.getDate("納期"));
+					record.add(rs.getInt("契約金額"));
+					record.add(rs.getDate("出荷年月日"));
+					record.add(rs.getDate("検収年月日"));
 
-					v.add(v2);
+					data.add(record);
 				}
 
 			} catch (SQLException ex) {
@@ -210,7 +210,7 @@ public class DetailSearch extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(v);
+			out.writeObject(data);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

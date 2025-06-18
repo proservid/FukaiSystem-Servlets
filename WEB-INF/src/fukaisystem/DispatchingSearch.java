@@ -32,12 +32,12 @@ public class DispatchingSearch extends GenericServlet {
 		Connection c = dbc.getConnection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		DispatchingDTO dispatchingDTO = null;
+		DispatchingDTO dto = null;
 		StringBuilder err = new StringBuilder();
-		List<Integer> strIndex = new ArrayList<Integer>();
-		List<Integer> intIndex = new ArrayList<Integer>();
+		List<Integer> stringConditionIndex = new ArrayList<Integer>();
+		List<Integer> intConditionIndex = new ArrayList<Integer>();
 
-		Vector<Vector<Object>> v = new Vector<Vector<Object>>();
+		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 
 		String[] constStrs = {
 			"製作枝番 like ?",
@@ -64,7 +64,7 @@ public class DispatchingSearch extends GenericServlet {
 				lg.error(className + "readObjectがnullです");
 			} else {
 				if (obj instanceof DispatchingDTO) {
-					dispatchingDTO = (DispatchingDTO) obj;
+					dto = (DispatchingDTO) obj;
 				} else {
 					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
 					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
@@ -84,13 +84,13 @@ public class DispatchingSearch extends GenericServlet {
 				boolean isFirst = true;
 				// 文字列の検索条件は、searchDTO.getStr(0～7)
 				for (int i = 0; i < 8; i++) {
-					if (!dispatchingDTO.getStr(i).equals("")) { // 検索条件が入っていれば
-						strIndex.add(i);
+					if (!dto.getStr(i).equals("")) { // 検索条件が入っていれば
+						stringConditionIndex.add(i);
 						if (isFirst) {
 							query.append(" WHERE ");
 							isFirst = false;
 						} else {
-							if (dispatchingDTO.isAnd())
+							if (dto.isAnd())
 								query.append(" AND ");
 							else
 								query.append(" OR ");
@@ -101,13 +101,13 @@ public class DispatchingSearch extends GenericServlet {
 
 				// 数値の検索条件は、searchDTO.getInt(0～6)
 				for (int i = 0; i < 7; i++) {
-					if (dispatchingDTO.getInt(i) != 0) { // 検索条件が入っていれば
-						intIndex.add(i);
+					if (dto.getInt(i) != 0) { // 検索条件が入っていれば
+						intConditionIndex.add(i);
 						if (isFirst) {
 							query.append(" WHERE " + constInts[i]);
 							isFirst = false;
 						} else {
-							if (dispatchingDTO.isAnd())
+							if (dto.isAnd())
 								query.append(" AND " + constInts[i]);
 							else
 								query.append(" OR " + constInts[i]);
@@ -117,27 +117,27 @@ public class DispatchingSearch extends GenericServlet {
 				query.append(") a GROUP BY 出庫親ID,製作期,製作番号,製作枝番,出庫年月日,用途,摘要");
 				ps = c.prepareStatement(query.toString());
 				int j = 1;
-				for (int i : strIndex) {
-					ps.setString(j, dispatchingDTO.getStr(i));
+				for (int i : stringConditionIndex) {
+					ps.setString(j, dto.getStr(i));
 					j++;
 				}
-				for (int i : intIndex) {
-					ps.setInt(j, dispatchingDTO.getInt(i));
+				for (int i : intConditionIndex) {
+					ps.setInt(j, dto.getInt(i));
 					j++;
 				}
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					Vector<Object> v2 = new Vector<Object>();
-					v2.add(rs.getInt("出庫親ID"));
+					Vector<Object> record = new Vector<Object>();
+					record.add(rs.getInt("出庫親ID"));
 					if (rs.getInt("製作期") != 0 && rs.getInt("製作番号") != 0) {
-						v2.add(rs.getInt("製作期") + "-" + rs.getInt("製作番号") + " " + rs.getString("製作枝番"));
+						record.add(rs.getInt("製作期") + "-" + rs.getInt("製作番号") + " " + rs.getString("製作枝番"));
 					} else {
-						v2.add("");
+						record.add("");
 					}
-					v2.add(rs.getDate("出庫年月日"));
-					v2.add(rs.getString("用途"));
-					v2.add(rs.getString("摘要"));
-					v.add(v2);
+					record.add(rs.getDate("出庫年月日"));
+					record.add(rs.getString("用途"));
+					record.add(rs.getString("摘要"));
+					data.add(record);
 				}
 
 			} catch (SQLException ex) {
@@ -154,7 +154,7 @@ public class DispatchingSearch extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(v);
+			out.writeObject(data);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

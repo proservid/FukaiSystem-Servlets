@@ -41,9 +41,9 @@ public class DataRegister extends GenericServlet {
 
 			String tableName = "";
 			if (obj instanceof StringDTO) {
-				StringDTO stringDTO = (StringDTO) obj;
-				tableName = stringDTO.getString();
-				lines = stringDTO.getData();
+				StringDTO dto = (StringDTO) obj;
+				tableName = dto.getString();
+				lines = dto.getData();
 			}
 			if (lines == null)
 				lg.debug("linesnull");

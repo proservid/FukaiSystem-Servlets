@@ -21,11 +21,11 @@ import fukaisystem.dto.SalesDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class DeliveryRegister extends GenericServlet {
+public class SalesRegister extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "DeliveryRegister\n";
+	private static final String className = "SalesRegister\n";
 
 	public void service(ServletRequest request, ServletResponse response) {
 		DBConnection dbc = new DBConnection();
@@ -34,11 +34,11 @@ public class DeliveryRegister extends GenericServlet {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		boolean isError = false;
-		SalesDTO deliveryDTO = null;
+		SalesDTO salesDTO = null;
 		StringBuilder err = new StringBuilder();
 
-		int deliveryID = 0;
-		int productID = 0;
+		int salesID = 0;
+		int productionID = 0;
 
 		try {
 
@@ -54,7 +54,7 @@ public class DeliveryRegister extends GenericServlet {
 				lg.error(className + "readObjectがnullです");
 			} else {
 				if (obj instanceof SalesDTO) {
-					deliveryDTO = (SalesDTO) obj;
+					salesDTO = (SalesDTO) obj;
 				} else {
 					isError = true;
 					err.append(className + "readObjectがShippingDTO型ではありません\n");
@@ -62,12 +62,12 @@ public class DeliveryRegister extends GenericServlet {
 				}
 			}
 
-			deliveryID = deliveryDTO.getInt(0);
-			productID = deliveryDTO.getInt(1);
+			salesID = salesDTO.getInt(0);
+			productionID = salesDTO.getInt(1);
 
 			boolean isEmpty = true;
-			for (Vector<Object> v : deliveryDTO.getVector()) {
-				if ((Integer) v.get(2) != 0) {
+			for (Vector<Object> record : salesDTO.getVector()) {
+				if ((Integer) record.get(2) != 0) {
 					isEmpty = false;
 				}
 			}
@@ -85,7 +85,7 @@ public class DeliveryRegister extends GenericServlet {
 					Logging.logStackTrace(ex, lg, className);
 				}
 
-				if (deliveryID == 0) {
+				if (salesID == 0) {
 					try {
 						ps = c.prepareStatement(
 							"INSERT INTO T_売上_親"
@@ -93,19 +93,19 @@ public class DeliveryRegister extends GenericServlet {
 								+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 						);
 						int i = 1;
-						ps.setInt(i, deliveryDTO.getInt(2)); i++; // 得意先CD
-						ps.setDate(i, deliveryDTO.getDate()); i++; // 売上年月日
-						ps.setBoolean(i, (deliveryDTO.getInt(7) != 2)); i++; // 売上FLG
-						ps.setBoolean(i, (deliveryDTO.getInt(7) != 1)); i++; // 請求FLG
-						ps.setInt(i, deliveryDTO.getInt(3)); i++; // 納品区分
-						ps.setInt(i, deliveryDTO.getInt(4)); i++; // 納品手段
-						if (deliveryDTO.getInt(5) < 0) {
+						ps.setInt(i, salesDTO.getInt(2)); i++; // 得意先CD
+						ps.setDate(i, salesDTO.getDate()); i++; // 売上年月日
+						ps.setBoolean(i, (salesDTO.getInt(7) != 2)); i++; // 売上FLG
+						ps.setBoolean(i, (salesDTO.getInt(7) != 1)); i++; // 請求FLG
+						ps.setInt(i, salesDTO.getInt(3)); i++; // 納品区分
+						ps.setInt(i, salesDTO.getInt(4)); i++; // 納品手段
+						if (salesDTO.getInt(5) < 0) {
 							ps.setNull(i, Types.INTEGER); i++;
 						} else {
-							ps.setInt(i, deliveryDTO.getInt(5)); i++; // 消費税
+							ps.setInt(i, salesDTO.getInt(5)); i++; // 消費税
 						}
-						ps.setInt(i, deliveryDTO.getInt(6)); i++; // 値引き
-						ps.setString(i, deliveryDTO.getString()); i++; // 摘要
+						ps.setInt(i, salesDTO.getInt(6)); i++; // 値引き
+						ps.setString(i, salesDTO.getString()); i++; // 摘要
 						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
 						ps.setInt(i, 0); // 更新者CD
 						boolean isResultSet = ps.execute();
@@ -114,7 +114,7 @@ public class DeliveryRegister extends GenericServlet {
 							if (isResultSet) {
 								rs = ps.getResultSet();
 								while (rs.next()) {
-									deliveryID = rs.getInt(1);
+									salesID = rs.getInt(1);
 								}
 								rs.close();
 							} else {
@@ -139,25 +139,25 @@ public class DeliveryRegister extends GenericServlet {
 								+ " WHERE 売上親ID=?"
 						);
 						int i = 1;
-						ps.setInt(i, deliveryDTO.getInt(2)); i++; // 得意先CD
-						ps.setDate(i, deliveryDTO.getDate()); i++; // 売上年月日
-						ps.setBoolean(i, (deliveryDTO.getInt(7) != 2)); i++; // 売上FLG
-						ps.setBoolean(i, (deliveryDTO.getInt(7) != 1)); i++; // 請求FLG
-						ps.setInt(i, deliveryDTO.getInt(3)); i++; // 納品区分
-						ps.setInt(i, deliveryDTO.getInt(4)); i++; // 納品手段
-						if (deliveryDTO.getInt(5) < 0) {
+						ps.setInt(i, salesDTO.getInt(2)); i++; // 得意先CD
+						ps.setDate(i, salesDTO.getDate()); i++; // 売上年月日
+						ps.setBoolean(i, (salesDTO.getInt(7) != 2)); i++; // 売上FLG
+						ps.setBoolean(i, (salesDTO.getInt(7) != 1)); i++; // 請求FLG
+						ps.setInt(i, salesDTO.getInt(3)); i++; // 納品区分
+						ps.setInt(i, salesDTO.getInt(4)); i++; // 納品手段
+						if (salesDTO.getInt(5) < 0) {
 							ps.setNull(i, Types.INTEGER); i++;
 						} else {
-							ps.setInt(i, deliveryDTO.getInt(5)); i++; // 消費税
+							ps.setInt(i, salesDTO.getInt(5)); i++; // 消費税
 						}
-						ps.setInt(i, deliveryDTO.getInt(6)); i++; // 値引き
-						ps.setString(i, deliveryDTO.getString()); i++; // 摘要
+						ps.setInt(i, salesDTO.getInt(6)); i++; // 値引き
+						ps.setString(i, salesDTO.getString()); i++; // 摘要
 						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
 						ps.setInt(i, 0); i++; // 更新者CD
-						ps.setInt(i, deliveryID);
+						ps.setInt(i, salesID);
 						ps.executeUpdate();
 						ps = c.prepareStatement("DELETE FROM T_売上_子 WHERE 売上親ID=?");
-						ps.setInt(1, deliveryID);
+						ps.setInt(1, salesID);
 						ps.executeUpdate();
 					} catch (SQLException ex) {
 						isError = true;
@@ -170,27 +170,27 @@ public class DeliveryRegister extends GenericServlet {
 				try {
 					ps = c.prepareStatement("INSERT INTO T_売上_子 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"); // +
 					// "UPDATE T_製作_子 SET 納品年月日=? WHERE ID=? AND 製作親ID=?");
-					for (Vector<Object> v : deliveryDTO.getVector()) {
-						int tag = (Integer) v.get(2);
+					for (Vector<Object> record : salesDTO.getVector()) {
+						int tag = (Integer) record.get(2);
 						if (tag != 0) {
 							int i = 1;
 							int j = 0;
 							ps.setInt(i, k); i++; // ID
-							ps.setInt(i, deliveryID); i++; // 売上親ID
-							ps.setInt(i, productID); i++; j++; // 製作親ID
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 製作子ID
+							ps.setInt(i, salesID); i++; // 売上親ID
+							ps.setInt(i, productionID); i++; j++; // 製作親ID
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 製作子ID
 							ps.setInt(i, tag); i++; j++; // 表示CD
-							ps.setString(i, (String) v.get(j)); i++; j += 3; // 出荷伝票番号
-							ps.setString(i, (String) v.get(j)); i++; j++; // 品名
-							ps.setBoolean(i, (Boolean) v.get(j)); i++; j++; // 各
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 数量
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 単位
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 単価
-							ps.setInt(i, (Integer) v.get(j)); i++; j++; // 金額
-							ps.setString(i, (String) v.get(j)); i++; // 備考
-							// ps.setDate(i, deliveryDTO.getDate()); i++; j = 1; //売上年月日
-							// ps.setInt(i, (Integer)v.get(j)); i++; j = 0; //製作子ID
-							// ps.setInt(i, (Integer)v.get(j)); //製作親ID
+							ps.setString(i, (String) record.get(j)); i++; j += 3; // 出荷伝票番号
+							ps.setString(i, (String) record.get(j)); i++; j++; // 品名
+							ps.setBoolean(i, (Boolean) record.get(j)); i++; j++; // 各
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 単位
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 単価
+							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 金額
+							ps.setString(i, (String) record.get(j)); i++; // 備考
+							// ps.setDate(i, salesDTO.getDate()); i++; j = 1; //売上年月日
+							// ps.setInt(i, (Integer)record.get(j)); i++; j = 0; //製作子ID
+							// ps.setInt(i, (Integer)record.get(j)); //製作親ID
 							ps.addBatch();
 							k++;
 						}
@@ -237,7 +237,7 @@ public class DeliveryRegister extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(deliveryID);
+			out.writeObject(salesID);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

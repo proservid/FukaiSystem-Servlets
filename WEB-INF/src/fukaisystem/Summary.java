@@ -120,41 +120,41 @@ public class Summary extends GenericServlet {
 					int newAccountID = rs.getInt("得意先CD");
 					if (accountID != 0 && accountID == newAccountID) {
 						if (taxes.containsKey(accountID)) {
-							Vector<Object> v = new Vector<Object>();
-							v.add(accountID);
-							v.add("");
-							v.add(taxes.get(accountID));
-							data.add(v);
+							Vector<Object> record = new Vector<Object>();
+							record.add(accountID);
+							record.add("");
+							record.add(taxes.get(accountID));
+							data.add(record);
 						}
-						Vector<Object> v = new Vector<Object>();
-						v.add(accountID);
-						v.add("");
-						v.add(subTotal);
-						data.add(v);
+						Vector<Object> record = new Vector<Object>();
+						record.add(accountID);
+						record.add("");
+						record.add(subTotal);
+						data.add(record);
 					}
-					Vector<Object> v = new Vector<Object>();
-					v.add(newAccountID);
-					v.add(rs.getString("製番"));
-					v.add(rs.getString("金額"));
-					data.add(v);
+					Vector<Object> record = new Vector<Object>();
+					record.add(newAccountID);
+					record.add(rs.getString("製番"));
+					record.add(rs.getString("金額"));
+					data.add(record);
 				}
 				if (taxes.containsKey(accountID)) {
-					Vector<Object> v = new Vector<Object>();
-					v.add(accountID);
-					v.add("");
-					v.add(taxes.get(accountID));
-					data.add(v);
+					Vector<Object> record = new Vector<Object>();
+					record.add(accountID);
+					record.add("");
+					record.add(taxes.get(accountID));
+					data.add(record);
 				}
-				Vector<Object> v = new Vector<Object>();
-				v.add(accountID);
-				v.add("");
-				v.add(subTotal);
-				data.add(v);
-				v = new Vector<Object>();
-				v.add(accountID);
-				v.add("");
-				v.add(subTotal);
-				data.add(v);
+				Vector<Object> record = new Vector<Object>();
+				record.add(accountID);
+				record.add("");
+				record.add(subTotal);
+				data.add(record);
+				record = new Vector<Object>();
+				record.add(accountID);
+				record.add("");
+				record.add(subTotal);
+				data.add(record);
 
 			} catch (SQLException ex) {
 				err.append(className + "テーブル「T_見積_親」の読み出しに失敗しました\n");

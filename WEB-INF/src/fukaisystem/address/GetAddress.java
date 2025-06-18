@@ -74,22 +74,22 @@ public class GetAddress extends GenericServlet {
 				ps.setString(1, input);
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					Vector<String> v = new Vector<String>();
-					v.add(rs.getString("都道府県"));
-					v.add(rs.getString("市区町村"));
-					v.add(rs.getString("町域") + rs.getString("京都通り名"));
-					v.add(rs.getString("字丁目") + rs.getString("補足"));
-					v.add(rs.getString("事業所名"));
-					v.add(rs.getString("事業所住所"));
-					v.add(rs.getString("郵便枝番"));
-					output.add(v);
+					Vector<String> record = new Vector<String>();
+					record.add(rs.getString("都道府県"));
+					record.add(rs.getString("市区町村"));
+					record.add(rs.getString("町域") + rs.getString("京都通り名"));
+					record.add(rs.getString("字丁目") + rs.getString("補足"));
+					record.add(rs.getString("事業所名"));
+					record.add(rs.getString("事業所住所"));
+					record.add(rs.getString("郵便枝番"));
+					output.add(record);
 				}
 				if (output.size() == 0) {
-					Vector<String> v = new Vector<String>();
+					Vector<String> record = new Vector<String>();
 					for (int i = 0; i < 7; i++) {
-						v.add("");
+						record.add("");
 					}
-					output.add(v);
+					output.add(record);
 				}
 			} catch (SQLException ex) {
 				err.append("テーブル「T_テーブル名」の読込に失敗しました\n");

@@ -30,7 +30,7 @@ public class GetOrderSummary extends GenericServlet {
 		Connection c = dbc.getConnection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		OrderDocumentDTO odDTO = null;
+		OrderDocumentDTO dto = null;
 		StringBuilder err = new StringBuilder();
 
 		int id = 0;
@@ -53,8 +53,8 @@ public class GetOrderSummary extends GenericServlet {
 				if (obj instanceof Number) {
 					id = ((Number) obj).intValue();
 				} else {
-					err.append(className + "readObjectがSetSummaryDTO型ではありません\n");
-					lg.error(className + "readObjectがSetSummaryDTO型ではありません");
+					err.append(className + "readObjectがNumber型ではありません\n");
+					lg.error(className + "readObjectがNumber型ではありません");
 				}
 			}
 			try {
@@ -65,27 +65,27 @@ public class GetOrderSummary extends GenericServlet {
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					Vector<Object> line = new Vector<Object>();
-					line.add(rs.getInt("表示CD"));
-					line.add(rs.getInt("大分類CD"));
-					line.add(rs.getInt("中分類CD"));
-					line.add(rs.getInt("小分類CD"));
-					line.add(rs.getString("材料品名"));
-					line.add(rs.getBoolean("各FLG"));
-					line.add(rs.getInt("数量"));
-					line.add(rs.getInt("数量単位CD"));
-					line.add(rs.getDouble("重量長さ"));
-					line.add(rs.getInt("単価"));
-					line.add(rs.getInt("金額"));
-					line.add(rs.getString("備考"));
-					line.add(rs.getDate("入庫年月日"));
-					line.add(rs.getDate("入庫年月日") != null);
-					line.add(rs.getInt("納品書番号"));
-					line.add(rs.getDate("納品書日"));
-					line.add(rs.getInt("消費税"));
-					line.add(rs.getInt("納品書番号") != 0);
-					line.add(rs.getBoolean("〆FLG"));
-					data.add(line);
+					Vector<Object> record = new Vector<Object>();
+					record.add(rs.getInt("表示CD"));
+					record.add(rs.getInt("大分類CD"));
+					record.add(rs.getInt("中分類CD"));
+					record.add(rs.getInt("小分類CD"));
+					record.add(rs.getString("材料品名"));
+					record.add(rs.getBoolean("各FLG"));
+					record.add(rs.getInt("数量"));
+					record.add(rs.getInt("数量単位CD"));
+					record.add(rs.getDouble("重量長さ"));
+					record.add(rs.getInt("単価"));
+					record.add(rs.getInt("金額"));
+					record.add(rs.getString("備考"));
+					record.add(rs.getDate("入庫年月日"));
+					record.add(rs.getDate("入庫年月日") != null);
+					record.add(rs.getInt("納品書番号"));
+					record.add(rs.getDate("納品書日"));
+					record.add(rs.getInt("消費税"));
+					record.add(rs.getInt("納品書番号") != 0);
+					record.add(rs.getBoolean("〆FLG"));
+					data.add(record);
 				}
 
 				ps = c.prepareStatement(
@@ -106,7 +106,7 @@ public class GetOrderSummary extends GenericServlet {
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					odDTO = new OrderDocumentDTO(
+					dto = new OrderDocumentDTO(
 						data,
 						rs.getString("社名"),
 						rs.getString("注文枝番"),
@@ -136,7 +136,7 @@ public class GetOrderSummary extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(odDTO);
+			out.writeObject(dto);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

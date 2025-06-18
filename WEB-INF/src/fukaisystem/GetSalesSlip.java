@@ -30,10 +30,10 @@ public class GetSalesSlip extends GenericServlet {
 		Connection c = dbc.getConnection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		SalesDTO dDTO = null;
+		SalesDTO dto = null;
 		StringBuilder err = new StringBuilder();
 
-		int deliveryID = 0;
+		int salesID = 0;
 		int tax = 0, discount = 0;
 
 		Vector<Vector<Object>> deliveryData = new Vector<Vector<Object>>();
@@ -48,10 +48,10 @@ public class GetSalesSlip extends GenericServlet {
 			in.close();
 
 			if (obj == null) {
-				deliveryID = 0;
+				salesID = 0;
 			} else {
 				if (obj instanceof Integer) {
-					deliveryID = (Integer) obj;
+					salesID = (Integer) obj;
 				} else {
 					err.append(className + "readObjectがInteger型ではありません\n");
 					lg.error(className + "readObjectがInteger型ではありません");
@@ -66,7 +66,7 @@ public class GetSalesSlip extends GenericServlet {
 				"SELECT 納品区分CD,納品手段CD,得意先CD,売上年月日,売上FLG,請求FLG,消費税,値引き,摘要 FROM T_売上_親"
 					+ " WHERE 売上親ID=?"
 			);
-			ps.setInt(1, deliveryID);
+			ps.setInt(1, salesID);
 			rs = ps.executeQuery();
 			if (rs.next()) {
 				int type = 0;
@@ -82,9 +82,9 @@ public class GetSalesSlip extends GenericServlet {
 				}
 
 				discount = rs.getInt("値引き");
-				//sDTO = new SalesDTO(deliveryID, rs.getInt("納品区分CD"),rs.getInt("納品手段CD"),rs.getInt("得意先CD"),type,rs.getDate("売上年月日"),rs.getString("摘要"),null);
-				dDTO = new SalesDTO(
-					deliveryID,
+				//sDTO = new SalesDTO(salesID, rs.getInt("納品区分CD"),rs.getInt("納品手段CD"),rs.getInt("得意先CD"),type,rs.getDate("売上年月日"),rs.getString("摘要"),null);
+				dto = new SalesDTO(
+					salesID,
 					0,
 					0,
 					rs.getDate("売上年月日"),
@@ -106,35 +106,35 @@ public class GetSalesSlip extends GenericServlet {
 					+ " LEFT OUTER JOIN T_売上_親 sp ON sc.売上親ID=sp.売上親ID"
 					+ " WHERE sc.売上親ID=? ORDER BY sc.ID"
 			);
-			ps.setInt(1, deliveryID);
+			ps.setInt(1, salesID);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				Vector<Object> line = new Vector<Object>();
+				Vector<Object> record = new Vector<Object>();
 				int price = rs.getInt("金額");
 				if (rs.getInt("表示CD") == 5) {
 					price = tax;
 				} else if (rs.getInt("表示CD") == 6) {
 					price = discount;
 				}
-				line.add(rs.getInt("製作親ID"));
-				line.add(rs.getInt("製作子ID"));
-				line.add(rs.getInt("表示CD"));
-				line.add(rs.getString("出荷伝票番号"));
-				line.add(rs.getDate("受注年月日"));
-				line.add(rs.getString("受注番号"));
-				line.add(rs.getString("品名"));
-				line.add(rs.getBoolean("各FLG"));
-				line.add(rs.getInt("数量"));
-				line.add(rs.getInt("数量単位CD"));
-				line.add(rs.getInt("単価"));
-				line.add(price);
-				line.add(rs.getString("備考"));
-				line.add(rs.getDate("完成年月日"));
-				line.add(rs.getDate("売上年月日"));
-				deliveryData.add(line);
+				record.add(rs.getInt("製作親ID"));
+				record.add(rs.getInt("製作子ID"));
+				record.add(rs.getInt("表示CD"));
+				record.add(rs.getString("出荷伝票番号"));
+				record.add(rs.getDate("受注年月日"));
+				record.add(rs.getString("受注番号"));
+				record.add(rs.getString("品名"));
+				record.add(rs.getBoolean("各FLG"));
+				record.add(rs.getInt("数量"));
+				record.add(rs.getInt("数量単位CD"));
+				record.add(rs.getInt("単価"));
+				record.add(price);
+				record.add(rs.getString("備考"));
+				record.add(rs.getDate("完成年月日"));
+				record.add(rs.getDate("売上年月日"));
+				deliveryData.add(record);
 			}
-			if (dDTO != null)
-				dDTO.setVector(deliveryData);
+			if (dto != null)
+				dto.setVector(deliveryData);
 		} catch (SQLException ex) {
 			err.append(ex.toString());
 			Logging.logStackTrace(ex, lg, className);
@@ -146,7 +146,7 @@ public class GetSalesSlip extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(dDTO);
+			out.writeObject(dto);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

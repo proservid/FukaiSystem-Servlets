@@ -74,22 +74,22 @@ public class CopyData extends GenericServlet {
 			ps.setString(3, branch);
 			rs = ps.executeQuery();
 			while (rs.next()) {
-				Vector<Object> line = new Vector<Object>();
-				line.add(rs.getInt("表示CD"));
-				line.add("");
-				line.add(rs.getDate("注文月日"));
-				line.add(rs.getString("注文番号"));
-				line.add(rs.getString("名称"));
-				line.add(rs.getBoolean("各FLG"));
-				line.add(rs.getInt("数量"));
-				line.add(rs.getInt("数量単位CD"));
-				line.add(rs.getInt("単価"));
-				line.add(rs.getInt("金額"));
-				line.add(0);
-				line.add("");
-				line.add(rs.getDate("完成年月日"));
-				line.add(rs.getDate("納品年月日"));
-				deliveryData.add(line);
+				Vector<Object> record = new Vector<Object>();
+				record.add(rs.getInt("表示CD"));
+				record.add("");
+				record.add(rs.getDate("注文月日"));
+				record.add(rs.getString("注文番号"));
+				record.add(rs.getString("名称"));
+				record.add(rs.getBoolean("各FLG"));
+				record.add(rs.getInt("数量"));
+				record.add(rs.getInt("数量単位CD"));
+				record.add(rs.getInt("単価"));
+				record.add(rs.getInt("金額"));
+				record.add(0);
+				record.add("");
+				record.add(rs.getDate("完成年月日"));
+				record.add(rs.getDate("納品年月日"));
+				deliveryData.add(record);
 			}
 		} catch (SQLException ex) {
 			err.append(ex.toString());

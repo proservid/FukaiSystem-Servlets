@@ -37,17 +37,17 @@ public class GetExpectedCost extends GenericServlet {
 		ResultSet rs = null;
 
 		String caption = "";
-		int productID = 0;
-		int l = 0;
-		int m = 0;
-		double ntotal = 0;
-		int total = 0;
+		int productionID = 0;
+		int coarseCD = 0;
+		int middleCD = 0;
+		double qty = 0;
+		int amount = 0;
 
 		StringBuilder err = new StringBuilder("");
-		Vector<String> title = new Vector<String>();
+		Vector<String> titles = new Vector<String>();
 		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 
-		List<Integer> param = null;
+		List<Integer> params = null;
 
 		try {
 
@@ -63,8 +63,8 @@ public class GetExpectedCost extends GenericServlet {
 				lg.error(className + "readObjectがnullです");
 			} else {
 				if (obj instanceof List<?>) {
-					param = (List<Integer>) obj;
-					productID = param.get(0);
+					params = (List<Integer>) obj;
+					productionID = params.get(0);
 				} else {
 					err.append(className + "readObjectがList型ではありません\n");
 					lg.error(className + "readObjectがList型ではありません");
@@ -72,10 +72,10 @@ public class GetExpectedCost extends GenericServlet {
 			}
 
 			try {
-				if (param.size() > 1) {
-					l = param.get(1);
-					if (param.size() == 3) { // 小
-						m = param.get(2);
+				if (params.size() > 1) {
+					coarseCD = params.get(1);
+					if (params.size() == 3) { // 小
+						middleCD = params.get(2);
 						ps = c.prepareStatement(
 							"select 小分類CD,小分類名,"
 								+ " CASE"
@@ -95,40 +95,40 @@ public class GetExpectedCost extends GenericServlet {
 								+ " where 製作親ID=? and sc.大分類CD=? and sc.中分類CD=? and 納品書日 is null and 表示CD=2"
 								+ " order by 小分類CD"
 						);
-						ps.setInt(1, productID);
-						ps.setInt(2, l);
-						ps.setInt(3, m);
+						ps.setInt(1, productionID);
+						ps.setInt(2, coarseCD);
+						ps.setInt(3, middleCD);
 
 						rs = ps.executeQuery();
 						while (rs.next()) {
-							Vector<Object> v = new Vector<Object>();
-							v.add(rs.getInt("小分類CD"));
-							v.add(rs.getString("小分類名"));
-							v.add(rs.getString("仕入先名"));
-							v.add(rs.getString("名"));
-							v.add(rs.getDouble("数量"));
-							v.add(rs.getInt("単価"));
-							v.add(rs.getInt("金額"));
-							ntotal += rs.getDouble("数量");
-							total += rs.getInt("金額");
-							data.add(v);
+							Vector<Object> record = new Vector<Object>();
+							record.add(rs.getInt("小分類CD"));
+							record.add(rs.getString("小分類名"));
+							record.add(rs.getString("仕入先名"));
+							record.add(rs.getString("名"));
+							record.add(rs.getDouble("数量"));
+							record.add(rs.getInt("単価"));
+							record.add(rs.getInt("金額"));
+							qty += rs.getDouble("数量");
+							amount += rs.getInt("金額");
+							data.add(record);
 						}
-						Vector<Object> v = new Vector<Object>();
-						v.add(0);
-						v.add("");
-						v.add("");
-						v.add("合計");
-						v.add(ntotal);
-						v.add(0);
-						v.add(total);
-						data.add(v);
-						title.add("小分類CD");
-						title.add("小分類名");
-						title.add("仕入先名");
-						title.add("品名");
-						title.add("数量");
-						title.add("単価");
-						title.add("金額");
+						Vector<Object> record = new Vector<Object>();
+						record.add(0);
+						record.add("");
+						record.add("");
+						record.add("合計");
+						record.add(qty);
+						record.add(0);
+						record.add(amount);
+						data.add(record);
+						titles.add("小分類CD");
+						titles.add("小分類名");
+						titles.add("仕入先名");
+						titles.add("品名");
+						titles.add("数量");
+						titles.add("単価");
+						titles.add("金額");
 					} else { // 中
 						ps = c.prepareStatement(
 							"select 中分類CD,中分類名,sum(金額) as 金額 "
@@ -142,26 +142,26 @@ public class GetExpectedCost extends GenericServlet {
 								+ " group by 中分類CD,中分類名"
 								+ " order by 中分類CD"
 						);
-						ps.setInt(1, productID);
-						ps.setInt(2, l);
+						ps.setInt(1, productionID);
+						ps.setInt(2, coarseCD);
 
 						rs = ps.executeQuery();
 						while (rs.next()) {
-							Vector<Object> v = new Vector<Object>();
-							v.add(rs.getInt("中分類CD"));
-							v.add(rs.getString("中分類名"));
-							v.add(rs.getInt("金額"));
-							total += rs.getInt("金額");
-							data.add(v);
+							Vector<Object> record = new Vector<Object>();
+							record.add(rs.getInt("中分類CD"));
+							record.add(rs.getString("中分類名"));
+							record.add(rs.getInt("金額"));
+							amount += rs.getInt("金額");
+							data.add(record);
 						}
-						Vector<Object> v = new Vector<Object>();
-						v.add(0);
-						v.add("合計");
-						v.add(total);
-						data.add(v);
-						title.add("中分類CD");
-						title.add("中分類名");
-						title.add("金額");
+						Vector<Object> record = new Vector<Object>();
+						record.add(0);
+						record.add("合計");
+						record.add(amount);
+						data.add(record);
+						titles.add("中分類CD");
+						titles.add("中分類名");
+						titles.add("金額");
 					}
 
 				} else { // 大
@@ -176,26 +176,26 @@ public class GetExpectedCost extends GenericServlet {
 							+ " group by 大分類CD,大分類名"
 							+ " order by 大分類CD"
 					);
-					ps.setInt(1, productID);
+					ps.setInt(1, productionID);
 					rs = ps.executeQuery();
 
 					while (rs.next()) {
-						Vector<Object> v = new Vector<Object>();
-						// v.add(rs.getString("製作期") + "-" + rs.getString("製作番号") + rs.getString("製作枝番"));
-						v.add(rs.getInt("大分類CD"));
-						v.add(rs.getString("大分類名"));
-						v.add(rs.getInt("金額"));
-						total += rs.getInt("金額");
-						data.add(v);
+						Vector<Object> record = new Vector<Object>();
+						// record.add(rs.getString("製作期") + "-" + rs.getString("製作番号") + rs.getString("製作枝番"));
+						record.add(rs.getInt("大分類CD"));
+						record.add(rs.getString("大分類名"));
+						record.add(rs.getInt("金額"));
+						amount += rs.getInt("金額");
+						data.add(record);
 					}
-					Vector<Object> v = new Vector<Object>();
-					v.add(0);
-					v.add("合計");
-					v.add(total);
-					data.add(v);
-					title.add("大分類CD");
-					title.add("大分類名");
-					title.add("金額");
+					Vector<Object> record = new Vector<Object>();
+					record.add(0);
+					record.add("合計");
+					record.add(amount);
+					data.add(record);
+					titles.add("大分類CD");
+					titles.add("大分類名");
+					titles.add("金額");
 				}
 			} catch (SQLException ex) {
 				err.append("テーブル「T_テーブル名」の読込に失敗しました\n");
@@ -212,7 +212,7 @@ public class GetExpectedCost extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(new CostDTO(caption, total, title, data));
+			out.writeObject(new CostDTO(caption, amount, titles, data));
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

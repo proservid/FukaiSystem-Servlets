@@ -30,7 +30,7 @@ public class GetTitle extends GenericServlet {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		StringBuilder err = new StringBuilder();
-		Vector<String> tableName = new Vector<String>();
+		Vector<String> tableNames = new Vector<String>();
 
 		try {
 
@@ -45,7 +45,7 @@ public class GetTitle extends GenericServlet {
 				DatabaseMetaData dmd = c.getMetaData();
 				rs = dmd.getTables(null, "dbo", "%", types);
 				while (rs.next()) {
-					tableName.add(rs.getString("TABLE_NAME").trim());
+					tableNames.add(rs.getString("TABLE_NAME").trim());
 				}
 			} catch (SQLException ex) {
 				err.append(className + "エラーが発生しました。\n" + ex);
@@ -62,7 +62,7 @@ public class GetTitle extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(tableName);
+			out.writeObject(tableNames);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

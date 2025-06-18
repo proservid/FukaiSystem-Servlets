@@ -18,11 +18,11 @@ import org.apache.log4j.Logger;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
-public class GetEstData extends GenericServlet {
+public class getQuotationData extends GenericServlet {
 
 	private static final long serialVersionUID = 1L;
 	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "GetEstData\n";
+	private static final String className = "getQuotationData\n";
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -33,7 +33,7 @@ public class GetEstData extends GenericServlet {
 		ResultSet rs = null;
 		StringBuilder err = new StringBuilder();
 		List<String> nums = null;
-		Vector<Vector<Object>> v = new Vector<Vector<Object>>();
+		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 
 		try {
 
@@ -74,18 +74,18 @@ public class GetEstData extends GenericServlet {
 				ps = c.prepareStatement(query.toString());
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					Vector<Object> line = new Vector<Object>();
-					line.add(rs.getInt("ID"));
-					line.add(rs.getInt("表示CD"));
-					line.add(rs.getString("名称"));
-					line.add(rs.getBoolean("各FLG"));
-					line.add(rs.getInt("数量"));
-					line.add(rs.getInt("数量単位CD"));
-					line.add(rs.getInt("単価"));
-					line.add(rs.getInt("提示額"));
-					line.add(rs.getString("図番"));
-					line.add(rs.getString("備考"));
-					v.add(line);
+					Vector<Object> record = new Vector<Object>();
+					record.add(rs.getInt("ID"));
+					record.add(rs.getInt("表示CD"));
+					record.add(rs.getString("名称"));
+					record.add(rs.getBoolean("各FLG"));
+					record.add(rs.getInt("数量"));
+					record.add(rs.getInt("数量単位CD"));
+					record.add(rs.getInt("単価"));
+					record.add(rs.getInt("提示額"));
+					record.add(rs.getString("図番"));
+					record.add(rs.getString("備考"));
+					data.add(record);
 				}
 
 			} catch (SQLException ex) {
@@ -102,7 +102,7 @@ public class GetEstData extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(v);
+			out.writeObject(data);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

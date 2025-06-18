@@ -211,20 +211,20 @@ public class GetShelf extends GenericServlet {
 				rs = ps.executeQuery();
 
 				while (rs.next()) {
-					Vector<Object> row = new Vector<Object>();
-					row.add(rs.getString("製番"));
-					row.add(rs.getString("売"));
-					row.add(rs.getInt("繰越金額") + rs.getInt("繰越90"));
-					row.add(rs.getInt("仕入金額"));
-					row.add(rs.getInt("出庫金額") + rs.getInt("出庫90"));
-					row.add(rs.getInt("仕入金額") + rs.getInt("出庫金額") + rs.getInt("出庫90"));
-					row.add(
+					Vector<Object> record = new Vector<Object>();
+					record.add(rs.getString("製番"));
+					record.add(rs.getString("売"));
+					record.add(rs.getInt("繰越金額") + rs.getInt("繰越90"));
+					record.add(rs.getInt("仕入金額"));
+					record.add(rs.getInt("出庫金額") + rs.getInt("出庫90"));
+					record.add(rs.getInt("仕入金額") + rs.getInt("出庫金額") + rs.getInt("出庫90"));
+					record.add(
 						rs.getInt("繰越金額") + rs.getInt("繰越90") + rs.getInt("仕入金額") + rs.getInt("出庫金額")
 							+ rs.getInt("出庫90")
 					);
-					row.add(rs.getString("工数"));
-					row.add(rs.getString("工数累計"));
-					data.add(row);
+					record.add(rs.getString("工数"));
+					record.add(rs.getString("工数累計"));
+					data.add(record);
 				}
 				rs.close();
 

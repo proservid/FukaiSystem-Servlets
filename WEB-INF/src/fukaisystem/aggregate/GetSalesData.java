@@ -124,39 +124,39 @@ public class GetSalesData extends GenericServlet {
 				while (rs.next()) {
 					if (!acNum.equals(rs.getString("得意先CD")) && !acNum.equals("")) {
 						if (m.containsKey(acNum)) {
-							List<Object> row = new ArrayList<Object>();
-							row.add(acNum);
-							row.add(acName);
-							row.add("消費税");
-							row.add("");
-							row.add(m.get(acNum));
-							contents.add(row);
+							List<Object> record = new ArrayList<Object>();
+							record.add(acNum);
+							record.add(acName);
+							record.add("消費税");
+							record.add("");
+							record.add(m.get(acNum));
+							contents.add(record);
 							subtotal += m.get(acNum);
 							total += m.get(acNum);
 						}
-						List<Object> row = new ArrayList<Object>();
-						row.add(acNum);
-						row.add(acName);
-						row.add("");
-						row.add("");
-						row.add(subtotal);
-						contents.add(row);
-						row = new ArrayList<Object>();
-						row.add("");
-						row.add("");
-						row.add("");
-						row.add("");
-						row.add(null);
-						contents.add(row);
+						List<Object> record = new ArrayList<Object>();
+						record.add(acNum);
+						record.add(acName);
+						record.add("");
+						record.add("");
+						record.add(subtotal);
+						contents.add(record);
+						record = new ArrayList<Object>();
+						record.add("");
+						record.add("");
+						record.add("");
+						record.add("");
+						record.add(null);
+						contents.add(record);
 						subtotal = 0;
 					}
-					List<Object> row = new ArrayList<Object>();
-					row.add(rs.getString("得意先CD"));
-					row.add(rs.getString("得意先名"));
-					row.add(rs.getString("受注番号"));
-					row.add(rs.getString("日付"));
-					row.add(rs.getInt("金額"));
-					contents.add(row);
+					List<Object> record = new ArrayList<Object>();
+					record.add(rs.getString("得意先CD"));
+					record.add(rs.getString("得意先名"));
+					record.add(rs.getString("受注番号"));
+					record.add(rs.getString("日付"));
+					record.add(rs.getInt("金額"));
+					contents.add(record);
 					acNum = rs.getString("得意先CD");
 					acName = rs.getString("得意先名");
 					subtotal += rs.getInt("金額");
@@ -164,37 +164,37 @@ public class GetSalesData extends GenericServlet {
 				}
 				rs.close();
 				if (m.containsKey(acNum)) {
-					List<Object> row = new ArrayList<Object>();
-					row.add(acNum);
-					row.add(acName);
-					row.add("消費税");
-					row.add("");
-					row.add(m.get(acNum));
-					contents.add(row);
+					List<Object> record = new ArrayList<Object>();
+					record.add(acNum);
+					record.add(acName);
+					record.add("消費税");
+					record.add("");
+					record.add(m.get(acNum));
+					contents.add(record);
 					subtotal += m.get(acNum);
 					total += m.get(acNum);
 				}
-				List<Object> row = new ArrayList<Object>();
-				row.add(acNum);
-				row.add(acName);
-				row.add("");
-				row.add("");
-				row.add(subtotal);
-				contents.add(row);
-				row = new ArrayList<Object>();
-				row.add("");
-				row.add("");
-				row.add("");
-				row.add("");
-				row.add(null);
-				contents.add(row);
-				row = new ArrayList<Object>();
-				row.add("");
-				row.add("");
-				row.add("");
-				row.add("合計");
-				row.add(total);
-				contents.add(row);
+				List<Object> record = new ArrayList<Object>();
+				record.add(acNum);
+				record.add(acName);
+				record.add("");
+				record.add("");
+				record.add(subtotal);
+				contents.add(record);
+				record = new ArrayList<Object>();
+				record.add("");
+				record.add("");
+				record.add("");
+				record.add("");
+				record.add(null);
+				contents.add(record);
+				record = new ArrayList<Object>();
+				record.add("");
+				record.add("");
+				record.add("");
+				record.add("合計");
+				record.add(total);
+				contents.add(record);
 
 				if (!tableName.equals("")) {
 					ps = c.prepareStatement(

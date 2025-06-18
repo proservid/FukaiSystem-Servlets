@@ -36,7 +36,7 @@ public class ReadSlip extends GenericServlet {
 		StringBuilder err = new StringBuilder();
 
 		String name = null;
-		SlipDTO slipDTO = null;
+		SlipDTO dto = null;
 		try {
 
 			/**
@@ -75,7 +75,7 @@ public class ReadSlip extends GenericServlet {
 					}
 					is.close();
 					baos.close();
-					slipDTO = new SlipDTO(false, name, baos.toByteArray());
+					dto = new SlipDTO(false, name, baos.toByteArray());
 				}
 			} catch (SQLException ex) {
 				err.append(className + "テーブル「T_帳票」の読込に失敗しました\n");
@@ -92,7 +92,7 @@ public class ReadSlip extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(slipDTO);
+			out.writeObject(dto);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

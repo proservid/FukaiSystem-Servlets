@@ -30,7 +30,7 @@ public class GetDispatchingSummary extends GenericServlet {
 		Connection c = dbc.getConnection();
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		DispatchingDTO dispDTO = null;
+		DispatchingDTO dto = null;
 		StringBuilder err = new StringBuilder();
 
 		int id = 0;
@@ -71,33 +71,33 @@ public class GetDispatchingSummary extends GenericServlet {
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					Vector<Object> line = new Vector<Object>();
-					line.add(rs.getInt("大分類CD"));
-					line.add(rs.getInt("中分類CD"));
-					line.add(rs.getInt("小分類CD"));
-					line.add(rs.getString("品名"));
-					line.add(rs.getBoolean("各FLG"));
-					line.add(rs.getDouble("数量"));
-					line.add(rs.getInt("数量単位CD"));
-					line.add(rs.getDouble("重量長さ"));
-					line.add(rs.getInt("単価"));
-					line.add(rs.getInt("金額"));
-					line.add(rs.getString("備考"));
-					line.add(rs.getInt("在庫親ID"));
-					line.add(rs.getInt("在庫子ID"));
-					line.add(
+					Vector<Object> record = new Vector<Object>();
+					record.add(rs.getInt("大分類CD"));
+					record.add(rs.getInt("中分類CD"));
+					record.add(rs.getInt("小分類CD"));
+					record.add(rs.getString("品名"));
+					record.add(rs.getBoolean("各FLG"));
+					record.add(rs.getDouble("数量"));
+					record.add(rs.getInt("数量単位CD"));
+					record.add(rs.getDouble("重量長さ"));
+					record.add(rs.getInt("単価"));
+					record.add(rs.getInt("金額"));
+					record.add(rs.getString("備考"));
+					record.add(rs.getInt("在庫親ID"));
+					record.add(rs.getInt("在庫子ID"));
+					record.add(
 						rs.getString("注文期") == null
 							? ""
 							: rs.getString("注文期") + "-" + rs.getString("注文番号") + " " + rs.getString("注文枝番")
 					);
-					data.add(line);
+					data.add(record);
 				}
 
 				ps = c.prepareStatement("SELECT * FROM T_出庫_親 p WHERE 出庫親ID=?");
 				ps.setInt(1, id);
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					dispDTO = new DispatchingDTO(
+					dto = new DispatchingDTO(
 						rs.getInt("出庫親ID"),
 						0,
 						0,
@@ -133,7 +133,7 @@ public class GetDispatchingSummary extends GenericServlet {
 		try {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(dispDTO);
+			out.writeObject(dto);
 			out.writeUTF(err.toString());
 			out.flush();
 			out.close();

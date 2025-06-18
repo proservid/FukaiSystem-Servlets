@@ -43,7 +43,7 @@ public class Init2 extends GenericServlet {
 		List<String> slips = new ArrayList<String>();
 		Map<Integer, String> types = new LinkedHashMap<Integer, String>();
 		Map<Integer, String> routes = new HashMap<Integer, String>();
-		Vector<String> deadlines = new Vector<String>();
+		Vector<String> dues = new Vector<String>();
 		Vector<String> places = new Vector<String>();
 		Vector<String> terms = new Vector<String>();
 		Vector<String> validities = new Vector<String>();
@@ -56,12 +56,12 @@ public class Init2 extends GenericServlet {
 		Map<Integer, String> units = new HashMap<Integer, String>();
 		Map<Integer, String> suppliers = new HashMap<Integer, String>();
 		Map<Integer, Integer> works = new HashMap<Integer, Integer>();
-		Map<Integer, String> material = new LinkedHashMap<Integer, String>();
-		Map<Integer, String> categoryL = new LinkedHashMap<Integer, String>();
-		Map<List<Integer>, Map<Integer, String>> categoryM = new HashMap<List<Integer>, Map<Integer, String>>();
-		Map<List<Integer>, Map<Integer, String>> categoryS = new HashMap<List<Integer>, Map<Integer, String>>();
+		Map<Integer, String> materials = new LinkedHashMap<Integer, String>();
+		Map<Integer, String> coarseCategories = new LinkedHashMap<Integer, String>();
+		Map<List<Integer>, Map<Integer, String>> middleCategories = new HashMap<List<Integer>, Map<Integer, String>>();
+		Map<List<Integer>, Map<Integer, String>> fineCategories = new HashMap<List<Integer>, Map<Integer, String>>();
 		Map<Integer, Map<Integer, Map<Integer, Integer>>> prices = new HashMap<Integer, Map<Integer, Map<Integer, Integer>>>();
-		Map<Integer, Double> sg = new HashMap<Integer, Double>();
+		Map<Integer, Double> sgs = new HashMap<Integer, Double>();
 
 		try {
 
@@ -92,7 +92,7 @@ public class Init2 extends GenericServlet {
 				ps = c.prepareStatement("SELECT * FROM M_納期");
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					deadlines.add(rs.getString("納期"));
+					dues.add(rs.getString("納期"));
 				}
 				ps = c.prepareStatement("SELECT * FROM M_受渡場所");
 				rs = ps.executeQuery();
@@ -167,13 +167,13 @@ public class Init2 extends GenericServlet {
 				ps = c.prepareStatement("SELECT * FROM M_原価 WHERE CD<101");
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					material.put(rs.getInt("CD"), rs.getString("大分類名"));
+					materials.put(rs.getInt("CD"), rs.getString("大分類名"));
 				}
 
 				ps = c.prepareStatement("SELECT * FROM M_原価");
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					categoryL.put(rs.getInt("CD"), rs.getString("大分類名"));
+					coarseCategories.put(rs.getInt("CD"), rs.getString("大分類名"));
 				}
 
 				ps = c.prepareStatement("SELECT * FROM M_材料_親");
@@ -181,26 +181,26 @@ public class Init2 extends GenericServlet {
 				while (rs.next()) {
 					List<Integer> subKey = new ArrayList<Integer>();
 					subKey.add(rs.getInt("大分類CD"));
-					if (!categoryM.containsKey(subKey)) {
-						categoryM.put(subKey, new LinkedHashMap<Integer, String>());
+					if (!middleCategories.containsKey(subKey)) {
+						middleCategories.put(subKey, new LinkedHashMap<Integer, String>());
 					}
-					categoryM.get(subKey).put(rs.getInt("CD"), rs.getString("中分類名"));
+					middleCategories.get(subKey).put(rs.getInt("CD"), rs.getString("中分類名"));
 				}
 				ps = c.prepareStatement("SELECT * FROM M_加工_親");
 				rs = ps.executeQuery();
 				while (rs.next()) {
 					List<Integer> subKey = new ArrayList<Integer>();
 					subKey.add(rs.getInt("大分類CD"));
-					if (!categoryM.containsKey(subKey)) {
-						categoryM.put(subKey, new LinkedHashMap<Integer, String>());
+					if (!middleCategories.containsKey(subKey)) {
+						middleCategories.put(subKey, new LinkedHashMap<Integer, String>());
 					}
-					categoryM.get(subKey).put(rs.getInt("CD"), rs.getString("中分類名"));
+					middleCategories.get(subKey).put(rs.getInt("CD"), rs.getString("中分類名"));
 				}
 
 				ps = c.prepareStatement("SELECT * FROM M_比重");
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					sg.put(rs.getInt("種類"), rs.getDouble("比重"));
+					sgs.put(rs.getInt("種類"), rs.getDouble("比重"));
 				}
 
 			} catch (SQLException ex) {
@@ -217,10 +217,10 @@ public class Init2 extends GenericServlet {
 					List<Integer> subKey = new ArrayList<Integer>();
 					subKey.add(rs.getInt("大分類CD"));
 					subKey.add(rs.getInt("中分類CD"));
-					if (!categoryS.containsKey(subKey)) {
-						categoryS.put(subKey, new LinkedHashMap<Integer, String>());
+					if (!fineCategories.containsKey(subKey)) {
+						fineCategories.put(subKey, new LinkedHashMap<Integer, String>());
 					}
-					categoryS.get(subKey).put(rs.getInt("CD"), rs.getString("小分類名"));
+					fineCategories.get(subKey).put(rs.getInt("CD"), rs.getString("小分類名"));
 				}
 			} catch (SQLException ex) {
 				err.append(ex.getMessage());
@@ -232,36 +232,36 @@ public class Init2 extends GenericServlet {
 				ps = c.prepareStatement("SELECT * FROM M_加工_子 WHERE 使用FLG='true'");
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					int l = rs.getInt("大分類CD");
-					int m = rs.getInt("中分類CD");
-					int s = rs.getInt("CD");
+					int coarseCD = rs.getInt("大分類CD");
+					int middleCD = rs.getInt("中分類CD");
+					int fineCD = rs.getInt("CD");
 					int price = rs.getInt("単価");
 					String name = rs.getString("小分類名");
-					if (prices.containsKey(l)) {
-						Map<Integer, Map<Integer, Integer>> map_m = prices.get(l);
-						if (map_m.containsKey(m)) {
-							Map<Integer, Integer> map_s = map_m.get(m);
-							map_s.put(s, price);
+					if (prices.containsKey(coarseCD)) {
+						Map<Integer, Map<Integer, Integer>> middleMap = prices.get(coarseCD);
+						if (middleMap.containsKey(middleCD)) {
+							Map<Integer, Integer> fineMap = middleMap.get(middleCD);
+							fineMap.put(fineCD, price);
 						} else {
-							Map<Integer, Integer> map_s = new HashMap<Integer, Integer>();
-							map_s.put(s, price);
-							map_m.put(m, map_s);
+							Map<Integer, Integer> fineMap = new HashMap<Integer, Integer>();
+							fineMap.put(fineCD, price);
+							middleMap.put(middleCD, fineMap);
 						}
 					} else {
-						Map<Integer, Map<Integer, Integer>> map_m = new HashMap<Integer, Map<Integer, Integer>>();
-						Map<Integer, Integer> map_s = new HashMap<Integer, Integer>();
-						map_s.put(s, price);
-						map_m.put(m, map_s);
-						prices.put(l, map_m);
+						Map<Integer, Map<Integer, Integer>> middleMap = new HashMap<Integer, Map<Integer, Integer>>();
+						Map<Integer, Integer> fineMap = new HashMap<Integer, Integer>();
+						fineMap.put(fineCD, price);
+						middleMap.put(middleCD, fineMap);
+						prices.put(coarseCD, middleMap);
 					}
 					List<Integer> subKey = new ArrayList<Integer>();
-					subKey.add(l);
-					subKey.add(m);
-					if (!categoryS.containsKey(subKey)) {
-						categoryS.put(subKey, new LinkedHashMap<Integer, String>());
+					subKey.add(coarseCD);
+					subKey.add(middleCD);
+					if (!fineCategories.containsKey(subKey)) {
+						fineCategories.put(subKey, new LinkedHashMap<Integer, String>());
 					}
 					if (name != null)
-						categoryS.get(subKey).put(s, name);
+						fineCategories.get(subKey).put(fineCD, name);
 				}
 			} catch (SQLException ex) {
 				err.append(ex.getMessage());
@@ -278,7 +278,7 @@ public class Init2 extends GenericServlet {
 				slips,
 				types,
 				routes,
-				deadlines,
+				dues,
 				places,
 				terms,
 				validities,
@@ -291,12 +291,12 @@ public class Init2 extends GenericServlet {
 				units,
 				suppliers,
 				works,
-				material,
-				categoryL,
-				categoryM,
-				categoryS,
+				materials,
+				coarseCategories,
+				middleCategories,
+				fineCategories,
 				prices,
-				sg
+				sgs
 			);
 
 			response.setContentType("application/octet-stream");

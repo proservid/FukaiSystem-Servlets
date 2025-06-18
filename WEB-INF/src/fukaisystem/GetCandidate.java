@@ -102,11 +102,11 @@ public class GetCandidate extends GenericServlet {
 				ps.setString(i++, input + "%");
 				rs = ps.executeQuery();
 				while (rs.next()) {
-					Vector<String> v = new Vector<String>();
-					v.add(rs.getString("ID"));
-					v.add(rs.getString(key));
-					v.add(rs.getString("社名"));
-					candidate.add(v);
+					Vector<String> record = new Vector<String>();
+					record.add(rs.getString("ID"));
+					record.add(rs.getString(key));
+					record.add(rs.getString("社名"));
+					candidate.add(record);
 				}
 			} catch (SQLException ex) {
 				err.append(ex.getMessage());

@@ -70,10 +70,10 @@ public class GetTableData extends GenericServlet {
 
 				while (rs.next()) {
 					Object element = null;
-					List<Object> row = new ArrayList<Object>();
+					List<Object> record = new ArrayList<Object>();
 					for (int i = 1; i <= colInfos.size(); i++) {
-						ColInfoDTO column = colInfos.get(i - 1);
-						switch (column.getColType()) {
+						ColInfoDTO colInfo = colInfos.get(i - 1);
+						switch (colInfo.getColType()) {
 							case Types.BIT:
 								element = rs.getBoolean(i);
 								break;
@@ -114,9 +114,9 @@ public class GetTableData extends GenericServlet {
 								// }
 							}
 						}
-						row.add(element);
+						record.add(element);
 					}
-					contents.add(row);
+					contents.add(record);
 				}
 				rs.close();
 

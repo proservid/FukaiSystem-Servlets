@@ -62,9 +62,9 @@ public class SetSlipFormat extends GenericServlet {
 				ps = c.prepareStatement(
 					"UPDATE T_伝票 SET フォーマット名=? WHERE 伝票名=?"
 				);
-				for (Vector<String> v : input) {
-					ps.setString(1, v.get(1));
-					ps.setString(2, v.get(0));
+				for (Vector<String> record : input) {
+					ps.setString(1, record.get(1));
+					ps.setString(2, record.get(0));
 					ps.addBatch();
 				}
 				int[] updateCounts = ps.executeBatch();
