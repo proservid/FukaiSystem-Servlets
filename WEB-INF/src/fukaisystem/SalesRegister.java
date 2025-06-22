@@ -93,20 +93,20 @@ public class SalesRegister extends GenericServlet {
 								+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 						);
 						int i = 1;
-						ps.setInt(i, salesDTO.getInt(2)); i++; // 得意先CD
-						ps.setDate(i, salesDTO.getDate()); i++; // 売上年月日
-						ps.setBoolean(i, (salesDTO.getInt(7) != 2)); i++; // 売上FLG
-						ps.setBoolean(i, (salesDTO.getInt(7) != 1)); i++; // 請求FLG
-						ps.setInt(i, salesDTO.getInt(3)); i++; // 納品区分
-						ps.setInt(i, salesDTO.getInt(4)); i++; // 納品手段
+						ps.setInt(i++, salesDTO.getInt(2)); // 得意先CD
+						ps.setDate(i++, salesDTO.getDate()); // 売上年月日
+						ps.setBoolean(i++, (salesDTO.getInt(7) != 2)); // 売上FLG
+						ps.setBoolean(i++, (salesDTO.getInt(7) != 1)); // 請求FLG
+						ps.setInt(i++, salesDTO.getInt(3)); // 納品区分
+						ps.setInt(i++, salesDTO.getInt(4)); // 納品手段
 						if (salesDTO.getInt(5) < 0) {
-							ps.setNull(i, Types.INTEGER); i++;
+							ps.setNull(i++, Types.INTEGER);
 						} else {
-							ps.setInt(i, salesDTO.getInt(5)); i++; // 消費税
+							ps.setInt(i++, salesDTO.getInt(5)); // 消費税
 						}
-						ps.setInt(i, salesDTO.getInt(6)); i++; // 値引き
-						ps.setString(i, salesDTO.getString()); i++; // 摘要
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
+						ps.setInt(i++, salesDTO.getInt(6)); // 値引き
+						ps.setString(i++, salesDTO.getString()); // 摘要
+						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
 						ps.setInt(i, 0); // 更新者CD
 						boolean isResultSet = ps.execute();
 						int updateCount = 0;
@@ -139,21 +139,21 @@ public class SalesRegister extends GenericServlet {
 								+ " WHERE 売上親ID=?"
 						);
 						int i = 1;
-						ps.setInt(i, salesDTO.getInt(2)); i++; // 得意先CD
-						ps.setDate(i, salesDTO.getDate()); i++; // 売上年月日
-						ps.setBoolean(i, (salesDTO.getInt(7) != 2)); i++; // 売上FLG
-						ps.setBoolean(i, (salesDTO.getInt(7) != 1)); i++; // 請求FLG
-						ps.setInt(i, salesDTO.getInt(3)); i++; // 納品区分
-						ps.setInt(i, salesDTO.getInt(4)); i++; // 納品手段
+						ps.setInt(i++, salesDTO.getInt(2)); // 得意先CD
+						ps.setDate(i++, salesDTO.getDate()); // 売上年月日
+						ps.setBoolean(i++, (salesDTO.getInt(7) != 2)); // 売上FLG
+						ps.setBoolean(i++, (salesDTO.getInt(7) != 1)); // 請求FLG
+						ps.setInt(i++, salesDTO.getInt(3)); // 納品区分
+						ps.setInt(i++, salesDTO.getInt(4)); // 納品手段
 						if (salesDTO.getInt(5) < 0) {
-							ps.setNull(i, Types.INTEGER); i++;
+							ps.setNull(i++, Types.INTEGER);
 						} else {
-							ps.setInt(i, salesDTO.getInt(5)); i++; // 消費税
+							ps.setInt(i++, salesDTO.getInt(5)); // 消費税
 						}
-						ps.setInt(i, salesDTO.getInt(6)); i++; // 値引き
-						ps.setString(i, salesDTO.getString()); i++; // 摘要
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
-						ps.setInt(i, 0); i++; // 更新者CD
+						ps.setInt(i++, salesDTO.getInt(6)); // 値引き
+						ps.setString(i++, salesDTO.getString()); // 摘要
+						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
+						ps.setInt(i++, 0); // 更新者CD
 						ps.setInt(i, salesID);
 						ps.executeUpdate();
 						ps = c.prepareStatement("DELETE FROM T_売上_子 WHERE 売上親ID=?");
@@ -174,22 +174,22 @@ public class SalesRegister extends GenericServlet {
 						int tag = (Integer) record.get(2);
 						if (tag != 0) {
 							int i = 1;
-							int j = 0;
-							ps.setInt(i, k); i++; // ID
-							ps.setInt(i, salesID); i++; // 売上親ID
-							ps.setInt(i, productionID); i++; j++; // 製作親ID
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 製作子ID
-							ps.setInt(i, tag); i++; j++; // 表示CD
-							ps.setString(i, (String) record.get(j)); i++; j += 3; // 出荷伝票番号
-							ps.setString(i, (String) record.get(j)); i++; j++; // 品名
-							ps.setBoolean(i, (Boolean) record.get(j)); i++; j++; // 各
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 単位
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 単価
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 金額
-							ps.setString(i, (String) record.get(j)); i++; // 備考
-							// ps.setDate(i, salesDTO.getDate()); i++; j = 1; //売上年月日
-							// ps.setInt(i, (Integer)record.get(j)); i++; j = 0; //製作子ID
+							int j = 1;
+							ps.setInt(i++, k); // ID
+							ps.setInt(i++, salesID); // 売上親ID
+							ps.setInt(i++, productionID); // 製作親ID
+							ps.setInt(i++, (Integer) record.get(j++)); // 製作子ID
+							ps.setInt(i++, tag); j++; // 表示CD
+							ps.setString(i++, (String) record.get(j += 3)); // 出荷伝票番号
+							ps.setString(i++, (String) record.get(j++)); // 品名
+							ps.setBoolean(i++, (Boolean) record.get(j++)); // 各
+							ps.setInt(i++, (Integer) record.get(j++)); // 数量
+							ps.setInt(i++, (Integer) record.get(j++)); // 単位
+							ps.setInt(i++, (Integer) record.get(j++)); // 単価
+							ps.setInt(i++, (Integer) record.get(j++)); // 金額
+							ps.setString(i++, (String) record.get(j)); // 備考
+							// ps.setDate(i++, salesDTO.getDate()); j = 1; //売上年月日
+							// ps.setInt(i++, (Integer)record.get(j)); j = 0; //製作子ID
 							// ps.setInt(i, (Integer)record.get(j)); //製作親ID
 							ps.addBatch();
 							k++;

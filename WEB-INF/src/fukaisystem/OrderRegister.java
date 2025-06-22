@@ -210,18 +210,18 @@ public class OrderRegister extends GenericServlet {
 								" SELECT ?, ?, ?, MAX(伝票番号)+1, ?, ?, ?, ?, ?, ?, ? FROM T_在庫_親"
 						);
 						int i = 1;
-						ps.setInt(i, odd.getInt(1)); i++; // 注文期
-						ps.setInt(i, orderNum); i++; // 注文番号
-						ps.setString(i, odd.getStr(1)); i++; // 注文枝番
+						ps.setInt(i++, odd.getInt(1)); // 注文期
+						ps.setInt(i++, orderNum); // 注文番号
+						ps.setString(i++, odd.getStr(1)); // 注文枝番
 						// 自動採番
-						// ps.setInt(i, odd.getInt(3)); i++; //伝票番号
-						ps.setInt(i, odd.getInt(0)); i++; // 仕入先CD
-						ps.setDate(i, odd.getDate(0)); i++; // 注文年月日
-						ps.setDate(i, odd.getDate(1)); i++; // 指定納期
-						ps.setString(i, odd.getStr(2)); i++; // 摘要
-						ps.setString(i, odd.getStr(3)); i++; // 納入先指定
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
-						ps.setInt(i, 0); i++; // 更新者CD
+						// ps.setInt(i++, odd.getInt(3)); //伝票番号
+						ps.setInt(i++, odd.getInt(0)); // 仕入先CD
+						ps.setDate(i++, odd.getDate(0)); // 注文年月日
+						ps.setDate(i++, odd.getDate(1)); // 指定納期
+						ps.setString(i++, odd.getStr(2)); // 摘要
+						ps.setString(i++, odd.getStr(3)); // 納入先指定
+						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
+						ps.setInt(i++, 0); // 更新者CD
 						boolean isResultSet = ps.execute();
 						int updateCount = 0;
 						while (true) {
@@ -257,19 +257,19 @@ public class OrderRegister extends GenericServlet {
 									+ " WHERE 在庫親ID=?"
 							);
 							int i = 1;
-							ps.setInt(i, odd.getInt(1)); i++; // 注文期
-							ps.setInt(i, orderNum); i++; // 注文番号
-							ps.setString(i, odd.getStr(1)); i++; // 注文枝番
+							ps.setInt(i++, odd.getInt(1)); // 注文期
+							ps.setInt(i++, orderNum); // 注文番号
+							ps.setString(i++, odd.getStr(1)); // 注文枝番
 							// 自動採番
-							// ps.setInt(i, odd.getInt(3)); i++; //伝票番号
-							ps.setInt(i, odd.getInt(0)); i++; // 仕入先CD
-							ps.setDate(i, odd.getDate(0)); i++; // 注文年月日
-							ps.setDate(i, odd.getDate(1)); i++; // 指定納期
-							ps.setString(i, odd.getStr(2)); i++; // 摘要
-							ps.setString(i, odd.getStr(3)); i++; // 納入先指定
-							ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
-							ps.setInt(i, 0); i++; // 更新者CD
-							ps.setInt(i, orderID); i++; // 在庫親ID
+							// ps.setInt(i++, odd.getInt(3)); //伝票番号
+							ps.setInt(i++, odd.getInt(0)); // 仕入先CD
+							ps.setDate(i++, odd.getDate(0)); // 注文年月日
+							ps.setDate(i++, odd.getDate(1)); // 指定納期
+							ps.setString(i++, odd.getStr(2)); // 摘要
+							ps.setString(i++, odd.getStr(3)); // 納入先指定
+							ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
+							ps.setInt(i++, 0); // 更新者CD
+							ps.setInt(i++, orderID); // 在庫親ID
 							ps.executeUpdate();
 							ps.close();
 						}
@@ -307,21 +307,21 @@ public class OrderRegister extends GenericServlet {
 						if (tag != 0) {
 							int i = 1;
 							int j = 0;
-							ps.setInt(i, k); i++; // ID
-							ps.setInt(i, orderID); i++; // 親ID
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 表示CD
-							ps.setInt(i, (record.get(j) == null) ? 0 : (Integer) record.get(j)); i++; j++; // 大分類CD
-							ps.setInt(i, (record.get(j) == null) ? 0 : (Integer) record.get(j)); i++; j++; // 中分類CD
-							ps.setInt(i, (record.get(j) == null) ? 0 : (Integer) record.get(j)); i++; j++; // 小分類CD
-							ps.setString(i, (String) record.get(j)); i++; j++; // 名称
-							ps.setBoolean(i, (Boolean) record.get(j)); i++; j++; // 各FLG
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量単位CD
-							ps.setDouble(i, (Double) record.get(j)); i++; j++; // 重量長さ（単位を要検討のこと）
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 単価
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 金額
-							ps.setString(i, (String) record.get(j)); i++; j++; // 備考
-							ps.setDate(i, record.get(j) == null ? null : new java.sql.Date(((java.util.Date) record.get(j)).getTime())); i++; j += 2; // 入庫年月日（チェックボックスを飛ばすためj+=2）
+							ps.setInt(i++, k); // ID
+							ps.setInt(i++, orderID); // 親ID
+							ps.setInt(i++, (Integer) record.get(j++)); // 表示CD
+							ps.setInt(i++, (record.get(j) == null) ? 0 : (Integer) record.get(j)); j++; // 大分類CD
+							ps.setInt(i++, (record.get(j) == null) ? 0 : (Integer) record.get(j)); j++; // 中分類CD
+							ps.setInt(i++, (record.get(j) == null) ? 0 : (Integer) record.get(j)); j++; // 小分類CD
+							ps.setString(i++, (String) record.get(j++)); // 名称
+							ps.setBoolean(i++, (Boolean) record.get(j++)); // 各FLG
+							ps.setInt(i++, (Integer) record.get(j++)); // 数量
+							ps.setInt(i++, (Integer) record.get(j++)); // 数量単位CD
+							ps.setDouble(i++, (Double) record.get(j++)); // 重量長さ（単位を要検討のこと）
+							ps.setInt(i++, (Integer) record.get(j++)); // 単価
+							ps.setInt(i++, (Integer) record.get(j++)); // 金額
+							ps.setString(i++, (String) record.get(j++)); // 備考
+							ps.setDate(i++, record.get(j) == null ? null : new java.sql.Date(((java.util.Date) record.get(j)).getTime())); j += 2; // 入庫年月日（チェックボックスを飛ばすためj+=2）
 							ps.setInt(i, record.get(j) == null ? 0 : (Integer) record.get(j)); // 納品書番号
 							ps.addBatch();
 							k++;

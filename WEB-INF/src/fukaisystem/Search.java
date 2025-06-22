@@ -358,34 +358,34 @@ public class Search extends GenericServlet {
 				for (int i : strConditionIndex) {
 					if (i == 0) {
 						// 案件名は1つの検索条件でe.案件名とp.案件名を対象にする
-						ps.setString(j, "%" + searchDTO.getStr(i) + "%"); j++;
+						ps.setString(j++, "%" + searchDTO.getStr(i) + "%");
 					} else if (i == 2) {
 						// 案件名は1つの検索条件でe.案件名とp.案件名を対象にする
-						ps.setString(j, "%" + searchDTO.getStr(i) + "%"); j++;
-						ps.setString(j, "%" + searchDTO.getStr(i) + "%"); j++;
+						ps.setString(j++, "%" + searchDTO.getStr(i) + "%");
+						ps.setString(j++, "%" + searchDTO.getStr(i) + "%");
 					} else if (i == 3) {
 						// 誕生枝番はeとp両方の誕生
-						ps.setString(j, searchDTO.getStr(i)); j++;
-						ps.setString(j, searchDTO.getStr(i)); j++;
+						ps.setString(j++, searchDTO.getStr(i));
+						ps.setString(j++, searchDTO.getStr(i));
 					} else if (!searchDTO.getStr(i).equals("未")) {
-						ps.setString(j, searchDTO.getStr(i)); j++;
+						ps.setString(j++, searchDTO.getStr(i));
 					}
 				}
 				for (int i : intConditionIndex) {
 					if (i == 5) { // 2条件×eとpの2本立て＝4つ
-						ps.setInt(j, searchDTO.getInt(11)); j++; // 購入者CD
-						ps.setInt(j, searchDTO.getInt(5)); j++; // 機種
-						ps.setInt(j, searchDTO.getInt(11)); j++;
-						ps.setInt(j, searchDTO.getInt(5)); j++;
+						ps.setInt(j++, searchDTO.getInt(11)); // 購入者CD
+						ps.setInt(j++, searchDTO.getInt(5)); // 機種
+						ps.setInt(j++, searchDTO.getInt(11));
+						ps.setInt(j++, searchDTO.getInt(5));
 					} else if (i == 7) { // eとpとsの3本立て
-						ps.setInt(j, searchDTO.getInt(i)); j++;
-						ps.setInt(j, searchDTO.getInt(i)); j++;
-						ps.setInt(j, searchDTO.getInt(i)); j++;
+						ps.setInt(j++, searchDTO.getInt(i));
+						ps.setInt(j++, searchDTO.getInt(i));
+						ps.setInt(j++, searchDTO.getInt(i));
 					} else if (i > 5) { // eとpの2本立て
-						ps.setInt(j, searchDTO.getInt(i)); j++;
-						ps.setInt(j, searchDTO.getInt(i)); j++;
+						ps.setInt(j++, searchDTO.getInt(i));
+						ps.setInt(j++, searchDTO.getInt(i));
 					} else {
-						ps.setInt(j, searchDTO.getInt(i)); j++;
+						ps.setInt(j++, searchDTO.getInt(i));
 					}
 				}
 				rs = ps.executeQuery();

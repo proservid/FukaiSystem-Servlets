@@ -253,9 +253,9 @@ public class QuotationRegister extends GenericServlet {
 							"SELECT 見積親ID FROM T_見積_親 WHERE 見積期=? AND 見積番号=? AND 見積枝番=?"
 						);
 						int i = 1;
-						ps.setInt(i, quotationNum1); i++; // 見積期
-						ps.setInt(i, quotationNum2); i++; // 見積番号
-						ps.setString(i, summaryDTO.getStr(4)); i++; // 見積枝番
+						ps.setInt(i++, quotationNum1); // 見積期
+						ps.setInt(i++, quotationNum2); // 見積番号
+						ps.setString(i++, summaryDTO.getStr(4)); // 見積枝番
 						rs = ps.executeQuery();
 						if (rs.next()) {
 							if (rs.getInt("見積親ID") != 0) {
@@ -287,43 +287,42 @@ public class QuotationRegister extends GenericServlet {
 								+ " ?, ?, ?, ?, ?, ?"
 						);
 						int i = 1;
-						ps.setInt(i, quotationNum1); i++; // 見積期
-						ps.setInt(i, quotationNum2); i++; // 見積番号
-						ps.setString(i, summaryDTO.getStr(4)); i++; // 見積枝番
+						ps.setInt(i++, quotationNum1); // 見積期
+						ps.setInt(i++, quotationNum2); // 見積番号
+						ps.setString(i++, summaryDTO.getStr(4)); // 見積枝番
 						// 元製作親IDサブクエリ---------------------------------
-						ps.setInt(i, summaryDTO.getInt(18)); i++; // 誕生期
-						ps.setInt(i, summaryDTO.getInt(19)); i++; // 誕生番号
-						ps.setString(i, summaryDTO.getStr(14)); i++; // 誕生枝番
-						ps.setInt(i, summaryDTO.getInt(2)); i++; // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
-						ps.setInt(i, summaryDTO.getInt(22)); i++; // 購入者CD
-						ps.setInt(i, summaryDTO.getInt(2) == 0
+						ps.setInt(i++, summaryDTO.getInt(18)); // 誕生期
+						ps.setInt(i++, summaryDTO.getInt(19)); // 誕生番号
+						ps.setString(i++, summaryDTO.getStr(14)); // 誕生枝番
+						ps.setInt(i++, summaryDTO.getInt(2)); // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
+						ps.setInt(i++, summaryDTO.getInt(22)); // 購入者CD
+						ps.setInt(i++, summaryDTO.getInt(2) == 0
 								? -1
 								: summaryDTO.getInt(2)
-						);
-						i++; // 納入機・・・これが0だとヒットしてしまうので、-1にする
-						ps.setInt(i, summaryDTO.getInt(18)); i++; // 誕生期
-						ps.setInt(i, summaryDTO.getInt(19)); i++; // 誕生番号
-						ps.setString(i, summaryDTO.getStr(14)); i++; // 誕生枝番
+						); // 納入機・・・これが0だとヒットしてしまうので、-1にする
+						ps.setInt(i++, summaryDTO.getInt(18)); // 誕生期
+						ps.setInt(i++, summaryDTO.getInt(19)); // 誕生番号
+						ps.setString(i++, summaryDTO.getStr(14)); // 誕生枝番
 						// -----------------------------------------------------
-						ps.setString(i, summaryDTO.getStr(2)); i++; // 案件名
-						ps.setString(i, summaryDTO.getStr(15)); i++; // 案内文
-						ps.setInt(i, summaryDTO.getInt(0)); i++; // 得意先CD
-						ps.setString(i, summaryDTO.getStr(0)); i++; // 得意先表示名
-						// ps.setInt(i, summaryDTO.getInt(5)); i++; //個人CD
-						// ps.setInt(i, summaryDTO.getInt(6)); i++; //依頼手段CD
-						ps.setInt(i, due); i++; // 納期CD
-						ps.setInt(i, place); i++; // 受渡場所CD
-						ps.setInt(i, terms); i++; // 取引条件CD
-						ps.setInt(i, validity); i++; // 有効期間CD
-						ps.setInt(i, summaryDTO.getInt(7)); i++; // 提出済CD
-						// ps.setDate(i, summaryDTO.getDate(0)); i++; //依頼年月日
-						ps.setDate(i, summaryDTO.getDate(1)); i++; // 見積年月日
-						ps.setDate(i, summaryDTO.getDate(2)); i++; // 提出年月日
-						ps.setInt(i, summaryDTO.getInt(8)); i++; // 通貨CD
-						ps.setInt(i, summaryDTO.getInt(9)); i++; // 見積金額
-						ps.setString(i, summaryDTO.getStr(9)); i++; // 摘要
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
-						ps.setInt(i, 0); i++; // 更新者CD
+						ps.setString(i++, summaryDTO.getStr(2)); // 案件名
+						ps.setString(i++, summaryDTO.getStr(15)); // 案内文
+						ps.setInt(i++, summaryDTO.getInt(0)); // 得意先CD
+						ps.setString(i++, summaryDTO.getStr(0)); // 得意先表示名
+						// ps.setInt(i++, summaryDTO.getInt(5)); //個人CD
+						// ps.setInt(i++, summaryDTO.getInt(6)); //依頼手段CD
+						ps.setInt(i++, due); // 納期CD
+						ps.setInt(i++, place); // 受渡場所CD
+						ps.setInt(i++, terms); // 取引条件CD
+						ps.setInt(i++, validity); // 有効期間CD
+						ps.setInt(i++, summaryDTO.getInt(7)); // 提出済CD
+						// ps.setDate(i++, summaryDTO.getDate(0)); //依頼年月日
+						ps.setDate(i++, summaryDTO.getDate(1)); // 見積年月日
+						ps.setDate(i++, summaryDTO.getDate(2)); // 提出年月日
+						ps.setInt(i++, summaryDTO.getInt(8)); // 通貨CD
+						ps.setInt(i++, summaryDTO.getInt(9)); // 見積金額
+						ps.setString(i++, summaryDTO.getStr(9)); // 摘要
+						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
+						ps.setInt(i++, 0); // 更新者CD
 						boolean isResultSet = ps.execute();
 						int updateCount = 0;
 						while (true) {
@@ -375,43 +374,42 @@ public class QuotationRegister extends GenericServlet {
 						);
 						int i = 1;
 						for (int g = 0; g < 18; g++)
-							ps.setInt(i, quotationNum1); i++; // 見積期
-						ps.setInt(i, quotationNum2); i++; // 見積番号
-						ps.setString(i, summaryDTO.getStr(4)); i++; // 見積枝番
+							ps.setInt(i++, quotationNum1); // 見積期
+						ps.setInt(i++, quotationNum2); // 見積番号
+						ps.setString(i++, summaryDTO.getStr(4)); // 見積枝番
 						// 元製作親IDサブクエリ---------------------------------
-						ps.setInt(i, summaryDTO.getInt(18)); i++; // 誕生期
-						ps.setInt(i, summaryDTO.getInt(19)); i++; // 誕生番号
-						ps.setString(i, summaryDTO.getStr(14)); i++; // 誕生枝番
-						ps.setInt(i, summaryDTO.getInt(2)); i++; // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
-						ps.setInt(i, summaryDTO.getInt(22)); i++; // 購入者CD
-						ps.setInt(i, summaryDTO.getInt(2) == 0
+						ps.setInt(i++, summaryDTO.getInt(18)); // 誕生期
+						ps.setInt(i++, summaryDTO.getInt(19)); // 誕生番号
+						ps.setString(i++, summaryDTO.getStr(14)); // 誕生枝番
+						ps.setInt(i++, summaryDTO.getInt(2)); // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
+						ps.setInt(i++, summaryDTO.getInt(22)); // 購入者CD
+						ps.setInt(i++, summaryDTO.getInt(2) == 0
 								? -1
 								: summaryDTO.getInt(2)
-						);
-						i++; // 納入機・・・これが0だとヒットしてしまうので、-1にする
-						ps.setInt(i, summaryDTO.getInt(18)); i++; // 誕生期
-						ps.setInt(i, summaryDTO.getInt(19)); i++; // 誕生番号
-						ps.setString(i, summaryDTO.getStr(14)); i++; // 誕生枝番
+						); // 納入機・・・これが0だとヒットしてしまうので、-1にする
+						ps.setInt(i++, summaryDTO.getInt(18)); // 誕生期
+						ps.setInt(i++, summaryDTO.getInt(19)); // 誕生番号
+						ps.setString(i++, summaryDTO.getStr(14)); // 誕生枝番
 						// -----------------------------------------------------
-						ps.setString(i, summaryDTO.getStr(2)); i++; // 案件名
-						ps.setString(i, summaryDTO.getStr(15)); i++; // 案内文
-						ps.setInt(i, summaryDTO.getInt(0)); i++; // 得意先CD
-						ps.setString(i, summaryDTO.getStr(0)); i++; // 得意先表示名
-						// ps.setInt(i, summaryDTO.getInt(5)); i++; //個人CD
-						// ps.setInt(i, summaryDTO.getInt(6)); i++; //依頼手段CD
-						ps.setInt(i, due); i++; // 納期CD
-						ps.setInt(i, place); i++; // 受渡場所CD
-						ps.setInt(i, terms); i++; // 取引条件CD
-						ps.setInt(i, validity); i++; // 有効期間CD
-						ps.setInt(i, summaryDTO.getInt(7)); i++; // 提出済CD
-						// ps.setDate(i, summaryDTO.getDate(0)); i++; //依頼年月日
-						ps.setDate(i, summaryDTO.getDate(1)); i++; // 見積年月日
-						ps.setDate(i, summaryDTO.getDate(2)); i++; // 提出年月日
-						ps.setInt(i, summaryDTO.getInt(8)); i++; // 通貨CD
-						ps.setInt(i, summaryDTO.getInt(9)); i++; // 見積金額
-						ps.setString(i, summaryDTO.getStr(9)); i++; // 摘要
-						ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime())); i++; // 更新日
-						ps.setInt(i, 0); i++; // 更新者CD
+						ps.setString(i++, summaryDTO.getStr(2)); // 案件名
+						ps.setString(i++, summaryDTO.getStr(15)); // 案内文
+						ps.setInt(i++, summaryDTO.getInt(0)); // 得意先CD
+						ps.setString(i++, summaryDTO.getStr(0)); // 得意先表示名
+						// ps.setInt(i++, summaryDTO.getInt(5)); //個人CD
+						// ps.setInt(i++, summaryDTO.getInt(6)); //依頼手段CD
+						ps.setInt(i++, due); // 納期CD
+						ps.setInt(i++, place); // 受渡場所CD
+						ps.setInt(i++, terms); // 取引条件CD
+						ps.setInt(i++, validity); // 有効期間CD
+						ps.setInt(i++, summaryDTO.getInt(7)); // 提出済CD
+						// ps.setDate(i++, summaryDTO.getDate(0)); //依頼年月日
+						ps.setDate(i++, summaryDTO.getDate(1)); // 見積年月日
+						ps.setDate(i++, summaryDTO.getDate(2)); // 提出年月日
+						ps.setInt(i++, summaryDTO.getInt(8)); // 通貨CD
+						ps.setInt(i++, summaryDTO.getInt(9)); // 見積金額
+						ps.setString(i++, summaryDTO.getStr(9)); // 摘要
+						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
+						ps.setInt(i++, 0); // 更新者CD
 						ps.setInt(i, quotationID); // ID
 						ps.executeUpdate();
 						// 子孫のデータ更新は、削除→追加にて
@@ -443,17 +441,17 @@ public class QuotationRegister extends GenericServlet {
 							keys.add((Integer) record.get(0));
 							int i = 1;
 							int j = 2;
-							ps.setInt(i, k); i++; // ID
-							ps.setInt(i, quotationID); i++; // 見積親ID
-							ps.setInt(i, tag); i++; // 表示CD
-							ps.setString(i, (String) record.get(j)); i++; j++; // 名称
-							ps.setBoolean(i, (Boolean) record.get(j)); i++; j++; // 各FLG
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 数量単位CD
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 単価
-							ps.setInt(i, (Integer) record.get(j)); i++; j++; // 提示額
-							ps.setString(i, (String) record.get(j)); i++; j++; // 図番
-							ps.setString(i, (String) record.get(j)); // 備考
+							ps.setInt(i++, k); // ID
+							ps.setInt(i++, quotationID); // 見積親ID
+							ps.setInt(i++, tag); // 表示CD
+							ps.setString(i++, (String) record.get(j++)); // 名称
+							ps.setBoolean(i++, (Boolean) record.get(j++)); // 各FLG
+							ps.setInt(i++, (Integer) record.get(j++)); // 数量
+							ps.setInt(i++, (Integer) record.get(j++)); // 数量単位CD
+							ps.setInt(i++, (Integer) record.get(j++)); // 単価
+							ps.setInt(i++, (Integer) record.get(j++)); // 提示額
+							ps.setString(i++, (String) record.get(j++)); // 図番
+							ps.setString(i++, (String) record.get(j)); // 備考
 							ps.addBatch();
 							k++;
 						}
@@ -489,38 +487,38 @@ public class QuotationRegister extends GenericServlet {
 										// 加工等
 										int i = 1;
 
-										ps1.setInt(i, middleCD); i++; // ID
-										ps1.setInt(i, coarseCD); i++; // 子ID
-										ps1.setInt(i, quotationID); i++; // 親ID
-										ps1.setInt(i, (Integer) record.get(1)); i++; // 大分類
-										ps1.setInt(i, (record.get(2) == null) ? 0 : (Integer) record.get(2)); i++; // 加工CD
-										ps1.setInt(i, (record.get(3) == null) ? 0 : (Integer) record.get(3)); i++; // 加工CD
-										ps1.setString(i, (String) record.get(4)); i++; // 名称
-										ps1.setInt(i, (Integer) record.get(5)); i++; // 単価
-										ps1.setDouble(i, (Double) record.get(6)); i++; // 数量
-										ps1.setDouble(i, (Double) record.get(8)); i++; // 掛率
+										ps1.setInt(i++, middleCD); // ID
+										ps1.setInt(i++, coarseCD); // 子ID
+										ps1.setInt(i++, quotationID); // 親ID
+										ps1.setInt(i++, (Integer) record.get(1)); // 大分類
+										ps1.setInt(i++, (record.get(2) == null) ? 0 : (Integer) record.get(2)); // 加工CD
+										ps1.setInt(i++, (record.get(3) == null) ? 0 : (Integer) record.get(3)); // 加工CD
+										ps1.setString(i++, (String) record.get(4)); // 名称
+										ps1.setInt(i++, (Integer) record.get(5)); // 単価
+										ps1.setDouble(i++, (Double) record.get(6)); // 数量
+										ps1.setDouble(i++, (Double) record.get(8)); // 掛率
 										ps1.setString(i, (String) record.get(15)); // 備考
 										ps1.addBatch();
 
 									} else {
 										// 材料
 										int i = 1;
-										ps2.setInt(i, middleCD); i++; // 孫ID
-										ps2.setInt(i, coarseCD); i++; // 子ID
-										ps2.setInt(i, quotationID); i++; // 親ID
-										ps2.setInt(i, (record.get(1) == null) ? 0 : (Integer) record.get(1)); i++; // 大分類
-										ps2.setInt(i, (record.get(2) == null) ? 0 : (Integer) record.get(2)); i++; // 中分類
-										ps2.setInt(i, (record.get(3) == null) ? 0 : (Integer) record.get(3)); i++; // 小分類
-										ps2.setString(i, (String) record.get(4)); i++; // 名称
-										ps2.setInt(i, (Integer) record.get(5)); i++; // 単価
-										ps2.setDouble(i, (Double) record.get(6)); i++; // 数量
-										ps2.setDouble(i, (Double) record.get(8)); i++; // 掛率
-										ps2.setInt(i, (Integer) record.get(10)); i++; // 品番
-										ps2.setDouble(i, (Double) record.get(11)); i++; // 重量
-										ps2.setInt(i, (Integer) record.get(12)); i++; // 仕入先CD
-										// ps2.setInt(i, 0); i++; //仕入先CD
-										ps2.setBoolean(i, (Boolean) record.get(13)); i++; // 仕入見積FLG
-										ps2.setString(i, (String) record.get(14)); i++; // 仕入納期
+										ps2.setInt(i++, middleCD); // 孫ID
+										ps2.setInt(i++, coarseCD); // 子ID
+										ps2.setInt(i++, quotationID); // 親ID
+										ps2.setInt(i++, (record.get(1) == null) ? 0 : (Integer) record.get(1)); // 大分類
+										ps2.setInt(i++, (record.get(2) == null) ? 0 : (Integer) record.get(2)); // 中分類
+										ps2.setInt(i++, (record.get(3) == null) ? 0 : (Integer) record.get(3)); // 小分類
+										ps2.setString(i++, (String) record.get(4)); // 名称
+										ps2.setInt(i++, (Integer) record.get(5)); // 単価
+										ps2.setDouble(i++, (Double) record.get(6)); // 数量
+										ps2.setDouble(i++, (Double) record.get(8)); // 掛率
+										ps2.setInt(i++, (Integer) record.get(10)); // 品番
+										ps2.setDouble(i++, (Double) record.get(11)); // 重量
+										ps2.setInt(i++, (Integer) record.get(12)); // 仕入先CD
+										// ps2.setInt(i++, 0); //仕入先CD
+										ps2.setBoolean(i++, (Boolean) record.get(13)); // 仕入見積FLG
+										ps2.setString(i++, (String) record.get(14)); // 仕入納期
 										ps2.setString(i, (String) record.get(15)); // 備考
 										ps2.addBatch();
 									}
