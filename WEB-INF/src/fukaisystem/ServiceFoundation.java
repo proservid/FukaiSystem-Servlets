@@ -145,6 +145,9 @@ public abstract class ServiceFoundation extends GenericServlet {
      */
     protected void reportException(ServletResponse response, Exception e) throws IOException {
         addError(e.getMessage());
+        for (StackTraceElement element : e.getStackTrace()) {
+            addError(element.toString() + "\n");
+        }
         send(response, null);
     }
 
