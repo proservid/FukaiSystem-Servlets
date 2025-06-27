@@ -27,7 +27,7 @@ public class GetData extends ServiceFoundation {
 	protected static final String className = "GetData";
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException, ParseException {
 		GetTableDTO dto = cast(response, o, GetTableDTO.class);
 		Map<String, Map<String, List<String>>> data = new HashMap<>();
 		Map<String, List<String>> tables = dto.getTables();
@@ -55,18 +55,14 @@ public class GetData extends ServiceFoundation {
 	 * @param dto GetTableDTOオブジェクト
 	 * @return 売上集計ヘッダ
 	 * @throws SQLException
+	 * @throws ParseException 
 	 */
 	private Map<String, List<String>> getSalesSummary(
 		Connection c, String table, String columns, Map<String, Map<String, Object>> conditions, String order
-	) throws SQLException {
+	) throws SQLException, ParseException {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 		Calendar cal = Calendar.getInstance();
-		try {
-			cal.setTimeInMillis(format.parse(conditions.get("").get("0").toString()).getTime()); // TODO:
-		} catch (ParseException e) {
-			handleError(e);
-			return null;
-		}
+		cal.setTimeInMillis(format.parse(conditions.get("").get("0").toString()).getTime()); // TODO:
 		Date current = new Date(cal.getTimeInMillis());
 		cal.add(Calendar.MONTH, 1);
 		Date next = new Date(cal.getTimeInMillis());

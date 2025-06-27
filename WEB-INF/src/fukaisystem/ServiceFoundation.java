@@ -34,8 +34,8 @@ public abstract class ServiceFoundation extends GenericServlet {
             Object result = core(response, obj);
             send(response, result);
 
-        } catch (IOException | ClassNotFoundException e) {
-            handleError(e);
+        } catch (Exception e) {
+            handleException(e);
         }
     }
 
@@ -50,8 +50,8 @@ public abstract class ServiceFoundation extends GenericServlet {
     protected Object core(ServletResponse response, Object obj) throws IOException {
         try (Connection c = getConnection();) {
             return access(c, response, obj);
-        } catch (SQLException e) {
-            handleError(e);
+        } catch (Exception e) {
+            reportException(response, e);
         }
         return null;
     }
@@ -64,16 +64,15 @@ public abstract class ServiceFoundation extends GenericServlet {
      * @param response ServletResponseオブジェクト
      * @param obj 未キャストの入力DTO
      * @return クライアントに返す出力DTO
-     * @throws IOException
-     * @throws SQLException
+     * @throws Exception
      */
-    protected Object access(Connection c, ServletResponse response, Object obj) throws IOException, SQLException {
+    protected Object access(Connection c, ServletResponse response, Object obj) throws Exception {
         c.setAutoCommit(false); // begin();
         try {
             return transaction(c, response, obj);
         } catch (SQLException e) {
             c.rollback();
-            throw e; // 再処理
+            throw e; // core で処理
         }
     }
 
@@ -85,10 +84,9 @@ public abstract class ServiceFoundation extends GenericServlet {
      * @param response ServletResponseオブジェクト
      * @param obj 未キャストの入力DTO
      * @return クライアントに返す出力DTO
-     * @throws IOException
-     * @throws SQLException
+     * @throws Exception
      */
-    protected Object transaction(Connection c, ServletResponse response, Object obj) throws IOException, SQLException {
+    protected Object transaction(Connection c, ServletResponse response, Object obj) throws Exception {
         return null;
     }
 
@@ -98,10 +96,6 @@ public abstract class ServiceFoundation extends GenericServlet {
      * @return Connectionオブジェクト
      */
     protected Connection getConnection() {
-        // if (c == null) {
-        //     c = new DBConnection().getConnection();
-        // }
-        // return c;
         return new DBConnection().getConnection();
     }
 
@@ -109,7 +103,7 @@ public abstract class ServiceFoundation extends GenericServlet {
      * オブジェクトが指定クラスのインスタンスである場合にはキャストして返し、そうでない場合には {@code null} を返す
      * 
      * @param <T> 期待される型
-     * @param response ServletResponse オブジェクト
+     * @param response ServletResponseオブジェクト
      * @param obj 対象オブジェクト
      * @param clazz 判定対象の型クラス
      * @return オブジェクトが指定クラスのインスタンスである場合にはその型にキャストされたオブジェクト、そうでなければ {@code null}
@@ -121,7 +115,7 @@ public abstract class ServiceFoundation extends GenericServlet {
             return (T) obj;
         }
         addError(String.format("[%s] DTO が %s 型ではありません\n", className, clazz.getSimpleName()));
-        send(response, obj);
+        send(response, null);
         return null;
     }
 
@@ -129,7 +123,7 @@ public abstract class ServiceFoundation extends GenericServlet {
      * クライアントにオブジェクトとエラーを送信する
      * エラーは getErrors() の内容が送信される（指定不可）
      * 
-     * @param response ServletResponse オブジェクト
+     * @param response ServletResponseオブジェクト
      * @param obj 送信するオブジェクト
      * @throws IOException
      */
@@ -142,9 +136,25 @@ public abstract class ServiceFoundation extends GenericServlet {
         out.close();
     }
 
-    protected void handleError(Exception e) {
-        Logging.logStackTrace(e, lg, className);
+    /**
+     * 発生した例外をクライアントに送信する
+     * 
+     * @param response ServletResponseオブジェクト
+     * @param e Exceptionオブジェクト
+     * @throws IOException
+     */
+    protected void reportException(ServletResponse response, Exception e) throws IOException {
         addError(e.getMessage());
+        send(response, null);
+    }
+
+    /**
+     * 例外の最終処理（ログに記録）
+     * 
+     * @param e Exceptionオブジェクト
+     */
+    protected void handleException(Exception e) {
+        Logging.logStackTrace(e, lg, className);
     }
 
     /**
