@@ -124,7 +124,7 @@ public class GetChart extends GenericServlet {
 			response.setContentType("application/octet-stream");
 			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
 			out.writeObject(cd);
-			out.writeUTF("acitve:" + dbc.getNumActive() + " idle:" + dbc.getNumIdle());
+			out.writeUTF("");
 			out.flush();
 			out.close();
 

@@ -264,7 +264,7 @@ public class ProductionRegister extends GenericServlet {
 						ps.setInt(i++, parentCode); // 納入機
 						ps.addBatch();
 					}
-					int[] updateCounts = ps.executeBatch();
+					ps.executeBatch();
 				} catch (SQLException ex) {
 					ex.printStackTrace();
 					isError = true;
