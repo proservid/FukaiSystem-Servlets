@@ -19,7 +19,7 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import print.dto.InitialDTO;
+import fukaisystem.dto.InitialDTO;
 import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 

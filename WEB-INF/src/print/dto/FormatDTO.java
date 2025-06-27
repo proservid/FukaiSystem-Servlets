@@ -7,20 +7,22 @@ package print.dto;
 
 import java.io.Serializable;
 
+import com.proservid.print.slip.Slip;
+
 /**
  *
  * @author kameura
  */
-public class SlipDTO implements Serializable {
+public class FormatDTO implements Serializable {
 
 	boolean isOverwrite;
 	String name;
-	byte[] byteSlip;
+	Slip format;
 
-	public SlipDTO(boolean isOverwrite, String name, byte[] byteSlip) {
+	public FormatDTO(boolean isOverwrite, String name, Slip format) {
 		this.isOverwrite = isOverwrite;
 		this.name = name;
-		this.byteSlip = byteSlip;
+		this.format = format;
 	}
 
 	public boolean isOverwrite() {
@@ -31,8 +33,8 @@ public class SlipDTO implements Serializable {
 		return name;
 	}
 
-	public byte[] getByteSlip() {
-		return byteSlip;
+	public Slip getformat() {
+		return format;
 	}
 
 }

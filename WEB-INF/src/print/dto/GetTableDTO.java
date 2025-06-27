@@ -6,61 +6,38 @@
 package print.dto;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author kameura
  */
 public class GetTableDTO implements Serializable {
-	String tableName;
-	String columnName;
-	String[] condition;
-	String[] signs;
-	String[] id;
+	Map<String, List<String>> tables;
+	Map<String, Map<String, Object>> conditions;
 	String order;
 
 	public GetTableDTO(
-		String tableName,
-		String columnName,
-		String[] condition,
-		String[] signs,
-		String[] id,
+		Map<String, List<String>> tables,
+		Map<String, Map<String, Object>> conditions,
 		String order
 	) {
-		this.tableName = tableName;
-		this.columnName = columnName;
-		this.condition = condition;
-		this.signs = signs;
-		this.id = id;
-		this.order = order;
+		this.tables = tables;
+		this.conditions = conditions;
+		this.order = order.isEmpty() ? "" : " ORDER BY " + order;
 	}
 
-	public String getString(int i) {
-		String s = "";
-		switch (i) {
-			case 0:
-				s = tableName;
-				break;
-			case 1:
-				s = columnName;
-				break;
-		}
-		return s;
+	public Map<String, List<String>> getTables() {
+		return tables;
 	}
 
-	public String[] getKeys() {
-		return condition;
-	}
-
-	public String[] getIDs() {
-		return id;
-	}
-
-	public String[] getSigns() {
-		return signs;
+	public Map<String, Map<String, Object>> getConditions() {
+		return conditions;
 	}
 
 	public String getOrder() {
 		return order;
 	}
 }
+ 
