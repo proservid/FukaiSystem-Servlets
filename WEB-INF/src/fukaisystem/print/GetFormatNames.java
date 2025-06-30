@@ -10,10 +10,11 @@ import com.proservid.print.dao.GetFormatDAO;
 import fukaisystem.ServiceFoundation;
 
 public class GetFormatNames extends ServiceFoundation {
-    protected static final String className = "GetFormatNames";
-    @Override
-    public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
-        return GetFormatDAO.getFormatNames(c);
-    }
+	protected static final String className = "GetFormatNames";
+
+	@Override
+	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+		return GetFormatDAO.getFormatNames(c);
+	}
 
 }

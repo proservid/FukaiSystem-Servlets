@@ -74,7 +74,7 @@ public class GetSummary extends GenericServlet {
 			Logging.logStackTrace(ex, lg, className);
 		}
 
-		try {
+		try {//やや遅い
 			StringBuilder query = new StringBuilder(
 				"SELECT TOP 1"
 					+ " e.案件名 AS 案件名e, p.案件名 AS 案件名p,"
@@ -256,7 +256,7 @@ public class GetSummary extends GenericServlet {
 				summaryDTO.setMap(quotationBasisDataMap);
 			}
 
-			// 製作明細
+			// 製作明細おそい
 			ps = c.prepareStatement("SELECT * FROM T_製作_子 WHERE 製作親ID=?");
 			ps.setInt(1, productionID);
 			rs = ps.executeQuery();

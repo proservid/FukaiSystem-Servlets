@@ -3,21 +3,22 @@ package fukaisystem.print;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+
 import javax.servlet.ServletResponse;
 
-import com.proservid.print.dao.SlipDAO;
+import com.proservid.print.dao.GetFormatDAO;
 
 import fukaisystem.ServiceFoundation;
 
 /**
- * 帳票名とフォーマット名の対応表をdataVectorで取得する
+ * フォーマットが登録されているかどうか調べる
  */
-public class GetLinks extends ServiceFoundation {
-	protected static final String className = "GetLinks";
+public class ExistsFormat extends ServiceFoundation {
+	protected static final String className = "ExistsFormat";
 
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
-		return SlipDAO.getLinks(c);
+		String name = cast(response, o, String.class);
+		return GetFormatDAO.existsFormat(c, name);
 	}
-
 }

@@ -56,6 +56,60 @@
  </servlet-mapping>
 
 <servlet>
+ <servlet-name> existsFormat </servlet-name>
+ <servlet-class> fukaisystem.print.ExistsFormat </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> existsFormat </servlet-name>
+ <url-pattern> /existsFormat </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> renameFormat </servlet-name>
+ <servlet-class> fukaisystem.print.RenameFormat </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> renameFormat </servlet-name>
+ <url-pattern> /renameFormat </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> addSlip </servlet-name>
+ <servlet-class> fukaisystem.print.AddSlip </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> addSlip </servlet-name>
+ <url-pattern> /addSlip </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> existsSlip </servlet-name>
+ <servlet-class> fukaisystem.print.ExistsSlip </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> existsSlip </servlet-name>
+ <url-pattern> /existsSlip </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> renameSlip </servlet-name>
+ <servlet-class> fukaisystem.print.RenameSlip </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> renameSlip </servlet-name>
+ <url-pattern> /renameSlip </url-pattern>
+ </servlet-mapping>
+
+<servlet>
+ <servlet-name> deleteSlip </servlet-name>
+ <servlet-class> fukaisystem.print.DeleteSlip </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> deleteSlip </servlet-name>
+ <url-pattern> /deleteSlip </url-pattern>
+ </servlet-mapping>
+
+<servlet>
  <servlet-name> getLinks </servlet-name>
  <servlet-class> fukaisystem.print.GetLinks </servlet-class>
  </servlet>
@@ -592,14 +646,14 @@
  <url-pattern> /getSalesSlip </url-pattern>
  </servlet-mapping>
 
- <servlet>
+ <!-- <servlet>
  <servlet-name> deleteSlip </servlet-name>
  <servlet-class> fukaisystem.DeleteSlip </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> deleteSlip </servlet-name>
  <url-pattern> /deleteSlip </url-pattern>
- </servlet-mapping>
+ </servlet-mapping> -->
 
  <servlet>
  <servlet-name> copy </servlet-name>
