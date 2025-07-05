@@ -54,8 +54,8 @@ public class GetRecord extends GenericServlet {
 					quotationID = ((IDDTO) obj).getQuotationID();
 					productionID = ((IDDTO) obj).getProductionID();
 				} else {
-					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
-					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
+					err.append(className + "readObjectがIDDTO型ではありません\n");
+					lg.error(className + "readObjectがIDDTO型ではありません");
 				}
 			}
 			try {

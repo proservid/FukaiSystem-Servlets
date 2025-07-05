@@ -5,22 +5,22 @@
 
 package fukaisystem.dto;
 
+import java.io.Serializable;
 import java.sql.Date;
-import java.util.List;
 import java.util.Vector;
 
 /**
  *
  * @author kameura
  */
-public class OrderDocumentDTO extends BasicDTO {
-	Vector<Vector<Object>> vector;
+public class OrderDocumentDTO implements Serializable {
+	Vector<Vector<Object>> dataVector;
 	String accountName, orderNum3, note1, note2;
 	int accountID, orderNum1, orderNum2, orderSlipNum, orderID;
 	Date publishDate, dueDate;
 
 	public OrderDocumentDTO(
-		Vector<Vector<Object>> vector,
+		Vector<Vector<Object>> dataVector,
 		String accountName,
 		String orderNum3,
 		String note1,
@@ -33,7 +33,7 @@ public class OrderDocumentDTO extends BasicDTO {
 		Date publishDate,
 		Date dueDate
 	) {
-		this.vector = vector;
+		this.dataVector = dataVector;
 		this.accountName = accountName;
 		this.orderNum3 = orderNum3;
 		this.note1 = note1;
@@ -47,81 +47,52 @@ public class OrderDocumentDTO extends BasicDTO {
 		this.dueDate = dueDate;
 	}
 
-	@Override
-	public Vector<Vector<Object>> getVector(int order) {
-		return vector;
+	public Vector<Vector<Object>> getDataVector() {
+		return dataVector;
 	}
 
-	@Override
-	public String getStr(int order) {
-		String s = "";
-		switch (order) {
-			case 0:
-				s = accountName;
-				break;
-			case 1:
-				s = orderNum3;
-				break;
-			case 2:
-				s = note1;
-				break;
-			case 3:
-				s = note2;
-				break;
-		}
-		return s;
+	public String accountName() {
+		return accountName;
 	}
 
-	@Override
-	public int getInt(int order) {
-		int i = 0;
-		switch (order) {
-			case 0:
-				i = accountID;
-				break;
-			case 1:
-				i = orderNum1;
-				break;
-			case 2:
-				i = orderNum2;
-				break;
-			case 3:
-				i = orderSlipNum;
-				break;
-			case 4:
-				i = orderID;
-				break;
-		}
-		return i;
+	public String orderNum3() {
+		return orderNum3;
 	}
 
-	@Override
-	public Date getDate(int order) {
-		Date d = null;
-		switch (order) {
-			case 0:
-				d = publishDate;
-				break;
-			case 1:
-				d = dueDate;
-				break;
-		}
-		return d;
+	public String note1() {
+		return note1;
 	}
 
-	@Override
-	public boolean getBool(int order) {
-		return false; // 不使用
+	public String note2() {
+		return note2;
 	}
 
-	@Override
-	public List<String> getQuotationNumbers() {
-		return null;
+	public int accountID() {
+		return accountID;
 	}
 
-	@Override
-	public List<Integer> getParents() {
-		return null;
+	public int orderNum1() {
+		return orderNum1;
+	}
+
+	public int orderNum2() {
+		return orderNum2;
+	}
+
+	public int orderSlipNum() {
+		return orderSlipNum;
+	}
+
+	public int orderID() {
+		return orderID;
+	}
+
+	public Date publishDate() {
+		return publishDate;
+	}
+
+	public Date dueDate() {
+		return dueDate;
 	}
 
 }

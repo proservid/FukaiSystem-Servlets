@@ -16,13 +16,13 @@ public class CostDTO implements Serializable {
 	String caption;
 	int total;
 	Vector<String> titles;
-	Vector<Vector<Object>> data;
+	Vector<Vector<Object>> dataVector;
 
-	public CostDTO(String caption, int total, Vector<String> titles, Vector<Vector<Object>> data) {
+	public CostDTO(String caption, int total, Vector<String> titles, Vector<Vector<Object>> dataVector) {
 		this.caption = caption;
 		this.total = total;
 		this.titles = titles;
-		this.data = data;
+		this.dataVector = dataVector;
 	}
 
 	public String getCaption() {
@@ -38,6 +38,6 @@ public class CostDTO implements Serializable {
 	}
 
 	public Vector<Vector<Object>> getTableData() {
-		return data;
+		return dataVector;
 	}
 }

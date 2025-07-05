@@ -51,8 +51,8 @@ public class getQuotationData extends GenericServlet {
 				if (obj instanceof List<?>) {
 					nums = (List<String>) obj;
 				} else {
-					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
-					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
+					err.append(className + "readObjectがList<String>型ではありません\n");
+					lg.error(className + "readObjectがList<String>型ではありません");
 				}
 			}
 			try {

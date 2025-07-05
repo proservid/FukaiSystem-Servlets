@@ -5,15 +5,13 @@
 
 package fukaisystem.dto;
 
-import java.sql.Date;
-import java.util.List;
-import java.util.Vector;
+import java.io.Serializable;
 
 /**
  *
  * @author kameura
  */
-public class HistoryDTO extends BasicDTO {
+public class HistoryDTO implements Serializable {
 	int accountCode, coarseCategory, middleCategory, fineCategory, productionNum1, productionNum2;
 	String productionNum3, article, orderY, orderM, orderD, dueY, dueM, dueD, receiptY, receiptM, receiptD;
 	boolean isStock, isAndSearch;
@@ -60,7 +58,90 @@ public class HistoryDTO extends BasicDTO {
 		this.isAndSearch = isAndSearch;
 	}
 
-	@Override
+	public String article() {
+		return article;
+	}
+
+	public String productionNum3() {
+		return productionNum3;
+	}
+
+	public String orderY() {
+		return orderY;
+	}
+
+	public String orderM() {
+		return orderM;
+	}
+
+	public String orderD() {
+		return orderD;
+	}
+
+	public String dueY() {
+		return dueY;
+	}
+
+	public String dueM() {
+		return dueM;
+	}
+
+	public String dueD() {
+		return dueD;
+	}
+
+	public String receiptY() {
+		return receiptY;
+	}
+
+	public String receiptM() {
+		return receiptM;
+	}
+
+	public String receiptD() {
+		return receiptD;
+	}
+
+
+	public int accountCode() {
+		return accountCode;
+	}
+
+	public int productionNum1() {
+		return productionNum1;
+	}
+
+	public int productionNum2() {
+		return productionNum2;
+	}
+
+	public int coarseCategory() {
+		return coarseCategory;
+	}
+
+	public int middleCategory() {
+		return middleCategory;
+	}
+
+	public int fineCategory() {
+		return fineCategory;
+	}
+
+	public boolean isAndSearch() {
+		return isAndSearch;
+	}
+
+	public boolean isStock() {
+		return isStock;
+	}
+
+	/**
+	 * サーブレット登録用
+	 * 
+	 * @param order 順番
+	 * 
+	 * @return 値
+	 */
 	public String getStr(int order) {
 		String str = "";
 		switch (order) {
@@ -101,7 +182,13 @@ public class HistoryDTO extends BasicDTO {
 		return str;
 	}
 
-	@Override
+	/**
+	 * サーブレット登録用
+	 * 
+	 * @param order 順番
+	 * 
+	 * @return 値
+	 */
 	public int getInt(int order) {
 		int i = 0;
 		switch (order) {
@@ -127,34 +214,4 @@ public class HistoryDTO extends BasicDTO {
 		return i;
 	}
 
-	@Override
-	public Vector<Vector<Object>> getVector(int order) {
-		return null;
-	}
-
-	@Override
-	public Date getDate(int order) {
-		return null;
-	}
-
-	public boolean isAnd() {
-		return isAndSearch;
-	}
-
-	@Override
-	public boolean getBool(int order) {
-		return isStock;
-	}
-
-	@Override
-	public List<String> getQuotationNumbers() {
-		return null;
-	}
-
-	@Override
-	public List<Integer> getParents() {
-		return null;
-	}
-
 }
- 

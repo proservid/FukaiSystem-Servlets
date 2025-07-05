@@ -40,4 +40,3 @@ public class GetTableDTO implements Serializable {
 		return order;
 	}
 }
- 

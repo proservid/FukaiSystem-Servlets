@@ -5,15 +5,15 @@
 
 package fukaisystem.dto;
 
+import java.io.Serializable;
 import java.sql.Date;
-import java.util.List;
 import java.util.Vector;
 
 /**
  *
  * @author kameura
  */
-public class DispatchingDTO extends BasicDTO {
+public class DispatchingDTO implements Serializable {
 	int dispatchingID, orderNum1, dispatchNum1, orderNum2, dispatchNum2, coarseCategory, middleCategory, fineCategory;
 	String orderNum3, dispatchNum3, year, month, day, name, use, remark;
 	Vector<Vector<Object>> vector;
@@ -62,7 +62,89 @@ public class DispatchingDTO extends BasicDTO {
 		this.isAndSearch = isAndSearch;
 	}
 
-	@Override
+	public String dispatchNum3() {
+		return dispatchNum3;
+	}
+
+	public String year() {
+		return year;
+	}
+
+	public String month() {
+		return month;
+	}
+
+	public String day() {
+		return day;
+	}
+
+	public String use() {
+		return use;
+	}
+
+	public String remark() {
+		return remark;
+	}
+
+	public String orderNum3() {
+		return orderNum3;
+	}
+
+	public String name() {
+		return name;
+	}
+
+	public int dispatchNum1() {
+		return dispatchNum1;
+	}
+
+	public int dispatchNum2() {
+		return dispatchNum2;
+	}
+
+	public int coarseCategory() {
+		return coarseCategory;
+	}
+
+	public int middleCategory() {
+		return middleCategory;
+	}
+
+	public int fineCategory() {
+		return fineCategory;
+	}
+
+	public int orderNum1() {
+		return orderNum1;
+	}
+
+	public int orderNum2() {
+		return orderNum2;
+	}
+
+	public int dispatchingID() {
+		return dispatchingID;
+	}
+
+	public Vector<Vector<Object>> getVector() {
+		return vector;
+	}
+
+	public Date date() {
+		return date;
+	}
+
+	public boolean isAndSearch() {
+		return isAndSearch;
+	}
+
+	/**
+	 * サーブレット登録用
+	 * 
+	 * @param order 順番
+	 * 
+	 * @return 値
+	 */
 	public String getStr(int order) {
 		String str = "";
 		switch (order) {
@@ -94,7 +176,13 @@ public class DispatchingDTO extends BasicDTO {
 		return str;
 	}
 
-	@Override
+	/**
+	 * サーブレット登録用
+	 * 
+	 * @param order 順番
+	 * 
+	 * @return 値
+	 */
 	public int getInt(int order) {
 		int i = 0;
 		switch (order) {
@@ -125,35 +213,4 @@ public class DispatchingDTO extends BasicDTO {
 		}
 		return i;
 	}
-
-	@Override
-	public Vector<Vector<Object>> getVector(int order) {
-		return vector;
-	}
-
-	@Override
-	public Date getDate(int order) {
-		return date;
-	}
-
-	public boolean isAnd() {
-		return isAndSearch;
-	}
-
-	@Override
-	public boolean getBool(int order) {
-		return false;
-	}
-
-	@Override
-	public List<String> getQuotationNumbers() {
-		return null;
-	}
-
-	@Override
-	public List<Integer> getParents() {
-		return null;
-	}
-
 }
- 

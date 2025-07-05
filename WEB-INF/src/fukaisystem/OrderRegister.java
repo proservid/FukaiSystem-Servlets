@@ -85,7 +85,7 @@ public class OrderRegister extends GenericServlet {
 			boolean isParentEditable = true; // 納品書番号が入ったデータが１つでもあるか
 			taxMap = new HashMap<Integer, DeliverySlip>(); // 指定納品書のデータ
 			List<Vector<Object>> regVector = new ArrayList<Vector<Object>>();
-			for (Vector<Object> record : odd.getVector(0)) {
+			for (Vector<Object> record : odd.getDataVector()) {
 				boolean closeFlg = false;
 				boolean matchFlg = false;
 				if (record.get(14) == null || record.get(15) == null || !(Boolean) record.get(17)) { // 納品書番号か納品日がnullまたは納品書チェックなし
@@ -158,8 +158,8 @@ public class OrderRegister extends GenericServlet {
 			}
 			// if(closeFlg) err.append("〆後の納品書日が入力されている行があります\n納品書データは〆後の日付で登録できません");
 			//////////////////////////////////////////////////////////////////////////////////////////////////////
-			orderID = odd.getInt(4);
-			if (odd.getInt(1) + odd.getInt(2) == 0) {
+			orderID = odd.orderID();
+			if (odd.orderNum1() + odd.orderNum2() == 0) {
 				// 注文期と注文番号を0に変更したということは、消去せよということ
 				if (isParentEditable) {
 					// 削除
@@ -181,14 +181,14 @@ public class OrderRegister extends GenericServlet {
 					}
 				}
 			} else {
-				int orderNum = odd.getInt(2);
+				int orderNum = odd.orderNum2();
 				// 在庫用注文番号（≠注文書番号）自動採番
 				if (orderNum == 0) {
 					try {
 						PreparedStatement ps = c.prepareStatement(
 							"SELECT CASE WHEN MAX(注文番号) IS NULL THEN 1 ELSE MAX(注文番号)+1 END AS 新注文番号 FROM T_在庫_親 WHERE 注文期=? AND 注文番号<9999"
 						);
-						ps.setInt(1, odd.getInt(1)); // 注文期
+						ps.setInt(1, odd.orderNum1()); // 注文期
 						ResultSet rs = ps.executeQuery();
 						if (rs.next()) {
 							orderNum = rs.getInt("新注文番号");
@@ -201,7 +201,7 @@ public class OrderRegister extends GenericServlet {
 					}
 				}
 
-				if (orderID == 0 || odd.getInt(3) == 0) { // ID又は注文書番号が0 → 新規
+				if (orderID == 0 || odd.orderSlipNum() == 0) { // ID又は注文書番号が0 → 新規
 
 					try {
 						PreparedStatement ps = c.prepareStatement(
@@ -210,16 +210,16 @@ public class OrderRegister extends GenericServlet {
 								" SELECT ?, ?, ?, MAX(伝票番号)+1, ?, ?, ?, ?, ?, ?, ? FROM T_在庫_親"
 						);
 						int i = 1;
-						ps.setInt(i++, odd.getInt(1)); // 注文期
+						ps.setInt(i++, odd.orderNum1()); // 注文期
 						ps.setInt(i++, orderNum); // 注文番号
-						ps.setString(i++, odd.getStr(1)); // 注文枝番
+						ps.setString(i++, odd.orderNum3()); // 注文枝番
 						// 自動採番
 						// ps.setInt(i++, odd.getInt(3)); //伝票番号
-						ps.setInt(i++, odd.getInt(0)); // 仕入先CD
-						ps.setDate(i++, odd.getDate(0)); // 注文年月日
-						ps.setDate(i++, odd.getDate(1)); // 指定納期
-						ps.setString(i++, odd.getStr(2)); // 摘要
-						ps.setString(i++, odd.getStr(3)); // 納入先指定
+						ps.setInt(i++, odd.accountID()); // 仕入先CD
+						ps.setDate(i++, odd.publishDate()); // 注文年月日
+						ps.setDate(i++, odd.dueDate()); // 指定納期
+						ps.setString(i++, odd.note1()); // 摘要
+						ps.setString(i++, odd.note2()); // 納入先指定
 						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
 						ps.setInt(i++, 0); // 更新者CD
 						boolean isResultSet = ps.execute();
@@ -257,16 +257,16 @@ public class OrderRegister extends GenericServlet {
 									+ " WHERE 在庫親ID=?"
 							);
 							int i = 1;
-							ps.setInt(i++, odd.getInt(1)); // 注文期
+							ps.setInt(i++, odd.orderNum1()); // 注文期
 							ps.setInt(i++, orderNum); // 注文番号
-							ps.setString(i++, odd.getStr(1)); // 注文枝番
+							ps.setString(i++, odd.orderNum3()); // 注文枝番
 							// 自動採番
 							// ps.setInt(i++, odd.getInt(3)); //伝票番号
-							ps.setInt(i++, odd.getInt(0)); // 仕入先CD
-							ps.setDate(i++, odd.getDate(0)); // 注文年月日
-							ps.setDate(i++, odd.getDate(1)); // 指定納期
-							ps.setString(i++, odd.getStr(2)); // 摘要
-							ps.setString(i++, odd.getStr(3)); // 納入先指定
+							ps.setInt(i++, odd.accountID()); // 仕入先CD
+							ps.setDate(i++, odd.publishDate()); // 注文年月日
+							ps.setDate(i++, odd.dueDate()); // 指定納期
+							ps.setString(i++, odd.note1()); // 摘要
+							ps.setString(i++, odd.note2()); // 納入先指定
 							ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
 							ps.setInt(i++, 0); // 更新者CD
 							ps.setInt(i++, orderID); // 在庫親ID

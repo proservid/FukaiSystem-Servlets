@@ -15,13 +15,13 @@ import java.util.Vector;
  */
 public class SalesDTO implements Serializable {
 	Date date;
-	int shippingID, productionID, account, state, way, tax, discount, type;
+	int shippingID, productID, account, state, way, tax, discount, type;
 	String note;
 	Vector<Vector<Object>> child;
 
 	public SalesDTO(
 		int shippingID,
-		int productionID,
+		int productID,
 		int account,
 		Date date,
 		int state,
@@ -33,7 +33,7 @@ public class SalesDTO implements Serializable {
 		Vector<Vector<Object>> child
 	) {
 		this.shippingID = shippingID;
-		this.productionID = productionID;
+		this.productID = productID;
 		this.account = account;
 		this.state = state;
 		this.way = way;
@@ -56,7 +56,7 @@ public class SalesDTO implements Serializable {
 				i = shippingID;
 				break;
 			case 1:
-				i = productionID;
+				i = productID;
 				break;
 			case 2:
 				i = account;

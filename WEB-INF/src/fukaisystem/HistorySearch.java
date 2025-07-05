@@ -69,12 +69,12 @@ public class HistorySearch extends GenericServlet {
 				if (obj instanceof HistoryDTO) {
 					dto = (HistoryDTO) obj;
 				} else {
-					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
-					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
+					err.append(className + "readObjectがHistorySearchDTO型ではありません\n");
+					lg.error(className + "readObjectがHistorySearchDTO型ではありません");
 				}
 			}
 			try {
-				isStock = dto.getBool(1);
+				isStock = dto.isStock();
 				StringBuilder query = new StringBuilder("");
 				if (isStock) {
 					query.append(
@@ -154,7 +154,7 @@ public class HistorySearch extends GenericServlet {
 							query.append(" WHERE ");
 							isFirst = false;
 						} else {
-							if (dto.isAnd())
+							if (dto.isAndSearch())
 								query.append(" AND ");
 							else
 								query.append(" OR ");
@@ -176,7 +176,7 @@ public class HistorySearch extends GenericServlet {
 								String words = dto.getStr(i).replaceAll("　", " ");
 								for (int j = 0; j < words.split(" ").length; j++) {
 									if (j > 0) {
-										if (dto.isAnd())
+										if (dto.isAndSearch())
 											query.append(" AND ");
 										else
 											query.append(" OR ");
@@ -199,7 +199,7 @@ public class HistorySearch extends GenericServlet {
 							query.append(" WHERE " + constInts[i]);
 							isFirst = false;
 						} else {
-							if (dto.isAnd())
+							if (dto.isAndSearch())
 								query.append(" AND " + constInts[i]);
 							else
 								query.append(" OR " + constInts[i]);

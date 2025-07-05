@@ -60,8 +60,8 @@ public class WriteSlip extends GenericServlet {
 					byteSlip = ((SlipDTO) obj).getByteSlip();
 				} else {
 					isError = true;
-					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
-					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
+					err.append(className + "readObjectがSlipDTO型ではありません\n");
+					lg.error(className + "readObjectがSlipDTO型ではありません");
 				}
 			}
 

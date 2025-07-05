@@ -55,8 +55,8 @@ public class Summary extends GenericServlet {
 				if (obj instanceof Date) {
 					date = (Date) obj;
 				} else {
-					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
-					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
+					err.append(className + "readObjectがDate型ではありません\n");
+					lg.error(className + "readObjectがDate型ではありません");
 				}
 			}
 

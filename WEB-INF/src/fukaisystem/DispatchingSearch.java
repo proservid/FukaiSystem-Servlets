@@ -66,8 +66,8 @@ public class DispatchingSearch extends GenericServlet {
 				if (obj instanceof DispatchingDTO) {
 					dto = (DispatchingDTO) obj;
 				} else {
-					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
-					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
+					err.append(className + "readObjectがDispatchingDTO型ではありません\n");
+					lg.error(className + "readObjectがDispatchingDTO型ではありません");
 				}
 			}
 			try {
@@ -90,7 +90,7 @@ public class DispatchingSearch extends GenericServlet {
 							query.append(" WHERE ");
 							isFirst = false;
 						} else {
-							if (dto.isAnd())
+							if (dto.isAndSearch())
 								query.append(" AND ");
 							else
 								query.append(" OR ");
@@ -107,7 +107,7 @@ public class DispatchingSearch extends GenericServlet {
 							query.append(" WHERE " + constInts[i]);
 							isFirst = false;
 						} else {
-							if (dto.isAnd())
+							if (dto.isAndSearch())
 								query.append(" AND " + constInts[i]);
 							else
 								query.append(" OR " + constInts[i]);

@@ -79,10 +79,10 @@ public class QuotationRegister extends GenericServlet {
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-			quotationNum1 = summaryDTO.getInt(3);
-			quotationNum2 = summaryDTO.getInt(4);
-			quotationID = summaryDTO.getInt(16);
-			productionID = summaryDTO.getInt(17);
+			quotationNum1 = summaryDTO.quotationNum1();
+			quotationNum2 = summaryDTO.quotationNum2();
+			quotationID = summaryDTO.quotationID();
+			productionID = summaryDTO.productionID();
 
 			if (quotationNum1 == 0 && quotationNum2 == 0 && quotationID != 0) {
 				// 見積IDがあるデータの見積期と見積番号を0に変更したということは、消去せよということ
@@ -125,7 +125,7 @@ public class QuotationRegister extends GenericServlet {
 							+ "	INSERT VALUES(w.有効期間)"
 							+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
 					);
-					ps.setString(1, summaryDTO.getStr(8));
+					ps.setString(1, summaryDTO.validity());
 					boolean isResultSet = ps.execute();
 					int updateCount = 0;
 					while (true) {
@@ -153,7 +153,7 @@ public class QuotationRegister extends GenericServlet {
 							+ "	INSERT VALUES(w.納期)"
 							+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
 					);
-					ps.setString(1, summaryDTO.getStr(5));
+					ps.setString(1, summaryDTO.due());
 					isResultSet = ps.execute();
 					updateCount = 0;
 					while (true) {
@@ -181,7 +181,7 @@ public class QuotationRegister extends GenericServlet {
 							+ "	INSERT VALUES(w.受渡場所)"
 							+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
 					);
-					ps.setString(1, summaryDTO.getStr(6));
+					ps.setString(1, summaryDTO.place());
 					isResultSet = ps.execute();
 					updateCount = 0;
 					while (true) {
@@ -209,7 +209,7 @@ public class QuotationRegister extends GenericServlet {
 							+ "	INSERT VALUES(w.取引条件)"
 							+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
 					);
-					ps.setString(1, summaryDTO.getStr(7));
+					ps.setString(1, summaryDTO.terms());
 					isResultSet = ps.execute();
 					updateCount = 0;
 					while (true) {
@@ -255,7 +255,7 @@ public class QuotationRegister extends GenericServlet {
 						int i = 1;
 						ps.setInt(i++, quotationNum1); // 見積期
 						ps.setInt(i++, quotationNum2); // 見積番号
-						ps.setString(i++, summaryDTO.getStr(4)); // 見積枝番
+						ps.setString(i++, summaryDTO.quotationNum3()); // 見積枝番
 						rs = ps.executeQuery();
 						if (rs.next()) {
 							if (rs.getInt("見積親ID") != 0) {
@@ -289,38 +289,38 @@ public class QuotationRegister extends GenericServlet {
 						int i = 1;
 						ps.setInt(i++, quotationNum1); // 見積期
 						ps.setInt(i++, quotationNum2); // 見積番号
-						ps.setString(i++, summaryDTO.getStr(4)); // 見積枝番
+						ps.setString(i++, summaryDTO.quotationNum3()); // 見積枝番
 						// 元製作親IDサブクエリ---------------------------------
-						ps.setInt(i++, summaryDTO.getInt(18)); // 誕生期
-						ps.setInt(i++, summaryDTO.getInt(19)); // 誕生番号
-						ps.setString(i++, summaryDTO.getStr(14)); // 誕生枝番
-						ps.setInt(i++, summaryDTO.getInt(2)); // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
-						ps.setInt(i++, summaryDTO.getInt(22)); // 購入者CD
-						ps.setInt(i++, summaryDTO.getInt(2) == 0
+						ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
+						ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
+						ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
+						ps.setInt(i++, summaryDTO.projectCode()); // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
+						ps.setInt(i++, summaryDTO.buyerCode()); // 購入者CD
+						ps.setInt(i++, summaryDTO.projectCode() == 0
 								? -1
-								: summaryDTO.getInt(2)
+								: summaryDTO.projectCode()
 						); // 納入機・・・これが0だとヒットしてしまうので、-1にする
-						ps.setInt(i++, summaryDTO.getInt(18)); // 誕生期
-						ps.setInt(i++, summaryDTO.getInt(19)); // 誕生番号
-						ps.setString(i++, summaryDTO.getStr(14)); // 誕生枝番
+						ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
+						ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
+						ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
 						// -----------------------------------------------------
-						ps.setString(i++, summaryDTO.getStr(2)); // 案件名
-						ps.setString(i++, summaryDTO.getStr(15)); // 案内文
-						ps.setInt(i++, summaryDTO.getInt(0)); // 得意先CD
-						ps.setString(i++, summaryDTO.getStr(0)); // 得意先表示名
-						// ps.setInt(i++, summaryDTO.getInt(5)); //個人CD
-						// ps.setInt(i++, summaryDTO.getInt(6)); //依頼手段CD
+						ps.setString(i++, summaryDTO.quotationProjectName()); // 案件名
+						ps.setString(i++, summaryDTO.announcement()); // 案内文
+						ps.setInt(i++, summaryDTO.quotationAccountID()); // 得意先CD
+						ps.setString(i++, summaryDTO.quotationAccountName()); // 得意先表示名
+						// ps.setInt(i++, summaryDTO.contactCode()); //個人CD
+						// ps.setInt(i++, summaryDTO.inquiryCode()); //依頼手段CD
 						ps.setInt(i++, due); // 納期CD
 						ps.setInt(i++, place); // 受渡場所CD
 						ps.setInt(i++, terms); // 取引条件CD
 						ps.setInt(i++, validity); // 有効期間CD
-						ps.setInt(i++, summaryDTO.getInt(7)); // 提出済CD
-						// ps.setDate(i++, summaryDTO.getDate(0)); //依頼年月日
-						ps.setDate(i++, summaryDTO.getDate(1)); // 見積年月日
-						ps.setDate(i++, summaryDTO.getDate(2)); // 提出年月日
-						ps.setInt(i++, summaryDTO.getInt(8)); // 通貨CD
-						ps.setInt(i++, summaryDTO.getInt(9)); // 見積金額
-						ps.setString(i++, summaryDTO.getStr(9)); // 摘要
+						ps.setInt(i++, summaryDTO.submitCD()); // 提出済CD
+						// ps.setDate(i++, summaryDTO.inquiryDate()); //依頼年月日
+						ps.setDate(i++, summaryDTO.quotationDate()); // 見積年月日
+						ps.setDate(i++, summaryDTO.submitDate()); // 提出年月日
+						ps.setInt(i++, summaryDTO.quotationCurrencyCD()); // 通貨CD
+						ps.setInt(i++, summaryDTO.quotationAmount()); // 見積金額
+						ps.setString(i++, summaryDTO.quotationNote()); // 摘要
 						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
 						ps.setInt(i++, 0); // 更新者CD
 						boolean isResultSet = ps.execute();
@@ -376,38 +376,38 @@ public class QuotationRegister extends GenericServlet {
 						for (int g = 0; g < 18; g++)
 							ps.setInt(i++, quotationNum1); // 見積期
 						ps.setInt(i++, quotationNum2); // 見積番号
-						ps.setString(i++, summaryDTO.getStr(4)); // 見積枝番
+						ps.setString(i++, summaryDTO.quotationNum3()); // 見積枝番
 						// 元製作親IDサブクエリ---------------------------------
-						ps.setInt(i++, summaryDTO.getInt(18)); // 誕生期
-						ps.setInt(i++, summaryDTO.getInt(19)); // 誕生番号
-						ps.setString(i++, summaryDTO.getStr(14)); // 誕生枝番
-						ps.setInt(i++, summaryDTO.getInt(2)); // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
-						ps.setInt(i++, summaryDTO.getInt(22)); // 購入者CD
-						ps.setInt(i++, summaryDTO.getInt(2) == 0
+						ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
+						ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
+						ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
+						ps.setInt(i++, summaryDTO.projectCode()); // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
+						ps.setInt(i++, summaryDTO.buyerCode()); // 購入者CD
+						ps.setInt(i++, summaryDTO.projectCode() == 0
 								? -1
-								: summaryDTO.getInt(2)
+								: summaryDTO.projectCode()
 						); // 納入機・・・これが0だとヒットしてしまうので、-1にする
-						ps.setInt(i++, summaryDTO.getInt(18)); // 誕生期
-						ps.setInt(i++, summaryDTO.getInt(19)); // 誕生番号
-						ps.setString(i++, summaryDTO.getStr(14)); // 誕生枝番
+						ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
+						ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
+						ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
 						// -----------------------------------------------------
-						ps.setString(i++, summaryDTO.getStr(2)); // 案件名
-						ps.setString(i++, summaryDTO.getStr(15)); // 案内文
-						ps.setInt(i++, summaryDTO.getInt(0)); // 得意先CD
-						ps.setString(i++, summaryDTO.getStr(0)); // 得意先表示名
-						// ps.setInt(i++, summaryDTO.getInt(5)); //個人CD
-						// ps.setInt(i++, summaryDTO.getInt(6)); //依頼手段CD
+						ps.setString(i++, summaryDTO.quotationProjectName()); // 案件名
+						ps.setString(i++, summaryDTO.announcement()); // 案内文
+						ps.setInt(i++, summaryDTO.projectCode()); // 得意先CD
+						ps.setString(i++, summaryDTO.quotationAccountName()); // 得意先表示名
+						// ps.setInt(i++, summaryDTO.contactCode()); //個人CD
+						// ps.setInt(i++, summaryDTO.inquiryCode()); //依頼手段CD
 						ps.setInt(i++, due); // 納期CD
 						ps.setInt(i++, place); // 受渡場所CD
 						ps.setInt(i++, terms); // 取引条件CD
 						ps.setInt(i++, validity); // 有効期間CD
-						ps.setInt(i++, summaryDTO.getInt(7)); // 提出済CD
-						// ps.setDate(i++, summaryDTO.getDate(0)); //依頼年月日
-						ps.setDate(i++, summaryDTO.getDate(1)); // 見積年月日
-						ps.setDate(i++, summaryDTO.getDate(2)); // 提出年月日
-						ps.setInt(i++, summaryDTO.getInt(8)); // 通貨CD
-						ps.setInt(i++, summaryDTO.getInt(9)); // 見積金額
-						ps.setString(i++, summaryDTO.getStr(9)); // 摘要
+						ps.setInt(i++, summaryDTO.submitCD()); // 提出済CD
+						// ps.setDate(i++, summaryDTO.inquiryDate()); //依頼年月日
+						ps.setDate(i++, summaryDTO.quotationDate()); // 見積年月日
+						ps.setDate(i++, summaryDTO.submitDate()); // 提出年月日
+						ps.setInt(i++, summaryDTO.quotationCurrencyCD()); // 通貨CD
+						ps.setInt(i++, summaryDTO.quotationAmount()); // 見積金額
+						ps.setString(i++, summaryDTO.quotationNote()); // 摘要
 						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
 						ps.setInt(i++, 0); // 更新者CD
 						ps.setInt(i, quotationID); // ID
@@ -435,7 +435,7 @@ public class QuotationRegister extends GenericServlet {
 					ps = c.prepareStatement(
 						"INSERT INTO T_見積_子 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 					);
-					for (Vector<Object> record : summaryDTO.getVector(0)) {
+					for (Vector<Object> record : summaryDTO.quotationVector()) {
 						int tag = (Integer) record.get(1);
 						if (tag != 0) {
 							keys.add((Integer) record.get(0));

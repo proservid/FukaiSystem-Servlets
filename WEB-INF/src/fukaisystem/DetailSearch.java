@@ -58,8 +58,8 @@ public class DetailSearch extends GenericServlet {
 					conjunction = pn.getNumber() == 0 ? "AND" : "OR";
 					str = pn.getBranch(); // 検索キーワード
 				} else {
-					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
-					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
+					err.append(className + "readObjectがProductNumber型ではありません\n");
+					lg.error(className + "readObjectがProductNumber型ではありません");
 				}
 			}
 			try {

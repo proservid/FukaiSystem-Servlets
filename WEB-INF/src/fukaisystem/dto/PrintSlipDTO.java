@@ -28,33 +28,23 @@ public class PrintSlipDTO implements Serializable {
 		this.dataTable = dataTable;
 	}
 
-	public String getTableName(int order) {
-		String s = "";
-		switch (order) {
-			case 0:
-				s = titleTableName;
-				break;
-			case 1:
-				s = dataTableName;
-				break;
-		}
-		return s;
+	public String titleTableName() {
+		return titleTableName;
 	}
 
-	public List<List<String>> getTable(int order) {
-		List<List<String>> table = null;
-		switch (order) {
-			case 0:
-				table = titleTable;
-				break;
-			case 1:
-				table = dataTable;
-				break;
-		}
-		return table;
+	public String dataTableName() {
+		return dataTableName;
 	}
 
-	public int getID() {
+	public List<List<String>> titleTable() {
+		return titleTable;
+	}
+
+	public List<List<String>> dataTable() {
+		return dataTable;
+	}
+
+	public int id() {
 		return id;
 	}
 

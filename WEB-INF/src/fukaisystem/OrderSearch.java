@@ -69,8 +69,8 @@ public class OrderSearch extends GenericServlet {
 				if (obj instanceof OrderSearchDTO) {
 					dto = (OrderSearchDTO) obj;
 				} else {
-					err.append(className + "readObjectがProjectSearchDTO型ではありません\n");
-					lg.error(className + "readObjectがProjectSearchDTO型ではありません");
+					err.append(className + "readObjectがOrderSearchDTO型ではありません\n");
+					lg.error(className + "readObjectがOrderSearchDTO型ではありません");
 				}
 			}
 			try {

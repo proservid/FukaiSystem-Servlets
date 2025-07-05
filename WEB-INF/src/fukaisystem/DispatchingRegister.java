@@ -69,8 +69,8 @@ public class DispatchingRegister extends GenericServlet {
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-			dispatchingID = dto.getInt(7);
-			if (dto.getInt(0) * dto.getInt(1) == 0) {
+			dispatchingID = dto.dispatchingID();
+			if (dto.dispatchNum1() * dto.dispatchNum2() == 0) {
 				// 注文期または注文番号を0に変更したということは、消去せよということ
 				if (dispatchingID != 0) {
 					try {
@@ -96,12 +96,12 @@ public class DispatchingRegister extends GenericServlet {
 								+ " VALUES(?, ?, ?, ?, ?, ?, ?, ?)"
 						);
 						int i = 1;
-						ps.setInt(i++, dto.getInt(0)); // 製作期
-						ps.setInt(i++, dto.getInt(1)); // 製作番号
-						ps.setString(i++, dto.getStr(0)); // 製作枝番
-						ps.setDate(i++, dto.getDate(0)); // 出庫年月日
-						ps.setString(i++, dto.getStr(4)); // 用途
-						ps.setString(i++, dto.getStr(5)); // 用途2
+						ps.setInt(i++, dto.dispatchNum1()); // 製作期
+						ps.setInt(i++, dto.dispatchNum2()); // 製作番号
+						ps.setString(i++, dto.dispatchNum3()); // 製作枝番
+						ps.setDate(i++, dto.date()); // 出庫年月日
+						ps.setString(i++, dto.use()); // 用途
+						ps.setString(i++, dto.remark()); // 用途2
 						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
 						ps.setInt(i, 0); // 更新者CD
 						boolean isResultSet = ps.execute();
@@ -134,12 +134,12 @@ public class DispatchingRegister extends GenericServlet {
 								+ " WHERE 出庫親ID=?"
 						);
 						int i = 1;
-						ps.setInt(i++, dto.getInt(0)); // 製作期
-						ps.setInt(i++, dto.getInt(1)); // 製作番号
-						ps.setString(i++, dto.getStr(0)); // 製作枝番
-						ps.setDate(i++, dto.getDate(0)); // 出庫年月日
-						ps.setString(i++, dto.getStr(4)); // 用途
-						ps.setString(i++, dto.getStr(5)); // 用途2
+						ps.setInt(i++, dto.dispatchNum1()); // 製作期
+						ps.setInt(i++, dto.dispatchNum2()); // 製作番号
+						ps.setString(i++, dto.dispatchNum3()); // 製作枝番
+						ps.setDate(i++, dto.date()); // 出庫年月日
+						ps.setString(i++, dto.use()); // 用途
+						ps.setString(i++, dto.remark()); // 用途2
 						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
 						ps.setInt(i++, 0); // 更新者CD
 						ps.setInt(i, dispatchingID);
@@ -158,7 +158,7 @@ public class DispatchingRegister extends GenericServlet {
 				try {
 					ps = c.prepareStatement("INSERT INTO T_出庫_子 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);"); // +
 					// "UPDATE T_製作_子 SET 納品年月日=? WHERE ID=? AND 製作親ID=?");
-					for (Vector<Object> record : dto.getVector(0)) {
+					for (Vector<Object> record : dto.getVector()) {
 						int i = 1;
 						int j = 0;
 						if (record.get(0) != null && (Integer) record.get(0) != 0) {

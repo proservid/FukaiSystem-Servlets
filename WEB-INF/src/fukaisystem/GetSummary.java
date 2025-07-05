@@ -252,7 +252,7 @@ public class GetSummary extends GenericServlet {
 				}
 			}
 			if (summaryDTO != null) {
-				summaryDTO.setVector(0, quotationData);
+				summaryDTO.setQuotationVector(quotationData);
 				summaryDTO.setMap(quotationBasisDataMap);
 			}
 
@@ -279,42 +279,7 @@ public class GetSummary extends GenericServlet {
 				productionData.add(record);
 			}
 			if (summaryDTO != null)
-				summaryDTO.setVector(1, productionData);
-
-			// 売上明細
-			ps = c.prepareStatement(
-				"SELECT sc.製作子ID,sc.表示CD,出荷伝票番号,pp.受注年月日,pp.受注番号,sc.品名,pc.各FLG,pc.数量,pc.数量単位CD,pc.単価,pc.金額,sc.備考 FROM T_売上_子 sc"
-					+ " LEFT OUTER JOIN T_製作_親 pp ON sc.製作親ID=pp.製作親ID"
-					+ " LEFT OUTER JOIN T_製作_子 pc ON sc.製作親ID=pc.製作親ID AND sc.製作子ID=pc.ID"
-					+ " WHERE 売上親ID=? ORDER BY sc.ID"
-			);
-			ps.setInt(1, salesID);
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				Vector<Object> record = new Vector<Object>();
-				int price = rs.getInt("金額");
-				if (rs.getInt("表示CD") == 5) {
-					price = tax;
-				} else if (rs.getInt("表示CD") == 6) {
-					price = discount;
-				}
-				record.add(productionID);
-				record.add(rs.getInt("製作子ID"));
-				record.add(rs.getInt("表示CD"));
-				record.add(rs.getString("出荷伝票番号"));
-				record.add(rs.getDate("受注年月日"));
-				record.add(rs.getString("受注番号"));
-				record.add(rs.getString("品名"));
-				record.add(rs.getBoolean("各FLG"));
-				record.add(rs.getInt("数量"));
-				record.add(rs.getInt("数量単位CD"));
-				record.add(rs.getInt("単価"));
-				record.add(price);
-				record.add(rs.getString("備考"));
-				salesData.add(record);
-			}
-			if (summaryDTO != null)
-				summaryDTO.setVector(2, salesData);
+				summaryDTO.setProductionVector(productionData);
 
 			// 売伝一覧
 			ps = c.prepareStatement(
@@ -341,7 +306,7 @@ public class GetSummary extends GenericServlet {
 				salesSlips.add(record);
 			}
 			if (summaryDTO != null)
-				summaryDTO.setVector(3, salesSlips);
+				summaryDTO.setSalesSlips(salesSlips);
 
 			if (productionID > 0) {
 				ps = c.prepareStatement(

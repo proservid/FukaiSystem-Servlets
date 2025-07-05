@@ -5,6 +5,7 @@
 
 package fukaisystem.dto;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 import java.util.Map;
@@ -14,11 +15,11 @@ import java.util.Vector;
  *
  * @author kameura
  */
-public class ProjectSummaryDTO extends BasicDTO {
+public class ProjectSummaryDTO implements Serializable {
 
 	String quotationAccountName, productionAccountName, quotationProjectName, productionProjectName, placeName,
 		quotationNum3, due, place, terms, validity, quotationNote,
-		acceptID, productionNum3, prosuctionNote,
+		acceptID, productionNum3, productionNote,
 		salesNote, birthNum3, announcement;
 	int quotationAccountID, productionAccountID, projectCode, buyerCode,
 		quotationID, quotationNum1, quotationNum2, contactCode, inquiryCode,
@@ -31,7 +32,7 @@ public class ProjectSummaryDTO extends BasicDTO {
 	boolean isNew, isAdd, isRelease, isOrder;
 	List<String> quotationNumbers;
 	List<Integer> parents;
-	Vector<Vector<Object>> quotationData, productionData, dispatchingData, salesSlips;
+	Vector<Vector<Object>> quotationVector, productionVector, dispatchingVector, salesSlips;
 	Map<Integer, Vector<Vector<Object>>> quotationBasisDataMap;
 
 	public ProjectSummaryDTO(
@@ -67,13 +68,13 @@ public class ProjectSummaryDTO extends BasicDTO {
 		Date inquiryDate,
 		Date quotationDate,
 		Date submitDate,
-		Vector<Vector<Object>> quotationData,
+		Vector<Vector<Object>> quotationVector,
 		Map<Integer, Vector<Vector<Object>>> quotationBasisDataMap,
 		// 製作
 		String acceptID,
 		String productionNum3,
 		String placeName,
-		String prosuctionNote,
+		String productionNote,
 		int productionID,
 		int productionNum1,
 		int productionNum2,
@@ -88,7 +89,7 @@ public class ProjectSummaryDTO extends BasicDTO {
 		boolean isAdd,
 		boolean isRelease,
 		boolean isOrder,
-		Vector<Vector<Object>> productionData,
+		Vector<Vector<Object>> productionVector,
 		// 売上
 		String salesNote,
 		int salesID,
@@ -96,7 +97,7 @@ public class ProjectSummaryDTO extends BasicDTO {
 		int deliveryCode,
 		int dispatchingAccountID,
 		Date salesSlipPublishDate,
-		Vector<Vector<Object>> dispatchingData,
+		Vector<Vector<Object>> dispatchingVector,
 		Vector<Vector<Object>> salesSlips
 	) {
 
@@ -129,13 +130,13 @@ public class ProjectSummaryDTO extends BasicDTO {
 		this.inquiryDate = inquiryDate;
 		this.quotationDate = quotationDate;
 		this.submitDate = submitDate;
-		this.quotationData = quotationData;
+		this.quotationVector = quotationVector;
 		this.quotationBasisDataMap = quotationBasisDataMap;
 
 		this.acceptID = acceptID;
 		this.productionNum3 = productionNum3;
 		this.placeName = placeName;
-		this.prosuctionNote = prosuctionNote;
+		this.productionNote = productionNote;
 		this.productionID = productionID;
 		this.productionNum1 = productionNum1;
 		this.productionNum2 = productionNum2;
@@ -149,7 +150,7 @@ public class ProjectSummaryDTO extends BasicDTO {
 		this.isNew = isNew;
 		this.isRelease = isRelease;
 		this.isOrder = isOrder;
-		this.productionData = productionData;
+		this.productionVector = productionVector;
 
 		this.salesNote = salesNote;
 		this.salesID = salesID;
@@ -157,238 +158,246 @@ public class ProjectSummaryDTO extends BasicDTO {
 		this.deliveryCode = deliveryCode;
 		this.dispatchingAccountID = dispatchingAccountID;
 		this.salesSlipPublishDate = salesSlipPublishDate;
-		this.dispatchingData = dispatchingData;
+		this.dispatchingVector = dispatchingVector;
 		this.salesSlips = salesSlips;
 		this.buyerCode = buyerCode;
 		this.isAdd = isAdd;
 	}
 
-	@Override
-	public String getStr(int order) {
-		String s = "";
-		switch (order) {
-			case 0:
-				s = quotationAccountName;
-				break;
-			case 1:
-				s = productionAccountName;
-				break;
-			case 2:
-				s = quotationProjectName;
-				break;
-			case 3:
-				s = placeName;
-				break;
-			case 4:
-				s = quotationNum3;
-				break;
-			case 5:
-				s = due;
-				break; // 納期
-			case 6:
-				s = place;
-				break; // 受渡場所
-			case 7:
-				s = terms;
-				break; // 取引条件
-			case 8:
-				s = validity;
-				break; // 有効期間
-			case 9:
-				s = quotationNote;
-				break;
-			case 10:
-				s = acceptID;
-				break;
-			case 11:
-				s = productionNum3;
-				break;
-			case 12:
-				s = prosuctionNote;
-				break;
-			case 13:
-				s = salesNote;
-				break;
-			case 14:
-				s = birthNum3;
-				break;
-			case 15:
-				s = announcement;
-				break;
-			case 16:
-				s = productionProjectName;
-				break;
-		}
-		return s;
+	public String quotationAccountName() {
+		return quotationAccountName;
 	}
 
-	@Override
-	public int getInt(int order) {
-		int i = 0;
-		switch (order) {
-			case 0:
-				i = quotationAccountID;
-				break;
-			case 1:
-				i = productionAccountID;
-				break;
-			case 2:
-				i = projectCode;
-				break;
-			case 3:
-				i = quotationNum1;
-				break;
-			case 4:
-				i = quotationNum2;
-				break;
-			case 5:
-				i = contactCode;
-				break;
-			case 6:
-				i = inquiryCode;
-				break;
-			case 7:
-				i = submitCD;
-				break;
-			case 8:
-				i = quotationCurrencyCD;
-				break;
-			case 9:
-				i = quotationAmount;
-				break;
-			case 10:
-				i = productionNum1;
-				break;
-			case 11:
-				i = productionNum2;
-				break;
-			case 12:
-				i = productionCurrencyCD;
-				break;
-			case 13:
-				i = productionAmount;
-				break;
-			case 14:
-				i = deliveryStateCode;
-				break;
-			case 15:
-				i = deliveryCode;
-				break;
-			case 16:
-				i = quotationID;
-				break;
-			case 17:
-				i = productionID;
-				break;
-			case 18:
-				i = birthNum1;
-				break;
-			case 19:
-				i = birthNum2;
-				break;
-			case 20:
-				i = salesID;
-				break;
-			case 21:
-				i = dispatchingAccountID;
-				break;
-			case 22:
-				i = buyerCode;
-				break;
-		}
-		return i;
+	public String productionAccountName() {
+		return productionAccountName;
 	}
 
-	@Override
-	public Date getDate(int order) {
-		Date d = null;
-		switch (order) {
-			case 0:
-				d = inquiryDate;
-				break;
-			case 1:
-				d = quotationDate;
-				break;
-			case 2:
-				d = submitDate;
-				break;
-			case 3:
-				d = acceptDate;
-				break; // 受注年月日
-			case 4:
-				d = deadlineDate;
-				break; // 納期
-			case 5:
-				d = productionSlipPublishDate;
-				break; // 発行年月日
-			case 6:
-				d = shippingDate;
-				break; // 出荷年月日
-			case 7:
-				d = inspectionDate;
-				break; // 検収年月日
-			case 8:
-				d = salesSlipPublishDate;
-				break; // 売上伝票発行年月日
-		}
-		return d;
+	public String quotationProjectName() {
+		return quotationProjectName;
 	}
 
-	@Override
-	public boolean getBool(int order) {
-		boolean b = false;
-		switch (order) {
-			case 0:
-				b = isRelease;
-				break;
-			case 1:
-				b = isOrder;
-				break;
-			case 2:
-				b = isNew;
-				break;
-			case 3:
-				b = isAdd;
-				break;
-		}
-		return b;
+	public String placeName() {
+		return placeName;
 	}
 
-	@Override
-	public Vector<Vector<Object>> getVector(int order) {
-		Vector<Vector<Object>> data = null;
-		switch (order) {
-			case 0:
-				data = quotationData;
-				break;
-			case 1:
-				data = productionData;
-				break;
-			case 2:
-				data = dispatchingData;
-				break;
-			case 3:
-				data = salesSlips;
-				break;
-		}
-		return data;
+	public String quotationNum3() {
+		return quotationNum3;
 	}
 
-	public void setVector(int order, Vector<Vector<Object>> vector) {
-		switch (order) {
-			case 0:
-				quotationData = vector;
-				break;
-			case 1:
-				productionData = vector;
-				break;
-			case 2:
-				dispatchingData = vector;
-				break;
-			case 3:
-				salesSlips = vector;
-				break;
-		}
+	public String due() {
+		return due;
+	} // 納期
+
+	public String place() {
+		return place;
+	} // 受渡場所
+
+	public String terms() {
+		return terms;
+	} // 取引条件
+
+	public String validity() {
+		return validity;
+	} // 有効期間
+
+	public String quotationNote() {
+		return quotationNote;
+	}
+
+	public String acceptID() {
+		return acceptID;
+	}
+
+	public String productionNum3() {
+		return productionNum3;
+	}
+
+	public String productionNote() {
+		return productionNote;
+	}
+
+	public String salesNote() {
+		return salesNote;
+	}
+
+	public String birthNum3() {
+		return birthNum3;
+	}
+
+	public String announcement() {
+		return announcement;
+	}
+
+	public String productionProjectName() {
+		return productionProjectName;
+	}
+
+	public int quotationAccountID() {
+		return quotationAccountID;
+	}
+
+	public int productionAccountID() {
+		return productionAccountID;
+	}
+
+	public int projectCode() {
+		return projectCode;
+	}
+
+	public int quotationNum1() {
+		return quotationNum1;
+	}
+
+	public int quotationNum2() {
+		return quotationNum2;
+	}
+
+	public int contactCode() {
+		return contactCode;
+	}
+
+	public int inquiryCode() {
+		return inquiryCode;
+	}
+
+	public int submitCD() {
+		return submitCD;
+	}
+
+	public int quotationCurrencyCD() {
+		return quotationCurrencyCD;
+	}
+
+	public int quotationAmount() {
+		return quotationAmount;
+	}
+
+	public int productionNum1() {
+		return productionNum1;
+	}
+
+	public int productionNum2() {
+		return productionNum2;
+	}
+
+	public int productionCurrencyCD() {
+		return productionCurrencyCD;
+	}
+
+	public int productionAmount() {
+		return productionAmount;
+	}
+
+	public int deliveryStateCode() {
+		return deliveryStateCode;
+	}
+
+	public int deliveryCode() {
+		return deliveryCode;
+	}
+
+	public int quotationID() {
+		return quotationID;
+	}
+
+	public int productionID() {
+		return productionID;
+	}
+
+	public int birthNum1() {
+		return birthNum1;
+	}
+
+	public int birthNum2() {
+		return birthNum2;
+	}
+
+	public int salesID() {
+		return salesID;
+	}
+
+	public int dispatchingAccountID() {
+		return dispatchingAccountID;
+	}
+
+	public int buyerCode() {
+		return buyerCode;
+	}
+
+	public Date inquiryDate() {
+		return inquiryDate;
+	}
+
+	public Date quotationDate() {
+		return quotationDate;
+	}
+
+	public Date submitDate() {
+		return submitDate;
+	}
+
+	public Date acceptDate() {
+		return acceptDate;
+	} // 受注年月日
+
+	public Date deadlineDate() {
+		return deadlineDate;
+	} // 納期
+
+	public Date productionSlipPublishDate() {
+		return productionSlipPublishDate;
+	} // 発行年月日
+
+	public Date shippingDate() {
+		return shippingDate;
+	} // 出荷年月日
+
+	public Date inspectionDate() {
+		return inspectionDate;
+	} // 検収年月日
+
+	public Date salesSlipPublishDate() {
+		return salesSlipPublishDate;
+	} // 売上伝票発行年月日
+
+	public boolean isRelease() {
+		return isRelease;
+	}
+
+	public boolean isOrder() {
+		return isOrder;
+	}
+
+	public boolean isNew() {
+		return isNew;
+	}
+
+	public boolean isAdd() {
+		return isAdd;
+	}
+
+	public Vector<Vector<Object>> quotationVector() {
+		return quotationVector;
+	}
+
+	public Vector<Vector<Object>> productionVector() {
+		return productionVector;
+	}
+
+	public Vector<Vector<Object>> salesSlips() {
+		return salesSlips;
+	}
+
+	public void setQuotationVector(Vector<Vector<Object>> vector) {
+		quotationVector = vector;
+	}
+
+	public void setProductionVector(Vector<Vector<Object>> vector) {
+		productionVector = vector;
+	}
+
+	public void setSalesSlips(Vector<Vector<Object>> vector) {
+		salesSlips = vector;
 	}
 
 	public Map<Integer, Vector<Vector<Object>>> getMap() {
@@ -409,14 +418,11 @@ public class ProjectSummaryDTO extends BasicDTO {
 			this.projectCode = parents.get(0);
 	}
 
-	@Override
 	public List<String> getQuotationNumbers() {
 		return quotationNumbers;
 	}
 
-	@Override
 	public List<Integer> getParents() {
 		return parents;
 	}
 }
- 

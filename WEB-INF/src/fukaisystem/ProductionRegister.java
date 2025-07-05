@@ -78,10 +78,10 @@ public class ProductionRegister extends GenericServlet {
 				Logging.logStackTrace(ex, lg, className);
 			}
 
-			quotationID = summaryDTO.getInt(16);
-			productionID = summaryDTO.getInt(17);
+			quotationID = summaryDTO.quotationID();
+			productionID = summaryDTO.productionID();
 
-			productNum2 = summaryDTO.getInt(11);
+			productNum2 = summaryDTO.productionNum2();
 			if (productNum2 == 0 && productionID != 0) {
 				// 製作期または製作番号が0なら
 				try {
@@ -144,28 +144,28 @@ public class ProductionRegister extends GenericServlet {
 								+ "?, ?, ? FROM T_製作_親"
 						);
 						int i = 1;
-						ps.setInt(i++, summaryDTO.getInt(10)); // 製作期
-						ps.setInt(i++, summaryDTO.getInt(11)); // 製作番号
-						ps.setString(i++, summaryDTO.getStr(11)); // 製作枝番
-						ps.setString(i++, summaryDTO.getStr(10)); // 受注番号
-						ps.setString(i++, summaryDTO.getStr(16)); // 案件名
+						ps.setInt(i++, summaryDTO.productionNum1()); // 製作期
+						ps.setInt(i++, summaryDTO.productionNum2()); // 製作番号
+						ps.setString(i++, summaryDTO.productionNum3()); // 製作枝番
+						ps.setString(i++, summaryDTO.acceptID()); // 受注番号
+						ps.setString(i++, summaryDTO.productionProjectName()); // 案件名
 						ps.setInt(i++, quotationID); // 見積親ID
-						ps.setInt(i++, summaryDTO.getInt(1)); // 得意先CD
+						ps.setInt(i++, summaryDTO.quotationAccountID()); // 得意先CD
 						// 機械番号サブクエリ-----------------------------------
-						ps.setBoolean(i++, summaryDTO.getBool(2)); // 新機FLG
-						ps.setInt(i++, summaryDTO.getInt(1)); // 得意先CD
+						ps.setBoolean(i++, summaryDTO.isNew()); // 新機FLG
+						ps.setInt(i++, summaryDTO.quotationAccountID()); // 得意先CD
 						// -----------------------------------------------------
-						ps.setString(i++, summaryDTO.getStr(3)); // 納入先名
-						ps.setDate(i++, summaryDTO.getDate(4)); // 納期
-						ps.setDate(i++, summaryDTO.getDate(3)); // 受注年月日
-						ps.setDate(i++, summaryDTO.getDate(5)); // 発行年月日
-						ps.setDate(i++, summaryDTO.getDate(6)); // 出荷年月日
-						ps.setDate(i++, summaryDTO.getDate(7)); // 検収年月日
-						ps.setInt(i++, summaryDTO.getInt(12)); // 通貨CD
-						ps.setInt(i++, summaryDTO.getInt(13)); // 契約金額
-						ps.setString(i++, summaryDTO.getStr(12)); // 摘要
-						ps.setBoolean(i++, summaryDTO.getBool(0)); // 出図FLG
-						ps.setBoolean(i++, summaryDTO.getBool(1)); // 手配FLG
+						ps.setString(i++, summaryDTO.placeName()); // 納入先名
+						ps.setDate(i++, summaryDTO.deadlineDate()); // 納期
+						ps.setDate(i++, summaryDTO.acceptDate()); // 受注年月日
+						ps.setDate(i++, summaryDTO.productionSlipPublishDate()); // 発行年月日
+						ps.setDate(i++, summaryDTO.shippingDate()); // 出荷年月日
+						ps.setDate(i++, summaryDTO.inspectionDate()); // 検収年月日
+						ps.setInt(i++, summaryDTO.productionCurrencyCD()); // 通貨CD
+						ps.setInt(i++, summaryDTO.productionAmount()); // 契約金額
+						ps.setString(i++, summaryDTO.productionNote()); // 摘要
+						ps.setBoolean(i++, summaryDTO.isRelease()); // 出図FLG
+						ps.setBoolean(i++, summaryDTO.isOrder()); // 手配FLG
 						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
 						ps.setInt(i++, 0); // 更新者CD
 						boolean isResultSet = ps.execute();
@@ -204,28 +204,28 @@ public class ProductionRegister extends GenericServlet {
 								+ "納入先名=?, 納期=?, 受注年月日=?, 発行年月日=?, 出荷年月日=?, 検収年月日=?, 通貨CD=?, 契約金額=?, 摘要=?, 出図FLG=?, 手配FLG=?, 更新日=?, 更新者CD=? WHERE 製作親ID=?"
 						);
 						int i = 1;
-						ps.setInt(i++, summaryDTO.getInt(10)); // 製作期
-						ps.setInt(i++, summaryDTO.getInt(11)); // 製作番号
-						ps.setString(i++, summaryDTO.getStr(11)); // 製作枝番
-						ps.setString(i++, summaryDTO.getStr(10)); // 受注番号
-						ps.setString(i++, summaryDTO.getStr(16)); // 案件名
+						ps.setInt(i++, summaryDTO.productionNum1()); // 製作期
+						ps.setInt(i++, summaryDTO.productionNum2()); // 製作番号
+						ps.setString(i++, summaryDTO.productionNum3()); // 製作枝番
+						ps.setString(i++, summaryDTO.acceptID()); // 受注番号
+						ps.setString(i++, summaryDTO.productionProjectName()); // 案件名
 						ps.setInt(i++, quotationID); // 見積親ID
-						ps.setInt(i++, summaryDTO.getInt(1)); // 得意先CD
+						ps.setInt(i++, summaryDTO.productionAccountID()); // 得意先CD
 						// 機械番号サブクエリ-----------------------------------
-						ps.setBoolean(i++, summaryDTO.getBool(2)); // 新機FLG
-						ps.setInt(i++, summaryDTO.getInt(1)); // 得意先CD
+						ps.setBoolean(i++, summaryDTO.isNew()); // 新機FLG
+						ps.setInt(i++, summaryDTO.productionAccountID()); // 得意先CD
 						// -----------------------------------------------------
-						ps.setString(i++, summaryDTO.getStr(3)); // 納入先名
-						ps.setDate(i++, summaryDTO.getDate(4)); // 納期
-						ps.setDate(i++, summaryDTO.getDate(3)); // 受注年月日
-						ps.setDate(i++, summaryDTO.getDate(5)); // 発行年月日
-						ps.setDate(i++, summaryDTO.getDate(6)); // 出荷年月日
-						ps.setDate(i++, summaryDTO.getDate(7)); // 検収年月日
-						ps.setInt(i++, summaryDTO.getInt(12)); // 通貨CD
-						ps.setInt(i++, summaryDTO.getInt(13)); // 契約金額
-						ps.setString(i++, summaryDTO.getStr(12)); // 摘要
-						ps.setBoolean(i++, summaryDTO.getBool(0)); // 出図FLG
-						ps.setBoolean(i++, summaryDTO.getBool(1)); // 手配FLG
+						ps.setString(i++, summaryDTO.placeName()); // 納入先名
+						ps.setDate(i++, summaryDTO.deadlineDate()); // 納期
+						ps.setDate(i++, summaryDTO.acceptDate()); // 受注年月日
+						ps.setDate(i++, summaryDTO.productionSlipPublishDate()); // 発行年月日
+						ps.setDate(i++, summaryDTO.shippingDate()); // 出荷年月日
+						ps.setDate(i++, summaryDTO.inspectionDate()); // 検収年月日
+						ps.setInt(i++, summaryDTO.productionCurrencyCD()); // 通貨CD
+						ps.setInt(i++, summaryDTO.productionAmount()); // 契約金額
+						ps.setString(i++, summaryDTO.productionNote()); // 摘要
+						ps.setBoolean(i++, summaryDTO.isRelease()); // 出図FLG
+						ps.setBoolean(i++, summaryDTO.isOrder()); // 手配FLG
 						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
 						ps.setInt(i++, 0); // 更新者CD
 						ps.setInt(i, productionID); // 製作親ID
@@ -258,9 +258,9 @@ public class ProductionRegister extends GenericServlet {
 					for (Integer parentCode : summaryDTO.getParents()) {
 						int i = 1;
 						ps.setInt(i++, productionID); // 製作親ID
-						ps.setBoolean(i++, summaryDTO.getBool(2)); // 新機FLG
+						ps.setBoolean(i++, summaryDTO.isNew()); // 新機FLG
 						ps.setInt(i++, productionID); // 製作親ID
-						ps.setInt(i++, summaryDTO.getInt(22)); // 購入者CD
+						ps.setInt(i++, summaryDTO.buyerCode()); // 購入者CD
 						ps.setInt(i++, parentCode); // 納入機
 						ps.addBatch();
 					}
@@ -277,7 +277,7 @@ public class ProductionRegister extends GenericServlet {
 						ps = c.prepareStatement(
 							"INSERT INTO T_製作_子 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 						);
-						for (Vector<Object> record : summaryDTO.getVector(1)) {
+						for (Vector<Object> record : summaryDTO.productionVector()) {
 							int tag = (Integer) record.get(1);
 							if (tag != 0) {
 								int i = 1;
