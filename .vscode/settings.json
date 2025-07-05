@@ -22,6 +22,8 @@
   // "java.format.settings.profile": "eclipse-custom",
   "java.format.settings.url": "formatter.xml",
   "[java]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
     "editor.formatOnPaste": true,
     "editor.formatOnType": true,
     // "editor.formatOnSave": true,
