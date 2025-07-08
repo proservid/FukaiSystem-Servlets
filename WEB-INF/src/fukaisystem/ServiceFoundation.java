@@ -32,7 +32,9 @@ public abstract class ServiceFoundation extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 			Object result = core(response, obj);
-			send(response, result);
+			if (result != null) { // reportException で送信済みの場合は result が null
+				send(response, result);
+			}
 
 		} catch (Exception e) {
 			handleException(e);
@@ -114,8 +116,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 		if (clazz.isInstance(obj)) {
 			return (T) obj;
 		}
-		addError(String.format("[%s] DTO が %s 型ではありません\n", className, clazz.getSimpleName()));
-		send(response, null);
+		send(response, new Exception(String.format("[%s] DTO が %s 型ではありません\n", className, clazz.getSimpleName())));
 		return null;
 	}
 
@@ -128,10 +129,19 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 * @throws IOException
 	 */
 	protected void send(ServletResponse response, Object obj) throws IOException {
+		String message;
+		if (obj instanceof Exception) {
+			message = ((Exception) obj).getMessage(); // extendedMessage はシリアル化できないので
+		} else {
+			message = getErrors();
+			if (!message.isEmpty()) {
+				obj = new Exception();
+			}
+		}
 		response.setContentType("application/octet-stream");
 		ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
 		out.writeObject(obj);
-		out.writeUTF(getErrors());
+		out.writeUTF(message);
 		out.flush();
 		out.close();
 	}
@@ -144,15 +154,11 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 * @throws IOException
 	 */
 	protected void reportException(ServletResponse response, Exception e) throws IOException {
-		addError(e.getMessage() + "\n");
-		for (StackTraceElement element : e.getStackTrace()) {
-			addError(element.toString() + "\n");
-		}
-		send(response, null);
+		send(response, e);
 	}
 
 	/**
-	 * 例外の最終処理（ログに記録）
+	 * 例外の最終処理（クライアントに送信できないのでログに記録するのみ）
 	 * 
 	 * @param e Exceptionオブジェクト
 	 */
@@ -166,8 +172,8 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 * @param e 追加するエラー
 	 */
 	protected void addError(String e) {
-		err.append(e);
-		lg.error(e);
+		err.append(e + " ");
+		lg.error(e + " ");
 	}
 
 	/**
