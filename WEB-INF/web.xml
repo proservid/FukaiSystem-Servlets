@@ -146,6 +146,15 @@
  </servlet-mapping>
 
 <servlet>
+ <servlet-name> getSalesSummary </servlet-name>
+ <servlet-class> fukaisystem.table.GetSalesSummary </servlet-class>
+ </servlet>
+ <servlet-mapping>
+ <servlet-name> getSalesSummary </servlet-name>
+ <url-pattern> /getSalesSummary </url-pattern>
+ </servlet-mapping>
+
+<servlet>
  <servlet-name> getShelf </servlet-name>
  <servlet-class> fukaisystem.aggregate.GetShelf2 </servlet-class>
  </servlet>
@@ -179,15 +188,6 @@
  <servlet-mapping>
  <servlet-name> tbInit </servlet-name>
  <url-pattern> /tbInit </url-pattern>
- </servlet-mapping>
-
- <servlet>
- <servlet-name> getData </servlet-name>
- <servlet-class> fukaisystem.GetData </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> getData </servlet-name>
- <url-pattern> /getData </url-pattern>
  </servlet-mapping>
 
  <servlet>

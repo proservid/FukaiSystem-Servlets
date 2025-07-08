@@ -25,7 +25,7 @@ public class GetTableDTO implements Serializable {
 	) {
 		this.tables = tables;
 		this.conditions = conditions;
-		this.order = order.isEmpty() ? "" : " ORDER BY " + order;
+		this.order = order.isEmpty() ? "" : " " + order;
 	}
 
 	public Map<String, List<String>> getTables() {
