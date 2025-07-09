@@ -176,4 +176,3 @@ public class InitialDTO implements Serializable {
 		return sgs;
 	}
 }
- 

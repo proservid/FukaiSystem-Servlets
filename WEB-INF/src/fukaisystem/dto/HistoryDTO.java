@@ -102,7 +102,6 @@ public class HistoryDTO implements Serializable {
 		return receiptD;
 	}
 
-
 	public int accountCode() {
 		return accountCode;
 	}

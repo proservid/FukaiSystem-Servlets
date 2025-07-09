@@ -10,9 +10,11 @@
                 <res-type>javax.sql.DataSource</res-type>
                 <res-auth>Container</res-auth>
         </resource-ref>
+
+<!-- fukaisystem.print.format -->
 <servlet>
  <servlet-name> getFormat </servlet-name>
- <servlet-class> fukaisystem.print.GetFormat </servlet-class>
+ <servlet-class> fukaisystem.print.format.GetFormat </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getFormat </servlet-name>
@@ -21,7 +23,7 @@
 
 <servlet>
  <servlet-name> registerFormat </servlet-name>
- <servlet-class> fukaisystem.print.RegisterFormat </servlet-class>
+ <servlet-class> fukaisystem.print.format.RegisterFormat </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> registerFormat </servlet-name>
@@ -30,7 +32,7 @@
 
 <servlet>
  <servlet-name> deleteFormat </servlet-name>
- <servlet-class> fukaisystem.print.DeleteFormat </servlet-class>
+ <servlet-class> fukaisystem.print.format.DeleteFormat </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> deleteFormat </servlet-name>
@@ -39,7 +41,7 @@
 
 <servlet>
  <servlet-name> getFormatName </servlet-name>
- <servlet-class> fukaisystem.print.GetFormatName </servlet-class>
+ <servlet-class> fukaisystem.print.format.GetFormatName </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getFormatName </servlet-name>
@@ -48,7 +50,7 @@
 
 <servlet>
  <servlet-name> getFormatNames </servlet-name>
- <servlet-class> fukaisystem.print.GetFormatNames </servlet-class>
+ <servlet-class> fukaisystem.print.format.GetFormatNames </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getFormatNames </servlet-name>
@@ -57,7 +59,7 @@
 
 <servlet>
  <servlet-name> existsFormat </servlet-name>
- <servlet-class> fukaisystem.print.ExistsFormat </servlet-class>
+ <servlet-class> fukaisystem.print.format.ExistsFormat </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> existsFormat </servlet-name>
@@ -66,16 +68,17 @@
 
 <servlet>
  <servlet-name> renameFormat </servlet-name>
- <servlet-class> fukaisystem.print.RenameFormat </servlet-class>
+ <servlet-class> fukaisystem.print.format.RenameFormat </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> renameFormat </servlet-name>
  <url-pattern> /renameFormat </url-pattern>
  </servlet-mapping>
 
+<!-- fukaisystem.print.slip -->
 <servlet>
  <servlet-name> addSlip </servlet-name>
- <servlet-class> fukaisystem.print.AddSlip </servlet-class>
+ <servlet-class> fukaisystem.print.slip.AddSlip </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> addSlip </servlet-name>
@@ -93,7 +96,7 @@
 
 <servlet>
  <servlet-name> renameSlip </servlet-name>
- <servlet-class> fukaisystem.print.RenameSlip </servlet-class>
+ <servlet-class> fukaisystem.print.slip.RenameSlip </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> renameSlip </servlet-name>
@@ -102,7 +105,7 @@
 
 <servlet>
  <servlet-name> deleteSlip </servlet-name>
- <servlet-class> fukaisystem.print.DeleteSlip </servlet-class>
+ <servlet-class> fukaisystem.print.slip.DeleteSlip </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> deleteSlip </servlet-name>
@@ -111,7 +114,7 @@
 
 <servlet>
  <servlet-name> getLinks </servlet-name>
- <servlet-class> fukaisystem.print.GetLinks </servlet-class>
+ <servlet-class> fukaisystem.print.slip.GetLinks </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getLinks </servlet-name>
@@ -120,16 +123,17 @@
 
 <servlet>
  <servlet-name> registerLink </servlet-name>
- <servlet-class> fukaisystem.print.RegisterLink </servlet-class>
+ <servlet-class> fukaisystem.print.slip.RegisterLink </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> registerLink </servlet-name>
  <url-pattern> /registerLink </url-pattern>
  </servlet-mapping>
 
+<!-- fukaisystem.print.table -->
 <servlet>
  <servlet-name> getNames </servlet-name>
- <servlet-class> fukaisystem.table.GetNames </servlet-class>
+ <servlet-class> fukaisystem.print.table.GetNames </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getNames </servlet-name>
@@ -138,16 +142,17 @@
 
 <servlet>
  <servlet-name> getData2 </servlet-name>
- <servlet-class> fukaisystem.table.GetData </servlet-class>
+ <servlet-class> fukaisystem.print.table.GetData </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getData2 </servlet-name>
  <url-pattern> /getData2 </url-pattern>
  </servlet-mapping>
 
+<!-- fukaisystem.application.business -->
 <servlet>
  <servlet-name> getSalesSummary </servlet-name>
- <servlet-class> fukaisystem.table.GetSalesSummary </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetSalesSummary </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getSalesSummary </servlet-name>
@@ -156,7 +161,7 @@
 
 <servlet>
  <servlet-name> getShelf </servlet-name>
- <servlet-class> fukaisystem.aggregate.GetShelf2 </servlet-class>
+ <servlet-class> fukaisystem.application.aggregate.GetShelf2 </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getShelf </servlet-name>
@@ -165,7 +170,7 @@
 
 <servlet>
  <servlet-name> getLedger </servlet-name>
- <servlet-class> fukaisystem.aggregate.GetLedger </servlet-class>
+ <servlet-class> fukaisystem.application.aggregate.GetLedger </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getLedger </servlet-name>
@@ -174,7 +179,7 @@
 
 <servlet>
  <servlet-name> getSalesData </servlet-name>
- <servlet-class> fukaisystem.aggregate.GetSalesData </servlet-class>
+ <servlet-class> fukaisystem.application.aggregate.GetSalesData </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getSalesData </servlet-name>
@@ -183,7 +188,7 @@
 
 <servlet>
  <servlet-name> tbInit </servlet-name>
- <servlet-class> fukaisystem.TbInit </servlet-class>
+ <servlet-class> fukaisystem.application.mh.TbInit </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> tbInit </servlet-name>
@@ -192,7 +197,7 @@
 
  <servlet>
  <servlet-name> getTableData </servlet-name>
- <servlet-class> fukaisystem.GetTableData </servlet-class>
+ <servlet-class> fukaisystem.application.GetTableData </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getTableData </servlet-name>
@@ -200,17 +205,8 @@
  </servlet-mapping>
 
   <servlet>
- <servlet-name> dataRegister </servlet-name>
- <servlet-class> fukaisystem.DataRegister </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> dataRegister </servlet-name>
- <url-pattern> /dataRegister </url-pattern>
- </servlet-mapping>
-
-  <servlet>
  <servlet-name> queryExecutor </servlet-name>
- <servlet-class> fukaisystem.QueryExecutor </servlet-class>
+ <servlet-class> fukaisystem.application.mh.QueryExecutor </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> queryExecutor </servlet-name>
@@ -220,7 +216,7 @@
 
  <servlet>
  <servlet-name> corpRegister </servlet-name>
- <servlet-class> fukaisystem.address.CorpRegister </servlet-class>
+ <servlet-class> fukaisystem.application.address.CorpRegister </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> corpRegister </servlet-name>
@@ -228,7 +224,7 @@
  </servlet-mapping>
  <servlet>
  <servlet-name> indRegister </servlet-name>
- <servlet-class> fukaisystem.address.IndRegister </servlet-class>
+ <servlet-class> fukaisystem.application.address.IndRegister </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> indRegister </servlet-name>
@@ -237,7 +233,7 @@
 
  <servlet>
  <servlet-name> getAddress </servlet-name>
- <servlet-class> fukaisystem.address.GetAddress </servlet-class>
+ <servlet-class> fukaisystem.application.address.GetAddress </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getAddress </servlet-name>
@@ -246,7 +242,7 @@
 
  <servlet>
  <servlet-name> getCountry </servlet-name>
- <servlet-class> fukaisystem.address.GetCountry </servlet-class>
+ <servlet-class> fukaisystem.application.address.GetCountry </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getCountry </servlet-name>
@@ -255,7 +251,7 @@
 
  <servlet>
  <servlet-name> getCoType </servlet-name>
- <servlet-class> fukaisystem.address.GetCoType </servlet-class>
+ <servlet-class> fukaisystem.application.address.GetCoType </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getCoType </servlet-name>
@@ -263,7 +259,7 @@
  </servlet-mapping>
  <servlet>
  <servlet-name> getInType </servlet-name>
- <servlet-class> fukaisystem.address.GetInType </servlet-class>
+ <servlet-class> fukaisystem.application.address.GetInType </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getInType </servlet-name>
@@ -271,7 +267,7 @@
  </servlet-mapping>
  <servlet>
  <servlet-name> getNenga </servlet-name>
- <servlet-class> fukaisystem.address.GetNenga </servlet-class>
+ <servlet-class> fukaisystem.application.address.GetNenga </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getNenga </servlet-name>
@@ -280,7 +276,7 @@
 
  <servlet>
  <servlet-name> getCorpData </servlet-name>
- <servlet-class> fukaisystem.address.GetCorpData </servlet-class>
+ <servlet-class> fukaisystem.application.address.GetCorpData </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getCorpData </servlet-name>
@@ -288,7 +284,7 @@
  </servlet-mapping>
  <servlet>
  <servlet-name> getIndData </servlet-name>
- <servlet-class> fukaisystem.address.GetIndData </servlet-class>
+ <servlet-class> fukaisystem.application.address.GetIndData </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getIndData </servlet-name>
@@ -298,7 +294,7 @@
 
  <servlet>
  <servlet-name> getQuotationData </servlet-name>
- <servlet-class> fukaisystem.GetQuotationData </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetQuotationData </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getQuotationData </servlet-name>
@@ -307,7 +303,7 @@
 
  <servlet>
  <servlet-name> numCheck </servlet-name>
- <servlet-class> fukaisystem.NumCheck </servlet-class>
+ <servlet-class> fukaisystem.application.business.NumCheck </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> numCheck </servlet-name>
@@ -315,35 +311,17 @@
  </servlet-mapping>
 
  <servlet>
- <servlet-name> text </servlet-name>
- <servlet-class> fukaisystem.Text </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> text </servlet-name>
- <url-pattern> /text </url-pattern>
- </servlet-mapping>
-
- <servlet>
  <servlet-name> init </servlet-name>
- <servlet-class> fukaisystem.Init </servlet-class>
+ <servlet-class> fukaisystem.application.business.Init </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> init </servlet-name>
  <url-pattern> /init </url-pattern>
  </servlet-mapping>
 
- <servlet>
- <servlet-name> pinit </servlet-name>
- <servlet-class> fukaisystem.Init2 </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> pinit </servlet-name>
- <url-pattern> /pinit </url-pattern>
- </servlet-mapping>
-
   <servlet>
   <servlet-name> updateCandidate </servlet-name>
- <servlet-class> fukaisystem.UpdateCandidate </servlet-class>
+ <servlet-class> fukaisystem.application.business.UpdateCandidate </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> updateCandidate </servlet-name>
@@ -352,7 +330,7 @@
 
  <servlet>
  <servlet-name> getExpectedCost </servlet-name>
- <servlet-class> fukaisystem.GetExpectedCost </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetExpectedCost </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getExpectedCost </servlet-name>
@@ -361,7 +339,7 @@
 
  <servlet>
  <servlet-name> getActualCost </servlet-name>
- <servlet-class> fukaisystem.GetActualCost </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetActualCost </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getActualCost </servlet-name>
@@ -370,7 +348,7 @@
 
  <servlet>
  <servlet-name> getEstimatedCost </servlet-name>
- <servlet-class> fukaisystem.GetEstimatedCost </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetEstimatedCost </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getEstimatedCost </servlet-name>
@@ -379,7 +357,7 @@
 
  <servlet>
  <servlet-name> auth </servlet-name>
- <servlet-class> fukaisystem.group.Auth </servlet-class>
+ <servlet-class> fukaisystem.application.group.Auth </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> auth </servlet-name>
@@ -388,7 +366,7 @@
 
  <servlet>
  <servlet-name> cp </servlet-name>
- <servlet-class> fukaisystem.group.ChangePassword </servlet-class>
+ <servlet-class> fukaisystem.application.group.ChangePassword </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> cp </servlet-name>
@@ -397,7 +375,7 @@
 
  <servlet>
  <servlet-name> iis </servlet-name>
- <servlet-class> fukaisystem.input.InitInputSystem </servlet-class>
+ <servlet-class> fukaisystem.application.mh.InitInputSystem </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> iis </servlet-name>
@@ -406,7 +384,7 @@
 
  <servlet>
  <servlet-name> getChart </servlet-name>
- <servlet-class> fukaisystem.GetChart </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetChart </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getChart </servlet-name>
@@ -415,7 +393,7 @@
 
  <servlet>
  <servlet-name> setLabel </servlet-name>
- <servlet-class> fukaisystem.SetLabel </servlet-class>
+ <servlet-class> fukaisystem.application.business.SetLabel </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> setLabel </servlet-name>
@@ -424,7 +402,7 @@
 
 <servlet>
  <servlet-name> orderRegister </servlet-name>
- <servlet-class> fukaisystem.OrderRegister </servlet-class>
+ <servlet-class> fukaisystem.application.business.OrderRegister </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> orderRegister </servlet-name>
@@ -433,7 +411,7 @@
 
 <servlet>
  <servlet-name> quotationRegister </servlet-name>
- <servlet-class> fukaisystem.QuotationRegister </servlet-class>
+ <servlet-class> fukaisystem.application.business.QuotationRegister </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> quotationRegister </servlet-name>
@@ -442,7 +420,7 @@
 
 <servlet>
  <servlet-name> productionRegister </servlet-name>
- <servlet-class> fukaisystem.ProductionRegister </servlet-class>
+ <servlet-class> fukaisystem.application.business.ProductionRegister </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> productionRegister </servlet-name>
@@ -451,7 +429,7 @@
 
 <servlet>
  <servlet-name> salesRegister </servlet-name>
- <servlet-class> fukaisystem.SalesRegister </servlet-class>
+ <servlet-class> fukaisystem.application.business.SalesRegister </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> salesRegister </servlet-name>
@@ -460,7 +438,7 @@
 
 <servlet>
  <servlet-name> dispatchingRegister </servlet-name>
- <servlet-class> fukaisystem.DispatchingRegister </servlet-class>
+ <servlet-class> fukaisystem.application.business.DispatchingRegister </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> dispatchingRegister </servlet-name>
@@ -469,7 +447,7 @@
 
 <servlet>
  <servlet-name> inputRegister </servlet-name>
- <servlet-class> fukaisystem.input.InputRegister </servlet-class>
+ <servlet-class> fukaisystem.application.mh.InputRegister </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> inputRegister </servlet-name>
@@ -479,7 +457,7 @@
 
  <servlet>
  <servlet-name> search </servlet-name>
- <servlet-class> fukaisystem.Search </servlet-class>
+ <servlet-class> fukaisystem.application.business.Search </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> search </servlet-name>
@@ -488,7 +466,7 @@
 
  <servlet>
  <servlet-name> detailSearch </servlet-name>
- <servlet-class> fukaisystem.DetailSearch </servlet-class>
+ <servlet-class> fukaisystem.application.business.DetailSearch </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> detailSearch </servlet-name>
@@ -496,16 +474,8 @@
  </servlet-mapping>
 
  <servlet>
- <servlet-name> osearch </servlet-name>
- <servlet-class> fukaisystem.OrderSearch </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> osearch </servlet-name>
- <url-pattern> /osearch </url-pattern>
- </servlet-mapping>
- <servlet>
  <servlet-name> osearch2 </servlet-name>
- <servlet-class> fukaisystem.OrderSearch2 </servlet-class>
+ <servlet-class> fukaisystem.application.business.OrderSearch2 </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> osearch2 </servlet-name>
@@ -514,7 +484,7 @@
 
  <servlet>
  <servlet-name> dsearch </servlet-name>
- <servlet-class> fukaisystem.DispatchingSearch </servlet-class>
+ <servlet-class> fukaisystem.application.business.DispatchingSearch </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> dsearch </servlet-name>
@@ -523,7 +493,7 @@
 
  <servlet>
  <servlet-name> hsearch </servlet-name>
- <servlet-class> fukaisystem.HistorySearch </servlet-class>
+ <servlet-class> fukaisystem.application.business.HistorySearch </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> hsearch </servlet-name>
@@ -532,7 +502,7 @@
 
  <servlet>
  <servlet-name> summary </servlet-name>
- <servlet-class> fukaisystem.GetSummary </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetSummary </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> summary </servlet-name>
@@ -541,7 +511,7 @@
 
  <servlet>
  <servlet-name> osummary </servlet-name>
- <servlet-class> fukaisystem.GetOrderSummary </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetOrderSummary </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> osummary </servlet-name>
@@ -550,7 +520,7 @@
 
  <servlet>
  <servlet-name> dsummary </servlet-name>
- <servlet-class> fukaisystem.GetDispatchingSummary </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetDispatchingSummary </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> dsummary </servlet-name>
@@ -559,7 +529,7 @@
 
  <servlet>
  <servlet-name> readSlip </servlet-name>
- <servlet-class> fukaisystem.ReadSlip </servlet-class>
+ <servlet-class> fukaisystem.application.business.ReadSlip </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> readSlip </servlet-name>
@@ -568,7 +538,7 @@
 
  <servlet>
  <servlet-name> writeSlip </servlet-name>
- <servlet-class> fukaisystem.WriteSlip </servlet-class>
+ <servlet-class> fukaisystem.application.business.WriteSlip </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> writeSlip </servlet-name>
@@ -577,7 +547,7 @@
 
  <servlet>
  <servlet-name> getTitle </servlet-name>
- <servlet-class> fukaisystem.GetTitle </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetTitle </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getTitle </servlet-name>
@@ -585,35 +555,8 @@
  </servlet-mapping>
 
  <servlet>
- <servlet-name> getColInfo </servlet-name>
- <servlet-class> fukaisystem.GetColInfo </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> getColInfo </servlet-name>
- <url-pattern> /getColInfo </url-pattern>
- </servlet-mapping>
-
- <servlet>
- <servlet-name> getSlipName </servlet-name>
- <servlet-class> fukaisystem.GetSlipName </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> getSlipName </servlet-name>
- <url-pattern> /getSlipName </url-pattern>
- </servlet-mapping>
-
- <servlet>
- <servlet-name> setSlipFormat </servlet-name>
- <servlet-class> fukaisystem.SetSlipFormat </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> setSlipFormat </servlet-name>
- <url-pattern> /setSlipFormat </url-pattern>
- </servlet-mapping>
-
- <servlet>
  <servlet-name> getRecord </servlet-name>
- <servlet-class> fukaisystem.GetRecord </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetRecord </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getRecord </servlet-name>
@@ -622,7 +565,7 @@
 
  <servlet>
  <servlet-name> getCandidate </servlet-name>
- <servlet-class> fukaisystem.GetCandidate </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetCandidate </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getCandidate </servlet-name>
@@ -630,7 +573,7 @@
  </servlet-mapping>
  <servlet>
  <servlet-name> getIndCandidate </servlet-name>
- <servlet-class> fukaisystem.address.GetIndCandidate </servlet-class>
+ <servlet-class> fukaisystem.application.address.GetIndCandidate </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getIndCandidate </servlet-name>
@@ -638,35 +581,26 @@
  </servlet-mapping>
 
  <servlet>
- <servlet-name> getSalesSlip </servlet-name>
- <servlet-class> fukaisystem.GetSalesSlip </servlet-class>
+ <servlet-name> getSelectedSalesSlip </servlet-name>
+ <servlet-class> fukaisystem.application.business.GetSelectedSalesSlip </servlet-class>
  </servlet>
  <servlet-mapping>
- <servlet-name> getSalesSlip </servlet-name>
- <url-pattern> /getSalesSlip </url-pattern>
+ <servlet-name> getSelectedSalesSlip </servlet-name>
+ <url-pattern> /getSelectedSalesSlip </url-pattern>
  </servlet-mapping>
 
- <!-- <servlet>
- <servlet-name> deleteSlip </servlet-name>
- <servlet-class> fukaisystem.DeleteSlip </servlet-class>
- </servlet>
- <servlet-mapping>
- <servlet-name> deleteSlip </servlet-name>
- <url-pattern> /deleteSlip </url-pattern>
- </servlet-mapping> -->
-
  <servlet>
- <servlet-name> copy </servlet-name>
- <servlet-class> fukaisystem.CopyData </servlet-class>
+ <servlet-name> deleteData </servlet-name>
+ <servlet-class> fukaisystem.application.business.DeleteData </servlet-class>
  </servlet>
  <servlet-mapping>
- <servlet-name> copy </servlet-name>
- <url-pattern> /copy </url-pattern>
+ <servlet-name> deleteData </servlet-name>
+ <url-pattern> /deleteData </url-pattern>
  </servlet-mapping>
 
  <servlet>
  <servlet-name> getTaxRate </servlet-name>
- <servlet-class> fukaisystem.GetTaxRate </servlet-class>
+ <servlet-class> fukaisystem.application.business.GetTaxRate </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getTaxRate </servlet-name>
@@ -675,7 +609,7 @@
 
  <servlet>
  <servlet-name> getSchedule </servlet-name>
- <servlet-class> fukaisystem.group.GetSchedule </servlet-class>
+ <servlet-class> fukaisystem.application.group.GetSchedule </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getSchedule </servlet-name>
@@ -684,7 +618,7 @@
 
  <servlet>
  <servlet-name> scheduleRegister </servlet-name>
- <servlet-class> fukaisystem.group.ScheduleRegister </servlet-class>
+ <servlet-class> fukaisystem.application.group.ScheduleRegister </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> scheduleRegister </servlet-name>
@@ -693,7 +627,7 @@
 
  <servlet>
  <servlet-name> getState </servlet-name>
- <servlet-class> fukaisystem.aggregate.GetState </servlet-class>
+ <servlet-class> fukaisystem.application.aggregate.GetState </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getState </servlet-name>
@@ -702,7 +636,7 @@
 
  <servlet>
  <servlet-name> setClose </servlet-name>
- <servlet-class> fukaisystem.aggregate.SetClose </servlet-class>
+ <servlet-class> fukaisystem.application.aggregate.SetClose </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> setClose </servlet-name>
@@ -711,7 +645,7 @@
 
  <servlet>
  <servlet-name> setRelease </servlet-name>
- <servlet-class> fukaisystem.aggregate.SetRelease </servlet-class>
+ <servlet-class> fukaisystem.application.aggregate.SetRelease </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> setRelease </servlet-name>
@@ -720,7 +654,7 @@
 
  <servlet>
  <servlet-name> setHoliday </servlet-name>
- <servlet-class> fukaisystem.group.SetHoliday </servlet-class>
+ <servlet-class> fukaisystem.application.group.SetHoliday </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> setHoliday </servlet-name>
@@ -729,7 +663,7 @@
 
  <servlet>
  <servlet-name> getDM </servlet-name>
- <servlet-class> fukaisystem.group.GetDandM </servlet-class>
+ <servlet-class> fukaisystem.application.group.GetDandM </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> getDM </servlet-name>
@@ -738,7 +672,7 @@
 
  <servlet>
  <servlet-name> setMember </servlet-name>
- <servlet-class> fukaisystem.group.SetMember </servlet-class>
+ <servlet-class> fukaisystem.application.group.SetMember </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> setMember </servlet-name>
@@ -747,7 +681,7 @@
 
  <servlet>
  <servlet-name> deleteMember </servlet-name>
- <servlet-class> fukaisystem.group.DeleteMember </servlet-class>
+ <servlet-class> fukaisystem.application.group.DeleteMember </servlet-class>
  </servlet>
  <servlet-mapping>
  <servlet-name> deleteMember </servlet-name>
