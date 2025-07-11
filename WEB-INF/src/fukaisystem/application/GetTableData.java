@@ -1,7 +1,6 @@
 package fukaisystem.application;
 
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,16 +11,12 @@ import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-
-import org.apache.log4j.Logger;
 
 import fukaisystem.dto.ColInfoDTO;
 import fukaisystem.dto.SqlDTO;
 import fukaisystem.dto.TableAdapter;
-import fukaisystem.sql.DBConnection;
+import fukaisystem.foundation.ServiceFoundation;
 
 /**
  * テーブルの内容と列情報を取得するためのクラス
@@ -29,45 +24,23 @@ import fukaisystem.sql.DBConnection;
  * @author kameura
  *
  */
-public class GetTableData extends GenericServlet {
+public class GetTableData extends ServiceFoundation {
 
-	private static final long serialVersionUID = 1L;
-	private static Logger lg = Logger.getLogger("A1");
-
-	public void service(ServletRequest request, ServletResponse response) {
-
-		DBConnection dbc = new DBConnection();
-		Connection c = dbc.getConnection();
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-
+	@Override
+	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 		String tableName = "", sql = "";
-		StringBuilder err = new StringBuilder("");
+		SqlDTO sqlData = cast(response, o, SqlDTO.class);
+		if (sqlData.isQuery()) {
+			sql = sqlData.getString();
+		} else {
+			tableName = sqlData.getString();
+			sql = "SELECT * FROM " + tableName;
+		}
 
-		try {
-			// クライアントから読み込み
-
-			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
-			Object obj = in.readObject();
-			if (obj instanceof SqlDTO) {
-				SqlDTO sqlData = (SqlDTO) obj;
-				if (sqlData.isQuery()) {
-					sql = sqlData.getString();
-				} else {
-					tableName = sqlData.getString();
-					sql = "SELECT * FROM " + tableName;
-				}
-			}
-			in.close();
-
-			Object output = null;
-
-			List<String> keys = new ArrayList<String>();
-			List<ColInfoDTO> colInfos = new ArrayList<ColInfoDTO>();
-			List<List<Object>> contents = new ArrayList<List<Object>>();
-			try {
-				Statement st = c.createStatement();
-				rs = st.executeQuery(sql);
+		List<ColInfoDTO> colInfos = new ArrayList<ColInfoDTO>();
+		List<List<Object>> contents = new ArrayList<List<Object>>();
+		try (Statement st = c.createStatement();) {
+			try (ResultSet rs = st.executeQuery(sql);) {
 				ResultSetMetaData rsmd = rs.getMetaData();
 				for (int i = 1; i <= rsmd.getColumnCount(); i++) {
 					ColInfoDTO ci = new ColInfoDTO(
@@ -129,60 +102,25 @@ public class GetTableData extends GenericServlet {
 					}
 					contents.add(record);
 				}
-				rs.close();
+			}
+		}
 
-				if (!tableName.equals("")) {
-					ps = c.prepareStatement(
-						"SELECT COLUMN_NAME FROM information_schema.constraint_column_usage"
-							+ " WHERE table_name=? AND constraint_name LIKE 'PK_%'"
-					);
-					ps.setString(1, tableName);
-					rs = ps.executeQuery();
+		List<String> keys = new ArrayList<String>();
+		if (!tableName.equals("")) {
+			try (
+				PreparedStatement ps = c.prepareStatement(
+					"SELECT COLUMN_NAME FROM information_schema.constraint_column_usage"
+						+ " WHERE table_name=? AND constraint_name LIKE 'PK_%'"
+				);
+			) {
+				ps.setString(1, tableName);
+				try (ResultSet rs = ps.executeQuery();) {
 					while (rs.next()) {
 						keys.add(rs.getString("COLUMN_NAME"));
 					}
 				}
-				output = new TableAdapter(keys, colInfos, contents);
-			} catch (SQLException ex) {
-				err.append(ex + "\n");
-				lg.error("GetElements3 " + ex);
-			}
-
-			// クライアントに送信
-
-			response.setContentType("application/octet-stream");
-			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-
-			out.writeObject(output);
-			out.writeUTF(err.toString());
-			out.flush();
-			out.close();
-		} catch (Exception ex) {
-			lg.error(ex);
-		} finally {
-			try {
-				if (c != null && !c.isClosed())
-					c.close();
-			} catch (SQLException ex) {
-				lg.error("c:" + ex);
-			}
-			// The following processes requires JDBC4.0.
-			try {
-				if (ps != null && !ps.isClosed()) {
-					ps.close();
-					lg.debug("ps is closed by jdbc4.0");
-				}
-			} catch (SQLException ex) {
-				lg.error("ps:" + ex);
-			}
-			try {
-				if (rs != null && !rs.isClosed()) {
-					rs.close();
-					lg.debug("rs is closed by jdbc4.0");
-				}
-			} catch (SQLException ex) {
-				lg.error("rs:" + ex);
 			}
 		}
+		return new TableAdapter(keys, colInfos, contents);
 	}
 }

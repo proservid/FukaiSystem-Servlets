@@ -1,481 +1,431 @@
 package fukaisystem.application.business;
 
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
 import fukaisystem.dto.ProjectSummaryDTO;
-import fukaisystem.sql.DBConnection;
-import fukaisystem.util.Logging;
+import fukaisystem.foundation.ServiceFoundation;
 
-public class QuotationRegister extends GenericServlet {
+/**
+ * 見積もりデータを登録する
+ */
+public class QuotationRegister extends ServiceFoundation {
 
-	private static final long serialVersionUID = 1L;
-	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "EstimateRegister\n";
+	protected static final Logger logger = Logger.getLogger("A1");
 
-	public void service(ServletRequest request, ServletResponse response) {
+	@Override
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
-		DBConnection dbc = new DBConnection();
-		Connection c = dbc.getConnection();
-		Statement st = null;
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		boolean isError = false;
-		ProjectSummaryDTO summaryDTO = null;
-		StringBuilder err = new StringBuilder();
 		List<Integer> keys = new ArrayList<Integer>();
 		int quotationID = 0;
 		int productionID = 0;
 		int quotationNum1 = 0;
 		int quotationNum2 = 0;
+		
+		ProjectSummaryDTO summaryDTO = cast(response, o, ProjectSummaryDTO.class);
+		quotationNum1 = summaryDTO.quotationNum1();
+		quotationNum2 = summaryDTO.quotationNum2();
+		quotationID = summaryDTO.quotationID();
+		productionID = summaryDTO.productionID();
 
-		try {
-
-			/**
-			 * クライアントデータ受け取り
-			 */
-			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
-			Object obj = in.readObject();
-			in.close();
-
-			if (obj == null) {
-				isError = true;
-				err.append(className + "readObjectがnullです\n");
-				lg.error(className + "readObjectがnullです");
-			} else {
-				if (obj instanceof ProjectSummaryDTO) {
-					summaryDTO = (ProjectSummaryDTO) obj;
-				} else {
-					isError = true;
-					err.append(className + "readObjectがProjectSummaryDTO型ではありません\n");
-					lg.error(className + "readObjectがProjectSummaryDTO型ではありません");
-				}
+		if (quotationNum1 == 0 && quotationNum2 == 0 && quotationID != 0) {
+			// 見積IDがあるデータの見積期と見積番号を0に変更したということは、消去せよということ
+			try (
+				PreparedStatement ps = c.prepareStatement(
+					"DELETE FROM T_見積_親 WHERE 見積親ID=?;"
+						+ "DELETE FROM T_見積_子 WHERE 見積親ID=?;"
+						+ "DELETE FROM T_見積_材料 WHERE 見積親ID=?;"
+						+ "DELETE FROM T_見積_加工 WHERE 見積親ID=?;"
+						+ "UPDATE T_製作_親 SET 見積親ID=0 WHERE 見積親ID=?;"
+						+ "DELETE FROM T_見積製作 WHERE 見積親ID=?"
+				);
+			) {
+				ps.setInt(1, quotationID);
+				ps.setInt(2, quotationID);
+				ps.setInt(3, quotationID);
+				ps.setInt(4, quotationID);
+				ps.setInt(5, quotationID);
+				ps.setInt(6, quotationID);
+				ps.executeUpdate();
+				quotationID = 0;
 			}
-			try {
-				// コミット後でありさえすればよい。
-				// コミット後ということは、子・孫ともども更新されているはずで、問題は生じない
-				// 親→子→孫（加工→材料）の順が守られている限り、デッドロックは発生しないはず
-				st = c.createStatement();
-				st.executeUpdate("SET TRANSACTION ISOLATION LEVEL READ COMMITTED");
-				st.executeUpdate("BEGIN TRANSACTION");
-			} catch (SQLException ex) {
-				isError = true;
-				err.append(className + "トランザクションの開始に失敗しました\n");
-				Logging.logStackTrace(ex, lg, className);
-			}
-
-			quotationNum1 = summaryDTO.quotationNum1();
-			quotationNum2 = summaryDTO.quotationNum2();
-			quotationID = summaryDTO.quotationID();
-			productionID = summaryDTO.productionID();
-
-			if (quotationNum1 == 0 && quotationNum2 == 0 && quotationID != 0) {
-				// 見積IDがあるデータの見積期と見積番号を0に変更したということは、消去せよということ
-				try {
-					ps = c.prepareStatement(
-						"DELETE FROM T_見積_親 WHERE 見積親ID=?;"
-							+ "DELETE FROM T_見積_子 WHERE 見積親ID=?;"
-							+ "DELETE FROM T_見積_材料 WHERE 見積親ID=?;"
-							+ "DELETE FROM T_見積_加工 WHERE 見積親ID=?;"
-							+ "UPDATE T_製作_親 SET 見積親ID=0 WHERE 見積親ID=?;"
-							+ "DELETE FROM T_見積製作 WHERE 見積親ID=?"
-					);
-					ps.setInt(1, quotationID);
-					ps.setInt(2, quotationID);
-					ps.setInt(3, quotationID);
-					ps.setInt(4, quotationID);
-					ps.setInt(5, quotationID);
-					ps.setInt(6, quotationID);
-					ps.executeUpdate();
-					quotationID = 0;
-				} catch (SQLException ex) {
-					isError = true;
-					err.append(className + "見積テーブルの削除に失敗しました\n");
-					Logging.logStackTrace(ex, lg, className);
-				}
-			} else {
-				// 納期
-				int due = 0;
-				int place = 0;
-				int terms = 0;
-				int validity = 0;
-				try {
-					ps = c.prepareStatement(
-						"MERGE INTO M_有効期間 AS v"
-							+ " USING (SELECT ? AS 有効期間) AS w"
-							+ " ON replace(replace(v.有効期間,' ',''),'　','')=replace(replace(w.有効期間,' ',''),'　','')"
-							+ " WHEN MATCHED THEN"
-							+ "	UPDATE SET v.有効期間=v.有効期間"
-							+ " WHEN NOT MATCHED THEN"
-							+ "	INSERT VALUES(w.有効期間)"
-							+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
-					);
-					ps.setString(1, summaryDTO.validity());
-					boolean isResultSet = ps.execute();
-					int updateCount = 0;
-					while (true) {
-						if (isResultSet) {
-							rs = ps.getResultSet();
+		} else {
+			// 納期
+			int due = 0;
+			int place = 0;
+			int terms = 0;
+			int validity = 0;
+			try (
+				PreparedStatement ps = c.prepareStatement(
+					"MERGE INTO M_有効期間 AS v"
+						+ " USING (SELECT ? AS 有効期間) AS w"
+						+ " ON replace(replace(v.有効期間,' ',''),'　','')=replace(replace(w.有効期間,' ',''),'　','')"
+						+ " WHEN MATCHED THEN"
+						+ "	UPDATE SET v.有効期間=v.有効期間"
+						+ " WHEN NOT MATCHED THEN"
+						+ "	INSERT VALUES(w.有効期間)"
+						+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
+				);
+			) {
+				ps.setString(1, summaryDTO.validity());
+				boolean isResultSet = ps.execute();
+				int updateCount = 0;
+				while (true) {
+					if (isResultSet) {
+						try (ResultSet rs = ps.getResultSet();) {
 							while (rs.next()) {
 								validity = rs.getInt(2);
 							}
-							rs.close();
-						} else {
-							updateCount = ps.getUpdateCount();
-							if (updateCount == -1) {
-								break;
-							}
 						}
-						isResultSet = ps.getMoreResults();
+					} else {
+						updateCount = ps.getUpdateCount();
+						if (updateCount == -1) {
+							break;
+						}
 					}
-					ps = c.prepareStatement(
-						"MERGE INTO M_納期 AS v"
-							+ " USING (SELECT ? AS 納期) AS w"
-							+ " ON replace(replace(v.納期,' ',''),'　','')=replace(replace(w.納期,' ',''),'　','')"
-							+ " WHEN MATCHED THEN"
-							+ "	UPDATE SET v.納期=v.納期"
-							+ " WHEN NOT MATCHED THEN"
-							+ "	INSERT VALUES(w.納期)"
-							+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
-					);
-					ps.setString(1, summaryDTO.due());
-					isResultSet = ps.execute();
-					updateCount = 0;
-					while (true) {
-						if (isResultSet) {
-							rs = ps.getResultSet();
+					isResultSet = ps.getMoreResults();
+				}
+			}
+			try (
+				PreparedStatement ps = c.prepareStatement(
+					"MERGE INTO M_納期 AS v"
+						+ " USING (SELECT ? AS 納期) AS w"
+						+ " ON replace(replace(v.納期,' ',''),'　','')=replace(replace(w.納期,' ',''),'　','')"
+						+ " WHEN MATCHED THEN"
+						+ "	UPDATE SET v.納期=v.納期"
+						+ " WHEN NOT MATCHED THEN"
+						+ "	INSERT VALUES(w.納期)"
+						+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
+				);
+			) {
+				ps.setString(1, summaryDTO.due());
+				boolean isResultSet = ps.execute();
+				int updateCount = 0;
+				while (true) {
+					if (isResultSet) {
+						try (ResultSet rs = ps.getResultSet();) {
 							while (rs.next()) {
 								due = rs.getInt(2);
 							}
-							rs.close();
-						} else {
-							updateCount = ps.getUpdateCount();
-							if (updateCount == -1) {
-								break;
-							}
 						}
-						isResultSet = ps.getMoreResults();
+					} else {
+						updateCount = ps.getUpdateCount();
+						if (updateCount == -1) {
+							break;
+						}
 					}
-					ps = c.prepareStatement(
-						"MERGE INTO M_受渡場所 AS v"
-							+ " USING (SELECT ? AS 受渡場所) AS w"
-							+ " ON replace(replace(v.受渡場所,' ',''),'　','')=replace(replace(w.受渡場所,' ',''),'　','')"
-							+ " WHEN MATCHED THEN"
-							+ "	UPDATE SET v.受渡場所=v.受渡場所"
-							+ " WHEN NOT MATCHED THEN"
-							+ "	INSERT VALUES(w.受渡場所)"
-							+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
-					);
-					ps.setString(1, summaryDTO.place());
-					isResultSet = ps.execute();
-					updateCount = 0;
-					while (true) {
-						if (isResultSet) {
-							rs = ps.getResultSet();
+					isResultSet = ps.getMoreResults();
+				}
+			}
+			try (
+				PreparedStatement ps = c.prepareStatement(
+					"MERGE INTO M_受渡場所 AS v"
+						+ " USING (SELECT ? AS 受渡場所) AS w"
+						+ " ON replace(replace(v.受渡場所,' ',''),'　','')=replace(replace(w.受渡場所,' ',''),'　','')"
+						+ " WHEN MATCHED THEN"
+						+ "	UPDATE SET v.受渡場所=v.受渡場所"
+						+ " WHEN NOT MATCHED THEN"
+						+ "	INSERT VALUES(w.受渡場所)"
+						+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
+				);
+			) {
+				ps.setString(1, summaryDTO.place());
+				boolean isResultSet = ps.execute();
+				int updateCount = 0;
+				while (true) {
+					if (isResultSet) {
+						try (ResultSet rs = ps.getResultSet();) {
 							while (rs.next()) {
 								place = rs.getInt(2);
 							}
-							rs.close();
-						} else {
-							updateCount = ps.getUpdateCount();
-							if (updateCount == -1) {
-								break;
-							}
 						}
-						isResultSet = ps.getMoreResults();
+					} else {
+						updateCount = ps.getUpdateCount();
+						if (updateCount == -1) {
+							break;
+						}
 					}
-					ps = c.prepareStatement(
-						"MERGE INTO M_取引条件 AS v"
-							+ " USING (SELECT ? AS 取引条件) AS w"
-							+ " ON replace(replace(v.取引条件,' ',''),'　','')=replace(replace(w.取引条件,' ',''),'　','')"
-							+ " WHEN MATCHED THEN"
-							+ "	UPDATE SET v.取引条件=v.取引条件"
-							+ " WHEN NOT MATCHED THEN"
-							+ "	INSERT VALUES(w.取引条件)"
-							+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
-					);
-					ps.setString(1, summaryDTO.terms());
-					isResultSet = ps.execute();
-					updateCount = 0;
-					while (true) {
-						if (isResultSet) {
-							rs = ps.getResultSet();
+					isResultSet = ps.getMoreResults();
+				}
+			}
+			try (
+				PreparedStatement ps = c.prepareStatement(
+					"MERGE INTO M_取引条件 AS v"
+						+ " USING (SELECT ? AS 取引条件) AS w"
+						+ " ON replace(replace(v.取引条件,' ',''),'　','')=replace(replace(w.取引条件,' ',''),'　','')"
+						+ " WHEN MATCHED THEN"
+						+ "	UPDATE SET v.取引条件=v.取引条件"
+						+ " WHEN NOT MATCHED THEN"
+						+ "	INSERT VALUES(w.取引条件)"
+						+ " OUTPUT deleted.CD as oldId, inserted.CD as newId;"
+				);
+			) {
+				ps.setString(1, summaryDTO.terms());
+				boolean isResultSet = ps.execute();
+				int updateCount = 0;
+				while (true) {
+					if (isResultSet) {
+						try (ResultSet rs = ps.getResultSet();) {
 							while (rs.next()) {
 								terms = rs.getInt(2);
 							}
-							rs.close();
-						} else {
-							updateCount = ps.getUpdateCount();
-							if (updateCount == -1) {
-								break;
-							}
 						}
-						isResultSet = ps.getMoreResults();
+					} else {
+						updateCount = ps.getUpdateCount();
+						if (updateCount == -1) {
+							break;
+						}
 					}
-				} catch (SQLException ex) {
-					isError = true;
-					ex.printStackTrace();
-					err.append(className + "テーブル「T_見積_親」の更新に失敗しました\n");
-					Logging.logStackTrace(ex, lg, className);
+					isResultSet = ps.getMoreResults();
 				}
-				if (quotationNum2 == 0) {
-					try {
-						ps = c.prepareStatement("SELECT MAX(見積番号) AS 最終見積番号 FROM T_見積_親 WHERE 見積期=?");
-						ps.setInt(1, quotationNum1); // 見積期
-						rs = ps.executeQuery();
+			}
+			if (quotationNum2 == 0) {
+				try (PreparedStatement ps = c.prepareStatement("SELECT MAX(見積番号) AS 最終見積番号 FROM T_見積_親 WHERE 見積期=?");) {
+					ps.setInt(1, quotationNum1); // 見積期
+					try (ResultSet rs = ps.executeQuery();) {
 						if (rs.next()) {
 							quotationNum2 = rs.getInt("最終見積番号") + 1;
 						}
-					} catch (SQLException ex) {
-						ex.printStackTrace();
-						isError = true;
-						err.append(className + "見積番号の読み込みに失敗しました\n");
-						Logging.logStackTrace(ex, lg, className);
 					}
-				} else {
-					try {
-						ps = c.prepareStatement(
-							"SELECT 見積親ID FROM T_見積_親 WHERE 見積期=? AND 見積番号=? AND 見積枝番=?"
-						);
-						int i = 1;
-						ps.setInt(i++, quotationNum1); // 見積期
-						ps.setInt(i++, quotationNum2); // 見積番号
-						ps.setString(i++, summaryDTO.quotationNum3()); // 見積枝番
-						rs = ps.executeQuery();
+				}
+			} else {
+				try (
+					PreparedStatement ps = c.prepareStatement(
+						"SELECT 見積親ID FROM T_見積_親 WHERE 見積期=? AND 見積番号=? AND 見積枝番=?"
+					);
+				) {
+					int i = 1;
+					ps.setInt(i++, quotationNum1); // 見積期
+					ps.setInt(i++, quotationNum2); // 見積番号
+					ps.setString(i++, summaryDTO.quotationNum3()); // 見積枝番
+					try (ResultSet rs = ps.executeQuery();) {
 						if (rs.next()) {
 							if (rs.getInt("見積親ID") != 0) {
 								quotationID = rs.getInt("見積親ID");
 							}
 						}
-					} catch (SQLException ex) {
-						ex.printStackTrace();
-						isError = true;
-						err.append(className + "見積親IDの読み込みに失敗しました\n");
-						Logging.logStackTrace(ex, lg, className);
 					}
 				}
-				if (quotationID == 0) { // 見積書新規作成
-					try {
-						ps = c.prepareStatement(
-							"INSERT INTO T_見積_親"
-								+ " (見積期, 見積番号, 見積枝番, 元製作親ID, 案件名, 案内文, 得意先CD, 得意先表示名,"
-								+ " 納期CD, 受渡場所CD, 取引条件CD, 有効期間CD, 提出済CD, 見積年月日, 提出年月日,"
-								+ " 通貨CD, 見積金額, 摘要, 更新日, 更新者CD)"
-								+ " OUTPUT inserted.見積親ID as newId, inserted.更新日"
-								+ " SELECT"
-								+ " ?, ?, ?,"
-								+ " CASE WHEN (?=0 AND ?=0 AND ?='' AND ?=0)"
-								+ "  THEN 0" // 種類、誕生製番がすべて空なら自身が新機となるため、親なしとして登録
-								+ "  ELSE (SELECT CASE WHEN MIN(製作親ID) IS NULL THEN 0 ELSE MIN(製作親ID) END FROM T_製作_親"
-								+ " WHERE (得意先CD=? AND 機械番号=?) OR (製作期=? AND 製作番号=? AND 製作枝番=?)) END,"
-								+ " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-								+ " ?, ?, ?, ?, ?, ?"
-						);
-						int i = 1;
-						ps.setInt(i++, quotationNum1); // 見積期
-						ps.setInt(i++, quotationNum2); // 見積番号
-						ps.setString(i++, summaryDTO.quotationNum3()); // 見積枝番
-						// 元製作親IDサブクエリ---------------------------------
-						ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
-						ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
-						ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
-						ps.setInt(i++, summaryDTO.projectCode()); // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
-						ps.setInt(i++, summaryDTO.buyerCode()); // 購入者CD
-						ps.setInt(i++, summaryDTO.projectCode() == 0
-								? -1
-								: summaryDTO.projectCode()
-						); // 納入機・・・これが0だとヒットしてしまうので、-1にする
-						ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
-						ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
-						ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
-						// -----------------------------------------------------
-						ps.setString(i++, summaryDTO.quotationProjectName()); // 案件名
-						ps.setString(i++, summaryDTO.announcement()); // 案内文
-						ps.setInt(i++, summaryDTO.quotationAccountID()); // 得意先CD
-						ps.setString(i++, summaryDTO.quotationAccountName()); // 得意先表示名
-						// ps.setInt(i++, summaryDTO.contactCode()); //個人CD
-						// ps.setInt(i++, summaryDTO.inquiryCode()); //依頼手段CD
-						ps.setInt(i++, due); // 納期CD
-						ps.setInt(i++, place); // 受渡場所CD
-						ps.setInt(i++, terms); // 取引条件CD
-						ps.setInt(i++, validity); // 有効期間CD
-						ps.setInt(i++, summaryDTO.submitCD()); // 提出済CD
-						// ps.setDate(i++, summaryDTO.inquiryDate()); //依頼年月日
-						ps.setDate(i++, summaryDTO.quotationDate()); // 見積年月日
-						ps.setDate(i++, summaryDTO.submitDate()); // 提出年月日
-						ps.setInt(i++, summaryDTO.quotationCurrencyCD()); // 通貨CD
-						ps.setInt(i++, summaryDTO.quotationAmount()); // 見積金額
-						ps.setString(i++, summaryDTO.quotationNote()); // 摘要
-						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
-						ps.setInt(i++, 0); // 更新者CD
-						boolean isResultSet = ps.execute();
-						int updateCount = 0;
-						while (true) {
-							if (isResultSet) {
-								rs = ps.getResultSet();
+			}
+			if (quotationID == 0) { // 見積書新規作成
+				try (
+					PreparedStatement ps = c.prepareStatement(
+						"INSERT INTO T_見積_親"
+							+ " (見積期, 見積番号, 見積枝番, 元製作親ID, 案件名, 案内文, 得意先CD, 得意先表示名,"
+							+ " 納期CD, 受渡場所CD, 取引条件CD, 有効期間CD, 提出済CD, 見積年月日, 提出年月日,"
+							+ " 通貨CD, 見積金額, 摘要, 更新日, 更新者CD)"
+							+ " OUTPUT inserted.見積親ID as newId, inserted.更新日"
+							+ " SELECT"
+							+ " ?, ?, ?,"
+							+ " CASE WHEN (?=0 AND ?=0 AND ?='' AND ?=0)"
+							+ "  THEN 0" // 種類、誕生製番がすべて空なら自身が新機となるため、親なしとして登録
+							+ "  ELSE (SELECT CASE WHEN MIN(製作親ID) IS NULL THEN 0 ELSE MIN(製作親ID) END FROM T_製作_親"
+							+ " WHERE (得意先CD=? AND 機械番号=?) OR (製作期=? AND 製作番号=? AND 製作枝番=?)) END,"
+							+ " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+							+ " ?, ?, ?, ?, ?, ?"
+					);
+				) {
+					int i = 1;
+					ps.setInt(i++, quotationNum1); // 見積期
+					ps.setInt(i++, quotationNum2); // 見積番号
+					ps.setString(i++, summaryDTO.quotationNum3()); // 見積枝番
+					// 元製作親IDサブクエリ---------------------------------
+					ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
+					ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
+					ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
+					ps.setInt(i++, summaryDTO.projectCode()); // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
+					ps.setInt(i++, summaryDTO.buyerCode()); // 購入者CD
+					ps.setInt(
+						i++,
+						summaryDTO.projectCode() == 0
+							? -1
+							: summaryDTO.projectCode()
+					); // 納入機・・・これが0だとヒットしてしまうので、-1にする
+					ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
+					ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
+					ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
+					// -----------------------------------------------------
+					ps.setString(i++, summaryDTO.quotationProjectName()); // 案件名
+					ps.setString(i++, summaryDTO.announcement()); // 案内文
+					ps.setInt(i++, summaryDTO.quotationAccountID()); // 得意先CD
+					ps.setString(i++, summaryDTO.quotationAccountName()); // 得意先表示名
+					// ps.setInt(i++, summaryDTO.contactCode()); //個人CD
+					// ps.setInt(i++, summaryDTO.inquiryCode()); //依頼手段CD
+					ps.setInt(i++, due); // 納期CD
+					ps.setInt(i++, place); // 受渡場所CD
+					ps.setInt(i++, terms); // 取引条件CD
+					ps.setInt(i++, validity); // 有効期間CD
+					ps.setInt(i++, summaryDTO.submitCD()); // 提出済CD
+					// ps.setDate(i++, summaryDTO.inquiryDate()); //依頼年月日
+					ps.setDate(i++, summaryDTO.quotationDate()); // 見積年月日
+					ps.setDate(i++, summaryDTO.submitDate()); // 提出年月日
+					ps.setInt(i++, summaryDTO.quotationCurrencyCD()); // 通貨CD
+					ps.setInt(i++, summaryDTO.quotationAmount()); // 見積金額
+					ps.setString(i++, summaryDTO.quotationNote()); // 摘要
+					ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
+					ps.setInt(i++, 0); // 更新者CD
+					boolean isResultSet = ps.execute();
+					int updateCount = 0;
+					while (true) {
+						if (isResultSet) {
+							try (ResultSet rs = ps.getResultSet();) {
 								while (rs.next()) {
 									quotationID = rs.getInt(1);
 								}
-								rs.close();
-							} else {
-								updateCount = ps.getUpdateCount();
-								if (updateCount == -1) {
-									break;
-								}
 							}
-							isResultSet = ps.getMoreResults();
+						} else {
+							updateCount = ps.getUpdateCount();
+							if (updateCount == -1) {
+								break;
+							}
 						}
-						// 製作伝票が作成されていたら、T_製作_親テーブルの見積親IDを更新する（旧仕様）
-						if (productionID != 0) {
-							ps = c.prepareStatement("UPDATE T_製作_親 SET 見積親ID=? WHERE 製作親ID=?");
-							ps.setInt(1, quotationID); // 見積親ID
-							ps.setInt(2, productionID);
-							ps.executeUpdate();
-							// 新仕様
-							ps = c.prepareStatement("INSERT INTO T_見積製作 VALUES(?,?)");
-							ps.setInt(1, quotationID);
-							ps.setInt(2, productionID);
-							ps.executeUpdate();
-						}
-					} catch (SQLException ex) {
-						isError = true;
-						err.append(className + "テーブル「T_見積_親」の更新に失敗しました\n");
-						Logging.logStackTrace(ex, lg, className);
+						isResultSet = ps.getMoreResults();
 					}
+				}
+				// 製作伝票が作成されていたら、T_製作_親テーブルの見積親IDを更新する（旧仕様）
+				if (productionID != 0) {
+					try (PreparedStatement ps = c.prepareStatement("UPDATE T_製作_親 SET 見積親ID=? WHERE 製作親ID=?");) {
+						ps.setInt(1, quotationID); // 見積親ID
+						ps.setInt(2, productionID);
+						ps.executeUpdate();
+					}
+					// 新仕様
+					try (PreparedStatement ps = c.prepareStatement("INSERT INTO T_見積製作 VALUES(?,?)");) {
+						ps.setInt(1, quotationID);
+						ps.setInt(2, productionID);
+						ps.executeUpdate();
+					}
+				}
 
-				} else { // 既存見積書更新
-					try {
-						ps = c.prepareStatement(
-							"UPDATE T_見積_親 SET"
-								+ " 見積期=?, 見積番号=?, 見積枝番=?,"
-								+ " 元製作親ID="
-								+ " CASE WHEN (?=0 AND ?=0 AND ?='' AND ?=0)"
-								+ "  THEN 0" // 種類、誕生製番がすべて空なら自身が新機となるため、親なしとして登録
-								+ "  ELSE (SELECT CASE WHEN MIN(製作親ID) IS NULL THEN 0 ELSE MIN(製作親ID) END FROM T_製作_親"
-								+ " WHERE (得意先CD=? AND 機械番号=?) OR (製作期=? AND 製作番号=? AND 製作枝番=?)) END,"
-								+ " 案件名=?, 案内文=?, 得意先CD=?, 得意先表示名=?,"
-								+ " 納期CD=?, 受渡場所CD=?, 取引条件CD=?, 有効期間CD=?, 提出済CD=?, 見積年月日=?, 提出年月日=?,"
-								+ " 通貨CD=?, 見積金額=?, 摘要=?, 更新日=?, 更新者CD=? WHERE 見積親ID=?"
-						);
+			} else { // 既存見積書更新
+				try (
+					PreparedStatement ps = c.prepareStatement(
+						"UPDATE T_見積_親 SET"
+							+ " 見積期=?, 見積番号=?, 見積枝番=?,"
+							+ " 元製作親ID="
+							+ " CASE WHEN (?=0 AND ?=0 AND ?='' AND ?=0)"
+							+ "  THEN 0" // 種類、誕生製番がすべて空なら自身が新機となるため、親なしとして登録
+							+ "  ELSE (SELECT CASE WHEN MIN(製作親ID) IS NULL THEN 0 ELSE MIN(製作親ID) END FROM T_製作_親"
+							+ " WHERE (得意先CD=? AND 機械番号=?) OR (製作期=? AND 製作番号=? AND 製作枝番=?)) END,"
+							+ " 案件名=?, 案内文=?, 得意先CD=?, 得意先表示名=?,"
+							+ " 納期CD=?, 受渡場所CD=?, 取引条件CD=?, 有効期間CD=?, 提出済CD=?, 見積年月日=?, 提出年月日=?,"
+							+ " 通貨CD=?, 見積金額=?, 摘要=?, 更新日=?, 更新者CD=? WHERE 見積親ID=?"
+					);
+				) {
+					int i = 1;
+					for (int g = 0; g < 18; g++)
+						ps.setInt(i++, quotationNum1); // 見積期
+					ps.setInt(i++, quotationNum2); // 見積番号
+					ps.setString(i++, summaryDTO.quotationNum3()); // 見積枝番
+					// 元製作親IDサブクエリ---------------------------------
+					ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
+					ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
+					ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
+					ps.setInt(i++, summaryDTO.projectCode()); // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
+					ps.setInt(i++, summaryDTO.buyerCode()); // 購入者CD
+					ps.setInt(
+						i++,
+						summaryDTO.projectCode() == 0
+							? -1
+							: summaryDTO.projectCode()
+					); // 納入機・・・これが0だとヒットしてしまうので、-1にする
+					ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
+					ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
+					ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
+					// -----------------------------------------------------
+					ps.setString(i++, summaryDTO.quotationProjectName()); // 案件名
+					ps.setString(i++, summaryDTO.announcement()); // 案内文
+					ps.setInt(i++, summaryDTO.projectCode()); // 得意先CD
+					ps.setString(i++, summaryDTO.quotationAccountName()); // 得意先表示名
+					// ps.setInt(i++, summaryDTO.contactCode()); //個人CD
+					// ps.setInt(i++, summaryDTO.inquiryCode()); //依頼手段CD
+					ps.setInt(i++, due); // 納期CD
+					ps.setInt(i++, place); // 受渡場所CD
+					ps.setInt(i++, terms); // 取引条件CD
+					ps.setInt(i++, validity); // 有効期間CD
+					ps.setInt(i++, summaryDTO.submitCD()); // 提出済CD
+					// ps.setDate(i++, summaryDTO.inquiryDate()); //依頼年月日
+					ps.setDate(i++, summaryDTO.quotationDate()); // 見積年月日
+					ps.setDate(i++, summaryDTO.submitDate()); // 提出年月日
+					ps.setInt(i++, summaryDTO.quotationCurrencyCD()); // 通貨CD
+					ps.setInt(i++, summaryDTO.quotationAmount()); // 見積金額
+					ps.setString(i++, summaryDTO.quotationNote()); // 摘要
+					ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
+					ps.setInt(i++, 0); // 更新者CD
+					ps.setInt(i, quotationID); // ID
+					ps.executeUpdate();
+				}
+				// 子孫のデータ更新は、削除→追加にて
+				try (PreparedStatement ps = c.prepareStatement("DELETE FROM T_見積_子 WHERE 見積親ID=?");) {
+					ps.setInt(1, quotationID);
+					ps.executeUpdate();
+				}
+				try (PreparedStatement ps = c.prepareStatement("DELETE FROM T_見積_材料 WHERE 見積親ID=?");) {
+					ps.setInt(1, quotationID);
+					ps.executeUpdate();
+				}
+				try (PreparedStatement ps = c.prepareStatement("DELETE FROM T_見積_加工 WHERE 見積親ID=?");) {
+					ps.setInt(1, quotationID);
+					ps.executeUpdate();
+				}
+			}
+			// mainTable
+			int k = 1;
+			try (
+				PreparedStatement ps = c.prepareStatement(
+					"INSERT INTO T_見積_子 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+				);
+			) {
+				for (Vector<Object> record : summaryDTO.quotationVector()) {
+					int tag = (Integer) record.get(1);
+					if (tag != 0) {
+						keys.add((Integer) record.get(0));
 						int i = 1;
-						for (int g = 0; g < 18; g++)
-							ps.setInt(i++, quotationNum1); // 見積期
-						ps.setInt(i++, quotationNum2); // 見積番号
-						ps.setString(i++, summaryDTO.quotationNum3()); // 見積枝番
-						// 元製作親IDサブクエリ---------------------------------
-						ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
-						ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
-						ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
-						ps.setInt(i++, summaryDTO.projectCode()); // 納入機・・・これらが入力されていなければ0、入力されていればそれ（入力に一致するデータがなければ0)
-						ps.setInt(i++, summaryDTO.buyerCode()); // 購入者CD
-						ps.setInt(i++, summaryDTO.projectCode() == 0
-								? -1
-								: summaryDTO.projectCode()
-						); // 納入機・・・これが0だとヒットしてしまうので、-1にする
-						ps.setInt(i++, summaryDTO.birthNum1()); // 誕生期
-						ps.setInt(i++, summaryDTO.birthNum2()); // 誕生番号
-						ps.setString(i++, summaryDTO.birthNum3()); // 誕生枝番
-						// -----------------------------------------------------
-						ps.setString(i++, summaryDTO.quotationProjectName()); // 案件名
-						ps.setString(i++, summaryDTO.announcement()); // 案内文
-						ps.setInt(i++, summaryDTO.projectCode()); // 得意先CD
-						ps.setString(i++, summaryDTO.quotationAccountName()); // 得意先表示名
-						// ps.setInt(i++, summaryDTO.contactCode()); //個人CD
-						// ps.setInt(i++, summaryDTO.inquiryCode()); //依頼手段CD
-						ps.setInt(i++, due); // 納期CD
-						ps.setInt(i++, place); // 受渡場所CD
-						ps.setInt(i++, terms); // 取引条件CD
-						ps.setInt(i++, validity); // 有効期間CD
-						ps.setInt(i++, summaryDTO.submitCD()); // 提出済CD
-						// ps.setDate(i++, summaryDTO.inquiryDate()); //依頼年月日
-						ps.setDate(i++, summaryDTO.quotationDate()); // 見積年月日
-						ps.setDate(i++, summaryDTO.submitDate()); // 提出年月日
-						ps.setInt(i++, summaryDTO.quotationCurrencyCD()); // 通貨CD
-						ps.setInt(i++, summaryDTO.quotationAmount()); // 見積金額
-						ps.setString(i++, summaryDTO.quotationNote()); // 摘要
-						ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime())); // 更新日
-						ps.setInt(i++, 0); // 更新者CD
-						ps.setInt(i, quotationID); // ID
-						ps.executeUpdate();
-						// 子孫のデータ更新は、削除→追加にて
-						ps = c.prepareStatement("DELETE FROM T_見積_子 WHERE 見積親ID=?");
-						ps.setInt(1, quotationID);
-						ps.executeUpdate();
-						ps = c.prepareStatement("DELETE FROM T_見積_材料 WHERE 見積親ID=?");
-						ps.setInt(1, quotationID);
-						ps.executeUpdate();
-						ps = c.prepareStatement("DELETE FROM T_見積_加工 WHERE 見積親ID=?");
-						ps.setInt(1, quotationID);
-						ps.executeUpdate();
-					} catch (SQLException ex) {
-						isError = true;
-						ex.printStackTrace();
-						err.append(className + "見積テーブルの削除に失敗しました\n");
-						Logging.logStackTrace(ex, lg, className);
+						int j = 2;
+						ps.setInt(i++, k); // ID
+						ps.setInt(i++, quotationID); // 見積親ID
+						ps.setInt(i++, tag); // 表示CD
+						ps.setString(i++, (String) record.get(j++)); // 名称
+						ps.setBoolean(i++, (Boolean) record.get(j++)); // 各FLG
+						ps.setInt(i++, (Integer) record.get(j++)); // 数量
+						ps.setInt(i++, (Integer) record.get(j++)); // 数量単位CD
+						ps.setInt(i++, (Integer) record.get(j++)); // 単価
+						ps.setInt(i++, (Integer) record.get(j++)); // 提示額
+						ps.setString(i++, (String) record.get(j++)); // 図番
+						ps.setString(i++, (String) record.get(j)); // 備考
+						ps.addBatch();
+						k++;
 					}
 				}
-				// mainTable
-				int k = 1;
-				try {
-					ps = c.prepareStatement(
-						"INSERT INTO T_見積_子 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-					);
-					for (Vector<Object> record : summaryDTO.quotationVector()) {
-						int tag = (Integer) record.get(1);
-						if (tag != 0) {
-							keys.add((Integer) record.get(0));
-							int i = 1;
-							int j = 2;
-							ps.setInt(i++, k); // ID
-							ps.setInt(i++, quotationID); // 見積親ID
-							ps.setInt(i++, tag); // 表示CD
-							ps.setString(i++, (String) record.get(j++)); // 名称
-							ps.setBoolean(i++, (Boolean) record.get(j++)); // 各FLG
-							ps.setInt(i++, (Integer) record.get(j++)); // 数量
-							ps.setInt(i++, (Integer) record.get(j++)); // 数量単位CD
-							ps.setInt(i++, (Integer) record.get(j++)); // 単価
-							ps.setInt(i++, (Integer) record.get(j++)); // 提示額
-							ps.setString(i++, (String) record.get(j++)); // 図番
-							ps.setString(i++, (String) record.get(j)); // 備考
-							ps.addBatch();
-							k++;
-						}
-					}
-					int[] updateCounts = ps.executeBatch();
-					lg.info("T_見積_子は" + updateCounts.length + "件処理されました。");
-				} catch (SQLException ex) {
-					isError = true;
-					ex.printStackTrace();
-					err.append(className + "テーブル「T_見積_子」の更新に失敗しました\n");
-					Logging.logStackTrace(ex, lg, className);
-				}
+				int[] updateCounts = ps.executeBatch();
+				logger.info("T_見積_子は" + updateCounts.length + "件処理されました。");
+			}
 
-				// subTable
-				int coarseCD = 1;
-				try {
-					PreparedStatement ps1 = c.prepareStatement(
-						"INSERT INTO T_見積_加工 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-					);
+			// subTable
+			int coarseCD = 1;
+			try (
+				PreparedStatement ps1 = c.prepareStatement(
+					"INSERT INTO T_見積_加工 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+				);
+			) {
+				try (
 					PreparedStatement ps2 = c.prepareStatement(
 						"INSERT INTO T_見積_材料 VALUES(" +
 							" ?, ?, ?, ?, ?, ?, ?, ?, ?, ?," +
 							" ?, ?, ?, ?, ?, ?)"
 					);
+				) {
 					for (int key : keys) {
 
 						if (summaryDTO.getMap().containsKey(key)) {
@@ -531,80 +481,12 @@ public class QuotationRegister extends GenericServlet {
 					int[] updateCounts1 = ps1.executeBatch();
 					int[] updateCounts2 = ps2.executeBatch();
 
-					lg.info("T_見積_加工は" + updateCounts1.length + "件処理されました。");
-					lg.info("T_見積_材料は" + updateCounts2.length + "件処理されました。");
-				} catch (SQLException ex) {
-					ex.printStackTrace();
-					err.append(className + "テーブル「T_見積_孫」の更新に失敗しました\n");
-					Logging.logStackTrace(ex, lg, className);
-				}
-			}
-
-			if (!isError) {
-				try {
-					st = c.createStatement();
-					st.executeUpdate("COMMIT");
-				} catch (SQLException ex) {
-					isError = true;
-					ex.printStackTrace();
-					err.append(className + "コミットに失敗しました\n");
-					Logging.logStackTrace(ex, lg, className);
-				}
-			}
-		} catch (Exception ex) {
-			ex.printStackTrace();
-			isError = true;
-			lg.debug("error");
-			lg.error(ex);
-		} finally {
-			if (isError) {
-				lg.debug("rollback");
-				try {
-					st = c.createStatement();
-					st.executeUpdate("ROLLBACK");
-				} catch (SQLException ex) {
-					err.append(className + "ロールバックに失敗しました\n");
-					Logging.logStackTrace(ex, lg, className);
+					logger.info("T_見積_加工は" + updateCounts1.length + "件処理されました。");
+					logger.info("T_見積_材料は" + updateCounts2.length + "件処理されました。");
 				}
 			}
 		}
-		/**
-		 * クライアントに送信
-		 */
-		try {
-			response.setContentType("application/octet-stream");
-			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(quotationID);
-			out.writeUTF(err.toString());
-			out.flush();
-			out.close();
-		} catch (Exception ex) {
-			Logging.logStackTrace(ex, lg, className);
-		} finally {
-			try {
-				if (c != null && !c.isClosed())
-					c.close();
-			} catch (SQLException ex) {
-				Logging.logStackTrace(ex, lg, className);
-			}
-			// The following processes requires JDBC4.0.
-			try {
-				if (ps != null && !ps.isClosed()) {
-					ps.close();
-					lg.debug(className + "ps is closed by jdbc4.0");
-				}
-			} catch (SQLException ex) {
-				Logging.logStackTrace(ex, lg, className);
-			}
-			try {
-				if (rs != null && !rs.isClosed()) {
-					rs.close();
-					lg.debug(className + "rs is closed by jdbc4.0");
-				}
-			} catch (SQLException ex) {
-				Logging.logStackTrace(ex, lg, className);
-			}
-		}
+		c.commit();
+		return quotationID;
 	}
-
 }

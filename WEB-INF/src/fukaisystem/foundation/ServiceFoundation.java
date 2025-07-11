@@ -16,8 +16,9 @@ import fukaisystem.sql.DBConnection;
 import fukaisystem.util.Logging;
 
 public abstract class ServiceFoundation extends GenericServlet {
-	private static final Logger lg = Logger.getLogger("A1");
-	protected static final String className = "ServiceFoundation";
+
+	protected static final Logger logger = Logger.getLogger("A1");
+	protected static final int isolationLevel = Connection.TRANSACTION_READ_COMMITTED;
 	private StringBuilder err;
 
 	/**
@@ -46,6 +47,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 * DBへのアクセスが不要な場合はこのメソッドをオーバーライドする
 	 * 
 	 * @param obj 未キャストの入力DTO
+	 * 
 	 * @return クライアントに返す出力DTO
 	 * @throws IOException
 	 */
@@ -65,10 +67,12 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 * @param c Connectionオブジェクト
 	 * @param response ServletResponseオブジェクト
 	 * @param obj 未キャストの入力DTO
+	 * 
 	 * @return クライアントに返す出力DTO
 	 * @throws Exception
 	 */
 	protected Object access(Connection c, ServletResponse response, Object obj) throws Exception {
+		c.setTransactionIsolation(isolationLevel);
 		c.setAutoCommit(false); // begin();
 		try {
 			return transaction(c, response, obj);
@@ -85,6 +89,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 * @param c Connectionオブジェクト
 	 * @param response ServletResponseオブジェクト
 	 * @param obj 未キャストの入力DTO
+	 * 
 	 * @return クライアントに返す出力DTO
 	 * @throws Exception
 	 */
@@ -108,6 +113,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 * @param response ServletResponseオブジェクト
 	 * @param obj 対象オブジェクト
 	 * @param clazz 判定対象の型クラス
+	 * 
 	 * @return オブジェクトが指定クラスのインスタンスである場合にはその型にキャストされたオブジェクト、そうでなければ {@code null}
 	 * @throws IOException
 	 */
@@ -116,7 +122,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 		if (clazz.isInstance(obj)) {
 			return (T) obj;
 		}
-		send(response, new Exception(String.format("[%s] DTO が %s 型ではありません\n", className, clazz.getSimpleName())));
+		send(response, new Exception(String.format("[%s] DTO が %s 型ではありません\n", getClass().getName(), clazz.getSimpleName())));
 		return null;
 	}
 
@@ -126,6 +132,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 * 
 	 * @param response ServletResponseオブジェクト
 	 * @param obj 送信するオブジェクト
+	 * 
 	 * @throws IOException
 	 */
 	protected void send(ServletResponse response, Object obj) throws IOException {
@@ -151,6 +158,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 * 
 	 * @param response ServletResponseオブジェクト
 	 * @param e Exceptionオブジェクト
+	 * 
 	 * @throws IOException
 	 */
 	protected void reportException(ServletResponse response, Exception e) throws IOException {
@@ -163,7 +171,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 * @param e Exceptionオブジェクト
 	 */
 	protected void handleException(Exception e) {
-		Logging.logStackTrace(e, lg, className);
+		Logging.logStackTrace(e, logger, getClass().getName());
 	}
 
 	/**
@@ -173,7 +181,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 */
 	protected void addError(String e) {
 		err.append(e + " ");
-		lg.error(e + " ");
+		logger.error(e + " ");
 	}
 
 	/**

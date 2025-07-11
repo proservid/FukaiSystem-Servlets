@@ -21,8 +21,10 @@ import javax.servlet.ServletResponse;
 import fukaisystem.dto.GetTableDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
+/**
+ * 指定した売上データの詳細を取得する
+ */
 public class GetSalesSummary extends ServiceFoundation {
-	protected static final String className = "GetSalesSummary";
 
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o)

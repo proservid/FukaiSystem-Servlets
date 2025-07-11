@@ -1,182 +1,112 @@
 package fukaisystem.application.business;
 
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Vector;
 
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-import org.apache.log4j.Logger;
-
 import fukaisystem.dto.SalesDTO;
-import fukaisystem.sql.DBConnection;
-import fukaisystem.util.Logging;
+import fukaisystem.foundation.ServiceFoundation;
 
-public class GetSelectedSalesSlip extends GenericServlet {
-
-	private static final long serialVersionUID = 1L;
-	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "ChangeSlip\n";
+/**
+ * 選択された売上伝票のデータを取得する
+ */
+public class GetSelectedSalesSlip extends ServiceFoundation {
 
 	@Override
-	public void service(ServletRequest request, ServletResponse response) {
-		DBConnection dbc = new DBConnection();
-		Connection c = dbc.getConnection();
-		PreparedStatement ps = null;
-		ResultSet rs = null;
+	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 		SalesDTO dto = null;
-		StringBuilder err = new StringBuilder();
 
-		int salesID = 0;
+		int salesID = cast(response, o, int.class);
 		int tax = 0, discount = 0;
 
 		Vector<Vector<Object>> deliveryData = new Vector<Vector<Object>>();
 
-		try {
-
-			/**
-			 * クライアントデータ受け取り
-			 */
-			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
-			Object obj = in.readObject();
-			in.close();
-
-			if (obj == null) {
-				salesID = 0;
-			} else {
-				if (obj instanceof Integer) {
-					salesID = (Integer) obj;
-				} else {
-					err.append(className + "readObjectがInteger型ではありません\n");
-					lg.error(className + "readObjectがInteger型ではありません");
-				}
-			}
-		} catch (Exception ex) {
-			Logging.logStackTrace(ex, lg, className);
-		}
-
-		try {
-			ps = c.prepareStatement(
+		try (
+			PreparedStatement ps = c.prepareStatement(
 				"SELECT 納品区分CD,納品手段CD,得意先CD,売上年月日,売上FLG,請求FLG,消費税,値引き,摘要 FROM T_売上_親"
 					+ " WHERE 売上親ID=?"
 			);
+		) {
 			ps.setInt(1, salesID);
-			rs = ps.executeQuery();
-			if (rs.next()) {
-				int type = 0;
-				if (!rs.getBoolean("売上FLG")) {
-					type = 2;
-				} else if (!rs.getBoolean("請求FLG")) {
-					type = 1;
-				}
-				if (rs.getString("消費税") == null) {
-					tax = -1;
-				} else {
-					tax = rs.getInt("消費税");
-				}
+			try (ResultSet rs = ps.executeQuery();) {
+				if (rs.next()) {
+					int type = 0;
+					if (!rs.getBoolean("売上FLG")) {
+						type = 2;
+					} else if (!rs.getBoolean("請求FLG")) {
+						type = 1;
+					}
+					if (rs.getString("消費税") == null) {
+						tax = -1;
+					} else {
+						tax = rs.getInt("消費税");
+					}
 
-				discount = rs.getInt("値引き");
-				//sDTO = new SalesDTO(salesID, rs.getInt("納品区分CD"),rs.getInt("納品手段CD"),rs.getInt("得意先CD"),type,rs.getDate("売上年月日"),rs.getString("摘要"),null);
-				dto = new SalesDTO(
-					salesID,
-					0,
-					0,
-					rs.getDate("売上年月日"),
-					rs.getInt("納品区分CD"),
-					rs.getInt("納品手段CD"),
-					tax,
-					discount,
-					type,
-					rs.getString("摘要"),
-					null
-				);
+					discount = rs.getInt("値引き");
+					dto = new SalesDTO(
+						salesID,
+						0,
+						0,
+						rs.getDate("売上年月日"),
+						rs.getInt("納品区分CD"),
+						rs.getInt("納品手段CD"),
+						tax,
+						discount,
+						type,
+						rs.getString("摘要"),
+						null
+					);
+				}
 			}
+		}
 
-			// 売上明細
-			ps = c.prepareStatement(
+		// 売上明細
+		try (
+			PreparedStatement ps = c.prepareStatement(
 				"SELECT sc.製作親ID,sc.製作子ID,sc.表示CD,出荷伝票番号,pp.受注年月日,sp.売上年月日,pp.受注番号,sc.品名,sc.各FLG,sc.数量,sc.数量単位CD,sc.単価,sc.金額,sc.備考,pc.完成年月日 FROM T_売上_子 sc"
 					+ " LEFT OUTER JOIN T_製作_親 pp ON sc.製作親ID=pp.製作親ID"
 					+ " LEFT OUTER JOIN T_製作_子 pc ON sc.製作親ID=pc.製作親ID AND sc.製作子ID=pc.ID"
 					+ " LEFT OUTER JOIN T_売上_親 sp ON sc.売上親ID=sp.売上親ID"
 					+ " WHERE sc.売上親ID=? ORDER BY sc.ID"
 			);
+		) {
 			ps.setInt(1, salesID);
-			rs = ps.executeQuery();
-			while (rs.next()) {
-				Vector<Object> record = new Vector<Object>();
-				int price = rs.getInt("金額");
-				if (rs.getInt("表示CD") == 5) {
-					price = tax;
-				} else if (rs.getInt("表示CD") == 6) {
-					price = discount;
+			try (ResultSet rs = ps.executeQuery();) {
+				while (rs.next()) {
+					Vector<Object> record = new Vector<Object>();
+					int price = rs.getInt("金額");
+					if (rs.getInt("表示CD") == 5) {
+						price = tax;
+					} else if (rs.getInt("表示CD") == 6) {
+						price = discount;
+					}
+					record.add(rs.getInt("製作親ID"));
+					record.add(rs.getInt("製作子ID"));
+					record.add(rs.getInt("表示CD"));
+					record.add(rs.getString("出荷伝票番号"));
+					record.add(rs.getDate("受注年月日"));
+					record.add(rs.getString("受注番号"));
+					record.add(rs.getString("品名"));
+					record.add(rs.getBoolean("各FLG"));
+					record.add(rs.getInt("数量"));
+					record.add(rs.getInt("数量単位CD"));
+					record.add(rs.getInt("単価"));
+					record.add(price);
+					record.add(rs.getString("備考"));
+					record.add(rs.getDate("完成年月日"));
+					record.add(rs.getDate("売上年月日"));
+					deliveryData.add(record);
 				}
-				record.add(rs.getInt("製作親ID"));
-				record.add(rs.getInt("製作子ID"));
-				record.add(rs.getInt("表示CD"));
-				record.add(rs.getString("出荷伝票番号"));
-				record.add(rs.getDate("受注年月日"));
-				record.add(rs.getString("受注番号"));
-				record.add(rs.getString("品名"));
-				record.add(rs.getBoolean("各FLG"));
-				record.add(rs.getInt("数量"));
-				record.add(rs.getInt("数量単位CD"));
-				record.add(rs.getInt("単価"));
-				record.add(price);
-				record.add(rs.getString("備考"));
-				record.add(rs.getDate("完成年月日"));
-				record.add(rs.getDate("売上年月日"));
-				deliveryData.add(record);
-			}
-			if (dto != null)
-				dto.setVector(deliveryData);
-		} catch (SQLException ex) {
-			err.append(ex.toString());
-			Logging.logStackTrace(ex, lg, className);
-		}
-
-		/**
-		 * クライアントに送信
-		 */
-		try {
-			response.setContentType("application/octet-stream");
-			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject(dto);
-			out.writeUTF(err.toString());
-			out.flush();
-			out.close();
-		} catch (Exception ex) {
-			Logging.logStackTrace(ex, lg, className);
-		} finally {
-			try {
-				if (c != null && !c.isClosed())
-					c.close();
-			} catch (SQLException ex) {
-				Logging.logStackTrace(ex, lg, className);
-			}
-			// The following processes requires JDBC4.0.
-			try {
-				if (ps != null && !ps.isClosed()) {
-					ps.close();
-					lg.debug(className + "ps is closed by jdbc4.0");
-				}
-			} catch (SQLException ex) {
-				Logging.logStackTrace(ex, lg, className);
-			}
-			try {
-				if (rs != null && !rs.isClosed()) {
-					rs.close();
-					lg.debug(className + "rs is closed by jdbc4.0");
-				}
-			} catch (SQLException ex) {
-				Logging.logStackTrace(ex, lg, className);
+				if (dto != null)
+					dto.setVector(deliveryData);
 			}
 		}
+		return dto;
 	}
 
 }
