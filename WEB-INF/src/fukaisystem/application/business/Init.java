@@ -26,32 +26,32 @@ public class Init extends ServiceFoundation {
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
-		Map<Integer, String> types = new LinkedHashMap<Integer, String>();
-		Map<Integer, String> routes = new HashMap<Integer, String>();
-		Vector<String> dues = new Vector<String>();
-		Vector<String> places = new Vector<String>();
-		Vector<String> terms = new Vector<String>();
-		Vector<String> validities = new Vector<String>();
-		Map<Integer, String> submits = new HashMap<Integer, String>();
-		Map<Integer, String> currencies = new HashMap<Integer, String>();
-		Map<Integer, String> states = new HashMap<Integer, String>();
-		Map<Integer, String> ways = new HashMap<Integer, String>();
-		Map<Integer, String> partials = new HashMap<Integer, String>();
-		Map<Integer, String> indication = new HashMap<Integer, String>();
-		Map<Integer, String> units = new HashMap<Integer, String>();
-		Map<Integer, String> suppliers = new HashMap<Integer, String>();
-		// Map<Integer, Integer> works = new HashMap<Integer, Integer>();
-		Map<Integer, String> materials = new LinkedHashMap<Integer, String>();
-		Map<Integer, String> coarseCategories = new LinkedHashMap<Integer, String>();
-		Map<List<Integer>, Map<Integer, String>> middleCategories = new HashMap<List<Integer>, Map<Integer, String>>();
-		Map<List<Integer>, Map<Integer, String>> fineCategories = new HashMap<List<Integer>, Map<Integer, String>>();
-		Map<Integer, Map<Integer, Map<Integer, Integer>>> costs = new HashMap<Integer, Map<Integer, Map<Integer, Integer>>>();
-		Map<Integer, Double> sgs = new HashMap<Integer, Double>();
+		Map<Integer, String> typeMap = new LinkedHashMap<Integer, String>();
+		Map<Integer, String> routeMap = new HashMap<Integer, String>();
+		Vector<String> dueVector = new Vector<String>();
+		Vector<String> placeVector = new Vector<String>();
+		Vector<String> termVector = new Vector<String>();
+		Vector<String> validityVector = new Vector<String>();
+		Map<Integer, String> submitMap = new HashMap<Integer, String>();
+		Map<Integer, String> currencieMap = new HashMap<Integer, String>();
+		Map<Integer, String> stateMap = new HashMap<Integer, String>();
+		Map<Integer, String> wayMap = new HashMap<Integer, String>();
+		Map<Integer, String> partialMap = new HashMap<Integer, String>();
+		Map<Integer, String> indicationMap = new HashMap<Integer, String>();
+		Map<Integer, String> unitMap = new HashMap<Integer, String>();
+		Map<Integer, String> supplierMap = new HashMap<Integer, String>();
+		// Map<Integer, Integer> processingCostMap = new HashMap<Integer, Integer>();
+		Map<Integer, String> materialCostMap = new LinkedHashMap<Integer, String>();
+		Map<Integer, String> coarseCategoryMap = new LinkedHashMap<Integer, String>();
+		Map<List<Integer>, Map<Integer, String>> middleCategoryMap = new HashMap<List<Integer>, Map<Integer, String>>();
+		Map<List<Integer>, Map<Integer, String>> fineCategoryMap = new HashMap<List<Integer>, Map<Integer, String>>();
+		Map<Integer, Map<Integer, Map<Integer, Integer>>> costMap = new HashMap<Integer, Map<Integer, Map<Integer, Integer>>>();
+		Map<Integer, Double> sgMap = new HashMap<Integer, Double>();
 
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_製品種別");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					types.put(rs.getInt("CD"), rs.getString("製品種別"));
+					typeMap.put(rs.getInt("CD"), rs.getString("製品種別"));
 				}
 			}
 		}
@@ -59,7 +59,7 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_依頼手段");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					routes.put(rs.getInt("CD"), rs.getString("依頼手段"));
+					routeMap.put(rs.getInt("CD"), rs.getString("依頼手段"));
 				}
 			}
 		}
@@ -67,28 +67,28 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_納期 WHERE CD<25");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					dues.add(rs.getString("納期"));
+					dueVector.add(rs.getString("納期"));
 				}
 			}
 		}
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_受渡場所");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					places.add(rs.getString("受渡場所"));
+					placeVector.add(rs.getString("受渡場所"));
 				}
 			}
 		}
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_取引条件");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					terms.add(rs.getString("取引条件"));
+					termVector.add(rs.getString("取引条件"));
 				}
 			}
 		}
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_有効期間");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					validities.add(rs.getString("有効期間"));
+					validityVector.add(rs.getString("有効期間"));
 				}
 			}
 		}
@@ -96,7 +96,7 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_見積提出");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					submits.put(rs.getInt("CD"), rs.getString("見積提出"));
+					submitMap.put(rs.getInt("CD"), rs.getString("見積提出"));
 				}
 			}
 		}
@@ -104,7 +104,7 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_使用通貨");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					currencies.put(rs.getInt("CD"), rs.getString("通貨記号"));
+					currencieMap.put(rs.getInt("CD"), rs.getString("通貨記号"));
 				}
 			}
 		}
@@ -112,7 +112,7 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_納品区分");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					states.put(rs.getInt("CD"), rs.getString("納品区分"));
+					stateMap.put(rs.getInt("CD"), rs.getString("納品区分"));
 				}
 			}
 		}
@@ -120,7 +120,7 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_納入手段");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					ways.put(rs.getInt("CD"), rs.getString("納入手段"));
+					wayMap.put(rs.getInt("CD"), rs.getString("納入手段"));
 				}
 			}
 		}
@@ -128,7 +128,7 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_納品区分");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					partials.put(rs.getInt("CD"), rs.getString("納品区分"));
+					partialMap.put(rs.getInt("CD"), rs.getString("納品区分"));
 				}
 			}
 		}
@@ -136,7 +136,7 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_見積表示");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					indication.put(rs.getInt("CD"), rs.getString("表示種別"));
+					indicationMap.put(rs.getInt("CD"), rs.getString("表示種別"));
 				}
 			}
 		}
@@ -144,7 +144,7 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_数量単位");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					units.put(rs.getInt("CD"), rs.getString("数量単位"));
+					unitMap.put(rs.getInt("CD"), rs.getString("数量単位"));
 				}
 			}
 		}
@@ -152,7 +152,7 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT 仕入先CD,会社名 FROM M_法人 WHERE 仕入先CD IS NOT NULL");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					suppliers.put(rs.getInt("仕入先CD"), rs.getString("会社名"));
+					supplierMap.put(rs.getInt("仕入先CD"), rs.getString("会社名"));
 				}
 			}
 		}
@@ -168,13 +168,13 @@ public class Init extends ServiceFoundation {
 		 * ps.setDate(2, new java.sql.Date(cal.getTimeInMillis()));
 		 * try (ResultSet rs = ps.executeQuery();){
 		 * while(rs.next()) {
-		 * works.put(rs.getInt("CD"), rs.getInt("単価"));
+		 * processingCostMap.put(rs.getInt("CD"), rs.getInt("単価"));
 		 * }}}
 		 */
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_原価 WHERE CD<101");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					materials.put(rs.getInt("CD"), rs.getString("大分類名"));
+					materialCostMap.put(rs.getInt("CD"), rs.getString("大分類名"));
 				}
 			}
 		}
@@ -182,7 +182,7 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_原価");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					coarseCategories.put(rs.getInt("CD"), rs.getString("大分類名"));
+					coarseCategoryMap.put(rs.getInt("CD"), rs.getString("大分類名"));
 				}
 			}
 		}
@@ -192,10 +192,10 @@ public class Init extends ServiceFoundation {
 				while (rs.next()) {
 					List<Integer> subKey = new ArrayList<Integer>();
 					subKey.add(rs.getInt("大分類CD"));
-					if (!middleCategories.containsKey(subKey)) {
-						middleCategories.put(subKey, new LinkedHashMap<Integer, String>());
+					if (!middleCategoryMap.containsKey(subKey)) {
+						middleCategoryMap.put(subKey, new LinkedHashMap<Integer, String>());
 					}
-					middleCategories.get(subKey).put(rs.getInt("CD"), rs.getString("中分類名"));
+					middleCategoryMap.get(subKey).put(rs.getInt("CD"), rs.getString("中分類名"));
 				}
 			}
 		}
@@ -204,10 +204,10 @@ public class Init extends ServiceFoundation {
 				while (rs.next()) {
 					List<Integer> subKey = new ArrayList<Integer>();
 					subKey.add(rs.getInt("大分類CD"));
-					if (!middleCategories.containsKey(subKey)) {
-						middleCategories.put(subKey, new LinkedHashMap<Integer, String>());
+					if (!middleCategoryMap.containsKey(subKey)) {
+						middleCategoryMap.put(subKey, new LinkedHashMap<Integer, String>());
 					}
-					middleCategories.get(subKey).put(rs.getInt("CD"), rs.getString("中分類名"));
+					middleCategoryMap.get(subKey).put(rs.getInt("CD"), rs.getString("中分類名"));
 				}
 			}
 		}
@@ -215,7 +215,7 @@ public class Init extends ServiceFoundation {
 		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_比重");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					sgs.put(rs.getInt("種類"), rs.getDouble("比重"));
+					sgMap.put(rs.getInt("種類"), rs.getDouble("比重"));
 				}
 			}
 		}
@@ -226,10 +226,10 @@ public class Init extends ServiceFoundation {
 					List<Integer> subKey = new ArrayList<Integer>();
 					subKey.add(rs.getInt("大分類CD"));
 					subKey.add(rs.getInt("中分類CD"));
-					if (!fineCategories.containsKey(subKey)) {
-						fineCategories.put(subKey, new LinkedHashMap<Integer, String>());
+					if (!fineCategoryMap.containsKey(subKey)) {
+						fineCategoryMap.put(subKey, new LinkedHashMap<Integer, String>());
 					}
-					fineCategories.get(subKey).put(rs.getInt("CD"), rs.getString("小分類名"));
+					fineCategoryMap.get(subKey).put(rs.getInt("CD"), rs.getString("小分類名"));
 				}
 			}
 		}
@@ -254,8 +254,8 @@ public class Init extends ServiceFoundation {
 					int fineCD = rs.getInt("CD");
 					int cost = rs.getInt("単価");
 					String name = rs.getString("小分類名");
-					if (costs.containsKey(coarseCD)) {
-						Map<Integer, Map<Integer, Integer>> middleMap = costs.get(coarseCD);
+					if (costMap.containsKey(coarseCD)) {
+						Map<Integer, Map<Integer, Integer>> middleMap = costMap.get(coarseCD);
 						if (middleMap.containsKey(middleCD)) {
 							Map<Integer, Integer> fineMap = middleMap.get(middleCD);
 							fineMap.put(fineCD, cost);
@@ -269,43 +269,43 @@ public class Init extends ServiceFoundation {
 						Map<Integer, Integer> fineMap = new HashMap<Integer, Integer>();
 						fineMap.put(fineCD, cost);
 						middleMap.put(middleCD, fineMap);
-						costs.put(coarseCD, middleMap);
+						costMap.put(coarseCD, middleMap);
 					}
 					List<Integer> subKey = new ArrayList<Integer>();
 					subKey.add(coarseCD);
 					subKey.add(middleCD);
-					if (!fineCategories.containsKey(subKey)) {
-						fineCategories.put(subKey, new LinkedHashMap<Integer, String>());
+					if (!fineCategoryMap.containsKey(subKey)) {
+						fineCategoryMap.put(subKey, new LinkedHashMap<Integer, String>());
 					}
 					if (name != null)
-						fineCategories.get(subKey).put(fineCD, name);
+						fineCategoryMap.get(subKey).put(fineCD, name);
 				}
 			}
 		}
 
 		return new InitialDTO(
 			null,
-			types,
-			routes,
-			dues,
-			places,
-			terms,
-			validities,
-			submits,
-			currencies,
-			states,
-			ways,
-			partials,
-			indication,
-			units,
-			suppliers,
+			typeMap,
+			routeMap,
+			dueVector,
+			placeVector,
+			termVector,
+			validityVector,
+			submitMap,
+			currencieMap,
+			stateMap,
+			wayMap,
+			partialMap,
+			indicationMap,
+			unitMap,
+			supplierMap,
 			null,
-			materials,
-			coarseCategories,
-			middleCategories,
-			fineCategories,
-			costs,
-			sgs
+			materialCostMap,
+			coarseCategoryMap,
+			middleCategoryMap,
+			fineCategoryMap,
+			costMap,
+			sgMap
 		);
 	}
 
