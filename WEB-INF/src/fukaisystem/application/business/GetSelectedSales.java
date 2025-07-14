@@ -15,7 +15,7 @@ import fukaisystem.foundation.ServiceFoundation;
 /**
  * 選択された売上伝票のデータを取得する
  */
-public class GetSelectedSalesSlip extends ServiceFoundation {
+public class GetSelectedSales extends ServiceFoundation {
 
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {

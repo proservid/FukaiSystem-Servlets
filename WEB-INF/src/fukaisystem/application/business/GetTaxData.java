@@ -25,7 +25,7 @@ import fukaisystem.foundation.ServiceFoundation;
  * 得意先CD が 0 の（指定されていない）場合、テーブル表示用に一括消費税の対象を Vector で返す
  * 得意先CDが指定されている場合、印刷用データを Map で返す
  */
-public class GetSalesSummary extends ServiceFoundation {
+public class GetTaxData extends ServiceFoundation {
 
 	@SuppressWarnings("unchecked")
 	@Override

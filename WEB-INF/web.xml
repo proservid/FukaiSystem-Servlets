@@ -153,12 +153,12 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name> getData2 </servlet-name>
+		<servlet-name> getData </servlet-name>
 		<servlet-class> fukaisystem.print.table.GetData </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> getData2 </servlet-name>
-		<url-pattern> /getData2 </url-pattern>
+		<servlet-name> getData </servlet-name>
+		<url-pattern> /getData </url-pattern>
 	</servlet-mapping>
 
 
@@ -340,12 +340,12 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name> dsearch </servlet-name>
+		<servlet-name> dispatchingSearch </servlet-name>
 		<servlet-class> fukaisystem.application.business.DispatchingSearch </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> dsearch </servlet-name>
-		<url-pattern> /dsearch </url-pattern>
+		<servlet-name> dispatchingSearch </servlet-name>
+		<url-pattern> /dispatchingSearch </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -376,15 +376,6 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name> dsummary </servlet-name>
-		<servlet-class> fukaisystem.application.business.GetDispatchingSummary </servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name> dsummary </servlet-name>
-		<url-pattern> /dsummary </url-pattern>
-	</servlet-mapping>
-
-	<servlet>
 		<servlet-name> getEstimatedCost </servlet-name>
 		<servlet-class> fukaisystem.application.business.GetEstimatedCost </servlet-class>
 	</servlet>
@@ -400,15 +391,6 @@
 	<servlet-mapping>
 		<servlet-name> getExpectedCost </servlet-name>
 		<url-pattern> /getExpectedCost </url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name> osummary </servlet-name>
-		<servlet-class> fukaisystem.application.business.GetOrderSummary </servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name> osummary </servlet-name>
-		<url-pattern> /osummary </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -430,30 +412,48 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name> getSalesSummary </servlet-name>
-		<servlet-class> fukaisystem.application.business.GetSalesSummary </servlet-class>
+		<servlet-name> getSelectedDispatching </servlet-name>
+		<servlet-class> fukaisystem.application.business.GetSelectedDispatching </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> getSalesSummary </servlet-name>
-		<url-pattern> /getSalesSummary </url-pattern>
+		<servlet-name> getSelectedDispatching </servlet-name>
+		<url-pattern> /getSelectedDispatching </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name> getSelectedSalesSlip </servlet-name>
-		<servlet-class> fukaisystem.application.business.GetSelectedSalesSlip </servlet-class>
+		<servlet-name> getSelectedOrder </servlet-name>
+		<servlet-class> fukaisystem.application.business.GetSelectedOrder </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> getSelectedSalesSlip </servlet-name>
-		<url-pattern> /getSelectedSalesSlip </url-pattern>
+		<servlet-name> getSelectedOrder </servlet-name>
+		<url-pattern> /getSelectedOrder </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name> summary </servlet-name>
+		<servlet-name> getSelectedSales </servlet-name>
+		<servlet-class> fukaisystem.application.business.GetSelectedSales </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getSelectedSales </servlet-name>
+		<url-pattern> /getSelectedSales </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> getSummary </servlet-name>
 		<servlet-class> fukaisystem.application.business.GetSummary </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> summary </servlet-name>
-		<url-pattern> /summary </url-pattern>
+		<servlet-name> getSummary </servlet-name>
+		<url-pattern> /getSummary </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> getTaxData </servlet-name>
+		<servlet-class> fukaisystem.application.business.GetTaxData </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getTaxData </servlet-name>
+		<url-pattern> /getTaxData </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -466,12 +466,12 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name> hsearch </servlet-name>
+		<servlet-name> historySearch </servlet-name>
 		<servlet-class> fukaisystem.application.business.HistorySearch </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> hsearch </servlet-name>
-		<url-pattern> /hsearch </url-pattern>
+		<servlet-name> historySearch </servlet-name>
+		<url-pattern> /historySearch </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -502,12 +502,12 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name> osearch2 </servlet-name>
-		<servlet-class> fukaisystem.application.business.OrderSearch2 </servlet-class>
+		<servlet-name> orderSearch </servlet-name>
+		<servlet-class> fukaisystem.application.business.OrderSearch </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> osearch2 </servlet-name>
-		<url-pattern> /osearch2 </url-pattern>
+		<servlet-name> orderSearch </servlet-name>
+		<url-pattern> /orderSearch </url-pattern>
 	</servlet-mapping>
 
 	<servlet>

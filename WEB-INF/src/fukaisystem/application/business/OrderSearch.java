@@ -17,7 +17,7 @@ import fukaisystem.foundation.ServiceFoundation;
 /**
  * 注文データを検索する
  */
-public class OrderSearch2 extends ServiceFoundation {
+public class OrderSearch extends ServiceFoundation {
 
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {

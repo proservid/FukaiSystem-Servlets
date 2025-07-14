@@ -15,7 +15,7 @@ import fukaisystem.foundation.ServiceFoundation;
 /**
  * 指定した注文データの詳細を取得する
  */
-public class GetOrderSummary extends ServiceFoundation {
+public class GetSelectedOrder extends ServiceFoundation {
 
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {

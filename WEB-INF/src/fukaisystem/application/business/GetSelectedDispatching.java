@@ -15,7 +15,7 @@ import fukaisystem.foundation.ServiceFoundation;
 /**
  * 指定した出庫データの詳細を取得する
  */
-public class GetDispatchingSummary extends ServiceFoundation {
+public class GetSelectedDispatching extends ServiceFoundation {
 
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
