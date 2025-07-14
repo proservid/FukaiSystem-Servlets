@@ -20,6 +20,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 	protected static final Logger logger = Logger.getLogger("A1");
 	protected static final int isolationLevel = Connection.TRANSACTION_READ_COMMITTED;
 	private StringBuilder err;
+	private boolean isSent = false;
 
 	/**
 	 * すべてのサーブレットで共通となる処理の骨格
@@ -33,7 +34,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 			Object obj = in.readObject();
 			in.close();
 			Object result = core(response, obj);
-			if (result != null) { // reportException で送信済みの場合は result が null
+			if (!isSent) { // reportException で送信済みの場合は isSent が true
 				send(response, result);
 			}
 
@@ -163,6 +164,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 */
 	protected void reportException(ServletResponse response, Exception e) throws IOException {
 		send(response, e);
+		isSent = true;
 	}
 
 	/**
