@@ -17,7 +17,7 @@ public class SetLabel extends ServiceFoundation {
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
-		int code = cast(response, o, int.class);
+		int code = cast(response, o, Integer.class);
 		String name = "";
 
 		try (

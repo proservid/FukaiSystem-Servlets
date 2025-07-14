@@ -234,16 +234,16 @@ public class ProjectSearchDTO implements Serializable {
 				i = projectCode;
 				break;
 			case 6:
-				i = birthNum1;
-				break;
-			case 7:
-				i = birthNum2;
-				break;
-			case 8:
 				i = currency;
 				break;
-			case 9:
+			case 7:
 				i = price;
+				break;
+			case 8:
+				i = birthNum1;
+				break;
+			case 9:
+				i = birthNum2;
 				break;
 			case 10:
 				i = deliveryCode;

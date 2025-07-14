@@ -31,11 +31,11 @@ public class DispatchingRegister extends ServiceFoundation {
 		if (dto.dispatchNum1() * dto.dispatchNum2() == 0) {
 			// 注文期または注文番号を0に変更したということは、消去せよということ
 			if (dispatchingID != 0) {
-				try (PreparedStatement ps = c.prepareStatement("DELETE FROM T_出庫_親 WHERE ID=?");) {
+				try (PreparedStatement ps = c.prepareStatement("DELETE FROM T_出庫_親 WHERE 出庫親ID=?");) {
 					ps.setInt(1, dispatchingID);
 					ps.executeUpdate();
 				}
-				try (PreparedStatement ps = c.prepareStatement("DELETE FROM T_出庫_子 WHERE ID=?");) {
+				try (PreparedStatement ps = c.prepareStatement("DELETE FROM T_出庫_子 WHERE 出庫親ID=?");) {
 					ps.setInt(1, dispatchingID);
 					ps.executeUpdate();
 					dispatchingID = 0;
@@ -114,8 +114,8 @@ public class DispatchingRegister extends ServiceFoundation {
 					int i = 1;
 					int j = 0;
 					if (record.get(0) != null && (Integer) record.get(0) != 0) {
-						ps.setInt(i++, k); // ID
 						ps.setInt(i++, dispatchingID); // 出庫親ID
+						ps.setInt(i++, k); // ID
 						ps.setInt(i++, (record.get(j) == null) ? 0 : (Integer) record.get(j));
 						j++; // 大分類CD
 						ps.setInt(i++, (record.get(j) == null) ? 0 : (Integer) record.get(j));

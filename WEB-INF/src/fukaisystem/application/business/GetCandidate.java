@@ -51,7 +51,7 @@ public class GetCandidate extends ServiceFoundation {
 				+ " ELSE 会社名 + CASE WHEN 支店名 IS NULL THEN '' ELSE ' ' + 支店名 END"
 				+ " END AS 社名"
 				+ " FROM M_法人"
-				+ " WHERE " + key + "IS NOT NULL"
+				+ " WHERE " + key + " IS NOT NULL"
 				+ " AND (会社名 LIKE ? OR 支店名 LIKE ? OR カイシャメイ LIKE ? OR シテンメイ LIKE ? OR アルファベット LIKE ? OR 仕入先CD LIKE ? OR 得意先CD LIKE ?)"
 		);
 		if (isValidOnly) {

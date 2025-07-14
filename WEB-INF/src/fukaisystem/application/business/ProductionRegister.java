@@ -101,10 +101,10 @@ public class ProductionRegister extends ServiceFoundation {
 					ps.setString(i++, summaryDTO.acceptID()); // 受注番号
 					ps.setString(i++, summaryDTO.productionProjectName()); // 案件名
 					ps.setInt(i++, quotationID); // 見積親ID
-					ps.setInt(i++, summaryDTO.quotationAccountID()); // 得意先CD
+					ps.setInt(i++, summaryDTO.productionAccountID()); // 得意先CD
 					// 機械番号サブクエリ-----------------------------------
 					ps.setBoolean(i++, summaryDTO.isNew()); // 新機FLG
-					ps.setInt(i++, summaryDTO.quotationAccountID()); // 得意先CD
+					ps.setInt(i++, summaryDTO.productionAccountID()); // 得意先CD
 					// -----------------------------------------------------
 					ps.setString(i++, summaryDTO.placeName()); // 納入先名
 					ps.setDate(i++, summaryDTO.deadlineDate()); // 納期
@@ -222,11 +222,11 @@ public class ProductionRegister extends ServiceFoundation {
 						if (tag != 0) {
 							int i = 1;
 							int j = 2;
-							ps.setInt(i++, k); // ID
 							ps.setInt(i++, productionID); // 製作親ID
+							ps.setInt(i++, k); // ID
 							ps.setInt(i++, tag); // 表示CD
-							ps.setString(i++, (String) record.get(j++));
-							// 名称 ps.setBoolean(i++, (Boolean) record.get(j++)); // 各FLG
+							ps.setString(i++, (String) record.get(j++)); // 名称
+							ps.setBoolean(i++, (Boolean) record.get(j++)); // 各FLG
 							ps.setInt(i++, (Integer) record.get(j++)); // 数量
 							ps.setInt(i++, (Integer) record.get(j++)); // 数量単位CD
 							ps.setInt(i++, (Integer) record.get(j++)); // 単価

@@ -242,8 +242,8 @@ public class OrderRegister extends ServiceFoundation {
 					if (tag != 0) {
 						int i = 1;
 						int j = 0;
-						ps.setInt(i++, k); // ID
 						ps.setInt(i++, orderID); // 親ID
+						ps.setInt(i++, k); // ID
 						ps.setInt(i++, (Integer) record.get(j++)); // 表示CD
 						ps.setInt(i++, (record.get(j) == null) ? 0 : (Integer) record.get(j));
 						j++; // 大分類CD

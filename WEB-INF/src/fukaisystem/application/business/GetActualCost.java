@@ -32,7 +32,7 @@ public class GetActualCost extends ServiceFoundation {
 		Vector<String> titles = new Vector<String>();
 		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 		List<Integer> params = cast(response, o, List.class);
-
+		productionID = params.get(0);
 		if (params.size() > 1) { // 中分類コードが指定されている
 			coarseCD = params.get(1);
 			if (params.size() == 3) { // 小分類コードも指定されている＝小分類を取得
@@ -76,9 +76,15 @@ public class GetActualCost extends ServiceFoundation {
 						+ " order by 小分類CD";
 				}
 				try (PreparedStatement ps = c.prepareStatement(query);) {
-					ps.setInt(1, productionID);
-					ps.setInt(2, coarseCD);
-					ps.setInt(3, middleCD);
+					int i = 1;
+					ps.setInt(i++, productionID);
+					ps.setInt(i++, coarseCD);
+					ps.setInt(i++, middleCD);
+					if (coarseCD < 101) {
+						ps.setInt(i++, productionID);
+						ps.setInt(i++, coarseCD);
+						ps.setInt(i++, middleCD);
+					}
 					try (ResultSet rs = ps.executeQuery();) {
 						while (rs.next()) {
 							Vector<Object> record = new Vector<Object>();
@@ -148,8 +154,13 @@ public class GetActualCost extends ServiceFoundation {
 						+ " order by 中分類CD";
 				}
 				try (PreparedStatement ps = c.prepareStatement(query);) {
-					ps.setInt(1, productionID);
-					ps.setInt(2, coarseCD);
+					int i = 1;
+					ps.setInt(i++, productionID);
+					ps.setInt(i++, coarseCD);
+					if (coarseCD < 101) {
+						ps.setInt(i++, productionID);
+						ps.setInt(i++, coarseCD);
+					}
 					try (ResultSet rs = ps.executeQuery();) {
 						while (rs.next()) {
 							Vector<Object> record = new Vector<Object>();

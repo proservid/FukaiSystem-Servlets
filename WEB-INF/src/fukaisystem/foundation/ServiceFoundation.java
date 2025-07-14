@@ -20,7 +20,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 	protected static final Logger logger = Logger.getLogger("A1");
 	protected static final int isolationLevel = Connection.TRANSACTION_READ_COMMITTED;
 	private StringBuilder err;
-	private boolean isSent = false;
+	private boolean isSent;
 
 	/**
 	 * すべてのサーブレットで共通となる処理の骨格
@@ -28,6 +28,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 	@Override
 	public void service(ServletRequest request, ServletResponse response) {
 		err = new StringBuilder();
+		isSent = false;
 		try {
 
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());

@@ -20,7 +20,7 @@ public class GetOrderSummary extends ServiceFoundation {
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 		OrderDocumentDTO dto = null;
-		int id = cast(response, o, int.class);
+		int id = cast(response, o, Integer.class);
 
 		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 

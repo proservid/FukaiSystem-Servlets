@@ -129,8 +129,8 @@ public class SalesRegister extends ServiceFoundation {
 				if (tag != 0) {
 					int i = 1;
 					int j = 1;
-					ps.setInt(i++, k); // ID
 					ps.setInt(i++, salesID); // 売上親ID
+					ps.setInt(i++, k); // ID
 					ps.setInt(i++, productionID); // 製作親ID
 					ps.setInt(i++, (Integer) record.get(j++)); // 製作子ID
 					ps.setInt(i++, tag);

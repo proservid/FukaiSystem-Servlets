@@ -23,7 +23,7 @@ public class GetDispatchingSummary extends ServiceFoundation {
 
 		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 
-		int id = cast(response, o, int.class);
+		int id = cast(response, o, Integer.class);
 
 		try (
 			PreparedStatement ps = c.prepareStatement(

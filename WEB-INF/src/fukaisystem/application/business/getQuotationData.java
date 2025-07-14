@@ -15,7 +15,7 @@ import fukaisystem.foundation.ServiceFoundation;
 /**
  * 製作伝票にコピーするための見積書データを取得する
  */
-public class getQuotationData extends ServiceFoundation {
+public class GetQuotationData extends ServiceFoundation {
 
 	@Override
 	@SuppressWarnings("unchecked")

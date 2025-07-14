@@ -33,6 +33,7 @@ public class GetExpectedCost extends ServiceFoundation {
 		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
 
 		List<Integer> params = cast(response, o, List.class);
+		productionID = params.get(0);
 		if (params.size() > 1) { // 中分類コードが指定されている
 			coarseCD = params.get(1);
 			if (params.size() == 3) { // 小分類コードも指定されている＝小分類を取得

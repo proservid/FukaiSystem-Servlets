@@ -21,7 +21,7 @@ public class GetSelectedSalesSlip extends ServiceFoundation {
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 		SalesDTO dto = null;
 
-		int salesID = cast(response, o, int.class);
+		int salesID = cast(response, o, Integer.class);
 		int tax = 0, discount = 0;
 
 		Vector<Vector<Object>> deliveryData = new Vector<Vector<Object>>();
