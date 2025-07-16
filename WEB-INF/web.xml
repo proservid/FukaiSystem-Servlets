@@ -99,7 +99,7 @@
 
 	<servlet>
 		<servlet-name> existsSlip </servlet-name>
-		<servlet-class> fukaisystem.print.ExistsSlip </servlet-class>
+		<servlet-class> fukaisystem.print.slip.ExistsSlip </servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name> existsSlip </servlet-name>
@@ -144,12 +144,21 @@
 
 	<!-- fukaisystem.print.table -->
 	<servlet>
-		<servlet-name> getNames </servlet-name>
+		<servlet-name> getTableNames </servlet-name>
 		<servlet-class> fukaisystem.print.table.GetNames </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> getNames </servlet-name>
-		<url-pattern> /getNames </url-pattern>
+		<servlet-name> getTableNames </servlet-name>
+		<url-pattern> /getTableNames </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> getColumnNames </servlet-name>
+		<servlet-class> fukaisystem.print.table.GetColumnNames </servlet-class>
+	</servlet>
+		<servlet-mapping>
+		<servlet-name> getColumnNames </servlet-name>
+		<url-pattern> /getColumnNames </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
