@@ -19,31 +19,22 @@ public class GetDestination extends ServiceFoundation {
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
-		Integer code = cast(response, o, Integer.class); // 正=選択用、負=編集用
-		Vector<String> destinationsForList = new Vector<>(); // 選択用
-		Vector<Vector<Object>> destinationsForTable = new Vector<>(); // 編集テーブル用
-		destinationsForList.add("");
+		Integer code = cast(response, o, Integer.class);
+		Vector<String> destinations = new Vector<>();
+		destinations.add("");
 
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"SELECT 納入先ID,納入先名 FROM M_納入先 WHERE 得意先CD=? ORDER BY 納入先ID"
+				"SELECT 納入先名 FROM M_納入先 WHERE 得意先CD=? ORDER BY 納入先ID"
 			);
 		) {
-			ps.setInt(1, Math.abs(code));
+			ps.setInt(1, code);
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
-					if (code > 0) {
-						destinationsForList.add(rs.getString("納入先名"));
-						continue;
-					}
-					Vector<Object> v = new Vector<>();
-					v.add(rs.getInt("納入先ID"));
-					v.add(rs.getString("納入先名"));
-					destinationsForTable.add(v);
+					destinations.add(rs.getString("納入先名"));
 				}
 			}
 		}
-		return code > 0 ? destinationsForList : destinationsForTable;
-
+		return destinations;
 	}
 }

@@ -331,6 +331,15 @@
 	</servlet-mapping>
 
 	<servlet>
+		<servlet-name> destinationRegister </servlet-name>
+		<servlet-class> fukaisystem.application.business.DestinationRegister </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> destinationRegister </servlet-name>
+		<url-pattern> /destinationRegister </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name> detailSearch </servlet-name>
 		<servlet-class> fukaisystem.application.business.DetailSearch </servlet-class>
 	</servlet>
