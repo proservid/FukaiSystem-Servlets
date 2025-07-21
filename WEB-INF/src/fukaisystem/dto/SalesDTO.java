@@ -14,10 +14,11 @@ import java.util.Vector;
  * @author kameura
  */
 public class SalesDTO implements Serializable {
-	Date date;
-	int shippingID, productID, account, state, way, tax, discount, type;
-	String note;
-	Vector<Vector<Object>> child;
+
+	private Date date;
+	private int shippingID, productID, account, state, way, tax, discount, type;
+	private String note;
+	private Vector<Vector<Object>> child;
 
 	public SalesDTO(
 		int shippingID,

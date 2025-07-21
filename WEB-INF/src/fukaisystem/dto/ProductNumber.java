@@ -12,9 +12,10 @@ import java.io.Serializable;
  * @author kameura
  */
 public class ProductNumber implements Serializable {
-	int period;
-	int number;
-	String branch;
+
+	private int period;
+	private int number;
+	private String branch;
 
 	public ProductNumber(int period, int number, String branch) {
 		this.period = period;

@@ -13,8 +13,9 @@ import java.util.Vector;
  * @author kameura
  */
 public class DestinationDTO implements Serializable {
-	int accountCD;
-	Vector<Vector<Object>> destinations;
+
+	private int accountCD;
+	private Vector<Vector<Object>> destinations;
 
 	public DestinationDTO(int accountCD, Vector<Vector<Object>> destinations) {
 		this.accountCD = accountCD;

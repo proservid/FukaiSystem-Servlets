@@ -10,8 +10,9 @@ package fukaisystem.dto;
  * @author kameura
  */
 public class Contents {
-	String[] slipNames, keys, signs, values;
-	String order;
+
+	private String[] slipNames, keys, signs, values;
+	private String order;
 
 	public Contents(String[] slipNames, String[] keys, String[] signs, String[] values, String order) {
 		this.slipNames = slipNames;

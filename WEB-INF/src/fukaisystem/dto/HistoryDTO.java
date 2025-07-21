@@ -12,9 +12,10 @@ import java.io.Serializable;
  * @author kameura
  */
 public class HistoryDTO implements Serializable {
-	int accountCode, coarseCategory, middleCategory, fineCategory, productionNum1, productionNum2;
-	String productionNum3, article, orderY, orderM, orderD, dueY, dueM, dueD, receiptY, receiptM, receiptD;
-	boolean isStock, isAndSearch;
+
+	private int accountCode, coarseCategory, middleCategory, fineCategory, productionNum1, productionNum2;
+	private String productionNum3, article, orderY, orderM, orderD, dueY, dueM, dueD, receiptY, receiptM, receiptD;
+	private boolean isStock, isAndSearch;
 
 	public HistoryDTO(
 		int accountCode,

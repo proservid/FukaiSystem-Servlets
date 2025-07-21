@@ -17,23 +17,23 @@ import java.util.Vector;
  */
 public class ProjectSummaryDTO implements Serializable {
 
-	String quotationAccountName, productionAccountName, quotationProjectName, productionProjectName, placeName,
+	private String quotationAccountName, productionAccountName, quotationProjectName, productionProjectName, placeName,
 		quotationNum3, due, place, terms, validity, quotationNote,
 		acceptID, productionNum3, productionNote,
 		salesNote, birthNum3, announcement;
-	int quotationAccountID, productionAccountID, projectCode, buyerCode,
+	private int quotationAccountID, productionAccountID, projectCode, buyerCode,
 		quotationID, quotationNum1, quotationNum2, contactCode, inquiryCode,
 		submitCD, quotationCurrencyCD, quotationAmount,
 		productionID, productionNum1, productionNum2, productionCurrencyCD, productionAmount,
 		deliveryStateCode, deliveryCode, birthNum1, birthNum2, salesID, dispatchingAccountID;
-	Date inquiryDate, quotationDate, submitDate,
+	private Date inquiryDate, quotationDate, submitDate,
 		acceptDate, deadlineDate, productionSlipPublishDate,
 		shippingDate, inspectionDate, salesSlipPublishDate;
-	boolean isNew, isAdd, isRelease, isOrder;
-	List<String> quotationNumbers;
-	List<Integer> parents;
-	Vector<Vector<Object>> quotationVector, productionVector, dispatchingVector, salesSlips;
-	Map<Integer, Vector<Vector<Object>>> quotationBasisDataMap;
+	private boolean isNew, isAdd, isRelease, isOrder;
+	private List<String> quotationNumbers;
+	private List<Integer> parents;
+	private Vector<Vector<Object>> quotationVector, productionVector, dispatchingVector, salesSlips;
+	private Map<Integer, Vector<Vector<Object>>> quotationBasisDataMap;
 
 	public ProjectSummaryDTO(
 		// 共通

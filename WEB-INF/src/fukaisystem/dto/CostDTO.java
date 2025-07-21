@@ -13,10 +13,11 @@ import java.util.Vector;
  * @author kameura
  */
 public class CostDTO implements Serializable {
-	String caption;
-	int total;
-	Vector<String> titles;
-	Vector<Vector<Object>> dataVector;
+
+	private String caption;
+	private int total;
+	private Vector<String> titles;
+	private Vector<Vector<Object>> dataVector;
 
 	public CostDTO(String caption, int total, Vector<String> titles, Vector<Vector<Object>> dataVector) {
 		this.caption = caption;

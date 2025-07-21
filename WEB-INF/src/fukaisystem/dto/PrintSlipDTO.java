@@ -13,9 +13,10 @@ import java.util.List;
  * @author kameura
  */
 public class PrintSlipDTO implements Serializable {
-	int id;
-	String titleTableName, dataTableName;
-	List<List<String>> titleTable, dataTable;
+
+	private int id;
+	private String titleTableName, dataTableName;
+	private List<List<String>> titleTable, dataTable;
 
 	public PrintSlipDTO(int id, String titleTableName, String dataTableName) {
 		this.id = id;

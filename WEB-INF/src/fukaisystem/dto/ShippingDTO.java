@@ -5,17 +5,18 @@ import java.sql.Date;
 import java.util.Vector;
 
 public class ShippingDTO implements Serializable {
-	int shippingID;
-	int accountCode;
-	String distinationName;
-	int shippingNum1;
-	int shippingNum2;
-	Date publishDate;
-	int shippingMonth;
-	int shippingDay;
-	int shippingWay;
-	int productionID;
-	Vector<Vector<Object>> vector;
+
+	private int shippingID;
+	private int accountCode;
+	private String distinationName;
+	private int shippingNum1;
+	private int shippingNum2;
+	private Date publishDate;
+	private int shippingMonth;
+	private int shippingDay;
+	private int shippingWay;
+	private int productionID;
+	private Vector<Vector<Object>> vector;
 
 	public ShippingDTO(
 		int shippingID,
