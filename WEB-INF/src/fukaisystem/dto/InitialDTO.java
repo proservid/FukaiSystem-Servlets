@@ -16,29 +16,28 @@ import java.util.Vector;
  */
 public class InitialDTO implements Serializable {
 
-	List<String> slipList;
-	Map<Integer, String> typeMap;
-	Map<Integer, String> routeMap;
-	Vector<String> dueVector;
-	Vector<String> placeVector;
-	Vector<String> termVector;
-	Vector<String> validityVector;
-	Map<Integer, String> submitMap;
-	Map<Integer, String> currencyMap;
-	Map<Integer, String> stateMap;
-	Map<Integer, String> wayMap;
-	Map<Integer, String> partialMap;
-	Map<Integer, String> indicationMap;
-	Map<Integer, String> unitMap;
-	Map<Integer, String> supplierMap;
-	Map<Integer, Integer> processingCostMap;
-	Map<Integer, String> materialCostMap;
-	Map<Integer, String> coarseCategoryMap;
-	Map<List<Integer>, Map<Integer, String>> middleCategoryMap;
-	Map<List<Integer>, Map<Integer, String>> fineCategoryMap;
-	Map<Integer, Map<Integer, Map<Integer, Integer>>> costMap;
-	// 比重
-	Map<Integer, Double> sgMap;
+	private List<String> slipList;
+	private Map<Integer, String> typeMap;
+	private Map<Integer, String> routeMap;
+	private Vector<String> dueVector;
+	private Vector<String> placeVector;
+	private Vector<String> termVector;
+	private Vector<String> validityVector;
+	private Map<Integer, String> submitMap;
+	private Map<Integer, String> currencyMap;
+	private Map<Integer, String> stateMap;
+	private Map<Integer, String> wayMap;
+	private Map<Integer, String> partialMap;
+	private Map<Integer, String> indicationMap;
+	private Map<Integer, String> unitMap;
+	private Map<Integer, String> supplierMap;
+	private Map<Integer, Integer> processingCostMap;
+	private Map<Integer, String> materialCostMap;
+	private Map<Integer, String> coarseCategoryMap;
+	private Map<List<Integer>, Map<Integer, String>> middleCategoryMap;
+	private Map<List<Integer>, Map<Integer, String>> fineCategoryMap;
+	private Map<Integer, Map<Integer, Map<Integer, Integer>>> costMap;
+	private Map<Integer, Double> sgMap; // 比重
 
 	public InitialDTO(
 		List<String> slipList,
@@ -193,4 +192,3 @@ public class InitialDTO implements Serializable {
 		this.validityVector = validityVector;
 	}
 }
- 

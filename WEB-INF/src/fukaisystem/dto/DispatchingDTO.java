@@ -14,11 +14,12 @@ import java.util.Vector;
  * @author kameura
  */
 public class DispatchingDTO implements Serializable {
-	int dispatchingID, orderNum1, dispatchNum1, orderNum2, dispatchNum2, coarseCategory, middleCategory, fineCategory;
-	String orderNum3, dispatchNum3, year, month, day, name, use, remark;
-	Vector<Vector<Object>> vector;
-	Date date;
-	boolean isAndSearch;
+
+	private int dispatchingID, orderNum1, dispatchNum1, orderNum2, dispatchNum2, coarseCategory, middleCategory, fineCategory;
+	private String orderNum3, dispatchNum3, year, month, day, name, use, remark;
+	private Vector<Vector<Object>> vector;
+	private Date date;
+	private boolean isAndSearch;
 
 	public DispatchingDTO(
 		int dispatchingID,

@@ -12,6 +12,7 @@ import java.io.Serializable;
  * @author kameura
  */
 public class CandidateInputDTO implements Serializable {
+
 	private String input;
 	private int key;
 	private boolean isValidOnly;

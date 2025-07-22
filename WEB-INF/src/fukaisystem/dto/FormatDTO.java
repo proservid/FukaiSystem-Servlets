@@ -15,10 +15,10 @@ import com.proservid.print.slip.Slip;
  */
 public class FormatDTO implements Serializable {
 
-	boolean isOverwrite;
-	String name;
-	String newName;
-	Slip format;
+	private boolean isOverwrite;
+	private String name;
+	private String newName;
+	private Slip format;
 
 	/**
 	 * 保存用

@@ -13,12 +13,12 @@ import java.io.Serializable;
  */
 public class OrderSearchDTO implements Serializable {
 
-	String orderNum3, orderY, orderM, orderD,
+	private String orderNum3, orderY, orderM, orderD,
 		dueY, dueM, dueD,
 		deliveryY, deliveryM, deliveryD,
 		acceptY, acceptM, acceptD;
-	int supplierID, orderNum1, orderNum2, slipNum, deliveryNum;
-	boolean isAndSearch;
+	private int supplierID, orderNum1, orderNum2, slipNum, deliveryNum;
+	private boolean isAndSearch;
 
 	public OrderSearchDTO(
 		String orderNum3,

@@ -123,7 +123,7 @@ public class DispatchingRegister extends ServiceFoundation {
 						ps.setInt(i++, (record.get(j) == null) ? 0 : (Integer) record.get(j));
 						j++; // 小分類CD
 						ps.setString(i++, (String) record.get(j++)); // 名称
-						ps.setBoolean(i++, (Boolean) record.get(j++)); // 各Flogger
+						ps.setBoolean(i++, (Boolean) record.get(j++)); // 各Flg
 						ps.setDouble(i++, (Double) record.get(j++)); // 数量
 						ps.setInt(i++, (Integer) record.get(j++)); // 数量単位CD
 						ps.setDouble(i++, (Double) record.get(j++)); // 重量長さ（単位を要検討のこと）

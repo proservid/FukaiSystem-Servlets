@@ -331,6 +331,15 @@
 	</servlet-mapping>
 
 	<servlet>
+		<servlet-name> destinationRegister </servlet-name>
+		<servlet-class> fukaisystem.application.business.DestinationRegister </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> destinationRegister </servlet-name>
+		<url-pattern> /destinationRegister </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name> detailSearch </servlet-name>
 		<servlet-class> fukaisystem.application.business.DetailSearch </servlet-class>
 	</servlet>
@@ -358,6 +367,15 @@
 	</servlet-mapping>
 
 	<servlet>
+		<servlet-name> existsShippingNumber </servlet-name>
+		<servlet-class> fukaisystem.application.business.ExistsShippingNumber </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> existsShippingNumber </servlet-name>
+		<url-pattern> /existsShippingNumber </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name> getActualCost </servlet-name>
 		<servlet-class> fukaisystem.application.business.GetActualCost </servlet-class>
 	</servlet>
@@ -382,6 +400,15 @@
 	<servlet-mapping>
 		<servlet-name> getChart </servlet-name>
 		<url-pattern> /getChart </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> getDestination </servlet-name>
+		<servlet-class> fukaisystem.application.business.GetDestination </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getDestination </servlet-name>
+		<url-pattern> /getDestination </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -445,6 +472,24 @@
 	<servlet-mapping>
 		<servlet-name> getSelectedSales </servlet-name>
 		<url-pattern> /getSelectedSales </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> getSelectedShipping </servlet-name>
+		<servlet-class> fukaisystem.application.business.GetSelectedShipping </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getSelectedShipping </servlet-name>
+		<url-pattern> /getSelectedShipping </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> getShippingNumbers </servlet-name>
+		<servlet-class> fukaisystem.application.business.GetShippingNumbers </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getShippingNumbers </servlet-name>
+		<url-pattern> /getShippingNumbers </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -562,6 +607,15 @@
 	<servlet-mapping>
 		<servlet-name> setLabel </servlet-name>
 		<url-pattern> /setLabel </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> shippingRegister </servlet-name>
+		<servlet-class> fukaisystem.application.business.ShippingRegister </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> shippingRegister </servlet-name>
+		<url-pattern> /shippingRegister </url-pattern>
 	</servlet-mapping>
 
 	<servlet>

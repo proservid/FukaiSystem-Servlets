@@ -14,10 +14,11 @@ import java.util.Vector;
  * @author kameura
  */
 public class OrderDocumentDTO implements Serializable {
-	Vector<Vector<Object>> dataVector;
-	String accountName, orderNum3, note1, note2;
-	int accountID, orderNum1, orderNum2, orderSlipNum, orderID;
-	Date publishDate, dueDate;
+
+	private Vector<Vector<Object>> dataVector;
+	private String accountName, orderNum3, note1, note2;
+	private int accountID, orderNum1, orderNum2, orderSlipNum, orderID;
+	private Date publishDate, dueDate;
 
 	public OrderDocumentDTO(
 		Vector<Vector<Object>> dataVector,

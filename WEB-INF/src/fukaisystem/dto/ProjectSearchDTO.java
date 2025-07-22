@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public class ProjectSearchDTO implements Serializable {
 
-	String accountName, projectName, range,
+	private String accountName, projectName, range,
 		quotationNum3, birthNum3, productionNum3, acceptID,
 		submitY, submitM, submitD,
 		acceptY, acceptM, acceptD,
@@ -22,7 +22,7 @@ public class ProjectSearchDTO implements Serializable {
 		salesY, salesM, salesD,
 		shippingY, shippingM, shippingD,
 		inspectionY, inspectionM, inspectionD;
-	int accountID, projectCode,
+	private int accountID, projectCode,
 		quotationNum1, quotationNum2,
 		birthNum1, birthNum2,
 		productionNum1, productionNum2,
@@ -30,7 +30,7 @@ public class ProjectSearchDTO implements Serializable {
 		price,
 		deliveryCode,
 		buyer;
-	boolean isAnd;
+	private boolean isAnd;
 
 	public ProjectSearchDTO(
 		int accountID,

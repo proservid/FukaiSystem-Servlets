@@ -14,9 +14,10 @@ import java.util.Map;
  * @author kameura
  */
 public class GetTableDTO implements Serializable {
-	Map<String, List<String>> tables;
-	Map<String, Map<String, Object>> conditions;
-	String order;
+
+	private Map<String, List<String>> tables;
+	private Map<String, Map<String, Object>> conditions;
+	private String order;
 
 	public GetTableDTO(
 		Map<String, List<String>> tables,

@@ -14,10 +14,11 @@ import java.util.Map;
  * @author kameura
  */
 public class ChartDTO implements Serializable {
-	String name, display;
-	Map<Integer, String> contacts;
-	Map<Integer, String> models;
-	Map<Integer, ProductNumber> numbers;
+
+	private String name, display;
+	private Map<Integer, String> contacts;
+	private Map<Integer, String> models;
+	private Map<Integer, ProductNumber> numbers;
 
 	public ChartDTO(
 		String name,

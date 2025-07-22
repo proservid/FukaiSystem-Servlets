@@ -12,7 +12,7 @@ import java.io.Serializable;
  * @author kameura
  */
 public class IDDTO implements Serializable {
-	private static final long serialVersionUID = -8485164825537144052L;
+
 	private final int quotationID;
 	private final int productionID;
 	private final int salesID;
