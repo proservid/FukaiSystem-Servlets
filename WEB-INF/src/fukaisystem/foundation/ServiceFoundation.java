@@ -77,7 +77,13 @@ public abstract class ServiceFoundation extends GenericServlet {
 		c.setTransactionIsolation(isolationLevel);
 		c.setAutoCommit(false); // begin();
 		try {
-			return transaction(c, response, obj);
+			Object result = transaction(c, response, obj);
+			if (result == null) {
+				c.rollback();
+				return null;
+			}
+			c.commit();
+			return result;
 		} catch (SQLException e) {
 			c.rollback();
 			throw e; // core で処理

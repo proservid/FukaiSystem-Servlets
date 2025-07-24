@@ -310,7 +310,6 @@ public class OrderRegister extends ServiceFoundation {
 				ps.executeUpdate();
 			}
 		}
-		c.commit();
 		return orderID;
 	}
 

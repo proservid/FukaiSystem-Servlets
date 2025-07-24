@@ -153,7 +153,6 @@ public class SalesRegister extends ServiceFoundation {
 			int[] updateCounts = ps.executeBatch();
 			logger.info("T_売上_子は" + updateCounts.length + "件処理されました。");
 		}
-		c.commit();
 		return salesID;
 	}
 }

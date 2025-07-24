@@ -276,7 +276,6 @@ public class ProductionRegister extends ServiceFoundation {
 				}
 			}
 		}
-		c.commit();
 		return productionID;
 	}
 }

@@ -24,7 +24,6 @@ public class DestinationRegister extends ServiceFoundation {
 		Vector<Vector<Object>> destinations = dto.getDestinations();
 
 		if (accountCD < 1 || destinations == null || destinations.size() < 1) {
-			c.rollback();
 			return null;
 		}
 		try (
@@ -53,7 +52,6 @@ public class DestinationRegister extends ServiceFoundation {
 			}
 			ps.executeBatch();
 		}
-		c.commit();
-		return null;
+		return true;
 	}
 }

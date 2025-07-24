@@ -141,7 +141,6 @@ public class DispatchingRegister extends ServiceFoundation {
 				logger.info("T_出庫_子は" + updateCounts.length + "件処理されました。");
 			}
 		}
-		c.commit();
 		return dispatchingID;
 	}
 

@@ -42,7 +42,6 @@ public class ShippingRegister extends ServiceFoundation {
 				ps.executeUpdate();
 				shippingID = 0;
 			}
-			c.commit();
 			return 0;
 		}
 		if (period < 1) {
@@ -194,7 +193,6 @@ public class ShippingRegister extends ServiceFoundation {
 			int[] updateCounts = ps.executeBatch();
 			logger.info("T_出荷_子は" + updateCounts.length + "件処理されました。");
 		}
-		c.commit();
 		return shippingID;
 	}
 

@@ -60,7 +60,6 @@ public class QuotationRegister extends ServiceFoundation {
 				ps.executeUpdate();
 				quotationID = 0;
 			}
-			c.commit();
 			return quotationID;
 		}
 
@@ -488,7 +487,6 @@ public class QuotationRegister extends ServiceFoundation {
 				logger.info("T_見積_材料は" + updateCounts2.length + "件処理されました。");
 			}
 		}
-		c.commit();
 		return quotationID;
 	}
 }
