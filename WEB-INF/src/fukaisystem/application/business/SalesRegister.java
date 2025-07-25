@@ -132,17 +132,18 @@ public class SalesRegister extends ServiceFoundation {
 					ps.setInt(i++, salesID); // 売上親ID
 					ps.setInt(i++, k); // ID
 					ps.setInt(i++, productionID); // 製作親ID
-					ps.setInt(i++, (Integer) record.get(j++)); // 製作子ID
+					ps.setInt(i++, (Integer) record.get(j++)); // 製作子ID=1
 					ps.setInt(i++, tag);
-					j++; // 表示CD
-					ps.setString(i++, (String) record.get(j += 3)); // 出荷伝票番号
-					ps.setString(i++, (String) record.get(j++)); // 品名
-					ps.setBoolean(i++, (Boolean) record.get(j++)); // 各
-					ps.setInt(i++, (Integer) record.get(j++)); // 数量
-					ps.setInt(i++, (Integer) record.get(j++)); // 単位
-					ps.setInt(i++, (Integer) record.get(j++)); // 単価
-					ps.setInt(i++, (Integer) record.get(j++)); // 金額
-					ps.setString(i++, (String) record.get(j)); // 備考
+					j++; // 表示CD=2
+					ps.setString(i++, (String) record.get(j)); // 出荷伝票番号=3
+					j += 3;// 出荷伝票番号=3
+					ps.setString(i++, (String) record.get(j++)); // 品名=6
+					ps.setBoolean(i++, (Boolean) record.get(j++)); // 各=7
+					ps.setInt(i++, (Integer) record.get(j++)); // 数量=8
+					ps.setInt(i++, (Integer) record.get(j++)); // 単位=9
+					ps.setInt(i++, (Integer) record.get(j++)); // 単価=10
+					ps.setInt(i++, (Integer) record.get(j++)); // 金額=11
+					ps.setString(i++, (String) record.get(j)); // 備考=12
 					// ps.setDate(i++, salesDTO.getDate()); j = 1; //売上年月日
 					// ps.setInt(i++, (Integer)record.get(j)); j = 0; //製作子ID
 					// ps.setInt(i, (Integer)record.get(j)); //製作親ID

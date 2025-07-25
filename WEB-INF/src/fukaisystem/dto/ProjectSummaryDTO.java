@@ -32,7 +32,9 @@ public class ProjectSummaryDTO implements Serializable {
 	private boolean isNew, isAdd, isRelease, isOrder;
 	private List<String> quotationNumbers;
 	private List<Integer> parents;
-	private Vector<Vector<Object>> quotationVector, productionVector, dispatchingVector, salesSlips;
+	@SuppressWarnings("unused")
+	private Vector<Vector<Object>> dispatchingVector;
+	private Vector<Vector<Object>> quotationVector, productionVector, salesSlips;
 	private Map<Integer, Vector<Vector<Object>>> quotationBasisDataMap;
 
 	public ProjectSummaryDTO(
