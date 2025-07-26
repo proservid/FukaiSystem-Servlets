@@ -348,7 +348,7 @@ public class QuotationRegister extends ServiceFoundation {
 				// -----------------------------------------------------
 				ps.setString(i++, summaryDTO.quotationProjectName()); // 案件名
 				ps.setString(i++, summaryDTO.announcement()); // 案内文
-				ps.setInt(i++, summaryDTO.projectCode()); // 得意先CD
+				ps.setInt(i++, summaryDTO.quotationAccountID()); // 得意先CD
 				ps.setString(i++, summaryDTO.quotationAccountName()); // 得意先表示名
 				// ps.setInt(i++, summaryDTO.contactCode()); //個人CD
 				// ps.setInt(i++, summaryDTO.inquiryCode()); //依頼手段CD
