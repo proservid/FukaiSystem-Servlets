@@ -64,7 +64,7 @@ public class Init extends ServiceFoundation {
 			}
 		}
 
-		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_納期 WHERE CD<25");) {
+		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_納期 WHERE CD<100");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
 					dueVector.add(rs.getString("納期"));
