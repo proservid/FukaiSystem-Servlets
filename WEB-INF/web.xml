@@ -178,7 +178,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name> corpRegister </servlet-name>
-		<url-pattern> /corpRegister </url-pattern>
+		<url-pattern> /corpRegistration </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -260,7 +260,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name> indRegister </servlet-name>
-		<url-pattern> /indRegister </url-pattern>
+		<url-pattern> /indRegistration </url-pattern>
 	</servlet-mapping>
 
 
@@ -680,7 +680,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name> scheduleRegister </servlet-name>
-		<url-pattern> /scheduleRegister </url-pattern>
+		<url-pattern> /scheduleRegistration </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -718,7 +718,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name> inputRegister </servlet-name>
-		<url-pattern> /inputRegister </url-pattern>
+		<url-pattern> /inputRegistration </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
