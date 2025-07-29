@@ -26,7 +26,7 @@ public class UpdateCandidate extends ServiceFoundation {
 		Vector<String> terms = new Vector<String>();
 		Vector<String> validities = new Vector<String>();
 
-		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_納期");) {
+		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_納期 WHERE CD<100");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
 					dues.add(rs.getString("納期"));
