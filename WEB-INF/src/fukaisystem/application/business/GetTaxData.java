@@ -61,12 +61,12 @@ public class GetTaxData extends ServiceFoundation {
 	) throws SQLException, ParseException {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy/MM/dd");
 		Calendar cal = Calendar.getInstance();
-		cal.setTimeInMillis(format.parse(conditions.get("<").get("売上日").toString()).getTime());
-		Date current = new Date(cal.getTimeInMillis());
+		cal.setTimeInMillis(format.parse(conditions.get(">=").get("売上日").toString()).getTime());
+		Date current = new Date(cal.getTimeInMillis()); // 当月1日
 		cal.add(Calendar.MONTH, 1);
-		Date next = new Date(cal.getTimeInMillis());
+		Date next = new Date(cal.getTimeInMillis()); // 翌月1日
 		cal.add(Calendar.DATE, -1);
-		Date last = new Date(cal.getTimeInMillis());
+		Date last = new Date(cal.getTimeInMillis()); // 当月末日
 
 		StringBuilder query = new StringBuilder(
 			"SELECT "
