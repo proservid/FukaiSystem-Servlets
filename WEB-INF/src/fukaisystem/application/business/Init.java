@@ -85,7 +85,7 @@ public class Init extends ServiceFoundation {
 				}
 			}
 		}
-		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_有効期間");) {
+		try (PreparedStatement ps = c.prepareStatement("SELECT * FROM M_有効期間 WHERE CD<18");) {
 			try (ResultSet rs = ps.executeQuery();) {
 				while (rs.next()) {
 					validityVector.add(rs.getString("有効期間"));
