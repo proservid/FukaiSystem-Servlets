@@ -331,12 +331,12 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name> destinationRegister </servlet-name>
-		<servlet-class> fukaisystem.application.business.DestinationRegister </servlet-class>
+		<servlet-name> accountNamesRegister </servlet-name>
+		<servlet-class> fukaisystem.application.business.AccountNamesRegister </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> destinationRegister </servlet-name>
-		<url-pattern> /destinationRegister </url-pattern>
+		<servlet-name> accountNamesRegister </servlet-name>
+		<url-pattern> /accountNamesRegister </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
@@ -376,6 +376,15 @@
 	</servlet-mapping>
 
 	<servlet>
+		<servlet-name> getAccountNames </servlet-name>
+		<servlet-class> fukaisystem.application.business.GetAccountNames </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getAccountNames </servlet-name>
+		<url-pattern> /getAccountNames </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name> getActualCost </servlet-name>
 		<servlet-class> fukaisystem.application.business.GetActualCost </servlet-class>
 	</servlet>
@@ -400,15 +409,6 @@
 	<servlet-mapping>
 		<servlet-name> getChart </servlet-name>
 		<url-pattern> /getChart </url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name> getDestination </servlet-name>
-		<servlet-class> fukaisystem.application.business.GetDestination </servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name> getDestination </servlet-name>
-		<url-pattern> /getDestination </url-pattern>
 	</servlet-mapping>
 
 	<servlet>
