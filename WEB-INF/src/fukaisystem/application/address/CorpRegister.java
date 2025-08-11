@@ -87,11 +87,11 @@ public class CorpRegister extends GenericServlet {
 								+ " (仕入先CD, 得意先CD, 種別CD, 会社名, カイシャメイ,"
 								+ " 支店名, シテンメイ, 表示名, アルファベット, alpha_2, 郵便番号, 郵便枝番," // 7
 								+ " 番地, 建物等, TEL1, TEL2, TEL3, FAX1, FAX2, FAX3," // 9
-								+ " メール, URL, 備考, 有効FLG, 贈答FLG, 年賀状CD)"
+								+ " メール, URL, 備考, 登録番号, 有効FLG, 贈答FLG, 年賀状CD)"
 								+ " OUTPUT inserted.CD as newId"
 								+ " VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
 								+ " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-								+ " ?, ?, ?, ?, ?, ?)"
+								+ " ?, ?, ?, ?, ?, ?, ?)"
 						);
 						int i = 1;
 						if (corpDTO.getInt(0) == 0) {
@@ -125,6 +125,7 @@ public class CorpRegister extends GenericServlet {
 						ps.setString(i++, corpDTO.getStr(19));
 						ps.setString(i++, corpDTO.getStr(20));
 						ps.setString(i++, corpDTO.getStr(21));
+						ps.setString(i++, corpDTO.getStr(24));
 						ps.setBoolean(i++, corpDTO.getBool(0));
 						ps.setBoolean(i++, corpDTO.getBool(1));
 						// ps.setString(i, corpDTO.getStr(22));
@@ -152,7 +153,7 @@ public class CorpRegister extends GenericServlet {
 								+ " 仕入先CD=?, 得意先CD=?, 種別CD=?, 会社名=?, カイシャメイ=?,"
 								+ " 支店名=?, シテンメイ=?, 表示名=?, アルファベット=?, alpha_2=?, 郵便番号=?, 郵便枝番=?," // 7
 								+ " 番地=?, 建物等=?, TEL1=?, TEL2=?, TEL3=?, FAX1=?, FAX2=?, FAX3=?," // 9
-								+ " メール=?, URL=?, 備考=?, 有効FLG=?, 贈答FLG=?, 年賀状CD=?" // 6
+								+ " メール=?, URL=?, 備考=?, 登録番号=?, 有効FLG=?, 贈答FLG=?, 年賀状CD=?" // 6
 								+ " WHERE CD=?"
 						);
 						int i = 1;
@@ -187,6 +188,7 @@ public class CorpRegister extends GenericServlet {
 						ps.setString(i++, corpDTO.getStr(19));
 						ps.setString(i++, corpDTO.getStr(20));
 						ps.setString(i++, corpDTO.getStr(21));
+						ps.setString(i++, corpDTO.getStr(24));
 						ps.setBoolean(i++, corpDTO.getBool(0));
 						ps.setBoolean(i++, corpDTO.getBool(1));
 						ps.setInt(i++, corpDTO.getInt(3));

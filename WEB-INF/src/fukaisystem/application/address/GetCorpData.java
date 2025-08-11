@@ -61,9 +61,9 @@ public class GetCorpData extends GenericServlet {
 				ps = c.prepareStatement(
 					"select "
 						+ "会社名, カイシャメイ, 支店名, シテンメイ, 表示名,"
-						+ "alpha_2, co.郵便番号, co.郵便枝番, 都道府県,市区町村,町域,"
+						+ "alpha_2, co.郵便番号, co.郵便枝番, p.都道府県,市区町村,町域,"
 						+ "番地,建物等,TEL1,TEL2,TEL3,FAX1,FAX2,FAX3,メール,URL,"
-						+ "備考,アルファベット,仕入先CD,得意先CD,種別CD,有効FLG,贈答FLG,年賀状CD"
+						+ "備考,アルファベット,登録番号,仕入先CD,得意先CD,種別CD,有効FLG,贈答FLG,年賀状CD"
 						+ " from M_法人 co"
 						+ " left outer join V_郵便番号 pc on replace(co.郵便番号,'-','')=pc.郵便番号 and co.郵便枝番=pc.郵便枝番"
 						+ " left outer join M_都道府県 p on pc.都道府県CD=p.CD"
@@ -81,8 +81,8 @@ public class GetCorpData extends GenericServlet {
 						rs.getString("TEL2"), rs.getString("TEL3"),
 						rs.getString("FAX1"), rs.getString("FAX2"), rs.getString("FAX3"), rs.getString("メール"),
 						rs.getString("URL"), rs.getString("備考"),
-						input, rs.getString("アルファベット"), rs.getInt("仕入先CD"), rs.getInt("得意先CD"), rs.getInt("種別CD"),
-						rs.getInt("年賀状CD"),
+						input, rs.getString("アルファベット"), rs.getString("登録番号"),
+						rs.getInt("仕入先CD"), rs.getInt("得意先CD"), rs.getInt("種別CD"), rs.getInt("年賀状CD"),
 						rs.getBoolean("有効FLG"), rs.getBoolean("贈答FLG"));
 				}
 			} catch (SQLException ex) {

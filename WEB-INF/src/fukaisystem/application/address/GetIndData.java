@@ -102,8 +102,8 @@ public class GetIndData extends GenericServlet {
 							rs.getString("cTEL2"), rs.getString("cTEL3"),
 							rs.getString("cFAX1"), rs.getString("cFAX2"), rs.getString("cFAX3"), rs.getString("cメール"),
 							rs.getString("cURL"), rs.getString("c備考"),
-							rs.getString("i法人CD"), rs.getString("cアルファベット"), rs.getInt("c仕入先CD"), rs.getInt("c得意先CD"),
-							rs.getInt("c種別CD"), rs.getInt("c年賀状CD"),
+							rs.getString("i法人CD"), rs.getString("cアルファベット"), "",
+							rs.getInt("c仕入先CD"), rs.getInt("c得意先CD"), rs.getInt("c種別CD"), rs.getInt("c年賀状CD"),
 							rs.getBoolean("c有効FLG"), rs.getBoolean("c贈答FLG")
 						);
 					}

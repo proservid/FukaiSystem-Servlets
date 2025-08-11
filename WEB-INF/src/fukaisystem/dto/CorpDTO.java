@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class CorpDTO implements Serializable {
 
 	String name, name2, branch, branch2, disp,
-			country, zip, zip2, pref, city, area, st, bldg, tel1, tel2, tel3, fax1, fax2, fax3, mail, url, rem, id, alphabet;
+			country, zip, zip2, pref, city, area, st, bldg, tel1, tel2, tel3, fax1, fax2, fax3, mail, url, rem, id, alphabet, reg;
 	int supNum, acNum, type, nenga;
 	boolean isValid, isZou;
 
@@ -22,7 +22,7 @@ public class CorpDTO implements Serializable {
 		String name, String name2, String branch, String branch2, String disp,
 		String country, String zip, String zip2, String pref, String city, String area, String st, String bldg,
 		String tel1, String tel2, String tel3, String fax1, String fax2, String fax3, String mail, String url,
-		String rem, String id, String alphabet,
+		String rem, String id, String alphabet, String reg,
 		int supNum, int acNum, int type, int nenga,
 		boolean isValid, boolean isZou) {
 		this.name = name;
@@ -43,6 +43,7 @@ public class CorpDTO implements Serializable {
 		this.rem = rem;
 		this.id = id;
 		this.alphabet = alphabet;
+		this.reg = reg;
 		this.supNum = supNum;
 		this.acNum = acNum;
 		this.type = type;
@@ -84,6 +85,7 @@ public class CorpDTO implements Serializable {
 			case 21: s = rem; break; //
 			case 22: s = id; break; //
 			case 23: s = alphabet; break; //
+			case 24: s = reg; break; // 登録番号
 		}
 		return s;
 	}
