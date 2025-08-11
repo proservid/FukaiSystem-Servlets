@@ -63,71 +63,53 @@ public class OrderSearchDTO implements Serializable {
 	}
 
 	public String getStr(int order) {
-		String s = "";
 		switch (order) {
 			case 0:
-				s = orderNum3;
-				break;
+				return orderNum3;
 			case 1:
-				s = orderY;
-				break;
+				return orderY;
 			case 2:
-				s = orderM;
-				break;
+				return orderM;
 			case 3:
-				s = orderD;
-				break;
+				return orderD;
 			case 4:
-				s = dueY;
-				break;
+				return dueY;
 			case 5:
-				s = dueM;
-				break;
+				return dueM;
 			case 6:
-				s = dueD;
-				break;
+				return dueD;
 			case 7:
-				s = acceptY;
-				break;
+				return acceptY;
 			case 8:
-				s = acceptM;
-				break;
+				return acceptM;
 			case 9:
-				s = acceptD;
-				break;
+				return acceptD;
 			case 10:
-				s = deliveryY;
-				break;
+				return deliveryY;
 			case 11:
-				s = deliveryM;
-				break;
+				return deliveryM;
 			case 12:
-				s = deliveryD;
-				break;
+				return deliveryD;
+			default:
+				return "";
 		}
-		return s;
 	}
 
 	public int getInt(int order) {
-		int i = 0;
 		switch (order) {
 			case 0:
-				i = supplierID;
-				break;
+				return supplierID;
 			case 1:
-				i = orderNum1;
-				break;
+				return orderNum1;
 			case 2:
-				i = orderNum2;
-				break;
+				return orderNum2;
 			case 3:
-				i = slipNum;
-				break;
+				return slipNum;
 			case 4:
-				i = deliveryNum;
-				break;
+				return deliveryNum;
+			default:
+				return 0;
 		}
-		return i;
 	}
 
 	public boolean isAnd() {
