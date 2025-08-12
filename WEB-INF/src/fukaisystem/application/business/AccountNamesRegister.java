@@ -24,9 +24,9 @@ public class AccountNamesRegister extends ServiceFoundation {
 		AccountNamesDTO dto = cast(response, o, AccountNamesDTO.class);
 		int type = dto.getType();
 		int accountCD = dto.getAccountCD();
-		Vector<Vector<Object>> destinations = dto.getAccountNames();
+		Vector<Vector<Object>> accountNames = dto.getAccountNames();
 
-		if (accountCD < 1 || destinations == null || destinations.size() < 1) {
+		if (accountCD < 1 || accountNames == null || accountNames.size() < 1) {
 			return null;
 		}
 		try (
@@ -43,7 +43,7 @@ public class AccountNamesRegister extends ServiceFoundation {
 			);
 		) {
 			int i = 1;
-			for (Vector<Object> record : destinations) {
+			for (Vector<Object> record : accountNames) {
 				String destination = (String) record.get(0);
 				if (destination.isEmpty()) {
 					continue;

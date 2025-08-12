@@ -27,11 +27,11 @@ public class GetSummary extends ServiceFoundation {
 		ProjectSummaryDTO summaryDTO = null;
 
 		int quotationID = 0, productionID = 0, salesID = 0;
-		int tax = 0, discount = 0;
+		// int tax = 0, discount = 0;
 
 		Vector<Vector<Object>> quotationData = new Vector<Vector<Object>>();
 		Vector<Vector<Object>> productionData = new Vector<Vector<Object>>();
-		Vector<Vector<Object>> salesData = new Vector<Vector<Object>>();
+		// Vector<Vector<Object>> salesData = new Vector<Vector<Object>>();
 		Vector<Vector<Object>> salesSlips = new Vector<Vector<Object>>();
 		Map<Integer, Vector<Vector<Object>>> quotationBasisDataMap = new HashMap<Integer, Vector<Vector<Object>>>();
 
@@ -151,12 +151,12 @@ public class GetSummary extends ServiceFoundation {
 						null, // あとでsetVectorする。Vector<Vector<Object>> mainTable_d
 						null// あとでsetVectorする。Vector<Vector<Object>> slipList
 					);
-					if (rs.getString("消費税") == null) {
-						tax = -1;
-					} else {
-						tax = rs.getInt("消費税");
-					}
-					discount = rs.getInt("値引き");
+					// if (rs.getString("消費税") == null) {
+					// 	tax = -1;
+					// } else {
+					// 	tax = rs.getInt("消費税");
+					// }
+					// discount = rs.getInt("値引き");
 				}
 			}
 		}
