@@ -1,4 +1,4 @@
-﻿/*
+/*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -13,9 +13,9 @@ import java.io.Serializable;
  */
 public class SlipDTO implements Serializable {
 
-	boolean isOverwrite;
-	String name;
-	byte[] byteSlip;
+	private boolean isOverwrite;
+	private String name;
+	private byte[] byteSlip;
 
 	public SlipDTO(boolean isOverwrite, String name, byte[] byteSlip) {
 		this.isOverwrite = isOverwrite;

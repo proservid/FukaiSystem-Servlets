@@ -14,7 +14,7 @@ import java.io.Serializable;
 public class CorpDTO implements Serializable {
 
 	String name, name2, branch, branch2, disp,
-			country, zip, zip2, pref, city, area, st, bldg, tel1, tel2, tel3, fax1, fax2, fax3, mail, url, rem, id, alphabet;
+			country, zip, zip2, pref, city, area, st, bldg, tel1, tel2, tel3, fax1, fax2, fax3, mail, url, rem, id, alphabet, reg;
 	int supNum, acNum, type, nenga;
 	boolean isValid, isZou;
 
@@ -22,7 +22,7 @@ public class CorpDTO implements Serializable {
 		String name, String name2, String branch, String branch2, String disp,
 		String country, String zip, String zip2, String pref, String city, String area, String st, String bldg,
 		String tel1, String tel2, String tel3, String fax1, String fax2, String fax3, String mail, String url,
-		String rem, String id, String alphabet,
+		String rem, String id, String alphabet, String reg,
 		int supNum, int acNum, int type, int nenga,
 		boolean isValid, boolean isZou) {
 		this.name = name;
@@ -43,6 +43,7 @@ public class CorpDTO implements Serializable {
 		this.rem = rem;
 		this.id = id;
 		this.alphabet = alphabet;
+		this.reg = reg;
 		this.supNum = supNum;
 		this.acNum = acNum;
 		this.type = type;
@@ -60,30 +61,31 @@ public class CorpDTO implements Serializable {
 	public String getStr(int order) {
 		String s = "";
 		switch(order) {
-			case  0: s = name; break;//‰ïĞ–¼/–¼
-			case  1: s = name2; break;//ƒJƒCƒVƒƒƒƒC/ƒVƒƒC
-			case  2: s = branch; break;//x“X–¼/Š‘®•”
-			case  3: s = branch2; break;//ƒVƒeƒ“ƒƒC/–ğE–¼
-			case  4: s = disp; break;//•\¦/‰ïĞƒR[ƒh
-			case  5: s = country; break;//
-			case  6: s = zip; break;//
-			case  7: s = zip2; break;//
-			case  8: s = pref; break;//
-			case  9: s = city; break;//
-			case 10: s = area; break;//
-			case 11: s = st; break;//
-			case 12: s = bldg; break;//
-			case 13: s = tel1; break;//
-			case 14: s = tel2; break;//
-			case 15: s = tel3; break;//
-			case 16: s = fax1; break;//
-			case 17: s = fax2; break;//
-			case 18: s = fax3; break;//
-			case 19: s = mail; break;//
-			case 20: s = url; break;//
-			case 21: s = rem; break;//
-			case 22: s = id; break;//
-			case 23: s = alphabet; break;//
+			case  0: s = name; break; //ä¼šç¤¾å/æ°å
+			case  1: s = name2; break; //ã‚«ã‚¤ã‚·ãƒ£ãƒ¡ã‚¤/ã‚·ãƒ¡ã‚¤
+			case  2: s = branch; break; //æ”¯åº—å/æ‰€å±éƒ¨ç½²
+			case  3: s = branch2; break; //ã‚·ãƒ†ãƒ³ãƒ¡ã‚¤/å½¹è·å
+			case  4: s = disp; break; //è¡¨ç¤º/ä¼šç¤¾ã‚³ãƒ¼ãƒ‰
+			case  5: s = country; break; //
+			case  6: s = zip; break; //
+			case  7: s = zip2; break; //
+			case  8: s = pref; break; //
+			case  9: s = city; break; //
+			case 10: s = area; break; //
+			case 11: s = st; break; //
+			case 12: s = bldg; break; //
+			case 13: s = tel1; break; //
+			case 14: s = tel2; break; //
+			case 15: s = tel3; break; //
+			case 16: s = fax1; break; //
+			case 17: s = fax2; break; //
+			case 18: s = fax3; break; //
+			case 19: s = mail; break; //
+			case 20: s = url; break; //
+			case 21: s = rem; break; //
+			case 22: s = id; break; //
+			case 23: s = alphabet; break; //
+			case 24: s = reg; break; // ç™»éŒ²ç•ªå·
 		}
 		return s;
 	}
@@ -105,6 +107,6 @@ public class CorpDTO implements Serializable {
 			case 0:	b = isValid; break;
 			case 1:	b = isZou; break;
 		}
-		return b;//•sg—p
+		return b; //ä¸ä½¿ç”¨
 	}
 }

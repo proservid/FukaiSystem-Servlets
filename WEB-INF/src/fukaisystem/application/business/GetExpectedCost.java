@@ -1,0 +1,176 @@
+package fukaisystem.application.business;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Vector;
+
+import javax.servlet.ServletResponse;
+
+import fukaisystem.dto.CostDTO;
+import fukaisystem.foundation.ServiceFoundation;
+
+/**
+ * 見込み原価（未納品だが金額が判明している材料費）を取得する
+ */
+public class GetExpectedCost extends ServiceFoundation {
+
+	@Override
+	@SuppressWarnings("unchecked")
+	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+
+		String caption = "";
+		int productionID = 0;
+		int coarseCD = 0;
+		int middleCD = 0;
+		double qty = 0;
+		int amount = 0;
+
+		Vector<String> titles = new Vector<String>();
+		Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+
+		List<Integer> params = cast(response, o, List.class);
+		productionID = params.get(0);
+		if (params.size() > 1) { // 中分類コードが指定されている
+			coarseCD = params.get(1);
+			if (params.size() == 3) { // 小分類コードも指定されている＝小分類を取得
+				middleCD = params.get(2);
+				try (
+					PreparedStatement ps = c.prepareStatement(
+						"select 小分類CD,小分類名,"
+							+ " CASE"
+							+ " WHEN 種別CD = 1 THEN '㈱'+会社名"
+							+ " WHEN 種別CD = 2 THEN 会社名+'㈱'"
+							+ " WHEN 種別CD = 3 THEN '㈲'+会社名"
+							+ " WHEN 種別CD = 4 THEN 会社名+'㈲'"
+							+ " ELSE 会社名 END AS 仕入先名,"
+							+ "材料品名 as 名,数量,単価,金額 "
+							+ " from T_製作_親 pp"
+							+ " left outer join T_在庫_親 sp on pp.製作期=sp.注文期 and pp.製作番号=sp.注文番号 and pp.製作枝番=sp.注文枝番"
+							+ " left outer join T_在庫_子 sc on sp.在庫親ID=sc.在庫親ID"
+							+ " left outer join M_法人 co on sp.仕入先CD=co.仕入先CD"
+							+ " left outer join T_指定納品書 d on sc.納品書番号=d.ID"
+							+ " left outer join M_原価 c on sc.大分類CD=c.CD"
+							+ " left outer join M_材料_子 mc on mc.大分類CD=sc.大分類CD and mc.中分類CD=sc.中分類CD and mc.CD=sc.小分類CD"
+							+ " where 製作親ID=? and sc.大分類CD=? and sc.中分類CD=? and 納品書日 is null and 表示CD=2"
+							+ " order by 小分類CD"
+					);
+				) {
+					ps.setInt(1, productionID);
+					ps.setInt(2, coarseCD);
+					ps.setInt(3, middleCD);
+
+					try (ResultSet rs = ps.executeQuery();) {
+						while (rs.next()) {
+							Vector<Object> record = new Vector<Object>();
+							record.add(rs.getInt("小分類CD"));
+							record.add(rs.getString("小分類名"));
+							record.add(rs.getString("仕入先名"));
+							record.add(rs.getString("名"));
+							record.add(rs.getDouble("数量"));
+							record.add(rs.getInt("単価"));
+							record.add(rs.getInt("金額"));
+							qty += rs.getDouble("数量");
+							amount += rs.getInt("金額");
+							data.add(record);
+						}
+						Vector<Object> record = new Vector<Object>();
+						record.add(0);
+						record.add("");
+						record.add("");
+						record.add("合計");
+						record.add(qty);
+						record.add(0);
+						record.add(amount);
+						data.add(record);
+					}
+				}
+				titles.add("小分類CD");
+				titles.add("小分類名");
+				titles.add("仕入先名");
+				titles.add("品名");
+				titles.add("数量");
+				titles.add("単価");
+				titles.add("金額");
+			} else { // 中分類を取得
+				try (
+					PreparedStatement ps = c.prepareStatement(
+						"select 中分類CD,中分類名,sum(金額) as 金額 "
+							+ " from T_製作_親 pp"
+							+ " left outer join T_在庫_親 sp on pp.製作期=sp.注文期 and pp.製作番号=sp.注文番号 and pp.製作枝番=sp.注文枝番"
+							+ " left outer join T_在庫_子 sc on sp.在庫親ID=sc.在庫親ID"
+							+ " left outer join T_指定納品書 d on sc.納品書番号=d.ID"
+							+ " left outer join M_原価 c on sc.大分類CD=c.CD"
+							+ " left outer join M_材料_親 mp on mp.大分類CD=sc.大分類CD and mp.CD=sc.中分類CD"
+							+ " where 製作親ID=? and sc.大分類CD=? and 納品書日 is null and 表示CD=2"
+							+ " group by 中分類CD,中分類名"
+							+ " order by 中分類CD"
+					);
+				) {
+					ps.setInt(1, productionID);
+					ps.setInt(2, coarseCD);
+
+					try (ResultSet rs = ps.executeQuery();) {
+						while (rs.next()) {
+							Vector<Object> record = new Vector<Object>();
+							record.add(rs.getInt("中分類CD"));
+							record.add(rs.getString("中分類名"));
+							record.add(rs.getInt("金額"));
+							amount += rs.getInt("金額");
+							data.add(record);
+						}
+						Vector<Object> record = new Vector<Object>();
+						record.add(0);
+						record.add("合計");
+						record.add(amount);
+						data.add(record);
+					}
+				}
+				titles.add("中分類CD");
+				titles.add("中分類名");
+				titles.add("金額");
+			}
+
+		} else { // 大分類コードのみ指定されている＝大分類を取得
+			try (
+				PreparedStatement ps = c.prepareStatement(
+					"select 大分類CD,case when 大分類名 is null then '(未分類)' else 大分類名 end as 大分類名,sum(金額) as 金額"
+						+ " from T_製作_親 pp"
+						+ " left outer join T_在庫_親 sp on pp.製作期=sp.注文期 and pp.製作番号=sp.注文番号 and pp.製作枝番=sp.注文枝番"
+						+ " left outer join T_在庫_子 sc on sp.在庫親ID=sc.在庫親ID"
+						+ " left outer join T_指定納品書 d on sc.納品書番号=d.ID"
+						+ " left outer join M_原価 c on sc.大分類CD=c.CD"
+						+ " where 製作親ID=? and 大分類CD is not null and 納品書日 is null and 表示CD=2 AND 納品書番号>-1"
+						+ " group by 大分類CD,大分類名"
+						+ " order by 大分類CD"
+				);
+			) {
+				ps.setInt(1, productionID);
+				try (ResultSet rs = ps.executeQuery();) {
+
+					while (rs.next()) {
+						Vector<Object> record = new Vector<Object>();
+						record.add(rs.getInt("大分類CD"));
+						record.add(rs.getString("大分類名"));
+						record.add(rs.getInt("金額"));
+						amount += rs.getInt("金額");
+						data.add(record);
+					}
+					Vector<Object> record = new Vector<Object>();
+					record.add(0);
+					record.add("合計");
+					record.add(amount);
+					data.add(record);
+				}
+			}
+			titles.add("大分類CD");
+			titles.add("大分類名");
+			titles.add("金額");
+		}
+		return new CostDTO(caption, amount, titles, data);
+
+	}
+}

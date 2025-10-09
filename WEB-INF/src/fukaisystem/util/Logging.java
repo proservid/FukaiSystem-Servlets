@@ -8,7 +8,7 @@ public class Logging {
 		StackTraceElement[] element = ex.getStackTrace();
 		StringBuilder sb = new StringBuilder(className);
 		sb.append(ex.toString() + "\n");
-		for(int i = 0; i < element.length; i++) {
+		for (int i = 0; i < element.length; i++) {
 			sb.append(element[i].toString() + "\n");
 		}
 		lg.error(sb.toString());

@@ -14,8 +14,10 @@ import java.util.Vector;
  * @author kameura
  */
 public class DocumentDTO implements Serializable {
-	Vector<Vector<Object>> vector;
-	Map<Integer, Vector<Vector<Object>>> map;
+
+	private Vector<Vector<Object>> vector;
+	private Map<Integer, Vector<Vector<Object>>> map;
+
 	public DocumentDTO(Vector<Vector<Object>> vector, Map<Integer, Vector<Vector<Object>>> map) {
 		this.vector = vector;
 		this.map = map;
@@ -24,6 +26,7 @@ public class DocumentDTO implements Serializable {
 	public Vector<Vector<Object>> getVector() {
 		return vector;
 	}
+
 	public Map<Integer, Vector<Vector<Object>>> getMap() {
 		return map;
 	}

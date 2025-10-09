@@ -12,21 +12,26 @@ import java.io.Serializable;
  * @author kameura
  */
 public class IDDTO implements Serializable {
-	private int estID;
-	private int prdID;
-	private int dlvID;
-	public IDDTO(int estID, int prdID, int dlvID) {
-		this.estID = estID;
-		this.prdID = prdID;
-		this.dlvID = dlvID;
+
+	private final int quotationID;
+	private final int productionID;
+	private final int salesID;
+
+	public IDDTO(int quotationID, int productionID, int salesID) {
+		this.quotationID = quotationID;
+		this.productionID = productionID;
+		this.salesID = salesID;
 	}
-	public int getEstID() {
-		return estID;
+
+	public int getQuotationID() {
+		return quotationID;
 	}
-	public int getPrdID() {
-		return prdID;
+
+	public int getProductionID() {
+		return productionID;
 	}
-	public int getDlvID() {
-		return dlvID;
+
+	public int getSalesID() {
+		return salesID;
 	}
 }

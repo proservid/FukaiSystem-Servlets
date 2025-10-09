@@ -6,44 +6,37 @@
 package fukaisystem.dto;
 
 import java.io.Serializable;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
  * @author kameura
  */
 public class GetTableDTO implements Serializable {
-	String tableName;
-	String columnName;
-	String[] condition;
-	String[] signs;
-	String[] id;
-	String order;
 
-	public GetTableDTO(String tableName, String columnName, String[] condition, String[] signs, String[] id, String order) {
-		this.tableName = tableName;
-		this.columnName = columnName;
-		this.condition = condition;
-		this.signs = signs;
-		this.id = id;
-		this.order = order;
+	private Map<String, List<String>> tables;
+	private Map<String, Map<String, Object>> conditions;
+	private String order;
+
+	public GetTableDTO(
+		Map<String, List<String>> tables,
+		Map<String, Map<String, Object>> conditions,
+		String order
+	) {
+		this.tables = tables;
+		this.conditions = conditions;
+		this.order = order.isEmpty() ? "" : " " + order;
 	}
-	public String getString(int i) {
-		String s = "";
-		switch(i) {
-			case 0 : s = tableName;break;
-			case 1 : s = columnName;break;
-		}
-		return s;
+
+	public Map<String, List<String>> getTables() {
+		return tables;
 	}
-	public String[] getKeys() {
-		return condition;
+
+	public Map<String, Map<String, Object>> getConditions() {
+		return conditions;
 	}
-	public String[] getIDs() {
-		return id;
-	}
-	public String[] getSigns() {
-		return signs;
-	}
+
 	public String getOrder() {
 		return order;
 	}

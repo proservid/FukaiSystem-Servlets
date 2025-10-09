@@ -1,4 +1,4 @@
-﻿package fukaisystem.sql;
+package fukaisystem.sql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,46 +14,46 @@ import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
 import fukaisystem.util.Logging;
 
-
 public class DBConnection {
 	Connection c = null;
 	DataSource ds = null;
 	BasicDataSource bds = null;
 	private static final Logger lg = Logger.getLogger("A1");
-    private static final String className = "DBConnection\n";
+	private static final String className = "DBConnection\n";
 
 	public DBConnection() {
 		/**
 		 * DB接続
 		 */
-//*
+		// *
 		try {
 			Context ctx = new InitialContext();
-			ds = (DataSource)ctx.lookup("java:comp/env/jdbc/FukaiSystem");
+			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/FukaiSystem");
 			c = ds.getConnection();
-		} catch(NamingException ex) {
+		} catch (NamingException ex) {
 			Logging.logStackTrace(ex, lg, className);
-		} catch(SQLException ex) {
-		//*/
+		} catch (SQLException ex) {
+			// */
 			try {
 				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			} catch(ClassNotFoundException ex2) {
+			} catch (ClassNotFoundException ex2) {
 				Logging.logStackTrace(ex2, lg, className);
 			}
 			try {
 				c = DriverManager.getConnection(
-				"jdbc:sqlserver://localhost:1433;databaseName=FukaiSystem;user=sa;password=3ishifukai");
-			} catch(SQLException ex2) {
+					"jdbc:sqlserver://localhost:1433;databaseName=FukaiSystem;user=sa;password=3ishifukai"
+				);
+			} catch (SQLException ex2) {
 				Logging.logStackTrace(ex2, lg, className);
 			}
-//*
- 		}
-		if(ds instanceof BasicDataSource) {
-			 bds = (BasicDataSource)ds;
+			// *
 		}
-		lg.debug("idle:"+bds.getNumIdle());
-		lg.debug("active:"+bds.getNumActive());
-		//*/
+		if (ds instanceof BasicDataSource) {
+			bds = (BasicDataSource) ds;
+		}
+		lg.debug("idle:" + bds.getNumIdle());
+		lg.debug("active:" + bds.getNumActive());
+		// */
 	}
 
 	public Connection getConnection() {

@@ -13,8 +13,9 @@ import java.util.Vector;
  * @author kameura
  */
 public class SlipSelectDTO implements Serializable {
-	Vector<String> candidate;
-	Vector<Vector<String>> tableData;
+
+	private Vector<String> candidate;
+	private Vector<Vector<String>> tableData;
 
 	public SlipSelectDTO(Vector<String> candidate, Vector<Vector<String>> tableData) {
 		this.candidate = candidate;
@@ -24,6 +25,7 @@ public class SlipSelectDTO implements Serializable {
 	public Vector<String> getCandidate() {
 		return candidate;
 	}
+
 	public Vector<Vector<String>> getTableData() {
 		return tableData;
 	}

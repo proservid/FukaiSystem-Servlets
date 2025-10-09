@@ -1,10 +1,11 @@
-﻿/*
+/*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 
 package fukaisystem.dto;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 import java.util.Map;
@@ -14,213 +15,415 @@ import java.util.Vector;
  *
  * @author kameura
  */
-public class ProjectSummaryDTO extends BasicDTO {
+public class ProjectSummaryDTO implements Serializable {
 
-	 String accountName_e, accountName_p, projectNameE, projectNameP, placeName,
-	  number_eb, deadline, place, terms, validity, note_e,
-	  acceptID, number_pb, note_p,
-	  note_s, number_bb, announcement;
-	 int accountID_e, accountID_p, projectCode, buyer,
-	  estimateID, period_e, number_e, contactCode, inquiryCode,
-	  submitCD, currencyCD_e, amount_e,
-	  productID, period_p, number_p, currencyCD_p, amount_p,
-	  deliveryState, deliveryCode, period_b, number_b, deliveryID, accountID_d;
-	 Date inquiryDate, estimateDate, submitDate,
-	  acceptDate, dueDate, publishDate,
-	  shippingDate, inspectionDate, salesDate;
-	 boolean isNew, isAdd, isRelease, isOrder;
-	 List<String> ests;
-	 List<Integer> parents;
-	 Vector<Vector<Object>> mainTable_e, mainTable_p, mainTable_d, slipList;
-	 Map<Integer, Vector<Vector<Object>>> subTable_e, subTable_p;
+	private String quotationAccountName, productionAccountName, quotationProjectName, productionProjectName, placeName,
+		quotationNum3, due, place, terms, validity, quotationNote,
+		acceptID, productionNum3, productionNote,
+		salesNote, birthNum3, announcement;
+	private int quotationAccountID, productionAccountID, projectCode, buyerCode,
+		quotationID, quotationNum1, quotationNum2, contactCode, inquiryCode,
+		submitCD, quotationCurrencyCD, quotationAmount,
+		productionID, productionNum1, productionNum2, productionCurrencyCD, productionAmount,
+		deliveryStateCode, deliveryCode, birthNum1, birthNum2, salesID, dispatchingAccountID;
+	private Date inquiryDate, quotationDate, submitDate,
+		acceptDate, deadlineDate, productionSlipPublishDate,
+		shippingDate, inspectionDate, salesSlipPublishDate;
+	private boolean isNew, isAdd, isRelease, isOrder;
+	private List<String> quotationNumbers;
+	private List<Integer> parents;
+	@SuppressWarnings("unused")
+	private Vector<Vector<Object>> dispatchingVector;
+	private Vector<Vector<Object>> quotationVector, productionVector, salesSlips;
+	private Map<Integer, Vector<Vector<Object>>> quotationBasisDataMap;
 
 	public ProjectSummaryDTO(
-	 //共通
-	 String accountName_e, String accountName_p, String projectNameE, String projectNameP,
-	 int accountID_e, int accountID_p, int projectCode, int buyer, List<Integer> parents,
-	 //見積
-	 String number_eb, String deadline, String place, String terms, String validity, String note_e,
-	 String announcement, String number_bb,
-	 int estimateID, int period_e, int number_e, int contactCode, int inquiryCode,
-	 int submitCD, int currencyCD_e, int amount_e, int period_b, int number_b,
-	 Date inquiryDate, Date estimateDate, Date submitDate,
-	 Vector<Vector<Object>> mainTable_e,
-	 Map<Integer, Vector<Vector<Object>>> subTable_e,
-	 //製作
-	 String acceptID, String number_pb, String placeName, String note_p,
-	 int productID, int period_p, int number_p, int currencyCD_p, int amount_p,
-	 Date acceptDate, Date dueDate, Date publishDate, Date shippingDate, Date inspectionDate,
-	 boolean isNew, boolean isAdd, boolean isRelease, boolean isOrder,
-	 Vector<Vector<Object>> mainTable_p,
-	 Map<Integer, Vector<Vector<Object>>> subTable_p,
-	 //売上
-	 String note_s,
-	 int deliveryID,
-	 int deliveryState, int deliveryCode, int accountID_d,
-	 Date salesDate,
-	 Vector<Vector<Object>> mainTable_d, Vector<Vector<Object>> slipList) {
-		this.accountName_e = accountName_e;	this.accountName_p = accountName_p; this.projectNameE = projectNameE; this.projectNameP = projectNameP;
-		this.accountID_e = accountID_e;	this.accountID_p = accountID_p;	this.projectCode = projectCode; this.parents = parents;
-		this.number_eb = number_eb; this.deadline = deadline;	this.place = place;	this.terms = terms;	this.validity = validity; this.note_e = note_e;
-		this.announcement = announcement; this.number_bb = number_bb;
-		this.estimateID = estimateID; this.period_e = period_e; this.number_e = number_e; this.contactCode = contactCode;	this.inquiryCode = inquiryCode;
-		this.submitCD = submitCD; this.currencyCD_e = currencyCD_e; this.amount_e = amount_e; this.period_b = period_b; this.number_b = number_b;
-		this.inquiryDate = inquiryDate;	this.estimateDate = estimateDate; this.submitDate = submitDate;
-		this.mainTable_e = mainTable_e;
-		this.subTable_e = subTable_e;
+		// 共通
+		String quotationAccountName,
+		String productionAccountName,
+		String quotationProjectName,
+		String productionProjectName,
+		int quotationAccountID,
+		int productionAccountID,
+		int projectCode,
+		int buyerCode,
+		List<Integer> parents,
+		// 見積
+		String quotationNum3,
+		String due,
+		String place,
+		String terms,
+		String validity,
+		String quotationNote,
+		String announcement,
+		String birthNum3,
+		int quotationID,
+		int quotationNum1,
+		int quotationNum2,
+		int contactCode,
+		int inquiryCode,
+		int submitCD,
+		int quotationCurrencyCD,
+		int quotationAmount,
+		int birthNum1,
+		int birthNum2,
+		Date inquiryDate,
+		Date quotationDate,
+		Date submitDate,
+		Vector<Vector<Object>> quotationVector,
+		Map<Integer, Vector<Vector<Object>>> quotationBasisDataMap,
+		// 製作
+		String acceptID,
+		String productionNum3,
+		String placeName,
+		String productionNote,
+		int productionID,
+		int productionNum1,
+		int productionNum2,
+		int productionCurrencyCD,
+		int productionAmount,
+		Date acceptDate,
+		Date deadlineDate,
+		Date productionSlipPublishDate,
+		Date shippingDate,
+		Date inspectionDate,
+		boolean isNew,
+		boolean isAdd,
+		boolean isRelease,
+		boolean isOrder,
+		Vector<Vector<Object>> productionVector,
+		// 売上
+		String salesNote,
+		int salesID,
+		int deliveryStateCode,
+		int deliveryCode,
+		int dispatchingAccountID,
+		Date salesSlipPublishDate,
+		Vector<Vector<Object>> dispatchingVector,
+		Vector<Vector<Object>> salesSlips
+	) {
 
-		this.acceptID = acceptID; this.number_pb = number_pb; this.placeName = placeName; this.note_p = note_p;
-		this.productID = productID; this.period_p = period_p; this.number_p = number_p; this.currencyCD_p = currencyCD_p; this.amount_p = amount_p;
-		this.acceptDate = acceptDate; this.dueDate = dueDate; this.publishDate = publishDate;
+		this.quotationAccountName = quotationAccountName;
+		this.productionAccountName = productionAccountName;
+		this.quotationProjectName = quotationProjectName;
+		this.productionProjectName = productionProjectName;
+		this.quotationAccountID = quotationAccountID;
+		this.productionAccountID = productionAccountID;
+		this.projectCode = projectCode;
+		this.parents = parents;
+		this.quotationNum3 = quotationNum3;
+		this.due = due;
+		this.place = place;
+		this.terms = terms;
+		this.validity = validity;
+		this.quotationNote = quotationNote;
+		this.announcement = announcement;
+		this.birthNum3 = birthNum3;
+		this.quotationID = quotationID;
+		this.quotationNum1 = quotationNum1;
+		this.quotationNum2 = quotationNum2;
+		this.contactCode = contactCode;
+		this.inquiryCode = inquiryCode;
+		this.submitCD = submitCD;
+		this.quotationCurrencyCD = quotationCurrencyCD;
+		this.quotationAmount = quotationAmount;
+		this.birthNum1 = birthNum1;
+		this.birthNum2 = birthNum2;
+		this.inquiryDate = inquiryDate;
+		this.quotationDate = quotationDate;
+		this.submitDate = submitDate;
+		this.quotationVector = quotationVector;
+		this.quotationBasisDataMap = quotationBasisDataMap;
+
+		this.acceptID = acceptID;
+		this.productionNum3 = productionNum3;
+		this.placeName = placeName;
+		this.productionNote = productionNote;
+		this.productionID = productionID;
+		this.productionNum1 = productionNum1;
+		this.productionNum2 = productionNum2;
+		this.productionCurrencyCD = productionCurrencyCD;
+		this.productionAmount = productionAmount;
+		this.acceptDate = acceptDate;
+		this.deadlineDate = deadlineDate;
+		this.productionSlipPublishDate = productionSlipPublishDate;
 		this.shippingDate = shippingDate;
 		this.inspectionDate = inspectionDate;
-		this.isNew = isNew; this.isRelease = isRelease;	this.isOrder = isOrder;
-		this.mainTable_p = mainTable_p;
-		this.subTable_p = subTable_p;
+		this.isNew = isNew;
+		this.isRelease = isRelease;
+		this.isOrder = isOrder;
+		this.productionVector = productionVector;
 
-		this.note_s = note_s;
-		this.deliveryID = deliveryID;
-		this.deliveryState = deliveryState;	this.deliveryCode = deliveryCode;
-		this.accountID_d = accountID_d;
-		this.salesDate = salesDate;
-		this.mainTable_d = mainTable_d;
-		this.slipList = slipList;
-		this.buyer = buyer;
+		this.salesNote = salesNote;
+		this.salesID = salesID;
+		this.deliveryStateCode = deliveryStateCode;
+		this.deliveryCode = deliveryCode;
+		this.dispatchingAccountID = dispatchingAccountID;
+		this.salesSlipPublishDate = salesSlipPublishDate;
+		this.dispatchingVector = dispatchingVector;
+		this.salesSlips = salesSlips;
+		this.buyerCode = buyerCode;
 		this.isAdd = isAdd;
 	}
 
-	@Override
-	public String getStr(int order) {
-		String s = "";
-		switch(order) {
-			case  0: s = accountName_e; break;
-			case  1: s = accountName_p; break;
-			case  2: s = projectNameE; break;
-			case  3: s = placeName; break;
-			case  4: s = number_eb; break;
-			case  5: s = deadline; break;//納期
-			case  6: s = place; break;//受渡場所
-			case  7: s = terms; break;//取引条件
-			case  8: s = validity; break;//有効期間
-			case  9: s = note_e; break;
-			case 10: s = acceptID; break;
-			case 11: s = number_pb; break;
-			case 12: s = note_p; break;
-			case 13: s = note_s; break;
-			case 14: s = number_bb; break;
-			case 15: s = announcement; break;
-			case 16: s = projectNameP; break;
-		}
-		return s;
+	public String quotationAccountName() {
+		return quotationAccountName;
 	}
 
-	@Override
-	public int getInt(int order) {
-		int i = 0;
-		switch(order) {
-			case  0: i = accountID_e; break;
-			case  1: i = accountID_p; break;
-			case  2: i = projectCode; break;
-			case  3: i = period_e; break;
-			case  4: i = number_e; break;
-			case  5: i = contactCode; break;
-			case  6: i = inquiryCode; break;
-			case  7: i = submitCD; break;
-			case  8: i = currencyCD_e; break;
-			case  9: i = amount_e; break;
-			case 10: i = period_p; break;
-			case 11: i = number_p; break;
-			case 12: i = currencyCD_p; break;
-			case 13: i = amount_p; break;
-			case 14: i = deliveryState; break;
-			case 15: i = deliveryCode; break;
-			case 16: i = estimateID; break;
-			case 17: i = productID; break;
-			case 18: i = period_b; break;
-			case 19: i = number_b; break;
-			case 20: i = deliveryID; break;
-			case 21: i = accountID_d; break;
-			case 22: i = buyer; break;
-		}
-		return i;
+	public String productionAccountName() {
+		return productionAccountName;
 	}
 
-	@Override
-	public Date getDate(int order) {
-		Date d = null;
-		switch(order) {
-			case 0: d = inquiryDate; break;
-			case 1: d = estimateDate; break;
-			case 2: d = submitDate; break;
-			case 3: d = acceptDate; break;//受注年月日
-			case 4: d = dueDate; break;//納期
-			case 5: d = publishDate; break;//発行年月日
-			case 6: d = shippingDate; break;//出荷年月日
-			case 7: d = inspectionDate; break;//検収年月日
-			case 8: d = salesDate; break;//売上年月日
-		}
-		return d;
+	public String quotationProjectName() {
+		return quotationProjectName;
 	}
 
-	@Override
-	public boolean getBool(int order) {
-		boolean b = false;
-		switch(order) {
-			case 0: b = isRelease; break;
-			case 1: b = isOrder; break;
-			case 2: b = isNew; break;
-			case 3: b = isAdd; break;
-		}
-		return b;
+	public String placeName() {
+		return placeName;
 	}
 
-	@Override
-	public Vector<Vector<Object>> getVector(int order) {
-		Vector<Vector<Object>> v = null;
-		switch(order) {
-			case 0: v = mainTable_e; break;
-			case 1: v = mainTable_p; break;
-			case 2: v = mainTable_d; break;
-			case 3: v = slipList; break;
-		}
-		return v;
-	}
-	public void setVector(int order, Vector<Vector<Object>> vector) {
-		switch(order) {
-			case 0: mainTable_e = vector; break;
-			case 1: mainTable_p = vector; break;
-			case 2: mainTable_d = vector; break;
-			case 3: slipList = vector; break;
-		}
+	public String quotationNum3() {
+		return quotationNum3;
 	}
 
-	public Map<Integer, Vector<Vector<Object>>> getMap(int order) {
-		Map<Integer, Vector<Vector<Object>>> m = null;
-		switch(order) {
-			case 0: m = subTable_e; break;
-			case 1: m = subTable_p; break;
-		}
-		return m;
-	}
-	public void setMap(int order, Map<Integer, Vector<Vector<Object>>> map) {
-		switch(order) {
-			case 0: subTable_e = map; break;
-			case 1: subTable_p = map; break;
-		}
+	public String due() {
+		return due;
+	} // 納期
+
+	public String place() {
+		return place;
+	} // 受渡場所
+
+	public String terms() {
+		return terms;
+	} // 取引条件
+
+	public String validity() {
+		return validity;
+	} // 有効期間
+
+	public String quotationNote() {
+		return quotationNote;
 	}
 
-	public void setEsts(List<String> ests) {
-		this.ests = ests;
+	public String acceptID() {
+		return acceptID;
 	}
+
+	public String productionNum3() {
+		return productionNum3;
+	}
+
+	public String productionNote() {
+		return productionNote;
+	}
+
+	public String salesNote() {
+		return salesNote;
+	}
+
+	public String birthNum3() {
+		return birthNum3;
+	}
+
+	public String announcement() {
+		return announcement;
+	}
+
+	public String productionProjectName() {
+		return productionProjectName;
+	}
+
+	public int quotationAccountID() {
+		return quotationAccountID;
+	}
+
+	public int productionAccountID() {
+		return productionAccountID;
+	}
+
+	public int projectCode() {
+		return projectCode;
+	}
+
+	public int quotationNum1() {
+		return quotationNum1;
+	}
+
+	public int quotationNum2() {
+		return quotationNum2;
+	}
+
+	public int contactCode() {
+		return contactCode;
+	}
+
+	public int inquiryCode() {
+		return inquiryCode;
+	}
+
+	public int submitCD() {
+		return submitCD;
+	}
+
+	public int quotationCurrencyCD() {
+		return quotationCurrencyCD;
+	}
+
+	public int quotationAmount() {
+		return quotationAmount;
+	}
+
+	public int productionNum1() {
+		return productionNum1;
+	}
+
+	public int productionNum2() {
+		return productionNum2;
+	}
+
+	public int productionCurrencyCD() {
+		return productionCurrencyCD;
+	}
+
+	public int productionAmount() {
+		return productionAmount;
+	}
+
+	public int deliveryStateCode() {
+		return deliveryStateCode;
+	}
+
+	public int deliveryCode() {
+		return deliveryCode;
+	}
+
+	public int quotationID() {
+		return quotationID;
+	}
+
+	public int productionID() {
+		return productionID;
+	}
+
+	public int birthNum1() {
+		return birthNum1;
+	}
+
+	public int birthNum2() {
+		return birthNum2;
+	}
+
+	public int salesID() {
+		return salesID;
+	}
+
+	public int dispatchingAccountID() {
+		return dispatchingAccountID;
+	}
+
+	public int buyerCode() {
+		return buyerCode;
+	}
+
+	public Date inquiryDate() {
+		return inquiryDate;
+	}
+
+	public Date quotationDate() {
+		return quotationDate;
+	}
+
+	public Date submitDate() {
+		return submitDate;
+	}
+
+	public Date acceptDate() {
+		return acceptDate;
+	} // 受注年月日
+
+	public Date deadlineDate() {
+		return deadlineDate;
+	} // 納期
+
+	public Date productionSlipPublishDate() {
+		return productionSlipPublishDate;
+	} // 発行年月日
+
+	public Date shippingDate() {
+		return shippingDate;
+	} // 出荷年月日
+
+	public Date inspectionDate() {
+		return inspectionDate;
+	} // 検収年月日
+
+	public Date salesSlipPublishDate() {
+		return salesSlipPublishDate;
+	} // 売上伝票発行年月日
+
+	public boolean isRelease() {
+		return isRelease;
+	}
+
+	public boolean isOrder() {
+		return isOrder;
+	}
+
+	public boolean isNew() {
+		return isNew;
+	}
+
+	public boolean isAdd() {
+		return isAdd;
+	}
+
+	public Vector<Vector<Object>> quotationVector() {
+		return quotationVector;
+	}
+
+	public Vector<Vector<Object>> productionVector() {
+		return productionVector;
+	}
+
+	public Vector<Vector<Object>> salesSlips() {
+		return salesSlips;
+	}
+
+	public void setQuotationVector(Vector<Vector<Object>> vector) {
+		quotationVector = vector;
+	}
+
+	public void setProductionVector(Vector<Vector<Object>> vector) {
+		productionVector = vector;
+	}
+
+	public void setSalesSlips(Vector<Vector<Object>> vector) {
+		salesSlips = vector;
+	}
+
+	public Map<Integer, Vector<Vector<Object>>> getMap() {
+		return quotationBasisDataMap;
+	}
+
+	public void setMap(Map<Integer, Vector<Vector<Object>>> map) {
+		quotationBasisDataMap = map;
+	}
+
+	public void setQuotationNumbers(List<String> quotationNumbers) {
+		this.quotationNumbers = quotationNumbers;
+	}
+
 	public void setParents(List<Integer> parents) {
 		this.parents = parents;
-		if(parents.size() > 0) this.projectCode = parents.get(0);
+		if (parents.size() > 0)
+			this.projectCode = parents.get(0);
 	}
-	@Override
-	public List<String> getEsts() {
-		return ests;
+
+	public List<String> getQuotationNumbers() {
+		return quotationNumbers;
 	}
-	@Override
+
 	public List<Integer> getParents() {
 		return parents;
 	}

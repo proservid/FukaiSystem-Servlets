@@ -1,0 +1,31 @@
+{
+  "editor.hover.delay": 800,
+  
+  // VS Code が使う Java（内部処理用）
+  // "java.jdt.ls.java.home": "C:\\Program Files\\Java\\jdk1.8.0_71",
+  // プロジェクトのビルドターゲット（JDK 8）
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-1.8",
+      "path": "C:\\Program Files\\Java\\jdk1.8.0_71",
+      "default": true
+    }
+  ],
+  "java.autobuild.enabled": true,
+  "java.project.sourcePaths": [
+    "WEB-INF/src"
+  ],
+  "java.project.outputPath": "WEB-INF/classes",
+  "java.project.referencedLibraries": [
+    "lib/servlet-api.jar"
+  ],
+  // "java.format.settings.profile": "eclipse-custom",
+  "java.format.settings.url": "formatter.xml",
+  "[java]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    // "editor.formatOnSave": true,
+  }
+}

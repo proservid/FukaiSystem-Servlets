@@ -18,18 +18,11 @@ package fukaisystem;
 */
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ResourceBundle;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import fukaisystem.sql.DBConnection;
 
 /**
  * The simplest possible servlet.
@@ -45,23 +38,23 @@ public class Hello extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response)
         throws IOException, ServletException {
 
-//		DBConnection dbc = new DBConnection();
-//		Connection c = dbc.getConnection();
-//		DatabaseMetaData dbmd;
+        // DBConnection dbc = new DBConnection();
+        // Connection c = dbc.getConnection();
+        // DatabaseMetaData dbmd;
 
-//		String qualifier = null, name = null;
-//		int position = 0, cardinality = 0;
+        // String qualifier = null, name = null;
+        // int position = 0, cardinality = 0;
 
-  //      ResourceBundle rb = ResourceBundle.getBundle("LocalStrings",request.getLocale());
+        // ResourceBundle rb = ResourceBundle.getBundle("LocalStrings",request.getLocale());
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
         out.println("<html>");
         out.println("<head>");
 
-  //      String title = rb.getString("helloworld.title");
+        // String title = rb.getString("helloworld.title");
 
- //       out.println("<title>" + title + "</title>");
+        // out.println("<title>" + title + "</title>");
         out.println("</head>");
         out.println("<body bgcolor=\"white\">");
 
@@ -74,30 +67,25 @@ public class Hello extends HttpServlet {
         // making these absolute till we work out the
         // addition of a PathInfo issue
 
-//        out.println("<a href=\"../helloworld.html\">");
-//        out.println("<img src=\"../images/code.gif\" height=24 " +
-//                    "width=24 align=right border=0 alt=\"view code\"></a>");
-//        out.println("<a href=\"../index.html\">");
-//        out.println("<img src=\"../images/return.gif\" height=24 " +
-//                    "width=24 align=right border=0 alt=\"return\"></a>");
-       out.println("<h1>OK</h1>");
-/*		try {
-			dbmd = c.getMetaData();
-			ResultSet rs = dbmd.getIndexInfo("FukaiSystem", null, "M_ä˙", true, false);
-			while(rs.next()) {
-		        out.println("qualifier:" +  rs.getString("INDEX_QUALIFIER") + "<br>");
-		        out.println("name:" + rs.getString("INDEX_NAME") + "<br>");
-		        out.println("position:" + rs.getInt("ORDINAL_POSITION") + "<br>");
-		        out.println("cardinality:" + rs.getInt("CARDINALITY") + "<br>");
-			}
-		} catch (SQLException e) {
-			// TODO é©ìÆê∂ê¨Ç≥ÇÍÇΩ catch ÉuÉçÉbÉN
-			e.printStackTrace();
-		}*/
+        // out.println("<a href=\"../helloworld.html\">");
+        // out.println("<img src=\"../images/code.gif\" height=24 width=24 align=right border=0 alt=\"view code\"></a>");
+        // out.println("<a href=\"../index.html\">");
+        // out.println("<img src=\"../images/return.gif\" height=24 width=24 align=right border=0 alt=\"return\"></a>");
+        out.println("<h1>OK</h1>");
+        /*
+         * try {
+         *  dbmd = c.getMetaData(); ResultSet rs = dbmd.getIndexInfo("FukaiSystem", null, "M_Êúü", true, false);
+         *  while(rs.next()) {
+         *      out.println("qualifier:" + rs.getString("INDEX_QUALIFIER") + "<br>");
+         *      out.println("name:" + rs.getString("INDEX_NAME") + "<br>");
+         *      out.println("position:" + rs.getInt("ORDINAL_POSITION") + "<br>");
+         *      out.println("cardinality:" + rs.getInt("CARDINALITY") + "<br>");
+         *  }
+         * } catch (SQLException e) {
+         *  e.printStackTrace();
+         * }
+         */
         out.println("</body>");
         out.println("</html>");
     }
 }
-
-
-
