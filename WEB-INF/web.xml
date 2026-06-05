@@ -320,6 +320,17 @@
 	</servlet-mapping>
 
 
+	<!-- fukaisystem.application.attendance -->
+	<servlet>
+		<servlet-name> attendance.dailyRegister </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.DailyRegister </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.dailyRegister </servlet-name>
+		<url-pattern> /attendance/dailyRegister </url-pattern>
+	</servlet-mapping>
+
+
 	<!-- fukaisystem.application.business -->
 	<servlet>
 		<servlet-name> deleteData </servlet-name>
