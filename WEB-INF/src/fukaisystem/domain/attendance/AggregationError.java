@@ -21,11 +21,11 @@ public final class AggregationError {
     }
 
     private final Type   type;
-    private final String employeeNo;
+    private final int    employeeNo;
     private final String workDate;
     private final String message;
 
-    public AggregationError(Type type, String employeeNo, String workDate, String message) {
+    public AggregationError(Type type, int employeeNo, String workDate, String message) {
         this.type       = type;
         this.employeeNo = employeeNo;
         this.workDate   = workDate;
@@ -33,12 +33,12 @@ public final class AggregationError {
     }
 
     public Type   getType()       { return type;       }
-    public String getEmployeeNo() { return employeeNo; }
+    public int    getEmployeeNo() { return employeeNo; }
     public String getWorkDate()   { return workDate;   }
     public String getMessage()    { return message;    }
 
     @Override
     public String toString() {
-        return String.format("[%s] %s %s : %s", type, employeeNo, workDate, message);
+        return String.format("[%s] %d %s : %s", type, employeeNo, workDate, message);
     }
 }

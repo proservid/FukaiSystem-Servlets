@@ -3,8 +3,6 @@ package fukaisystem.domain.attendance;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import fukaisystem.util.Util;
-
 /**
  * 日次集計結果（work_daily テーブルへの登録データ）。
  *
@@ -17,7 +15,7 @@ import fukaisystem.util.Util;
 public final class WorkDaily {
 
     /** 従業員番号 */
-    private final String employeeNo;
+    private final int employeeNo;
 
     /** 対象日 */
     private final LocalDate workDate;
@@ -53,7 +51,7 @@ public final class WorkDaily {
 
     // ---- ゲッター ----------------------------------------------------------------
 
-    public String        getEmployeeNo()       { return employeeNo;       }
+    public int           getEmployeeNo()       { return employeeNo;       }
     public LocalDate     getWorkDate()         { return workDate;         }
     public int           getTotalMinutes()     { return totalMinutes;     }
     public int           getOvertimeMinutes()  { return overtimeMinutes;  }
@@ -76,7 +74,7 @@ public final class WorkDaily {
     @Override
     public String toString() {
         return String.format(
-            "WorkDaily{employeeNo='%s', workDate=%s, isHoliday=%b, total=%s, overtime=%s, lateNight=%s, holiday=%s}",
+            "WorkDaily{employeeNo='%d', workDate=%s, isHoliday=%b, total=%s, overtime=%s, lateNight=%s, holiday=%s}",
             employeeNo, workDate, isHoliday,
             toHoursMinutes(totalMinutes),
             toHoursMinutes(overtimeMinutes),
@@ -89,7 +87,7 @@ public final class WorkDaily {
     public static Builder builder() { return new Builder(); }
 
     public static final class Builder {
-        private String        employeeNo;
+        private int           employeeNo;
         private LocalDate     workDate;
         private int           totalMinutes;
         private int           overtimeMinutes;
@@ -100,7 +98,7 @@ public final class WorkDaily {
 
         private Builder() {}
 
-        public Builder employeeNo(String v)         { this.employeeNo       = v; return this; }
+        public Builder employeeNo(int v)            { this.employeeNo       = v; return this; }
         public Builder workDate(LocalDate v)        { this.workDate         = v; return this; }
         public Builder totalMinutes(int v)          { this.totalMinutes     = v; return this; }
         public Builder overtimeMinutes(int v)       { this.overtimeMinutes  = v; return this; }
@@ -110,7 +108,7 @@ public final class WorkDaily {
         public Builder calcAt(LocalDateTime v)      { this.calcAt           = v; return this; }
 
         public WorkDaily build() {
-            if (Util.isBlank(employeeNo)) {
+            if (employeeNo == 0) {
                 throw new IllegalStateException("employeeNo は必須です");
             }
             if (workDate == null) {

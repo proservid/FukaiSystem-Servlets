@@ -17,7 +17,10 @@ import java.time.LocalTime;
 public final class TimeRecord implements Serializable {
 
     /** 従業員番号（CSVカラム1：先頭ゼロ埋め8桁） */
-    private final String employeeNo;
+    private final int employeeNo;
+
+    /** タイムカード番号（CSVカラム1：先頭ゼロ埋め8桁） */
+    private final int timeCardNo;
 
     /** 従業員氏名（CSVカラム2） */
     private final String employeeName;
@@ -45,6 +48,7 @@ public final class TimeRecord implements Serializable {
 
     private TimeRecord(Builder b) {
         this.employeeNo     = b.employeeNo;
+        this.timeCardNo     = b.timeCardNo;
         this.employeeName   = b.employeeName;
         this.clockIn        = b.clockIn;
         this.goOut          = b.goOut;
@@ -57,7 +61,8 @@ public final class TimeRecord implements Serializable {
 
     // ---- ゲッター ----------------------------------------------------------------
 
-    public String    getEmployeeNo()   { return employeeNo;     }
+    public int       getEmployeeNo()   { return employeeNo;     }
+    public int       getTimeCardNo()   { return timeCardNo;     }
     public String    getEmployeeName() { return employeeName;   }
     public LocalTime getClockIn()      { return clockIn;        }
     public LocalTime getGoOut()        { return goOut;          }
@@ -70,7 +75,7 @@ public final class TimeRecord implements Serializable {
     @Override
     public String toString() {
         return String.format(
-            "TimeRecord{employeeNo='%s', clockIn=%s, goOut=%s, returnIn=%s, clockOut=%s}",
+            "TimeRecord{employeeNo='%d', clockIn=%s, goOut=%s, returnIn=%s, clockOut=%s}",
             employeeNo, clockIn, goOut, returnIn, clockOut);
     }
 
@@ -79,7 +84,8 @@ public final class TimeRecord implements Serializable {
     public static Builder builder() { return new Builder(); }
 
     public static final class Builder {
-        private String    employeeNo;
+        private int       employeeNo;
+        private int       timeCardNo;
         private String    employeeName;
         private LocalTime clockIn;
         private LocalTime goOut;
@@ -91,7 +97,8 @@ public final class TimeRecord implements Serializable {
 
         private Builder() {}
 
-        public Builder employeeNo(String v)    { this.employeeNo     = v; return this; }
+        public Builder employeeNo(int v)       { this.employeeNo     = v; return this; }
+        public Builder timeCardNo(int v)       { this.timeCardNo     = v; return this; }
         public Builder employeeName(String v)  { this.employeeName   = v; return this; }
         public Builder clockIn(LocalTime v)    { this.clockIn        = v; return this; }
         public Builder goOut(LocalTime v)      { this.goOut          = v; return this; }
@@ -103,7 +110,7 @@ public final class TimeRecord implements Serializable {
 
         /** @throws IllegalStateException 必須項目（employeeNo）が null の場合 */
         public TimeRecord build() {
-            if (employeeNo == null || employeeNo.trim().isEmpty()) {
+            if (employeeNo == 0) {
                 throw new IllegalStateException("employeeNo は必須です");
             }
             return new TimeRecord(this);

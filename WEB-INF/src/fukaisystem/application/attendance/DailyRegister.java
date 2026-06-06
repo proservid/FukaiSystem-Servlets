@@ -2,10 +2,11 @@ package fukaisystem.application.attendance;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.util.Date;
-// import java.sql.PreparedStatement;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.servlet.ServletResponse;
@@ -28,37 +29,53 @@ public class DailyRegister extends ServiceFoundation {
 		if (date == null || records == null) {
 			return null;
 		}
-		// try (
-		// 	PreparedStatement ps = c.prepareStatement(
-		// 		"DELETE FROM T_打刻 WHERE 得意先CD=?"
-		// 	);
-		// ) {
-		// 	ps.setInt(1, accountCD);
-		// 	ps.executeUpdate();
-		// }
-		// try (
-		// 	PreparedStatement ps = c.prepareStatement(
-		// 		"INSERT INTO T_打刻 VALUES(?, ?, ?)"
-		// 	);
-		// ) {
-		// 	int i = 1;
-		// 	for (Vector<Object> record : accountNames) {
-		// 		String destination = (String) record.get(0);
-		// 		if (destination.isEmpty()) {
-		// 			continue;
-		// 		}
-		// 		ps.setInt(1, accountCD);
-		// 		ps.setInt(2, i++); // 宛名ID
-		// 		ps.setString(3, destination);
-		// 		ps.addBatch();
-		// 	}
-		// 	ps.executeBatch();
-		// }
+		try (
+			PreparedStatement ps = c.prepareStatement(
+				"DELETE FROM T_打刻 WHERE 年月日=?"
+			);
+		) {
+			ps.setObject(1, date);
+			ps.executeUpdate();
+		}
+		LocalDateTime now = LocalDateTime.now();
+		try (
+			PreparedStatement ps = c.prepareStatement(
+				"INSERT INTO T_打刻 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+			);
+		) {
+			for (TimeRecord record : records) {
+				ps.setObject(1, date);
+				ps.setInt(2, record.getEmployeeNo());
+				ps.setInt(3, record.getTimeCardNo());
+				ps.setObject(4, record.getClockIn());
+				ps.setObject(5, record.getGoOut());
+				ps.setObject(6, record.getReturnIn());
+				ps.setObject(7, record.getClockOut());
+				ps.setBoolean(8, record.isBusinessTrip());
+				ps.setBoolean(9, record.isPaidHoliday());
+				ps.setString(10, record.getNote());
+				ps.setObject(11, now);
+				ps.addBatch();
+			}
+			ps.executeBatch();
+		}
+		boolean isHoliday = false;
+		try (PreparedStatement ps = c.prepareStatement(
+				"SELECT 1 FROM T_祝日 WHERE 祝日=?"
+			);
+		) {
+			ps.setObject(1, date);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				isHoliday = true;
+			}
+		}
+
 		return DailyRecords.builder()
 			.workDate(date)
 			.records(records)
-			.holiday(true)
-			.registerDate(new Date())
+			.holiday(isHoliday)
+			.registerDate(now)
 			.build();
 	}
 }

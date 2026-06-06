@@ -11,7 +11,7 @@ public class AggregationException extends RuntimeException {
     private final AggregationError.Type errorType;
 
     public AggregationException(AggregationError.Type errorType,
-                                String employeeNo,
+                                int employeeNo,
                                 String workDate,
                                 String message) {
         super("[" + errorType + "] 従業員=" + employeeNo + " 日付=" + workDate + " : " + message);
