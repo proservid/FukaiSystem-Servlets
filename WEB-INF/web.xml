@@ -322,6 +322,14 @@
 
 	<!-- fukaisystem.application.attendance -->
 	<servlet>
+		<servlet-name> attendance.init </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.Init </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.init </servlet-name>
+		<url-pattern> /attendance/init </url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name> attendance.dailyRegister </servlet-name>
 		<servlet-class> fukaisystem.application.attendance.DailyRegister </servlet-class>
 	</servlet>
