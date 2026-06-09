@@ -330,12 +330,28 @@
 		<url-pattern> /attendance/init </url-pattern>
 	</servlet-mapping>
 	<servlet>
+		<servlet-name> attendance.dailyReader </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.DailyReader </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.dailyReader </servlet-name>
+		<url-pattern> /attendance/dailyReader </url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name> attendance.dailyRegister </servlet-name>
 		<servlet-class> fukaisystem.application.attendance.DailyRegister </servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name> attendance.dailyRegister </servlet-name>
 		<url-pattern> /attendance/dailyRegister </url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.dailyModifier </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.DailyModifier </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.dailyModifier </servlet-name>
+		<url-pattern> /attendance/dailyModifier </url-pattern>
 	</servlet-mapping>
 
 

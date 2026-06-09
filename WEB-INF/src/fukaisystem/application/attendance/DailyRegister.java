@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.servlet.ServletResponse;
@@ -37,7 +36,6 @@ public class DailyRegister extends ServiceFoundation {
 			ps.setObject(1, date);
 			ps.executeUpdate();
 		}
-		LocalDateTime now = LocalDateTime.now();
 		try (
 			PreparedStatement ps = c.prepareStatement(
 				"INSERT INTO T_打刻 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
@@ -54,7 +52,7 @@ public class DailyRegister extends ServiceFoundation {
 				ps.setBoolean(8, record.isBusinessTrip());
 				ps.setBoolean(9, record.isPaidHoliday());
 				ps.setString(10, record.getNote());
-				ps.setObject(11, now);
+				ps.setObject(11, null);
 				ps.addBatch();
 			}
 			ps.executeBatch();
@@ -75,7 +73,7 @@ public class DailyRegister extends ServiceFoundation {
 			.workDate(date)
 			.records(records)
 			.holiday(isHoliday)
-			.registerDate(now)
+			.registerDate(null)
 			.build();
 	}
 }
