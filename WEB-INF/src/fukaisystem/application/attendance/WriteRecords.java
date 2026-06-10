@@ -63,7 +63,8 @@ public class WriteRecords extends ServiceFoundation {
 			ps.executeBatch();
 		}
 		boolean isHoliday = false;
-		try (PreparedStatement ps = c.prepareStatement(
+		try (
+			PreparedStatement ps = c.prepareStatement(
 				"SELECT 1 FROM T_祝日 WHERE 祝日=?"
 			);
 		) {
