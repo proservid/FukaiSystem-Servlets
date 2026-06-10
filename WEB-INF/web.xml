@@ -361,6 +361,14 @@
 		<servlet-name> attendance.deleteModify </servlet-name>
 		<url-pattern> /attendance/deleteModify </url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.deleteRecord </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.DeleteRecord </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.deleteRecord </servlet-name>
+		<url-pattern> /attendance/deleteRecord </url-pattern>
+	</servlet-mapping>
 
 
 	<!-- fukaisystem.application.business -->

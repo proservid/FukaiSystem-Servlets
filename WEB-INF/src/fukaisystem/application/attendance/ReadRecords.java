@@ -35,7 +35,7 @@ public class ReadRecords extends ServiceFoundation {
 		LocalDateTime registerDate = null;
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"SELECT * FROM T_打刻 WHERE 年月日=?"
+				"SELECT * FROM T_打刻 WHERE 年月日=? AND 削除日時 IS NULL"
 			);
 		) {
 			ps.setObject(1, date);
@@ -57,7 +57,7 @@ public class ReadRecords extends ServiceFoundation {
 		}
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"SELECT * FROM T_打刻修正 WHERE 年月日=?"
+				"SELECT * FROM T_打刻修正 WHERE 年月日=? AND 削除日時 IS NULL"
 			);
 		) {
 			ps.setObject(1, date);

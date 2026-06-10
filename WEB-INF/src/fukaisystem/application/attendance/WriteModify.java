@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.time.LocalDateTime;
 import java.sql.Date;
 import java.util.List;
@@ -31,7 +32,7 @@ public class WriteModify extends ServiceFoundation {
 		LocalDateTime now = LocalDateTime.now();
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"INSERT INTO T_打刻修正 VALUES(?, ?, (SELECT COUNT(*) + 1 FROM T_打刻修正 WHERE 年月日=? AND 人員CD=?), ?, ?, ?, ?, ?, ?, ?, ?)"
+				"INSERT INTO T_打刻修正 VALUES(?, ?, (SELECT COUNT(*) + 1 FROM T_打刻修正 WHERE 年月日=? AND 人員CD=?), ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 			);
 		) {
 			for (Map.Entry<Integer, List<Object>> m : map.entrySet()) {
@@ -44,6 +45,7 @@ public class WriteModify extends ServiceFoundation {
 					ps.setObject(i++, value == null ? null : value);
 				}
 				ps.setObject(i++, now);
+				ps.setNull(i++, Types.TIMESTAMP);
 				ps.addBatch();
 			}
 			ps.executeBatch();
@@ -57,6 +59,6 @@ public class WriteModify extends ServiceFoundation {
 		// 	ps.executeUpdate();
 		// }
 
-		return now;
+		return null;
 	}
 }

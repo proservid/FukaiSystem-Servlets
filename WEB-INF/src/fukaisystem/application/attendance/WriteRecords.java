@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -40,21 +41,23 @@ public class WriteRecords extends ServiceFoundation {
 		LocalDateTime now = LocalDateTime.now();
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"INSERT INTO T_打刻 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+				"INSERT INTO T_打刻 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 			);
 		) {
 			for (TimeRecord record : records) {
-				ps.setObject(1, date);
-				ps.setInt(2, record.getEmployeeNo());
-				ps.setInt(3, record.getTimeCardNo());
-				ps.setObject(4, record.getClockIn());
-				ps.setObject(5, record.getGoOut());
-				ps.setObject(6, record.getReturnIn());
-				ps.setObject(7, record.getClockOut());
-				ps.setBoolean(8, record.isBusinessTrip());
-				ps.setBoolean(9, record.isPaidHoliday());
-				ps.setString(10, record.getNote());
-				ps.setObject(11, now);
+				int i = 1;
+				ps.setObject(i++, date);
+				ps.setInt(i++, record.getEmployeeNo());
+				ps.setInt(i++, record.getTimeCardNo());
+				ps.setObject(i++, record.getClockIn());
+				ps.setObject(i++, record.getGoOut());
+				ps.setObject(i++, record.getReturnIn());
+				ps.setObject(i++, record.getClockOut());
+				ps.setBoolean(i++, record.isBusinessTrip());
+				ps.setBoolean(i++, record.isPaidHoliday());
+				ps.setString(i++, record.getNote());
+				ps.setObject(i++, now);
+				ps.setNull(i++, Types.TIMESTAMP);
 				ps.addBatch();
 			}
 			ps.executeBatch();
