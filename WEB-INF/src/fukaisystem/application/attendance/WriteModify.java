@@ -17,7 +17,7 @@ import fukaisystem.foundation.ServiceFoundation;
 /**
  * 打刻修正データを登録し、修正日時 (これを登録年月日とする) を返す
  */
-public class DailyModifier extends ServiceFoundation {
+public class WriteModify extends ServiceFoundation {
 
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {

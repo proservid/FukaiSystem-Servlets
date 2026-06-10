@@ -330,28 +330,28 @@
 		<url-pattern> /attendance/init </url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name> attendance.dailyReader </servlet-name>
-		<servlet-class> fukaisystem.application.attendance.DailyReader </servlet-class>
+		<servlet-name> attendance.readRecords </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.ReadRecords </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> attendance.dailyReader </servlet-name>
-		<url-pattern> /attendance/dailyReader </url-pattern>
+		<servlet-name> attendance.readRecords </servlet-name>
+		<url-pattern> /attendance/readRecords </url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name> attendance.dailyRegister </servlet-name>
-		<servlet-class> fukaisystem.application.attendance.DailyRegister </servlet-class>
+		<servlet-name> attendance.writeRecords </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.WriteRecords </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> attendance.dailyRegister </servlet-name>
-		<url-pattern> /attendance/dailyRegister </url-pattern>
+		<servlet-name> attendance.writeRecords </servlet-name>
+		<url-pattern> /attendance/writeRecords </url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name> attendance.dailyModifier </servlet-name>
-		<servlet-class> fukaisystem.application.attendance.DailyModifier </servlet-class>
+		<servlet-name> attendance.writeModify </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.WriteModify </servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name> attendance.dailyModifier </servlet-name>
-		<url-pattern> /attendance/dailyModifier </url-pattern>
+		<servlet-name> attendance.writeModify </servlet-name>
+		<url-pattern> /attendance/writeModify </url-pattern>
 	</servlet-mapping>
 
 

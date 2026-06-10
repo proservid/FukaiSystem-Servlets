@@ -22,15 +22,15 @@ import fukaisystem.foundation.ServiceFoundation;
 /**
  * 日次打刻データを登録し、表示用データを返す
  */
-public class DailyReader extends ServiceFoundation {
+public class ReadRecords extends ServiceFoundation {
 
 	@Override
 	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 		LocalDate date = cast(response, o, LocalDate.class);
-
 		if (date == null) {
 			return null;
 		}
+
 		Map<Integer, TimeRecord.Builder> builders = new HashMap<>();
 		LocalDateTime registerDate = null;
 		try (
