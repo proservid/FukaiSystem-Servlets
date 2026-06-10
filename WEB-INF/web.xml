@@ -353,6 +353,14 @@
 		<servlet-name> attendance.writeModify </servlet-name>
 		<url-pattern> /attendance/writeModify </url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.deleteModify </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.DeleteModify </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.deleteModify </servlet-name>
+		<url-pattern> /attendance/deleteModify </url-pattern>
+	</servlet-mapping>
 
 
 	<!-- fukaisystem.application.business -->
