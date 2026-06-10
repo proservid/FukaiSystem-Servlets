@@ -15,7 +15,7 @@ import fukaisystem.dto.attendance.ModifiedDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
- * 打刻修正データを登録し、修正日時 (これを登録年月日とする) を返す
+ * 打刻修正データを登録し、修正日時を返す
  */
 public class WriteModify extends ServiceFoundation {
 
@@ -48,14 +48,14 @@ public class WriteModify extends ServiceFoundation {
 			}
 			ps.executeBatch();
 		}
-		try (PreparedStatement ps = c.prepareStatement(
-				"UPDATE T_打刻 SET 登録日時=? WHERE 年月日=?"
-			);
-		) {
-			ps.setObject(1, now);
-			ps.setDate(2, date);
-			ps.executeUpdate();
-		}
+		// try (PreparedStatement ps = c.prepareStatement(
+		// 		"UPDATE T_打刻 SET 登録日時=? WHERE 年月日=?"
+		// 	);
+		// ) {
+		// 	ps.setObject(1, now);
+		// 	ps.setDate(2, date);
+		// 	ps.executeUpdate();
+		// }
 
 		return now;
 	}
