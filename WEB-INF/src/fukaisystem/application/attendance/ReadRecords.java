@@ -63,7 +63,13 @@ public class ReadRecords extends ServiceFoundation {
 			ps.setObject(1, date);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				TimeRecord.Builder builder = builders.get(rs.getInt("人員CD"));
+				int memberCD = rs.getInt("人員CD");
+				TimeRecord.Builder builder = builders.get(memberCD);
+				if (builder == null) {
+					// 打刻データがなく修正のみの場合 (出張など)
+					builder = TimeRecord.builder().employeeNo(memberCD);
+					builders.put(memberCD, builder);
+				}
 				LocalTime clockIn = rs.getObject("出勤時刻", LocalTime.class);
 				if (clockIn != null) {
 					builder.clockIn(clockIn);
