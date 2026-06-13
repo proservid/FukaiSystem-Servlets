@@ -50,14 +50,6 @@ public class WriteModify extends ServiceFoundation {
 			}
 			ps.executeBatch();
 		}
-		// try (PreparedStatement ps = c.prepareStatement(
-		// 		"UPDATE T_打刻 SET 登録日時=? WHERE 年月日=?"
-		// 	);
-		// ) {
-		// 	ps.setObject(1, now);
-		// 	ps.setDate(2, date);
-		// 	ps.executeUpdate();
-		// }
 
 		return null;
 	}

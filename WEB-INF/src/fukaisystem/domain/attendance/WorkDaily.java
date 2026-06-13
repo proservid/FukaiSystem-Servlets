@@ -122,18 +122,18 @@ public final class WorkDaily implements Serializable {
 
         private Builder() {}
 
-        public Builder employeeNo(int v)            { this.employeeNo       = v; return this; }
-        public Builder workDate(LocalDate v)        { this.workDate         = v; return this; }
-        public Builder totalMinutes(int v)          { this.totalMinutes     = v; return this; }
-        public Builder overtimeMinutes(int v)       { this.overtimeMinutes  = v; return this; }
-        public Builder lateNightMinutes(int v)      { this.lateNightMinutes = v; return this; }
-        public Builder isHoliday(boolean v)         { this.isHoliday        = v; return this; }
-        public Builder isSunday(boolean v)          { this.isSunday         = v; return this; }
-        public Builder isBusinessTrip(boolean v)    { this.isBusinessTrip   = v; return this; }
-        public Builder isLateEarly(boolean v)       { this.isLateEarly      = v; return this; }
-        public Builder isAbsence(boolean v)         { this.isAbsence        = v; return this; }
-        public Builder isPaidHoliday(boolean v)     { this.isPaidHoliday    = v; return this; }
-        public Builder calcAt(LocalDateTime v)      { this.calcAt           = v; return this; }
+        public Builder employeeNo(int v)          { this.employeeNo       = v; return this; }
+        public Builder workDate(LocalDate v)      { this.workDate         = v; return this; }
+        public Builder totalMinutes(int v)        { this.totalMinutes     = v; return this; }
+        public Builder overtimeMinutes(int v)     { this.overtimeMinutes  = v; return this; }
+        public Builder lateNightMinutes(int v)    { this.lateNightMinutes = v; return this; }
+        public Builder holiday(boolean v)         { this.isHoliday        = v; return this; }
+        public Builder sunday(boolean v)          { this.isSunday         = v; return this; }
+        public Builder businessTrip(boolean v)    { this.isBusinessTrip   = v; return this; }
+        public Builder lateEarly(boolean v)       { this.isLateEarly      = v; return this; }
+        public Builder absence(boolean v)         { this.isAbsence        = v; return this; }
+        public Builder paidHoliday(boolean v)     { this.isPaidHoliday    = v; return this; }
+        public Builder calcAt(LocalDateTime v)    { this.calcAt           = v; return this; }
 
         public WorkDaily build() {
             if (employeeNo == 0) {

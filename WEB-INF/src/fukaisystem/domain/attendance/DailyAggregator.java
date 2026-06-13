@@ -133,11 +133,11 @@ public class DailyAggregator {
 
         // 有給
         if (record.isPaidHoliday()) {
-            return builder.isPaidHoliday(true).build();
+            return builder.paidHoliday(true).build();
         }
         // 欠勤
         if (record.getClockIn() == null && record.getClockOut() == null) {
-            return builder.isAbsence(true).build();
+            return builder.absence(true).build();
         }
 
         // 出勤・退勤のどちらかが未打刻 → 不完全データ
@@ -188,10 +188,10 @@ public class DailyAggregator {
                 .totalMinutes(totalMinutes)
                 .overtimeMinutes(overtimeMinutes)
                 .lateNightMinutes(lateNightMinutes)
-                .isHoliday(isHoliday)
-                .isSunday(isSunday)
-                .isBusinessTrip(record.isBusinessTrip())
-                .isLateEarly(isLateEarly(record))
+                .holiday(isHoliday)
+                .sunday(isSunday)
+                .businessTrip(record.isBusinessTrip())
+                .lateEarly(isLateEarly(record))
                 .build();
     }
 
