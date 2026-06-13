@@ -1,5 +1,6 @@
 package fukaisystem.domain.attendance;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -12,7 +13,7 @@ import java.time.LocalDateTime;
  * <p>本クラスは不変オブジェクトとして設計する。
  * インスタンス生成には {@link Builder} を使用すること。
  */
-public final class WorkDaily {
+public final class WorkDaily implements Serializable {
 
     /** 従業員番号 */
     private final int employeeNo;
@@ -20,33 +21,49 @@ public final class WorkDaily {
     /** 対象日 */
     private final LocalDate workDate;
 
-    /** 実労働時間（分）: 退勤 - 出勤 - 外出時間 */
+    /** 実労働時間（分）: 退勤 - 出勤 - 外出時間 - 昼休み - 定時後休憩 */
     private final int totalMinutes;
 
-    /** 日次時間外労働（分）: max(0, 実労働 - 480分) */
+    /** 日次時間外労働（分）: 17:15 以降の実労働時間（30分単位切り捨て） */
     private final int overtimeMinutes;
 
-    /** 深夜労働（分）: 22:00〜翌05:00 に重なる実労働時間 */
+    /** 深夜労働（分）: 00:00〜06:00 および 22:00〜翌06:00 に重なる実労働時間 */
     private final int lateNightMinutes;
 
-    /** 休日労働（分）: 休日フラグが true の場合の実労働時間全体 */
-    private final int holidayMinutes;
-
-    /** 休日フラグ: 日曜・祝日・所定休日の場合 true */
+    /** 休日フラグ: 祝日・所定休日の場合 true（法定休日の日曜は isSunday で表す） */
     private final boolean isHoliday;
+
+    /** 日曜フラグ: 日曜の場合 true */
+    private final boolean isSunday;
+
+    /** 出張フラグ: 出張の場合 true */
+    private final boolean isBusinessTrip;
+
+    /** 遅早フラグ: 遅刻・早退の場合 true */
+    private final boolean isLateEarly;
+
+    /** 欠勤フラグ: 欠勤の場合 true */
+    private final boolean isAbsence;
+
+    /** 有給フラグ: 有給休暇の場合 true */
+    private final boolean isPaidHoliday;
 
     /** 集計実行日時 */
     private final LocalDateTime calcAt;
 
     private WorkDaily(Builder b) {
-        this.employeeNo      = b.employeeNo;
-        this.workDate        = b.workDate;
-        this.totalMinutes    = b.totalMinutes;
-        this.overtimeMinutes = b.overtimeMinutes;
+        this.employeeNo       = b.employeeNo;
+        this.workDate         = b.workDate;
+        this.totalMinutes     = b.totalMinutes;
+        this.overtimeMinutes  = b.overtimeMinutes;
         this.lateNightMinutes = b.lateNightMinutes;
-        this.holidayMinutes  = b.holidayMinutes;
-        this.isHoliday       = b.isHoliday;
-        this.calcAt          = b.calcAt;
+        this.isHoliday        = b.isHoliday;
+        this.isSunday         = b.isSunday;
+        this.isBusinessTrip   = b.isBusinessTrip;
+        this.isLateEarly      = b.isLateEarly;
+        this.isAbsence        = b.isAbsence;
+        this.isPaidHoliday    = b.isPaidHoliday;
+        this.calcAt           = b.calcAt;
     }
 
     // ---- ゲッター ----------------------------------------------------------------
@@ -56,8 +73,12 @@ public final class WorkDaily {
     public int           getTotalMinutes()     { return totalMinutes;     }
     public int           getOvertimeMinutes()  { return overtimeMinutes;  }
     public int           getLateNightMinutes() { return lateNightMinutes; }
-    public int           getHolidayMinutes()   { return holidayMinutes;   }
     public boolean       isHoliday()           { return isHoliday;        }
+    public boolean       isSunday()            { return isSunday;         }
+    public boolean       isBusinessTrip()      { return isBusinessTrip;   }
+    public boolean       isLateEarly()         { return isLateEarly;      }
+    public boolean       isAbsence()           { return isAbsence;        }
+    public boolean       isPaidHoliday()       { return isPaidHoliday;    }
     public LocalDateTime getCalcAt()           { return calcAt;           }
 
     /**
@@ -78,8 +99,7 @@ public final class WorkDaily {
             employeeNo, workDate, isHoliday,
             toHoursMinutes(totalMinutes),
             toHoursMinutes(overtimeMinutes),
-            toHoursMinutes(lateNightMinutes),
-            toHoursMinutes(holidayMinutes));
+            toHoursMinutes(lateNightMinutes));
     }
 
     // ---- Builder ----------------------------------------------------------------
@@ -92,8 +112,12 @@ public final class WorkDaily {
         private int           totalMinutes;
         private int           overtimeMinutes;
         private int           lateNightMinutes;
-        private int           holidayMinutes;
         private boolean       isHoliday;
+        private boolean       isSunday;
+        private boolean       isBusinessTrip;
+        private boolean       isLateEarly;
+        private boolean       isAbsence;
+        private boolean       isPaidHoliday;
         private LocalDateTime calcAt = LocalDateTime.now();
 
         private Builder() {}
@@ -103,8 +127,12 @@ public final class WorkDaily {
         public Builder totalMinutes(int v)          { this.totalMinutes     = v; return this; }
         public Builder overtimeMinutes(int v)       { this.overtimeMinutes  = v; return this; }
         public Builder lateNightMinutes(int v)      { this.lateNightMinutes = v; return this; }
-        public Builder holidayMinutes(int v)        { this.holidayMinutes   = v; return this; }
         public Builder isHoliday(boolean v)         { this.isHoliday        = v; return this; }
+        public Builder isSunday(boolean v)          { this.isSunday         = v; return this; }
+        public Builder isBusinessTrip(boolean v)    { this.isBusinessTrip   = v; return this; }
+        public Builder isLateEarly(boolean v)       { this.isLateEarly      = v; return this; }
+        public Builder isAbsence(boolean v)         { this.isAbsence        = v; return this; }
+        public Builder isPaidHoliday(boolean v)     { this.isPaidHoliday    = v; return this; }
         public Builder calcAt(LocalDateTime v)      { this.calcAt           = v; return this; }
 
         public WorkDaily build() {

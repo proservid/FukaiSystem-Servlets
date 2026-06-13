@@ -1,7 +1,7 @@
 package fukaisystem.domain.attendance;
 
+import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,10 +44,10 @@ import java.util.List;
  *   DailyAggregator aggregator = new DailyAggregator();
  *
  *   // 単件処理
- *   WorkDaily result = aggregator.aggregate(record, holidays);
+ *   WorkDaily result = aggregator.aggregate(date, isHoliday, isSunday, record);
  *
  *   // バッチ処理
- *   DailyAggregationResult batchResult = aggregator.aggregateAll(records, holidays);
+ *   DailyAggregationResult batchResult = aggregator.aggregateAll(records);
  *   batchResult.getSuccessList(); // DB登録へ
  *   batchResult.getErrorList();   // ログ出力・画面表示へ
  * }</pre>
@@ -63,10 +63,13 @@ public class DailyAggregator {
     /** 昼休み開始: 12:00 = 720分 */
     static final int LUNCH_START = 12 * 60;           // 720
 
-    /** 昼休み終了: 12:45 = 770分 */
-    static final int LUNCH_END   = 12 * 60 + 45;      // 770
+    /** 昼休み終了: 12:45 = 765分 */
+    static final int LUNCH_END   = 12 * 60 + 45;      // 765
 
     // ---- 定時・残業 -------------------------------------------------------------
+
+    /** 定時始業: 8:20 = 500分 */
+    static final int STANDARD_START   = 8 * 60 + 20;   // 500
 
     /** 定時終業: 17:00 = 1020分 */
     static final int STANDARD_END     = 17 * 60;       // 1020
@@ -114,17 +117,37 @@ public class DailyAggregator {
      *
      * @param date      打刻日
      * @param isHoliday 休日FLG
+     * @param isSunday  日曜FLG
      * @param record    打刻データ（null 不可）
-     * @return 集計結果。出勤または退勤が未打刻の場合は {@code null} を返す。
+     * @return 集計結果（null を返さない）
      * @throws IllegalArgumentException record が null の場合
-     * @throws AggregationException     打刻の時刻順序が不正、または24時間超の場合
+     * @throws AggregationException     出勤・退勤の片方が未打刻、外出・戻りの片方が未打刻、
+     *                                  打刻の時刻順序が不正、または実労働24時間超の場合
      */
-    public WorkDaily aggregate(LocalDate date, boolean isHoliday, TimeRecord record) {
+    public WorkDaily aggregate(LocalDate date, boolean isHoliday, boolean isSunday, TimeRecord record) {
         if (record == null) throw new IllegalArgumentException("record は null にできません");
 
-        // 出勤・退勤のどちらかが未打刻 → 集計不可（欠勤・未処理として呼び出し元が判断）
+        WorkDaily.Builder builder = WorkDaily.builder()
+            .employeeNo(record.getEmployeeNo())
+            .workDate(date);
+
+        // 有給
+        if (record.isPaidHoliday()) {
+            return builder.isPaidHoliday(true).build();
+        }
+        // 欠勤
+        if (record.getClockIn() == null && record.getClockOut() == null) {
+            return builder.isAbsence(true).build();
+        }
+
+        // 出勤・退勤のどちらかが未打刻 → 不完全データ
         if (record.getClockIn() == null || record.getClockOut() == null) {
-            return null;
+            throw new AggregationException(
+                AggregationError.Type.MISSING_PUNCH,
+                record.getEmployeeNo(),
+                date.toString(),
+                "出勤・退勤のどちらか一方が未打刻です: clockIn=" + record.getClockIn()
+                    + " clockOut=" + record.getClockOut());
         }
 
         // 外出・戻りの片方のみ → 不完全データ
@@ -160,25 +183,50 @@ public class DailyAggregator {
 
         int overtimeMinutes   = calcOvertimeMinutes(intervals);
         int lateNightMinutes  = calcLateNightMinutes(intervals);
-        int holidayMinutes    = isHoliday ? totalMinutes : 0;
 
-        return WorkDaily.builder()
-                .employeeNo(record.getEmployeeNo())
-                .workDate(date)
+        return builder
                 .totalMinutes(totalMinutes)
                 .overtimeMinutes(overtimeMinutes)
                 .lateNightMinutes(lateNightMinutes)
-                .holidayMinutes(holidayMinutes)
                 .isHoliday(isHoliday)
-                .calcAt(LocalDateTime.now())
+                .isSunday(isSunday)
+                .isBusinessTrip(record.isBusinessTrip())
+                .isLateEarly(isLateEarly(record))
                 .build();
+    }
+
+    /**
+     * 日曜日かどうかを調べる。
+     *
+     * @param date 打刻日
+     * @return 日曜日は true, 他の曜日は false
+     */
+    public boolean isSunday(LocalDate date) {
+        return date.getDayOfWeek() == DayOfWeek.SUNDAY;
+    }
+
+    /**
+     * 遅刻または早退かどうかを調べる。
+     *
+     * <p>日付またぎ（退勤 &lt; 出勤）の場合は退勤を翌日時刻として扱い、早退とは判定しない。
+     * 定時始業（08:20）より後の出勤は深夜シフトであっても遅刻として扱う。
+     *
+     * @param record 打刻データ（出勤・退勤とも打刻済みであること）
+     * @return 遅刻または早退の場合は true, そうでない場合は false
+     */
+    public boolean isLateEarly(TimeRecord record) {
+        int clockInMin  = toMinutes(record.getClockIn());
+        int clockOutMin = toMinutes(record.getClockOut());
+        // 日付またぎは退勤を翌日時刻に補正してから早退判定する
+        if (clockOutMin < clockInMin) clockOutMin += 1440;
+        return clockInMin > STANDARD_START || clockOutMin < STANDARD_END;
     }
 
     /**
      * 複数の打刻データをバッチ集計する。
      * エラーが発生した個別レコードはスキップし、エラーリストに追記して処理を続行する。
      *
-     * @param records   1日の全打刻データ（null 不可）
+     * @param records 1日の全打刻データ（null 不可）
      * @return 成功リストとエラーリストを含む集計結果
      */
     public DailyAggregationResult aggregateAll(DailyRecords records) {
@@ -189,17 +237,18 @@ public class DailyAggregator {
 
         for (TimeRecord record : records.getRecords()) {
             LocalDate date = records.getWorkDate();
+            boolean isHoliday = records.isHoliday();
+            boolean isSunday = isSunday(date);
             try {
-                WorkDaily result = aggregate(date, records.isHoliday(), record);
-                if (result == null) {
-                    errorList.add(new AggregationError(
-                        AggregationError.Type.MISSING_PUNCH,
-                        record.getEmployeeNo(),
-                        date.toString(),
-                        "出勤または退勤が未打刻のため集計をスキップしました"));
-                } else {
-                    successList.add(result);
+                // 休日・日曜で打刻がないレコードは欠勤ではないためスキップする。
+                if (
+                    (isHoliday || isSunday)
+                        && record.getClockIn() == null
+                        && record.getClockOut() == null
+                ) {
+                    continue;
                 }
+                successList.add(aggregate(date, isHoliday, isSunday, record));
             } catch (AggregationException e) {
                 errorList.add(new AggregationError(
                     e.getErrorType(),
@@ -234,8 +283,18 @@ public class DailyAggregator {
         int rawClockIn  = toMinutes(record.getClockIn());
         int rawClockOut = toMinutes(record.getClockOut());
 
+        // 出勤と退勤が同時刻 → 日付またぎと区別できないデータ異常として扱う
+        if (rawClockOut == rawClockIn) {
+            throw new AggregationException(
+                AggregationError.Type.INVALID_TIME_ORDER,
+                record.getEmployeeNo(),
+                date.toString(),
+                "出勤時刻と退勤時刻が同一です: clockIn=" + record.getClockIn()
+                    + " clockOut=" + record.getClockOut());
+        }
+
         // 退勤 < 出勤 → 日付またぎ（翌日扱い）
-        boolean midnightShift = (rawClockOut <= rawClockIn);
+        boolean midnightShift = (rawClockOut < rawClockIn);
         int clockInMin  = rawClockIn;
         int clockOutMin = midnightShift ? rawClockOut + 1440 : rawClockOut;
 
@@ -270,7 +329,8 @@ public class DailyAggregator {
     }
 
     /**
-     * 指定した控除期間 [deductStart, deductEnd] を労働区間リストから除去する。
+     * 指定した控除期間 (deductStart, deductEnd) を労働区間リストから除去する
+     * （境界がちょうど一致する区間は控除されない）。
      *
      * <p>控除期間と重なる各区間を「控除前」「控除後」の2部分に分割し、
      * 長さゼロの区間は除去して返す。
