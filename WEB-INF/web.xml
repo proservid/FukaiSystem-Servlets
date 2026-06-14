@@ -377,6 +377,22 @@
 		<servlet-name> attendance.writeWorkDaily </servlet-name>
 		<url-pattern> /attendance/writeWorkDaily </url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.readAll </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.ReadAll </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.readAll </servlet-name>
+		<url-pattern> /attendance/readAll </url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.readPersonal </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.ReadPersonal </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.readPersonal </servlet-name>
+		<url-pattern> /attendance/readPersonal </url-pattern>
+	</servlet-mapping>
 
 
 	<!-- fukaisystem.application.business -->
