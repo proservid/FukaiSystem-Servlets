@@ -4,25 +4,25 @@ import java.io.Serializable;
 
 public class FilterDTO implements Serializable {
 
-	Integer coarse;
-	Integer middle;
-	Integer fine;
+	int coarse;
+	int middle;
+	int fine;
 
-	public FilterDTO(Integer coarse, Integer middle, Integer fine) {
+	public FilterDTO(int coarse, int middle, int fine) {
 		this.coarse = coarse;
 		this.middle = middle;
 		this.fine = fine;
 	}
 
-	public Integer getCoarse() {
+	public int getCoarse() {
 		return coarse;
 	}
 
-	public Integer getMiddle() {
+	public int getMiddle() {
 		return middle;
 	}
 
-	public Integer getFine() {
+	public int getFine() {
 		return fine;
 	}
 }

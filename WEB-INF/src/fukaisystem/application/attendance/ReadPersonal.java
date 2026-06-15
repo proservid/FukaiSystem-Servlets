@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
+import java.time.LocalDate;
 import java.util.Vector;
 
 import javax.servlet.ServletResponse;
@@ -25,14 +25,20 @@ public class ReadPersonal extends ServiceFoundation {
 		if (dto == null) {
 			return null;
 		}
+		LocalDate from;
+		LocalDate to;
 		String num = "";
 		String group = "";
 		String having = "";
-		if (dto.getMiddle() == null) {
+		if (dto.getMiddle() == 0) { // 年間
+			from = LocalDate.of(dto.getCoarse(), 1, 1);
+			to = from.plusYears(1);
 			num = "MONTH(年月日)";
 			group = "YEAR(年月日), MONTH(年月日)";
-			having = "YEAR(年月日)=? AND ? IS NULL";
-		} else {
+			having = "YEAR(年月日)=? AND ?=0";
+		} else { // 月間
+			from = LocalDate.of(dto.getCoarse(), dto.getMiddle(), 1);
+			to = from.plusMonths(1);
 			num = "DAY(年月日)";
 			group = "YEAR(年月日), MONTH(年月日), DAY(年月日)";
 			having = "YEAR(年月日)=? AND MONTH(年月日)=?";
@@ -58,12 +64,16 @@ public class ReadPersonal extends ServiceFoundation {
 					+ " SUM(CASE WHEN 遅早FLG='true' THEN 1 ELSE 0 END) AS 遅早,"
 					+ " SUM(CASE WHEN 欠勤FLG='true' THEN 1 ELSE 0 END) AS 欠勤,"
 					+ " SUM(CASE WHEN 有給FLG='true' THEN 1 ELSE 0 END) AS 有給"
-					+ " FROM T_日次集計 GROUP BY " + group + ", 人員CD HAVING " + having + " AND 人員CD=?"
+					+ " FROM T_日次集計 WHERE 年月日>=? AND 年月日<?"
+					+ " GROUP BY " + group + ", 人員CD HAVING " + having + " AND 人員CD=?"
 			);
 		) {
-			ps.setInt(1, dto.getCoarse());
-			ps.setObject(2, dto.getMiddle(), Types.INTEGER); // null がありうる
-			ps.setInt(3, dto.getFine());
+			int i = 1;
+			ps.setObject(i++, from);
+			ps.setObject(i++, to);
+			ps.setInt(i++, dto.getCoarse());
+			ps.setInt(i++, dto.getMiddle());
+			ps.setInt(i++, dto.getFine());
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				Vector<Object> v = new Vector<>();

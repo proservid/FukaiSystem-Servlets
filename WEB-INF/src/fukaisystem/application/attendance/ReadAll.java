@@ -29,12 +29,12 @@ public class ReadAll extends ServiceFoundation {
 		LocalDate to;
 		String group = "";
 		String having = "";
-		if (dto.getMiddle() == null) {
+		if (dto.getMiddle() == 0) { // 年間
 			from = LocalDate.of(dto.getCoarse(), 1, 1);
 			to = from.plusYears(1);
 			group = "YEAR(年月日)";
-			having = "YEAR(年月日)=? AND ? IS NULL";
-		} else if (dto.getFine() == null) {
+			having = "YEAR(年月日)=? AND ?=0";
+		} else if (dto.getFine() == 0) { // 月間
 			from = LocalDate.of(dto.getCoarse(), dto.getMiddle(), 1);
 			to = from.plusMonths(1);
 			group = "YEAR(年月日), MONTH(年月日)";
@@ -74,8 +74,8 @@ public class ReadAll extends ServiceFoundation {
 			int i = 1;
 			ps.setObject(i++, from);
 			ps.setObject(i++, to);
-			ps.setObject(i++, dto.getCoarse());
-			ps.setObject(i++, dto.getMiddle());
+			ps.setInt(i++, dto.getCoarse());
+			ps.setInt(i++, dto.getMiddle());
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				Vector<Object> v = new Vector<>();
