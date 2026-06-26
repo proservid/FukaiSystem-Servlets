@@ -777,6 +777,25 @@
 	</servlet-mapping>
 
 
+	<!-- fukaisystem.application.issue -->
+	<servlet>
+		<servlet-name> issue.getProductionDetail </servlet-name>
+		<servlet-class> fukaisystem.application.issue.GetProductionDetail </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> issue.getProductionDetail </servlet-name>
+		<url-pattern> /issue/getProductionDetail </url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name> issue.dispatchingRegister </servlet-name>
+		<servlet-class> fukaisystem.application.issue.DispatchingRegister </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> issue.dispatchingRegister </servlet-name>
+		<url-pattern> /issue/dispatchingRegister </url-pattern>
+	</servlet-mapping>
+
+
 	<!-- fukaisystem.application.mh -->
 	<servlet>
 		<servlet-name> iis </servlet-name>
