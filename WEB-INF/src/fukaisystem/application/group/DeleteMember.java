@@ -23,6 +23,7 @@ public class DeleteMember extends GenericServlet {
 	private static final Logger lg = Logger.getLogger("A1");
 	private static final String className = "DeleteMember\n";
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public void service(ServletRequest request, ServletResponse response) {
 		DBConnection dbc = new DBConnection();

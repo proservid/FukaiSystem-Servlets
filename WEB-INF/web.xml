@@ -320,6 +320,81 @@
 	</servlet-mapping>
 
 
+	<!-- fukaisystem.application.attendance -->
+	<servlet>
+		<servlet-name> attendance.init </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.Init </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.init </servlet-name>
+		<url-pattern> /attendance/init </url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.readRecords </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.ReadRecords </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.readRecords </servlet-name>
+		<url-pattern> /attendance/readRecords </url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.writeRecords </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.WriteRecords </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.writeRecords </servlet-name>
+		<url-pattern> /attendance/writeRecords </url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.writeModify </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.WriteModify </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.writeModify </servlet-name>
+		<url-pattern> /attendance/writeModify </url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.deleteModify </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.DeleteModify </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.deleteModify </servlet-name>
+		<url-pattern> /attendance/deleteModify </url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.deleteRecord </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.DeleteRecord </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.deleteRecord </servlet-name>
+		<url-pattern> /attendance/deleteRecord </url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.writeWorkDaily </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.WriteWorkDaily </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.writeWorkDaily </servlet-name>
+		<url-pattern> /attendance/writeWorkDaily </url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.readAll </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.ReadAll </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.readAll </servlet-name>
+		<url-pattern> /attendance/readAll </url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name> attendance.readPersonal </servlet-name>
+		<servlet-class> fukaisystem.application.attendance.ReadPersonal </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> attendance.readPersonal </servlet-name>
+		<url-pattern> /attendance/readPersonal </url-pattern>
+	</servlet-mapping>
+
+
 	<!-- fukaisystem.application.business -->
 	<servlet>
 		<servlet-name> deleteData </servlet-name>

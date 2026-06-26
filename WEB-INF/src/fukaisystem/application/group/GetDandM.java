@@ -49,7 +49,7 @@ public class GetDandM extends GenericServlet {
 			 * クライアントデータ受け取り
 			 */
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
-			Object[] obj = (Object[]) in.readObject();
+			// Object[] obj = (Object[]) in.readObject();
 			in.close();
 
 			try {
