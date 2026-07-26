@@ -30,9 +30,8 @@ public class DBConnection {
 			Context ctx = new InitialContext();
 			ds = (DataSource) ctx.lookup("java:comp/env/jdbc/FukaiSystem");
 			c = ds.getConnection();
-		} catch (NamingException ex) {
+		} catch (NamingException | SQLException ex) { // JNDI 未定義・接続失敗のどちらでも直接接続にフォールバックする
 			Logging.logStackTrace(ex, lg, className);
-		} catch (SQLException ex) {
 			// */
 			try {
 				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -41,7 +40,7 @@ public class DBConnection {
 			}
 			try {
 				c = DriverManager.getConnection(
-					"jdbc:sqlserver://localhost:1433;databaseName=FukaiSystem;user=sa;password=3ishifukai"
+					"jdbc:sqlserver://localhost:1433;databaseName=FukaiSystem;user=sa;password=sqlexpress_2014"
 				);
 			} catch (SQLException ex2) {
 				Logging.logStackTrace(ex2, lg, className);
@@ -50,9 +49,9 @@ public class DBConnection {
 		}
 		if (ds instanceof BasicDataSource) {
 			bds = (BasicDataSource) ds;
+			lg.debug("idle:" + bds.getNumIdle());
+			lg.debug("active:" + bds.getNumActive());
 		}
-		lg.debug("idle:" + bds.getNumIdle());
-		lg.debug("active:" + bds.getNumActive());
 		// */
 	}
 
@@ -61,11 +60,11 @@ public class DBConnection {
 	}
 
 	public int getNumActive() {
-		return bds.getNumActive();
+		return (bds != null) ? bds.getNumActive() : -1;
 	}
 
 	public int getNumIdle() {
-		return bds.getNumIdle();
+		return (bds != null) ? bds.getNumIdle() : -1;
 	}
 
 }
