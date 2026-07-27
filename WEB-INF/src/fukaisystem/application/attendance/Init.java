@@ -14,7 +14,7 @@ import fukaisystem.dto.attendance.InitDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
- * 日次打刻データを登録し、表示用データを返す
+ * 在籍従業員マスタを取得する
  */
 public class Init extends ServiceFoundation {
 
