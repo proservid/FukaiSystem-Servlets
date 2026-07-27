@@ -10,6 +10,8 @@ import java.util.List;
  */
 public final class DailyRecords implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
     /** 対象日（CSVカラム3） */
     private final LocalDate workDate;
 

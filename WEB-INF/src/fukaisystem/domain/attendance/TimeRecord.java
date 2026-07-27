@@ -16,6 +16,8 @@ import java.time.LocalTime;
  */
 public final class TimeRecord implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
     /** 従業員番号（CSVカラム1：先頭ゼロ埋め8桁） */
     private final int employeeNo;
 
@@ -43,6 +45,12 @@ public final class TimeRecord implements Serializable {
     /** 有給FLG */
     private final boolean isPaidHoliday;
 
+    /** 午前半休FLG（午前半日分の有給） */
+    private final boolean isAmPaidHoliday;
+
+    /** 午後半休FLG（午後半日分の有給） */
+    private final boolean isPmPaidHoliday;
+
     /** 備考 */
     private final String note;
 
@@ -56,6 +64,8 @@ public final class TimeRecord implements Serializable {
         this.clockOut       = b.clockOut;
         this.isBusinessTrip = b.isBusinessTrip;
         this.isPaidHoliday  = b.isPaidHoliday;
+        this.isAmPaidHoliday = b.isAmPaidHoliday;
+        this.isPmPaidHoliday = b.isPmPaidHoliday;
         this.note           = b.note;
     }
 
@@ -70,6 +80,8 @@ public final class TimeRecord implements Serializable {
     public LocalTime getClockOut()     { return clockOut;       }
     public boolean   isBusinessTrip()  { return isBusinessTrip; }
     public boolean   isPaidHoliday()   { return isPaidHoliday;  }
+    public boolean   isAmPaidHoliday() { return isAmPaidHoliday; }
+    public boolean   isPmPaidHoliday() { return isPmPaidHoliday; }
     public String    getNote()         { return note;           }
 
     @Override
@@ -93,6 +105,8 @@ public final class TimeRecord implements Serializable {
         private LocalTime clockOut;
         private boolean   isBusinessTrip;
         private boolean   isPaidHoliday;
+        private boolean   isAmPaidHoliday;
+        private boolean   isPmPaidHoliday;
         private String    note;
 
         private Builder() {}
@@ -106,6 +120,8 @@ public final class TimeRecord implements Serializable {
         public Builder clockOut(LocalTime v)   { this.clockOut       = v; return this; }
         public Builder businessTrip(boolean v) { this.isBusinessTrip = v; return this; }
         public Builder paidHoliday(boolean v)  { this.isPaidHoliday  = v; return this; }
+        public Builder amPaidHoliday(boolean v) { this.isAmPaidHoliday = v; return this; }
+        public Builder pmPaidHoliday(boolean v) { this.isPmPaidHoliday = v; return this; }
         public Builder note(String v)          { this.note           = v; return this; }
 
         /** @throws IllegalStateException 必須項目（employeeNo）が null の場合 */
