@@ -49,8 +49,6 @@ public class ReadRecords extends ServiceFoundation {
 					.goOut(rs.getObject("外出時刻", LocalTime.class))
 					.returnIn(rs.getObject("戻り時刻", LocalTime.class))
 					.clockOut(rs.getObject("退勤時刻", LocalTime.class))
-					.businessTrip(rs.getBoolean("出張FLG"))
-					.paidHoliday(rs.getBoolean("有給FLG"))
 					.note(rs.getString("備考"));
 				builders.put(rs.getInt("人員CD"), builder);
 			}
