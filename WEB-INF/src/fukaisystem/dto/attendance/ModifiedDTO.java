@@ -7,6 +7,8 @@ import java.util.Map;
 
 public class ModifiedDTO implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	Date date;
 	Map<Integer, List<Object>> modifiedMap;
 

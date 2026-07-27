@@ -41,7 +41,7 @@ public class WriteRecords extends ServiceFoundation {
 		LocalDateTime now = LocalDateTime.now();
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"INSERT INTO T_打刻 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+				"INSERT INTO T_打刻 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 			);
 		) {
 			for (TimeRecord record : records) {
@@ -53,8 +53,6 @@ public class WriteRecords extends ServiceFoundation {
 				ps.setObject(i++, record.getGoOut());
 				ps.setObject(i++, record.getReturnIn());
 				ps.setObject(i++, record.getClockOut());
-				ps.setBoolean(i++, record.isBusinessTrip());
-				ps.setBoolean(i++, record.isPaidHoliday());
 				ps.setString(i++, record.getNote());
 				ps.setObject(i++, now);
 				ps.setNull(i++, Types.TIMESTAMP);

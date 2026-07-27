@@ -7,6 +7,8 @@ import fukaisystem.domain.attendance.WorkDaily;
 
 public class WorkDailiesDTO implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	List<WorkDaily> workDailies;
 
 	public WorkDailiesDTO(List<WorkDaily> workDailies) {

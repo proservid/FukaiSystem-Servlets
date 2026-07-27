@@ -5,6 +5,8 @@ import java.util.Vector;
 
 public class DataVectorDTO implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	Vector<Vector<Object>> dataVector;
 
 	public DataVectorDTO(Vector<Vector<Object>> dataVector) {

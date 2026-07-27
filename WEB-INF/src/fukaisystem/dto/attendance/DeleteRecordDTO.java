@@ -5,6 +5,8 @@ import java.util.Date;
 
 public class DeleteRecordDTO implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	Date date;
 	int memberCD;
 

@@ -15,6 +15,8 @@ import java.time.LocalDateTime;
  */
 public final class WorkDaily implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     /** 従業員番号 */
     private final int employeeNo;
 
@@ -29,6 +31,9 @@ public final class WorkDaily implements Serializable {
 
     /** 深夜労働（分）: 00:00〜06:00 および 22:00〜翌06:00 に重なる実労働時間 */
     private final int lateNightMinutes;
+
+    /** 遅刻早退累計（分）: 遅刻時間（定時始業08:20より後の出勤分）と早退時間（定時終業17:00より前の退勤分）の合計 */
+    private final int lateEarlyMinutes;
 
     /** 休日フラグ: 祝日・所定休日の場合 true（法定休日の日曜は isSunday で表す） */
     private final boolean isHoliday;
@@ -48,6 +53,12 @@ public final class WorkDaily implements Serializable {
     /** 有給フラグ: 有給休暇の場合 true */
     private final boolean isPaidHoliday;
 
+    /** 午前半休フラグ: 午前半日分の有給の場合 true（時間計算は打刻から通常どおり行い、午前分は遅刻早退累計に加えない） */
+    private final boolean isAmPaidHoliday;
+
+    /** 午後半休フラグ: 午後半日分の有給の場合 true（時間計算は打刻から通常どおり行い、午後分は遅刻早退累計に加えない） */
+    private final boolean isPmPaidHoliday;
+
     /** 集計実行日時 */
     private final LocalDateTime calcAt;
 
@@ -57,12 +68,15 @@ public final class WorkDaily implements Serializable {
         this.totalMinutes     = b.totalMinutes;
         this.overtimeMinutes  = b.overtimeMinutes;
         this.lateNightMinutes = b.lateNightMinutes;
+        this.lateEarlyMinutes = b.lateEarlyMinutes;
         this.isHoliday        = b.isHoliday;
         this.isSunday         = b.isSunday;
         this.isBusinessTrip   = b.isBusinessTrip;
         this.isLateEarly      = b.isLateEarly;
         this.isAbsence        = b.isAbsence;
         this.isPaidHoliday    = b.isPaidHoliday;
+        this.isAmPaidHoliday  = b.isAmPaidHoliday;
+        this.isPmPaidHoliday  = b.isPmPaidHoliday;
         this.calcAt           = b.calcAt;
     }
 
@@ -73,12 +87,15 @@ public final class WorkDaily implements Serializable {
     public int           getTotalMinutes()     { return totalMinutes;     }
     public int           getOvertimeMinutes()  { return overtimeMinutes;  }
     public int           getLateNightMinutes() { return lateNightMinutes; }
+    public int           getLateEarlyMinutes() { return lateEarlyMinutes; }
     public boolean       isHoliday()           { return isHoliday;        }
     public boolean       isSunday()            { return isSunday;         }
     public boolean       isBusinessTrip()      { return isBusinessTrip;   }
     public boolean       isLateEarly()         { return isLateEarly;      }
     public boolean       isAbsence()           { return isAbsence;        }
     public boolean       isPaidHoliday()       { return isPaidHoliday;    }
+    public boolean       isAmPaidHoliday()     { return isAmPaidHoliday;  }
+    public boolean       isPmPaidHoliday()     { return isPmPaidHoliday;  }
     public LocalDateTime getCalcAt()           { return calcAt;           }
 
     /**
@@ -112,28 +129,34 @@ public final class WorkDaily implements Serializable {
         private int           totalMinutes;
         private int           overtimeMinutes;
         private int           lateNightMinutes;
+        private int           lateEarlyMinutes;
         private boolean       isHoliday;
         private boolean       isSunday;
         private boolean       isBusinessTrip;
         private boolean       isLateEarly;
         private boolean       isAbsence;
         private boolean       isPaidHoliday;
+        private boolean       isAmPaidHoliday;
+        private boolean       isPmPaidHoliday;
         private LocalDateTime calcAt = LocalDateTime.now();
 
         private Builder() {}
 
-        public Builder employeeNo(int v)          { this.employeeNo       = v; return this; }
-        public Builder workDate(LocalDate v)      { this.workDate         = v; return this; }
-        public Builder totalMinutes(int v)        { this.totalMinutes     = v; return this; }
-        public Builder overtimeMinutes(int v)     { this.overtimeMinutes  = v; return this; }
-        public Builder lateNightMinutes(int v)    { this.lateNightMinutes = v; return this; }
-        public Builder holiday(boolean v)         { this.isHoliday        = v; return this; }
-        public Builder sunday(boolean v)          { this.isSunday         = v; return this; }
-        public Builder businessTrip(boolean v)    { this.isBusinessTrip   = v; return this; }
-        public Builder lateEarly(boolean v)       { this.isLateEarly      = v; return this; }
-        public Builder absence(boolean v)         { this.isAbsence        = v; return this; }
-        public Builder paidHoliday(boolean v)     { this.isPaidHoliday    = v; return this; }
-        public Builder calcAt(LocalDateTime v)    { this.calcAt           = v; return this; }
+        public Builder employeeNo(int v)            { this.employeeNo       = v; return this; }
+        public Builder workDate(LocalDate v)        { this.workDate         = v; return this; }
+        public Builder totalMinutes(int v)          { this.totalMinutes     = v; return this; }
+        public Builder overtimeMinutes(int v)       { this.overtimeMinutes  = v; return this; }
+        public Builder lateNightMinutes(int v)      { this.lateNightMinutes = v; return this; }
+        public Builder lateEarlyMinutes(int v)      { this.lateEarlyMinutes = v; return this; }
+        public Builder isHoliday(boolean v)         { this.isHoliday        = v; return this; }
+        public Builder isSunday(boolean v)          { this.isSunday         = v; return this; }
+        public Builder isBusinessTrip(boolean v)    { this.isBusinessTrip   = v; return this; }
+        public Builder isLateEarly(boolean v)       { this.isLateEarly      = v; return this; }
+        public Builder isAbsence(boolean v)         { this.isAbsence        = v; return this; }
+        public Builder isPaidHoliday(boolean v)     { this.isPaidHoliday    = v; return this; }
+        public Builder isAmPaidHoliday(boolean v)   { this.isAmPaidHoliday  = v; return this; }
+        public Builder isPmPaidHoliday(boolean v)   { this.isPmPaidHoliday  = v; return this; }
+        public Builder calcAt(LocalDateTime v)      { this.calcAt           = v; return this; }
 
         public WorkDaily build() {
             if (employeeNo == 0) {

@@ -49,8 +49,6 @@ public class ReadRecords extends ServiceFoundation {
 					.goOut(rs.getObject("外出時刻", LocalTime.class))
 					.returnIn(rs.getObject("戻り時刻", LocalTime.class))
 					.clockOut(rs.getObject("退勤時刻", LocalTime.class))
-					.businessTrip(rs.getBoolean("出張FLG"))
-					.paidHoliday(rs.getBoolean("有給FLG"))
 					.note(rs.getString("備考"));
 				builders.put(rs.getInt("人員CD"), builder);
 			}
@@ -89,6 +87,14 @@ public class ReadRecords extends ServiceFoundation {
 				boolean businessTrip = rs.getBoolean("出張FLG");
 				if (!rs.wasNull()) {
 					builder.businessTrip(businessTrip);
+				}
+				boolean amPaidHoliday = rs.getBoolean("前休FLG");
+				if (!rs.wasNull()) {
+					builder.amPaidHoliday(amPaidHoliday);
+				}
+				boolean pmPaidHoliday = rs.getBoolean("後休FLG");
+				if (!rs.wasNull()) {
+					builder.pmPaidHoliday(pmPaidHoliday);
 				}
 				boolean paidHoliday = rs.getBoolean("有給FLG");
 				if (!rs.wasNull()) {
