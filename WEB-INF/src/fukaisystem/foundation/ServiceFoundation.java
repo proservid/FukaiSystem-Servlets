@@ -55,6 +55,10 @@ public abstract class ServiceFoundation extends GenericServlet {
 	 */
 	protected Object core(ServletResponse response, Object obj) throws IOException {
 		try (Connection c = getConnection();) {
+			if (c == null) {
+				reportException(response, new Exception("データベースに接続できません"));
+				return null;
+			}
 			return access(c, response, obj);
 		} catch (Exception e) {
 			reportException(response, e);

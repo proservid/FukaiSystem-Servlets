@@ -5,7 +5,8 @@
 	<classpathentry kind="src" output="work" path="work"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/log4j-1.2.16.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/mssql-jdbc-12.10.0.jre11.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/print.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/print-0.10.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/core-3.5.3.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="lib/jasper.jar"/>
 	<classpathentry kind="lib" path="lib/jsp-api.jar"/>
