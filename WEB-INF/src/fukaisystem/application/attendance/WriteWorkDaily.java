@@ -25,7 +25,7 @@ public class WriteWorkDaily extends ServiceFoundation {
 		LocalDateTime now = LocalDateTime.now();
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"INSERT INTO T_日次集計 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+				"INSERT INTO T_日次集計 VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 			);
 		) {
 			for (WorkDaily wd : workDailies) {
@@ -35,11 +35,13 @@ public class WriteWorkDaily extends ServiceFoundation {
 				ps.setInt(i++, wd.getTotalMinutes());
 				ps.setInt(i++, wd.getOvertimeMinutes());
 				ps.setInt(i++, wd.getLateNightMinutes());
+				ps.setInt(i++, wd.getLateEarlyMinutes());
 				ps.setBoolean(i++, wd.isHoliday());
 				ps.setBoolean(i++, wd.isSunday());
 				ps.setBoolean(i++, wd.isBusinessTrip());
-				ps.setBoolean(i++, wd.isLateEarly());
 				ps.setBoolean(i++, wd.isAbsence());
+				ps.setBoolean(i++, wd.isAmPaidHoliday());
+				ps.setBoolean(i++, wd.isPmPaidHoliday());
 				ps.setBoolean(i++, wd.isPaidHoliday());
 				ps.setObject(i++, now);
 				ps.addBatch();

@@ -32,7 +32,7 @@ public class WriteModify extends ServiceFoundation {
 		LocalDateTime now = LocalDateTime.now();
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"INSERT INTO T_打刻修正 VALUES(?, ?, (SELECT COUNT(*) + 1 FROM T_打刻修正 WHERE 年月日=? AND 人員CD=?), ?, ?, ?, ?, ?, ?, ?, ?, ?)"
+				"INSERT INTO T_打刻修正 VALUES(?, ?, (SELECT COUNT(*) + 1 FROM T_打刻修正 WHERE 年月日=? AND 人員CD=?), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
 			);
 		) {
 			for (Map.Entry<Integer, List<Object>> m : map.entrySet()) {

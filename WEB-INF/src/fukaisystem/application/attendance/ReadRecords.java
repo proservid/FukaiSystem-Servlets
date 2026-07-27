@@ -88,6 +88,14 @@ public class ReadRecords extends ServiceFoundation {
 				if (!rs.wasNull()) {
 					builder.businessTrip(businessTrip);
 				}
+				boolean amPaidHoliday = rs.getBoolean("前休FLG");
+				if (!rs.wasNull()) {
+					builder.amPaidHoliday(amPaidHoliday);
+				}
+				boolean pmPaidHoliday = rs.getBoolean("後休FLG");
+				if (!rs.wasNull()) {
+					builder.pmPaidHoliday(pmPaidHoliday);
+				}
 				boolean paidHoliday = rs.getBoolean("有給FLG");
 				if (!rs.wasNull()) {
 					builder.paidHoliday(paidHoliday);
