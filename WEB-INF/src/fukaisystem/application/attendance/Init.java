@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import javax.servlet.ServletResponse;
 
@@ -20,10 +21,10 @@ public class Init extends ServiceFoundation {
 
 	@Override
 	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
-		Map<Integer, String> validMembers = new HashMap<>();
+		Map<Integer, String> validMembers = new TreeMap<>();
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"SELECT CD, 姓+名 AS 氏名 FROM M_人員 WHERE 在籍FLG='true'"
+				"SELECT CD, 姓 + ' ' + 名 AS 氏名 FROM M_人員 WHERE 在籍FLG='true'"
 			);
 		) {
 			ResultSet rs = ps.executeQuery();
