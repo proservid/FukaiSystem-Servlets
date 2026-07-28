@@ -114,7 +114,7 @@ public class ReadPersonal extends ServiceFoundation {
 				v.add(rs.getInt("日曜"));
 				v.add(rs.getInt("出張"));
 				v.add(rs.getInt("欠勤"));
-				v.add(rs.getInt("有給"));
+				v.add(rs.getFloat("有給"));
 				dataVector.add(v);
 			}
 		}
