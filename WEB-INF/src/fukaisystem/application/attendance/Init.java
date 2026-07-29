@@ -28,7 +28,7 @@ public class Init extends ServiceFoundation {
 
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"SELECT CD, 姓 + ' ' + 名 AS 氏名 FROM M_人員-- WHERE CD > 9 AND CD < 10000 AND 在籍FLG='true'"
+				"SELECT CD, 姓 + ' ' + 名 AS 氏名 FROM M_人員 WHERE CD > 9 AND CD < 10000 AND 在籍FLG='true'"
 			);
 		) {
 			ResultSet rs = ps.executeQuery();
