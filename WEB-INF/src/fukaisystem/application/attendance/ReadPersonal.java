@@ -47,7 +47,7 @@ public class ReadPersonal extends ServiceFoundation {
 		Vector<Vector<Object>> dataVector = new Vector<>();
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"SELECT " + num + " AS 番号,"
+				"SELECT 番号,"
 					+ "実労働合計 - 土休実労働 - 日曜実労働 AS 平日実労働,"
 					+ "残業合計 - 土休残業 - 日曜残業 AS 平日残業,"
 					+ "深夜合計 - 土休深夜 - 日曜深夜 AS 平日深夜,"
@@ -59,7 +59,7 @@ public class ReadPersonal extends ServiceFoundation {
 					+ "土休深夜, 日曜深夜, 深夜合計,"
 					+ "土休実労働, 日曜実労働, 実労働合計,"
 					+ "遅早, 出勤, 土休, 日曜, 出張, 欠勤, 前休 + 後休 + 有給 AS 有給"
-					+ " FROM (SELECT 年月日,"
+					+ " FROM (SELECT " + num + " AS 番号,"
 					+ " SUM(実労働時間) AS 実労働合計,"
 					+ " SUM(CASE WHEN 土休FLG='true' THEN 実労働時間 ELSE 0 END) AS 土休実労働,"
 					+ " SUM(CASE WHEN 日曜FLG='true' THEN 実労働時間 ELSE 0 END) AS 日曜実労働,"
@@ -79,8 +79,7 @@ public class ReadPersonal extends ServiceFoundation {
 					+ " SUM(CASE WHEN 後休FLG='true' THEN 0.5 ELSE 0 END) AS 後休,"
 					+ " SUM(CASE WHEN 有給FLG='true' THEN 1 ELSE 0 END) AS 有給"
 					+ " FROM T_日次集計 WHERE 年月日>=? AND 年月日<?"
-					+ " GROUP BY " + group + ", 年月日, 人員CD HAVING " + having + " AND 人員CD=?) a"
-			);
+					+ " GROUP BY " + group + ", 人員CD HAVING " + having + " AND 人員CD=?) a");
 		) {
 			int i = 1;
 			ps.setObject(i++, from);
