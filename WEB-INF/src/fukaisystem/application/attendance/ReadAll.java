@@ -73,7 +73,7 @@ public class ReadAll extends ServiceFoundation {
 				+ " SUM(CASE WHEN 土休FLG='true' THEN 深夜労働 ELSE 0 END) AS 土休深夜,"
 				+ " SUM(CASE WHEN 日曜FLG='true' THEN 深夜労働 ELSE 0 END) AS 日曜深夜,"
 				+ " SUM(遅刻早退) AS 遅早,"
-				+ " SUM(CASE WHEN 欠勤FLG='false' AND 有給FLG='false' THEN 1 ELSE 0 END) AS 出勤,"
+				+ " SUM(CASE WHEN 欠勤FLG='false' AND 有給FLG='false' AND 代休FLG='false' THEN 1 ELSE 0 END) AS 出勤,"
 				+ " SUM(CASE WHEN 土休FLG='true' THEN 1 ELSE 0 END) AS 土休,"
 				+ " SUM(CASE WHEN 日曜FLG='true' THEN 1 ELSE 0 END) AS 日曜,"
 				+ " SUM(CASE WHEN 出張FLG='true' THEN 1 ELSE 0 END) AS 出張,"
@@ -117,7 +117,7 @@ public class ReadAll extends ServiceFoundation {
 				v.add(rs.getInt("日曜"));
 				v.add(rs.getInt("出張"));
 				v.add(rs.getInt("欠勤"));
-				v.add(rs.getInt("有給"));
+				v.add(rs.getFloat("有給"));
 				dataVector.add(v);
 			}
 		}

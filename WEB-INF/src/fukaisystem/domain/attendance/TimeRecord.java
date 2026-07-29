@@ -43,6 +43,9 @@ public final class TimeRecord implements Serializable {
     private final boolean isBusinessTrip;
 
     /** 有給FLG */
+    private final boolean isCompDay;
+
+    /** 有給FLG */
     private final boolean isPaidHoliday;
 
     /** 午前半休FLG（午前半日分の有給） */
@@ -55,34 +58,36 @@ public final class TimeRecord implements Serializable {
     private final String note;
 
     private TimeRecord(Builder b) {
-        this.employeeNo     = b.employeeNo;
-        this.timeCardNo     = b.timeCardNo;
-        this.employeeName   = b.employeeName;
-        this.clockIn        = b.clockIn;
-        this.goOut          = b.goOut;
-        this.returnIn       = b.returnIn;
-        this.clockOut       = b.clockOut;
-        this.isBusinessTrip = b.isBusinessTrip;
-        this.isPaidHoliday  = b.isPaidHoliday;
+        this.employeeNo      = b.employeeNo;
+        this.timeCardNo      = b.timeCardNo;
+        this.employeeName    = b.employeeName;
+        this.clockIn         = b.clockIn;
+        this.goOut           = b.goOut;
+        this.returnIn        = b.returnIn;
+        this.clockOut        = b.clockOut;
+        this.isBusinessTrip  = b.isBusinessTrip;
+        this.isPaidHoliday   = b.isPaidHoliday;
+        this.isCompDay       = b.isCompDay;
         this.isAmPaidHoliday = b.isAmPaidHoliday;
         this.isPmPaidHoliday = b.isPmPaidHoliday;
-        this.note           = b.note;
+        this.note            = b.note;
     }
 
     // ---- ゲッター ----------------------------------------------------------------
 
-    public int       getEmployeeNo()   { return employeeNo;     }
-    public int       getTimeCardNo()   { return timeCardNo;     }
-    public String    getEmployeeName() { return employeeName;   }
-    public LocalTime getClockIn()      { return clockIn;        }
-    public LocalTime getGoOut()        { return goOut;          }
-    public LocalTime getReturnIn()     { return returnIn;       }
-    public LocalTime getClockOut()     { return clockOut;       }
-    public boolean   isBusinessTrip()  { return isBusinessTrip; }
-    public boolean   isPaidHoliday()   { return isPaidHoliday;  }
+    public int       getEmployeeNo()   { return employeeNo;      }
+    public int       getTimeCardNo()   { return timeCardNo;      }
+    public String    getEmployeeName() { return employeeName;    }
+    public LocalTime getClockIn()      { return clockIn;         }
+    public LocalTime getGoOut()        { return goOut;           }
+    public LocalTime getReturnIn()     { return returnIn;        }
+    public LocalTime getClockOut()     { return clockOut;        }
+    public boolean   isBusinessTrip()  { return isBusinessTrip;  }
+    public boolean   isCompDay()       { return isCompDay;       }
+    public boolean   isPaidHoliday()   { return isPaidHoliday;   }
     public boolean   isAmPaidHoliday() { return isAmPaidHoliday; }
     public boolean   isPmPaidHoliday() { return isPmPaidHoliday; }
-    public String    getNote()         { return note;           }
+    public String    getNote()         { return note;            }
 
     @Override
     public String toString() {
@@ -104,6 +109,7 @@ public final class TimeRecord implements Serializable {
         private LocalTime returnIn;
         private LocalTime clockOut;
         private boolean   isBusinessTrip;
+        private boolean   isCompDay;
         private boolean   isPaidHoliday;
         private boolean   isAmPaidHoliday;
         private boolean   isPmPaidHoliday;
@@ -111,18 +117,19 @@ public final class TimeRecord implements Serializable {
 
         private Builder() {}
 
-        public Builder employeeNo(int v)       { this.employeeNo     = v; return this; }
-        public Builder timeCardNo(int v)       { this.timeCardNo     = v; return this; }
-        public Builder employeeName(String v)  { this.employeeName   = v; return this; }
-        public Builder clockIn(LocalTime v)    { this.clockIn        = v; return this; }
-        public Builder goOut(LocalTime v)      { this.goOut          = v; return this; }
-        public Builder returnIn(LocalTime v)   { this.returnIn       = v; return this; }
-        public Builder clockOut(LocalTime v)   { this.clockOut       = v; return this; }
-        public Builder businessTrip(boolean v) { this.isBusinessTrip = v; return this; }
-        public Builder paidHoliday(boolean v)  { this.isPaidHoliday  = v; return this; }
+        public Builder employeeNo(int v)        { this.employeeNo      = v; return this; }
+        public Builder timeCardNo(int v)        { this.timeCardNo      = v; return this; }
+        public Builder employeeName(String v)   { this.employeeName    = v; return this; }
+        public Builder clockIn(LocalTime v)     { this.clockIn         = v; return this; }
+        public Builder goOut(LocalTime v)       { this.goOut           = v; return this; }
+        public Builder returnIn(LocalTime v)    { this.returnIn        = v; return this; }
+        public Builder clockOut(LocalTime v)    { this.clockOut        = v; return this; }
+        public Builder businessTrip(boolean v)  { this.isBusinessTrip  = v; return this; }
+        public Builder compDay(boolean v)       { this.isCompDay       = v; return this; }
+        public Builder paidHoliday(boolean v)   { this.isPaidHoliday   = v; return this; }
         public Builder amPaidHoliday(boolean v) { this.isAmPaidHoliday = v; return this; }
         public Builder pmPaidHoliday(boolean v) { this.isPmPaidHoliday = v; return this; }
-        public Builder note(String v)          { this.note           = v; return this; }
+        public Builder note(String v)           { this.note            = v; return this; }
 
         /** @throws IllegalStateException 必須項目（employeeNo）が null の場合 */
         public TimeRecord build() {

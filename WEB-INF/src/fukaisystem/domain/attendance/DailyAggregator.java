@@ -143,6 +143,10 @@ public class DailyAggregator {
             .employeeNo(record.getEmployeeNo())
             .workDate(date);
 
+        // 代休
+        if (record.isCompDay()) {
+            return builder.isCompDay(true).build();
+        }
         // 有給
         if (record.isPaidHoliday()) {
             return builder.isPaidHoliday(true).build();

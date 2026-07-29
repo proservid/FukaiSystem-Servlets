@@ -47,7 +47,7 @@ public class ReadPersonal extends ServiceFoundation {
 		Vector<Vector<Object>> dataVector = new Vector<>();
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"SELECT " + num + " AS 番号,"
+				"SELECT 番号,"
 					+ "実労働合計 - 土休実労働 - 日曜実労働 AS 平日実労働,"
 					+ "残業合計 - 土休残業 - 日曜残業 AS 平日残業,"
 					+ "深夜合計 - 土休深夜 - 日曜深夜 AS 平日深夜,"
@@ -59,7 +59,7 @@ public class ReadPersonal extends ServiceFoundation {
 					+ "土休深夜, 日曜深夜, 深夜合計,"
 					+ "土休実労働, 日曜実労働, 実労働合計,"
 					+ "遅早, 出勤, 土休, 日曜, 出張, 欠勤, 前休 + 後休 + 有給 AS 有給"
-					+ " FROM (SELECT 年月日,"
+					+ " FROM (SELECT " + num + " AS 番号,"
 					+ " SUM(実労働時間) AS 実労働合計,"
 					+ " SUM(CASE WHEN 土休FLG='true' THEN 実労働時間 ELSE 0 END) AS 土休実労働,"
 					+ " SUM(CASE WHEN 日曜FLG='true' THEN 実労働時間 ELSE 0 END) AS 日曜実労働,"
@@ -70,7 +70,7 @@ public class ReadPersonal extends ServiceFoundation {
 					+ " SUM(CASE WHEN 土休FLG='true' THEN 深夜労働 ELSE 0 END) AS 土休深夜,"
 					+ " SUM(CASE WHEN 日曜FLG='true' THEN 深夜労働 ELSE 0 END) AS 日曜深夜,"
 					+ " SUM(遅刻早退) AS 遅早,"
-					+ " SUM(CASE WHEN 欠勤FLG='false' AND 有給FLG='false' THEN 1 ELSE 0 END) AS 出勤,"
+					+ " SUM(CASE WHEN 欠勤FLG='false' AND 有給FLG='false' AND 代休FLG='false' THEN 1 ELSE 0 END) AS 出勤,"
 					+ " SUM(CASE WHEN 土休FLG='true' THEN 1 ELSE 0 END) AS 土休,"
 					+ " SUM(CASE WHEN 日曜FLG='true' THEN 1 ELSE 0 END) AS 日曜,"
 					+ " SUM(CASE WHEN 出張FLG='true' THEN 1 ELSE 0 END) AS 出張,"
@@ -79,8 +79,7 @@ public class ReadPersonal extends ServiceFoundation {
 					+ " SUM(CASE WHEN 後休FLG='true' THEN 0.5 ELSE 0 END) AS 後休,"
 					+ " SUM(CASE WHEN 有給FLG='true' THEN 1 ELSE 0 END) AS 有給"
 					+ " FROM T_日次集計 WHERE 年月日>=? AND 年月日<?"
-					+ " GROUP BY " + group + ", 年月日, 人員CD HAVING " + having + " AND 人員CD=?) a"
-			);
+					+ " GROUP BY " + group + ", 人員CD HAVING " + having + " AND 人員CD=?) a");
 		) {
 			int i = 1;
 			ps.setObject(i++, from);
@@ -114,7 +113,7 @@ public class ReadPersonal extends ServiceFoundation {
 				v.add(rs.getInt("日曜"));
 				v.add(rs.getInt("出張"));
 				v.add(rs.getInt("欠勤"));
-				v.add(rs.getInt("有給"));
+				v.add(rs.getFloat("有給"));
 				dataVector.add(v);
 			}
 		}

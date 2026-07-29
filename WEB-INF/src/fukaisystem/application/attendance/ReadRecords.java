@@ -100,6 +100,10 @@ public class ReadRecords extends ServiceFoundation {
 				if (!rs.wasNull()) {
 					builder.paidHoliday(paidHoliday);
 				}
+				boolean compDay = rs.getBoolean("代休FLG");
+				if (!rs.wasNull()) {
+					builder.compDay(compDay);
+				}
 				String note = rs.getString("備考");
 				if (note != null) {
 					builder.note(note);

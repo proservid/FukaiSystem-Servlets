@@ -50,6 +50,9 @@ public final class WorkDaily implements Serializable {
     /** 欠勤フラグ: 欠勤の場合 true */
     private final boolean isAbsence;
 
+    /** 有給フラグ: 代休の場合 true */
+    private final boolean isCompDay;
+
     /** 有給フラグ: 有給休暇の場合 true */
     private final boolean isPaidHoliday;
 
@@ -74,6 +77,7 @@ public final class WorkDaily implements Serializable {
         this.isBusinessTrip   = b.isBusinessTrip;
         this.isLateEarly      = b.isLateEarly;
         this.isAbsence        = b.isAbsence;
+        this.isCompDay        = b.isCompDay;
         this.isPaidHoliday    = b.isPaidHoliday;
         this.isAmPaidHoliday  = b.isAmPaidHoliday;
         this.isPmPaidHoliday  = b.isPmPaidHoliday;
@@ -93,6 +97,7 @@ public final class WorkDaily implements Serializable {
     public boolean       isBusinessTrip()      { return isBusinessTrip;   }
     public boolean       isLateEarly()         { return isLateEarly;      }
     public boolean       isAbsence()           { return isAbsence;        }
+    public boolean       isCompDay()           { return isCompDay;        }
     public boolean       isPaidHoliday()       { return isPaidHoliday;    }
     public boolean       isAmPaidHoliday()     { return isAmPaidHoliday;  }
     public boolean       isPmPaidHoliday()     { return isPmPaidHoliday;  }
@@ -135,6 +140,7 @@ public final class WorkDaily implements Serializable {
         private boolean       isBusinessTrip;
         private boolean       isLateEarly;
         private boolean       isAbsence;
+        private boolean       isCompDay;
         private boolean       isPaidHoliday;
         private boolean       isAmPaidHoliday;
         private boolean       isPmPaidHoliday;
@@ -153,6 +159,7 @@ public final class WorkDaily implements Serializable {
         public Builder isBusinessTrip(boolean v)    { this.isBusinessTrip   = v; return this; }
         public Builder isLateEarly(boolean v)       { this.isLateEarly      = v; return this; }
         public Builder isAbsence(boolean v)         { this.isAbsence        = v; return this; }
+        public Builder isCompDay(boolean v)         { this.isCompDay        = v; return this; }
         public Builder isPaidHoliday(boolean v)     { this.isPaidHoliday    = v; return this; }
         public Builder isAmPaidHoliday(boolean v)   { this.isAmPaidHoliday  = v; return this; }
         public Builder isPmPaidHoliday(boolean v)   { this.isPmPaidHoliday  = v; return this; }
