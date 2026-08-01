@@ -66,9 +66,13 @@ public class ReadAll extends ServiceFoundation {
 				+ " SUM(実労働時間) AS 実労働合計,"
 				+ " SUM(CASE WHEN 土休FLG='true' THEN 実労働時間 ELSE 0 END) AS 土休実労働,"
 				+ " SUM(CASE WHEN 日曜FLG='true' THEN 実労働時間 ELSE 0 END) AS 日曜実労働,"
-				+ " SUM(時間外労働) AS 残業合計,"
-				+ " SUM(CASE WHEN 土休FLG='true' THEN 時間外労働 ELSE 0 END) AS 土休残業,"
-				+ " SUM(CASE WHEN 日曜FLG='true' THEN 時間外労働 ELSE 0 END) AS 日曜残業,"
+				// 深夜労働はすべて残業に含まれるため、表示する残業からは深夜分を除く。
+				// これにより 所定内 = 実労働 - 残業 - 深夜 が二重に差し引かれず、
+				// 所定内がマイナスにならない（所定内 + 残業 + 深夜 = 実労働）。
+				// 時間外労働は30分単位に切り捨てるため、深夜労働を下回る場合は残業を0とする。
+				+ " SUM(CASE WHEN 時間外労働 > 深夜労働 THEN 時間外労働 - 深夜労働 ELSE 0 END) AS 残業合計,"
+				+ " SUM(CASE WHEN 土休FLG='true' AND 時間外労働 > 深夜労働 THEN 時間外労働 - 深夜労働 ELSE 0 END) AS 土休残業,"
+				+ " SUM(CASE WHEN 日曜FLG='true' AND 時間外労働 > 深夜労働 THEN 時間外労働 - 深夜労働 ELSE 0 END) AS 日曜残業,"
 				+ " SUM(深夜労働) AS 深夜合計,"
 				+ " SUM(CASE WHEN 土休FLG='true' THEN 深夜労働 ELSE 0 END) AS 土休深夜,"
 				+ " SUM(CASE WHEN 日曜FLG='true' THEN 深夜労働 ELSE 0 END) AS 日曜深夜,"
