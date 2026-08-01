@@ -21,7 +21,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class Init extends ServiceFoundation {
 
 	@Override
-	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		Map<Integer, String> validMemberMap = new TreeMap<>();
 		Map<Integer, Map<Integer, Boolean>> holidayMap = new HashMap<>();
