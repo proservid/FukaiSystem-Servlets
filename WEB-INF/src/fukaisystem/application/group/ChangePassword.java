@@ -1,56 +1,29 @@
 package fukaisystem.application.group;
 
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import javax.servlet.GenericServlet;
-import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
-import org.apache.log4j.Logger;
+import fukaisystem.foundation.ServiceFoundation;
 
-import fukaisystem.sql.DBConnection;
-import fukaisystem.util.Logging;
+public class ChangePassword extends ServiceFoundation {
 
-public class ChangePassword extends GenericServlet {
-	/**
-	 *
-	 */
-	private static final long serialVersionUID = 1L;
-	private static final Logger lg = Logger.getLogger("A1");
-	private static final String className = "ChangePassword\n";
+	@Override
+	public Object access(Connection c, ServletResponse response, Object o) throws Exception {
 
-	public void service(ServletRequest request, ServletResponse response) {
-
-		DBConnection dbc = new DBConnection();
-		Connection c = dbc.getConnection();
-		PreparedStatement ps = null;
-		ResultSet rs = null;
-		StringBuilder err = new StringBuilder();
-
-		try {
-
-			/**
-			 * クライアントデータ受け取り
-			 */
-			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
-			Object[] obj = (Object[]) in.readObject();
-			in.close();
-
-			try {
-				ps = c.prepareStatement("update M_人員 set pass=? where CD=?");
-				ps.setString(1, digestMd5((char[]) obj[1]));
-				ps.setString(2, (String) obj[0]);
-				// digestMd5((char[])obj[1]));
-				int result = ps.executeUpdate();
-				if (result != 1)
-					err.append("パスワードは更新されませんでした。\n");
+		Object[] obj = cast(response, o, Object[].class);
+		try (
+			PreparedStatement ps = c.prepareStatement("update M_人員 set pass=? where CD=?");
+		) {
+			ps.setString(1, digestMd5((char[]) obj[1]));
+			ps.setString(2, (String) obj[0]);
+			// digestMd5((char[])obj[1]));
+			int result = ps.executeUpdate();
+			if (result != 1)
+				throw new Exception("パスワードは更新されませんでした。\n");
+		}
 
 //全員分のデフォルトパスワード自動生成の処理
 //				ps = c.prepareStatement("select LoginID from M_人員");
@@ -63,48 +36,7 @@ public class ChangePassword extends GenericServlet {
 //					ps2.setString(2, rs.getString("LoginID"));
 //					ps2.executeUpdate();
 //				}
-			} catch(SQLException ex) {
-				Logging.logStackTrace(ex, lg, className);
-				err.append("DBエラー\n");
-			}
-
-			/**
-			 * クライアントに送信
-			 */
-			response.setContentType("application/octet-stream");
-			ObjectOutputStream out = new ObjectOutputStream(response.getOutputStream());
-			out.writeObject("");
-			out.writeUTF(err.toString());
-			out.flush();
-			out.close();
-
-		} catch (Exception ex) {
-			Logging.logStackTrace(ex, lg, className);
-		} finally {
-			try {
-				if (c != null && !c.isClosed())
-					c.close();
-			} catch (SQLException ex) {
-				Logging.logStackTrace(ex, lg, className);
-			}
-			// The following processes requires JDBC4.0.
-			try {
-				if (ps != null && !ps.isClosed()) {
-					ps.close();
-					lg.debug(className + "ps is closed by jdbc4.0");
-				}
-			} catch (SQLException ex) {
-				Logging.logStackTrace(ex, lg, className);
-			}
-			try {
-				if (rs != null && !rs.isClosed()) {
-					rs.close();
-					lg.debug(className + "rs is closed by jdbc4.0");
-				}
-			} catch (SQLException ex) {
-				Logging.logStackTrace(ex, lg, className);
-			}
-		}
+		return "";
 	}
 
 	/**

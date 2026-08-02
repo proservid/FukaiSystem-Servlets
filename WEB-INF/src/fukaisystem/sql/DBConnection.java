@@ -40,7 +40,7 @@ public class DBConnection {
 			}
 			try {
 				c = DriverManager.getConnection(
-					"jdbc:sqlserver://localhost:1433;databaseName=FukaiSystem;user=sa;password=sqlexpress_2014"
+					"jdbc:sqlserver://localhost:1433;databaseName=FukaiSystem;user=sa;password=sqlexpress_2014;trustServerCertificate=true"
 				);
 			} catch (SQLException ex2) {
 				Logging.logStackTrace(ex2, lg, className);
