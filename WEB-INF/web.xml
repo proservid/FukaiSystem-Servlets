@@ -755,7 +755,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name> scheduleRegister </servlet-name>
-		<url-pattern> /scheduleRegistration </url-pattern>
+		<url-pattern> /scheduleRegister </url-pattern>
 	</servlet-mapping>
 
 	<servlet>

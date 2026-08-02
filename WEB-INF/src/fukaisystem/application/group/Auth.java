@@ -24,7 +24,7 @@ public class Auth extends ServiceFoundation {
 
 		try (
 			PreparedStatement ps = c.prepareStatement(
-			"SELECT RIGHT('00' + CONVERT(varchar, CD), 2) AS 部署CD,部署名 FROM M_部署"
+			"SELECT RIGHT('00' + CONVERT(varchar, CD), 3) AS 部署CD,部署名 FROM M_部署"
 			);
 		) {
 			ResultSet rs = ps.executeQuery();
@@ -35,7 +35,7 @@ public class Auth extends ServiceFoundation {
 		}
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"SELECT CD AS 個人CD,姓+' '+名 AS 氏名,RIGHT('00' + CONVERT(varchar, 所属部署CD), 2) AS 部署CD FROM M_人員 WHERE 在籍FLG='true' AND CD>0 ORDER BY 所属部署CD,表示CD"
+				"SELECT CD AS 個人CD,姓+' '+名 AS 氏名,RIGHT('00' + CONVERT(varchar, 所属部署CD), 3) AS 部署CD FROM M_人員 WHERE 在籍FLG='true' AND CD>0 ORDER BY 所属部署CD,表示CD"
 			);
 		) {
 			ResultSet rs = ps.executeQuery();
