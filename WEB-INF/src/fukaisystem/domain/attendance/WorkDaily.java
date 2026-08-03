@@ -26,10 +26,18 @@ public final class WorkDaily implements Serializable {
     /** 実労働時間（分）: 退勤 - 出勤 - 外出時間 - 昼休み - 定時後休憩 */
     private final int totalMinutes;
 
+    /**
+     * 所定内労働時間（分）: 実労働のうち残業にも深夜にも該当しない時間。
+     *
+     * <p>時間外・深夜は30分単位で切り捨てるため、「実労働 - 時間外 - 深夜」で求めると
+     * 切り捨てた端数が混ざる。混入を避けるため打刻から直接算出した値を保持する。
+     */
+    private final int scheduledMinutes;
+
     /** 日次時間外労働（分）: 17:15 以降の実労働時間（30分単位切り捨て） */
     private final int overtimeMinutes;
 
-    /** 深夜労働（分）: 00:00〜06:00 および 22:00〜翌06:00 に重なる実労働時間 */
+    /** 深夜労働（分）: 00:00〜05:00 および 22:00〜翌05:00 に重なる実労働時間（30分単位切り捨て） */
     private final int lateNightMinutes;
 
     /** 遅刻早退累計（分）: 遅刻時間（定時始業08:20より後の出勤分）と早退時間（定時終業17:00より前の退勤分）の合計 */
@@ -69,6 +77,7 @@ public final class WorkDaily implements Serializable {
         this.employeeNo       = b.employeeNo;
         this.workDate         = b.workDate;
         this.totalMinutes     = b.totalMinutes;
+        this.scheduledMinutes = b.scheduledMinutes;
         this.overtimeMinutes  = b.overtimeMinutes;
         this.lateNightMinutes = b.lateNightMinutes;
         this.lateEarlyMinutes = b.lateEarlyMinutes;
@@ -89,6 +98,7 @@ public final class WorkDaily implements Serializable {
     public int           getEmployeeNo()       { return employeeNo;       }
     public LocalDate     getWorkDate()         { return workDate;         }
     public int           getTotalMinutes()     { return totalMinutes;     }
+    public int           getScheduledMinutes() { return scheduledMinutes; }
     public int           getOvertimeMinutes()  { return overtimeMinutes;  }
     public int           getLateNightMinutes() { return lateNightMinutes; }
     public int           getLateEarlyMinutes() { return lateEarlyMinutes; }
@@ -132,6 +142,7 @@ public final class WorkDaily implements Serializable {
         private int           employeeNo;
         private LocalDate     workDate;
         private int           totalMinutes;
+        private int           scheduledMinutes;
         private int           overtimeMinutes;
         private int           lateNightMinutes;
         private int           lateEarlyMinutes;
@@ -151,6 +162,7 @@ public final class WorkDaily implements Serializable {
         public Builder employeeNo(int v)            { this.employeeNo       = v; return this; }
         public Builder workDate(LocalDate v)        { this.workDate         = v; return this; }
         public Builder totalMinutes(int v)          { this.totalMinutes     = v; return this; }
+        public Builder scheduledMinutes(int v)      { this.scheduledMinutes = v; return this; }
         public Builder overtimeMinutes(int v)       { this.overtimeMinutes  = v; return this; }
         public Builder lateNightMinutes(int v)      { this.lateNightMinutes = v; return this; }
         public Builder lateEarlyMinutes(int v)      { this.lateEarlyMinutes = v; return this; }
