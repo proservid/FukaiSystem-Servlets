@@ -20,7 +20,8 @@ import fukaisystem.foundation.ServiceFoundation;
 public class ReadAll extends ServiceFoundation {
 
 	@Override
-	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+
 		FilterDTO dto = cast(response, o, FilterDTO.class);
 		if (dto == null) {
 			return null;

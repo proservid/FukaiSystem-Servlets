@@ -16,11 +16,9 @@ import fukaisystem.foundation.ServiceFoundation;
 public class ScheduleRegister extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
-		Daily2 daily = null;
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
-		daily = cast(response, o, Daily2.class);
-		;
+		Daily2 daily = cast(response, o, Daily2.class);
 		String myCD = daily.getCD();
 		Object[] members = daily.getMembers();
 		int withBit = daily.getWithBit();

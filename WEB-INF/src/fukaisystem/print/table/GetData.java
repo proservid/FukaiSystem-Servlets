@@ -15,7 +15,6 @@ import fukaisystem.dto.GetTableDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 public class GetData extends ServiceFoundation {
-	protected static final String className = "GetData";
 
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o)
@@ -24,6 +23,7 @@ public class GetData extends ServiceFoundation {
 		GetTableDTO dto = cast(response, o, GetTableDTO.class);
 		Map<String, Map<String, List<String>>> data = new HashMap<>();
 		Map<String, List<String>> tables = dto.getTables();
+
 		for (Map.Entry<String, List<String>> table : tables.entrySet()) {
 			String tableName = table.getKey();
 			if (tableName.equals("V_見積原簿")) {

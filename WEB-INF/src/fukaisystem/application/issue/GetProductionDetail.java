@@ -12,12 +12,14 @@ import javax.servlet.ServletResponse;
 import fukaisystem.foundation.ServiceFoundation;
 
 public class GetProductionDetail extends ServiceFoundation {
+
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		int productionID = cast(response, o, Integer.class);
 
 		Vector<Vector<Object>> productionData = new Vector<>();
+
 		// 製作明細
 		try (PreparedStatement ps = c.prepareStatement("SELECT ID,表示CD,名称,数量 FROM T_製作_子 WHERE 製作親ID=?");) {
 			ps.setInt(1, productionID);

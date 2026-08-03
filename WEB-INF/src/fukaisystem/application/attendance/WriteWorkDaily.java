@@ -14,12 +14,13 @@ import fukaisystem.dto.attendance.WorkDailiesDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
- * 日次打刻データを登録し、表示用データを返す
+ * 日次集計データを登録・変更する
  */
 public class WriteWorkDaily extends ServiceFoundation {
 
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+
 		List<WorkDaily> workDailies = cast(response, o, WorkDailiesDTO.class).getWorkDailies();
 
 		LocalDateTime now = LocalDateTime.now();

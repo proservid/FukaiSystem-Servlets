@@ -10,8 +10,6 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import org.apache.log4j.Logger;
-
 import fukaisystem.dto.DispatchingDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
@@ -20,14 +18,13 @@ import fukaisystem.foundation.ServiceFoundation;
  */
 public class DispatchingRegister extends ServiceFoundation {
 
-	protected static final Logger logger = Logger.getLogger("A1");
-
 	@Override
 	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		int dispatchingID = 0;
 		DispatchingDTO dto = cast(response, o, DispatchingDTO.class);
 		dispatchingID = dto.dispatchingID();
+
 		try (
 			PreparedStatement ps = c.prepareStatement(
 				"INSERT INTO T_出庫_親"
