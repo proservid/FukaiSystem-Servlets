@@ -34,6 +34,14 @@ public final class WorkDaily implements Serializable {
      */
     private final int scheduledMinutes;
 
+    /**
+     * 早出（分）: 始業 08:20 より前の実労働時間（30分単位切り捨て）。
+     *
+     * <p>出張のみが対象で、認めるのは 05:50〜08:20 の最大2時間30分まで。
+     * 出張以外は始業前を切り捨てるため常に 0。
+     */
+    private final int earlyWorkMinutes;
+
     /** 日次時間外労働（分）: 17:15 以降の実労働時間（30分単位切り捨て） */
     private final int overtimeMinutes;
 
@@ -78,6 +86,7 @@ public final class WorkDaily implements Serializable {
         this.workDate         = b.workDate;
         this.totalMinutes     = b.totalMinutes;
         this.scheduledMinutes = b.scheduledMinutes;
+        this.earlyWorkMinutes = b.earlyWorkMinutes;
         this.overtimeMinutes  = b.overtimeMinutes;
         this.lateNightMinutes = b.lateNightMinutes;
         this.lateEarlyMinutes = b.lateEarlyMinutes;
@@ -99,6 +108,7 @@ public final class WorkDaily implements Serializable {
     public LocalDate     getWorkDate()         { return workDate;         }
     public int           getTotalMinutes()     { return totalMinutes;     }
     public int           getScheduledMinutes() { return scheduledMinutes; }
+    public int           getEarlyWorkMinutes() { return earlyWorkMinutes; }
     public int           getOvertimeMinutes()  { return overtimeMinutes;  }
     public int           getLateNightMinutes() { return lateNightMinutes; }
     public int           getLateEarlyMinutes() { return lateEarlyMinutes; }
@@ -143,6 +153,7 @@ public final class WorkDaily implements Serializable {
         private LocalDate     workDate;
         private int           totalMinutes;
         private int           scheduledMinutes;
+        private int           earlyWorkMinutes;
         private int           overtimeMinutes;
         private int           lateNightMinutes;
         private int           lateEarlyMinutes;
@@ -163,6 +174,7 @@ public final class WorkDaily implements Serializable {
         public Builder workDate(LocalDate v)        { this.workDate         = v; return this; }
         public Builder totalMinutes(int v)          { this.totalMinutes     = v; return this; }
         public Builder scheduledMinutes(int v)      { this.scheduledMinutes = v; return this; }
+        public Builder earlyWorkMinutes(int v)      { this.earlyWorkMinutes = v; return this; }
         public Builder overtimeMinutes(int v)       { this.overtimeMinutes  = v; return this; }
         public Builder lateNightMinutes(int v)      { this.lateNightMinutes = v; return this; }
         public Builder lateEarlyMinutes(int v)      { this.lateEarlyMinutes = v; return this; }
