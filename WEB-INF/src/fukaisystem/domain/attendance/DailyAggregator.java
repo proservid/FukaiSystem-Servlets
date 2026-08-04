@@ -23,7 +23,7 @@ import java.util.List;
  *   <dt>実労働時間</dt>
  *   <dd>退勤 − 出勤 から以下を自動控除した時間。
  *       ① 始業前（08:20より前。出張のみ早出として 05:50 まで認める）、② 外出打刻区間、
- *       ③ 昼休み（12:00〜12:45）、④ 定時後休憩（17:00〜17:15）。
+ *       ③ 昼休み（12:00〜12:45。出張は1時間として 12:00〜13:00）、④ 定時後休憩（17:00〜17:15）。
  *       出張の場合は定時後休憩なしとみなし、④は控除しない。</dd>
  *
  *   <dt>早出</dt>
@@ -40,7 +40,7 @@ import java.util.List;
  *   <dt>遅刻早退累計</dt>
  *   <dd>遅刻時間（始業基準より後に出勤した分）と
  *       早退時間（終業基準より前に退勤した分）の合計（分）。
- *       基準は通常 08:20〜17:00。午前半休は午後始業（12:45）〜17:00、
+ *       基準は通常 08:20〜17:00。午前半休は午後始業（12:45。出張は 13:00）〜17:00、
  *       午後半休は 08:20〜午前終業（12:00）とし、半休で免除された半日分は累計に加えない。</dd>
  *
  *   <dt>半休（午前・午後）</dt>
@@ -48,8 +48,10 @@ import java.util.List;
  *       午前半休・午後半休フラグを集計結果へ引き継ぐ。</dd>
  *
  *   <dt>深夜労働</dt>
- *   <dd>実労働のうち 22:00〜翌05:00 または 00:00〜05:00 に重なる時間を
- *       30分単位（端数切り捨て）で算出。出張の場合は切り捨てを行わず1分単位で算出する。
+ *   <dd>実労働のうち 22:00〜翌05:00 または 00:00〜05:00 に重なる時間。分単位で数えるが、
+ *       時間外労働の30分切り捨てで計上されなかった末尾は深夜にも計上しない
+ *       （＝残業として計上した区間と深夜帯の重なり）。
+ *       例: 08:20〜22:15 の勤務は 21:45〜22:15 の30分が通常の残業15分と深夜15分に分かれる。
  *       残業・休日との重複は独立してカウントする。</dd>
  *
  *   <dt>休日労働</dt>
@@ -83,8 +85,11 @@ public class DailyAggregator {
     /** 昼休み開始: 12:00 = 720分 */
     static final int LUNCH_START = 12 * 60;           // 720
 
-    /** 昼休み終了: 12:45 = 765分 */
+    /** 昼休み終了: 12:45 = 765分（出張は {@link #BUSINESS_TRIP_LUNCH_END} を使う） */
     static final int LUNCH_END   = 12 * 60 + 45;      // 765
+
+    /** 出張の昼休み終了: 13:00 = 780分（出張は昼休みを1時間とする） */
+    static final int BUSINESS_TRIP_LUNCH_END = 13 * 60;   // 780
 
     // ---- 定時・残業 -------------------------------------------------------------
 
@@ -126,9 +131,6 @@ public class DailyAggregator {
     static final int LATE_NIGHT_START     = 22 * 60;              // 1320: 22:00
     static final int LATE_NIGHT_END       = 24 * 60 + 5 * 60;     // 1740: 翌05:00
 
-    /** 深夜の計算単位（分）: 30分切り捨て（出張の場合は適用せず1分単位） */
-    static final int LATE_NIGHT_UNIT      = 30;
-
     // ---- その他 ----------------------------------------------------------------
 
     /** 実労働時間の上限（分）= 24時間。超過はデータ異常とみなす */
@@ -145,7 +147,7 @@ public class DailyAggregator {
      * <ol>
      *   <li>外出打刻による区間分割</li>
      *   <li>始業前（08:20より前。出張は早出として認める 05:50 より前）の切り捨て</li>
-     *   <li>昼休み（12:00〜12:45）の自動控除</li>
+     *   <li>昼休み（12:00〜12:45。出張は 12:00〜13:00）の自動控除</li>
      *   <li>定時後休憩（17:00〜17:15）の自動控除（出張の場合は控除しない）</li>
      *   <li>実労働時間・早出・時間外・深夜・休日・遅刻早退累計の算出</li>
      * </ol>
@@ -213,9 +215,11 @@ public class DailyAggregator {
         int beforeWorkEnd = record.isBusinessTrip() ? EARLY_WORK_START : STANDARD_START;
         intervals = deductPeriod(intervals, 0, beforeWorkEnd);
 
-        // ---- 3. 昼休み自動控除（12:00〜12:45。日付またぎで翌昼を通過する場合は翌日分も控除） ----
-        intervals = deductPeriod(intervals, LUNCH_START, LUNCH_END);
-        intervals = deductPeriod(intervals, LUNCH_START + 1440, LUNCH_END + 1440);
+        // ---- 3. 昼休み自動控除（12:00〜12:45。出張は1時間として 12:00〜13:00。
+        //         日付またぎで翌昼を通過する場合は翌日分も控除） ----
+        int lunchEnd = record.isBusinessTrip() ? BUSINESS_TRIP_LUNCH_END : LUNCH_END;
+        intervals = deductPeriod(intervals, LUNCH_START, lunchEnd);
+        intervals = deductPeriod(intervals, LUNCH_START + 1440, lunchEnd + 1440);
 
         // ---- 4. 定時後休憩自動控除（17:00〜17:15。同上、翌日分も控除。出張は休憩なしのため控除しない） ----
         if (!record.isBusinessTrip()) {
@@ -285,7 +289,7 @@ public class DailyAggregator {
      *
      * <p>遅刻時間（始業基準より後に出勤した分）と
      * 早退時間（終業基準より前に退勤した分）の合計を返す。
-     * 始業基準は通常 08:20、午前半休の場合は午後始業（12:45 ＝ 昼休み終了）。
+     * 始業基準は通常 08:20、午前半休の場合は午後始業（＝昼休み終了。通常 12:45、出張は 13:00）。
      * 終業基準は通常 17:00、午後半休の場合は午前終業（12:00 ＝ 昼休み開始）。
      * 半休で免除された半日分は累計に加えない。
      *
@@ -300,8 +304,10 @@ public class DailyAggregator {
         int clockOutMin = toMinutes(record.getClockOut());
         // 日付またぎは退勤を翌日時刻に補正してから早退時間を計算する
         if (clockOutMin < clockInMin) clockOutMin += 1440;
-        // 午前半休は午後始業（12:45）、午後半休は午前終業（12:00）を基準にする
-        int startMin = record.isAmPaidHoliday() ? LUNCH_END   : STANDARD_START;
+        // 午前半休は午後始業（＝昼休み終了。通常 12:45、出張は 13:00）、
+        // 午後半休は午前終業（12:00）を基準にする
+        int lunchEnd = record.isBusinessTrip() ? BUSINESS_TRIP_LUNCH_END : LUNCH_END;
+        int startMin = record.isAmPaidHoliday() ? lunchEnd    : STANDARD_START;
         int endMin   = record.isPmPaidHoliday() ? LUNCH_START : STANDARD_END;
         int lateMinutes  = Math.max(0, clockInMin - startMin);
         int earlyMinutes = Math.max(0, endMin - clockOutMin);
@@ -507,7 +513,23 @@ public class DailyAggregator {
      * @return 時間外労働（分）。出張以外は30分単位に切り捨てた値。
      */
     private int calcOvertimeMinutes(List<int[]> intervals, boolean isBusinessTrip) {
-        // 出張は定時後休憩がなく 17:00 から残業扱い、それ以外は 17:15 起点
+        int raw = calcRawOvertimeMinutes(intervals, isBusinessTrip);
+        // 出張は30分単位の切り捨てを行わない
+        if (isBusinessTrip) return raw;
+        return (raw / OVERTIME_UNIT) * OVERTIME_UNIT;
+    }
+
+    /**
+     * 切り捨て前の時間外労働（分）を算出する。
+     *
+     * <p>出張は定時後休憩がないため 17:00（{@link #STANDARD_END}）以降、
+     * それ以外は 17:15（{@link #OVERTIME_START}）以降を対象とする。
+     *
+     * @param intervals      控除済みの労働区間リスト
+     * @param isBusinessTrip 出張FLG
+     * @return 30分単位に切り捨てる前の時間外労働（分）
+     */
+    private int calcRawOvertimeMinutes(List<int[]> intervals, boolean isBusinessTrip) {
         int overtimeStart = isBusinessTrip ? STANDARD_END : OVERTIME_START;
         int raw = 0;
         for (int[] iv : intervals) {
@@ -515,9 +537,7 @@ public class DailyAggregator {
                 raw += iv[1] - Math.max(iv[0], overtimeStart);
             }
         }
-        // 出張は30分単位の切り捨てを行わない
-        if (isBusinessTrip) return raw;
-        return (raw / OVERTIME_UNIT) * OVERTIME_UNIT;
+        return raw;
     }
 
     /**
@@ -531,22 +551,64 @@ public class DailyAggregator {
      *
      * <p>深夜かつ残業、深夜かつ休日の重複は各集計で独立してカウントする（仕様書 4.1.1）。
      *
-     * <p>時間外労働と同様に {@link #LATE_NIGHT_UNIT}（30分）単位で切り捨てる。
-     * 出張の場合は切り捨てを行わず1分単位で算出する。
+     * <p>深夜は分単位で数えるが、時間外労働の30分切り捨てで計上されなかった末尾は
+     * 深夜にも計上しない（{@link #dropTail}）。深夜帯はすべて残業の時間帯に含まれるため、
+     * これにより「残業として計上した区間のうち深夜帯と重なる分」が深夜労働になり、
+     * 集計画面の「残業 ＝ 時間外労働 − 深夜労働」と内訳が常に一致する。
+     *
+     * <p>例えば 08:20〜22:15 の勤務は時間外労働 300分（17:15〜22:15）のうち
+     * 22:00〜22:15 の15分が深夜となり、21:45〜22:15 の30分が通常の残業15分と深夜15分に分かれる。
+     * 08:20〜23:00 は時間外労働が 345分 → 330分に切り捨てられるため、
+     * 末尾の 22:45〜23:00 を除いた 22:00〜22:45 の45分が深夜になる。
+     *
+     * <p>出張の場合は時間外労働を切り捨てないため、深夜も実際に重なった分をそのまま計上する。
      *
      * @param intervals      控除済みの労働区間リスト
      * @param isBusinessTrip 出張FLG
-     * @return 深夜労働時間（分）。出張以外は30分単位に切り捨てた値。
+     * @return 深夜労働時間（分）
      */
     private int calcLateNightMinutes(List<int[]> intervals, boolean isBusinessTrip) {
+        List<int[]> counted = intervals;
+        if (!isBusinessTrip) {
+            // 30分単位の切り捨てで時間外労働に計上されなかった末尾は深夜にも計上しない
+            int rawOvertime = calcRawOvertimeMinutes(intervals, false);
+            counted = dropTail(intervals, rawOvertime % OVERTIME_UNIT);
+        }
         int lateNight = 0;
-        for (int[] iv : intervals) {
+        for (int[] iv : counted) {
             lateNight += overlap(iv[0], iv[1], 0,         LATE_NIGHT_EARLY_END);
             lateNight += overlap(iv[0], iv[1], LATE_NIGHT_START, LATE_NIGHT_END);
         }
-        // 出張は30分単位の切り捨てを行わない
-        if (isBusinessTrip) return lateNight;
-        return (lateNight / LATE_NIGHT_UNIT) * LATE_NIGHT_UNIT;
+        return lateNight;
+    }
+
+    /**
+     * 労働区間リストの末尾から {@code dropMinutes} 分を取り除いた区間リストを返す。
+     *
+     * <p>時間外労働の30分切り捨てで落ちる端数は必ず勤務の末尾にあたるため、
+     * 「残業として計上した区間」を求める用途に使う。
+     * 区間リストは時刻の昇順に並んでいることを前提とする。
+     *
+     * @param intervals   元の労働区間リスト
+     * @param dropMinutes 末尾から取り除く時間（分）。0 の場合は元のリストをそのまま返す。
+     * @return 末尾を取り除いた労働区間リスト
+     */
+    private List<int[]> dropTail(List<int[]> intervals, int dropMinutes) {
+        if (dropMinutes <= 0) return intervals;
+        List<int[]> result = new ArrayList<>(intervals);
+        for (int i = result.size() - 1; i >= 0 && dropMinutes > 0; i--) {
+            int[] iv = result.get(i);
+            int length = iv[1] - iv[0];
+            if (length <= dropMinutes) {
+                // 区間ごと落ちる
+                dropMinutes -= length;
+                result.remove(i);
+            } else {
+                result.set(i, new int[]{iv[0], iv[1] - dropMinutes});
+                dropMinutes = 0;
+            }
+        }
+        return result;
     }
 
     /**
@@ -555,6 +617,7 @@ public class DailyAggregator {
      * <p>実労働のうち、早出（始業 08:20 より前）にも
      * 残業（{@link #OVERTIME_START} 以降。出張は {@link #STANDARD_END} 以降）にも
      * 深夜時間帯にも該当しない時間。割増賃金の対象にならない部分にあたる。
+     * 出張の所定内は 08:20〜17:00（昼休み1時間を除く 460分）が上限になる。
      *
      * <p>早出・時間外・深夜は30分単位で切り捨てるため、
      * 「実労働 − 早出 − 残業 − 深夜」で所定内を求めると切り捨てた端数が所定内に混ざってしまう。

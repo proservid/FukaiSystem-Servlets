@@ -78,7 +78,8 @@ public class ReadAll extends ServiceFoundation {
 				+ " SUM(CASE WHEN 土休FLG='true' THEN 早出 ELSE 0 END) AS 土休早出,"
 				+ " SUM(CASE WHEN 日曜FLG='true' THEN 早出 ELSE 0 END) AS 日曜早出,"
 				// 深夜労働はすべて残業に含まれるため、表示する残業からは深夜分を除く。
-				// 時間外労働は30分単位に切り捨てるため、深夜労働を下回る場合は残業を0とする。
+				// 深夜労働は残業として計上した区間から算出するため時間外労働を下回ることはないが、
+				// 念のため下回る場合は残業を0とする。
 				+ " SUM(CASE WHEN 時間外労働 > 深夜労働 THEN 時間外労働 - 深夜労働 ELSE 0 END) AS 残業合計,"
 				+ " SUM(CASE WHEN 土休FLG='true' AND 時間外労働 > 深夜労働 THEN 時間外労働 - 深夜労働 ELSE 0 END) AS 土休残業,"
 				+ " SUM(CASE WHEN 日曜FLG='true' AND 時間外労働 > 深夜労働 THEN 時間外労働 - 深夜労働 ELSE 0 END) AS 日曜残業,"
