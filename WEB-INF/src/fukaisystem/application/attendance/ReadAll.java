@@ -56,12 +56,14 @@ public class ReadAll extends ServiceFoundation {
 				+ "残業合計 - 土休残業 - 日曜残業 AS 平日残業,"
 				+ "深夜合計 - 土休深夜 - 日曜深夜 AS 平日深夜,"
 				+ "所定内合計 - 土休所定内 - 日曜所定内 AS 平日所定内,"
+				+ "早出合計 - 土休早出 - 日曜早出 AS 平日早出,"
 				+ "土休所定内, 日曜所定内, 所定内合計,"
+				+ "土休早出, 日曜早出, 早出合計,"
 				+ "土休残業, 日曜残業, 残業合計,"
 				+ "土休深夜, 日曜深夜, 深夜合計,"
 				+ "土休実労働, 日曜実労働, 実労働合計,"
-				// 30分単位に切り捨てた端数（実労働のうち所定内・残業・深夜のいずれにも計上されない分）
-				+ "実労働合計 - 所定内合計 - 残業合計 - 深夜合計 AS 切捨,"
+				// 30分単位に切り捨てた端数（実労働のうち所定内・早出・残業・深夜のいずれにも計上されない分）
+				+ "実労働合計 - 所定内合計 - 早出合計 - 残業合計 - 深夜合計 AS 切捨,"
 				+ "遅早, 出勤, 土休, 日曜, 出張, 欠勤, 前休 + 後休 + 有給 AS 有給"
 				+ " FROM (SELECT 人員CD,"
 				+ " SUM(実労働時間) AS 実労働合計,"
@@ -71,6 +73,10 @@ public class ReadAll extends ServiceFoundation {
 				+ " SUM(所定内) AS 所定内合計,"
 				+ " SUM(CASE WHEN 土休FLG='true' THEN 所定内 ELSE 0 END) AS 土休所定内,"
 				+ " SUM(CASE WHEN 日曜FLG='true' THEN 所定内 ELSE 0 END) AS 日曜所定内,"
+				// 早出は出張のみが対象。所定内・残業・深夜のいずれとも重ならない
+				+ " SUM(早出) AS 早出合計,"
+				+ " SUM(CASE WHEN 土休FLG='true' THEN 早出 ELSE 0 END) AS 土休早出,"
+				+ " SUM(CASE WHEN 日曜FLG='true' THEN 早出 ELSE 0 END) AS 日曜早出,"
 				// 深夜労働はすべて残業に含まれるため、表示する残業からは深夜分を除く。
 				// 時間外労働は30分単位に切り捨てるため、深夜労働を下回る場合は残業を0とする。
 				+ " SUM(CASE WHEN 時間外労働 > 深夜労働 THEN 時間外労働 - 深夜労働 ELSE 0 END) AS 残業合計,"
@@ -106,6 +112,10 @@ public class ReadAll extends ServiceFoundation {
 				v.add(rs.getInt("土休所定内"));
 				v.add(rs.getInt("日曜所定内"));
 				v.add(rs.getInt("所定内合計"));
+				v.add(rs.getInt("平日早出"));
+				v.add(rs.getInt("土休早出"));
+				v.add(rs.getInt("日曜早出"));
+				v.add(rs.getInt("早出合計"));
 				v.add(rs.getInt("平日残業"));
 				v.add(rs.getInt("土休残業"));
 				v.add(rs.getInt("日曜残業"));
