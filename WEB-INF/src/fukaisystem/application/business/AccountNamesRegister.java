@@ -8,7 +8,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.AccountNamesDTO;
+import fukaisystem.dto.business.AccountNamesDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**

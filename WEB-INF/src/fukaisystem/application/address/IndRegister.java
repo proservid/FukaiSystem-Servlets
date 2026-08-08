@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.IndDTO;
+import fukaisystem.dto.address.IndDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 public class IndRegister extends ServiceFoundation {

@@ -9,7 +9,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.CandidateInputDTO;
+import fukaisystem.dto.common.CandidateInputDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 public class GetIndCandidate extends ServiceFoundation {

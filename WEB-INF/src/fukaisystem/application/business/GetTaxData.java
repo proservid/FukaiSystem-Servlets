@@ -18,7 +18,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.GetTableDTO;
+import fukaisystem.dto.common.GetTableDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**

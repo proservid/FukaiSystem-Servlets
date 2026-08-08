@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.AggregateDTO;
+import fukaisystem.dto.aggregate.AggregateDTO;
 import fukaisystem.foundation.ServiceFoundation;
 import fukaisystem.sql.ResultSetConverter;
 

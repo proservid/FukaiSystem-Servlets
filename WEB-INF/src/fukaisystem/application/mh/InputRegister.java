@@ -11,7 +11,7 @@ import java.util.Calendar;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.InputDTO;
+import fukaisystem.dto.mh.InputDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 public class InputRegister extends ServiceFoundation {

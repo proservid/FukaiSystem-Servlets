@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 
 import com.proservid.print.dao.TableDAO;
 
-import fukaisystem.dto.GetTableDTO;
+import fukaisystem.dto.common.GetTableDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 public class GetData extends ServiceFoundation {

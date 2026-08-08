@@ -12,7 +12,7 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import fukaisystem.dto.DispatchingDTO;
+import fukaisystem.dto.business.DispatchingDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
