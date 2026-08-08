@@ -5,23 +5,19 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.ColInfoDTO;
-import fukaisystem.dto.TableAdapter;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
- * テーブルの内容と列情報を取得するためのクラス
- * 
+ * 得意先別製番別売上集計を取得するためのクラス
+ *
  * @author kameura
  *
  */
@@ -30,18 +26,17 @@ public class GetSalesData extends ServiceFoundation {
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
-		String tableName = "";
-
 		Map<String, Integer> m = new HashMap<String, Integer>();
 		Date from = cast(response, o, Date.class);
+		if (from == null) {
+			return null;
+		}
 		Calendar target = Calendar.getInstance();
 		target.setTime(from);
 		target.add(Calendar.MONTH, 1);
 		Date to = new Date(target.getTimeInMillis());
 
-		List<String> keys = new ArrayList<String>();
-		List<ColInfoDTO> colInfos = new ArrayList<ColInfoDTO>();
-		List<List<Object>> contents = new ArrayList<List<Object>>();
+		Vector<Vector<Object>> contents = new Vector<Vector<Object>>();
 
 		try (
 			PreparedStatement ps = c.prepareStatement(
@@ -99,14 +94,6 @@ public class GetSalesData extends ServiceFoundation {
 			ps.setDate(1, from);
 			ps.setDate(2, to);
 			ResultSet rs = ps.executeQuery();
-			ResultSetMetaData rsmd = rs.getMetaData();
-			for (int i = 1; i <= rsmd.getColumnCount(); i++) {
-				ColInfoDTO ci = new ColInfoDTO(
-					rsmd.getColumnName(i), rsmd.getColumnTypeName(i),
-					rsmd.getColumnType(i), rsmd.getColumnDisplaySize(i)
-				);
-				colInfos.add(ci);
-			}
 
 			String accountCode = "";
 			String accountName = "";
@@ -115,7 +102,7 @@ public class GetSalesData extends ServiceFoundation {
 			while (rs.next()) {
 				if (!accountCode.equals(rs.getString("得意先CD")) && !accountCode.equals("")) {
 					if (m.containsKey(accountCode)) {
-						List<Object> record = new ArrayList<Object>();
+						Vector<Object> record = new Vector<Object>();
 						record.add(accountCode);
 						record.add(accountName);
 						record.add("消費税");
@@ -125,14 +112,14 @@ public class GetSalesData extends ServiceFoundation {
 						subtotal += m.get(accountCode);
 						total += m.get(accountCode);
 					}
-					List<Object> record = new ArrayList<Object>();
+					Vector<Object> record = new Vector<Object>();
 					record.add(accountCode);
 					record.add(accountName);
 					record.add("");
 					record.add("");
 					record.add(subtotal);
 					contents.add(record);
-					record = new ArrayList<Object>();
+					record = new Vector<Object>();
 					record.add("");
 					record.add("");
 					record.add("");
@@ -141,7 +128,7 @@ public class GetSalesData extends ServiceFoundation {
 					contents.add(record);
 					subtotal = 0;
 				}
-				List<Object> record = new ArrayList<Object>();
+				Vector<Object> record = new Vector<Object>();
 				record.add(rs.getString("得意先CD"));
 				record.add(rs.getString("得意先名"));
 				record.add(rs.getString("受注番号"));
@@ -155,7 +142,7 @@ public class GetSalesData extends ServiceFoundation {
 			}
 			rs.close();
 			if (m.containsKey(accountCode)) {
-				List<Object> record = new ArrayList<Object>();
+				Vector<Object> record = new Vector<Object>();
 				record.add(accountCode);
 				record.add(accountName);
 				record.add("消費税");
@@ -165,21 +152,21 @@ public class GetSalesData extends ServiceFoundation {
 				subtotal += m.get(accountCode);
 				total += m.get(accountCode);
 			}
-			List<Object> record = new ArrayList<Object>();
+			Vector<Object> record = new Vector<Object>();
 			record.add(accountCode);
 			record.add(accountName);
 			record.add("");
 			record.add("");
 			record.add(subtotal);
 			contents.add(record);
-			record = new ArrayList<Object>();
+			record = new Vector<Object>();
 			record.add("");
 			record.add("");
 			record.add("");
 			record.add("");
 			record.add(null);
 			contents.add(record);
-			record = new ArrayList<Object>();
+			record = new Vector<Object>();
 			record.add("");
 			record.add("");
 			record.add("");
@@ -188,20 +175,6 @@ public class GetSalesData extends ServiceFoundation {
 			contents.add(record);
 		}
 
-		if (!tableName.equals("")) {
-			try (
-				PreparedStatement ps = c.prepareStatement(
-					"SELECT COLUMN_NAME FROM information_schema.constraint_column_usage"
-						+ " WHERE table_name=? AND constraint_name LIKE 'PK_%'"
-				);
-			) {
-				ps.setString(1, tableName);
-				ResultSet rs = ps.executeQuery();
-				while (rs.next()) {
-					keys.add(rs.getString("COLUMN_NAME"));
-				}
-			}
-		}
-		return new TableAdapter(keys, colInfos, contents);
+		return contents;
 	}
 }
