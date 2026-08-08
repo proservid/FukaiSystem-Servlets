@@ -825,6 +825,33 @@
 	</servlet-mapping>
 
 	<servlet>
+		<servlet-name> getInputRecord </servlet-name>
+		<servlet-class> fukaisystem.application.mh.GetInputRecord </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getInputRecord </servlet-name>
+		<url-pattern> /getInputRecord </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> getDailyRecords </servlet-name>
+		<servlet-class> fukaisystem.application.mh.GetDailyRecords </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getDailyRecords </servlet-name>
+		<url-pattern> /getDailyRecords </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> deleteInputRecord </servlet-name>
+		<servlet-class> fukaisystem.application.mh.DeleteInputRecord </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> deleteInputRecord </servlet-name>
+		<url-pattern> /deleteInputRecord </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name> tbInit </servlet-name>
 		<servlet-class> fukaisystem.application.mh.TbInit </servlet-class>
 	</servlet>
