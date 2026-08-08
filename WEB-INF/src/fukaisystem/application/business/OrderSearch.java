@@ -11,7 +11,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.OrderSearchDTO;
+import fukaisystem.dto.business.OrderSearchDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**

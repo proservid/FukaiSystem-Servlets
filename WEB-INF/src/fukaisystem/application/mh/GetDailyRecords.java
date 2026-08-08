@@ -11,7 +11,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.DailyInputDTO;
+import fukaisystem.dto.mh.DailyInputDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**

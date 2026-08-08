@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.ProductSheetDTO;
+import fukaisystem.dto.aggregate.ProductSheetDTO;
 import fukaisystem.foundation.ServiceFoundation;
 import fukaisystem.sql.ResultSetConverter;
 
