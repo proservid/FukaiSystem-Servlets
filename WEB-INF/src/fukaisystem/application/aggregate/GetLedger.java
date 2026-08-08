@@ -5,24 +5,20 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.ColInfoDTO;
-import fukaisystem.dto.TableAdapter;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
- * テーブルの内容と列情報を取得するためのクラス
- * 
+ * 得意先元帳を取得するためのクラス
+ *
  * @author kameura
  *
  */
@@ -31,12 +27,13 @@ public class GetLedger extends ServiceFoundation {
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
-		String tableName = "";
-
 		Map<String, Amount> m = new HashMap<String, Amount>();
 		DecimalFormat df = new DecimalFormat("#,###");
 
 		Date from = cast(response, o, Date.class);
+		if (from == null) {
+			return null;
+		}
 		Calendar target = Calendar.getInstance();
 		target.setTime(from);
 		int month = target.get(Calendar.MONTH) + 1;
@@ -45,9 +42,7 @@ public class GetLedger extends ServiceFoundation {
 		target.add(Calendar.DATE, -1);
 		Date last = new Date(target.getTimeInMillis());
 
-		List<String> keys = new ArrayList<String>();
-		List<ColInfoDTO> colInfos = new ArrayList<ColInfoDTO>();
-		List<List<Object>> contents = new ArrayList<List<Object>>();
+		Vector<Vector<Object>> contents = new Vector<Vector<Object>>();
 		try (
 			PreparedStatement ps = c.prepareStatement(
 				"SELECT"
@@ -109,14 +104,6 @@ public class GetLedger extends ServiceFoundation {
 			ps.setDate(1, from);
 			ps.setDate(2, to);
 			ResultSet rs = ps.executeQuery();
-			ResultSetMetaData rsmd = rs.getMetaData();
-			for (int i = 2; i <= rsmd.getColumnCount(); i++) { // 最初の列（得意先CD）はスキップ
-				ColInfoDTO ci = new ColInfoDTO(
-					rsmd.getColumnName(i), rsmd.getColumnTypeName(i),
-					rsmd.getColumnType(i), rsmd.getColumnDisplaySize(i)
-				);
-				colInfos.add(ci);
-			}
 
 			String acNum = "";
 			String acName = "";
@@ -128,8 +115,7 @@ public class GetLedger extends ServiceFoundation {
 				// 特殊データの追加
 				if (rs.getString("受注番号") != null) {
 					if (!accept.equals(rs.getString("受注番号")) && !accept.equals("")) { // 次の受注番号へ変わるタイミングで小計を追加
-						List<Object> record = new ArrayList<Object>();
-						// record.add(acNum);
+						Vector<Object> record = new Vector<Object>();
 						record.add(acName);
 						record.add("");
 						record.add("小計");
@@ -141,8 +127,7 @@ public class GetLedger extends ServiceFoundation {
 						subtotal = 0;
 						if (!acNum.equals(rs.getString("得意先CD")) && !acNum.equals("")) { // さらに次の得意先CDへ変わるタイミングで（消費税別途の得意先の消費税と）合計を追加
 							if (m.containsKey(acNum)) { // 消費税を別途計算していた得意先については、追加
-								record = new ArrayList<Object>();
-								// record.add(acNum);
+								record = new Vector<Object>();
 								record.add(acName);
 								record.add(last);
 								record.add(month + "月度納入額(\\" + df.format(m.get(acNum).getPrice()) + ")");
@@ -152,8 +137,7 @@ public class GetLedger extends ServiceFoundation {
 								record.add(""); // 注文書番号
 								contents.add(record);
 
-								record = new ArrayList<Object>();
-								// record.add(acNum);
+								record = new Vector<Object>();
 								record.add(acName);
 								record.add(last);
 								record.add("* 消費税");
@@ -163,8 +147,7 @@ public class GetLedger extends ServiceFoundation {
 								record.add(""); // 注文書番号
 								contents.add(record);
 
-								record = new ArrayList<Object>();
-								// record.add(acNum);
+								record = new Vector<Object>();
 								record.add(acName);
 								record.add("");
 								record.add("小計");
@@ -176,8 +159,7 @@ public class GetLedger extends ServiceFoundation {
 								total += m.get(acNum).getTax();
 								inclusive += m.get(acNum).getTax();
 							}
-							record = new ArrayList<Object>();
-							// record.add(acNum);
+							record = new Vector<Object>();
 							record.add(acName);
 							record.add("");
 							record.add("合計");
@@ -190,8 +172,7 @@ public class GetLedger extends ServiceFoundation {
 						}
 					}
 					// 通常データの追加
-					List<Object> record = new ArrayList<Object>();
-					// record.add(rs.getString("得意先CD"));
+					Vector<Object> record = new Vector<Object>();
 					record.add(rs.getString("得意先名"));
 					record.add(rs.getString("納入月日"));
 					record.add(rs.getString("品名"));
@@ -211,8 +192,7 @@ public class GetLedger extends ServiceFoundation {
 			rs.close();
 
 			// 最終データ分の小計合計そして総合計
-			List<Object> record = new ArrayList<Object>();
-			// record.add(acNum);
+			Vector<Object> record = new Vector<Object>();
 			record.add(acName);
 			record.add("");
 			record.add("小計");
@@ -224,8 +204,7 @@ public class GetLedger extends ServiceFoundation {
 			subtotal = 0;
 
 			if (m.containsKey(acNum)) { // 消費税を別途計算していた得意先については、追加
-				record = new ArrayList<Object>();
-				// record.add(acNum);
+				record = new Vector<Object>();
 				record.add(acName);
 				record.add(last);
 				record.add(month + "月度納入額(\\" + df.format(m.get(acNum).getPrice()) + ")");
@@ -235,8 +214,7 @@ public class GetLedger extends ServiceFoundation {
 				record.add(""); // 注文書番号
 				contents.add(record);
 
-				record = new ArrayList<Object>();
-				// record.add(acNum);
+				record = new Vector<Object>();
 				record.add(acName);
 				record.add(last);
 				record.add("* 消費税");
@@ -246,8 +224,7 @@ public class GetLedger extends ServiceFoundation {
 				record.add(""); // 注文書番号
 				contents.add(record);
 
-				record = new ArrayList<Object>();
-				// record.add(acNum);
+				record = new Vector<Object>();
 				record.add(acName);
 				record.add("");
 				record.add("小計");
@@ -259,8 +236,7 @@ public class GetLedger extends ServiceFoundation {
 				total += m.get(acNum).getTax();
 				inclusive += m.get(acNum).getTax();
 			}
-			record = new ArrayList<Object>();
-			// record.add(acNum);
+			record = new Vector<Object>();
 			record.add(acName);
 			record.add("");
 			record.add("合計");
@@ -269,8 +245,7 @@ public class GetLedger extends ServiceFoundation {
 			record.add(""); // 受注番号
 			record.add(""); // 注文書番号
 			contents.add(record);
-			record = new ArrayList<Object>();
-			// record.add(acNum);
+			record = new Vector<Object>();
 			record.add(acName);
 			record.add("");
 			record.add("総合計");
@@ -280,21 +255,8 @@ public class GetLedger extends ServiceFoundation {
 			record.add(""); // 注文書番号
 			contents.add(record);
 		}
-		if (!tableName.equals("")) {
-			try (
-				PreparedStatement ps = c.prepareStatement(
-					"SELECT COLUMN_NAME FROM information_schema.constraint_column_usage"
-						+ " WHERE table_name=? AND constraint_name LIKE 'PK_%'"
-				);
-			) {
-				ps.setString(1, tableName);
-				ResultSet rs = ps.executeQuery();
-				while (rs.next()) {
-					keys.add(rs.getString("COLUMN_NAME"));
-				}
-			}
-		}
-		return new TableAdapter(keys, colInfos, contents);
+
+		return contents;
 	}
 
 	private class Amount {

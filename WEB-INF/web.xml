@@ -275,6 +275,33 @@
 
 	<!-- fukaisystem.application.aggregate -->
 	<servlet>
+		<servlet-name> getMonthly </servlet-name>
+		<servlet-class> fukaisystem.application.aggregate.GetMonthly </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getMonthly </servlet-name>
+		<url-pattern> /getMonthly </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> getAnnual </servlet-name>
+		<servlet-class> fukaisystem.application.aggregate.GetAnnual </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getAnnual </servlet-name>
+		<url-pattern> /getAnnual </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> getProductSheet </servlet-name>
+		<servlet-class> fukaisystem.application.aggregate.GetProductSheet </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getProductSheet </servlet-name>
+		<url-pattern> /getProductSheet </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name> getLedger </servlet-name>
 		<servlet-class> fukaisystem.application.aggregate.GetLedger </servlet-class>
 	</servlet>
