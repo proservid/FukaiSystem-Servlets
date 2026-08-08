@@ -253,6 +253,15 @@
 		<url-pattern> /getNenga </url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name> getNengaList </servlet-name>
+		<servlet-class> fukaisystem.application.address.GetNengaList </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> getNengaList </servlet-name>
+		<url-pattern> /getNengaList </url-pattern>
+	</servlet-mapping>
+
 
 	<servlet>
 		<servlet-name> indRegister </servlet-name>
