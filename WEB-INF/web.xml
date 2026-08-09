@@ -888,4 +888,40 @@
 		<url-pattern> /mh/tbInit </url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name> mh.tbGetRecords </servlet-name>
+		<servlet-class> fukaisystem.application.mh.TbGetRecords </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> mh.tbGetRecords </servlet-name>
+		<url-pattern> /mh/tbGetRecords </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> mh.tbGetMonthly </servlet-name>
+		<servlet-class> fukaisystem.application.mh.TbGetMonthly </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> mh.tbGetMonthly </servlet-name>
+		<url-pattern> /mh/tbGetMonthly </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> mh.tbGetSummary </servlet-name>
+		<servlet-class> fukaisystem.application.mh.TbGetSummary </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> mh.tbGetSummary </servlet-name>
+		<url-pattern> /mh/tbGetSummary </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name> mh.tbDeleteRecords </servlet-name>
+		<servlet-class> fukaisystem.application.mh.TbDeleteRecords </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> mh.tbDeleteRecords </servlet-name>
+		<url-pattern> /mh/tbDeleteRecords </url-pattern>
+	</servlet-mapping>
+
 </web-app>
