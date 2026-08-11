@@ -16,7 +16,7 @@ import fukaisystem.dto.attendance.InitDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
- * 在籍従業員マスタを取得する
+ * 在籍従業員マスタ・祝日マスタ・就業時間マスタを取得する
  */
 public class Init extends ServiceFoundation {
 
@@ -51,6 +51,6 @@ public class Init extends ServiceFoundation {
 					.put(rs.getInt("日"), true);
 			}
 		}
-		return new InitDTO(validMemberMap, holidayMap);
+		return new InitDTO(validMemberMap, holidayMap, WorkScheduleReader.read(c));
 	}
 }
