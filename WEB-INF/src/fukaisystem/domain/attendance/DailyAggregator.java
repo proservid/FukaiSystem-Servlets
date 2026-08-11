@@ -2,7 +2,6 @@ package fukaisystem.domain.attendance;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +13,14 @@ import java.util.List;
  *   <li>打刻データ（{@link TimeRecord}）と休日マスタを受け取り、日次集計結果（{@link WorkDaily}）を算出する。</li>
  *   <li>DBアクセス・CSV読み込みは行わない（呼び出し元が注入する）。</li>
  * </ul>
+ *
+ * <h2>就業時間の設定</h2>
+ * <p>始業・終業・休憩・残業開始・丸め単位・深夜時間帯・実労働上限は、
+ * すべてコンストラクタで受け取る {@link WorkSchedule} から取得する。
+ * 本クラスは時刻や単位をハードコードせず、既定値も持たない。
+ *
+ * <p>以下の集計ルールの説明は就業時間マスタが下記の内容である場合の値。
+ * マスタを変更すればそれに追従する。
  *
  * <h2>集計ルール</h2>
  * <dl>
@@ -63,7 +70,8 @@ import java.util.List;
  *
  * <h2>使用例</h2>
  * <pre>{@code
- *   DailyAggregator aggregator = new DailyAggregator();
+ *   // 就業時間は WorkScheduleReader で就業時間マスタから読み込む
+ *   DailyAggregator aggregator = new DailyAggregator(workSchedule);
  *
  *   // 単件処理
  *   WorkDaily result = aggregator.aggregate(date, isHoliday, isSunday, record);
@@ -76,69 +84,32 @@ import java.util.List;
  */
 public class DailyAggregator {
 
-    // =========================================================================
-    // 定数（すべて「勤務日 00:00 を 0 とした分数」で表現）
-    // =========================================================================
-
-    // ---- 昼休み ----------------------------------------------------------------
-
-    /** 昼休み開始: 12:00 = 720分 */
-    static final int LUNCH_START = 12 * 60;           // 720
-
-    /** 昼休み終了: 12:45 = 765分（出張は {@link #BUSINESS_TRIP_LUNCH_END} を使う） */
-    static final int LUNCH_END   = 12 * 60 + 45;      // 765
-
-    /** 出張の昼休み終了: 13:00 = 780分（出張は昼休みを1時間とする） */
-    static final int BUSINESS_TRIP_LUNCH_END = 13 * 60;   // 780
-
-    // ---- 定時・残業 -------------------------------------------------------------
-
-    /** 定時始業: 8:20 = 500分 */
-    static final int STANDARD_START   = 8 * 60 + 20;   // 500
-
-    /** 定時終業: 17:00 = 1020分 */
-    static final int STANDARD_END     = 17 * 60;       // 1020
-
-    /** 定時後休憩終了 ＝ 残業開始: 17:15 = 1035分（出張は定時後休憩なしのため 17:00 起点） */
-    static final int OVERTIME_START   = 17 * 60 + 15;  // 1035
-
-    /** 残業の計算単位（分）: 30分切り捨て（出張の場合は適用せず1分単位） */
-    static final int OVERTIME_UNIT    = 30;
-
-    // ---- 早出 -------------------------------------------------------------------
+    /** 集計に使う就業時間（時刻・丸め単位・深夜時間帯・実労働上限） */
+    private final WorkSchedule schedule;
 
     /**
-     * 早出の開始 ＝ 早出として認める最も早い時刻: 5:50 = 350分。
-     * 始業（8:20）までの最大2時間30分が早出の対象になる（出張のみ）。
-     */
-    static final int EARLY_WORK_START = 5 * 60 + 50;   // 350
-
-    /** 早出の計算単位（分）: 30分切り捨て（出張のみが対象のため残業・深夜と異なり出張でも切り捨てる） */
-    static final int EARLY_WORK_UNIT  = 30;
-
-    // ---- 深夜時間帯 -------------------------------------------------------------
-
-    /**
-     * 深夜時間帯の定義（労働基準法第37条: 22:00〜翌05:00）。
+     * 指定した就業時間で集計する。
      *
-     * <p>勤務日の分数表現では以下の2帯域と重なる時間を合算する。
-     * <ul>
-     *   <li>早朝深夜帯: [0, 300]   →  00:00〜05:00</li>
-     *   <li>夜間深夜帯: [1320, 1740] →  22:00〜翌05:00（日付またぎ分を含む）</li>
-     * </ul>
+     * @param schedule 就業時間（null 不可）
+     * @throws IllegalArgumentException schedule が null の場合
      */
-    static final int LATE_NIGHT_EARLY_END = 5  * 60;              // 300:  05:00
-    static final int LATE_NIGHT_START     = 22 * 60;              // 1320: 22:00
-    static final int LATE_NIGHT_END       = 24 * 60 + 5 * 60;     // 1740: 翌05:00
-
-    // ---- その他 ----------------------------------------------------------------
-
-    /** 実労働時間の上限（分）= 24時間。超過はデータ異常とみなす */
-    static final int MAX_WORK_MINUTES = 24 * 60;                  // 1440
+    public DailyAggregator(WorkSchedule schedule) {
+        if (schedule == null) throw new IllegalArgumentException("schedule は null にできません");
+        this.schedule = schedule;
+    }
 
     // =========================================================================
     // 公開メソッド
     // =========================================================================
+
+    /**
+     * 集計に使っている就業時間を返す。
+     *
+     * @return 就業時間
+     */
+    public WorkSchedule getWorkSchedule() {
+        return schedule;
+    }
 
     /**
      * 1件の打刻データから日次集計結果を算出する。
@@ -159,7 +130,7 @@ public class DailyAggregator {
      * @return 集計結果（null を返さない）
      * @throws IllegalArgumentException record が null の場合
      * @throws AggregationException     出勤・退勤の片方が未打刻、外出・戻りの片方が未打刻、
-     *                                  打刻の時刻順序が不正、または実労働24時間超の場合
+     *                                  打刻の時刻順序が不正、または実労働が上限を超えた場合
      */
     public WorkDaily aggregate(LocalDate date, boolean isHoliday, boolean isSunday, TimeRecord record) {
         if (record == null) throw new IllegalArgumentException("record は null にできません");
@@ -212,31 +183,40 @@ public class DailyAggregator {
         //         早出を認めないため、始業より前の勤務は実労働に含めない。
         //         ただし出張は 05:50〜08:20 を早出として認めるため、05:50 を境界にする。
         //         日付またぎの勤務は翌日側の時刻（+1440分）で表すため、この控除の対象外となる。
-        int beforeWorkEnd = record.isBusinessTrip() ? EARLY_WORK_START : STANDARD_START;
-        intervals = deductPeriod(intervals, 0, beforeWorkEnd);
+        int beforeWorkEnd = record.isBusinessTrip()
+            ? schedule.getEarlyWorkStartMinutes()
+            : schedule.getStartMinutes();
+        intervals = WorkIntervals.deductPeriod(intervals, 0, beforeWorkEnd);
 
         // ---- 3. 昼休み自動控除（12:00〜12:45。出張は1時間として 12:00〜13:00。
         //         日付またぎで翌昼を通過する場合は翌日分も控除） ----
-        int lunchEnd = record.isBusinessTrip() ? BUSINESS_TRIP_LUNCH_END : LUNCH_END;
-        intervals = deductPeriod(intervals, LUNCH_START, lunchEnd);
-        intervals = deductPeriod(intervals, LUNCH_START + 1440, lunchEnd + 1440);
+        int lunchStart = schedule.getBreakStartMinutes();
+        int lunchEnd = record.isBusinessTrip()
+            ? schedule.getBusinessTripBreakEndMinutes()
+            : schedule.getBreakEndMinutes();
+        intervals = WorkIntervals.deductPeriod(intervals, lunchStart, lunchEnd);
+        intervals = WorkIntervals.deductPeriod(intervals,
+            lunchStart + WorkIntervals.MINUTES_PER_DAY, lunchEnd + WorkIntervals.MINUTES_PER_DAY);
 
         // ---- 4. 定時後休憩自動控除（17:00〜17:15。同上、翌日分も控除。出張は休憩なしのため控除しない） ----
         if (!record.isBusinessTrip()) {
-            intervals = deductPeriod(intervals, STANDARD_END, OVERTIME_START);
-            intervals = deductPeriod(intervals, STANDARD_END + 1440, OVERTIME_START + 1440);
+            int restStart = schedule.getEndMinutes();
+            int restEnd   = schedule.getOvertimeStartMinutes();
+            intervals = WorkIntervals.deductPeriod(intervals, restStart, restEnd);
+            intervals = WorkIntervals.deductPeriod(intervals,
+                restStart + WorkIntervals.MINUTES_PER_DAY, restEnd + WorkIntervals.MINUTES_PER_DAY);
         }
 
         // ---- 5. 各区分の算出 ----
-        int totalMinutes     = sumIntervals(intervals);
+        int totalMinutes     = WorkIntervals.sumIntervals(intervals);
 
-        // 24時間超は異常データ
-        if (totalMinutes > MAX_WORK_MINUTES) {
+        // 上限（既定24時間）超は異常データ
+        if (totalMinutes > schedule.getMaxWorkMinutes()) {
             throw new AggregationException(
                 AggregationError.Type.EXCESSIVE_WORK_HOURS,
                 record.getEmployeeNo(),
                 date.toString(),
-                "実労働時間が24時間を超えています: " + totalMinutes + "分");
+                "実労働時間が上限（" + schedule.getMaxWorkMinutes() + "分）を超えています: " + totalMinutes + "分");
         }
 
         int earlyWorkMinutes  = calcEarlyWorkMinutes(intervals, record.isBusinessTrip());
@@ -300,15 +280,17 @@ public class DailyAggregator {
      * @return 遅刻早退累計（分）。遅刻も早退もない場合は 0。
      */
     public int calcLateEarlyMinutes(TimeRecord record) {
-        int clockInMin  = toMinutes(record.getClockIn());
-        int clockOutMin = toMinutes(record.getClockOut());
+        int clockInMin  = WorkIntervals.toMinutes(record.getClockIn());
+        int clockOutMin = WorkIntervals.toMinutes(record.getClockOut());
         // 日付またぎは退勤を翌日時刻に補正してから早退時間を計算する
-        if (clockOutMin < clockInMin) clockOutMin += 1440;
+        if (clockOutMin < clockInMin) clockOutMin += WorkIntervals.MINUTES_PER_DAY;
         // 午前半休は午後始業（＝昼休み終了。通常 12:45、出張は 13:00）、
         // 午後半休は午前終業（12:00）を基準にする
-        int lunchEnd = record.isBusinessTrip() ? BUSINESS_TRIP_LUNCH_END : LUNCH_END;
-        int startMin = record.isAmPaidHoliday() ? lunchEnd    : STANDARD_START;
-        int endMin   = record.isPmPaidHoliday() ? LUNCH_START : STANDARD_END;
+        int lunchEnd = record.isBusinessTrip()
+            ? schedule.getBusinessTripBreakEndMinutes()
+            : schedule.getBreakEndMinutes();
+        int startMin = record.isAmPaidHoliday() ? lunchEnd                          : schedule.getStartMinutes();
+        int endMin   = record.isPmPaidHoliday() ? schedule.getBreakStartMinutes()   : schedule.getEndMinutes();
         int lateMinutes  = Math.max(0, clockInMin - startMin);
         int earlyMinutes = Math.max(0, endMin - clockOutMin);
         return lateMinutes + earlyMinutes;
@@ -370,14 +352,14 @@ public class DailyAggregator {
      * <p>全時刻は「勤務日 00:00 を 0 とした分数」で表現する。
      * 日付またぎ（退勤 &lt; 出勤）は +1440 して翌日分として扱う。
      *
-     * <p>昼休み・定時後休憩の控除は {@link #deductPeriod} で後処理する。
+     * <p>昼休み・定時後休憩の控除は {@link WorkIntervals#deductPeriod} で後処理する。
      *
      * @return 労働区間のリスト。各要素は {@code int[]{開始分, 終了分}}。
      * @throws AggregationException 時刻順序が不正な場合
      */
     private List<int[]> buildPunchIntervals(LocalDate date, TimeRecord record) {
-        int rawClockIn  = toMinutes(record.getClockIn());
-        int rawClockOut = toMinutes(record.getClockOut());
+        int rawClockIn  = WorkIntervals.toMinutes(record.getClockIn());
+        int rawClockOut = WorkIntervals.toMinutes(record.getClockOut());
 
         // 出勤と退勤が同時刻 → 日付またぎと区別できないデータ異常として扱う
         if (rawClockOut == rawClockIn) {
@@ -392,13 +374,13 @@ public class DailyAggregator {
         // 退勤 < 出勤 → 日付またぎ（翌日扱い）
         boolean midnightShift = (rawClockOut < rawClockIn);
         int clockInMin  = rawClockIn;
-        int clockOutMin = midnightShift ? rawClockOut + 1440 : rawClockOut;
+        int clockOutMin = midnightShift ? rawClockOut + WorkIntervals.MINUTES_PER_DAY : rawClockOut;
 
         List<int[]> intervals = new ArrayList<>();
 
         if (record.getGoOut() != null) {
-            int rawGoOut    = toMinutes(record.getGoOut());
-            int rawReturnIn = toMinutes(record.getReturnIn());
+            int rawGoOut    = WorkIntervals.toMinutes(record.getGoOut());
+            int rawReturnIn = WorkIntervals.toMinutes(record.getReturnIn());
             int goOutMin, returnInMin;
 
             if (midnightShift) {
@@ -425,62 +407,14 @@ public class DailyAggregator {
     }
 
     /**
-     * 指定した控除期間 (deductStart, deductEnd) を労働区間リストから除去する
-     * （境界がちょうど一致する区間は控除されない）。
-     *
-     * <p>控除期間と重なる各区間を「控除前」「控除後」の2部分に分割し、
-     * 長さゼロの区間は除去して返す。
-     *
-     * <p>呼び出し例:
-     * <pre>
-     *   // 昼休み控除
-     *   intervals = deductPeriod(intervals, LUNCH_START, LUNCH_END);
-     *   // 定時後休憩控除
-     *   intervals = deductPeriod(intervals, STANDARD_END, OVERTIME_START);
-     * </pre>
-     *
-     * @param intervals   元の労働区間リスト
-     * @param deductStart 控除開始（分）
-     * @param deductEnd   控除終了（分）
-     * @return 控除後の労働区間リスト（新規リスト）
-     */
-    private List<int[]> deductPeriod(List<int[]> intervals, int deductStart, int deductEnd) {
-        List<int[]> result = new ArrayList<>();
-        for (int[] iv : intervals) {
-            // 控除開始より前の部分
-            if (iv[0] < deductStart) {
-                int end = Math.min(iv[1], deductStart);
-                if (end > iv[0]) result.add(new int[]{iv[0], end});
-            }
-            // 控除終了より後の部分
-            if (iv[1] > deductEnd) {
-                int start = Math.max(iv[0], deductEnd);
-                if (iv[1] > start) result.add(new int[]{start, iv[1]});
-            }
-        }
-        return result;
-    }
-
-    /**
-     * 労働区間リストの合計時間（分）を返す。
-     */
-    private int sumIntervals(List<int[]> intervals) {
-        int total = 0;
-        for (int[] iv : intervals) {
-            total += iv[1] - iv[0];
-        }
-        return total;
-    }
-
-    /**
      * 早出（分）を算出する。
      *
-     * <p>早出は出張のみが対象で、始業（{@link #STANDARD_START} = 08:20）より前の実労働のうち
-     * {@link #EARLY_WORK_START}（05:50）以降と重なる時間を {@link #EARLY_WORK_UNIT}（30分）単位で
-     * 切り捨てて算出する。対象帯域が 2時間30分のため、結果は最大 150分になる。
+     * <p>早出は出張のみが対象で、始業（既定 08:20）より前の実労働のうち
+     * 早出開始（既定 05:50）以降と重なる時間を早出単位（既定30分）で
+     * 切り捨てて算出する。既定では対象帯域が 2時間30分のため、結果は最大 150分になる。
      *
-     * <p>05:50 より前の勤務は早出として認めず、実労働にも含めない
-     * （{@link #aggregate} の始業前切り捨てで除去済みのため、ここでは 05:50 を下限とする必要はないが、
+     * <p>早出開始より前の勤務は早出として認めず、実労働にも含めない
+     * （{@link #aggregate} の始業前切り捨てで除去済みのため、ここでは下限を設ける必要はないが、
      * 帯域の定義を明示するため重なりで算出する）。
      *
      * @param intervals      控除済みの労働区間リスト
@@ -492,45 +426,48 @@ public class DailyAggregator {
         if (!isBusinessTrip) return 0;
         int raw = 0;
         for (int[] iv : intervals) {
-            raw += overlap(iv[0], iv[1], EARLY_WORK_START, STANDARD_START);
+            raw += WorkIntervals.overlap(iv[0], iv[1],
+                schedule.getEarlyWorkStartMinutes(), schedule.getStartMinutes());
         }
-        return (raw / EARLY_WORK_UNIT) * EARLY_WORK_UNIT;
+        int unit = schedule.getEarlyWorkUnitMinutes();
+        return (raw / unit) * unit;
     }
 
     /**
      * 時間外労働（分）を算出する。
      *
-     * <p>17:15（{@link #OVERTIME_START}）以降の実労働時間を合計し、
-     * {@link #OVERTIME_UNIT}（30分）単位で切り捨てる。
-     * 17:00〜17:15 の定時後休憩は {@link #deductPeriod} で事前に除去済みのため、
-     * 17:15 以降のみを対象とすれば良い。
+     * <p>残業開始（既定 17:15）以降の実労働時間を合計し、
+     * 残業単位（既定30分）で切り捨てる。
+     * 定時後休憩（17:00〜17:15）は {@link WorkIntervals#deductPeriod} で事前に除去済みのため、
+     * 残業開始以降のみを対象とすれば良い。
      *
-     * <p>出張の場合は定時後休憩がないため 17:00（{@link #STANDARD_END}）以降を対象とし、
+     * <p>出張の場合は定時後休憩がないため終業（既定 17:00）以降を対象とし、
      * 切り捨てを行わず1分単位で算出する。
      *
      * @param intervals      控除済みの労働区間リスト
      * @param isBusinessTrip 出張FLG
-     * @return 時間外労働（分）。出張以外は30分単位に切り捨てた値。
+     * @return 時間外労働（分）。出張以外は残業単位に切り捨てた値。
      */
     private int calcOvertimeMinutes(List<int[]> intervals, boolean isBusinessTrip) {
         int raw = calcRawOvertimeMinutes(intervals, isBusinessTrip);
-        // 出張は30分単位の切り捨てを行わない
+        // 出張は切り捨てを行わない
         if (isBusinessTrip) return raw;
-        return (raw / OVERTIME_UNIT) * OVERTIME_UNIT;
+        int unit = schedule.getOvertimeUnitMinutes();
+        return (raw / unit) * unit;
     }
 
     /**
      * 切り捨て前の時間外労働（分）を算出する。
      *
-     * <p>出張は定時後休憩がないため 17:00（{@link #STANDARD_END}）以降、
-     * それ以外は 17:15（{@link #OVERTIME_START}）以降を対象とする。
+     * <p>出張は定時後休憩がないため終業（既定 17:00）以降、
+     * それ以外は残業開始（既定 17:15）以降を対象とする。
      *
      * @param intervals      控除済みの労働区間リスト
      * @param isBusinessTrip 出張FLG
-     * @return 30分単位に切り捨てる前の時間外労働（分）
+     * @return 切り捨てる前の時間外労働（分）
      */
     private int calcRawOvertimeMinutes(List<int[]> intervals, boolean isBusinessTrip) {
-        int overtimeStart = isBusinessTrip ? STANDARD_END : OVERTIME_START;
+        int overtimeStart = isBusinessTrip ? schedule.getEndMinutes() : schedule.getOvertimeStartMinutes();
         int raw = 0;
         for (int[] iv : intervals) {
             if (iv[1] > overtimeStart) {
@@ -543,15 +480,15 @@ public class DailyAggregator {
     /**
      * 深夜労働時間（分）を算出する。
      *
-     * <p>深夜時間帯は以下の2帯域の和:
+     * <p>深夜時間帯は以下の2帯域の和（既定値の場合）:
      * <ul>
-     *   <li>早朝深夜帯: [0, {@value #LATE_NIGHT_EARLY_END}]（00:00〜05:00）</li>
-     *   <li>夜間深夜帯: [{@value #LATE_NIGHT_START}, {@value #LATE_NIGHT_END}]（22:00〜翌05:00）</li>
+     *   <li>早朝深夜帯: [0, 300)   → 00:00〜05:00</li>
+     *   <li>夜間深夜帯: [1320, 1740) → 22:00〜翌05:00（日付またぎ分を含む）</li>
      * </ul>
      *
      * <p>深夜かつ残業、深夜かつ休日の重複は各集計で独立してカウントする（仕様書 4.1.1）。
      *
-     * <p>深夜は分単位で数えるが、時間外労働の30分切り捨てで計上されなかった末尾は
+     * <p>深夜は分単位で数えるが、時間外労働の切り捨て（既定30分単位）で計上されなかった末尾は
      * 深夜にも計上しない（{@link #dropTail}）。深夜帯はすべて残業の時間帯に含まれるため、
      * これにより「残業として計上した区間のうち深夜帯と重なる分」が深夜労働になり、
      * 集計画面の「残業 ＝ 時間外労働 − 深夜労働」と内訳が常に一致する。
@@ -570,14 +507,15 @@ public class DailyAggregator {
     private int calcLateNightMinutes(List<int[]> intervals, boolean isBusinessTrip) {
         List<int[]> counted = intervals;
         if (!isBusinessTrip) {
-            // 30分単位の切り捨てで時間外労働に計上されなかった末尾は深夜にも計上しない
+            // 切り捨てで時間外労働に計上されなかった末尾は深夜にも計上しない
             int rawOvertime = calcRawOvertimeMinutes(intervals, false);
-            counted = dropTail(intervals, rawOvertime % OVERTIME_UNIT);
+            counted = dropTail(intervals, rawOvertime % schedule.getOvertimeUnitMinutes());
         }
         int lateNight = 0;
         for (int[] iv : counted) {
-            lateNight += overlap(iv[0], iv[1], 0,         LATE_NIGHT_EARLY_END);
-            lateNight += overlap(iv[0], iv[1], LATE_NIGHT_START, LATE_NIGHT_END);
+            lateNight += WorkIntervals.overlap(iv[0], iv[1], 0, schedule.getLateNightEndMinutes());
+            lateNight += WorkIntervals.overlap(iv[0], iv[1],
+                schedule.getLateNightStartMinutes(), schedule.getLateNightEndNextDayMinutes());
         }
         return lateNight;
     }
@@ -585,7 +523,7 @@ public class DailyAggregator {
     /**
      * 労働区間リストの末尾から {@code dropMinutes} 分を取り除いた区間リストを返す。
      *
-     * <p>時間外労働の30分切り捨てで落ちる端数は必ず勤務の末尾にあたるため、
+     * <p>時間外労働の切り捨てで落ちる端数は必ず勤務の末尾にあたるため、
      * 「残業として計上した区間」を求める用途に使う。
      * 区間リストは時刻の昇順に並んでいることを前提とする。
      *
@@ -614,12 +552,12 @@ public class DailyAggregator {
     /**
      * 所定内労働時間（分）を算出する。
      *
-     * <p>実労働のうち、早出（始業 08:20 より前）にも
-     * 残業（{@link #OVERTIME_START} 以降。出張は {@link #STANDARD_END} 以降）にも
+     * <p>実労働のうち、早出（始業より前）にも
+     * 残業（残業開始以降。出張は終業以降）にも
      * 深夜時間帯にも該当しない時間。割増賃金の対象にならない部分にあたる。
      * 出張の所定内は 08:20〜17:00（昼休み1時間を除く 460分）が上限になる。
      *
-     * <p>早出・時間外・深夜は30分単位で切り捨てるため、
+     * <p>早出・時間外・深夜は丸め単位（既定30分）で切り捨てるため、
      * 「実労働 − 早出 − 残業 − 深夜」で所定内を求めると切り捨てた端数が所定内に混ざってしまう。
      * それを避けるため、所定内は打刻から直接（切り捨てずに）算出する。
      *
@@ -628,22 +566,15 @@ public class DailyAggregator {
      * @return 所定内労働時間（分）
      */
     private int calcScheduledMinutes(List<int[]> intervals, boolean isBusinessTrip) {
-        // 出張は定時後休憩がなく 17:00 から残業扱い、それ以外は 17:15 起点
-        int overtimeStart = isBusinessTrip ? STANDARD_END : OVERTIME_START;
-        List<int[]> scheduled = deductPeriod(intervals, overtimeStart, Integer.MAX_VALUE);
+        // 出張は定時後休憩がなく終業から残業扱い、それ以外は残業開始が起点
+        int overtimeStart = isBusinessTrip ? schedule.getEndMinutes() : schedule.getOvertimeStartMinutes();
+        List<int[]> scheduled = WorkIntervals.deductPeriod(intervals, overtimeStart, Integer.MAX_VALUE);
         // 始業前は所定内に含めない。出張の早出区間（05:50〜08:20）を除くほか、
-        // 早朝深夜帯 [0, LATE_NIGHT_EARLY_END) もこの範囲に含まれる
-        scheduled = deductPeriod(scheduled, 0, STANDARD_START);
-        scheduled = deductPeriod(scheduled, LATE_NIGHT_START, LATE_NIGHT_END);
-        return sumIntervals(scheduled);
-    }
-
-    /**
-     * 2区間 [aStart, aEnd) と [bStart, bEnd) の重複時間（分）を返す。
-     * 重複がない場合は 0。
-     */
-    private int overlap(int aStart, int aEnd, int bStart, int bEnd) {
-        return Math.max(0, Math.min(aEnd, bEnd) - Math.max(aStart, bStart));
+        // 早朝深夜帯 [0, 深夜終了) もこの範囲に含まれる
+        scheduled = WorkIntervals.deductPeriod(scheduled, 0, schedule.getStartMinutes());
+        scheduled = WorkIntervals.deductPeriod(scheduled,
+            schedule.getLateNightStartMinutes(), schedule.getLateNightEndNextDayMinutes());
+        return WorkIntervals.sumIntervals(scheduled);
     }
 
     /**
@@ -651,7 +582,7 @@ public class DailyAggregator {
      * 外出・戻り・退勤の日付またぎ補正に使用する。
      */
     private int normalizeAfter(int value, int baseline) {
-        return (value <= baseline) ? value + 1440 : value;
+        return (value <= baseline) ? value + WorkIntervals.MINUTES_PER_DAY : value;
     }
 
     /**
@@ -684,12 +615,5 @@ public class DailyAggregator {
                 "退勤時刻が戻り時刻より前です: returnIn=" + rec.getReturnIn()
                     + " clockOut=" + rec.getClockOut());
         }
-    }
-
-    /**
-     * {@link LocalTime} を 00:00 起点の分数に変換する（秒・ナノ秒は切り捨て）。
-     */
-    private int toMinutes(LocalTime time) {
-        return time.getHour() * 60 + time.getMinute();
     }
 }
