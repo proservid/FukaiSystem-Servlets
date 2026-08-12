@@ -853,6 +853,15 @@
 	</servlet-mapping>
 
 	<servlet>
+		<servlet-name> mh.timeRecorder </servlet-name>
+		<servlet-class> fugasystem.application.mh.TimeRecorder </servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name> mh.timeRecorder </servlet-name>
+		<url-pattern> /mh/timeRecorder </url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name> mh.getInputRecord </servlet-name>
 		<servlet-class> fukaisystem.application.mh.GetInputRecord </servlet-class>
 	</servlet>
