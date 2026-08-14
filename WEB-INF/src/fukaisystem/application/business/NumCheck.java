@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.ProductNumber;
+import fukaisystem.dto.business.ProductNumber;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**

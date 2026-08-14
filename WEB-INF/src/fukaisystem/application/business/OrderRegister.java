@@ -18,7 +18,7 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import fukaisystem.dto.OrderDocumentDTO;
+import fukaisystem.dto.business.OrderDocumentDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**

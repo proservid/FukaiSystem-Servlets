@@ -2,22 +2,41 @@ package fukaisystem.application.mh;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.Date;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.InputDTO;
+import fukaisystem.application.attendance.WorkScheduleReader;
+import fukaisystem.domain.attendance.WorkSchedule;
+import fukaisystem.dto.mh.InputDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
+/**
+ * 加工実績を登録・更新する
+ *
+ * <p>着手日時〜終了日時の実働時間は、就業時間マスタ（{@code M_就業時間}）の設定に従い
+ * {@link WorkSchedule#calcWorkMinutes(int, int)} で算出する
+ * （始業前の切り捨て・休憩・定時後休憩の控除）。
+ * 出張の場合は就業時間を適用せず、入力された休憩時間のみを控除するため、
+ * 就業時間マスタは参照しない。
+ */
 public class InputRegister extends ServiceFoundation {
 
-	private Date from, to, t0820, t1200, t1245, t1700, t1715;
-	private int time;
+	/** 出張の加工CD */
+	private static final String BUSINESS_TRIP = "17";
+
+	/** 加工実績の時間の刻み（分）。15分＝25 として登録する */
+	private static final int TIME_UNIT_MINUTES = 15;
+
+	/** 加工実績の時間の刻みあたりの値。15分＝25、1時間＝100 */
+	private static final int TIME_UNIT_VALUE = 25;
+
+	/** 時間の端数を切り上げる下限（分）。3捨4入のため 15分の 0.4 にあたる 6分以上を切り上げる */
+	private static final int TIME_ROUND_UP_MINUTES = 6;
 
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
@@ -33,133 +52,30 @@ public class InputRegister extends ServiceFoundation {
 		int toM = inputDTO.getInt(8);
 		int rest = inputDTO.getInt(9);
 		int id = inputDTO.getInt(10);
+		String processCD = inputDTO.getString(2);
+		boolean isBusinessTrip = BUSINESS_TRIP.equals(processCD);
+
 		Calendar cal = Calendar.getInstance();
 		cal.set(year, month, day, fromT, fromM, 0);
 		cal.set(Calendar.MILLISECOND, 0);
-		from = new Date(cal.getTimeInMillis());
+		Date from = new Date(cal.getTimeInMillis());
 		cal.set(year, month, day, toT, toM, 0);
 		cal.set(Calendar.MILLISECOND, 0);
-		to = new Date(cal.getTimeInMillis());
+		Date to = new Date(cal.getTimeInMillis());
 
-		try (
-			PreparedStatement ps = c.prepareStatement("SELECT * FROM M_就業時間");
-		) {
-			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
-				int w0 = rs.getInt("始業時");
-				int w1 = rs.getInt("始業分");
-				int w2 = rs.getInt("終業時");
-				int w3 = rs.getInt("終業分");
-				int w4 = rs.getInt("休憩始時");
-				int w5 = rs.getInt("休憩始分");
-				int w6 = rs.getInt("休憩終時");
-				int w7 = rs.getInt("休憩終分");
-				int w8 = rs.getInt("残業始時");
-				int w9 = rs.getInt("残業始分");
-				// 基本情報
-				cal.set(year, month, day, w0, w1, -1);
-				t0820 = new Date(cal.getTimeInMillis());
-				cal.set(year, month, day, w4, w5, -1);
-				t1200 = new Date(cal.getTimeInMillis());
-				cal.set(year, month, day, w6, w7, -1);
-				t1245 = new Date(cal.getTimeInMillis());
-				cal.set(year, month, day, w2, w3, -1);
-				t1700 = new Date(cal.getTimeInMillis());
-				cal.set(year, month, day, w8, w9, -1);
-				t1715 = new Date(cal.getTimeInMillis());
-
-				int br1 = (int)((t1245.getTime() - t1200.getTime()) / (1000 * 60)); // 45分
-				int br2 = (int)((t1715.getTime() - t1700.getTime()) / (1000 * 60)); // 15分
-
-				if (inputDTO.getString(2).equals("17")) { // 出張の場合
-					cal.setTime(to);
-					cal.add(Calendar.MINUTE, rest * (-1));
-					setTime(cal.getTimeInMillis() - from.getTime());
-				} else {
-					if (from.before(t0820)) {
-						// 開始を0820に
-						cal.set(year, month, day, w0, w1, 0);
-						long adjustedFrom = cal.getTimeInMillis();
-						if (to.after(t1715)) {
-							// 終了から45分+15分=1時間引く
-							cal.setTime(to);
-							cal.add(Calendar.MINUTE, -br1 - br2);
-						} else if (to.after(t1700)) {
-							// 45分引き、終りを1700で計算
-							cal.set(year, month, day, w2, w3, 0);
-							cal.add(Calendar.MINUTE, -br1);
-						} else if (to.after(t1245)) {
-							// 45分引くのみ
-							cal.setTime(to);
-							cal.add(Calendar.MINUTE, -br1);
-						} else if (to.before(t1200)) {
-							// そのまま
-							cal.setTime(to);
-						} else {
-							// 終了を1200に
-							cal.set(year, month, day, w4, w5, 0);
-						}
-						setTime(cal.getTimeInMillis() - adjustedFrom);
-					} else if (from.before(t1200)) {
-						if (to.after(t1715)) {
-							// 終了から45分+15分=1時間引く
-							cal.setTime(to);
-							cal.add(Calendar.MINUTE, -br1 - br2);
-						} else if (to.after(t1700)) { // TODO 1659
-							// 終了を1700とし、45分引く
-							cal.set(year, month, day, w2, w3, 0);
-							cal.add(Calendar.MINUTE, -br1);
-						} else if (to.after(t1245)) {
-							// 終了から45分引く
-							cal.setTime(to);
-							cal.add(Calendar.MINUTE, -br1);
-						} else if (to.after(t1200)) {
-							// 終了を1200に
-							cal.set(year, month, day, w4, w5, 0);
-						} else {
-							// 終了が12時前ならそのまま
-							cal.setTime(to);
-						}
-						setTime(cal.getTimeInMillis() - from.getTime());
-					} else if (from.after(t1715)) {
-						// 一切調整不要
-						setTime(to.getTime() - from.getTime());
-					} else if (from.after(t1700)) {
-						// 開始を1715にするのみ
-						cal.set(year, month, day, w8, w9, 0);
-						setTime(to.getTime() - cal.getTimeInMillis());
-					} else if (from.after(t1245)) {
-						// 開始時刻は調整不要
-						if (to.after(t1715)) {
-							cal.setTime(to);
-							cal.add(Calendar.MINUTE, -br2); // 終了時間から15分引く
-							setTime(cal.getTimeInMillis() - from.getTime()); //
-						} else if (to.after(t1700)) {
-							// 終了を1700に
-							cal.set(year, month, day, w2, w3);
-							setTime(cal.getTimeInMillis() - from.getTime());
-						} else {
-							setTime(to.getTime() - from.getTime());
-						}
-					} else { // 12時から12時45分の間に始まっていたら
-						// 開始を1245に
-						cal.set(year, month, day, w6, w7, 0);
-						long adjustedFrom = cal.getTimeInMillis();
-						if (to.after(t1715)) {
-							cal.setTime(to);
-							cal.add(Calendar.MINUTE, -br2); // 15分引く
-							setTime(cal.getTimeInMillis() - adjustedFrom);
-						} else if (to.after(t1700)) {
-							// 終了を1700に
-							cal.set(year, month, day, w2, w3, 0);
-							setTime(cal.getTimeInMillis() - adjustedFrom);
-						} else {
-							setTime(to.getTime() - adjustedFrom);
-						}
-					}
-				}
-			}
+		// 実働時間の算出（00:00 起点の分数で計算する）
+		int fromMinutes = fromT * 60 + fromM;
+		int toMinutes = toT * 60 + toM;
+		int minutes;
+		if (isBusinessTrip) {
+			// 出張は就業時間を適用せず、入力された休憩時間のみを控除する（就業時間マスタは参照しない）
+			minutes = Math.max(0, toMinutes - fromMinutes - rest);
+		} else {
+			WorkSchedule schedule = WorkScheduleReader.read(c);
+			minutes = schedule.calcWorkMinutes(fromMinutes, toMinutes);
 		}
+		int time = toWorkTimeUnit(minutes);
+		String note = isBusinessTrip ? "休憩" + rest + "分" : "";
 
 		if (id == 0) {
 			try (
@@ -188,18 +104,18 @@ public class InputRegister extends ServiceFoundation {
 				ps.setInt(i++, inputDTO.getInt(1) == 0 ? 0 : inputDTO.getInt(0)); // 番号が0なら期も0
 				ps.setInt(i++, inputDTO.getInt(1));
 				ps.setString(i++, inputDTO.getInt(1) == 0 ? "" : inputDTO.getString(3)); // 番号が0なら枝番なし
-				ps.setString(i++, inputDTO.getString(2)); // 加工CD
+				ps.setString(i++, processCD); // 加工CD
 				ps.setInt(i++, time); // 時間
 				ps.setTimestamp(i++, new Timestamp(from.getTime())); // 着手日時
 				ps.setTimestamp(i++, new Timestamp(to.getTime())); // 終了日時
 
-				ps.setString(i++, inputDTO.getString(2)); // 加工CD
+				ps.setString(i++, processCD); // 加工CD
 				ps.setTimestamp(i++, new Timestamp(from.getTime())); // 着手日時
 				ps.setTimestamp(i++, new Timestamp(from.getTime())); // 着手日時
 
 				ps.setString(i++, inputDTO.getString(1)); // 担当者CD
-				ps.setString(i++, inputDTO.getString(2).equals("17") ? "休憩" + rest + "分" : ""); // 備考
-				ps.setTimestamp(i, new Timestamp(new java.util.Date().getTime()));
+				ps.setString(i++, note); // 備考
+				ps.setTimestamp(i, new Timestamp(new Date().getTime()));
 				ps.executeUpdate();
 			}
 		} else {
@@ -216,15 +132,15 @@ public class InputRegister extends ServiceFoundation {
 				ps.setInt(i++, inputDTO.getInt(1) == 0 ? 0 : inputDTO.getInt(0)); // 番号が0なら期も0
 				ps.setInt(i++, inputDTO.getInt(1));
 				ps.setString(i++, inputDTO.getInt(1) == 0 ? "" : inputDTO.getString(3)); // 番号が0なら枝番なし
-				ps.setString(i++, inputDTO.getString(2)); // 加工CD
+				ps.setString(i++, processCD); // 加工CD
 				ps.setInt(i++, time); // 時間
 				ps.setTimestamp(i++, new Timestamp(from.getTime())); // 着手日時
 				ps.setTimestamp(i++, new Timestamp(to.getTime())); // 終了日時
 				ps.setTimestamp(i++, new Timestamp(from.getTime())); // 着手日時
 				ps.setTimestamp(i++, new Timestamp(from.getTime())); // 着手日時
 				ps.setString(i++, inputDTO.getString(1)); // 担当者CD
-				ps.setString(i++, inputDTO.getString(2).equals("17") ? "休憩" + rest + "分" : ""); // 備考
-				ps.setTimestamp(i++, new Timestamp(new java.util.Date().getTime()));
+				ps.setString(i++, note); // 備考
+				ps.setTimestamp(i++, new Timestamp(new Date().getTime()));
 				ps.setInt(i, id);
 				ps.executeUpdate();
 			}
@@ -232,11 +148,20 @@ public class InputRegister extends ServiceFoundation {
 		return -1;
 	}
 
-	private void setTime(long value) {
-		long remainder = value % (1000 * 60 * 15); // ミリ秒を100分の1秒にして分にして15分単位にする
-		// ３捨４入
-		time = ((float)remainder / (1000 * 60 * 15) >= 0.4) ? ((int)(value / (1000 * 60 * 15)) + 1) * 25
-			: ((int)(value / (1000 * 60 * 15))) * 25;
+	/**
+	 * 実働時間（分）を T_加工実績.時間 の単位に変換する
+	 *
+	 * <p>15分＝25、1時間＝100 の単位で、15分未満の端数は3捨4入する
+	 * （15分の 0.4 にあたる 6分以上で切り上げ、5分以下は切り捨て）。
+	 *
+	 * @param minutes 実働時間（分）
+	 *
+	 * @return T_加工実績.時間 に登録する値
+	 */
+	private static int toWorkTimeUnit(int minutes) {
+		int blocks = minutes / TIME_UNIT_MINUTES;
+		int remainder = minutes % TIME_UNIT_MINUTES;
+		return (remainder >= TIME_ROUND_UP_MINUTES) ? (blocks + 1) * TIME_UNIT_VALUE : blocks * TIME_UNIT_VALUE;
 	}
 
 }

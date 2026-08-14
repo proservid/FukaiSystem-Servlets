@@ -7,7 +7,7 @@ import javax.servlet.ServletResponse;
 
 import com.proservid.print.dao.RegisterFormatDAO;
 
-import fukaisystem.dto.FormatDTO;
+import fukaisystem.dto.print.FormatDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**

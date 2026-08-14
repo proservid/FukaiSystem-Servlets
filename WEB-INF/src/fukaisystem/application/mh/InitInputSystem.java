@@ -13,7 +13,7 @@ import java.util.TreeMap;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.InitialInputDTO;
+import fukaisystem.dto.mh.InitialInputDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 public class InitInputSystem extends ServiceFoundation {

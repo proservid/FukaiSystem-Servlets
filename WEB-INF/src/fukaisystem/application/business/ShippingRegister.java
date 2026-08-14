@@ -13,7 +13,7 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import fukaisystem.dto.ShippingDTO;
+import fukaisystem.dto.business.ShippingDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**

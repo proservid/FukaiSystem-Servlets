@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.CorpDTO;
+import fukaisystem.dto.address.CorpDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 public class GetCorpData extends ServiceFoundation {

@@ -9,7 +9,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.SalesDTO;
+import fukaisystem.dto.business.SalesDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**

@@ -11,8 +11,8 @@ import java.util.Map;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.ChartDTO;
-import fukaisystem.dto.ProductNumber;
+import fukaisystem.dto.business.ChartDTO;
+import fukaisystem.dto.business.ProductNumber;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
