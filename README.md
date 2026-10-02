@@ -105,6 +105,37 @@ docker compose up -d --build
 
 ---
 
+## ビルド設定（重要）
+
+コンパイラ準拠レベルは `.settings/org.eclipse.jdt.core.prefs` で **1.8 に固定**している。
+
+```
+org.eclipse.jdt.core.compiler.compliance=1.8
+org.eclipse.jdt.core.compiler.source=1.8
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
+```
+
+このファイルが無いと、IDE は自身が動いている JDK のバージョンでコンパイルしてしまう。
+JDK 25 でビルドされ、クラスファイルのメジャーバージョンが 69 になると**JDK 21 の Tomcat が読み込めなくなる**障害が発生する（全サーブレットが 404 になる）。
+`.vscode/settings.json` の `java.configuration.runtimes` だけでは固定されないので、このファイルを消さないこと。
+
+生成されたクラスが Java 8 になっているかは次で確認できる（52 = Java 8）。
+
+```bash
+od -An -tu1 -j7 -N1 WEB-INF/classes/fukaisystem/Hello.class
+```
+
+IDE を使わずにコマンドラインでビルドし直す場合:
+
+```bash
+CP=$(ls lib/*.jar WEB-INF/lib/*.jar | tr '\n' ';')
+find WEB-INF/src -name "*.java" > /tmp/srcs.txt
+javac --release 8 -encoding UTF-8 -cp "$CP" -d WEB-INF/classes @/tmp/srcs.txt
+cp WEB-INF/src/log4j.properties WEB-INF/classes/
+```
+
+---
+
 ## ライブラリ
 
 `WEB-INF/lib` と `lib` は `.gitignore` の対象で、リポジトリには含まれない。
