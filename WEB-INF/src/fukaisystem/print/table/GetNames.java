@@ -12,10 +12,10 @@ import com.proservid.print.dao.TableDAO;
 import fukaisystem.foundation.ServiceFoundation;
 
 public class GetNames extends ServiceFoundation {
-	protected static final String className = "GetNames";
 
 	@Override
 	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+
 		if (o == null) {
 			return getTableNames(c);
 		}

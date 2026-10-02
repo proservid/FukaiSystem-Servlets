@@ -16,7 +16,7 @@ public class IndDTO implements Serializable {
 	String name, name2, dept, post, corpCD,
 			country, zip, zip2, pref, city, area, st, bldg, tel1, tel2, tel3, fax1, fax2, fax3, mail, url, rem, id, alphabet;
 	int type, nenga;
-	boolean isValid, isZou, isMo, isHome, hasAddr, hasCorpDTO;
+	boolean isValid, isZou, isMo, isHome, hasAddr;
 	CorpDTO dto;
 
 	public IndDTO(
@@ -25,7 +25,7 @@ public class IndDTO implements Serializable {
 		String tel1, String tel2, String tel3, String fax1, String fax2, String fax3, String mail, String url,
 		String rem, String id, String alphabet,
 		int type, int nenga,
-		boolean isValid, boolean isZou, boolean isMo, boolean isHome, boolean hasAddr, boolean hasCorpDTO,
+		boolean isValid, boolean isZou, boolean isMo, boolean isHome, boolean hasAddr,
 		CorpDTO dto) {
 		this.name = name;
 		this.name2 = name2;
@@ -58,7 +58,6 @@ public class IndDTO implements Serializable {
 		this.isMo = isMo;
 		this.isHome = isHome;
 		this.hasAddr = hasAddr;
-		this.hasCorpDTO = hasCorpDTO;
 		this.dto = dto;
 	}
 
@@ -109,7 +108,7 @@ public class IndDTO implements Serializable {
 			case 1:	b = isZou; break;
 			case 2:	b = isMo; break;
 			case 3: b = hasAddr; break;
-			case 4: b = hasCorpDTO; break;
+			case 4: b = dto != null; break;
 			case 5: b = isHome; break;
 		}
 		return b; //不使用

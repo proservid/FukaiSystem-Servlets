@@ -14,6 +14,10 @@ import javax.servlet.ServletResponse;
 import fukaisystem.dto.InitialScheduleDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
+/**
+ * 認証は当面不使用
+ * マスタデータを取得する
+ */
 public class Auth extends ServiceFoundation {
 
 	@Override

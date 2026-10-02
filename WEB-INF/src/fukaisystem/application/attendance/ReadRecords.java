@@ -20,12 +20,13 @@ import fukaisystem.domain.attendance.TimeRecord;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
- * 日次打刻データを登録し、表示用データを返す
+ * 日次打刻データを返す
  */
 public class ReadRecords extends ServiceFoundation {
 
 	@Override
 	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+
 		LocalDate date = cast(response, o, LocalDate.class);
 		if (date == null) {
 			return null;
