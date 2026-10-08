@@ -15,18 +15,29 @@ import fukaisystem.foundation.ServiceFoundation;
 
 /**
  * 日次集計データを登録・変更する
+ *
+ * <p>複数件をひとつのトランザクションで処理する。自動コミットのままでは
+ * 途中で失敗したときに一部だけ登録された状態が確定してしまう。
+ *
+ * <p>MERGE の対象には {@code WITH (HOLDLOCK)} を指定する。既定の READ COMMITTED では
+ * 一致判定のために取った共有ロックが判定直後に解放されるため、判定と登録の間に
+ * 同じ年月日・人員CDの集計が割り込み、主キー違反になることがある。
  */
 public class WriteWorkDaily extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
-		List<WorkDaily> workDailies = cast(response, o, WorkDailiesDTO.class).getWorkDailies();
+		WorkDailiesDTO dto = cast(response, o, WorkDailiesDTO.class);
+		if (dto == null) {
+			return null; // cast() がクライアントに送信済み
+		}
+		List<WorkDaily> workDailies = dto.getWorkDailies();
 
 		LocalDateTime now = LocalDateTime.now();
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"MERGE INTO T_日次集計 AS d"
+				"MERGE INTO T_日次集計 WITH (HOLDLOCK) AS d"
 					+ " USING (SELECT ? AS date, ? AS cd, ? AS total, ? AS scheduled, ? AS earlyWork, ? AS overTime, ? AS night, ? AS lateEarly, ? AS holiday, ? AS sunday, ? AS trip, ? AS absence, ? AS amPaid, ? AS pmPaid, ? AS paid, ? AS comp, ? AS now) AS w"
 					+ "  ON d.年月日=w.date AND d.人員CD=w.cd"
 					+ " WHEN MATCHED THEN"
@@ -73,9 +84,8 @@ public class WriteWorkDaily extends ServiceFoundation {
 				ps.setObject(i++, now);
 				ps.addBatch();
 			}
-			ps.executeBatch();
+			// null を返すと access() がロールバックしてしまうため、必ず件数を返す
+			return Integer.valueOf(ps.executeBatch().length);
 		}
-
-		return null;
 	}
 }

@@ -19,6 +19,15 @@ import fukaisystem.foundation.ServiceFoundation;
 
 /**
  * 製作伝票データを登録する
+ *
+ * <p>製作親IDと機械番号は {@code MAX()+1} でアプリ側が採番する。既定の READ COMMITTED では
+ * 最大値を読むために取った共有ロックが読み終えた時点で解放されるため、
+ * 同時に登録すると同じ番号を採ってしまう。これを防ぐため、採番のために読む T_製作_親 には
+ * {@code WITH (UPDLOCK, HOLDLOCK)} を指定し、登録し終えるまでロックを保持する。
+ *
+ * <p>既存伝票の更新でも、更新の前に対象の製作親IDをロックして
+ * 削除や別の更新が割り込まないようにする。明細は必ず親を経由して操作されるため、
+ * T_製作_子 はロックしない。
  */
 public class ProductionRegister extends ServiceFoundation {
 
@@ -38,6 +47,7 @@ public class ProductionRegister extends ServiceFoundation {
 		productNum2 = summaryDTO.productionNum2();
 		if (productNum2 == 0 && productionID != 0) {
 			// 製作期または製作番号が0なら
+			lock(c, "T_製作_親", "製作親ID=?", productionID);
 			try (
 				PreparedStatement ps = c.prepareStatement(
 					"DELETE FROM T_売上_親"
@@ -88,10 +98,10 @@ public class ProductionRegister extends ServiceFoundation {
 							+ " SELECT CASE WHEN MAX(製作親ID) IS NULL THEN 1 ELSE MAX(製作親ID)+1 END,"
 							+ "?, ?, ?, ?, ?, ?, ?,"
 							+ "CASE WHEN ?=1 THEN" // 新機なら、
-							+ " (SELECT CASE WHEN MAX(機械番号) IS NULL THEN 1 ELSE MAX(機械番号)+1 END FROM T_製作_親 WHERE 得意先CD=?)" // 機種番号を登録
+							+ " (SELECT CASE WHEN MAX(機械番号) IS NULL THEN 1 ELSE MAX(機械番号)+1 END FROM T_製作_親 WITH (UPDLOCK, HOLDLOCK) WHERE 得意先CD=?)" // 機種番号を登録
 							+ " ELSE 0 END," // それ以外の場合はすべて0
 							+ "?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-							+ "?, ?, ? FROM T_製作_親"
+							+ "?, ?, ? FROM T_製作_親 WITH (UPDLOCK, HOLDLOCK)"
 					);
 				) {
 					int i = 1;
@@ -139,13 +149,14 @@ public class ProductionRegister extends ServiceFoundation {
 				}
 
 			} else { // 既存製作伝票の更新
+				lock(c, "T_製作_親", "製作親ID=?", productionID);
 				try (
 					PreparedStatement ps = c.prepareStatement(
 						"UPDATE T_製作_親 SET 製作期=?, 製作番号=?, 製作枝番=?,"
 							+ "受注番号=?, 案件名=?, 見積親ID=?, 得意先CD=?," // これは受注者、カルテ履歴の得意先（購入者）と異なる可能性あり
 							+ "機械番号="
 							+ "CASE WHEN ?=1 THEN" // 新機なら、
-							+ " (SELECT CASE WHEN MAX(機械番号) IS NULL THEN 1 ELSE MAX(機械番号)+1 END FROM T_製作_親 WHERE 得意先CD=?)" // 純粋な新機だから機種番号をセット
+							+ " (SELECT CASE WHEN MAX(機械番号) IS NULL THEN 1 ELSE MAX(機械番号)+1 END FROM T_製作_親 WITH (UPDLOCK, HOLDLOCK) WHERE 得意先CD=?)" // 純粋な新機だから機種番号をセット
 							+ " ELSE 0 END," // それ以外の場合はすべて0
 							+ "納入先名=?, 納期=?, 受注年月日=?, 発行年月日=?, 出荷年月日=?, 検収年月日=?, 通貨CD=?, 契約金額=?, 摘要=?, 出図FLG=?, 手配FLG=?, 更新日=?, 更新者CD=? WHERE 製作親ID=?"
 					);
@@ -196,7 +207,7 @@ public class ProductionRegister extends ServiceFoundation {
 						+ " CASE WHEN MAX(製作親ID) IS NULL THEN ? ELSE MAX(製作親ID) END" // 製作履歴がなければその製作親ID、あれば直近の製作親ID
 						+ " ELSE" // 修理部品等で
 						+ " CASE WHEN MAX(製作親ID) IS NULL THEN 0 ELSE MAX(製作親ID) END" // 製作履歴がなければ0、あれば直近の製作親ID
-						+ " END FROM T_製作_親 WHERE 得意先CD=? AND 機械番号=? AND 機械番号<>0"
+						+ " END FROM T_製作_親 WITH (UPDLOCK, HOLDLOCK) WHERE 得意先CD=? AND 機械番号=? AND 機械番号<>0"
 				);
 			) {
 				for (Integer parentCode : summaryDTO.getParents()) {

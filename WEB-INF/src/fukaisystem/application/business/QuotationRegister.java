@@ -41,6 +41,7 @@ public class QuotationRegister extends ServiceFoundation {
 
 		if (quotationNum1 == 0 && quotationNum2 == 0 && quotationID != 0) {
 			// 見積IDがあるデータの見積期と見積番号を0に変更したということは、消去せよということ
+			lock(c, "T_見積_親", "見積親ID=?", quotationID);
 			try (
 				PreparedStatement ps = c.prepareStatement(
 					"DELETE FROM T_見積_親 WHERE 見積親ID=?;"
@@ -70,7 +71,7 @@ public class QuotationRegister extends ServiceFoundation {
 		int validity = 0;
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"MERGE INTO M_有効期間 AS v"
+				"MERGE INTO M_有効期間 WITH (HOLDLOCK) AS v"
 					+ " USING (SELECT ? AS 有効期間) AS w"
 					+ " ON replace(replace(v.有効期間,' ',''),'　','')=replace(replace(w.有効期間,' ',''),'　','')"
 					+ " WHEN MATCHED THEN"
@@ -101,7 +102,7 @@ public class QuotationRegister extends ServiceFoundation {
 		}
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"MERGE INTO M_納期 AS v"
+				"MERGE INTO M_納期 WITH (HOLDLOCK) AS v"
 					+ " USING (SELECT ? AS 納期) AS w"
 					+ " ON replace(replace(v.納期,' ',''),'　','')=replace(replace(w.納期,' ',''),'　','')"
 					+ " WHEN MATCHED THEN"
@@ -132,7 +133,7 @@ public class QuotationRegister extends ServiceFoundation {
 		}
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"MERGE INTO M_受渡場所 AS v"
+				"MERGE INTO M_受渡場所 WITH (HOLDLOCK) AS v"
 					+ " USING (SELECT ? AS 受渡場所) AS w"
 					+ " ON replace(replace(v.受渡場所,' ',''),'　','')=replace(replace(w.受渡場所,' ',''),'　','')"
 					+ " WHEN MATCHED THEN"
@@ -163,7 +164,7 @@ public class QuotationRegister extends ServiceFoundation {
 		}
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"MERGE INTO M_取引条件 AS v"
+				"MERGE INTO M_取引条件 WITH (HOLDLOCK) AS v"
 					+ " USING (SELECT ? AS 取引条件) AS w"
 					+ " ON replace(replace(v.取引条件,' ',''),'　','')=replace(replace(w.取引条件,' ',''),'　','')"
 					+ " WHEN MATCHED THEN"
@@ -193,7 +194,12 @@ public class QuotationRegister extends ServiceFoundation {
 			}
 		}
 		if (quotationNum2 == 0) {
-			try (PreparedStatement ps = c.prepareStatement("SELECT MAX(見積番号) AS 最終見積番号 FROM T_見積_親 WHERE 見積期=?");) {
+			// 採番してから登録し終えるまで、同じ見積期への登録を割り込ませない
+			try (
+				PreparedStatement ps = c.prepareStatement(
+					"SELECT MAX(見積番号) AS 最終見積番号 FROM T_見積_親 WITH (UPDLOCK, HOLDLOCK) WHERE 見積期=?"
+				);
+			) {
 				ps.setInt(1, quotationNum1); // 見積期
 				try (ResultSet rs = ps.executeQuery();) {
 					if (rs.next()) {
@@ -203,9 +209,10 @@ public class QuotationRegister extends ServiceFoundation {
 				}
 			}
 		} else {
+			// 既存を探してから登録し終えるまで、同じ見積番号の登録を割り込ませない
 			try (
 				PreparedStatement ps = c.prepareStatement(
-					"SELECT 見積親ID FROM T_見積_親 WHERE 見積期=? AND 見積番号=? AND 見積枝番=?"
+					"SELECT 見積親ID FROM T_見積_親 WITH (UPDLOCK, HOLDLOCK) WHERE 見積期=? AND 見積番号=? AND 見積枝番=?"
 				);
 			) {
 				int i = 1;
@@ -312,6 +319,7 @@ public class QuotationRegister extends ServiceFoundation {
 			}
 
 		} else { // 既存見積書更新
+			lock(c, "T_見積_親", "見積親ID=?", quotationID);
 			try (
 				PreparedStatement ps = c.prepareStatement(
 					"UPDATE T_見積_親 SET"

@@ -28,7 +28,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class GetShelf2 extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		Map<Integer, Map<String, Shelf>> shelfMaps = new HashMap<Integer, Map<String, Shelf>>();
 		for (int i = 1; i < 10; i++) { // 10～90

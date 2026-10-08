@@ -25,7 +25,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class GetLedger extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		Map<String, Amount> m = new HashMap<String, Amount>();
 		DecimalFormat df = new DecimalFormat("#,###");

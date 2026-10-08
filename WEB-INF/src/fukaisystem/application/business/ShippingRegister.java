@@ -18,6 +18,15 @@ import fukaisystem.foundation.ServiceFoundation;
 
 /**
  * 出荷データを登録する
+ *
+ * <p>出荷伝票番号は {@code MAX()+1} でアプリ側が採番する。既定の READ COMMITTED では
+ * 最大値を読むために取った共有ロックが読み終えた時点で解放されるため、
+ * 同時に登録すると同じ番号を採ってしまう。手入力された番号の重複確認も同じ理由で
+ * すり抜ける。これを防ぐため、採番・重複確認で読む T_出荷_親 には
+ * {@code WITH (UPDLOCK, HOLDLOCK)} を指定し、登録し終えるまでロックを保持する。
+ *
+ * <p>既存伝票の更新・削除でも、対象の出荷親IDをロックしてから処理する。
+ * 明細は必ず親を経由して操作されるため、T_出荷_子 はロックしない。
  */
 public class ShippingRegister extends ServiceFoundation {
 
@@ -33,6 +42,7 @@ public class ShippingRegister extends ServiceFoundation {
 
 		// 期と番号を0に変更したということは、消去せよということ
 		if (shippingID != 0 && period == 0 && number == 0) {
+			lock(c, "T_出荷_親", "出荷親ID=?", shippingID);
 			try (PreparedStatement ps = c.prepareStatement("DELETE FROM T_出荷_親 WHERE 出荷親ID=?");) {
 				ps.setInt(1, shippingID);
 				ps.executeUpdate();
@@ -48,9 +58,13 @@ public class ShippingRegister extends ServiceFoundation {
 			throw new SQLException("期の指定が無効です");
 		}
 
-		// ロックはせず、スレッドによる出荷伝票番号の競合は UNIQUE 制約で回避
+		// 採番・重複確認してから登録し終えるまで、同じ期への登録を割り込ませない
 		if (number == 0) {
-			try (PreparedStatement ps = c.prepareStatement("SELECT MAX(出荷伝票番号2) FROM T_出荷_親 WHERE 出荷伝票番号1=?");) {
+			try (
+				PreparedStatement ps = c.prepareStatement(
+					"SELECT MAX(出荷伝票番号2) FROM T_出荷_親 WITH (UPDLOCK, HOLDLOCK) WHERE 出荷伝票番号1=?"
+				);
+			) {
 				ps.setInt(1, period);
 				try (ResultSet rs = ps.executeQuery();) {
 					if (rs.next()) {
@@ -62,7 +76,8 @@ public class ShippingRegister extends ServiceFoundation {
 		} else {
 			try (
 				PreparedStatement ps = c.prepareStatement(
-					"SELECT 1 FROM T_出荷_親 WHERE 出荷親ID<>? AND 出荷伝票番号1=? AND 出荷伝票番号2=?"
+					"SELECT 1 FROM T_出荷_親 WITH (UPDLOCK, HOLDLOCK)"
+						+ " WHERE 出荷親ID<>? AND 出荷伝票番号1=? AND 出荷伝票番号2=?"
 				);
 			) {
 				ps.setInt(1, shippingID);
@@ -116,6 +131,7 @@ public class ShippingRegister extends ServiceFoundation {
 			}
 
 		} else {
+			lock(c, "T_出荷_親", "出荷親ID=?", shippingID);
 			try (
 				PreparedStatement ps = c.prepareStatement(
 					"UPDATE T_出荷_親 SET 得意先CD=?, 納入先名=?, 出荷伝票番号1=?, 出荷伝票番号2=?, 発行年月日=?, 出荷月=?, 出荷日=?, 納品手段CD=?, 製作親ID=?, 更新日=?, 更新者CD=?"

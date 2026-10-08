@@ -23,7 +23,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class GetSchedule extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 		Date from = null;
 		Date to = null;
 		List<Date> holidays = new ArrayList<Date>();

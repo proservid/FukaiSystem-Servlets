@@ -21,7 +21,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class Auth extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		TreeMap<String, String> dept = new TreeMap<String, String>();
 		Map<String, Map<String, String>> name = new LinkedHashMap<String, Map<String, String>>();

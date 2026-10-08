@@ -20,7 +20,7 @@ public class GetActualCost extends ServiceFoundation {
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		String caption = "";
 		int productionID = 0;

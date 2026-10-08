@@ -17,6 +17,10 @@ import fukaisystem.foundation.ServiceFoundation;
 
 /**
  * 出庫データを登録する
+ *
+ * <p>既存伝票の更新・削除では、処理の前に対象の出庫親IDをロックし、
+ * 削除や別の更新が割り込まないようにする。明細は必ず親を経由して操作されるため、
+ * T_出庫_子 はロックしない。
  */
 public class DispatchingRegister extends ServiceFoundation {
 
@@ -31,6 +35,7 @@ public class DispatchingRegister extends ServiceFoundation {
 		if (dto.dispatchNum1() * dto.dispatchNum2() == 0) {
 			// 注文期または注文番号を0に変更したということは、消去せよということ
 			if (dispatchingID != 0) {
+				lock(c, "T_出庫_親", "出庫親ID=?", dispatchingID);
 				try (PreparedStatement ps = c.prepareStatement("DELETE FROM T_出庫_親 WHERE 出庫親ID=?");) {
 					ps.setInt(1, dispatchingID);
 					ps.executeUpdate();
@@ -80,6 +85,7 @@ public class DispatchingRegister extends ServiceFoundation {
 				}
 
 			} else {
+				lock(c, "T_出庫_親", "出庫親ID=?", dispatchingID);
 				try (
 					PreparedStatement ps = c.prepareStatement(
 						"UPDATE T_出庫_親 SET 製作期=?, 製作番号=?, 製作枝番=?, 出庫年月日=?, 用途=?, 摘要=?, 更新日=?, 更新者CD=?"

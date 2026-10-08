@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import javax.servlet.GenericServlet;
@@ -88,7 +90,7 @@ public abstract class ServiceFoundation extends GenericServlet {
 			}
 			c.commit();
 			return result;
-		} catch (SQLException e) {
+		} catch (Exception e) { // SQLException 以外（NullPointerException 等）でも必ず巻き戻す
 			c.rollback();
 			throw e; // core で処理
 		}
@@ -110,8 +112,44 @@ public abstract class ServiceFoundation extends GenericServlet {
 	}
 
 	/**
+	 * 更新対象の行に更新ロックを掛ける
+	 *
+	 * <p>{@code UPDLOCK} で更新ロックを、{@code HOLDLOCK} で該当行がない場合の範囲ロックを取り、
+	 * トランザクションが終わるまで保持する。読み取りから更新までの間に別のトランザクションが
+	 * 割り込むのを防ぐため、読み取り・更新・削除を行う前に呼び出す。
+	 * 更新ロックは互いに非互換のため、後から来たトランザクションは待たされる。
+	 *
+	 * <p>明細は必ず親を経由してしか操作されないため、親子にまたがる更新では親の行だけをロックすればよい。
+	 * それ以外の理由で複数の行をロックする場合は、デッドロックを避けるため必ず親テーブルから順に呼び出すこと。
+	 *
+	 * <p>テーブル名・列名はプレースホルダで指定できないため文字列連結で組み立てる。
+	 * いずれも呼び出し元が定数で与えるものに限り、入力値を渡してはならない。
+	 *
+	 * @param c Connectionオブジェクト
+	 * @param table ロック対象のテーブル名
+	 * @param condition ロック対象を絞り込む条件（WHERE 以降。プレースホルダを含んでよい）
+	 * @param keys condition のプレースホルダに設定する値
+	 *
+	 * @throws SQLException
+	 */
+	protected void lock(Connection c, String table, String condition, Object... keys) throws SQLException {
+		try (
+			PreparedStatement ps = c.prepareStatement(
+				"SELECT 1 FROM " + table + " WITH (UPDLOCK, HOLDLOCK) WHERE " + condition
+			);
+		) {
+			for (int i = 0; i < keys.length; i++) {
+				ps.setObject(i + 1, keys[i]);
+			}
+			try (ResultSet rs = ps.executeQuery();) {
+				rs.next(); // ロックの取得が目的のため結果は使用しない
+			}
+		}
+	}
+
+	/**
 	 * コネクションを取得する
-	 * 
+	 *
 	 * @return Connectionオブジェクト
 	 */
 	protected Connection getConnection() {

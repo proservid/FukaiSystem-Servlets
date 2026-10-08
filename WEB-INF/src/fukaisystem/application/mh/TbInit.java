@@ -17,7 +17,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class TbInit extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		Map<String, String> validMembers = new LinkedHashMap<String, String>();
 		Map<String, String> allMembers = new LinkedHashMap<String, String>();

@@ -18,7 +18,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class NumCheck extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		ProductNumber input = cast(response, o, ProductNumber.class);
 		int result = -1;

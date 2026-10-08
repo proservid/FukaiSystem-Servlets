@@ -11,10 +11,24 @@ import javax.servlet.ServletResponse;
 import fukaisystem.dto.address.IndDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
+/**
+ * 個人データを登録・変更・削除する
+ *
+ * <p>M_個人 と M_個人住所 をひとつのトランザクションで処理する。別々にコミットすると、
+ * 個人だけが登録されて住所が欠けたり、個人だけが削除されて住所が孤児として残ったりする。
+ *
+ * <p>所属する法人の存在確認から登録までの間に、その法人が
+ * {@link fukaisystem.application.address.CorpRegister} で削除されると、
+ * 存在しない法人を参照する個人ができてしまう。これを防ぐため確認時に法人の行をロックする。
+ *
+ * <p>デッドロックを避けるため、ロックは M_法人 → M_個人 の順に取る。
+ * 住所は必ず個人を経由して操作されるため、M_個人住所 はロックしない。
+ * CorpRegister も同じ順序でロックすること。
+ */
 public class IndRegister extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		IndDTO indDTO = null;
 		String idStr = "";
@@ -31,7 +45,10 @@ public class IndRegister extends ServiceFoundation {
 		}
 
 		if (corpCD != null) {
-			try (PreparedStatement ps = c.prepareStatement("select * from M_法人 where CD=?");) {
+			// 確認してから登録し終えるまで、この法人の削除を割り込ませない
+			try (
+				PreparedStatement ps = c.prepareStatement("select * from M_法人 WITH (UPDLOCK, HOLDLOCK) where CD=?");
+			) {
 				ps.setString(1, corpCD);
 				ResultSet rs = ps.executeQuery();
 				if (!rs.next()) {
@@ -42,12 +59,13 @@ public class IndRegister extends ServiceFoundation {
 		}
 
 		if (isDel) {
-			try (
-				PreparedStatement ps = c
-					.prepareStatement("DELETE FROM M_個人 WHERE CD=?;DELETE FROM M_個人住所 WHERE 個人CD=?");
-			) {
+			lock(c, "M_個人", "CD=?", idStr);
+			try (PreparedStatement ps = c.prepareStatement("DELETE FROM M_個人 WHERE CD=?");) {
 				ps.setString(1, idStr);
-				ps.setString(2, idStr);
+				ps.executeUpdate();
+			}
+			try (PreparedStatement ps = c.prepareStatement("DELETE FROM M_個人住所 WHERE 個人CD=?");) {
+				ps.setString(1, idStr);
 				ps.executeUpdate();
 			}
 			return cd;
@@ -124,6 +142,7 @@ public class IndRegister extends ServiceFoundation {
 		}
 
 		// 更新
+		lock(c, "M_個人", "CD=?", cd);
 		try (
 			PreparedStatement ps = c.prepareStatement(
 				"UPDATE M_個人 SET"
@@ -159,7 +178,7 @@ public class IndRegister extends ServiceFoundation {
 				// 個人住所あり
 				try (
 					PreparedStatement ps2 = c.prepareStatement(
-						"MERGE INTO M_個人住所 AS addr"
+						"MERGE INTO M_個人住所 WITH (HOLDLOCK) AS addr"
 							+ " USING (SELECT ? AS 個人CD, ? AS alpha_2, ? AS 郵便番号, ? AS 郵便枝番," // 7
 							+ " ? AS 番地, ? AS 建物等, ? AS 自宅FLG) AS w"
 							+ " ON addr.個人CD=w.個人CD"

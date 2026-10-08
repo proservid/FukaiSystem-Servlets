@@ -23,7 +23,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class GetSummary extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 		ProjectSummaryDTO summaryDTO = null;
 
 		int quotationID = 0, productionID = 0, salesID = 0;

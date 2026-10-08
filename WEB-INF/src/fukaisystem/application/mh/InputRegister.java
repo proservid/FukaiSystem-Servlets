@@ -23,6 +23,13 @@ import fukaisystem.foundation.ServiceFoundation;
  * （始業前の切り捨て・休憩・定時後休憩の控除）。
  * 出張の場合は就業時間を適用せず、入力された休憩時間のみを控除するため、
  * 就業時間マスタは参照しない。
+ *
+ * <p>就業時間マスタの読み取りと加工実績の登録をひとつのトランザクションで行う。
+ * 自動コミットのままでは、読み取りから登録までの間にマスタが変更されると
+ * 実働時間だけが古い設定で算出された状態が確定してしまう。
+ *
+ * <p>既存データの更新では、更新の前に対象のIDをロックし、削除や別の更新が
+ * 割り込まないようにする。
  */
 public class InputRegister extends ServiceFoundation {
 
@@ -39,7 +46,7 @@ public class InputRegister extends ServiceFoundation {
 	private static final int TIME_ROUND_UP_MINUTES = 6;
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		InputDTO inputDTO = cast(response, o, InputDTO.class);
 
@@ -119,6 +126,7 @@ public class InputRegister extends ServiceFoundation {
 				ps.executeUpdate();
 			}
 		} else {
+			lock(c, "T_加工実績", "ID=?", id);
 			try (
 				PreparedStatement ps = c.prepareStatement(
 					"UPDATE T_加工実績  SET 製作期=?,製作番号=?,製作枝番=?,加工CD=?,時間=?,着手日時=?,終了日時=?,"

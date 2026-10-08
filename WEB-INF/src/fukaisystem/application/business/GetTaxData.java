@@ -29,7 +29,7 @@ public class GetTaxData extends ServiceFoundation {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o)
+	public Object transaction(Connection c, ServletResponse response, Object o)
 		throws IOException, SQLException, ParseException {
 		GetTableDTO dto = cast(response, o, GetTableDTO.class);
 		Map<String, Map<String, List<String>>> data = new HashMap<>();

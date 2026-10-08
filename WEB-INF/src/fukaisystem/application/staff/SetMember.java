@@ -11,6 +11,16 @@ import javax.servlet.ServletResponse;
 import fukaisystem.dto.staff.DMDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
+/**
+ * 指定した部署の人員データを登録・変更する
+ *
+ * <p>複数件をひとつのトランザクションで処理する。自動コミットのままでは
+ * 途中で失敗したときに一部だけ登録された状態が確定してしまう。
+ *
+ * <p>MERGE の対象には {@code WITH (HOLDLOCK)} を指定する。既定の READ COMMITTED では
+ * 一致判定のために取った共有ロックが判定直後に解放されるため、判定と登録の間に
+ * 同じ人員CDの登録が割り込み、主キー違反になることがある。
+ */
 public class SetMember extends ServiceFoundation {
 
 	private DMDTO dmd;
@@ -18,15 +28,18 @@ public class SetMember extends ServiceFoundation {
 	private Vector<Vector<Object>> data;
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
-		dmd = (DMDTO)cast(response, o, DMDTO.class);
+		dmd = cast(response, o, DMDTO.class);
+		if (dmd == null) {
+			return null; // cast() がクライアントに送信済み
+		}
 		dept = dmd.getName().keySet().iterator().next();
 		data = dmd.getName().get(dept);
 
 		try (
 			PreparedStatement ps = c.prepareStatement(
-				"MERGE INTO M_人員 AS m"
+				"MERGE INTO M_人員 WITH (HOLDLOCK) AS m"
 					+ " USING (SELECT ? AS CD, ? AS 姓, ? AS 名, ? AS 所属部署CD, ? AS 表示CD, ? AS 在籍FLG) AS temp"
 					+ "  ON m.CD=temp.CD AND temp.CD<>0 "
 					+ " WHEN MATCHED THEN"

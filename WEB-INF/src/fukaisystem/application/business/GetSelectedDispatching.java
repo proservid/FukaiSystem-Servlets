@@ -18,7 +18,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class GetSelectedDispatching extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 		DispatchingDTO dto = null;
 
 		Vector<Vector<Object>> data = new Vector<Vector<Object>>();

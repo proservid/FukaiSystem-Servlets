@@ -8,10 +8,16 @@ import javax.servlet.ServletResponse;
 
 import fukaisystem.foundation.ServiceFoundation;
 
+/**
+ * パスワードを変更する
+ *
+ * <p>更新できたかどうかを確かめてから例外を投げるため、トランザクション内で処理する。
+ * 自動コミットのままでは、確認して例外を投げた時点ですでに更新が確定してしまう。
+ */
 public class ChangePassword extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws Exception {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws Exception {
 
 		Object[] obj = cast(response, o, Object[].class);
 		try (

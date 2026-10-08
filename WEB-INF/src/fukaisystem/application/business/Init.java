@@ -24,7 +24,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class Init extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		Map<Integer, String> typeMap = new LinkedHashMap<Integer, String>();
 		Map<Integer, String> routeMap = new HashMap<Integer, String>();

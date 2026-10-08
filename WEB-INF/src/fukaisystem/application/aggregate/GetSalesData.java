@@ -24,7 +24,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class GetSalesData extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		Map<String, Integer> m = new HashMap<String, Integer>();
 		Date from = cast(response, o, Date.class);
