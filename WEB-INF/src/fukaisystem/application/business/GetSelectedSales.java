@@ -9,7 +9,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.SalesDTO;
+import fukaisystem.dto.business.SalesDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
@@ -18,7 +18,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class GetSelectedSales extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 		SalesDTO dto = null;
 
 		int salesID = cast(response, o, Integer.class);

@@ -8,7 +8,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.AccountNamesDTO;
+import fukaisystem.dto.business.AccountNamesDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
@@ -29,6 +29,8 @@ public class AccountNamesRegister extends ServiceFoundation {
 		if (accountCD < 1 || accountNames == null || accountNames.size() < 1) {
 			return null;
 		}
+		// 全件入れ替えのため、消してから入れ終えるまで同じ得意先への登録を割り込ませない
+		lock(c, TABLE_NAMES[type], "得意先CD=?", accountCD);
 		try (
 			PreparedStatement ps = c.prepareStatement(
 				"DELETE FROM " + TABLE_NAMES[type] + " WHERE 得意先CD=?"

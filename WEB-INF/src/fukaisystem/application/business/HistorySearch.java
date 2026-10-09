@@ -11,7 +11,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.HistoryDTO;
+import fukaisystem.dto.business.HistoryDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**

@@ -10,7 +10,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.CostDTO;
+import fukaisystem.dto.business.CostDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
@@ -20,7 +20,7 @@ public class GetExpectedCost extends ServiceFoundation {
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		String caption = "";
 		int productionID = 0;

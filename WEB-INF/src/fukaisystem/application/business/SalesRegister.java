@@ -13,11 +13,15 @@ import javax.servlet.ServletResponse;
 
 import org.apache.log4j.Logger;
 
-import fukaisystem.dto.SalesDTO;
+import fukaisystem.dto.business.SalesDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
  * 売上伝票データを登録する
+ *
+ * <p>既存伝票の更新では、更新の前に対象の売上親IDをロックし、
+ * 削除や別の更新が割り込まないようにする。明細は必ず親を経由して操作されるため、
+ * T_売上_子 はロックしない。
  */
 public class SalesRegister extends ServiceFoundation {
 
@@ -87,6 +91,7 @@ public class SalesRegister extends ServiceFoundation {
 				}
 			}
 		} else { // 更新
+			lock(c, "T_売上_親", "売上親ID=?", salesID);
 			try (
 				PreparedStatement ps = c.prepareStatement(
 					"UPDATE T_売上_親 SET 得意先CD=?, 売上年月日=?, 売上FLG=?, 請求FLG=?, 納品区分CD=?, 納品手段CD=?, 消費税=?, 値引き=?, 摘要=?, 更新日=?, 更新者CD=?"

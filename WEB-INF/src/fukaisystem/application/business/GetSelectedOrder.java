@@ -9,7 +9,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.OrderDocumentDTO;
+import fukaisystem.dto.business.OrderDocumentDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
@@ -18,7 +18,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class GetSelectedOrder extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 		OrderDocumentDTO dto = null;
 		int id = cast(response, o, Integer.class);
 
@@ -45,8 +45,14 @@ public class GetSelectedOrder extends ServiceFoundation {
 					record.add(rs.getDouble("重量長さ"));
 					record.add(rs.getInt("単価"));
 					record.add(rs.getInt("金額"));
+					record.add(rs.getString("図面番号"));
+					// 部品番号は未設定(材料の行など)を NULL のまま画面へ渡す。
+					// 0 に落とすと存在しない部品番号を指定したことになってしまう
+					int partNo = rs.getInt("部品番号");
+					record.add(rs.wasNull() ? null : Integer.valueOf(partNo));
 					record.add(rs.getString("備考"));
 					record.add(rs.getDate("入庫年月日"));
+					record.add(rs.getString("入庫場所"));
 					record.add(rs.getDate("入庫年月日") != null);
 					record.add(rs.getInt("納品書番号"));
 					record.add(rs.getDate("納品書日"));

@@ -9,7 +9,7 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.ShippingDTO;
+import fukaisystem.dto.business.ShippingDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
@@ -18,7 +18,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class GetSelectedShipping extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		String shippingNumber = cast(response, o, String.class); // 出荷伝票番号
 		String[] numParts = shippingNumber.split("-");

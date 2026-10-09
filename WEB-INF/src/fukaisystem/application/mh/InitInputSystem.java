@@ -13,13 +13,13 @@ import java.util.TreeMap;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.InitialInputDTO;
+import fukaisystem.dto.mh.InitialInputDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
 public class InitInputSystem extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		TreeMap<String, String> dept = new TreeMap<String, String>();
 		Map<String, String> process = new LinkedHashMap<String, String>();

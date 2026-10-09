@@ -7,9 +7,19 @@ import java.sql.Types;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.CorpDTO;
+import fukaisystem.dto.address.CorpDTO;
 import fukaisystem.foundation.ServiceFoundation;
 
+/**
+ * 法人データを登録・変更・削除する
+ *
+ * <p>削除では M_法人 から消したうえで M_個人 の関連付けを付け替えるため、
+ * その間に {@link fukaisystem.application.address.IndRegister} が同じ法人を参照する個人を
+ * 登録すると、存在しない法人を参照する個人が残る。これを防ぐため対象行をロックする。
+ *
+ * <p>デッドロックを避けるため、ロックは M_法人 → M_個人 の順に取る。
+ * IndRegister も同じ順序でロックすること。
+ */
 public class CorpRegister extends ServiceFoundation {
 
 	@Override
@@ -30,6 +40,8 @@ public class CorpRegister extends ServiceFoundation {
 		}
 
 		if (isDel) {
+			lock(c, "M_法人", "CD=?", idStr);
+			lock(c, "M_個人", "法人CD=?", idStr);
 			try (
 				PreparedStatement ps = c.prepareStatement(
 					"DELETE FROM M_法人 WHERE CD=?"
@@ -119,6 +131,7 @@ public class CorpRegister extends ServiceFoundation {
 					}
 				}
 			} else { // 更新
+				lock(c, "M_法人", "CD=?", cd);
 				try (
 					PreparedStatement ps = c.prepareStatement(
 						"UPDATE M_法人 SET"

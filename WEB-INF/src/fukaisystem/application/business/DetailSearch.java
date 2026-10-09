@@ -9,8 +9,8 @@ import java.util.Vector;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.IDDTO;
-import fukaisystem.dto.ProductNumber;
+import fukaisystem.dto.business.IDDTO;
+import fukaisystem.dto.business.ProductNumber;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**

@@ -30,6 +30,8 @@ public class WriteRecords extends ServiceFoundation {
 		if (date == null || records == null) {
 			return null;
 		}
+		// 全件入れ替えのため、消してから入れ終えるまで同じ年月日への登録を割り込ませない
+		lock(c, "T_打刻", "年月日=?", date);
 		try (
 			PreparedStatement ps = c.prepareStatement(
 				"DELETE FROM T_打刻 WHERE 年月日=?"

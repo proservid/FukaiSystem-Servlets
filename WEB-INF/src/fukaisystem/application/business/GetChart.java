@@ -11,8 +11,8 @@ import java.util.Map;
 
 import javax.servlet.ServletResponse;
 
-import fukaisystem.dto.ChartDTO;
-import fukaisystem.dto.ProductNumber;
+import fukaisystem.dto.business.ChartDTO;
+import fukaisystem.dto.business.ProductNumber;
 import fukaisystem.foundation.ServiceFoundation;
 
 /**
@@ -21,7 +21,7 @@ import fukaisystem.foundation.ServiceFoundation;
 public class GetChart extends ServiceFoundation {
 
 	@Override
-	public Object access(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
+	public Object transaction(Connection c, ServletResponse response, Object o) throws IOException, SQLException {
 
 		String name = "";
 		String display = "";
