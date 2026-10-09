@@ -34,9 +34,14 @@ public abstract class ServiceFoundation extends GenericServlet {
 		try {
 
 			ObjectInputStream in = new ObjectInputStream(request.getInputStream());
-			Object obj = in.readObject();
+			// まずエラーオブジェクトが送信されていれば正規のアクセス
+			Object error = in.readObject();
+			// 不正アクセスへは "ok" を返す
+			Object result = "ok";
+			if (error instanceof Error) {
+				result = core(response, in.readObject());
+			}
 			in.close();
-			Object result = core(response, obj);
 			if (!isSent) { // reportException で送信済みの場合は isSent が true
 				send(response, result);
 			}
